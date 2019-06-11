@@ -1,0 +1,19 @@
+version: "3.5"
+
+services:
+  viper-frontend:
+    container_name: viper-frontend
+    command: npm run build
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        app_env: ${APP_ENV}
+    volumes:
+      - ".:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - CHOKIDAR_USEPOLLING=true

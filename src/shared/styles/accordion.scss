@@ -1,0 +1,47 @@
+.uk-accordion {
+  &-title {
+    position: relative;
+    background-color: $global-inverse-color;
+    padding: 0 48px 0 24px;
+    line-height: 62px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 0 16px;
+      font-size: 16px;
+      line-height: 56px;
+    }
+    @media (min-width: $breakpoint-small) {
+      &:after {
+        content: "";
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-image: url("../../assets/icons/plus.svg");
+      }
+    }
+  }
+  > li {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+    &.uk-open {
+      .uk-accordion-title {
+        &:after {
+          content: "";
+          //background-image: url("../../assets/icons/minus.svg");
+        }
+      }
+    }
+  }
+  &-content {
+    margin: 0;
+    padding: 0 24px 24px 24px;
+    font-size: 16px;
+    background-color: $global-inverse-color;
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 8px 16px;
+    }
+  }
+}

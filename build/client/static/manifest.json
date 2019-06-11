@@ -1,0 +1,6 @@
+{
+  "bundle.css": "http://localhost:8501/static/bundle.css",
+  "bundle.js": "http://localhost:8501/static/bundle.js",
+  "vendor.js": "http://localhost:8501/static/vendor.b1754212.chunk.js",
+  "index.html": "http://localhost:8501/static/index.html"
+}

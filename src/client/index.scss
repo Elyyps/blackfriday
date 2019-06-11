@@ -1,0 +1,27 @@
+@import "~uikit/src/scss/mixins.scss";
+
+@import "~uikit/src/scss/variables.scss";
+@import "~uikit/src/scss/components/base.scss";
+
+@import "~uikit/src/scss/components/container.scss";
+@import "~uikit/src/scss/components/grid.scss";
+@import "~uikit/src/scss/components/width.scss";
+@import "~uikit/src/scss/components/visibility.scss";
+@import "~uikit/src/scss/components/accordion";
+
+@import "./src/shared/styles/slick.scss";
+
+@import "./src/shared/styles/form.scss";
+@import "./src/shared/styles/fonts.scss";
+@import "./src/shared/styles/base.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
