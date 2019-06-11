@@ -5,13 +5,11 @@ import { FirstModuleComponent } from "@app/prep/modules-prep";
 
 export interface IHomepageComponentProps {}
 
-const HomepageComponent = (props: IHomepageComponentProps) => {
-  return (
-    <div>
-      <div className={styles["start"]}>Hello, start here</div>
-      <FirstModuleComponent />
-    </div>
-  );
-};
+const HomepageComponent = (props: IHomepageComponentProps) => (
+  <div>
+    <div className={styles["start"]}>Hello, start here</div>
+    <FirstModuleComponent />
+  </div>
+);
 
 export { HomepageComponent };
