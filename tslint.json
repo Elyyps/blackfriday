@@ -5,8 +5,7 @@
     "tslint-config-airbnb",
     "tslint-config-prettier",
     "tslint-react-a11y",
-    "tslint-react",
-    "tslint-microsoft-contrib"
+    "tslint-react"
   ],
   "jsRules": {},
   "rules": {
@@ -26,6 +25,7 @@
     "no-string-literal": false,
     "jsx-no-lambda": false,
     "jsx-boolean-value": false,
+    "no-null-keyword": false,
     "jsx-no-multiline-js": false,
     "completed-docs": false,
     "no-restricted-globals": false,
@@ -49,9 +49,14 @@
     "no-require-imports": false,
     "react-a11y-role": false,
     "react-this-binding-issue": false,
-    "no-unsafe-any": [false, "warning"],
+    "no-unsafe-any": false,
     "align": false,
-    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case"
+    ],
     "no-import-side-effect": [
       true,
       {
@@ -59,7 +64,8 @@
       }
     ],
     "max-func-body-length": 10,
-    "strict-boolean-expressions": false
+    "strict-boolean-expressions": false,
+    "no-any": false
   },
   "linterOptions": {
     "exclude": ["./node_modules"]
