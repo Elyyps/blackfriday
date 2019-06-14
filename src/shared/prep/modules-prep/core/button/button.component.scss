@@ -1,0 +1,58 @@
+.button {
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 600;
+  font-family: $global-font-family;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  justify-content: center;
+  position: relative;
+  border-radius: 2px;
+  padding: 8px 30px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  color: $global-inverse-color !important;
+  background-color: $gray-dark;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+  }
+
+  .icon-svg {
+    line-height: 1;
+    margin-left: 8px;
+    path {
+      fill: $global-inverse-color;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $button-hover-background;
+  }
+
+  &--primary {
+    background-color: $global-secondary-background;
+
+    &:hover {
+      background-color: $button-primary-hover-background;
+    }
+  }
+
+  &--invert {
+    color: $gray-dark !important;
+    background-color: $global-background;
+    &:hover {
+      background-color: $global-muted-background;
+    }
+  }
+
+  &--small {
+    padding: 8px 18px;
+  }
+}

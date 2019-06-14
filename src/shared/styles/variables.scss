@@ -38,7 +38,7 @@ $global-font-family: "Assistant", -apple-system, BlinkMacSystemFont, "Segoe UI",
 $global-font-family-secondary: "Bai Jamjuree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
   Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $global-font-size:         16px !default;
-$global-line-height:       1.44 !default;
+$global-line-height:       1.438 !default;
 
 $global-xxlarge-font-size: 32px !default;
 $global-xlarge-font-size:  24px !default;
@@ -109,9 +109,8 @@ $container-padding-horizontal-m: $global-medium-gutter !default;
 // Buttons
 //
 
-$button-hover-background: darken($global-muted-background, 7%);
-$button-hover-color: $global-link-hover-color;
-$button-primary-hover-background: darken($global-primary-background, 7%);
+$button-hover-background:         darken($gray-dark, 7%);
+$button-primary-hover-background: darken($global-secondary-background, 7%);
 
 //
 // Border
@@ -143,9 +142,9 @@ $base-h3-font-size:            $global-large-font-size;
 $base-h3-line-height:          1.25;
 $base-h4-font-size:            $global-medium-font-size;
 $base-h4-line-height:          1.38;
-$base-h5-font-size:            18px;
+$base-h5-font-size:            $global-small-font-size;
 $base-h5-line-height:          1.33;
-$base-h6-font-size:            $global-small-font-size;
+$base-h6-font-size:            $global-xsmall-font-size;
 $base-h6-line-height:          1;
 $base-list-padding-left:       35px;
 $base-em-color:                inherit;
