@@ -1,0 +1,42 @@
+.hero {
+  background-color: $bg-muted;
+  &__title {
+    > * {
+      font-size: 48px;
+    }
+  }
+  &__label{
+    background-color: rgba($brand-primary,.15);
+    font-size: 12px;
+    font-weight: bold;
+    color: $brand-primary;
+    padding: 6px 10px;
+    display: inline-flex;
+    text-transform: uppercase;
+    border-radius: $global-border-radius;
+  }
+  &__list{
+    font-size: 20px;
+  }
+  &__cards{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    >li{
+      padding-left: 0;
+      &:before{
+        display: none;
+      }
+    }
+  }
+  &-bottom{
+    background-color: #cacaca;
+    &-cards{
+      display: flex;
+      flex-wrap: wrap;
+      .card-simple{
+        flex: 1 1 50%;
+      }
+    }
+  }
+}

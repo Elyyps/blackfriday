@@ -1,6 +1,3 @@
-//test data
-$red-b44: #b72b56;
-
 //
 // Brand colors
 //
@@ -74,6 +71,7 @@ $global-danger-background:    #fa3939 !default;
 
 $global-border-width:       1px;
 $global-border:             #ececec;
+$global-border-radius:      2px!default;
 
 //
 // Spacings
@@ -83,7 +81,7 @@ $global-border:             #ececec;
 $global-margin:              24px;
 $global-small-margin:        16px;
 $global-medium-margin:       32px;
-$global-large-margin:        40px; 
+$global-large-margin:        40px;
 $global-xlarge-margin:       120px;
 
 // Used in grid, column, container, align, card, padding
