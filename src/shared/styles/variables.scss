@@ -109,7 +109,7 @@ $container-padding-horizontal-m: $global-medium-gutter !default;
 // Buttons
 //
 
-$button-hover-background:         darken($gray-dark, 7%);
+$button-hover-background:         lighten($gray-dark, 10%);
 $button-primary-hover-background: darken($global-secondary-background, 7%);
 
 //

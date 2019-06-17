@@ -2,15 +2,15 @@ import * as React from "react";
 
 import styles from "./homepage-component.module.scss";
 import {
-  FirstModuleComponent,
-  BodyTextComponent
+  BodyTextComponent,
+  FooterComponent,
+  NavBarComponent
 } from "@app/prep/modules-prep";
 export interface IHomepageComponentProps {}
 
 const HomepageComponent = (props: IHomepageComponentProps) => (
-  <div>
-    <div className={styles["start"]}>Hello, start here</div>
-    <FirstModuleComponent />
+  <div className={styles["homepage"]}>
+    <NavBarComponent />
     <BodyTextComponent bgcolor={"#f7f7f7"}>
       <h1>
         <strong>Black Friday België</strong>
@@ -42,6 +42,7 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
         elkaar te shoppen.
       </p>
     </BodyTextComponent>
+    <FooterComponent />
   </div>
 );
 
