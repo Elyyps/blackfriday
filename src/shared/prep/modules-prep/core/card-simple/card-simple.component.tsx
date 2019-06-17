@@ -34,5 +34,4 @@ const CardSimple = (props: ICardSimpleProps) => (
     </div>
   </Link>
 );
-
 export { CardSimple };

@@ -1,10 +1,9 @@
 import * as React from "react";
 import styles from "./hero-component.module.scss";
 import { CardSimple } from "@app/prep/modules-prep/core";
-import Slider, { Settings } from "react-slick";
-import { setRelatedProductsSlider } from "./slider-settings";
+// import Slider from "react-slick";
 import CardIcon from "@assets/icons/store.svg";
-import classNames from "classnames";
+
 export interface IHeroComponentProps {
   bgcolor?: string;
   cards?: any;
@@ -17,13 +16,7 @@ const HeroComponent = (props: IHeroComponentProps) => {
     backgroundColor: props.bgcolor,
     cards: props.cards
   };
-  const [draggable, setDraggable] = React.useState(false);
 
-  const settingsSlider = setRelatedProductsSlider(
-    () => setDraggable,
-    props.customNextArrow,
-    props.customPrevArrow
-  ) as Settings;
   const cards = [
     {
       title: "Productdeals",
@@ -84,21 +77,7 @@ const HeroComponent = (props: IHeroComponentProps) => {
                 </div>
               </div>
             </div>
-            <div>
-              <Slider {...settingsSlider}>
-                {/*{props.relatedProductsModule.relatedProducts.map((item, index) => (*/}
-                {/*<div className={styles["related-product-slider__slide"]} key={index}>*/}
-                {/*<RelatedPostCard*/}
-                {/*link={item.URL}*/}
-                {/*content={item.amount}*/}
-                {/*title={item.title}*/}
-                {/*image={item.picture}*/}
-                {/*draggable={draggable}*/}
-                {/*/>*/}
-                {/*</div>*/}
-                {/*))}*/}
-              </Slider>
-            </div>
+            <div>slider</div>
           </div>
         </div>
         <div className="hero-bottom">
