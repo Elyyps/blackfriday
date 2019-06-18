@@ -80,7 +80,7 @@ const HeroComponent = (props: IHeroComponentProps) => {
             <div>slider</div>
           </div>
         </div>
-        <div className="hero-bottom">
+        <div className={styles["hero-bottom"]}>
           <div className="uk-container">
             <div className="uk-grid uk-child-width-1-2@s">
               <div>
