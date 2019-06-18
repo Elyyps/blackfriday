@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import styles from "./card-simple.module.scss";
-import { IconComponent } from "@app/prep/modules-prep/core";
+import { IconComponent, ImageComponent } from "@app/prep/modules-prep/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
 
 interface ICardSimpleProps {
@@ -30,6 +30,7 @@ const CardSimple = (props: ICardSimpleProps) => (
         )}
         <div className={styles["card-simple__title"]}>{props.title}</div>
       </div>
+      <ImageComponent src={CHEVRON_RIGHT} alt="arrow" />
       <IconComponent icon={CHEVRON_RIGHT} size="10px" />
     </div>
   </Link>
