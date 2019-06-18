@@ -1,16 +1,17 @@
 import * as React from "react";
-
 import styles from "./homepage-component.module.scss";
 import {
   BodyTextComponent,
   FooterComponent,
-  NavBarComponent
+  NavBarComponent,
+  HeroComponent
 } from "@app/prep/modules-prep";
 export interface IHomepageComponentProps {}
 
 const HomepageComponent = (props: IHomepageComponentProps) => (
   <div className={styles["homepage"]}>
     <NavBarComponent />
+    <HeroComponent />
     <BodyTextComponent bgcolor={"#f7f7f7"}>
       <h1>
         <strong>Black Friday België</strong>
