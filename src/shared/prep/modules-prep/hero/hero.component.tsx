@@ -1,16 +1,11 @@
 import * as React from "react";
 import styles from "./hero-component.module.scss";
-import {
-  CardSimple,
-  ImageComponent,
-  IconComponent
-} from "@app/prep/modules-prep/core";
+import { CardSimple, IconComponent } from "@app/prep/modules-prep/core";
 import Slider, { Settings } from "react-slick";
 import CardIcon from "@assets/icons/store.svg";
 import Oasis from "@assets/oasis.jpg";
-import { getArrow } from "@app/constants/icons";
-
-import { setRelatedProductsSlider } from "./slider-settings";
+import { CHEVRON_RIGHT, getArrow } from "@app/constants/icons";
+import { Link } from "react-router-dom";
 
 export interface IHeroComponentProps {
   bgcolor?: string;
@@ -38,7 +33,7 @@ const BasicArrow = (props: IBasicArrowProps) => {
         style={{ display: "block" }}
         onClick={onClick}
       >
-        <IconComponent icon={getArrow(props.prev)} size={"5px"} />
+        <IconComponent icon={getArrow(props.prev)} size={"12px"} />
       </button>
     );
   } else {
@@ -99,14 +94,14 @@ const HeroComponent = (props: IHeroComponentProps) => {
       icon: CardIcon
     }
   ];
+  const sliceNumber = 2;
 
   return (
     <>
       <div className={styles["hero"]} style={style}>
         <div className={styles["hero-top"]}>
           <div className="uk-container">
-            <div className="custom">custom</div>
-            <div className="uk-grid uk-child-width-1-2@s">
+            <div className="uk-grid uk-child-width-1-2@m">
               <div>
                 <div className={styles["hero-wrap"]}>
                   <div className={styles["hero__label"]}>
@@ -121,7 +116,7 @@ const HeroComponent = (props: IHeroComponentProps) => {
                     <li>Overzicht van alle Black Friday winkels</li>
                   </ul>
                   <div className={styles["hero__cards"]}>
-                    {cards.slice(2).map((item, key) => (
+                    {cards.slice(sliceNumber).map((item, key) => (
                       <CardSimple key={key} {...item} />
                     ))}
                   </div>
@@ -148,16 +143,60 @@ const HeroComponent = (props: IHeroComponentProps) => {
               <div>
                 <Slider {...settings}>
                   <div>
-                    <ImageComponent src={Oasis} alt="oasis" />
+                    <div
+                      style={{ backgroundImage: `url(${Oasis})` }}
+                      className={styles["hero__slider-item"]}
+                    >
+                      <div className={styles["hero__slider-title"]}>
+                        Handige Black Friday Tips
+                      </div>
+                      <Link to="#" className={styles["hero__slider-button"]}>
+                        Lees meer
+                        <IconComponent icon={CHEVRON_RIGHT} size={"5px"} />
+                      </Link>
+                    </div>
                   </div>
                   <div>
-                    <ImageComponent src={Oasis} alt="oasis" />
+                    <div
+                      style={{ backgroundImage: `url(${Oasis})` }}
+                      className={styles["hero__slider-item"]}
+                    >
+                      <div className={styles["hero__slider-title"]}>
+                        Handige Black Friday Tips
+                      </div>
+                      <Link to="#" className={styles["hero__slider-button"]}>
+                        Lees meer
+                        <IconComponent icon={CHEVRON_RIGHT} size={"5px"} />
+                      </Link>
+                    </div>
                   </div>
                   <div>
-                    <ImageComponent src={Oasis} alt="oasis" />
+                    <div
+                      style={{ backgroundImage: `url(${Oasis})` }}
+                      className={styles["hero__slider-item"]}
+                    >
+                      <div className={styles["hero__slider-title"]}>
+                        Handige Black Friday Tips
+                      </div>
+                      <Link to="#" className={styles["hero__slider-button"]}>
+                        Lees meer
+                        <IconComponent icon={CHEVRON_RIGHT} size={"5px"} />
+                      </Link>
+                    </div>
                   </div>
                   <div>
-                    <ImageComponent src={Oasis} alt="oasis" />
+                    <div
+                      style={{ backgroundImage: `url(${Oasis})` }}
+                      className={styles["hero__slider-item"]}
+                    >
+                      <div className={styles["hero__slider-title"]}>
+                        Handige Black Friday Tips
+                      </div>
+                      <Link to="#" className={styles["hero__slider-button"]}>
+                        Lees meer
+                        <IconComponent icon={CHEVRON_RIGHT} size={"8px"} />
+                      </Link>
+                    </div>
                   </div>
                 </Slider>
               </div>

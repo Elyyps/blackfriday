@@ -8,7 +8,6 @@ export interface IImageComponentProps
   > {
   isBlocking?: boolean;
 }
-
 const ImageComponent = (
   props: IImageComponentProps &
     React.DetailedHTMLProps<

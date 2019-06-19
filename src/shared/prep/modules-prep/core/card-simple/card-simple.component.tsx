@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import styles from "./card-simple.module.scss";
-import { IconComponent, ImageComponent } from "@app/prep/modules-prep/core";
+import { IconComponent } from "@app/prep/modules-prep/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
 
 interface ICardSimpleProps {
