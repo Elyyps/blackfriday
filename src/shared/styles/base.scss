@@ -45,15 +45,22 @@ ul {
   
   &.uk-list-check {
     font-weight: 600;
+    color: $gray-light;
     li {
+      padding-left: 30px;
+      position: relative;
       &::before {
+        content: "";
+        position: absolute;
+        top: 0.2em;
+        left: 0;
         width: 13px;
         height: 6px;
         transform: rotate(-51deg);
         border-radius: 0;
         border: solid $brand-secondary;
         border-width: 0 0 2px 2px;
-        background: none !important;
+        background: none;
       }
     }
   }

@@ -1,0 +1,59 @@
+.opened {
+  opacity: 1;
+  visibility: visible;
+}
+.closed {
+  opacity: 0;
+  visibility: hidden;
+}
+.hamburger-menu {
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: .2s all ease-in-out;
+  background: rgba(0,0,0,.35);
+  &__holder {
+    margin-left: auto;
+    height: 100%;
+    overflow: auto;
+    padding: 40px 24px 24px;
+    width: 400px;
+    background: $gray-dark;
+    box-sizing: border-box;
+    @media (max-width: $breakpoint-small-max) {
+      width: auto;
+    }
+  }
+  &__navigation {
+    li {
+      margin-bottom: 8px;
+      a {
+        text-decoration: none;
+        color: $global-inverse-color;
+        &:hover {
+          color: $global-link-color;
+        }
+      }
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 24px;
+    top: 10px;
+    color: $global-inverse-color;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    > div {
+      margin-right: 8px;
+    }
+    path {
+      stroke: currentColor;
+    }
+  }
+}

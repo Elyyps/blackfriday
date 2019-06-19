@@ -6,7 +6,7 @@
   padding: 16px 0;
   background: $global-background;
   @media (max-width: $breakpoint-small-max) {
-    padding: 12px;
+    padding: 12px 0;
   }
   &__holder {
     display: flex;
