@@ -8,7 +8,9 @@
     font-size: 15px;
   }
 }
-
+#app{
+  overflow: hidden;
+}
 a:not([class]) {
   text-decoration: underline;
   &:hover {
@@ -165,6 +167,11 @@ h5 {
 
 h6 {
   text-transform: uppercase;
+}
+.uk-invert{
+  h1,h2,h3,h4,h5,h6{
+    color: $global-inverse-color;
+  }
 }
 
 @mixin hook-base-blockquote() {

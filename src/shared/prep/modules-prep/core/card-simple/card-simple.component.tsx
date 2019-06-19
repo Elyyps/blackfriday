@@ -30,8 +30,7 @@ const CardSimple = (props: ICardSimpleProps) => (
         )}
         <div className={styles["card-simple__title"]}>{props.title}</div>
       </div>
-      <ImageComponent src={CHEVRON_RIGHT} alt="arrow" />
-      <IconComponent icon={CHEVRON_RIGHT} size="10px" />
+      <IconComponent icon={CHEVRON_RIGHT} size="5px" />
     </div>
   </Link>
 );
