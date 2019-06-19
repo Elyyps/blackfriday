@@ -6,7 +6,6 @@ const CHEVRON_RIGHT: string = require("@assets/icons/chevron-right.svg");
 const CHEVRON_LEFT: string = require("@assets/icons/chevron-left.svg");
 const getArrow = (propsPrev?: boolean): string =>
   require(`${"@assets/icons/chevron-"}${propsPrev ? "left" : "right"}.svg`);
-
 export {
   SEARCH_ICON,
   CLOSE_ICON,
