@@ -1,9 +1,16 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import "./footer-component.scss";
-import { ImageComponent, Button } from "@app/prep/modules-prep/core";
+import {
+  ImageComponent,
+  Button,
+  IconComponent
+} from "@app/prep/modules-prep/core";
 import LOGO from "@assets/bf-expert-brand.svg";
 import Paper from "@assets/icons/paper.svg";
+import Mail from "@assets/icons/mail.svg";
+import Facebook from "@assets/icons/facebook.svg";
+import Instagram from "@assets/icons/instagram.svg";
 
 export interface IFooterComponentProps {}
 
@@ -121,6 +128,41 @@ const FooterComponent = (props: IFooterComponentProps) => {
               <div className="footer__column-title">
                 Eenvoudig met ons in contact
               </div>
+              <ul className="footer__social">
+                <li>
+                  <Link to="/" className="footer__social-link">
+                    <div className="footer__social-icon">
+                      <IconComponent icon={Facebook} size="10px" />
+                    </div>
+                    <div className="footer__social-text">
+                      <div className="footer__social-title">Facebook</div>
+                      4.240 mensen vinden ons leuk
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="footer__social-link">
+                    <div className="footer__social-icon">
+                      <IconComponent icon={Instagram} size="16px" />
+                    </div>
+                    <div className="footer__social-text">
+                      <div className="footer__social-title">Instagram</div>
+                      Volg ons voor leuke acties
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" className="footer__social-link">
+                    <div className="footer__social-icon">
+                      <IconComponent icon={Mail} size="16px" />
+                    </div>
+                    <div className="footer__social-text">
+                      <div className="footer__social-title">Mailtje</div>
+                      Heeft u een vraag? Stel hem gerust!
+                    </div>
+                  </Link>
+                </li>
+              </ul>
             </div>
             <div>
               <div className="footer__column-title">

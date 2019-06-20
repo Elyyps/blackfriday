@@ -72,4 +72,38 @@
       margin: 0 0 0 32px;
     }
   }
+
+  &__social {
+    li {
+      padding: 8px 0;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: $global-border-radius;
+    border: solid 2px $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &__social-text {
+    font-size: 12px;
+    color: $tint-gray;
+  }
+  &__social-title {
+    font-size: 15px;
+    color: $global-inverse-color;
+  }
 }
