@@ -1,53 +1,16 @@
-.opened {
-  opacity: 1;
-  max-height: 100vh;
-}
-.closed {
-  opacity: 0;
-  max-height: 0;
-}
 .navbar-search {
-  position: fixed;
-  z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  transition: .2s all ease-in-out;
-  background: rgba(0,0,0,.35);
+  position: relative;
+  padding: 23px 0;
+  @media (max-width: $breakpoint-small-max) {
+    padding: 12px 0;
+  }
+  
   &__bar {
-    padding: 23px 0;
-    background: $gray-dark;
-    @media (max-width: $breakpoint-small-max) {
-      padding: 12px 0;
+    @media (min-width: $breakpoint-medium) {
+      padding: 0 94px 0 0;
     }
   }
-  &__bar-holder {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  &__close {
-    color: $global-inverse-color;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    cursor: pointer;
-    @media (max-width: $breakpoint-small-max) {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      color: $gray-dark;
-    }
-    > div {
-      margin-right: 8px;
-    }
-    path {
-      stroke: currentColor;
-    }
-  }
+  
   &__icon {
     position: absolute;
     top: 50%;
