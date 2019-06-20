@@ -4,7 +4,8 @@ import {
   BodyTextComponent,
   FooterComponent,
   NavBarComponent,
-  HeroComponent
+  HeroComponent,
+  DealsOverviewComponent
 } from "@app/prep/modules-prep";
 export interface IHomepageComponentProps {}
 
@@ -43,6 +44,7 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
         elkaar te shoppen.
       </p>
     </BodyTextComponent>
+    <DealsOverviewComponent />
     <FooterComponent />
   </div>
 );

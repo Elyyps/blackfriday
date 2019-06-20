@@ -152,7 +152,7 @@ const HeroComponent = (props: IHeroComponentProps) => {
                       </div>
                       <Link to="#" className={styles["hero__slider-button"]}>
                         Lees meer
-                        <IconComponent icon={CHEVRON_RIGHT} size={"5px"} />
+                        <IconComponent icon={CHEVRON_RIGHT} size={"4px"} />
                       </Link>
                     </div>
                   </div>
