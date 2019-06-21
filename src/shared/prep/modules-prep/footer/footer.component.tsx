@@ -6,15 +6,22 @@ import {
   Button,
   IconComponent
 } from "@app/prep/modules-prep/core";
+
 import LOGO from "@assets/bf-expert-brand.svg";
 import Paper from "@assets/icons/paper.svg";
 import Mail from "@assets/icons/mail.svg";
 import Facebook from "@assets/icons/facebook.svg";
 import Instagram from "@assets/icons/instagram.svg";
+import Star from "@assets/icons/star-filled.svg";
+import Store from "@assets/icons/store.svg";
+import Medal from "@assets/icons/medal.svg";
+
+import { USP } from "@app/prep/modules-prep/core/usp/usp.component";
 
 export interface IFooterComponentProps {}
 
 const FooterComponent = (props: IFooterComponentProps) => {
+  const numberStars = 5;
   const footerBottomNav = [
     {
       title: "Partner worden?",
@@ -106,70 +113,107 @@ const FooterComponent = (props: IFooterComponentProps) => {
   return (
     <div className="footer">
       <div className="footer__top">
-        <div className="uk-container">top</div>
+        <div className="uk-container">
+          <div className="footer__top-holder">
+            <div className="footer__top-left">
+              <ul className="footer__top-list">
+                <li>
+                  <IconComponent icon={Store} size="20px" />
+                  132 winkels
+                </li>
+                <li>
+                  <IconComponent icon={Medal} size="20px" />
+                  560 Deals
+                </li>
+              </ul>
+            </div>
+            <div className="footer__top-right uk-visible@m">
+              <USP />
+            </div>
+          </div>
+        </div>
       </div>
       <div className="footer__holder">
         <div className="uk-container">
           <div className="footer__columns">
             {footerNav.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="footer__column-collapse">
                 <div className="footer__column-title">{item.title}</div>
-                <ul className="footer__column-nav">
-                  {item.links.map((link, i) => (
-                    <li key={i}>
-                      <Link to={link.link}>{link.title}</Link>
-                    </li>
-                  ))}
-                </ul>
+                <div className="footer__column-collapse-body">
+                  <ul className="footer__column-nav">
+                    {item.links.map((link, i) => (
+                      <li key={i}>
+                        <Link to={link.link}>{link.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
 
-            <div>
+            <div className="footer__column-collapse">
               <div className="footer__column-title">
                 Eenvoudig met ons in contact
               </div>
-              <ul className="footer__social">
-                <li>
-                  <Link to="/" className="footer__social-link">
-                    <div className="footer__social-icon">
-                      <IconComponent icon={Facebook} size="10px" />
-                    </div>
-                    <div className="footer__social-text">
-                      <div className="footer__social-title">Facebook</div>
-                      4.240 mensen vinden ons leuk
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="footer__social-link">
-                    <div className="footer__social-icon">
-                      <IconComponent icon={Instagram} size="16px" />
-                    </div>
-                    <div className="footer__social-text">
-                      <div className="footer__social-title">Instagram</div>
-                      Volg ons voor leuke acties
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="footer__social-link">
-                    <div className="footer__social-icon">
-                      <IconComponent icon={Mail} size="16px" />
-                    </div>
-                    <div className="footer__social-text">
-                      <div className="footer__social-title">Mailtje</div>
-                      Heeft u een vraag? Stel hem gerust!
-                    </div>
-                  </Link>
-                </li>
-              </ul>
+              <div className="footer__column-collapse-body">
+                <ul className="footer__social">
+                  <li>
+                    <Link to="/" className="footer__social-link">
+                      <div className="footer__social-icon">
+                        <IconComponent icon={Facebook} size="10px" />
+                      </div>
+                      <div className="footer__social-text">
+                        <div className="footer__social-title">Facebook</div>
+                        4.240 mensen vinden ons leuk
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/" className="footer__social-link">
+                      <div className="footer__social-icon">
+                        <IconComponent icon={Instagram} size="16px" />
+                      </div>
+                      <div className="footer__social-text">
+                        <div className="footer__social-title">Instagram</div>
+                        Volg ons voor leuke acties
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/" className="footer__social-link">
+                      <div className="footer__social-icon">
+                        <IconComponent icon={Mail} size="16px" />
+                      </div>
+                      <div className="footer__social-text">
+                        <div className="footer__social-title">Mailtje</div>
+                        Heeft u een vraag? Stel hem gerust!
+                      </div>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div>
-              <div className="footer__column-title">
-                Aanmelden voor onze nieuwsbrief
+              <div className="footer__column-body">
+                <div className="footer__column-title">
+                  Aanmelden voor onze nieuwsbrief
+                </div>
+                <p>En ontvang ons de allerbeste aanbiedingen</p>
+                <Button title="Nieuwsbrief" variant="invert" icon={Paper} />
               </div>
-              <p>En ontvang ons de allerbeste aanbiedingen</p>
-              <Button title="Nieuwsbrief" variant="invert" icon={Paper} />
+              <div className="footer__column-footer">
+                <div className="rating">
+                  <div className="rating__mark">5,0</div>
+                  <div className="rating__stars">
+                    {[...Array(numberStars)].map((e, i) => (
+                      <span key={i}>
+                        <IconComponent icon={Star} size="14px" />
+                      </span>
+                    ))}
+                  </div>
+                  143 Google Reviews
+                </div>
+              </div>
             </div>
           </div>
         </div>
