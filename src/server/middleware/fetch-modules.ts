@@ -1,6 +1,5 @@
 import * as express from "express";
 import { pageActions } from "@app/stores";
-import { PageApi } from "@app/api";
 import FatalError from "@app/errors/fatal-error";
 
 const moduleFetcher: any = () => async (
@@ -13,14 +12,8 @@ const moduleFetcher: any = () => async (
       return next();
     }
 
-    const api = new PageApi();
-
-    const response = await api
-      .pageRouteGet("https://terrasana.com" + req.url)
-      .then(response => response.json())
-      .catch((error: any) => {
-        // new FatalError(error.name, error.message, error.stack);
-      });
+    // TODO generate modules from dummy data
+    const response: any = {};
 
     res.locals.store.dispatch(pageActions.setCurrentPage({ page: response }));
   } catch (error) {

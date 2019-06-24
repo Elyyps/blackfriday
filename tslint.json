@@ -65,7 +65,8 @@
     ],
     "max-func-body-length": 10,
     "strict-boolean-expressions": false,
-    "no-any": false
+    "no-any": false,
+    "strictPropertyInitialization": false
   },
   "linterOptions": {
     "exclude": ["./node_modules"]
