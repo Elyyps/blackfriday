@@ -13,6 +13,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0;
         > li {
           font-weight: 600;
           a {
@@ -21,12 +22,12 @@
             color: inherit;
             display: inline-flex;
           }
-          &.uk-active{
-            a{
-              background-color: rgba($brand-primary,.1);
+          &.uk-active {
+            a {
+              background-color: rgba($brand-primary, .1);
               position: relative;
               color: $brand-primary;
-              &:after{
+              &:after {
                 content: '';
                 width: 100%;
                 bottom: 0;
@@ -37,6 +38,57 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+  &__filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  &__filter-list {
+    display: flex;
+    align-items: center;
+    margin: 0 -4px;
+    > * {
+      padding: 0 4px;
+    }
+    .filter-label {
+      padding-right: 12px;
+    }
+    .button--dropdown {
+      background-color: $tint-gray-light;
+      color: $gray-dark;
+      path {
+        fill: none;
+        stroke: $gray-dark;
+      }
+    }
+    .uk-dropdown {
+      margin: 0;
+      background-color: $global-inverse-color;
+      padding: 24px 24px 68px 24px;
+      min-width: 536px;
+    }
+    .dropdown {
+      &-body{
+        max-height: 210px;
+        overflow-y: auto;
+      }
+      &-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $global-inverse-color;
+        width: 100%;
+        &__action {
+          padding-top: 24px;
+          margin: 0;
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px solid $gray;
         }
       }
     }

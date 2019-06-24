@@ -8,7 +8,6 @@ import createHistory from "../shared/stores/history";
 import "./index.scss";
 import { IntlProviderContainer } from "@app/translations/intl-provider.container";
 import { Routes } from "@app/routes";
-
 const history = createHistory();
 
 // Create/use the store
