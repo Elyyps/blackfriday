@@ -46,4 +46,11 @@
     overflow: auto;
     max-height: 80vh;
   }
+  &__results-posts {
+    margin-bottom: -16px;
+    > div {
+      display: flex;
+      margin-bottom: 16px;
+    }
+  }
 }
