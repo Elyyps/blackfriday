@@ -21,6 +21,8 @@
   background-color: $gray-dark;
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .icon-svg {
     line-height: .5;

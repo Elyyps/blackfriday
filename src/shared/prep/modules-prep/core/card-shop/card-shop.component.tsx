@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./card-shop.scss";
 import { ImageComponent, Button } from "@app/prep/modules-prep/core";
+import classNames from "classnames";
 
 interface ICardShopProps {
   button_link?: any;
@@ -10,6 +11,7 @@ interface ICardShopProps {
   range?: any;
   sub_title?: any;
   title?: any;
+  variant?: string;
 }
 
 const CardShop = (props: ICardShopProps) => {
@@ -20,7 +22,8 @@ const CardShop = (props: ICardShopProps) => {
     image,
     range,
     button_text,
-    button_link
+    button_link,
+    variant
   } = props;
 
   const statusBarFilled = {
@@ -43,20 +46,24 @@ const CardShop = (props: ICardShopProps) => {
   };
 
   return (
-    <div className="card-shop">
+    <div
+      className={classNames("card-shop", `card-shop--${variant || "default"}`)}
+    >
       <div className="card-shop__body">
         <div className="card-shop__image">
           <ImageComponent src={image} />
         </div>
-        <div className={`card-shop__status ${statusBar(range)}`}>
-          <div className="card-shop__status-title">{sub_title}</div>
-          <div className="card-shop__status-bar">
-            <div
-              className="card-shop__status-bar-filled"
-              style={statusBarFilled}
-            />
+        {range && (
+          <div className={`card-shop__status ${statusBar(range)}`}>
+            <div className="card-shop__status-title">{sub_title}</div>
+            <div className="card-shop__status-bar">
+              <div
+                className="card-shop__status-bar-filled"
+                style={statusBarFilled}
+              />
+            </div>
           </div>
-        </div>
+        )}
         <div className="card-shop__content">
           <div className="card-shop__title">{title}</div>
           {content}
