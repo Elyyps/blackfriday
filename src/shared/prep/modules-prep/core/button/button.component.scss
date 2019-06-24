@@ -17,7 +17,7 @@
   padding: 8px 30px;
   transition: background-color 0.3s;
   cursor: pointer;
-  color: $global-inverse-color !important;
+  color: $global-inverse-color;
   background-color: $gray-dark;
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
@@ -46,7 +46,7 @@
   }
 
   &--invert {
-    color: $gray-dark !important;
+    color: $gray-dark ;
     background-color: $global-background;
     &:hover {
       background-color: $global-muted-background;
