@@ -1,6 +1,5 @@
 import * as express from "express";
 import { pageActions } from "@app/stores";
-import FatalError from "@app/errors/fatal-error";
 
 const moduleFetcher: any = () => async (
   req: express.Request & { store: any },

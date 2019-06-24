@@ -1,6 +1,5 @@
 import { Dispatch } from "react-redux";
-import { IAppState, pageActions } from "@app/stores";
-import FatalError from "@app/errors/fatal-error";
+import { IAppState } from "@app/stores";
 
 const getPage = (page: string) => async (
   dispatch: Dispatch<any>,
@@ -10,7 +9,7 @@ const getPage = (page: string) => async (
     // TODO: generate page dummy data
   } catch (error) {
     // tslint:disable-next-line: no-unused-expression no-unsafe-any
-    new FatalError(error.name, error.message, error.stack);
+    // new FatalError(error.name, error.message, error.stack);
   }
 };
 

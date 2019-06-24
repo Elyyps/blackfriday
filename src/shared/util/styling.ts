@@ -5,7 +5,7 @@ export interface IStyles {
 export class StylingOverrideUtil {
   private propsStyle: IStyles | undefined;
 
-  constructor(propsStyle: IStyles | undefined) {
+  public constructor(propsStyle: IStyles | undefined) {
     this.propsStyle = propsStyle;
   }
 

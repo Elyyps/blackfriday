@@ -5,8 +5,8 @@ import * as ActionType from "./page.types";
 import { PageModel } from "@app/api/pagebuilder/page.model";
 
 export interface IPageState {
-  pages: PageModel[];
   currentPage: PageModel | undefined;
+  pages: PageModel[];
 }
 
 const INITIAL_STATE: IPageState = {

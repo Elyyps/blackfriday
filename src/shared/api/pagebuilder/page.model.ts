@@ -3,10 +3,7 @@ import { MetaData } from "./meta-data";
 
 export class PageModel {
   public id: string;
-
-  public route: string;
-
-  public wordPressPostModules: WordPressPostModule[];
-
   public metaData: MetaData;
+  public route: string;
+  public wordPressPostModules: WordPressPostModule[];
 }

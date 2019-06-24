@@ -1,40 +1,28 @@
 import { Background } from "@app/api/core/background";
 import { Curve } from "@app/api/core/curve";
+import { Padding } from "@app/api/core/padding";
 
-export class Padding {
-  public mobilePadding: number;
-  public desktopPadding: number;
-}
 export class WordPressPostModule {
-  public id: string;
-
-  public name: string;
-
-  public topMargin: string;
-
-  public bottomMargin: string;
-
-  // background, can be set as a pattern or color
   public background?: Background;
-
-  public curve?: Curve;
-
-  // padding must be one of the following object. Each object identifies a desktop and mobile size, SMALL, MEDIUM, LARGE
-  public topPadding?: Padding;
-  // padding must be one of the following object. Each object identifies a desktop and mobile size, SMALL, MEDIUM, LARGE
+  public bottomMargin: string;
   public bottomPadding?: Padding;
+  public curve?: Curve;
+  public id: string;
+  public name: string;
+  public topMargin: string;
+  public topPadding?: Padding;
 }
 
 export const paddingMobile = {
-  mobilePaddingSmall: 24,
-  mobilePaddingMedium: 32,
   mobilePaddingLarge: 48,
+  mobilePaddingMedium: 32,
+  mobilePaddingSmall: 24,
   mobilePaddingXLarge: 64
 };
 
 export const paddingDesktop = {
-  desktopPaddingSmall: 72,
-  desktopPaddingMedium: 96,
   desktopPaddingLarge: 120,
+  desktopPaddingMedium: 96,
+  desktopPaddingSmall: 72,
   desktopPaddingXLarge: 144
 };
