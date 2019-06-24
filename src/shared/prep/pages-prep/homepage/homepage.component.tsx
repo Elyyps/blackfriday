@@ -7,6 +7,7 @@ import {
   HeroComponent,
   DealsOverviewComponent
 } from "@app/prep/modules-prep";
+import { FeaturedShopComponent } from "@app/prep/modules-prep/featured-shop";
 export interface IHomepageComponentProps {}
 
 const HomepageComponent = (props: IHomepageComponentProps) => (
@@ -45,6 +46,10 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
       </p>
     </BodyTextComponent>
     <DealsOverviewComponent />
+    <FeaturedShopComponent
+      bgcolor={"#f7f7f7"}
+      title={"Vergelijkbare winkels"}
+    />
     <FooterComponent />
   </div>
 );

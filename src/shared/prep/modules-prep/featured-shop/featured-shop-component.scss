@@ -1,0 +1,13 @@
+.featured-shop {
+  &__title {
+    margin-bottom: 36px;
+  }
+  
+  .uk-grid-posts {
+    margin-bottom: -16px;
+    > div {
+      display: flex;
+      margin-bottom: 16px;
+    }
+  }
+}
