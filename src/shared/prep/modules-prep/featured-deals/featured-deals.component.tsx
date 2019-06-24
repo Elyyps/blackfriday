@@ -1,23 +1,23 @@
 import * as React from "react";
-import "./featured-shop-component.scss";
-import { CardShop, CardButton } from "@app/prep/modules-prep/core";
+import "./featured-deals-component.scss";
+import { CardProduct, CardButton } from "@app/prep/modules-prep/core";
 
-export interface IFeaturedShopComponentProps {
+export interface IFeaturedDealsComponentProps {
   bgcolor?: string;
   buttonMore?: any[];
   items?: any[];
   title?: string;
 }
 
-const FeaturedShopComponent = (props: IFeaturedShopComponentProps) => (
-  <div className="featured-shop">
+const FeaturedDealsComponent = (props: IFeaturedDealsComponentProps) => (
+  <div className="featured-deals">
     <div className="uk-container">
-      <h2 className="featured-shop__title">{props.title}</h2>
+      <h2 className="featured-deals__title">{props.title}</h2>
       <div className="uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m">
         {props.items &&
           props.items.map((item, key) => (
             <div key={key}>
-              <CardShop {...item} />
+              <CardProduct {...item} />
             </div>
           ))}
         {props.buttonMore &&
@@ -31,4 +31,4 @@ const FeaturedShopComponent = (props: IFeaturedShopComponentProps) => (
   </div>
 );
 
-export { FeaturedShopComponent };
+export { FeaturedDealsComponent };

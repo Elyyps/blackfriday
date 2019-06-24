@@ -8,6 +8,9 @@ import {
   DealsOverviewComponent
 } from "@app/prep/modules-prep";
 import { FeaturedShopComponent } from "@app/prep/modules-prep/featured-shop";
+import { FeaturedDealsComponent } from "@app/prep/modules-prep/featured-deals";
+import { Cards, CardMore, CardsDeals } from "./dummy-data";
+
 export interface IHomepageComponentProps {}
 
 const HomepageComponent = (props: IHomepageComponentProps) => (
@@ -47,8 +50,16 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
     </BodyTextComponent>
     <DealsOverviewComponent />
     <FeaturedShopComponent
+      items={[...Cards]}
+      buttonMore={[...CardMore]}
       bgcolor={"#f7f7f7"}
       title={"Vergelijkbare winkels"}
+    />
+    <FeaturedDealsComponent
+      items={[...CardsDeals]}
+      buttonMore={[...CardMore]}
+      bgcolor={"#f7f7f7"}
+      title={"Onze beste deals"}
     />
     <FooterComponent />
   </div>
