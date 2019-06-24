@@ -8,17 +8,23 @@
   font-size: 14px;
   font-weight: 600;
   padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
 
   &__body {
     flex: 1 1 auto;
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &__title {
     font-family: $global-font-family-secondary;
     font-size: 16px;
     font-weight: bold;
-    color: $gray;
-    margin: 0 0 8px;
+    color: $gray-dark;
+    margin: 0 0 6px;
   }
 
   &__image {
@@ -26,14 +32,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95px;
+    height: 85px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      order: 2;
+      width: 90px;
+      height: auto;
+      flex: 0 0 90px;
+      margin-bottom: 0;
+    }
     img,
     svg {
+      margin: 0 auto;
       max-height: 100%;
     }
   }
 
   &__content {
+    margin-bottom: 24px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      order: 1;
+      flex: 1 1 60%;
+      margin-bottom: 0;
+    }
     a {
       color: $gray;
       text-decoration: none;
@@ -45,14 +65,33 @@
     > * {
       width: 100%;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+      width: 50%;
+      margin-left: auto;
+    }
   }
 
   &__status {
     color: $gray-lighter;
+    margin-bottom: 8px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      order: 3;
+      width: 100%;
+      clear: both;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      position: relative;
+    }
     &-title {
       text-transform: uppercase;
       font-size: 11px;
       font-weight: bold;
+      @media (max-width: $breakpoint-xsmall-max) {
+        position: absolute;
+        left: 0;
+        top: 28px;
+        width: 50%;
+      }
     }
     &-bar {
       position: relative;
@@ -77,6 +116,49 @@
       color: #ff9d0a;
       .card-shop__status-bar-filled {
         background: #ff9d0a;
+      }
+    }
+  }
+  
+  &--responsive {
+    .card-shop {
+      &__body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+  
+      &__image {
+        order: 2;
+        width: 90px;
+        height: auto;
+        flex: 0 0 90px;
+        margin-bottom: 0;
+      }
+  
+      &__content {
+        order: 1;
+        flex: 1 1 60%;
+        margin-bottom: 0;
+      }
+  
+      &__action {
+        width: 50%;
+        margin-left: auto;
+      }
+  
+      &__status {
+        order: 3;
+        width: 100%;
+        clear: both;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        position: relative;
+        &-title {
+          position: absolute;
+          left: 0;
+          top: 28px;
+          width: 50%;
+        }
       }
     }
   }
