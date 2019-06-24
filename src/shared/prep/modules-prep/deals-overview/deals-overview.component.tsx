@@ -29,6 +29,7 @@ const tabItems = [
     title: "Productdeals"
   }
 ];
+
 const TabItemsContent = [
   {
     title: "Title",
