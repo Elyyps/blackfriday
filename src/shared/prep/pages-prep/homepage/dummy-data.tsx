@@ -131,4 +131,14 @@ const CTASimple = {
   icon: Sign
 };
 
-export { Cards, CardMore, CardsDeals, CTASimple };
+const Banner = {
+  title: "Black Friday bij Coolblue",
+  buttonTitle: "Meer deals",
+  buttonLink: "#",
+  image: Oasis,
+  label: "22 t/m 26 nov.",
+  text: "Een selectie van bizarre aanbiedingen. Meer info",
+  logo: CoolBlue
+};
+
+export { Cards, CardMore, CardsDeals, CTASimple, Banner };
