@@ -2,6 +2,7 @@ import Oasis from "@assets/oasis.jpg";
 import CoolBlue from "@assets/cool-blue.svg";
 import Wehkamp from "@assets/logo-wehkamp.svg";
 import Store from "@assets/icons/store.svg";
+import Sign from "@assets/icons/sign.svg";
 
 const Cards = [
   {
@@ -123,4 +124,11 @@ const CardsDeals = [
   }
 ];
 
-export { Cards, CardMore, CardsDeals };
+const CTASimple = {
+  title: "Niet helemaal wat je zoekt? Geeft niks want we hebben meer!",
+  buttonTitle: "Meer deals",
+  buttonLink: "#",
+  icon: Sign
+};
+
+export { Cards, CardMore, CardsDeals, CTASimple };
