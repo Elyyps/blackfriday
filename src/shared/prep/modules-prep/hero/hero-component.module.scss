@@ -8,7 +8,8 @@
   right: 0;
   @media(max-width: $breakpoint-small-max){
     position: static;
-    width: 100%;
+    width: auto;
+    margin: 0 -24px;
     min-height: 280px;
   }
   >div{
