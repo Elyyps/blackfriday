@@ -1,0 +1,123 @@
+.deals-overview {
+  &__header {
+    padding-bottom: 16px;
+    background-color: $global-inverse-color;
+  }
+  &__tab {
+    border-bottom: 1px solid $tint-gray;
+    .uk-tab {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        > li {
+          font-weight: 600;
+          a {
+            padding: 14px 16px;
+            text-decoration: none;
+            color: inherit;
+            display: inline-flex;
+          }
+          &.uk-active {
+            a {
+              background-color: rgba($brand-primary, .1);
+              position: relative;
+              color: $brand-primary;
+              &:after {
+                content: '';
+                width: 100%;
+                bottom: 0;
+                position: absolute;
+                background-color: $brand-primary;
+                height: 2px;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  &__filter-list {
+    display: flex;
+    align-items: center;
+    margin: 0 -4px;
+    > * {
+      padding: 0 4px;
+    }
+    .filter-label {
+      padding-right: 12px;
+    }
+    .button--dropdown {
+      background-color: $tint-gray-light;
+      color: $gray-dark;
+      position: relative;
+      z-index: 1021;
+      &:focus,&:active{
+        outline: none;
+      }
+      &.uk-open{
+        background-color: $global-inverse-color;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
+      }
+      path {
+        fill: none;
+        stroke: $gray-dark;
+      }
+    }
+    .uk-dropdown {
+      margin: 0;
+      background-color: $global-inverse-color;
+      padding: 24px 24px 68px 24px;
+      min-width: 536px;
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
+      z-index: 1;
+    }
+    .dropdown {
+      &-body{
+        max-height: 210px;
+        overflow-y: auto;
+        padding-top: 24px;
+      }
+      &-list{
+        font-size: 15px;
+        >li{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:not(:last-child){
+            margin-bottom: 13px;
+          }
+          .count-item{
+            color: $gray-light;
+          }
+        }
+      }
+      &-bottom {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $global-inverse-color;
+        width: 100%;
+        &__action {
+          margin: 0;
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px solid $gray;
+          padding: 16px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

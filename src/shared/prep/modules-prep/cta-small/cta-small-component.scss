@@ -1,0 +1,30 @@
+.cta-simple {
+  &__holder {
+    background: $global-background;
+    border-radius: $global-border-radius;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.08);
+
+    @media (min-width: $breakpoint-small) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 0;
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-weight: 600;
+    @media (min-width: $breakpoint-small) {
+      margin: 0 32px;
+    }
+  }
+
+  .icon-svg {
+    @media (max-width: $breakpoint-xsmall-max) {
+      margin: 0 auto 16px;
+    }
+  }
+}
