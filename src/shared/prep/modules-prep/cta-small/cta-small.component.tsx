@@ -7,12 +7,16 @@ export interface ICtaSimpleComponentProps {
   buttonLink?: string;
   buttonTitle?: string;
   icon?: any;
+  paddingBottom?: string;
+  paddingTop?: string;
   title?: string;
 }
 
 const CtaSmallComponent = (props: ICtaSimpleComponentProps) => {
   const styles = {
-    backgroundColor: props.bgcolor
+    backgroundColor: props.bgcolor,
+    paddingTop: props.paddingTop,
+    paddingBottom: props.paddingBottom
   };
 
   return (
