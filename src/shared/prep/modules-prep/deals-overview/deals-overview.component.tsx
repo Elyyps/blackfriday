@@ -3,16 +3,20 @@ import "./deals-overview-component.scss";
 import {
   TabContainerComponent,
   TabComponent,
-  Button
+  Button,
+  Checkbox,
+  Input
 } from "@app/prep/modules-prep/core";
 
 import Oasis from "@assets/oasis.jpg";
 import ChevronDown from "@assets/icons/chevron-down.svg";
+import Search from "@assets/icons/search.svg";
 import { Link } from "react-router-dom";
 
-// if (typeof window !== "undefined") {
-//   require("uikit");
-// }
+// tslint:disable-next-line
+if (typeof window !== "undefined") {
+  require("uikit");
+}
 
 export interface IDealsOverviewComponentProps {
   bgcolor?: string;
@@ -88,26 +92,26 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   />
                   <div data-uk-dropdown="mode: click">
                     <div className="dropdown-head">
-                      <input type="text" />
+                      <Input
+                        placeholder={"Merk zoeken"}
+                        classModify={"large"}
+                        icon={Search}
+                      />
                     </div>
                     <div className="dropdown-body">
                       <div className="uk-grid uk-child-width-1-2">
                         <div>
                           <ul className="dropdown-list">
-                            <li>dropdown-list</li>
+                            <li>
+                              <Checkbox key={"1"} label={"Apple"} />
+                              <span className="count-item">(2)</span>
+                            </li>
                           </ul>
                         </div>
                         <div>
                           <ul className="dropdown-list">
                             <li>
-                              {/*<input*/}
-                              {/*checked*/}
-                              {/*type="checkbox"*/}
-                              {/*id={"check1"}*/}
-                              {/*/>*/}
-                              <label htmlFor="check1" className={"checkbox"}>
-                                Apple
-                              </label>
+                              <Checkbox key={"1"} label={"Apple"} />
                             </li>
                           </ul>
                         </div>
