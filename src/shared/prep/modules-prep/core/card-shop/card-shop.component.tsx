@@ -2,6 +2,7 @@ import * as React from "react";
 import "./card-shop.scss";
 import { ImageComponent, Button } from "@app/prep/modules-prep/core";
 import classNames from "classnames";
+import IconDefault from "@assets/icons/link.svg";
 
 interface ICardShopProps {
   button_link?: any;
@@ -70,7 +71,12 @@ const CardShop = (props: ICardShopProps) => {
         </div>
       </div>
       <div className="card-shop__action">
-        <Button title={button_text} href={button_link} variant={"primary"} />
+        <Button
+          title={button_text}
+          href={button_link}
+          variant={"primary"}
+          icon={IconDefault}
+        />
       </div>
     </div>
   );

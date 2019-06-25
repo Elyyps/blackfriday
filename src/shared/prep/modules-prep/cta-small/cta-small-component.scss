@@ -4,6 +4,7 @@
     border-radius: $global-border-radius;
     padding: 16px;
     text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.08);
 
     @media (min-width: $breakpoint-small) {
       display: flex;
