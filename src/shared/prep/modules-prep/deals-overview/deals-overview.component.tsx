@@ -9,10 +9,11 @@ import {
 import Oasis from "@assets/oasis.jpg";
 import ChevronDown from "@assets/icons/chevron-down.svg";
 import { Link } from "react-router-dom";
-//
-// if (typeof window !== "undefined") {
-//   require("uikit");
-// }
+
+// tslint:disable-next-line
+if (typeof window !== "undefined") {
+  require("uikit");
+}
 
 export interface IDealsOverviewComponentProps {
   bgcolor?: string;
