@@ -1,8 +1,22 @@
 import * as React from "react";
 import "./deals-overview-component.scss";
-import { TabComponent, TabItemComponent } from "@app/prep/modules-prep/core";
-import { CardShop } from "@app/prep/modules-prep/core/card-shop";
+import {
+  TabContainerComponent,
+  TabComponent,
+  Button,
+  Checkbox,
+  Input
+} from "@app/prep/modules-prep/core";
+
 import Oasis from "@assets/oasis.jpg";
+import ChevronDown from "@assets/icons/chevron-down.svg";
+import Search from "@assets/icons/search.svg";
+import { Link } from "react-router-dom";
+
+// tslint:disable-next-line
+if (typeof window !== "undefined") {
+  require("uikit");
+}
 
 export interface IDealsOverviewComponentProps {
   bgcolor?: string;
@@ -19,9 +33,20 @@ const tabItems = [
     title: "Productdeals"
   }
 ];
+
 const TabItemsContent = [
   {
     title: "Title",
+    sub_title: "Subtitle",
+    content: "Een selectie van bizarre vele aanbiedingen. Meer info",
+    meer_info_link: "#",
+    image: Oasis,
+    range: "80%",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    title: "Title2",
     sub_title: "Subtitle",
     content: "Een selectie van bizarre vele aanbiedingen. Meer info",
     meer_info_link: "#",
@@ -33,7 +58,8 @@ const TabItemsContent = [
 ];
 
 const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
-  const switcherAttr = { "data-attr": "value" };
+  const connectClass = "uk-switcher-list";
+  const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
   return (
     <>
@@ -41,27 +67,100 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
         <div className="deals-overview__header">
           <div className="uk-container">
             <div className="deals-overview__tab">
-              <TabComponent {...switcherAttr} classTabList={"uk-tab__list"}>
-                {tabItems.map((item, key) => (
-                  <TabItemComponent key={key}>{item.title}</TabItemComponent>
-                ))}
-              </TabComponent>
+              <TabContainerComponent
+                attribute={switcherAttr}
+                classTabList={"uk-tab__list"}
+              >
+                {tabItems
+                  ? tabItems.map((item, key) => (
+                      <TabComponent attrAction={"link"} key={key}>
+                        {item.title}
+                      </TabComponent>
+                    ))
+                  : ""}
+              </TabContainerComponent>
             </div>
             <div className="deals-overview__filters">
-              <div className="deals-overview__filter-list">filter list</div>
+              <div className="deals-overview__filter-list">
+                <div className="filter-label">Filters</div>
+                <div className="filter-status">
+                  <Button
+                    title={"Status"}
+                    type={"button"}
+                    variant={"dropdown"}
+                    icon={ChevronDown}
+                  />
+                  <div data-uk-dropdown="mode: click">
+                    <div className="dropdown-head">
+                      <Input
+                        placeholder={"Merk zoeken"}
+                        classModify={"large"}
+                        icon={Search}
+                      />
+                    </div>
+                    <div className="dropdown-body">
+                      <div className="uk-grid uk-child-width-1-2">
+                        <div>
+                          <ul className="dropdown-list">
+                            <li>
+                              <Checkbox key={"1"} label={"Apple"} />
+                              <span className="count-item">(2)</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <ul className="dropdown-list">
+                            <li>
+                              <Checkbox key={"1"} label={"Apple"} />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="dropdown-bottom">
+                      <ul className="dropdown-bottom__action">
+                        <li>
+                          <Link to="#">Verwijder merk filters (2)</Link>
+                        </li>
+                        <li>
+                          <Button title={"Toon 123 Winkels"} href={"#"} />
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="filter-category">
+                  <Button
+                    title={"Categorie"}
+                    type={"button"}
+                    variant={"dropdown"}
+                    icon={ChevronDown}
+                  />
+                  <div data-uk-dropdown="mode: click">Lorem</div>
+                </div>
+                <div className="filter-brand">
+                  <Button
+                    title={"Merk"}
+                    type={"button"}
+                    variant={"dropdown"}
+                    icon={ChevronDown}
+                  />
+                  <div data-uk-dropdown="mode: click">Lorem</div>
+                </div>
+              </div>
               <div className="deals-overview__sort">filter sort</div>
             </div>
           </div>
         </div>
         <div className="deals-overview__body">
           <div className="uk-container">
-            <TabComponent classTabList={"uk-switcher"}>
-              {TabItemsContent.map((item, key) => (
-                <TabItemComponent key={key}>
-                  <CardShop {...item} />
-                </TabItemComponent>
-              ))}
-            </TabComponent>
+            <TabContainerComponent classTabList={`uk-switcher ${connectClass}`}>
+              {TabItemsContent
+                ? TabItemsContent.map((item, key) => (
+                    <TabComponent key={key}>{item.title}</TabComponent>
+                  ))
+                : ""}
+            </TabContainerComponent>
           </div>
         </div>
       </div>
