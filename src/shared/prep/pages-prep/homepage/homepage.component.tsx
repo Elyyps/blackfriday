@@ -8,9 +8,17 @@ import {
 } from "@app/prep/modules-prep";
 import { FeaturedShopComponent } from "@app/prep/modules-prep/featured-shop";
 import { FeaturedDealsComponent } from "@app/prep/modules-prep/featured-deals";
-import { Cards, CardMore, CardsDeals, CTASimple, Banner } from "./dummy-data";
+import {
+  Cards,
+  CardMore,
+  CardsDeals,
+  CTASimple,
+  Banner,
+  BlogFeaturedFields
+} from "./dummy-data";
 import { CtaSmallComponent } from "@app/prep/modules-prep/cta-small";
 import { BannerComponent } from "@app/prep/modules-prep/banner";
+import { FeaturedBlogComponent } from "@app/prep/modules-prep/featured-blog";
 
 export interface IHomepageComponentProps {}
 
@@ -18,6 +26,21 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
   <div className={styles["homepage"]}>
     <NavBarComponent />
     <HeroComponent />
+    <FeaturedShopComponent
+      items={[...Cards]}
+      buttonMore={[...CardMore]}
+      bgcolor={"#f7f7f7"}
+      title={"Vergelijkbare winkels"}
+    />
+    <BannerComponent {...Banner} />
+    <FeaturedDealsComponent
+      items={[...CardsDeals]}
+      buttonMore={[...CardMore]}
+      bgcolor={"#f7f7f7"}
+      title={"Onze beste deals"}
+    />
+    <CtaSmallComponent {...CTASimple} />
+    <FeaturedBlogComponent {...BlogFeaturedFields} />
     <BodyTextComponent bgcolor={"#f7f7f7"}>
       <h1>
         <strong>Black Friday België</strong>
@@ -49,20 +72,6 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
         elkaar te shoppen.
       </p>
     </BodyTextComponent>
-    <FeaturedShopComponent
-      items={[...Cards]}
-      buttonMore={[...CardMore]}
-      bgcolor={"#f7f7f7"}
-      title={"Vergelijkbare winkels"}
-    />
-    <FeaturedDealsComponent
-      items={[...CardsDeals]}
-      buttonMore={[...CardMore]}
-      bgcolor={"#f7f7f7"}
-      title={"Onze beste deals"}
-    />
-    <CtaSmallComponent {...CTASimple} bgcolor={"#f7f7f7"} />
-    <BannerComponent {...Banner} bgcolor={"#f7f7f7"} />
     <FooterComponent />
   </div>
 );

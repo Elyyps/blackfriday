@@ -125,6 +125,9 @@ const CardsDeals = [
 ];
 
 const CTASimple = {
+  bgcolor: "#f7f7f7",
+  paddingTop: "70px",
+  paddingBottom: "70px",
   title: "Niet helemaal wat je zoekt? Geeft niks want we hebben meer!",
   buttonTitle: "Meer deals",
   buttonLink: "#",
@@ -132,6 +135,9 @@ const CTASimple = {
 };
 
 const Banner = {
+  bgcolor: "#f7f7f7",
+  paddingTop: "70px",
+  paddingBottom: "70px",
   title: "Black Friday bij Coolblue",
   buttonTitle: "Meer deals",
   buttonLink: "#",
@@ -141,4 +147,21 @@ const Banner = {
   logo: CoolBlue
 };
 
-export { Cards, CardMore, CardsDeals, CTASimple, Banner };
+const BlogFeaturedFields = {
+  bgcolor: "#f7f7f7",
+  title: "Ook interessant om te lezen",
+  items: [
+    {
+      title: "De beste Moederdag cadeau deals",
+      link: "/",
+      image: Oasis
+    },
+    {
+      title: "Black Friday wordt Black Week – deals beginnen eerder",
+      link: "/",
+      image: Oasis
+    }
+  ]
+};
+
+export { Cards, CardMore, CardsDeals, CTASimple, Banner, BlogFeaturedFields };
