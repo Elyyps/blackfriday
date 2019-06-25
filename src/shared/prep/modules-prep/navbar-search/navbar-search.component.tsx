@@ -95,7 +95,7 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
           <div className="uk-container">
             <h2>Gevonden deals</h2>
             <div
-              className={`uk-grid uk-grid-small uk-child-width-1-3@s ${
+              className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${
                 styles["navbar-search__results-posts"]
               }`}
             >
@@ -113,7 +113,7 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
             </div>
             <h2>Gevonden winkels</h2>
             <div
-              className={`uk-grid uk-grid-small uk-child-width-1-3@s ${
+              className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${
                 styles["navbar-search__results-posts"]
               }`}
             >

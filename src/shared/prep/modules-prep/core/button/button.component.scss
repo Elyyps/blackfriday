@@ -19,10 +19,12 @@
   cursor: pointer;
   color: $global-inverse-color;
   background-color: $gray-dark;
-  @media (max-width: $breakpoint-xsmall-max) {
-    width: 100%;
+  @media (max-width: $breakpoint-small-max) {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
   }
   .icon-svg {
     line-height: .5;
@@ -33,6 +35,7 @@
   }
 
   &:hover {
+    color: $global-inverse-color;
     text-decoration: none;
     background-color: $button-hover-background;
   }
@@ -46,10 +49,11 @@
   }
 
   &--invert {
-    color: $gray-dark ;
+    color: $gray-dark;
     background-color: $global-background;
     &:hover {
-      background-color: $global-muted-background;
+      color: $gray-dark;
+      background-color: $tint-gray;
     }
   }
 
