@@ -11,13 +11,17 @@ export interface IBannerComponentProps {
   image?: string;
   label?: string;
   logo?: string;
+  paddingBottom?: string;
+  paddingTop?: string;
   text?: any;
   title?: string;
 }
 
 const BannerComponent = (props: IBannerComponentProps) => {
   const styles = {
-    backgroundColor: props.bgcolor
+    backgroundColor: props.bgcolor,
+    paddingTop: props.paddingTop,
+    paddingBottom: props.paddingBottom
   };
 
   return (
