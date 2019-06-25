@@ -2,7 +2,7 @@ import * as React from "react";
 import "./form.component.scss";
 
 interface ICheckboxProps {
-  key: string;
+  key?: any;
   label: string;
 }
 
