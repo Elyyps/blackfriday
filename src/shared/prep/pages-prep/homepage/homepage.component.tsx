@@ -4,8 +4,7 @@ import {
   BodyTextComponent,
   FooterComponent,
   NavBarComponent,
-  HeroComponent,
-  DealsOverviewComponent
+  HeroComponent
 } from "@app/prep/modules-prep";
 import { FeaturedShopComponent } from "@app/prep/modules-prep/featured-shop";
 import { FeaturedDealsComponent } from "@app/prep/modules-prep/featured-deals";
@@ -50,7 +49,6 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
         elkaar te shoppen.
       </p>
     </BodyTextComponent>
-    <DealsOverviewComponent />
     <FeaturedShopComponent
       items={[...Cards]}
       buttonMore={[...CardMore]}
