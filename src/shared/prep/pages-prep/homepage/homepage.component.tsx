@@ -9,8 +9,9 @@ import {
 } from "@app/prep/modules-prep";
 import { FeaturedShopComponent } from "@app/prep/modules-prep/featured-shop";
 import { FeaturedDealsComponent } from "@app/prep/modules-prep/featured-deals";
-import { Cards, CardMore, CardsDeals, CTASimple } from "./dummy-data";
+import { Cards, CardMore, CardsDeals, CTASimple, Banner } from "./dummy-data";
 import { CtaSmallComponent } from "@app/prep/modules-prep/cta-small";
+import { BannerComponent } from "@app/prep/modules-prep/banner";
 
 export interface IHomepageComponentProps {}
 
@@ -63,6 +64,7 @@ const HomepageComponent = (props: IHomepageComponentProps) => (
       title={"Onze beste deals"}
     />
     <CtaSmallComponent {...CTASimple} bgcolor={"#f7f7f7"} />
+    <BannerComponent {...Banner} bgcolor={"#f7f7f7"} />
     <FooterComponent />
   </div>
 );

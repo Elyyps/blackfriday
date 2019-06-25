@@ -2,6 +2,7 @@ import * as React from "react";
 import "./card-product.scss";
 import { ImageComponent, Button } from "@app/prep/modules-prep/core";
 import classNames from "classnames";
+import IconDefault from "@assets/icons/link.svg";
 
 interface ICardProductProps {
   button_link?: any;
@@ -53,7 +54,12 @@ const CardProduct = (props: ICardProductProps) => {
             <div className="card-product__price-new">{price}</div>
           </div>
         </div>
-        <Button title={button_text} href={button_link} variant={"primary"} />
+        <Button
+          title={button_text}
+          href={button_link}
+          variant={"primary"}
+          icon={IconDefault}
+        />
       </div>
     </div>
   );
