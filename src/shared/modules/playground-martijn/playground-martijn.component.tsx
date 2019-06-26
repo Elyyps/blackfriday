@@ -6,16 +6,77 @@ import IconDefault from "@assets/icons/link.svg";
 
 export interface IPlaygroundMartijnComponentProps {}
 
+const renderButtonVariations = (
+  buttonVariant = "primary-default",
+  bgColor = "#fff",
+  textColor = "#1c1c1c"
+) => (
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "24px",
+      backgroundColor: `${bgColor}`
+    }}
+  >
+    <h3 style={{ color: `${textColor}` }}>{buttonVariant}</h3>
+    <Button title="test" icon={IconDefault} variant={buttonVariant} />
+    <br />
+    <Button
+      title="test"
+      iconPosition="right"
+      icon={IconDefault}
+      variant={buttonVariant}
+    />
+    <br />
+    <Button
+      title="test"
+      iconPosition="left"
+      icon={IconDefault}
+      variant={buttonVariant}
+    />
+    <br />
+    <Button iconPosition="right" icon={IconDefault} variant={buttonVariant} />
+    <br />
+    <Button iconPosition="left" icon={IconDefault} variant={buttonVariant} />
+    <br />
+    <Button icon={IconDefault} variant={buttonVariant} />
+    <br />
+    <Button title="test" iconPosition="left" variant={buttonVariant} />
+    <br />
+    <Button title="test" iconPosition="right" variant={buttonVariant} />
+    <br />
+    <Button title="test" variant={buttonVariant} />
+    <br />
+  </div>
+);
+
 const PlaygroundMartijnComponent = (
   props: IPlaygroundMartijnComponentProps
 ) => (
-  <div>
-    <Button
-      iconPosition="right"
-      icon={IconDefault}
-      variant="primary-inverted"
-      title="hi"
-    />
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-around"
+    }}
+  >
+    {/* Primary */}
+    {renderButtonVariations("primary-default")}
+    {/* Primary Brand */}
+    {renderButtonVariations("primary-brand")}
+    {/* Primary Inverted */}
+    {renderButtonVariations("primary-inverted")}
+    {/* Secondary */}
+    {renderButtonVariations("secondary")}
+    {/* Secondary inverted */}
+    {renderButtonVariations("secondary-inverted")}
+    {/* Tertiary */}
+    {renderButtonVariations("tertiary")}
+    {/* Tertiary Inverted*/}
+    {renderButtonVariations("tertiary-inverted", "#1c1c1c", "#fff")}
   </div>
 );
 

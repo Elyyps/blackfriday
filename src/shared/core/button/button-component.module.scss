@@ -2,7 +2,9 @@
 .button--primary-default {
   margin: 0;
   border: none;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   font-size: 15px;
   line-height: 1.3;
   font-weight: 600;
@@ -47,7 +49,8 @@
     }
   }
 
-  &--primary-inverted {
+  &--primary-inverted,
+  &--secondary-inverted {
     color: $gray-dark !important;
     background-color: $global-background;
     &:hover {
@@ -69,6 +72,48 @@
     }
   }
 
+  &--tertiary {
+    color: $gray-dark !important;
+    background-color: transparent;
+    -webkit-box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    -moz-box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    &:hover {
+      -webkit-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
+      -moz-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
+      box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
+      background-color: transparent;
+      color: darken($brand-primary, 7%) !important;
+      & > .icon-svg path {
+        fill: darken($brand-primary, 7%) !important;
+      }
+    }
+    .icon-svg path {
+      fill: $gray-dark;
+    }
+  }
+
+  &--tertiary-inverted {
+    color: $global-inverse-color;
+    background-color: transparent;
+    -webkit-box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    -moz-box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    &:hover {
+      -webkit-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
+      -moz-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
+      box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
+      background-color: transparent;
+    }
+    .icon-svg path {
+      fill: $global-inverse-color;
+    }
+  }
+
+  &--FAB {
+    padding: 16px 16px;
+  }
+
   &--small {
     padding: 8px 18px;
   }
@@ -80,4 +125,7 @@
 
 .icon-right {
   margin-left: 8px;
+}
+
+.icon-center {
 }
