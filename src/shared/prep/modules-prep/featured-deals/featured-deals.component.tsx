@@ -6,18 +6,24 @@ export interface IFeaturedDealsComponentProps {
   bgcolor?: string;
   buttonMore?: any[];
   items?: any[];
+  paddingBottom?: string;
+  paddingTop?: string;
   title?: string;
 }
 
 const FeaturedDealsComponent = (props: IFeaturedDealsComponentProps) => {
   const styles = {
-    backgroundColor: props.bgcolor
+    backgroundColor: props.bgcolor || "",
+    paddingTop: props.paddingTop || "",
+    paddingBottom: props.paddingBottom || ""
   };
 
   return (
     <div className="featured-deals" style={styles}>
       <div className="uk-container">
-        <h2 className="featured-deals__title">{props.title}</h2>
+        {props.title && (
+          <h2 className="featured-deals__title">{props.title}</h2>
+        )}
         <div className="uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m">
           {props.items &&
             props.items.map((item, key) => (
