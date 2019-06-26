@@ -21,6 +21,8 @@ const PlaygroundPedroComponent = (props: IPlaygroundPedroComponentProps) => (
     <LinkComponent animated variant="tertiary" icon={getArrow(false)} to="/">
       Tertiary w Icon animated
     </LinkComponent>
+
+        <TimeLeftBarComponent title="NU GELDIG" range={0.6} />
   </div>
 );
 
