@@ -8,9 +8,22 @@
     font-size: 15px;
   }
 }
-#app{
+#app {
   overflow: hidden;
 }
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  font-family: Assistant;
+  letter-spacing: normal;
+  color: black;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
 a:not([class]) {
   text-decoration: underline;
   &:hover {
@@ -28,7 +41,7 @@ ul {
       list-style: none;
       padding-left: 30px;
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         width: 4px;
         height: 4px;
@@ -42,7 +55,7 @@ ul {
       }
     }
   }
-  
+
   &.uk-list-check {
     font-weight: 600;
     color: $gray-light;
@@ -50,7 +63,7 @@ ul {
       padding-left: 30px;
       position: relative;
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0.2em;
         left: 0;
@@ -76,7 +89,7 @@ ol {
     padding-left: 29px;
     &::before {
       counter-increment: ol;
-      content: counter(ol) ".";
+      content: counter(ol) '.';
       position: absolute;
       top: 0;
       left: 5px;
@@ -97,7 +110,7 @@ blockquote {
   z-index: 1;
   &::before {
     color: $global-primary-background;
-    content: "\2033";
+    content: '\2033';
     opacity: 0.2;
     position: absolute;
     left: 8px;
@@ -136,7 +149,7 @@ blockquote {
 }
 
 .icon-svg {
-  line-height: .5;
+  line-height: 0.5;
   display: flex;
   align-items: center;
   > div {
@@ -170,7 +183,8 @@ h3 {
   }
 }
 
-h4 {}
+h4 {
+}
 
 h5 {
   font-weight: 600;
@@ -179,8 +193,13 @@ h5 {
 h6 {
   text-transform: uppercase;
 }
-.uk-invert{
-  h1,h2,h3,h4,h5,h6{
+.uk-invert {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: $global-inverse-color;
   }
 }

@@ -1,27 +1,29 @@
 import * as React from "react";
-import { LinkComponent } from "@app/core/link";
+import { storiesOf } from "@storybook/react";
+import { withA11y } from "@storybook/addon-a11y";
+import { LinkComponent } from "./link.component";
 import { getArrow } from "@app/constants/icons";
 
-import styles from "./playground-pedro-component.module.scss";
-
-export interface IPlaygroundPedroComponentProps {}
-
-const PlaygroundPedroComponent = (props: IPlaygroundPedroComponentProps) => (
-  <div className={styles["playground-pk"]}>
-    Adicione seu código aqui Pedro!
-    <i>Wp tom</i>
-    <br />
+storiesOf("Link", module)
+  .addDecorator(withA11y)
+  .add("Basic implementation primary", () => (
     <LinkComponent to="/">Primary</LinkComponent>
+  ))
+
+  .add("Basic implementation primary", () => (
     <LinkComponent icon={getArrow(false)} to="/">
       Primary w Icon
     </LinkComponent>
+  ))
+
+  .add("Basic implementation primary", () => (
     <LinkComponent variant="secondary" icon={getArrow(false)} to="/">
       Secondary w Icon
     </LinkComponent>
+  ))
+
+  .add("Basic implementation primary", () => (
     <LinkComponent animated variant="tertiary" icon={getArrow(false)} to="/">
       Tertiary w Icon animated
     </LinkComponent>
-  </div>
-);
-
-export { PlaygroundPedroComponent };
+  ));

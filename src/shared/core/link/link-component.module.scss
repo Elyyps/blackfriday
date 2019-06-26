@@ -1,0 +1,64 @@
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  svg {
+    width: 6px;
+    margin-left: 8px;
+    transition: transform 150ms ease-in-out;
+  }
+  &--primary {
+    color: black;
+    svg{
+      *{
+        stroke: $gray-light;
+      }
+    }
+    &:hover {
+      color: $brand-primary;
+      svg {
+        * {
+          stroke: $brand-primary;
+        }
+      }
+    }
+  }
+  &--tertiary {
+    color: $brand-secondary;
+    svg {
+      * {
+        stroke: $brand-secondary;
+      }
+    }
+    &:hover {
+      color: $brand-secondary;
+    }
+  }
+  &--secondary {
+    color: $brand-primary;
+    svg {
+      * {
+        stroke: $brand-primary;
+      }
+    }
+    &:hover {
+      color: black;
+      svg {
+        * {
+          stroke: black;
+        }
+      }
+    }
+  }
+
+  &--animated {
+    &:hover {
+      color: black;
+       svg {
+          transform: translateX(4px);
+        * {
+          stroke: black;
+        }
+      }
+    }
+  }
+}
