@@ -10,7 +10,7 @@
   padding: 16px;
   width: 100%;
   box-sizing: border-box;
-
+  height: 100%;
   &__body {
     flex: 1 1 auto;
     @media (max-width: $breakpoint-xsmall-max) {

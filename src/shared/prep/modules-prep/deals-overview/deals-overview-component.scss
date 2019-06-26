@@ -2,6 +2,7 @@
   &__header {
     padding-bottom: 16px;
     background-color: $global-inverse-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
   }
   &__tab {
     border-bottom: 1px solid $tint-gray;
@@ -48,6 +49,35 @@
     justify-content: space-between;
     padding: 16px 0;
   }
+  &__sort{
+    display: flex;
+    align-items: center;
+  }
+  .filter__sort{
+    display: flex;
+    align-items: center;
+    margin: 0 -12px;
+    &-item{
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      color: $gray-light;
+      padding: 0 12px;
+      >.icon-svg{
+        margin-right: 16px;
+      }
+    }
+    &-change{
+      display: flex;
+      align-items: center;
+      color: $gray-dark;
+      font-weight: 500;
+      margin-left: 3px;
+      .icon-svg{
+        margin-left: 8px;
+      }
+    }
+  }
   &__filter-list {
     display: flex;
     align-items: center;
@@ -58,6 +88,15 @@
     .filter {
       &-label{
         padding-right: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        font-family: $global-font-family-secondary;
+        color: $gray-dark;
+        .icon-svg{
+          padding-left: 8px;
+        }
       }
       &-item{
         overflow: hidden;
@@ -68,12 +107,29 @@
       color: $gray-dark;
       position: relative;
       z-index: 1021;
+      .icon-svg{
+        transition:transform .3s;
+      }
       &:focus,&:active{
         outline: none;
       }
-      &.uk-open{
+      &.uk-open,&.uk-open.active{
         background-color: $global-inverse-color;
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
+        color: $gray-dark;
+        .icon-svg{
+          transform: rotate(-180deg);
+        }
+        path {
+          stroke: $gray-dark;
+        }
+      }
+      &.active{
+        background-color: $gray-dark;
+        color: $global-inverse-color;
+        path {
+          stroke: $global-inverse-color;
+        }
       }
       path {
         fill: none;
@@ -126,6 +182,13 @@
           }
         }
       }
+    }
+  }
+  &__body{
+    padding: 24px 0;
+    background-color: $bg-muted;
+    .uk-margin-small-top{
+      margin-top: 16px;
     }
   }
 }

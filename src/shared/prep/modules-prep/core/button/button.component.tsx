@@ -7,7 +7,7 @@ import ArrowDown from "@assets/icons/chevron-down.svg";
 import classNames from "classnames";
 
 interface IButtonProps {
-  classNames?: void;
+  classNames?: string;
   href?: string;
   icon?: any;
   onClick?: any;

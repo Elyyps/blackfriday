@@ -3,11 +3,11 @@ import "./banner-component.scss";
 import { Button, ImageComponent } from "@app/prep/modules-prep/core";
 import { Link } from "react-router-dom";
 import IconDefault from "@assets/icons/link.svg";
-
 export interface IBannerComponentProps {
   bgcolor?: string;
   buttonLink?: any;
   buttonTitle?: string;
+  classModify?: any;
   image?: string;
   label?: string;
   logo?: string;
@@ -17,6 +17,8 @@ export interface IBannerComponentProps {
   title?: string;
 }
 
+import classNames from "classnames";
+
 const BannerComponent = (props: IBannerComponentProps) => {
   const styles = {
     backgroundColor: props.bgcolor,
@@ -25,7 +27,12 @@ const BannerComponent = (props: IBannerComponentProps) => {
   };
 
   return (
-    <div className="banner" style={styles}>
+    <div
+      className={classNames("banner", {
+        [props.classModify]: props.classModify
+      })}
+      style={styles}
+    >
       <div className="uk-container">
         <div className="banner__holder">
           <div className="banner__image">

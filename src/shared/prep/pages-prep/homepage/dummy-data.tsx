@@ -121,6 +121,76 @@ const CardsDeals = [
     old_price: "€3.429",
     button_text: "Naar deals",
     button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
   }
 ];
 
@@ -136,15 +206,16 @@ const CTASimple = {
 
 const Banner = {
   bgcolor: "#f7f7f7",
-  paddingTop: "70px",
-  paddingBottom: "70px",
+  paddingTop: "40px",
+  paddingBottom: "40px",
   title: "Black Friday bij Coolblue",
   buttonTitle: "Meer deals",
   buttonLink: "#",
   image: Oasis,
   label: "22 t/m 26 nov.",
   text: "Een selectie van bizarre aanbiedingen. Meer info",
-  logo: CoolBlue
+  logo: CoolBlue,
+  classModify: "uk-width-1-1"
 };
 
 const BlogFeaturedFields = {
