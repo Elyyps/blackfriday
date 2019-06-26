@@ -1,0 +1,12 @@
+.shadow-card {
+  background: $global-inverse-color;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  display: inline-block;
+  &--small {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  }
+  &--medium {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+  }
+}
