@@ -1,7 +1,7 @@
 import * as React from "react";
 import { generateDummyCheckboxArray } from "@app/api/core/checkbox";
 import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
-import { FilterModalComponent } from "@app/core/filter-modal/filter-modal.component";
+import { FilterModalComponent } from "@app/core/search-filter-control/search-filter-control.component";
 
 export interface IPlaygroundAhmedComponentProps {}
 

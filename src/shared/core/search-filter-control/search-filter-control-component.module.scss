@@ -10,7 +10,7 @@
   &-head {
     input {
       margin-top: 10px;
-      width: 100%;
+      width: 98.5%;
       height: 40px;
       background-color: #eee8e8;
     }
@@ -24,6 +24,7 @@
   &-list {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     -webkit-columns: 2;
     -moz-columns: 2;
     columns: 2;
@@ -31,7 +32,8 @@
     padding-top: 24px;
     max-height: 185px;
     > li {
-      width: 50%;
+      width: 45%;
+
       font-size: 15px;
       &:not(:last-child) {
         margin-bottom: 13px;

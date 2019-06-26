@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./filter-modal-component.module.scss";
+import style from "./search-filter-control-component.module.scss";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Link } from "react-router-dom";
 import { Checkbox } from "@app/api/core/checkbox";
@@ -36,7 +36,11 @@ const FilterModalComponent = (props: IFilterModalComponentProps) => {
             <Link to="#">Verwijder merk filters (2){value}</Link>
           </li>
           <li>
-            <Button title={"Toon 123 Winkels"} href={"#"} />
+            <Button
+              title={"Toon 123 Winkels"}
+              href={"#"}
+              variant={"primary-brand"}
+            />
           </li>
         </ul>
       </div>
