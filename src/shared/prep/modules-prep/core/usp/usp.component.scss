@@ -1,0 +1,28 @@
+.usp {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin: 0 -25px;
+  &__item {
+    flex: 1 1 auto;
+    padding: 0 25px;
+    text-align: center;
+  }
+  &__link {
+    color: $gray-light;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+    }
+  }
+  .icon-svg {
+    margin-right: 8px;
+    path {
+      fill: currentColor;
+    }
+  }
+}

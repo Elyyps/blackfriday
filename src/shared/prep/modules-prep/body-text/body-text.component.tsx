@@ -20,5 +20,4 @@ const BodyTextComponent = (props: IBodyTextComponentProps) => {
     </div>
   );
 };
-
 export { BodyTextComponent };

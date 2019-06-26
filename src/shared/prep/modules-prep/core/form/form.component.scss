@@ -1,0 +1,53 @@
+.checkbox{
+  -webkit-appearance: none;
+  background-color: #fdf3f3;
+  border: 1px solid $brand-primary;
+  border-radius: 2px;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  position: relative;
+  margin: 0 13px 0 0;
+  &-label{
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: $gray-dark;
+  }
+}
+
+.checkbox:checked {
+  background-color: $brand-primary;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNS45NjUiIGhlaWdodD0iMTMuMTQyIiB2aWV3Qm94PSIwIDAgMTUuOTY1IDEzLjE0MiI+PHRpdGxlPmNoZWNrPC90aXRsZT48cGF0aCBkPSJNLjY3NCw3LjI5Myw1LjUyLDExLjcxNiwxNS4yMTMuNjU5IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
+  background-position: center;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  outline: none;
+}
+.input{
+  background-color: $tint-gray-light;
+  min-height: 40px;
+  width: 100%;
+  border:none;
+  font-size: 15px;
+  padding: 12px 12px 12px 36px;
+  box-sizing: border-box;
+  &-wrapper{
+    position: relative;
+    .icon-svg{
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      svg,path{
+        fill:currentColor;
+      }
+
+    }
+  }
+}

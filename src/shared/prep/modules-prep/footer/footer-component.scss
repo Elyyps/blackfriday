@@ -1,0 +1,237 @@
+.footer {
+  font-size: 13px;
+  font-weight: 600;
+  color: $gray-light;
+  background: $global-background;
+  
+  &__top {
+    padding: 20px 0;
+  }
+  
+  &__top-holder {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    @media (min-width: $breakpoint-medium) {
+      justify-content: space-between;
+    }
+  }
+  
+  &__top-list {
+    display: flex;
+    font-size: 15px;
+    color: $gray-light;
+    margin: 0;
+    @media (min-width: $breakpoint-medium) {
+      margin-left: -15px;
+    }
+    li {
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+    }
+    .icon-svg {
+      margin-right: 10px;
+    }
+  }
+  
+  &__holder {
+    background: $gray-dark;
+    color: $global-inverse-color;
+    padding: 48px 0 37px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 16px 0;
+    }
+    a {
+      text-decoration: none;
+      color: $tint-gray;
+      &:hover {
+        color: $global-link-color;
+      }
+    }
+  }
+  
+  &__columns {
+    @media (min-width: $breakpoint-small) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @media (min-width: $breakpoint-medium) {
+      flex-wrap: nowrap;
+    }
+    > div {
+      @media (min-width: $breakpoint-small) {
+        flex: 1 1 50%;
+        width: 50%;
+        padding-right: 32px;
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      @media (min-width: $breakpoint-medium) {
+        flex: 1 1 auto;
+        padding-bottom: 0;
+      }
+    }
+  }
+  
+  &__column-body {
+    flex: 1 1 auto;
+  }
+  
+  &__column-footer {
+    flex: 0 0 auto;
+    padding-top: 24px;
+  }
+  
+  &__column-collapse {
+    @media (max-width: $breakpoint-xsmall-max) {
+      border-bottom: 1px solid $gray;
+    }
+  }
+  &__column-collapse-body {
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: none;
+    }
+  }
+  &__column-title {
+    font-size: 14px;
+    font-family: $global-font-family-secondary;
+    margin-bottom: 24px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 14px 0;
+      position: relative;
+      margin: 0;
+    }
+  
+    .footer__column-collapse & {
+      @media (max-width: $breakpoint-xsmall-max) {
+      
+      }
+    }
+  }
+  
+  &__column-nav {
+    margin: 0;
+    li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+  
+  &__bottom {
+    padding: 15px 0;
+  }
+  
+  &__bottom-holder {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (min-width: $breakpoint-small) {
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+  }
+  
+  &__logo-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__logo {
+    width: 149px;
+    display: block;
+    margin-right: 32px;
+  }
+  
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px 0 0;
+    justify-content: flex-end;
+    li {
+      margin: 0 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      justify-content: center;
+      clear: both;
+      width: 100%;
+      margin: 0;
+      order: -1;
+      li {
+        margin-bottom: 16px;
+      }
+    }
+  
+    a {
+      text-decoration: none;
+      color: $gray-dark;
+      &:hover {
+        color: $global-link-color;
+      }
+    }
+  }
+
+  &__social {
+    li {
+      padding-top: 8px;
+      &:not(:last-child) {
+        padding-bottom: 8px;
+      }
+    }
+  }
+
+  &__social-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: $global-border-radius;
+    border: solid 2px $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex: 0 0 auto;
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &__social-text {
+    font-size: 12px;
+    color: $tint-gray;
+  }
+  &__social-title {
+    font-size: 15px;
+    color: $global-inverse-color;
+  }
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  @media (max-width: $breakpoint-small-max) {
+    justify-content: center;
+  }
+  &__mark {
+    font-size: 14px;
+    margin-right: 8px;
+    font-family: $global-font-family-secondary;
+  }
+  &__stars {
+    display: flex;
+    .icon-svg {
+      margin-right: 6px;
+    }
+    path {
+      fill: #ffbd03;
+    }
+  }
+}
