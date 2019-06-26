@@ -227,15 +227,16 @@ const CardsDeals = [
 
 const Banner = {
   bgcolor: "#f7f7f7",
-  paddingTop: "70px",
-  paddingBottom: "70px",
+  paddingTop: "40px",
+  paddingBottom: "24px",
   title: "Black Friday bij Coolblue",
   buttonTitle: "Meer deals",
   buttonLink: "#",
   image: Oasis,
   label: "22 t/m 26 nov.",
   text: "Een selectie van bizarre aanbiedingen. Meer info",
-  logo: CoolBlue
+  logo: CoolBlue,
+  classModify: "uk-width-1-1"
 };
 
 const CardMore = [

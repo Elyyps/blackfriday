@@ -206,16 +206,15 @@ const CTASimple = {
 
 const Banner = {
   bgcolor: "#f7f7f7",
-  paddingTop: "40px",
-  paddingBottom: "40px",
+  paddingTop: "70px",
+  paddingBottom: "70px",
   title: "Black Friday bij Coolblue",
   buttonTitle: "Meer deals",
   buttonLink: "#",
   image: Oasis,
   label: "22 t/m 26 nov.",
   text: "Een selectie van bizarre aanbiedingen. Meer info",
-  logo: CoolBlue,
-  classModify: "uk-width-1-1"
+  logo: CoolBlue
 };
 
 const BlogFeaturedFields = {
