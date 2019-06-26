@@ -1,7 +1,8 @@
 import style from "./dropdown-component.module.scss";
 import * as React from "react";
 import { Dropdown } from "@app/api/core/dropdown";
-import { Button } from "@app/prep/modules-prep/core";
+import ChevronDown from "@assets/icons/chevron-down.svg";
+import { Button } from "../button";
 
 export interface IDropdownComponentProps {
   children: any;
@@ -23,7 +24,12 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           onClick={toggleOpened}
           role="button"
         >
-          <span>Merk</span>
+          <Button
+            title={"Merk"}
+            type={"button"}
+            variant={"dropdown"}
+            icon={ChevronDown}
+          />
         </div>
         <div
           className={
@@ -32,10 +38,6 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
         >
           {props.children}
         </div>
-      </div>
-      <div className="filter-brand">
-        <Button title={"Merk"} type={"button"} variant={"dropdown"} />
-        <div data-uk-dropdown="mode: click">Lorem</div>
       </div>
     </React.Fragment>
   );

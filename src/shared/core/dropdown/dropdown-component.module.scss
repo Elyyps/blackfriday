@@ -1,32 +1,16 @@
 .dropdown {
-  width: auto;
-  height: auto;
-  position: relative;
   display: inline-block;
-
   margin: 20px 0 0 30%;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
-  background-color: var(--tint-white);
+
   &-isOpen {
-    display: block;
+    width: auto;
+    height: auto;
+    border: solid 1px black;
+    background-color: var(--tint-white);
   }
   &-isClose {
     display: none;
   }
   &-button {
-    width: 32px;
-    height: 20px;
-    span {
-      width: 60px;
-      height: 20px;
-      font-family: 'Assistant';
-      font-size: 15px;
-      font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      color: var(--tint-grey-11);
-    }
   }
 }

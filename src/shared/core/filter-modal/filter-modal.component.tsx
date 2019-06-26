@@ -2,8 +2,8 @@ import React from "react";
 import style from "./filter-modal-component.module.scss";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Link } from "react-router-dom";
-import { Button } from "@app/prep/modules-prep/core";
 import { Checkbox } from "@app/api/core/checkbox";
+import { Button } from "../button";
 
 export interface IFilterModalComponentProps {
   checkbox: Checkbox[];
@@ -14,11 +14,11 @@ const FilterModalComponent = (props: IFilterModalComponentProps) => {
 
   return (
     <div className={style["filter-modal"]}>
-      <div className={style["filter-modal-head"]}>
-        <input placeholder={"Merk zoeken"} />
-      </div>
-      <div className={style["filter-modal-body"]}>
-        <div className={style["uk-grid uk-child-width-1-2"]}>
+      <div className={style["filter-modal-container"]}>
+        <div className={style["filter-modal-head"]}>
+          <input placeholder={"Merk zoeken"} />
+        </div>
+        <div className={style["filter-modal-body"]}>
           <div>
             <ul className={style["filter-modal-list"]}>
               {props.checkbox.map((checkbox, key) => (

@@ -1,26 +1,38 @@
 .filter-modal {
   width: 536px;
-  height: 368px;
-
-  margin: auto;
+  height: 100%;
+  z-index: 0;
+  position: relative;
+  &-container {
+    margin: auto;
+    width: 90%;
+  }
   &-head {
     input {
+      margin-top: 10px;
       width: 100%;
       height: 40px;
-      background-color: var(--tint-grey-94);
+      background-color: #eee8e8;
     }
   }
   &-body {
-    max-height: 210px;
-    overflow-y: auto;
-    padding-top: 24px;
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+    }
   }
   &-list {
-    font-size: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    overflow-y: auto;
+    padding-top: 24px;
+    max-height: 185px;
     > li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      width: 50%;
+      font-size: 15px;
       &:not(:last-child) {
         margin-bottom: 13px;
       }
@@ -30,15 +42,19 @@
     }
   }
   &-bottom {
+    z-index: 1;
     background-color: $global-inverse-color;
+    position: absolute;
+    bottom: 0;
     width: 100%;
+    border-top: 0.2px solid $gray;
+
+    height: 68px;
     &__action {
       margin: 0;
       display: flex;
       justify-content: space-between;
-      border-top: 1px solid $gray;
       padding: 16px;
-      box-sizing: border-box;
     }
   }
 }
