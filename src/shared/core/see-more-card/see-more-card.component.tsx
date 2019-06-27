@@ -9,15 +9,16 @@ import { getArrow } from "@app/constants/icons";
 export interface ISeeMoreCardComponentProps {
   link: Link;
   title: string;
+  icon: string;
 }
 
 const SeeMoreCardComponent = (props: ISeeMoreCardComponentProps) => {
-  const { title, link } = props;
+  const { title, link, icon } = props;
 
   return (
     <div className={styles["see-more-card"]}>
       <div className={styles["see-more-card__icon"]}>
-        <IconComponent size="24px" icon={StoreIcon} />
+        <IconComponent size="24px" icon={icon} />
       </div>
       <div className={styles["see-more-card__title"]}>{title}</div>
       <LinkComponent

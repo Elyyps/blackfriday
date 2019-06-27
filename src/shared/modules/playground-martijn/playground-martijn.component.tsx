@@ -28,6 +28,7 @@ const renderButtonVariations = (
       iconPosition="right"
       icon={IconDefault}
       variant={buttonVariant}
+      onClick={() => alert(`clicked button 2: ${buttonVariant}`)}
     />
     <br />
     <Button
@@ -35,19 +36,48 @@ const renderButtonVariations = (
       iconPosition="left"
       icon={IconDefault}
       variant={buttonVariant}
+      onClick={() => alert(`clicked button 3: ${buttonVariant}`)}
     />
     <br />
-    <Button iconPosition="right" icon={IconDefault} variant={buttonVariant} />
+    <Button
+      iconPosition="right"
+      icon={IconDefault}
+      variant={buttonVariant}
+      onClick={() => alert(`clicked button 4: ${buttonVariant}`)}
+    />
     <br />
-    <Button iconPosition="left" icon={IconDefault} variant={buttonVariant} />
+    <Button
+      iconPosition="left"
+      icon={IconDefault}
+      variant={buttonVariant}
+      onClick={() => alert(`clicked button 5: ${buttonVariant}`)}
+    />
     <br />
-    <Button icon={IconDefault} variant={buttonVariant} />
+    <Button
+      icon={IconDefault}
+      variant={buttonVariant}
+      onClick={() => alert(`clicked button 1: ${buttonVariant}`)}
+    />
     <br />
-    <Button title="test" iconPosition="left" variant={buttonVariant} />
+    <Button
+      title="test"
+      iconPosition="left"
+      variant={buttonVariant}
+      onClick={() => alert(`clicked button 6: ${buttonVariant}`)}
+    />
     <br />
-    <Button title="test" iconPosition="right" variant={buttonVariant} />
+    <Button
+      title="test"
+      iconPosition="right"
+      variant={buttonVariant}
+      onClick={() => alert(`clicked button 7: ${buttonVariant}`)}
+    />
     <br />
-    <Button title="test" variant={buttonVariant} />
+    <Button
+      title="test"
+      variant={buttonVariant}
+      onClick={() => alert(`clicked button 1: ${buttonVariant}`)}
+    />
     <br />
   </div>
 );

@@ -8,12 +8,13 @@ export interface ILinkComponentProps {
   animated?: boolean;
   children: any;
   icon?: string;
-  to: string;
+  target?: string;
+  to?: string;
   variant?: "primary" | "secondary" | "tertiary";
 }
 
 const LinkComponent = (props: ILinkComponentProps) => {
-  const { icon, to, variant, animated } = props;
+  const { icon, to, target, variant, animated } = props;
   const defaultVariant = variant || "primary";
   const linkClassName = classNames(
     style["link"],
@@ -23,7 +24,7 @@ const LinkComponent = (props: ILinkComponentProps) => {
   );
 
   return (
-    <Link className={linkClassName} to={to}>
+    <Link target={target} className={linkClassName} to={to}>
       {props.children}
       {icon && <IconComponent icon={icon} size="14px" />}
     </Link>

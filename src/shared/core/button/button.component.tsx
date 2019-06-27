@@ -21,7 +21,7 @@ interface IButtonProps {
   href?: string;
   icon?: string;
   iconPosition?: string;
-  onClick?: any;
+  onClick?: () => void;
   size?: number;
   target?: string;
   title?: string;
@@ -86,14 +86,17 @@ const Button = (props: IButtonProps) => {
           type={buttonType}
           name={title}
           className={buttonClassName}
-          onClick={!disabled && props.onClick}
+          onClick={
+            !disabled && typeof props.onClick !== "undefined"
+              ? props.onClick
+              : undefined
+          }
         >
           <span className={style["icon-svg"]}>
-            {(icon && iconPosition === "right") || (icon && !iconPosition)
-              ? title
-              : ""}
+            {((icon && iconPosition === "right") || (icon && !iconPosition)) &&
+              title}
             {icon ? renderIconMargin(iconPosition) : title}
-            {icon && iconPosition === "left" ? title : ""}
+            {icon && iconPosition === "left" && title}
           </span>
         </button>
       )}
