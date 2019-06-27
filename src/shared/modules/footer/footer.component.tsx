@@ -5,6 +5,7 @@ import { ImageComponent, Button, IconComponent, USP } from "@app/core/";
 
 import Star from "@assets/icons/star-filled.svg";
 import { Footer } from "@app/api/modules/footer/models/footer.module";
+import { LinkComponent } from "@app/core/link";
 
 export interface IFooterComponentProps {
   footerModule: Footer;
@@ -24,7 +25,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   (item, index) => (
                     <li key={index}>
                       <IconComponent icon={item.icon} size="20px" />
-                      {item.text}
+                      <span>{item.text}</span>
                     </li>
                   )
                 )}
@@ -46,7 +47,9 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   <ul className="footer__column-nav">
                     {item.links.map((link, i) => (
                       <li key={i}>
-                        <Link to={link.url}>{link.title}</Link>
+                        <LinkComponent to={link.url}>
+                          {link.title}
+                        </LinkComponent>
                       </li>
                     ))}
                   </ul>
@@ -86,10 +89,11 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   {props.footerModule.middleFooter.newsletter.title}
                 </div>
                 <p> {props.footerModule.middleFooter.newsletter.text}</p>
+
                 <Button
                   title={props.footerModule.middleFooter.newsletter.bottonText}
-                  variant="invert"
                   icon={props.footerModule.middleFooter.newsletter.bottonIcon}
+                  variant={"primary-inverted"}
                 />
               </div>
               <div className="footer__column-footer">
@@ -124,7 +128,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
             <ul className="footer__nav">
               {props.footerModule.bottomFooter.items.map((link, key) => (
                 <li key={key}>
-                  <Link to={link.url}>{link.title}</Link>
+                  <LinkComponent to={link.url}>{link.title}</LinkComponent>
                 </li>
               ))}
             </ul>
