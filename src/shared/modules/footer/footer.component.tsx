@@ -46,7 +46,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   <ul className="footer__column-nav">
                     {item.links.map((link, i) => (
                       <li key={i}>
-                        <Link to={link.link}>{link.title}</Link>
+                        <Link to={link.url}>{link.title}</Link>
                       </li>
                     ))}
                   </ul>
@@ -124,7 +124,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
             <ul className="footer__nav">
               {props.footerModule.bottomFooter.items.map((link, key) => (
                 <li key={key}>
-                  <Link to={link.link}>{link.title}</Link>
+                  <Link to={link.url}>{link.title}</Link>
                 </li>
               ))}
             </ul>

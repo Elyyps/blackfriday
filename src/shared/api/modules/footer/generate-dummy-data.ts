@@ -8,19 +8,19 @@ export const bottomFooter = (): BottomFotter => ({
   items: [
     {
       title: "Partner worden?",
-      link: "/"
+      url: "/"
     },
     {
       title: "Algemene voorwaarden",
-      link: "/"
+      url: "/"
     },
     {
       title: "Privacy",
-      link: "/"
+      url: "/"
     },
     {
       title: "Cookiebeleid",
-      link: "/"
+      url: "/"
     }
   ],
   logo:
@@ -34,31 +34,31 @@ export const middleFooter = (): MiddleFooter => ({
       links: [
         {
           title: "Black Friday 2019",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Apple",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Deals",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Elektronica",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Gaming",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Winkels",
-          link: "/"
+          url: "/"
         },
         {
           title: "Cyber Monday 2019",
-          link: "/"
+          url: "/"
         }
       ]
     },
@@ -67,31 +67,31 @@ export const middleFooter = (): MiddleFooter => ({
       links: [
         {
           title: "Airpods Black Friday",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Kleding",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Jumbo",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Rituals",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday G-star",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Center Parcs",
-          link: "/"
+          url: "/"
         },
         {
           title: "Black Friday Computer",
-          link: "/"
+          url: "/"
         }
       ]
     }
@@ -149,7 +149,7 @@ export const topFooter = (): TopFooter => ({
       icon:
         "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
       text: {
-        link: "./",
+        url: "./",
         title: "Overzicht van álle black friday winkels"
       }
     },
@@ -157,7 +157,7 @@ export const topFooter = (): TopFooter => ({
       icon:
         "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
       text: {
-        link: "./",
+        url: "./",
         title: "Altijd up-to-date van de laatste deals"
       }
     },
@@ -165,7 +165,7 @@ export const topFooter = (): TopFooter => ({
       icon:
         "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg",
       text: {
-        link: "./",
+        url: "./",
         title: "Mis niets van Black Friday 2019"
       }
     }

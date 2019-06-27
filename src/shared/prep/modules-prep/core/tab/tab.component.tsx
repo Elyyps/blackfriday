@@ -1,26 +1,19 @@
 import * as React from "react";
 import "./tab-component.module.scss";
-import classNames from "classnames";
+import { Link } from "react-router-dom";
 
-export interface ITabComponentProps {
+export interface ITabProps {
+  attrAction?: any;
   children?: any;
-  classTabList?: any;
-  switcherAttr?: any;
-  title?: any;
 }
 
-const TabComponent = (props: ITabComponentProps) => {
-  const { switcherAttr, classTabList, children } = props;
+const TabComponent = (props: ITabProps) => {
+  const { attrAction, children } = props;
 
   return (
-    <React.Fragment>
-      <ul
-        {...switcherAttr}
-        className={classNames("uk-tab", { [`${classTabList}`]: true })}
-      >
-        {children}
-      </ul>
-    </React.Fragment>
+    <>
+      <li>{attrAction ? <Link to="#">{children}</Link> : <>{children} </>}</li>
+    </>
   );
 };
 

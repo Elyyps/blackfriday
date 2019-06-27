@@ -1,4 +1,4 @@
 export class Link {
-  public link: string;
   public title: string;
+  public url: string;
 }
