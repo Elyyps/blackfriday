@@ -65,7 +65,12 @@
     ],
     "max-func-body-length": 10,
     "strict-boolean-expressions": false,
-    "no-any": false
+    "no-any": false,
+    "interface-over-type-literal": false,
+    "no-default-export": false,
+    "no-use-before-declare": false,
+    "strict-type-predicates": false,
+    "no-void-expression": false
   },
   "linterOptions": {
     "exclude": ["./node_modules"]
