@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { generateDummyCheckboxArray } from "@app/api/core/checkbox";
 import { DropdownComponent } from "./dropdown.component";
-import { FilterModalComponent } from "../search-filter-control/search-filter-control.component";
+import { SearchFilterControlComponent } from "../search-filter-control/search-filter-control.component";
 
 const notes = require("./dropdown.md");
 
@@ -13,7 +13,7 @@ storiesOf("dropdown", module)
     "Basic implementation",
     () => (
       <DropdownComponent>
-        <FilterModalComponent checkbox={generateDummyCheckboxArray()} />
+        <SearchFilterControlComponent checkbox={generateDummyCheckboxArray()} />
       </DropdownComponent>
     ),
     {

@@ -6,15 +6,33 @@ import { PlaygroundPedroComponent } from "./modules/playground-pedro/playground-
 import { PlaygroundDanieleComponent } from "./modules/playground-daniele/playground-daniele.component";
 import { PlaygroundMartijnComponent } from "./modules/playground-martijn/playground-martijn.component";
 import { WinkleoverviewComponent } from "./prep/pages-prep/winkleoverview/winkleoverview.component";
+import { BlogSingleComponent } from "./prep/pages-prep/blog-single/blog-single.component";
 
 const Routes: React.FunctionComponent = props => (
   <React.Fragment>
     <Route exact path="/" component={HomepageComponent} />
     <Route exact path="/winkleoverview" component={WinkleoverviewComponent} />
-    <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
-    <Route exact path="/playground-pedro" component={PlaygroundPedroComponent} />
-    <Route exact path="/playground-daniele" component={PlaygroundDanieleComponent} />
-    <Route exact path="/playground-martijn" component={PlaygroundMartijnComponent} />
+    <Route
+      exact
+      path="/playground-ahmed"
+      component={PlaygroundAhmedComponent}
+    />
+    <Route
+      exact
+      path="/playground-pedro"
+      component={PlaygroundPedroComponent}
+    />
+    <Route
+      exact
+      path="/playground-daniele"
+      component={PlaygroundDanieleComponent}
+    />
+    <Route
+      exact
+      path="/playground-martijn"
+      component={PlaygroundMartijnComponent}
+    />
+    <Route exact path="/blog-single" component={BlogSingleComponent} />
   </React.Fragment>
 );
 

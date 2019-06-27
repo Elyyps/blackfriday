@@ -1,18 +1,10 @@
 .dropdown {
-  display: inline-block;
-  margin: 20px 0 0 30%;
-
   &-button {
-    z-index: 1;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
   }
-  &-isOpen {
-    z-index: 0;
-    width: auto;
-    height: auto;
-    border: solid 1px black;
+  &-content {
+    margin-top: 0;
     background-color: var(--tint-white);
-  }
-  &-isClose {
-    display: none;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
   }
 }

@@ -6,8 +6,10 @@ import ChevronUp from "@assets/icons/chevron-up.svg";
 import { Button } from "../button";
 
 export interface IDropdownComponentProps {
-  children: any;
-  orientation?: "left" | "right";
+  buttonVariant?: string;
+  children?: any;
+  orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";
+  title?: string;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
@@ -22,17 +24,15 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
       <div className={style["dropdown"]}>
         <div className={style["dropdown-button"]}>
           <Button
-            title={"Merk"}
-            variant={"primary-inverted"}
+            title={props.title}
+            variant={props.buttonVariant}
             icon={isDropdownOpened ? ChevronUp : ChevronDown}
             onClick={toggleOpened}
           />
         </div>
         <div
-          style={{ float: props.orientation }}
-          className={
-            style[isDropdownOpened ? "dropdown-isOpen" : "dropdown-isClose"]
-          }
+          data-uk-dropdown={props.orientation}
+          className={style["dropdown-content"]}
         >
           {props.children}
         </div>

@@ -9,7 +9,7 @@ export interface IFilterModalComponentProps {
   checkbox: Checkbox[];
 }
 
-const FilterModalComponent = (props: IFilterModalComponentProps) => {
+const SearchFilterControlComponent = (props: IFilterModalComponentProps) => {
   const [value, setValue] = React.useState("");
 
   return (
@@ -48,4 +48,4 @@ const FilterModalComponent = (props: IFilterModalComponentProps) => {
   );
 };
 
-export { FilterModalComponent };
+export { SearchFilterControlComponent };
