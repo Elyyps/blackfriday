@@ -5,20 +5,25 @@ import { TimeLeftBarComponent } from '../time-left-bar';
 import { ImageComponent } from '@app/prep/modules-prep/core';
 import { LinkComponent } from '../link';
 import { getArrow } from '@app/constants/icons';
+import { Button } from '../button';
+import ShopIcon from "@assets/icons/link.svg"
 
 export interface IShopCardComponentProps {
-  button_link?: any;
   button_text?: any;
-  content?: any;
+  content?: string;
   image?: any;
   range?: any;
+  seeMoreLink?: string,
+  seeMoreText?: string,
   sub_title?: any;
   title?: any;
+  url: string;
+
   variant?: string;
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const { title, sub_title, content, image, range, button_text, button_link, variant } = props;
+  const { title, seeMoreLink, seeMoreText, sub_title, content, image, range, button_text, url, variant } = props;
 
   return (
     <div className={styles['shop-card']}>
@@ -30,12 +35,11 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
         <div className={styles['shop-card__content']}>
           <div className={styles['shop-card__title']}>{title}</div>
           {content}
+          {seeMoreText && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}
         </div>
       </div>
       <div className={styles['shop-card__action']}>
-        <LinkComponent to={button_link} variant='tertiary' icon={getArrow(false)}>
-          {button_text}
-        </LinkComponent>
+        <Button title={button_text} iconPosition='right' icon={ShopIcon} />
       </div>
     </div>
   );

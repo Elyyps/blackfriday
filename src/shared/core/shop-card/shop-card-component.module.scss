@@ -4,17 +4,15 @@
   border-radius: $global-border-radius;
   background: $global-background;
   color: $gray-lighter;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,.08);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
   font-size: 14px;
   font-weight: 600;
   padding: 16px;
   width: 100%;
 
-  
-   max-height: 288px;
+  max-height: 288px;
   min-height: 288px;
-  max-width: 227px;
-  min-width: 227px;
+
   background-color: white;
   text-align: left;
   padding: 0 32px;
@@ -47,7 +45,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 85px;
+    height: 90px;
+    margin-top: 16px;
+    max-height: 90px;
+    overflow: hidden;
+    align-items: center;
     @media (max-width: $breakpoint-xsmall-max) {
       order: 2;
       width: 90px;
@@ -64,6 +66,12 @@
 
   &__content {
     margin-bottom: 24px;
+    font-family: Assistant;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    color: #777777;
     @media (max-width: $breakpoint-xsmall-max) {
       order: 1;
       flex: 1 1 60%;
@@ -77,6 +85,7 @@
 
   &__action {
     flex: 0 0 auto;
+    margin-bottom: 16px;
     > * {
       width: 100%;
     }
@@ -135,14 +144,14 @@
       }
     }
   }
-  
+
   &--responsive {
     .shop-card {
       &__body {
         display: flex;
         flex-wrap: wrap;
       }
-  
+
       &__image {
         order: 2;
         width: 90px;
@@ -150,18 +159,18 @@
         flex: 0 0 90px;
         margin-bottom: 0;
       }
-  
+
       &__content {
         order: 1;
         flex: 1 1 60%;
         margin-bottom: 0;
       }
-  
+
       &__action {
         width: 50%;
         margin-left: auto;
       }
-  
+
       &__status {
         order: 3;
         width: 100%;
