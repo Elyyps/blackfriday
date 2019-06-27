@@ -1,0 +1,142 @@
+.card-product {
+  display: flex;
+  flex-direction: column;
+  border-radius: $global-border-radius;
+  background: $global-background;
+  color: $gray-lighter;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,.08);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__body {
+    flex: 1 1 auto;
+    margin-bottom: 12px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+  }
+  
+  &__content {
+    @media (max-width: $breakpoint-xsmall-max) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__title {
+    font-family: $global-font-family-secondary;
+    font-size: 16px;
+    font-weight: bold;
+    color: $gray-dark;
+    margin: 0 0 6px;
+  }
+
+  &__image {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 119px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      order: 2;
+      width: 90px;
+      height: auto;
+      flex: 0 0 90px;
+      margin: 0 0 0 10px;
+    }
+    img,
+    svg {
+      margin: 0 auto;
+      max-height: 100%;
+    }
+  }
+  
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: block;
+      margin: 0;
+      flex: 0 0 50%;
+    }
+  }
+  
+  &__price-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__sale {
+    background: rgba($brand-primary, .1);
+    color: $brand-primary;
+    padding: 1px 5px;
+    display: inline-flex;
+  }
+  
+  &__price-new {
+    color: $brand-primary;
+    font-size: 14px;
+    font-family: $global-font-family-secondary;
+  }
+
+  &__price-old {
+    margin: 0 4px 0 0;
+    text-decoration: line-through;
+  }
+  
+  &__action {
+    .button {
+      width: 100%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: flex;
+      align-items: flex-end;
+      .button {
+        width: 50%;
+      }
+    }
+  }
+
+  
+  &--responsive {
+    .card-product {
+      &__body {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+  
+      &__content {
+        flex: 1 1 auto;
+      }
+  
+      &__image {
+        order: 2;
+        width: 90px;
+        height: auto;
+        flex: 0 0 90px;
+        margin: 0 0 0 10px;
+      }
+  
+      &__price {
+        display: block;
+        margin: 0;
+        flex: 0 0 50%;
+      }
+  
+      &__action {
+        display: flex;
+        align-items: flex-end;
+        .button {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
