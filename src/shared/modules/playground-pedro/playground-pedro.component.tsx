@@ -10,19 +10,7 @@ export interface IPlaygroundPedroComponentProps {}
 
 const PlaygroundPedroComponent = (props: IPlaygroundPedroComponentProps) => (
   <div className={styles['playground-pk']}>
-    Adicione seu código aqui Pedro!
-    <i>Wp tom</i>
-    <br />
-    <LinkComponent to='/'>Primary</LinkComponent>
-    <LinkComponent icon={getArrow(false)} to='/'>
-      Primary w Icon
-    </LinkComponent>
-    <LinkComponent variant='secondary' icon={getArrow(false)} to='/'>
-      Secondary w Icon
-    </LinkComponent>
-    <LinkComponent animated variant='tertiary' icon={getArrow(false)} to='/'>
-      Tertiary w Icon animated
-    </LinkComponent>
+
     <TimeLeftBarComponent title='NU GELDIG' range={0.6} />
     <ShopCardComponent
       image='https://d2ddoduugvun08.cloudfront.net/items/2L2B2V3Q0p2W2C041W1h/Image%202019-06-27%20at%2010.42.50%20AM.png'

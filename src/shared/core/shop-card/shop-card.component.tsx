@@ -1,12 +1,10 @@
-
-import * as React from "react";
-import styles from "./shop-card-component.module.scss";
+import * as React from 'react';
+import styles from './shop-card-component.module.scss';
 import classNames from 'classnames';
-import { TimeLeftBarComponent } from "../time-left-bar";
-import { ImageComponent } from "@app/prep/modules-prep/core";
-import { LinkComponent } from "../link";
-import { getArrow } from "@app/constants/icons";
-
+import { TimeLeftBarComponent } from '../time-left-bar';
+import { ImageComponent } from '@app/prep/modules-prep/core';
+import { LinkComponent } from '../link';
+import { getArrow } from '@app/constants/icons';
 
 export interface IShopCardComponentProps {
   button_link?: any;
@@ -23,18 +21,18 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
   const { title, sub_title, content, image, range, button_text, button_link, variant } = props;
 
   return (
-    <div className={classNames('card-shop', `card-shop--${variant || 'default'}`)}>
-      <div className='card-shop__body'>
-        <div className='card-shop__image'>
+    <div className={styles['shop-card']}>
+      <div className={styles['shop-card__body']}>
+        <div className={styles['shop-card__image']}>
           <ImageComponent src={image} />
         </div>
-        <TimeLeftBarComponent range={range} title={sub_title} /> 
-        <div className='card-shop__content'>
-          <div className='card-shop__title'>{title}</div>
+        <TimeLeftBarComponent range={range} title={sub_title} />
+        <div className={styles['shop-card__content']}>
+          <div className={styles['shop-card__title']}>{title}</div>
           {content}
         </div>
       </div>
-      <div className='card-shop__action'>
+      <div className={styles['shop-card__action']}>
         <LinkComponent to={button_link} variant='tertiary' icon={getArrow(false)}>
           {button_text}
         </LinkComponent>
@@ -44,4 +42,3 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
 };
 
 export { ShopCardComponent };
-  
