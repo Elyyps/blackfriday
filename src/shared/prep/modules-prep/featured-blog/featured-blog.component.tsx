@@ -17,7 +17,7 @@ const FeaturedBlogComponent = (props: IFeaturedBlogComponentProps) => {
   return (
     <div className="featured-blog" style={styles}>
       <div className="uk-container">
-        <h2 className="featured-blog__title">{props.title}</h2>
+        {props.title && <h2 className="featured-blog__title">{props.title}</h2>}
         <div className="featured-blog__body">
           {props.items &&
             props.items.map((item, key) => (
