@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Button, ButtonType } from "@app/core/button/button.component";
-import IconDefault from "@assets/icons/link.svg";
+import IconDefault from "@assets/icons/party.svg";
+import { IconComponent } from "@app/core/icon";
 
 // import styles from "./playground-martijn-component.module.scss";
 
@@ -29,6 +30,7 @@ const renderButtonVariations = (
       title="test"
       iconPosition="right"
       icon={IconDefault}
+      iconStyle="outline-fill"
       variant={buttonVariant}
       onClick={() => alert(`clicked button 2: ${buttonVariant}`)}
       fullWidth
@@ -111,6 +113,8 @@ const PlaygroundMartijnComponent = (
     {renderButtonVariations("tertiary")}
     {/* Tertiary Inverted*/}
     {renderButtonVariations("tertiary-inverted", "#1c1c1c", "#fff")}
+
+    <IconComponent icon={IconDefault} size="14px" />
   </div>
 );
 

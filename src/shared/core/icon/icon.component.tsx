@@ -2,9 +2,11 @@ import * as React from "react";
 import ReactSVG from "react-svg";
 
 export interface IIconComponentProps {
-  color?: string;
+  fillColor?: string;
   icon: any;
   size: string;
+  strokeColor?: string;
+  strokeWidth?: string;
 }
 
 const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
@@ -14,8 +16,10 @@ const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
     loading={() => <span />}
     renumerateIRIElements={false}
     style={{
-      fill: props.color,
+      fill: props.fillColor,
       height: props.size,
+      stroke: props.strokeColor,
+      strokeWidth: props.strokeWidth,
       width: props.size
     }}
     className="icon-svg"

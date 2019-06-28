@@ -12,27 +12,42 @@ export type ButtonType =
   | "tertiary"
   | "tertiary-inverted";
 
+export type iconType = "outline" | "filled" | "outline-fill" | "colored";
+
 interface IButtonProps {
-  buttonType?: ButtonType;
+  buttonType?: string;
   classNames?: void;
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: string;
   iconPosition?: string;
+  iconStyle?: string;
   onClick?: () => void;
   size?: number;
   title?: string;
-  variant?: string;
+  variant?: ButtonType;
 }
 
 const Button = (props: IButtonProps) => {
-  const { variant, title, buttonType, icon, disabled, iconPosition } = props;
+  const {
+    variant,
+    title,
+    buttonType,
+    icon,
+    disabled,
+    iconStyle,
+    iconPosition
+  } = props;
   const classModify = variant || "primary-default";
   const buttonFAB = !title ? style["button--FAB"] : "";
+  const iconOutline = iconStyle
+    ? style[`button--${classModify}--icon-${iconStyle}`]
+    : style[`button--${classModify}--icon-filled`];
   const buttonClassName = classNames(
     style["button"],
     style[`button--${classModify}`],
     buttonFAB,
+    iconOutline,
     {
       "button--fullWidth": props.fullWidth
     }
@@ -43,9 +58,9 @@ const Button = (props: IButtonProps) => {
   };
 
   const renderIconMargin = (margin = "right") => {
-    let newMargin = margin;
-    if (!title) {
-      newMargin = "center";
+    let newMargin = "";
+    if (title) {
+      newMargin = margin;
     }
 
     return (
