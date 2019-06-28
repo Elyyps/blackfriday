@@ -28,7 +28,7 @@ const Button = (props: IButtonProps) => {
       {href ? (
         <Link {...other} to={href} className={buttonClassName} target={target}>
           {title}
-          <IconComponent icon={icon || IconDefault} size="12px" />
+          {icon ? <IconComponent icon={icon || IconDefault} size="12px" /> : ""}
         </Link>
       ) : (
         <button {...other} type={type} className={buttonClassName}>
