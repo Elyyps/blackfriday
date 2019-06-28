@@ -15,13 +15,14 @@ describe("[Button]", () => {
     );
     expect(renderedComponent).toMatchSnapshot();
   });
-  it("Should render button with icon left without crashing", () => {
+  it("Should render button with icon left and full width without crashing", () => {
     const renderedComponent = shallow(
       <Button
         icon={IconDefault}
         iconPosition="left"
         title="Primary"
         variant="primary-default"
+        fullWidth
       />
     );
     expect(renderedComponent).toMatchSnapshot();

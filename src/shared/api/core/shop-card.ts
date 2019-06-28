@@ -5,7 +5,7 @@ export class ShopCard {
   public button: Link;
   public content: string;
   public picture?: string;
-  public seeMore?: Link;
+  public seeMore: Link;
   public timeLeftBar: TimeLeftBar;
   public title?: string;
 }

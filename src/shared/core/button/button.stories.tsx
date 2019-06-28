@@ -1,12 +1,12 @@
 import * as React from "react";
 
 import IconDefault from "@assets/icons/link.svg";
-import { Button } from "@app/core/button/";
+import { Button, ButtonType } from "@app/core/button/";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 // import { withProvider } from "@app/core/storybook-provider";
 
-const buttonVariants: string[] = [
+const buttonVariants: ButtonType[] = [
   "primary-default",
   "primary-brand",
   "primary-inverted",

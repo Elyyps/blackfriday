@@ -11,13 +11,28 @@ import { FeaturedShopsComponent } from "./modules/featured-shops";
 
 const Routes: React.FunctionComponent = props => (
   <React.Fragment>
-    <Route exact path='/' component={HomepageComponent} />
-    <Route exact path='/winkleoverview' component={WinkleoverviewComponent} />
-    <Route exact path='/aaa' component={FeaturedShopComponent} />
-    <Route exact path='/playground-ahmed' component={PlaygroundAhmedComponent} />
-    <Route exact path='/playground-pedro' component={PlaygroundPedroComponent} />
-    <Route exact path='/playground-daniele' component={PlaygroundDanieleComponent} />
-    <Route exact path='/playground-martijn' component={PlaygroundMartijnComponent} />
+    <Route exact path="/" component={HomepageComponent} />
+    <Route exact path="/winkleoverview" component={WinkleoverviewComponent} />
+    <Route
+      exact
+      path="/playground-ahmed"
+      component={PlaygroundAhmedComponent}
+    />
+    <Route
+      exact
+      path="/playground-pedro"
+      component={PlaygroundPedroComponent}
+    />
+    <Route
+      exact
+      path="/playground-daniele"
+      component={PlaygroundDanieleComponent}
+    />
+    <Route
+      exact
+      path="/playground-martijn"
+      component={PlaygroundMartijnComponent}
+    />
   </React.Fragment>
 );
 

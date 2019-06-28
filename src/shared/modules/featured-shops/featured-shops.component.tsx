@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styles from './featured-shops-component.module.scss';
+
+// import './featured-shops.scss';
 import { ShopCard } from '@app/api/core/shop-card';
 import { SeeMoreCard } from '@app/api/core/see-more-card';
 import { ShopCardComponent } from '@app/core/shop-card';
@@ -13,28 +15,54 @@ export interface IFeaturedShopsComponentProps {
 
 const FeaturedShopsComponent = (props: IFeaturedShopsComponentProps) => {
   const { shops, title, seeMoreCard } = props;
+  const [viewPortWidth, setViewPortWidth] = React.useState(0);
+  const [finalShopsArray, setFinalShopsArray] = React.useState(null);
+  const updateWindowDimensions = () => {
+    // if (typeof window !== 'undefined') {
+    //   setViewPortWidth(window.innerWidth);
+    //   if (window.innerWidth <= 1135) {
+    //     alert("gone")
+
+    //   }
+    // }
+  };
+  React.useState(() => {
+  // setFinalShopsArray(props.shops)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateWindowDimensions);
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateWindowDimensions);
+      }
+    };
+  });
 
   return (
-    <div className={styles['featured-shops']}> 
-        <h2 className='featured-shop__title'>{title}</h2>
-        {/* <div className='uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m'> */}
-         <div className={styles['featured-shops__list']}>
-          {shops.map((shop, key) => (
-            <div key={key}>
-              <ShopCardComponent
-                key={key}
-                url={shop.button.url}
-                title={shop.title}
-                range={shop.timeLeftBar.value}
-                image={shop.picture}
-              />
-            </div>
-          ))}
-          <div>
-          <SeeMoreCardComponent title={seeMoreCard.title} link={seeMoreCard.link} icon={seeMoreCard.icon} />
-
+    <div className={styles['featured-shops']}>
+      <h2 className={styles['featured-shop__title']}>{title}</h2>
+      {/* <div className='uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m'> */}
+      <div className={styles['featured-shops__list']}>
+        {shops.map((shop, key) => (
+          <div className={styles[`featured-shop__item-${key}`]} key={key}>
+            <ShopCardComponent
+              key={key}
+              buttonLink={shop.button.url}
+              title={shop.title}
+              range={shop.timeLeftBar.value}
+              image={shop.picture}
+              buttonText={shop.button.title}
+              content={shop.content}
+              seeMoreLink={shop.seeMore.url}
+              seeMoreText={shop.seeMore.title}
+            />
           </div>
+        ))}
+        <div>
+          <SeeMoreCardComponent title={seeMoreCard.title} link={seeMoreCard.link} icon={seeMoreCard.icon} />
         </div>
+      </div>
     </div>
   );
 };
