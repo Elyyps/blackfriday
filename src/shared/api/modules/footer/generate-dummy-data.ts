@@ -103,6 +103,14 @@ export const middleFooter = (): MiddleFooter => ({
     bottonIcon:
       "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
   },
+  googleReviews: {
+    link: {
+      url:
+        "https://www.google.com/search?output=search&q=Black+Friday+Nederland&ludocid=1020966209707573937&kgs=5565f77d0465e24f&shndl=-1&source=sh/x/kp/local&entrypoint=sh/x/kp/local#lrd=0x47c6eebed8f7cb0f:0xe2b335bc14c02b1,1",
+      title: "8 Google Reviews"
+    },
+    rating: 4.5
+  },
   socialMedia: {
     title: "Eenvoudig met ons in contact",
     socialItem: [

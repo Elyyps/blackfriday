@@ -106,7 +106,11 @@ const FooterComponent = (props: IFooterComponentProps) => {
                       </span>
                     ))}
                   </div>
-                  143 Google Reviews
+                  <LinkComponent
+                    to={props.footerModule.middleFooter.googleReviews.link.url}
+                  >
+                    {props.footerModule.middleFooter.googleReviews.link.title}
+                  </LinkComponent>
                 </div>
               </div>
             </div>
