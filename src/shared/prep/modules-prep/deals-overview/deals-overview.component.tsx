@@ -47,9 +47,13 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   const [textLabel, setTextLabel] = useState("");
   const [prevIcon, setPrevIcon] = useState(false);
   const [filterContent, setFilterContent] = useState(false);
+  const [filterSort, setfilterSort] = useState(false);
 
   const handleClickClear = (e: any) => {
     e.preventDefault();
+  };
+  const filterSortChange = (e: any) => {
+    setfilterSort(!filterSort);
   };
   const handleClick = (e: any) => {
     {
@@ -226,7 +230,13 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                 </div>
                 <div className="filter__sort-item">
                   Sorteer op:
-                  <span className="filter__sort-change">
+                  <span
+                    role={"button"}
+                    className={classNames("filter__sort-change", {
+                      ["isActive"]: filterSort
+                    })}
+                    onClick={filterSortChange}
+                  >
                     Relevantie
                     <IconComponent icon={ArrowLongDown} size={"6px"} />
                   </span>

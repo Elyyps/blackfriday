@@ -1,6 +1,13 @@
 import CoolBlue from "@assets/cool-blue.svg";
 import Store from "@assets/icons/store.svg";
 import Oasis from "@assets/oasis.jpg";
+import Sign from "@assets/icons/sign.svg";
+
+const HeaderSmall = {
+  sub_title: "Coolblue",
+  title: "Apple AirPods 2 met draadloze oplaadcase",
+  image: Oasis
+};
 
 const CardsDeals = [
   {
@@ -11,7 +18,8 @@ const CardsDeals = [
     price: "€2.429",
     old_price: "€3.429",
     button_text: "Naar deals",
-    button_link: "#"
+    button_link: "#",
+    label: "hot"
   },
   {
     image: Oasis,
@@ -41,7 +49,8 @@ const CardsDeals = [
     price: "€2.429",
     old_price: "€3.429",
     button_text: "Naar deals",
-    button_link: "#"
+    button_link: "#",
+    label: "hot"
   },
   {
     image: Oasis,
@@ -237,6 +246,16 @@ const Banner = {
   text: "Een selectie van bizarre aanbiedingen. Meer info",
   logo: CoolBlue,
   classModify: "uk-width-1-1"
+};
+const CTASimple = {
+  bgcolor: "#f7f7f7",
+  paddingTop: "70px",
+  paddingBottom: "70px",
+  title:
+    "Wow je hebt alle deals gezien! Niet getreurd heb je onze deelnemende winkels al gezien?",
+  buttonTitle: "Meer deals",
+  buttonLink: "#",
+  icon: Sign
 };
 
 const CardMore = [
@@ -532,5 +551,7 @@ export {
   Banner,
   CardMore,
   CardsDeals,
-  dealsOverviewDropdownDummy
+  dealsOverviewDropdownDummy,
+  CTASimple,
+  HeaderSmall
 };

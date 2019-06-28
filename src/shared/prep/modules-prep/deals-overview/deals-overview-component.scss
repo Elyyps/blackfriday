@@ -182,15 +182,30 @@
         }
 
       }
+      &__sort{
+        &-change{
+          .icon-svg{
+            transition: transform .3s;
+          }
+          &:hover{
+            cursor: pointer;
+          }
+          &.isActive{
+            .icon-svg{
+              transform: rotate(-180deg);
+            }
+          }
+        }
+      }
     }
   }
   &__sort {
     display: none;
-
     @media(min-width: $breakpoint-medium) {
       display: flex;
       align-items: center;
     }
+
   }
   .filter__sort {
     display: flex;
@@ -249,6 +264,7 @@
         display: flex;
         justify-content: space-between;
       }
+
     }
     .button--dropdown {
       background-color: $tint-gray-light;
