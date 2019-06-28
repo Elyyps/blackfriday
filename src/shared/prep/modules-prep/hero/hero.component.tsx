@@ -1,10 +1,11 @@
 import * as React from "react";
 import styles from "./hero-component.module.scss";
 import { CardSimple, IconComponent } from "@app/prep/modules-prep/core";
+import { BasicArrow } from "./basic-arrow.component";
 import Slider, { Settings } from "react-slick";
 import CardIcon from "@assets/icons/store.svg";
 import Oasis from "@assets/oasis.jpg";
-import { CHEVRON_RIGHT, getArrow } from "@app/constants/icons";
+import { CHEVRON_RIGHT } from "@app/constants/icons";
 import { Link } from "react-router-dom";
 
 export interface IHeroComponentProps {
@@ -13,44 +14,6 @@ export interface IHeroComponentProps {
   customNextArrow?: JSX.Element | undefined;
   customPrevArrow?: JSX.Element | undefined;
 }
-interface IBasicArrowProps {
-  className?: string;
-  customArrow?: JSX.Element;
-  onClick?: () => void;
-  prev?: boolean;
-}
-
-const BasicArrow = (props: IBasicArrowProps) => {
-  const { className, onClick } = props;
-  let result;
-  const customStyle = "hero__slick-arrow-" + `${props.prev ? "prev" : "next"}`;
-  if (props.customArrow === undefined) {
-    result = (
-      <button
-        className={`${className} ${styles["hero__slick-arrow"]} ${
-          styles[customStyle]
-        }`}
-        style={{ display: "block" }}
-        onClick={onClick}
-      >
-        <IconComponent icon={getArrow(props.prev)} size={"12px"} />
-      </button>
-    );
-  } else {
-    result = (
-      <div
-        className={className}
-        onClick={onClick}
-        role="button"
-        aria-label="nextButton"
-      >
-        {props.customArrow}
-      </div>
-    );
-  }
-
-  return result;
-};
 
 const HeroComponent = (props: IHeroComponentProps) => {
   const style = {

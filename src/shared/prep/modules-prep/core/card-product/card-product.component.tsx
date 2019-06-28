@@ -1,14 +1,20 @@
 import * as React from "react";
 import "./card-product.scss";
-import { ImageComponent, Button } from "@app/prep/modules-prep/core";
+import {
+  ImageComponent,
+  Button,
+  IconComponent
+} from "@app/prep/modules-prep/core";
 import classNames from "classnames";
 import IconDefault from "@assets/icons/link.svg";
+import IconHot from "@assets/icons/hot.svg";
 
 interface ICardProductProps {
-  button_link?: any;
-  button_text?: string;
+  button_link?: string;
+  button_text: string;
   content?: any;
   image?: any;
+  label?: string;
   old_price?: string;
   price?: string;
   sale?: string;
@@ -27,7 +33,8 @@ const CardProduct = (props: ICardProductProps) => {
     old_price,
     button_text,
     button_link,
-    variant
+    variant,
+    label
   } = props;
 
   return (
@@ -37,6 +44,14 @@ const CardProduct = (props: ICardProductProps) => {
         `card-product--${variant || "default"}`
       )}
     >
+      {label ? (
+        <div className="card-product__label">
+          <IconComponent icon={IconHot} size={"10px"} />
+          {label}
+        </div>
+      ) : (
+        ""
+      )}
       <div className="card-product__body">
         <div className="card-product__image">
           <ImageComponent src={image} />
