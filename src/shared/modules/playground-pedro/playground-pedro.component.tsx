@@ -3,6 +3,7 @@ import { LinkComponent } from "@app/core/link";
 import { getArrow } from "@app/constants/icons";
 
 import styles from "./playground-pedro-component.module.scss";
+import { SeeMoreCardComponent } from "@app/core/see-more-card";
 
 export interface IPlaygroundPedroComponentProps {}
 
@@ -21,6 +22,10 @@ const PlaygroundPedroComponent = (props: IPlaygroundPedroComponentProps) => (
     <LinkComponent animated variant="tertiary" icon={getArrow(false)} to="/">
       Tertiary w Icon animated
     </LinkComponent>
+    <SeeMoreCardComponent
+      title="Wij hebben meer winkels in ons overzicht"
+      link={{ title: "Alle winkels", url: "/" }}
+    />
   </div>
 );
 
