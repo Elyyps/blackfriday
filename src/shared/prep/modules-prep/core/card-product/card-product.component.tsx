@@ -5,8 +5,8 @@ import classNames from "classnames";
 import IconDefault from "@assets/icons/link.svg";
 
 interface ICardProductProps {
-  button_link?: any;
-  button_text?: string;
+  button_link?: string;
+  button_text: string;
   content?: any;
   image?: any;
   old_price?: string;
