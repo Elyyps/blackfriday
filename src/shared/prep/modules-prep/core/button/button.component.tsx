@@ -7,19 +7,21 @@ import ArrowDown from "@assets/icons/chevron-down.svg";
 import classNames from "classnames";
 
 interface IButtonProps {
-  classNames?: void;
+  children?: any;
+  classNames?: string;
   href?: string;
   icon?: any;
   onClick?: any;
   position?: string;
   target?: string;
-  title: any;
+  title: string;
   type?: string;
   variant?: string;
 }
 
 const Button = (props: IButtonProps) => {
   const {
+    onClick,
     href,
     variant,
     target,
@@ -27,8 +29,7 @@ const Button = (props: IButtonProps) => {
     type,
     icon,
     position,
-    ...other
-  } = props;
+    ...other }= props;
   const classModify = variant || "default";
   const buttonClassName = classNames("button", {
     [`button--${classModify}`]: classModify,
@@ -36,6 +37,7 @@ const Button = (props: IButtonProps) => {
   });
 
   return (
+
     <React.Fragment>
       {href ? (
         <Link {...other} to={href} className={buttonClassName} target={target}>
@@ -43,7 +45,7 @@ const Button = (props: IButtonProps) => {
           {icon ? <IconComponent icon={icon || IconDefault} size="12px" /> : ""}
         </Link>
       ) : (
-        <button {...other} type={type} className={buttonClassName}>
+        <button onClick={onClick} {...other} type={type} className={buttonClassName}>
           <span>{title}</span>
           <IconComponent icon={icon || IconDefault} size="12px" />
           {variant === "dropdown" && (
