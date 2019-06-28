@@ -12,7 +12,7 @@ import Oasis from "@assets/oasis.jpg";
 import ChevronDown from "@assets/icons/chevron-down.svg";
 import Search from "@assets/icons/search.svg";
 import { Link } from "react-router-dom";
-
+import { dealsOverviewDropdownDummy } from "../../pages-prep/winkleoverview/dummy-data";
 // tslint:disable-next-line
 if (typeof window !== "undefined") {
   require("uikit");
@@ -83,53 +83,61 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
             <div className="deals-overview__filters">
               <div className="deals-overview__filter-list">
                 <div className="filter-label">Filters</div>
-                <div className="filter-status">
-                  <Button
-                    title={"Status"}
-                    type={"button"}
-                    variant={"dropdown"}
-                    icon={ChevronDown}
-                  />
-                  <div data-uk-dropdown="mode: click">
-                    <div className="dropdown-head">
-                      <Input
-                        placeholder={"Merk zoeken"}
-                        classModify={"large"}
-                        icon={Search}
-                      />
-                    </div>
-                    <div className="dropdown-body">
-                      <div className="uk-grid uk-child-width-1-2">
-                        <div>
-                          <ul className="dropdown-list">
-                            <li>
-                              <Checkbox key={"1"} label={"Apple"} />
-                              <span className="count-item">(2)</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div>
-                          <ul className="dropdown-list">
-                            <li>
-                              <Checkbox key={"1"} label={"Apple"} />
-                            </li>
-                          </ul>
+                {dealsOverviewDropdownDummy
+                  ? dealsOverviewDropdownDummy.map((item, index) => (
+                      <div key={index} className="filter-item">
+                        <Button
+                          title={item.button_text}
+                          type={"button"}
+                          variant={"dropdown"}
+                          icon={ChevronDown}
+                        />
+                        <div data-uk-dropdown="mode: click">
+                          <div className="dropdown-head">
+                            <Input
+                              placeholder={item.dropdwon.placehoder}
+                              classModify={"large"}
+                              icon={Search}
+                            />
+                          </div>
+                          <div className="dropdown-body">
+                            <div className="uk-grid uk-child-width-1-2">
+                              {item.dropdwon.checkbox_list
+                                ? item.dropdwon.checkbox_list.map(
+                                    (itemCheckbox, key) => (
+                                      <div
+                                        key={key}
+                                        className={"dropdown-item"}
+                                      >
+                                        <Checkbox
+                                          key={key}
+                                          label={itemCheckbox.label}
+                                        />
+                                        <span className="count-item">
+                                          ({itemCheckbox.count})
+                                        </span>
+                                      </div>
+                                    )
+                                  )
+                                : ""}
+                            </div>
+                          </div>
+                          <div className="dropdown-bottom">
+                            <ul className="dropdown-bottom__action">
+                              <li>
+                                <Link to="#">Verwijder merk filters (2)</Link>
+                              </li>
+                              <li>
+                                <Button title={"Toon 123 Winkels"} href={"#"} />
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="dropdown-bottom">
-                      <ul className="dropdown-bottom__action">
-                        <li>
-                          <Link to="#">Verwijder merk filters (2)</Link>
-                        </li>
-                        <li>
-                          <Button title={"Toon 123 Winkels"} href={"#"} />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div className="filter-category">
+                    ))
+                  : ""}
+
+                <div className="filter-item">
                   <Button
                     title={"Categorie"}
                     type={"button"}
@@ -138,7 +146,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   />
                   <div data-uk-dropdown="mode: click">Lorem</div>
                 </div>
-                <div className="filter-brand">
+                <div className="filter-item">
                   <Button
                     title={"Merk"}
                     type={"button"}
