@@ -3,6 +3,7 @@ import "./button.component.scss";
 import { Link } from "react-router-dom";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
+import ArrowDown from "@assets/icons/chevron-down.svg";
 import classNames from "classnames";
 
 interface IButtonProps {
@@ -10,6 +11,7 @@ interface IButtonProps {
   href?: string;
   icon?: any;
   onClick?: any;
+  position?: string;
   target?: string;
   title: any;
   type?: string;
@@ -17,23 +19,38 @@ interface IButtonProps {
 }
 
 const Button = (props: IButtonProps) => {
-  const { href, variant, target, title, type, icon, ...other } = props;
+  const {
+    href,
+    variant,
+    target,
+    title,
+    type,
+    icon,
+    position,
+    ...other
+  } = props;
   const classModify = variant || "default";
   const buttonClassName = classNames("button", {
-    [`button--${classModify}`]: classModify
+    [`button--${classModify}`]: classModify,
+    [`button--icon-${position}`]: position
   });
 
   return (
     <React.Fragment>
       {href ? (
         <Link {...other} to={href} className={buttonClassName} target={target}>
-          {title}
+          <span>{title}</span>
           {icon ? <IconComponent icon={icon || IconDefault} size="12px" /> : ""}
         </Link>
       ) : (
         <button {...other} type={type} className={buttonClassName}>
-          {title}
+          <span>{title}</span>
           <IconComponent icon={icon || IconDefault} size="12px" />
+          {variant === "dropdown" && (
+            <div className="button__arrow">
+              <IconComponent icon={ArrowDown} size={"10px"} />
+            </div>
+          )}
         </button>
       )}
     </React.Fragment>
