@@ -4,6 +4,7 @@ export * from "./card-simple";
 export * from "./card-button";
 export * from "./card-shop";
 export * from "./card-product";
+export * from "./card-post";
 export * from "./image";
 export * from "./tab";
 export * from "./form";
