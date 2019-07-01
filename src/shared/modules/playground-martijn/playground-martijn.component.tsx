@@ -9,8 +9,9 @@ const buttonSize = 35;
 
 export interface IPlaygroundMartijnComponentProps {}
 
-const topNumber = 24;
-const sideNumber = 16;
+const topCssPixelString = "24px";
+const sideCssPixelString = "16px";
+
 const renderButtonVariations = (
   buttonVariant: ButtonType = "primary-default",
   bgColor = "#fff",
@@ -112,16 +113,33 @@ const PlaygroundMartijnComponent = (
           fdsfd
           <div>
             f sdf ds
-            <div>Voeg hier je code toe Martijn!</div>
+            <div>No padding and no border radius defined</div>
           </div>
         </div>
       </ShadowCardComponent>
       <ShadowCardComponent
         shadowSize="medium"
-        borderRadius={[topNumber, sideNumber, topNumber, sideNumber]}
-        padding={[topNumber, sideNumber, topNumber, sideNumber]}
+        borderRadius={[
+          topCssPixelString,
+          sideCssPixelString,
+          topCssPixelString,
+          sideCssPixelString
+        ]}
+        padding={[
+          topCssPixelString,
+          sideCssPixelString,
+          topCssPixelString,
+          sideCssPixelString
+        ]}
       >
-        <div>Content</div>
+        <div>4 padding and 4 border radius parameters defined</div>
+      </ShadowCardComponent>
+      <ShadowCardComponent
+        shadowSize="medium"
+        borderRadius={[topCssPixelString]}
+        padding={[topCssPixelString]}
+      >
+        <div>One padding and one border radius parameter defined</div>
       </ShadowCardComponent>
     </div>
     <h1>Button Component</h1>

@@ -1,25 +1,27 @@
 import * as React from "react";
 import styles from "./shadow-card-component.module.scss";
 
-type CssFourProperties = [number, number] | [number, number, number, number];
+type CssCornerProperties =
+  | [string]
+  | [string, string]
+  | [string, string, string, string];
 
 export interface IShadowCardComponentProps {
   backgroundColor?: string;
-  borderRadius?: CssFourProperties | undefined;
+  borderRadius?: CssCornerProperties | undefined;
   children?: any;
-  padding?: CssFourProperties | undefined;
+  padding?: CssCornerProperties | undefined;
   shadowSize: "small" | "medium";
 }
 
 const ShadowCardComponent = (props: IShadowCardComponentProps) => {
   const renderFourCssProperties = (
-    borderRadiusArray: CssFourProperties | undefined
+    borderRadiusArray: CssCornerProperties | undefined
   ) => {
     if (typeof borderRadiusArray !== "undefined") {
-      let result = "";
-      borderRadiusArray.forEach(element => {
-        result += ` ${element}px`;
-      });
+      const result: string = borderRadiusArray
+        .map(element => element)
+        .join(" ");
 
       return result;
     }

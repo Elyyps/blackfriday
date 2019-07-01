@@ -5,8 +5,8 @@ import { withA11y } from "@storybook/addon-a11y";
 // import { withProvider } from "@app/modules/core/storybook-provider";
 import { ShadowCardComponent } from "./shadow-card.component";
 
-const topNumber = 24;
-const sideNumber = 16;
+const topCssPixelString = "24px";
+const sideCssPixelString = "16px";
 
 storiesOf("ShadowCard", module)
   .addDecorator(withA11y)
@@ -34,8 +34,13 @@ storiesOf("ShadowCard", module)
     () => (
       <ShadowCardComponent
         shadowSize="medium"
-        borderRadius={[topNumber, sideNumber, topNumber, sideNumber]}
-        padding={[topNumber, sideNumber]}
+        borderRadius={[
+          topCssPixelString,
+          sideCssPixelString,
+          topCssPixelString,
+          sideCssPixelString
+        ]}
+        padding={[topCssPixelString, sideCssPixelString]}
       >
         <div>Content</div>
       </ShadowCardComponent>

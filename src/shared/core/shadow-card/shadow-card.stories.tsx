@@ -2,8 +2,8 @@ import React from "react";
 import { shallow } from "enzyme";
 import { ShadowCardComponent } from "./shadow-card.component";
 
-const topNumber = 24;
-const sideNumber = 16;
+const topCssPixelString = "24px";
+const sideCssPixelString = "16px";
 
 describe("[ShadowCard]", () => {
   it("Should render component without crashing (only shadow defined)", () => {
@@ -34,8 +34,25 @@ describe("[ShadowCard]", () => {
     const renderedComponent = shallow(
       <ShadowCardComponent
         shadowSize="medium"
-        borderRadius={[topNumber, sideNumber, topNumber, sideNumber]}
-        padding={[topNumber, sideNumber]}
+        borderRadius={[
+          topCssPixelString,
+          sideCssPixelString,
+          topCssPixelString,
+          sideCssPixelString
+        ]}
+        padding={[topCssPixelString, sideCssPixelString]}
+      >
+        <div>Content</div>
+      </ShadowCardComponent>
+    );
+    expect(renderedComponent).toMatchSnapshot();
+  });
+  it("Should render component without crashing (with only 1 padding and 1 radius)", () => {
+    const renderedComponent = shallow(
+      <ShadowCardComponent
+        shadowSize="medium"
+        borderRadius={[topCssPixelString]}
+        padding={[topCssPixelString]}
       >
         <div>Content</div>
       </ShadowCardComponent>
