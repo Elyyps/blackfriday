@@ -75,7 +75,8 @@
     position: relative;
   }
 
-  &--responsive {
+  &--responsive,
+  .sidebar & {
     .banner {
       &__holder {
         display: block;
@@ -89,12 +90,22 @@
         padding: 16px;
       }
 
+      &__title {
+        font-size: 20px;
+      }
+
       &__label {
         font-size: 11px;
       }
 
       &__logo {
         display: none;
+      }
+
+      &__footer {
+        .button {
+          width: 100%;
+        }
       }
     }
   }

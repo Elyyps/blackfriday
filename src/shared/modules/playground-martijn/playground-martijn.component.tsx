@@ -1,13 +1,15 @@
 import * as React from "react";
-import { Button } from "@app/core/button/button.component";
+import { Button, ButtonType } from "@app/core/button/button.component";
 import IconDefault from "@assets/icons/link.svg";
 
 // import styles from "./playground-martijn-component.module.scss";
 
+const buttonSize = 35;
+
 export interface IPlaygroundMartijnComponentProps {}
 
 const renderButtonVariations = (
-  buttonVariant = "primary-default",
+  buttonVariant: ButtonType = "primary-default",
   bgColor = "#fff",
   textColor = "#1c1c1c"
 ) => (
@@ -29,6 +31,7 @@ const renderButtonVariations = (
       icon={IconDefault}
       variant={buttonVariant}
       onClick={() => alert(`clicked button 2: ${buttonVariant}`)}
+      fullWidth
     />
     <br />
     <Button
@@ -44,6 +47,7 @@ const renderButtonVariations = (
       icon={IconDefault}
       variant={buttonVariant}
       onClick={() => alert(`clicked button 4: ${buttonVariant}`)}
+      size={buttonSize}
     />
     <br />
     <Button
