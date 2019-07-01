@@ -121,6 +121,76 @@ const CardsDeals = [
     old_price: "€3.429",
     button_text: "Naar deals",
     button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
+  },
+  {
+    image: Oasis,
+    sub_title: "Coolblue",
+    title: "Apple AirPods 2 met draadloze oplaadcase",
+    sale: "Bespaar 40% ",
+    price: "€2.429",
+    old_price: "€3.429",
+    button_text: "Naar deals",
+    button_link: "#"
   }
 ];
 

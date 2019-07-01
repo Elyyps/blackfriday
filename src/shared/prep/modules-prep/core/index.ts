@@ -7,3 +7,6 @@ export * from "./card-product";
 export * from "./image";
 export * from "./tab";
 export * from "./form";
+export * from "./shared-box";
+export * from "./sidebar";
+export * from "./sidebar-box";
