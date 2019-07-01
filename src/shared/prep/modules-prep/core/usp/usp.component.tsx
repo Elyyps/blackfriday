@@ -16,13 +16,13 @@ const USP = (props: IUSPProps) => (
         Overzicht van álle black friday winkels
       </Link>
     </div>
-    <div className="usp__item">
+    <div className="usp__item uk-visible@s">
       <Link to="./" className="usp__link">
         <IconComponent icon={Clock} size="14px" />
         Altijd up-to-date van de laatste deals
       </Link>
     </div>
-    <div className="usp__item">
+    <div className="usp__item uk-visible@s">
       <Link to="./" className="usp__link">
         <IconComponent icon={Megaphone} size="14px" />
         Mis niets van Black Friday 2019

@@ -204,6 +204,34 @@ h6 {
   }
 }
 
+.align-left {
+  margin-bottom: 24px;
+  @media (min-width: $breakpoint-small) {
+    margin-right: 16px;
+    float: left;
+  }
+  @media (min-width: $breakpoint-medium) {
+    margin-right: 24px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+  }
+}
+
+.align-right {
+  margin-bottom: 24px;
+  @media (min-width: $breakpoint-small) {
+    margin-left: 16px;
+    float: right;
+  }
+  @media (min-width: $breakpoint-medium) {
+    margin-left: 24px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+  }
+}
+
 @mixin hook-base-blockquote() {
   @media (max-width: $breakpoint-small-max) {
     font-size: 1rem;

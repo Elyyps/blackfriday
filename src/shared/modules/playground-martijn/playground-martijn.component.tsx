@@ -1,13 +1,17 @@
 import * as React from "react";
-import { Button, ButtonType } from "@app/core/button/button.component";
-import IconDefault from "@assets/icons/chevron-right.svg";
+import { ShadowCardComponent } from "@app/core/shadow-card";
+import { Button, ButtonType } from "@app/core/button/";
+import IconDefault from "@assets/icons/party.svg";
 import { IconComponent } from "@app/core/icon";
 
-import style from "./playground-martijn-component.module.scss";
+import styles from "./playground-martijn-component.module.scss";
 
 const buttonSize = 35;
 
 export interface IPlaygroundMartijnComponentProps {}
+
+const topCssPixelString = "24px";
+const sideCssPixelString = "16px";
 
 const renderButtonVariations = (
   buttonVariant: ButtonType = "primary-default",
@@ -61,11 +65,7 @@ const renderButtonVariations = (
       onClick={() => alert(`clicked button 5: ${buttonVariant}`)}
     />
     <br />
-    <Button
-      icon={IconDefault}
-      variant={buttonVariant}
-      onClick={() => alert(`clicked button 1: ${buttonVariant}`)}
-    />
+    <Button icon={IconDefault} variant={buttonVariant} onClick={() => alert(`clicked button 1: ${buttonVariant}`)} />
     <br />
     <Button
       title="test"
@@ -81,20 +81,49 @@ const renderButtonVariations = (
       onClick={() => alert(`clicked button 7: ${buttonVariant}`)}
     />
     <br />
-    <Button
-      title="test"
-      variant={buttonVariant}
-      onClick={() => alert(`clicked button 1: ${buttonVariant}`)}
-    />
+    <Button title="test" variant={buttonVariant} onClick={() => alert(`clicked button 1: ${buttonVariant}`)} />
     <br />
   </div>
 );
 
-const PlaygroundMartijnComponent = (
-  props: IPlaygroundMartijnComponentProps
-) => (
-  <div className={style["playground-wrapper"]}>
-    <div className={style["part-section"]}>
+const PlaygroundMartijnComponent = (props: IPlaygroundMartijnComponentProps) => (
+  <div className={styles["playground-wrapper"]}>
+    <h1>ShadowCard Component</h1>
+    <div className={styles["part-section"]}>
+      <div className={styles["shadow-wrapper"]}>
+        <ShadowCardComponent shadowSize="small">
+          <div>Content</div>
+        </ShadowCardComponent>
+      </div>
+      <div className={styles["shadow-wrapper"]}>
+        <ShadowCardComponent shadowSize="small">
+          <div>
+            fdsfd
+            <div>
+              f sdf ds
+              <div>No padding and no border radius defined</div>
+            </div>
+          </div>
+        </ShadowCardComponent>
+      </div>
+      <div className={styles["shadow-wrapper"]}>
+        <ShadowCardComponent
+          shadowSize="medium"
+          borderRadius={[topCssPixelString, sideCssPixelString, topCssPixelString, sideCssPixelString]}
+          padding={[topCssPixelString, sideCssPixelString, topCssPixelString, sideCssPixelString]}
+        >
+          <div>4 padding and 4 border radius parameters defined</div>
+        </ShadowCardComponent>
+      </div>
+      <div className={styles["shadow-wrapper"]}>
+        <ShadowCardComponent shadowSize="medium" borderRadius={[topCssPixelString]} padding={[topCssPixelString]}>
+          <div>One padding and one border radius parameter defined</div>
+        </ShadowCardComponent>
+      </div>
+    </div>
+
+    <h1>Button Component</h1>
+    <div className={styles["part-section"]}>
       {/* Primary */}
       {renderButtonVariations("primary-default")}
       {/* Primary Brand */}
@@ -110,44 +139,28 @@ const PlaygroundMartijnComponent = (
       {/* Tertiary Inverted*/}
       {renderButtonVariations("tertiary-inverted", "#1c1c1c", "#fff")}
     </div>
-    <div className={style["part-section"]}>
-      <div className={style["icon-wrapper"]}>
+    <div className={styles["part-section"]}>
+      <div className={styles["icon-wrapper"]}>
         <h3>Outline</h3>
-        <IconComponent
-          icon={IconDefault}
-          strokeColor="red"
-          strokeWidth="4px"
-          size="24px"
-        />
+        <IconComponent icon={IconDefault} strokeColor="red" strokeWidth="2px" size="24px" />
       </div>
 
-      <div className={style["icon-wrapper"]}>
+      <div className={styles["icon-wrapper"]}>
         <h3>Filled</h3>
         <IconComponent icon={IconDefault} fillColor="red" size="24px" />
       </div>
 
-      <div className={style["icon-wrapper"]}>
+      <div className={styles["icon-wrapper"]}>
         <h3>Outline Filled</h3>
-        <IconComponent
-          icon={IconDefault}
-          strokeColor="red"
-          fillColor="red"
-          size="24px"
-        />
+        <IconComponent icon={IconDefault} strokeColor="red" fillColor="red" size="24px" />
       </div>
 
-      <div className={style["icon-wrapper"]}>
+      <div className={styles["icon-wrapper"]}>
         <h3>Colored (original)</h3>
         <IconComponent icon={IconDefault} size="24px" />
       </div>
     </div>
   </div>
 );
-
-// fill: props.fillColor,
-//   height: props.size,
-//     stroke: props.strokeColor,
-//       strokeWidth: props.strokeWidth,
-//         width: props.size
 
 export { PlaygroundMartijnComponent };

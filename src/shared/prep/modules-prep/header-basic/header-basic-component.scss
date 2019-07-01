@@ -1,0 +1,87 @@
+.header-basic {
+  color: $global-inverse-color;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  padding: 72px 0;
+  @media (max-width: $breakpoint-small-max) {
+    margin-bottom: 24px;
+    padding: 40px 0;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    text-align: left;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: $gray-dark;
+    z-index: -1;
+  }
+  &::after {
+    background: url("../../../../assets/pattern.svg");
+    background-position: 50% 0;
+    background-size: 2000px auto;
+    opacity: .5;
+  }
+  
+  &__breadcrumbs {
+    font-size: 12px;
+    font-weight: 600;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    li {
+      margin: 0 5px;
+      display: inline-flex;
+      align-items: center;
+      &:not(:last-child) {
+        &::after {
+          margin-left: 8px;
+          display: block;
+          content: '\2014';
+        }
+      }
+    }
+    a {
+      color: #999;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+        color: $global-inverse-color;
+      }
+    }
+  }
+  
+  &__back {
+    color: #999;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &:hover {
+      text-decoration: none;
+      color: $global-inverse-color;
+    }
+    .icon-svg {
+      margin-right: 10px;
+      path {
+        stroke: currentColor;
+      }
+    }
+  }
+  
+  h1 {
+    font-weight: bold;
+    margin: 0;
+    color: currentColor;
+  }
+}
