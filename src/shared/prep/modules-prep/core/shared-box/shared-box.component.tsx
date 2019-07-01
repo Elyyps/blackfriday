@@ -11,13 +11,7 @@ const SharedBox = (props: ISharedBoxProps) => (
   <div className="shared-box">
     {props.title && (
       <div>
-        <Button
-          title={props.title}
-          type={"button"}
-          variant={"dropdown"}
-          icon={Share}
-          position={"left"}
-        />
+        <Button title={props.title} type={"button"} variant={"dropdown"} icon={Share} position={"left"} />
         <div data-uk-dropdown="mode: click">Social Shared</div>
       </div>
     )}

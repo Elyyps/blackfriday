@@ -1,4 +1,30 @@
-.playground-martijn {
-  width: 100vw;
-  height: 100vh;
+.playground-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.part-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.icon-wrapper {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.shadow-wrapper {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

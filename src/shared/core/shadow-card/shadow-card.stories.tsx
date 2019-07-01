@@ -34,12 +34,7 @@ describe("[ShadowCard]", () => {
     const renderedComponent = shallow(
       <ShadowCardComponent
         shadowSize="medium"
-        borderRadius={[
-          topCssPixelString,
-          sideCssPixelString,
-          topCssPixelString,
-          sideCssPixelString
-        ]}
+        borderRadius={[topCssPixelString, sideCssPixelString, topCssPixelString, sideCssPixelString]}
         padding={[topCssPixelString, sideCssPixelString]}
       >
         <div>Content</div>
@@ -49,11 +44,7 @@ describe("[ShadowCard]", () => {
   });
   it("Should render component without crashing (with only 1 padding and 1 radius)", () => {
     const renderedComponent = shallow(
-      <ShadowCardComponent
-        shadowSize="medium"
-        borderRadius={[topCssPixelString]}
-        padding={[topCssPixelString]}
-      >
+      <ShadowCardComponent shadowSize="medium" borderRadius={[topCssPixelString]} padding={[topCssPixelString]}>
         <div>Content</div>
       </ShadowCardComponent>
     );

@@ -66,9 +66,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   };
   const handleChange = (event: any) => {
     setCheckedItems(
-      checkedItems.set(event.target.getAttribute("data-category"), [
-        { [event.target.name]: event.target.checked }
-      ])
+      checkedItems.set(event.target.getAttribute("data-category"), [{ [event.target.name]: event.target.checked }])
     );
   };
 
@@ -78,10 +76,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
         <div className="deals-overview__header">
           <div className="uk-container">
             <div className="deals-overview__tab">
-              <TabContainerComponent
-                attribute={switcherAttr}
-                classTabList={"uk-tab__list"}
-              >
+              <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
                 {tabItems
                   ? tabItems.map((item, key) => (
                       <TabComponent attrAction={"link"} key={key}>
@@ -98,9 +93,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   <IconComponent icon={HandPointing} size={"20px"} />
                 </div>
                 <button
-                  className={classNames(
-                    "filter-label filter-label--mobile uk-hidden@m"
-                  )}
+                  className={classNames("filter-label filter-label--mobile uk-hidden@m")}
                   onClick={handleClickLAbel}
                 >
                   Filters
@@ -117,28 +110,12 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                     })}
                   >
                     {prevIcon ? (
-                      <span
-                        role="button"
-                        className={classNames({ ["arrow-control"]: prevIcon })}
-                        onClick={handleClick}
-                      >
-                        <IconComponent
-                          color={"#fff"}
-                          icon={ChevronLeft}
-                          size={"7px"}
-                        />
+                      <span role="button" className={classNames({ ["arrow-control"]: prevIcon })} onClick={handleClick}>
+                        <IconComponent color={"#fff"} icon={ChevronLeft} size={"7px"} />
                       </span>
                     ) : (
-                      <span
-                        role="button"
-                        className={"button-control"}
-                        onClick={handleClickLAbel}
-                      >
-                        <IconComponent
-                          color={"#fff"}
-                          icon={Cross}
-                          size={"12px"}
-                        />
+                      <span role="button" className={"button-control"} onClick={handleClickLAbel}>
+                        <IconComponent color={"#fff"} icon={Cross} size={"12px"} />
                       </span>
                     )}
                     {textLabel ? (
@@ -149,11 +126,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                           Filters
                           <IconComponent icon={HandPointing} size={"16px"} />
                         </span>
-                        <a
-                          role="button"
-                          className={"filter-content-clear"}
-                          onClick={handleClickClear}
-                        >
+                        <a role="button" className={"filter-content-clear"} onClick={handleClickClear}>
                           Wis alle filters
                         </a>
                       </>
@@ -173,34 +146,23 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
 
                           <div data-uk-dropdown="mode: click">
                             <div className="dropdown-head">
-                              <Input
-                                placeholder={item.dropdwon.placehoder}
-                                classModify={"large"}
-                                icon={Search}
-                              />
+                              <Input placeholder={item.dropdwon.placehoder} classModify={"large"} icon={Search} />
                             </div>
                             <div className="dropdown-body">
                               <div className="uk-grid uk-child-width-1-2@s">
                                 {item.dropdwon.status
-                                  ? item.dropdwon.status.map(
-                                      (itemCheckbox, key) => (
-                                        <div
+                                  ? item.dropdwon.status.map((itemCheckbox, key) => (
+                                      <div key={key} className={"dropdown-item"}>
+                                        <Checkbox
+                                          onChange={handleChange}
                                           key={key}
-                                          className={"dropdown-item"}
-                                        >
-                                          <Checkbox
-                                            onChange={handleChange}
-                                            key={key}
-                                            name={itemCheckbox.name}
-                                            label={itemCheckbox.label}
-                                            buttonText={item.button_text}
-                                          />
-                                          <span className="count-item uk-visible@m">
-                                            ({itemCheckbox.count})
-                                          </span>
-                                        </div>
-                                      )
-                                    )
+                                          name={itemCheckbox.name}
+                                          label={itemCheckbox.label}
+                                          buttonText={item.button_text}
+                                        />
+                                        <span className="count-item uk-visible@m">({itemCheckbox.count})</span>
+                                      </div>
+                                    ))
                                   : ""}
                               </div>
                             </div>
@@ -210,10 +172,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                                   <Link to="#">Verwijder merk filters (2)</Link>
                                 </li>
                                 <li>
-                                  <Button
-                                    title={"Toon 123 Winkels"}
-                                    href={"#"}
-                                  />
+                                  <Button title={"Toon 123 Winkels"} href={"#"} />
                                 </li>
                               </ul>
                             </div>
@@ -256,22 +215,18 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                         data-uk-margin
                       >
                         {CardsDeals &&
-                          CardsDeals.slice(0, postFrom).map(
-                            (itemCard, keyCard) => (
-                              <div key={keyCard}>
-                                <CardProduct {...itemCard} />
-                              </div>
-                            )
-                          )}
+                          CardsDeals.slice(0, postFrom).map((itemCard, keyCard) => (
+                            <div key={keyCard}>
+                              <CardProduct {...itemCard} />
+                            </div>
+                          ))}
                         <BannerComponent {...Banner} />
                         {CardsDeals &&
-                          CardsDeals.slice(postFrom).map(
-                            (itemCard, keyCard) => (
-                              <div key={keyCard}>
-                                <CardProduct {...itemCard} />
-                              </div>
-                            )
-                          )}
+                          CardsDeals.slice(postFrom).map((itemCard, keyCard) => (
+                            <div key={keyCard}>
+                              <CardProduct {...itemCard} />
+                            </div>
+                          ))}
                       </div>
                     </TabComponent>
                   ))

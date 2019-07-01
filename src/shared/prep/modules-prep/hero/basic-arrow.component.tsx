@@ -17,9 +17,7 @@ const BasicArrow = (props: IBasicArrowProps) => {
   if (props.customArrow === undefined) {
     result = (
       <button
-        className={`${className} ${styles["hero__slick-arrow"]} ${
-          styles[customStyle]
-        }`}
+        className={`${className} ${styles["hero__slick-arrow"]} ${styles[customStyle]}`}
         style={{ display: "block" }}
         onClick={onClick}
       >
@@ -28,12 +26,7 @@ const BasicArrow = (props: IBasicArrowProps) => {
     );
   } else {
     result = (
-      <div
-        className={className}
-        onClick={onClick}
-        role="button"
-        aria-label="nextButton"
-      >
+      <div className={className} onClick={onClick} role="button" aria-label="nextButton">
         {props.customArrow}
       </div>
     );
