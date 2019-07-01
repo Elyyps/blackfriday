@@ -1,3 +1,40 @@
+$buttonVariants: "primary-default" $global-inverse-color $global-inverse-color,
+  "primary-brand" $global-inverse-color $global-inverse-color, "primary-inverted" $gray-dark $gray-dark,
+  "secondary" $gray-dark $gray-dark, "secondary-inverted" $gray-dark $gray-dark,
+  "tertiary" $gray-dark (darken($brand-primary, 7%) !important),
+  "tertiary-inverted" $global-inverse-color ($global-inverse-color !important);
+
+@each $name, $color, $colorHover in $buttonVariants {
+  .button--#{$name}--icon-filled {
+    .icon-svg path {
+      fill: $color;
+    }
+    &:hover .icon-svg path {
+      fill: $colorHover;
+    }
+  }
+
+  .button--#{$name}--icon-outline {
+    .icon-svg path {
+      stroke: $color;
+    }
+    &:hover .icon-svg path {
+      stroke: $colorHover;
+    }
+  }
+
+  .button--#{$name}--icon-outline-fill {
+    .icon-svg path {
+      fill: $color;
+      stroke: $color;
+    }
+    &:hover .icon-svg path {
+      fill: $colorHover;
+      stroke: $colorHover;
+    }
+  }
+}
+
 .button,
 .button--primary-default {
   margin: 0;
@@ -109,188 +146,4 @@
 
 .icon-right {
   margin-left: 8px;
-}
-
-// Instead of each loop
-
-.button--primary-default--icon-filled .icon-svg path {
-  fill: $global-inverse-color;
-}
-
-.button--primary-default--icon-filled:hover .icon-svg path {
-  fill: $global-inverse-color;
-}
-
-.button--primary-default--icon-outline .icon-svg path {
-  stroke: $global-inverse-color;
-}
-
-.button--primary-default--icon-outline:hover .icon-svg path {
-  stroke: $global-inverse-color;
-}
-
-.button--primary-default--icon-outline-fill .icon-svg path {
-  fill: $global-inverse-color;
-  stroke: $global-inverse-color;
-}
-
-.button--primary-default--icon-outline-fill:hover .icon-svg path {
-  fill: $global-inverse-color;
-  stroke: $global-inverse-color;
-}
-
-.button--primary-brand--icon-filled .icon-svg path {
-  fill: $global-inverse-color;
-}
-
-.button--primary-brand--icon-filled:hover .icon-svg path {
-  fill: $global-inverse-color;
-}
-
-.button--primary-brand--icon-outline .icon-svg path {
-  stroke: $global-inverse-color;
-}
-
-.button--primary-brand--icon-outline:hover .icon-svg path {
-  stroke: $global-inverse-color;
-}
-
-.button--primary-brand--icon-outline-fill .icon-svg path {
-  fill: $global-inverse-color;
-  stroke: $global-inverse-color;
-}
-
-.button--primary-brand--icon-outline-fill:hover .icon-svg path {
-  fill: $global-inverse-color;
-  stroke: $global-inverse-color;
-}
-
-.button--primary-inverted--icon-filled .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--primary-inverted--icon-filled:hover .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--primary-inverted--icon-outline .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--primary-inverted--icon-outline:hover .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--primary-inverted--icon-outline-fill .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--primary-inverted--icon-outline-fill:hover .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--secondary--icon-filled .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--secondary--icon-filled:hover .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--secondary--icon-outline .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--secondary--icon-outline:hover .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--secondary--icon-outline-fill .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--secondary--icon-outline-fill:hover .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--secondary-inverted--icon-filled .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--secondary-inverted--icon-filled:hover .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--secondary-inverted--icon-outline .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--secondary-inverted--icon-outline:hover .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--secondary-inverted--icon-outline-fill .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--secondary-inverted--icon-outline-fill:hover .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--tertiary--icon-filled .icon-svg path {
-  fill: $gray-dark;
-}
-
-.button--tertiary--icon-filled:hover .icon-svg path {
-  fill: darken($brand-primary, 7%) !important;
-}
-
-.button--tertiary--icon-outline .icon-svg path {
-  stroke: $gray-dark;
-}
-
-.button--tertiary--icon-outline:hover .icon-svg path {
-  stroke: darken($brand-primary, 7%) !important;
-}
-
-.button--tertiary--icon-outline-fill .icon-svg path {
-  fill: $gray-dark;
-  stroke: $gray-dark;
-}
-
-.button--tertiary--icon-outline-fill:hover .icon-svg path {
-  fill: darken($brand-primary, 7%) !important;
-  stroke: darken($brand-primary, 7%) !important;
-}
-
-.button--tertiary-inverted--icon-filled .icon-svg path {
-  fill: $global-inverse-color;
-}
-
-.button--tertiary-inverted--icon-filled:hover .icon-svg path {
-  fill: $global-inverse-color !important;
-}
-
-.button--tertiary-inverted--icon-outline .icon-svg path {
-  stroke: $global-inverse-color;
-}
-
-.button--tertiary-inverted--icon-outline:hover .icon-svg path {
-  stroke: $global-inverse-color !important;
-}
-
-.button--tertiary-inverted--icon-outline-fill .icon-svg path {
-  fill: $global-inverse-color;
-  stroke: $global-inverse-color;
-}
-
-.button--tertiary-inverted--icon-outline-fill:hover .icon-svg path {
-  fill: $global-inverse-color !important;
-  stroke: $global-inverse-color !important;
 }

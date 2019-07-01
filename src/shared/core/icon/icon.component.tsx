@@ -1,6 +1,8 @@
 import * as React from "react";
 import ReactSVG from "react-svg";
 
+import style from "./icon-component.module.scss";
+
 export interface IIconComponentProps {
   fillColor?: string;
   icon: any;
@@ -14,7 +16,8 @@ const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
     src={props.icon}
     fallback={() => <span>Error!</span>}
     loading={() => <span />}
-    renumerateIRIElements={false}
+    renumerateIRIElements={true}
+    wrapper="span"
     style={{
       fill: props.fillColor,
       height: props.size,
@@ -22,7 +25,7 @@ const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
       strokeWidth: props.strokeWidth,
       width: props.size
     }}
-    className="icon-svg"
+    className={style["icon-svg"]}
   />
 );
 
