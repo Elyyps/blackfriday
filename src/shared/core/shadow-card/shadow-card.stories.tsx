@@ -1,53 +1,38 @@
-import React from "react";
-import { shallow } from "enzyme";
+import * as React from "react";
+
+import { storiesOf } from "@storybook/react";
+import { withA11y } from "@storybook/addon-a11y";
 import { ShadowCardComponent } from "./shadow-card.component";
 
 const topCssPixelString = "24px";
 const sideCssPixelString = "16px";
 
-describe("[ShadowCard]", () => {
-  it("Should render component without crashing (only shadow defined)", () => {
-    const renderedComponent = shallow(
-      <ShadowCardComponent shadowSize="small">
-        <div>Content</div>
-      </ShadowCardComponent>
-    );
-    expect(renderedComponent).toMatchSnapshot();
-  });
-  it("Should render component without crashing (only shadow defined) with more content", () => {
-    const renderedComponent = shallow(
-      <ShadowCardComponent shadowSize="small">
+storiesOf("ShadowCard", module)
+  .addDecorator(withA11y)
+  .add("Basic implementation with only shadow defined", () => (
+    <ShadowCardComponent shadowSize="small">
+      <div>Content</div>
+    </ShadowCardComponent>
+  ))
+  .add("Basic implementation with more content", () => (
+    <ShadowCardComponent shadowSize="small">
+      <div>
+        <span>Content 1</span>
         <div>
-          <span>Content 1</span>
+          <span>Content 2</span>
           <div>
-            <span>Content 2</span>
-            <div>
-              <span>Content 3</span>
-            </div>
+            <span>Content 3</span>
           </div>
         </div>
-      </ShadowCardComponent>
-    );
-    expect(renderedComponent).toMatchSnapshot();
-  });
-  it("Should render component without crashing (with padding and radius)", () => {
-    const renderedComponent = shallow(
-      <ShadowCardComponent
-        shadowSize="medium"
-        borderRadius={[topCssPixelString, sideCssPixelString, topCssPixelString, sideCssPixelString]}
-        padding={[topCssPixelString, sideCssPixelString]}
-      >
-        <div>Content</div>
-      </ShadowCardComponent>
-    );
-    expect(renderedComponent).toMatchSnapshot();
-  });
-  it("Should render component without crashing (with only 1 padding and 1 radius)", () => {
-    const renderedComponent = shallow(
-      <ShadowCardComponent shadowSize="medium" borderRadius={[topCssPixelString]} padding={[topCssPixelString]}>
-        <div>Content</div>
-      </ShadowCardComponent>
-    );
-    expect(renderedComponent).toMatchSnapshot();
-  });
-});
+      </div>
+    </ShadowCardComponent>
+  ))
+  .add("Basic implementation with shadow, borderRadius and padding defined", () => (
+    <ShadowCardComponent
+      shadowSize="medium"
+      borderRadius={[topCssPixelString, sideCssPixelString, topCssPixelString, sideCssPixelString]}
+      padding={[topCssPixelString, sideCssPixelString]}
+    >
+      <div>Content</div>
+    </ShadowCardComponent>
+  ));

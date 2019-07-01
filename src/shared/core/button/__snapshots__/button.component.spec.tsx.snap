@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Button] Should render button with icon left and full width without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`[Button] Should render button with icon right without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`[Button] Should render button without icon without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`[Button] Should render button without text (FAB) without crashing 1`] = `ShallowWrapper {}`;

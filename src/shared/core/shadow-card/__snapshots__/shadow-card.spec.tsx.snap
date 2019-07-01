@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ShadowCard] Should render component without crashing (only shadow defined) 1`] = `ShallowWrapper {}`;
+
+exports[`[ShadowCard] Should render component without crashing (only shadow defined) with more content 1`] = `ShallowWrapper {}`;
+
+exports[`[ShadowCard] Should render component without crashing (with only 1 padding and 1 radius) 1`] = `ShallowWrapper {}`;
+
+exports[`[ShadowCard] Should render component without crashing (with padding and radius) 1`] = `ShallowWrapper {}`;

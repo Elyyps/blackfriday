@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[IconComponent] Should render icon with fill and stroke without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`[IconComponent] Should render icon with fill without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`[IconComponent] Should render icon with stroke and strokeWidth without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`[IconComponent] Should render original icon without crashing 1`] = `ShallowWrapper {}`;
