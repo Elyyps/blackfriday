@@ -15,15 +15,11 @@ export interface IShadowCardComponentProps {
 }
 
 const ShadowCardComponent = (props: IShadowCardComponentProps) => {
-  const renderFourCssProperties = (
+  const renderCssCornerProperties = (
     borderRadiusArray: CssCornerProperties | undefined
   ) => {
     if (typeof borderRadiusArray !== "undefined") {
-      const result: string = borderRadiusArray
-        .map(element => element)
-        .join(" ");
-
-      return result;
+      return borderRadiusArray.map(element => element).join(" ");
     }
 
     return undefined;
@@ -33,8 +29,8 @@ const ShadowCardComponent = (props: IShadowCardComponentProps) => {
     <div
       style={{
         backgroundColor: props.backgroundColor,
-        borderRadius: renderFourCssProperties(props.borderRadius),
-        padding: renderFourCssProperties(props.padding)
+        borderRadius: renderCssCornerProperties(props.borderRadius),
+        padding: renderCssCornerProperties(props.padding)
       }}
       className={`${styles["shadow-card"]} ${
         styles[`shadow-card--${props.shadowSize}`]
