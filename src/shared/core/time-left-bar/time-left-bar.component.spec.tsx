@@ -1,16 +1,10 @@
-
-import * as React from "react";
-
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-//import { withProvider } from "@app/modules/core/storybook-provider";
+import React from "react";
+import { shallow } from "enzyme";
 import { TimeLeftBarComponent } from "./time-left-bar.component";
 
-storiesOf("TimeLeftBar", module)
-  .addDecorator(withA11y)
-  //.addDecorator(withProvider)
-  //.add("Basic implementation", () => (
-  //  <TimeLeftBarComponent />
-  //));
-
-  
+describe("[TimeLeftBar]", () => {
+  it("should render component without crashing", () => {
+    const renderedComponent = shallow(<TimeLeftBarComponent range={0} />);
+    expect(renderedComponent).toMatchSnapshot();
+  });
+});

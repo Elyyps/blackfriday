@@ -13,7 +13,7 @@
   min-width: 215px;
   background-color: white;
   text-align: left;
-  padding: 0 32px;
+  padding: 0 16px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,8 @@
   position: relative;
   @media (max-width: 699px) {
     min-height: 168px;
+    height: 168px;
+    max-height: 168px;
   }
 
   &__body {
@@ -47,7 +49,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     min-height: 4rem;
     margin-top: 16px;
     max-height: 90px;
@@ -81,8 +83,8 @@
       flex: 1 1 60%;
       margin-top: 16px;
       margin-bottom: 0;
-          max-height: 70px;
-    min-height: 70px;
+      max-height: 70px;
+      min-height: 70px;
     }
     a {
       color: $gray;
@@ -121,7 +123,7 @@
         position: absolute;
         width: 50%;
         bottom: 28px;
-        left: 32px;
+        left: 16px;
       }
       color: #777777;
       &.green {

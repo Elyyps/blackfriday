@@ -1,30 +1,26 @@
 import * as React from "react";
 import styles from "./shop-card-component.module.scss";
-import classNames from "classnames";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { ImageComponent } from "@app/prep/modules-prep/core";
 import { LinkComponent } from "../link";
-import { getArrow } from "@app/constants/icons";
 import { Button } from "../button";
 import ShopIcon from "@assets/icons/link.svg";
 import { ShadowCardComponent } from "../shadow-card";
 
 export interface IShopCardComponentProps {
   buttonLink: string;
-  buttonText?: any;
+  buttonText?: string;
   content?: string;
-  image?: any;
-  range?: number;
+  image?: string;
+  range: number;
   seeMoreLink: string;
   seeMoreText: string;
-  subTitle?: any;
-  title?: any;
-
-  variant?: string;
+  subtitle: string;
+  title: string;
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const { title, seeMoreLink, seeMoreText, subTitle, content, image, range, buttonText, buttonLink, variant } = props;
+  const { title, seeMoreLink, subtitle, seeMoreText, content, image, range, buttonText } = props;
   const statusBarColor = () => {
     const rangeNumber = range;
     const limit = 0.5;
@@ -46,8 +42,8 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
           <div className={styles["shop-card__image"]}>
             <ImageComponent src={image} />
           </div>
-          <div className={`${styles["shop-card__status-title"]} ${styles[statusBarColor()]}`}>{title}</div>
-          <TimeLeftBarComponent range={range} title={subTitle} />
+          <div className={`${styles["shop-card__status-title"]} ${styles[statusBarColor()]}`}>{subtitle}</div>
+          <TimeLeftBarComponent range={range} />
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{title}</div>
             {content} {seeMoreText && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}

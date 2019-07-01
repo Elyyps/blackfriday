@@ -1,5 +1,5 @@
-import { TimeLeftBar } from './time-left-bar';
-import { Link } from './link';
+import { TimeLeftBar } from "./time-left-bar";
+import { Link } from "./link";
 
 export class ShopCard {
   public button: Link;
@@ -7,5 +7,5 @@ export class ShopCard {
   public picture?: string;
   public seeMore: Link;
   public timeLeftBar: TimeLeftBar;
-  public title?: string;
+  public title: string;
 }
