@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, ButtonType } from "@app/core/button/button.component";
-import IconDefault from "@assets/icons/party.svg";
+import IconDefault from "@assets/icons/chevron-right.svg";
 import { IconComponent } from "@app/core/icon";
 
 import style from "./playground-martijn-component.module.scss";
@@ -116,7 +116,7 @@ const PlaygroundMartijnComponent = (
         <IconComponent
           icon={IconDefault}
           strokeColor="red"
-          strokeWidth="2px"
+          strokeWidth="4px"
           size="24px"
         />
       </div>
@@ -131,7 +131,7 @@ const PlaygroundMartijnComponent = (
         <IconComponent
           icon={IconDefault}
           strokeColor="red"
-          fillColor="red !important"
+          fillColor="red"
           size="24px"
         />
       </div>

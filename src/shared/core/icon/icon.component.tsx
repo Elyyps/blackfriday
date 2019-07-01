@@ -2,6 +2,7 @@ import * as React from "react";
 import ReactSVG from "react-svg";
 
 import style from "./icon-component.module.scss";
+import classNames from "classnames";
 
 export interface IIconComponentProps {
   fillColor?: string;
@@ -10,6 +11,27 @@ export interface IIconComponentProps {
   strokeColor?: string;
   strokeWidth?: string;
 }
+
+const iconStyleClassName = (props: IIconComponentProps) => {
+  const { fillColor, strokeColor, strokeWidth } = props;
+
+  const defaultStyle = "icon-svg";
+  const fillClassName =
+    typeof fillColor !== "undefined" ? style[`${defaultStyle}--filled`] : "";
+  const strokeWidthClassName =
+    typeof strokeWidth !== "undefined"
+      ? style[`${defaultStyle}--stroke-width`]
+      : "";
+  const outlineClassName =
+    typeof strokeColor !== "undefined" ? style[`${defaultStyle}--outline`] : "";
+
+  return classNames(
+    style[defaultStyle],
+    fillClassName,
+    outlineClassName,
+    strokeWidthClassName
+  );
+};
 
 const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
   <ReactSVG
@@ -25,7 +47,7 @@ const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
       strokeWidth: props.strokeWidth,
       width: props.size
     }}
-    className={style["icon-svg"]}
+    className={iconStyleClassName(props)}
   />
 );
 
