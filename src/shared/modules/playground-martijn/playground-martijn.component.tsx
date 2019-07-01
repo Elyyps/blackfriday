@@ -39,6 +39,7 @@ const renderButtonVariations = (
     <Button
       title="test"
       iconPosition="left"
+      iconStyle="outline"
       icon={IconDefault}
       variant={buttonVariant}
       onClick={() => alert(`clicked button 3: ${buttonVariant}`)}
@@ -48,6 +49,7 @@ const renderButtonVariations = (
       iconPosition="right"
       icon={IconDefault}
       variant={buttonVariant}
+      iconStyle="filled"
       onClick={() => alert(`clicked button 4: ${buttonVariant}`)}
       size={buttonSize}
     />
@@ -94,28 +96,61 @@ const PlaygroundMartijnComponent = (
   <div
     style={{
       display: "flex",
-      flexDirection: "row",
+      flexDirection: "column",
       alignItems: "center",
       justifyContent: "space-around"
     }}
   >
-    {/* Primary */}
-    {renderButtonVariations("primary-default")}
-    {/* Primary Brand */}
-    {renderButtonVariations("primary-brand")}
-    {/* Primary Inverted */}
-    {renderButtonVariations("primary-inverted")}
-    {/* Secondary */}
-    {renderButtonVariations("secondary")}
-    {/* Secondary inverted */}
-    {renderButtonVariations("secondary-inverted")}
-    {/* Tertiary */}
-    {renderButtonVariations("tertiary")}
-    {/* Tertiary Inverted*/}
-    {renderButtonVariations("tertiary-inverted", "#1c1c1c", "#fff")}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around"
+      }}
+    >
+      {/* Primary */}
+      {renderButtonVariations("primary-default")}
+      {/* Primary Brand */}
+      {renderButtonVariations("primary-brand")}
+      {/* Primary Inverted */}
+      {renderButtonVariations("primary-inverted")}
+      {/* Secondary */}
+      {renderButtonVariations("secondary")}
+      {/* Secondary inverted */}
+      {renderButtonVariations("secondary-inverted")}
+      {/* Tertiary */}
+      {renderButtonVariations("tertiary")}
+      {/* Tertiary Inverted*/}
+      {renderButtonVariations("tertiary-inverted", "#1c1c1c", "#fff")}
+    </div>{" "}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-around"
+      }}
+    >
+      <h3>Outline</h3>
+      <IconComponent icon={IconDefault} size="14px" />
 
-    <IconComponent icon={IconDefault} size="14px" />
+      <h3>Filled</h3>
+      <IconComponent icon={IconDefault} size="14px" />
+
+      <h3>Outline Filled</h3>
+      <IconComponent icon={IconDefault} size="14px" />
+
+      <h3>Colored (original</h3>
+      <IconComponent icon={IconDefault} size="14px" />
+    </div>
   </div>
 );
+
+// fill: props.fillColor,
+//   height: props.size,
+//     stroke: props.strokeColor,
+//       strokeWidth: props.strokeWidth,
+//         width: props.size
 
 export { PlaygroundMartijnComponent };

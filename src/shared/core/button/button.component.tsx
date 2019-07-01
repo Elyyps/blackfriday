@@ -12,7 +12,7 @@ export type ButtonType =
   | "tertiary"
   | "tertiary-inverted";
 
-export type iconType = "outline" | "filled" | "outline-fill" | "colored";
+export type IconStyle = "outline" | "filled" | "outline-fill";
 
 interface IButtonProps {
   buttonType?: string;
@@ -21,7 +21,7 @@ interface IButtonProps {
   fullWidth?: boolean;
   icon?: string;
   iconPosition?: string;
-  iconStyle?: string;
+  iconStyle?: IconStyle;
   onClick?: () => void;
   size?: number;
   title?: string;
@@ -42,7 +42,7 @@ const Button = (props: IButtonProps) => {
   const buttonFAB = !title ? style["button--FAB"] : "";
   const iconOutline = iconStyle
     ? style[`button--${classModify}--icon-${iconStyle}`]
-    : style[`button--${classModify}--icon-filled`];
+    : "";
   const buttonClassName = classNames(
     style["button"],
     style[`button--${classModify}`],
