@@ -9,14 +9,14 @@ import { Button } from "../button";
 import ShopIcon from "@assets/icons/link.svg";
 
 export interface IShopCardComponentProps {
-  button_text?: any;
-  content?: string;
+  button_text: any;
+  content: string;
   image?: any;
   range?: any;
   seeMoreLink?: string;
-  seeMoreText?: string;
+  seeMoreText: string;
   sub_title?: any;
-  title?: any;
+  title: any;
   url: string;
 
   variant?: string;

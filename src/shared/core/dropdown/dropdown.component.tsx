@@ -14,9 +14,16 @@ export interface IDropdownComponentProps {
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
   const [isDropdownOpened, setIsDropdownOpened] = React.useState(false);
-
+  const [textLabel, setTextLabel] = React.useState("");
+  const [prevIcon, setPrevIcon] = React.useState(false);
   const toggleOpened = () => {
     setIsDropdownOpened(!isDropdownOpened);
+  };
+  const handleClick = (e: any) => {
+    {
+      e.target.innerText ? setTextLabel(e.target.innerText) : setTextLabel("");
+    }
+    setPrevIcon(!prevIcon);
   };
 
   return (
@@ -30,12 +37,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
             onClick={toggleOpened}
           />
         </div>
-        <div
-          data-uk-dropdown={props.orientation}
-          className={style["dropdown-content"]}
-        >
-          {props.children}
-        </div>
+        <div uk-dropdown=" mode:click">{props.children}</div>
       </div>
     </React.Fragment>
   );
