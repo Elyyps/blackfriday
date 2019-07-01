@@ -52,7 +52,7 @@ const Button = (props: IButtonProps) => {
           className={buttonClassName}
         >
           <span>{title}</span>
-          <IconComponent icon={icon || IconDefault} size="12px" />
+          {icon ? <IconComponent icon={icon || IconDefault} size="12px" /> : ""}
           {variant === "dropdown" && (
             <div className="button__arrow">
               <IconComponent icon={ArrowDown} size={"12px"} />
