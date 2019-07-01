@@ -176,13 +176,16 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   </div>
                   {dealsOverviewDropdownDummy
                     ? dealsOverviewDropdownDummy.map((item, index) => (
-                        <div key={index} className="filter-item">
+                        <div
+                          key={index}
+                          className={`filter-item ${isSomeCheckboxctive(
+                            item.button_text
+                          )} `}
+                        >
                           <Button
                             title={item.button_text}
                             type={"button"}
-                            variant={`dropdown-modify ${isSomeCheckboxctive(
-                              item.button_text
-                            )} `}
+                            variant={`dropdown-modify`}
                             onClick={handleClick}
                             icon={ChevronDown}
                           />
@@ -192,6 +195,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                                 placeholder={item.dropdwon.placehoder}
                                 classModify={"large"}
                                 icon={Search}
+                                name={"search"}
                               />
                             </div>
                             <div className="dropdown-body">
@@ -213,8 +217,6 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                                             key={key}
                                             name={itemCheckbox.name}
                                             label={itemCheckbox.label}
-                                            buttonText={item.button_text}
-                                            data-status={itemCheckbox.name}
                                           />
                                           <span className="count-item uk-visible@m">
                                             ({itemCheckbox.count})
