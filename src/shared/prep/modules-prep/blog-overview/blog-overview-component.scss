@@ -1,0 +1,24 @@
+.blog-overview {
+  &__holder {
+    @media (min-width: $breakpoint-small) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  &__content {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+  }
+  &__sidebar {
+    margin: 0 -16px;
+    @media (min-width: $breakpoint-small) {
+      width: 40%;
+      flex-shrink: 0;
+      margin-left: 24px;
+    }
+    @media (min-width: $breakpoint-medium) {
+      width: 31%;
+      margin: 0 0 0 40px;
+    }
+  }
+}
