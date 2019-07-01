@@ -17,28 +17,7 @@ const FeaturedShopsComponent = (props: IFeaturedShopsComponentProps) => {
   const { shops, title, seeMoreCard } = props;
   const [viewPortWidth, setViewPortWidth] = React.useState(0);
   const [finalShopsArray, setFinalShopsArray] = React.useState(null);
-  const updateWindowDimensions = () => {
-    // if (typeof window !== 'undefined') {
-    //   setViewPortWidth(window.innerWidth);
-    //   if (window.innerWidth <= 1135) {
-    //     alert("gone")
-
-    //   }
-    // }
-  };
-  React.useState(() => {
-  // setFinalShopsArray(props.shops)
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', updateWindowDimensions);
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', updateWindowDimensions);
-      }
-    };
-  });
-
+  
   return (
     <div className={styles['featured-shops']}>
       <h2 className={styles['featured-shop__title']}>{title}</h2>

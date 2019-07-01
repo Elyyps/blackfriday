@@ -27,7 +27,6 @@ const TimeLeftBarComponent = (props: ITimeLeftBarComponentProps) => {
 
   return (
     <div className={`${styles['time-left-bar']} ${styles[statusBar(range)]}`}>
-      <div className={styles['time-left-bar-title']}>{title}</div>
       <div className={styles['time-left-bar-control']}>
         <div className={styles['time-left-bar-control-filled']} style={statusBarFilled} />
       </div>
