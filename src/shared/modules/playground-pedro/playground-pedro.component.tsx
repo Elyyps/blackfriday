@@ -13,9 +13,9 @@ export interface IPlaygroundPedroComponentProps {}
 
 
 const PlaygroundPedroComponent = (props: IPlaygroundPedroComponentProps) => (
-  <div className={styles['playground-pk']}>
+
     <FeaturedShopsComponent {...getFeaturedShopsDummyData()} />
-  </div>
+
 );
 
 export { PlaygroundPedroComponent };
