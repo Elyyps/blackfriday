@@ -5,31 +5,29 @@ import StoreIcon from "@assets/icons/store.svg";
 import { Link } from "@app/api/core/link";
 import { LinkComponent } from "../link";
 import { getArrow } from "@app/constants/icons";
+import { ShadowCardComponent } from "../shadow-card";
 
 export interface ISeeMoreCardComponentProps {
+  icon: string;
   link: Link;
   title: string;
-  icon: string;
 }
 
 const SeeMoreCardComponent = (props: ISeeMoreCardComponentProps) => {
   const { title, link, icon } = props;
 
   return (
-    <div className={styles["see-more-card"]}>
-      <div className={styles["see-more-card__icon"]}>
-        <IconComponent size="24px" icon={icon} />
+    <ShadowCardComponent>
+      <div className={styles["see-more-card"]}>
+        <div className={styles["see-more-card__icon"]}>
+          <IconComponent size="24px" icon={icon} />
+        </div>
+        <div className={styles["see-more-card__title"]}>{title}</div>
+        <LinkComponent to={link.url} icon={getArrow(false)} animated variant="tertiary">
+          {link.title}
+        </LinkComponent>
       </div>
-      <div className={styles["see-more-card__title"]}>{title}</div>
-      <LinkComponent
-        to={link.url}
-        icon={getArrow(false)}
-        animated
-        variant="tertiary"
-      >
-        {link.title}
-      </LinkComponent>
-    </div>
+    </ShadowCardComponent>
   );
 };
 
