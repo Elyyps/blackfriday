@@ -3,11 +3,11 @@
   font-weight: 600;
   color: $gray-light;
   background: $global-background;
-  
+
   &__top {
     padding: 20px 0;
   }
-  
+
   &__top-holder {
     justify-content: center;
     display: flex;
@@ -17,7 +17,7 @@
       justify-content: space-between;
     }
   }
-  
+
   &__top-list {
     display: flex;
     font-size: 15px;
@@ -35,7 +35,7 @@
       margin-right: 10px;
     }
   }
-  
+
   &__holder {
     background: $gray-dark;
     color: $global-inverse-color;
@@ -51,7 +51,7 @@
       }
     }
   }
-  
+
   &__columns {
     @media (min-width: $breakpoint-small) {
       display: flex;
@@ -76,16 +76,16 @@
       }
     }
   }
-  
+
   &__column-body {
     flex: 1 1 auto;
   }
-  
+
   &__column-footer {
     flex: 0 0 auto;
     padding-top: 24px;
   }
-  
+
   &__column-collapse {
     @media (max-width: $breakpoint-xsmall-max) {
       border-bottom: 1px solid $gray;
@@ -105,25 +105,24 @@
       position: relative;
       margin: 0;
     }
-  
+
     .footer__column-collapse & {
       @media (max-width: $breakpoint-xsmall-max) {
-      
       }
     }
   }
-  
+
   &__column-nav {
     margin: 0;
     li:not(:last-child) {
       margin-bottom: 8px;
     }
   }
-  
+
   &__bottom {
     padding: 15px 0;
   }
-  
+
   &__bottom-holder {
     display: flex;
     justify-content: center;
@@ -134,18 +133,18 @@
       flex-wrap: nowrap;
     }
   }
-  
+
   &__logo-box {
     display: flex;
     align-items: center;
   }
-  
+
   &__logo {
     width: 149px;
     display: block;
     margin-right: 32px;
   }
-  
+
   &__nav {
     display: flex;
     flex-wrap: wrap;
@@ -164,7 +163,7 @@
         margin-bottom: 16px;
       }
     }
-  
+
     a {
       text-decoration: none;
       color: $gray-dark;
@@ -224,14 +223,5 @@
     font-size: 14px;
     margin-right: 8px;
     font-family: $global-font-family-secondary;
-  }
-  &__stars {
-    display: flex;
-    .icon-svg {
-      margin-right: 6px;
-    }
-    path {
-      fill: #ffbd03;
-    }
   }
 }

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./footer-component.scss";
 import { ImageComponent, Button, IconComponent, USP } from "@app/core/";
 
-import Star from "@assets/icons/star-filled.svg";
 import { Footer } from "@app/api/modules/footer/models/footer.module";
 import { LinkComponent } from "@app/core/link";
+import { StarsRatingComponent } from "@app/core/stars-rating";
 
 export interface IFooterComponentProps {
   footerModule: Footer;
@@ -13,6 +13,10 @@ export interface IFooterComponentProps {
 
 const FooterComponent = (props: IFooterComponentProps) => {
   const numberStars = 5;
+  const rating =
+    props.footerModule.middleFooter.googleReviews.rating > numberStars
+      ? 0
+      : props.footerModule.middleFooter.googleReviews.rating;
 
   return (
     <div className="footer">
@@ -98,19 +102,20 @@ const FooterComponent = (props: IFooterComponentProps) => {
               </div>
               <div className="footer__column-footer">
                 <div className="rating">
-                  <div className="rating__mark">5,0</div>
-                  <div className="rating__stars">
-                    {[...Array(numberStars)].map((e, i) => (
-                      <span key={i}>
-                        <IconComponent icon={Star} size="14px" />
-                      </span>
-                    ))}
+                  <div className="rating__mark">{rating}</div>
+                  <StarsRatingComponent
+                    rating={rating}
+                    numberStars={numberStars}
+                  />
+                  <div style={{ marginLeft: "10px" }}>
+                    <LinkComponent
+                      to={
+                        props.footerModule.middleFooter.googleReviews.link.url
+                      }
+                    >
+                      {props.footerModule.middleFooter.googleReviews.link.title}
+                    </LinkComponent>
                   </div>
-                  <LinkComponent
-                    to={props.footerModule.middleFooter.googleReviews.link.url}
-                  >
-                    {props.footerModule.middleFooter.googleReviews.link.title}
-                  </LinkComponent>
                 </div>
               </div>
             </div>
