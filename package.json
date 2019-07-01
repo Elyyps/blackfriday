@@ -36,6 +36,7 @@
     "connected-react-router": "6.4.0",
     "cors": "2.8.5",
     "dotenv": "8.0.0",
+    "enzyme-to-json": "3.3.5",
     "express": "4.16.4",
     "express-manifest-helpers": "0.6.0",
     "formik": "1.5.7",
@@ -216,6 +217,9 @@
     "not op_mini all"
   ],
   "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"

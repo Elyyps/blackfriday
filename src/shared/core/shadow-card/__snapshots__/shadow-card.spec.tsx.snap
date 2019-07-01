@@ -1,9 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[ShadowCard] Should render component without crashing (only shadow defined) 1`] = `ShallowWrapper {}`;
+exports[`[ShadowCard] Should render component without crashing (only shadow defined) 1`] = `
+<div
+  className="shadow-card shadow-card--small"
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderRadius": undefined,
+      "padding": undefined,
+    }
+  }
+>
+  <div>
+    Content
+  </div>
+</div>
+`;
 
-exports[`[ShadowCard] Should render component without crashing (only shadow defined) with more content 1`] = `ShallowWrapper {}`;
+exports[`[ShadowCard] Should render component without crashing (only shadow defined) with more content 1`] = `
+<div
+  className="shadow-card shadow-card--small"
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderRadius": undefined,
+      "padding": undefined,
+    }
+  }
+>
+  <div>
+    <span>
+      Content 1
+    </span>
+    <div>
+      <span>
+        Content 2
+      </span>
+      <div>
+        <span>
+          Content 3
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
 
-exports[`[ShadowCard] Should render component without crashing (with only 1 padding and 1 radius) 1`] = `ShallowWrapper {}`;
+exports[`[ShadowCard] Should render component without crashing (with only 1 padding and 1 radius) 1`] = `
+<div
+  className="shadow-card shadow-card--medium"
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderRadius": "24px",
+      "padding": "24px",
+    }
+  }
+>
+  <div>
+    Content
+  </div>
+</div>
+`;
 
-exports[`[ShadowCard] Should render component without crashing (with padding and radius) 1`] = `ShallowWrapper {}`;
+exports[`[ShadowCard] Should render component without crashing (with padding and radius) 1`] = `
+<div
+  className="shadow-card shadow-card--medium"
+  style={
+    Object {
+      "backgroundColor": undefined,
+      "borderRadius": "24px 16px 24px 16px",
+      "padding": "24px 16px",
+    }
+  }
+>
+  <div>
+    Content
+  </div>
+</div>
+`;
