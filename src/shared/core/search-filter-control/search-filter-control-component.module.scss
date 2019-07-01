@@ -2,64 +2,77 @@
   width: 536px;
   height: 100%;
 
-  position: relative;
-  &-container {
-    margin: auto;
-    width: 90%;
-  }
   &-head {
-    margin-bottom: 10px;
-    input {
-      margin-top: 10px;
-      width: 98.5%;
-      height: 40px;
-      background-color: #eee8e8;
+    @media (max-width: $breakpoint-small-max) {
+      padding: 16px 16px 0;
+      background: $global-inverse-color;
     }
   }
   &-body {
-    ::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
+    max-height: 210px;
+    overflow-y: auto;
+    padding-top: 24px;
+    box-sizing: border-box;
+    @media (max-width: $breakpoint-medium-max) {
+      min-height: calc(100% - 55px);
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 0;
     }
   }
-  &-list {
-    z-index: 0;
+  &-item {
+    font-size: 15px;
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-between;
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    columns: 2;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 24px;
-    max-height: 185px;
-    > li {
-      width: 45%;
-
-      font-size: 15px;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+      .checkbox-label {
+        padding: 16px;
+        width: 100%;
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background-color: $gray-dark;
+        }
+      }
       &:not(:last-child) {
-        margin-bottom: 13px;
+        margin-bottom: 0;
       }
-      .count-item {
-        color: $gray-light;
-      }
+    }
+    .count-item {
+      color: $gray-light;
     }
   }
   &-bottom {
-    z-index: 1;
-    background-color: $global-inverse-color;
     position: absolute;
+    left: 0;
     bottom: 0;
+    background-color: $global-inverse-color;
     width: 100%;
-    border-top: 0.2px solid $gray;
-
-    height: 68px;
     &__action {
       margin: 0;
       display: flex;
       justify-content: space-between;
+      border-top: 1px solid $gray;
       padding: 16px;
+      box-sizing: border-box;
+      @media (max-width: $breakpoint-xsmall-max) {
+        justify-content: center;
+      }
+      > li {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 }

@@ -20,6 +20,10 @@
     "start-server": "http-server-spa /build/client/static index.html 3002"
   },
   "dependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/platform-express": "^6.0.0",
+    "@nestjs/swagger": "^3.0.2",
     "@commitlint/config-conventional": "8.0.0",
     "body-parser": "1.19.0",
     "chalk": "2.4.2",

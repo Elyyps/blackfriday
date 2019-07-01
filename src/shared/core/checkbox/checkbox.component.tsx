@@ -19,7 +19,7 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
         {props.checkbox.text}
       </label>
       <span className={style["checkbox__count-item"]}>
-        {props.checkbox.quantity}
+        ({props.checkbox.quantity})
       </span>
     </div>
   </React.Fragment>
