@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Button] Should render button with icon left and full width without crashing 1`] = `
+<Fragment>
+  <button
+    className="button button--primary-default button--fullWidth"
+    name="Primary"
+    style={
+      Object {
+        "height": undefined,
+        "width": "100%",
+      }
+    }
+  >
+    <span
+      className="icon-svg"
+    >
+      <span
+        className="icon-left"
+      >
+        <IconComponent
+          icon="link.svg"
+          size="14px"
+        />
+      </span>
+      Primary
+    </span>
+  </button>
+</Fragment>
+`;
+
+exports[`[Button] Should render button with icon right without crashing 1`] = `
+<Fragment>
+  <button
+    className="button button--primary-default"
+    name="Primary"
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <span
+      className="icon-svg"
+    >
+      Primary
+      <span
+        className="icon-right"
+      >
+        <IconComponent
+          icon="link.svg"
+          size="14px"
+        />
+      </span>
+    </span>
+  </button>
+</Fragment>
+`;
+
+exports[`[Button] Should render button without icon without crashing 1`] = `
+<Fragment>
+  <button
+    className="button button--primary-default"
+    name="Primary"
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <span
+      className="icon-svg"
+    >
+      Primary
+    </span>
+  </button>
+</Fragment>
+`;
+
+exports[`[Button] Should render button without text (FAB) without crashing 1`] = `
+<Fragment>
+  <button
+    className="button button--primary-default button--FAB"
+    style={
+      Object {
+        "height": undefined,
+        "width": undefined,
+      }
+    }
+  >
+    <span
+      className="icon-svg"
+    >
+      <span
+        className="icon-"
+      >
+        <IconComponent
+          icon="link.svg"
+          size="14px"
+        />
+      </span>
+    </span>
+  </button>
+</Fragment>
+`;

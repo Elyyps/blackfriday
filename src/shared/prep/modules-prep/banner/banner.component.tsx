@@ -50,12 +50,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
             </div>
             <div className="banner__footer">
               {props.buttonTitle && (
-                <Button
-                  title={props.buttonTitle}
-                  href={props.buttonLink}
-                  variant={"primary"}
-                  icon={IconDefault}
-                />
+                <Button title={props.buttonTitle} href={props.buttonLink} variant={"primary"} icon={IconDefault} />
               )}
               {props.logo && (
                 <div className="banner__logo">

@@ -7,13 +7,18 @@ import { IconComponent } from "@app/prep/modules-prep/core";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
+import { FilterBar } from "@app/api/core/filter-bar";
+import { useEffect } from "react";
 
-export interface IFilterBarComponentProps {}
+export interface IFilterBarComponentProps {
+  filterBar: FilterBar;
+  onBrandChange: (value: string) => void;
+  onCategoryChange: (value: string) => void;
+  onOrderByChange: (value: string) => void;
+  onStatusChange: (value: string) => void;
+}
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
-  const checkbox = generateDummyCheckboxArray();
-  const status = ["Stock", "out", "unlimited"];
-  const categorie = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
   const [filterSort, setfilterSort] = React.useState(false);
 
   const filterSortChange = (e: any) => {
@@ -29,38 +34,29 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
         </div>
 
         <div className={styles[""]}>
-          <DropdownComponent
-            title="Status"
-            buttonVariant="primary-brand"
-            orientation="bottom-left"
-          >
+          <DropdownComponent title="Status" buttonVariant="primary-brand" orientation="bottom-left">
             <ul>
-              {status.map((value, key) => (
+              {props.filterBar.status.map((value, key) => (
                 <li key={key}>{value}</li>
               ))}
             </ul>
           </DropdownComponent>
         </div>
         <div className={styles[""]}>
-          <DropdownComponent
-            title="Categorie"
-            buttonVariant="secondary"
-            orientation="bottom-left"
-          >
+          <DropdownComponent title="Categorie" buttonVariant="secondary" orientation="bottom-left">
             <ul>
-              {categorie.map((value, key) => (
+              {props.filterBar.categories.map((value, key) => (
                 <li key={key}>{value}</li>
               ))}
             </ul>
           </DropdownComponent>
         </div>
         <div className={styles[""]}>
-          <DropdownComponent
-            title="Merk"
-            buttonVariant="secondary"
-            orientation="bottom-right"
-          >
-            <SearchFilterControlComponent checkbox={checkbox} />
+          <DropdownComponent title="Merk" buttonVariant="secondary" orientation="bottom-right">
+            <SearchFilterControlComponent
+              checkbox={props.filterBar.brands}
+              onChange={value => props.onBrandChange(value)}
+            />
           </DropdownComponent>
         </div>
       </div>

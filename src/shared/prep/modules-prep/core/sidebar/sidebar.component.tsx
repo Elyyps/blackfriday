@@ -13,9 +13,7 @@ const SidebarComponent = (props: ISidebarProps) => (
     {props.banner && <BannerComponent {...props.banner} />}
 
     {props.items &&
-      props.items.map((item, key) => (
-        <SidebarBoxComponent key={key} title={item.title} items={item.links} />
-      ))}
+      props.items.map((item, key) => <SidebarBoxComponent key={key} title={item.title} items={item.links} />)}
   </div>
 );
 

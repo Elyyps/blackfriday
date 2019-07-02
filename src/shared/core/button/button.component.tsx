@@ -12,40 +12,39 @@ export type ButtonType =
   | "tertiary"
   | "tertiary-inverted";
 
+export type IconStyle = "outline" | "filled" | "outline-fill";
+
 interface IButtonProps {
-  buttonType?: ButtonType;
+  buttonType?: string;
   classNames?: void;
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: string;
   iconPosition?: string;
+  iconStyle?: IconStyle;
   onClick?: () => void;
   size?: number;
   title?: string;
-  variant?: string;
+  variant?: ButtonType;
 }
 
 const Button = (props: IButtonProps) => {
-  const { variant, title, buttonType, icon, disabled, iconPosition } = props;
+  const { variant, title, buttonType, icon, disabled, iconStyle, iconPosition } = props;
   const classModify = variant || "primary-default";
   const buttonFAB = !title ? style["button--FAB"] : "";
-  const buttonClassName = classNames(
-    style["button"],
-    style[`button--${classModify}`],
-    buttonFAB,
-    {
-      "button--fullWidth": props.fullWidth
-    }
-  );
+  const iconOutline = iconStyle ? style[`button--${classModify}--icon-${iconStyle}`] : "";
+  const buttonClassName = classNames(style["button"], style[`button--${classModify}`], buttonFAB, iconOutline, {
+    "button--fullWidth": props.fullWidth
+  });
   const buttonStyle = {
     width: props.fullWidth ? "100%" : props.size,
     height: props.size
   };
 
   const renderIconMargin = (margin = "right") => {
-    let newMargin = margin;
-    if (!title) {
-      newMargin = "center";
+    let newMargin = "";
+    if (title) {
+      newMargin = margin;
     }
 
     return (
@@ -63,15 +62,10 @@ const Button = (props: IButtonProps) => {
         type={buttonType}
         name={title}
         className={buttonClassName}
-        onClick={
-          !disabled && typeof props.onClick !== "undefined"
-            ? props.onClick
-            : undefined
-        }
+        onClick={!disabled && typeof props.onClick !== "undefined" ? props.onClick : undefined}
       >
         <span className={style["icon-svg"]}>
-          {((icon && iconPosition === "right") || (icon && !iconPosition)) &&
-            title}
+          {((icon && iconPosition === "right") || (icon && !iconPosition)) && title}
           {icon ? renderIconMargin(iconPosition) : title}
           {icon && iconPosition === "left" && title}
         </span>

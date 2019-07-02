@@ -1,19 +1,15 @@
 import { Dispatch } from "react-redux";
-import { ShopCard, generateData } from "@app/api/core/shop-card";
 import { shopsOverviewActions } from "@app/stores/stores-overview/stores-overview.action";
-import { response } from "express";
+import { getShopsOverviewCards } from "@app/api/modules/stores-overview/endpoints";
 
-const getShopsCards = (
-  status: string,
-  categories: string[],
-  brands: string[],
-  sortBy: string
-) => async (dispatch: Dispatch<any>) => {
+const getShopsCards = (status: string, categories: string[], brands: string[], sortBy: string) => async (
+  dispatch: Dispatch<any>
+) => {
   try {
     // api
     //   .productCardProductsGet(search, product)
     //   .then(response => response.json())
-    //   .then((response: ProductLineSingleModule) => {
+    //   .then((response: ProductLineSinsgleModule) => {
     //     dispatch(
     //       productLineActions.setProductCards({
     //         productCardList: response.productCardList,
@@ -21,9 +17,10 @@ const getShopsCards = (
     //       })
     //     );
     //   });
+    const cards = getShopsOverviewCards(status, categories, brands, sortBy).shopCards;
     dispatch(
       shopsOverviewActions.setShopsOverview({
-        shopCards: SortedCards
+        shopCards: cards
       })
     );
   } catch (error) {

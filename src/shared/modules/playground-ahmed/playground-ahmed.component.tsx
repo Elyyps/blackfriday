@@ -4,10 +4,6 @@ import { StoresOverviewComponent } from "../stores-overview";
 
 export interface IPlaygroundAhmedComponentProps {}
 
-const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => (
-  <div>
-    <StoresOverviewComponent />
-  </div>
-);
+const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => <div />;
 
 export { PlaygroundAhmedComponent };

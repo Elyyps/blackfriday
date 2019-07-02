@@ -15,12 +15,11 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
           type="checkbox"
           className={style["checkbox__input"]}
           aria-checked="false"
+          onChange={() => props.onClick(props.checkbox.text)}
         />
         {props.checkbox.text}
       </label>
-      <span className={style["checkbox__count-item"]}>
-        ({props.checkbox.quantity})
-      </span>
+      <span className={style["checkbox__count-item"]}>({props.checkbox.quantity})</span>
     </div>
   </React.Fragment>
 );

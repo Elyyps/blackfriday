@@ -6,7 +6,14 @@ import ChevronUp from "@assets/icons/chevron-up.svg";
 import { Button } from "../button";
 
 export interface IDropdownComponentProps {
-  buttonVariant?: string;
+  buttonVariant?:
+    | "primary-default"
+    | "primary-brand"
+    | "primary-inverted"
+    | "secondary"
+    | "secondary-inverted"
+    | "tertiary"
+    | "tertiary-inverted";
   children?: any;
   orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";
   title?: string;
@@ -14,16 +21,9 @@ export interface IDropdownComponentProps {
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
   const [isDropdownOpened, setIsDropdownOpened] = React.useState(false);
-  const [textLabel, setTextLabel] = React.useState("");
-  const [prevIcon, setPrevIcon] = React.useState(false);
+
   const toggleOpened = () => {
     setIsDropdownOpened(!isDropdownOpened);
-  };
-  const handleClick = (e: any) => {
-    {
-      e.target.innerText ? setTextLabel(e.target.innerText) : setTextLabel("");
-    }
-    setPrevIcon(!prevIcon);
   };
 
   return (
