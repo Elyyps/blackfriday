@@ -1,10 +1,11 @@
 import * as React from "react";
 import { ShadowCardComponent } from "@app/core/shadow-card";
 import { Button, ButtonType } from "@app/core/button/";
-import IconDefault from "@assets/icons/party.svg";
+import IconDefault from "@assets/icons/sign.svg";
 import { IconComponent } from "@app/core/icon";
 
 import styles from "./playground-martijn-component.module.scss";
+import { CtaSmallComponent } from "@app/modules/cta-small";
 
 const buttonSize = 35;
 
@@ -13,6 +14,7 @@ export interface IPlaygroundMartijnComponentProps {}
 const topCssPixelString = "24px";
 const sideCssPixelString = "16px";
 
+const buttonClick = () => (location.href = "#");
 const renderButtonVariations = (
   buttonVariant: ButtonType = "primary-default",
   bgColor = "#fff",
@@ -159,6 +161,15 @@ const PlaygroundMartijnComponent = (props: IPlaygroundMartijnComponentProps) => 
         <h3>Colored (original)</h3>
         <IconComponent icon={IconDefault} size="24px" />
       </div>
+    </div>
+    <div className={styles["part-section"]}>
+      <CtaSmallComponent
+        buttonClick={buttonClick}
+        buttonTitle="Naar deals"
+        text="Niet helemaal wat je zoekt? Geeft niks want we hebben meer!"
+        icon={IconDefault}
+      />
+      <CtaSmallComponent />
     </div>
   </div>
 );

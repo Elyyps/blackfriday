@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[CtaSmall] should render component without crashing 1`] = `
+<div
+  className="cta-small"
+  style={
+    Object {
+      "bgColor": undefined,
+      "paddingBottom": undefined,
+      "paddingTop": undefined,
+    }
+  }
+>
+  <div
+    className="uk-container"
+  >
+    <ShadowCardComponent
+      borderRadius={
+        Array [
+          "2px",
+        ]
+      }
+      shadowSize="small"
+    >
+      <div
+        className="cta-small__wrapper"
+      >
+        <IconComponent
+          icon="sign.svg"
+          size="32px"
+        />
+        <div
+          className="cta-small__title"
+        >
+          Niet helemaal wat je zoekt? Geeft niks want we hebben meer!
+        </div>
+        <Button
+          onClick={[Function]}
+          title="Naar deals"
+          variant="primary-brand"
+        />
+      </div>
+    </ShadowCardComponent>
+  </div>
+</div>
+`;
+
+exports[`[CtaSmall] should render empty component without crashing 1`] = `
+<div
+  className="cta-small"
+  style={
+    Object {
+      "bgColor": undefined,
+      "paddingBottom": undefined,
+      "paddingTop": undefined,
+    }
+  }
+>
+  <div
+    className="uk-container"
+  >
+    <ShadowCardComponent
+      borderRadius={
+        Array [
+          "2px",
+        ]
+      }
+      shadowSize="small"
+    >
+      <div
+        className="cta-small__wrapper"
+      >
+        <div
+          className="cta-small__title"
+        />
+      </div>
+    </ShadowCardComponent>
+  </div>
+</div>
+`;
