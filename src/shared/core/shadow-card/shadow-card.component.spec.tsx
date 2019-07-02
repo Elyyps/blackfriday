@@ -29,20 +29,12 @@ storiesOf("ShadowCard", module)
       </div>
     </ShadowCardComponent>
   ))
-  .add(
-    "Basic implementation with shadow, borderRadius and padding defined",
-    () => (
-      <ShadowCardComponent
-        shadowSize="medium"
-        borderRadius={[
-          topCssPixelString,
-          sideCssPixelString,
-          topCssPixelString,
-          sideCssPixelString
-        ]}
-        padding={[topCssPixelString, sideCssPixelString]}
-      >
-        <div>Content</div>
-      </ShadowCardComponent>
-    )
-  );
+  .add("Basic implementation with shadow, borderRadius and padding defined", () => (
+    <ShadowCardComponent
+      shadowSize="medium"
+      borderRadius={[topCssPixelString, sideCssPixelString, topCssPixelString, sideCssPixelString]}
+      padding={[topCssPixelString, sideCssPixelString]}
+    >
+      <div>Content</div>
+    </ShadowCardComponent>
+  ));

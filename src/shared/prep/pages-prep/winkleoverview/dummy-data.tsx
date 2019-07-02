@@ -251,8 +251,7 @@ const CTASimple = {
   bgcolor: "#f7f7f7",
   paddingTop: "70px",
   paddingBottom: "70px",
-  title:
-    "Wow je hebt alle deals gezien! Niet getreurd heb je onze deelnemende winkels al gezien?",
+  title: "Wow je hebt alle deals gezien! Niet getreurd heb je onze deelnemende winkels al gezien?",
   buttonTitle: "Meer deals",
   buttonLink: "#",
   icon: Sign
@@ -545,13 +544,4 @@ const TabItemsContent = [
     button_link: "#"
   }
 ];
-export {
-  TabItemsContent,
-  tabItems,
-  Banner,
-  CardMore,
-  CardsDeals,
-  dealsOverviewDropdownDummy,
-  CTASimple,
-  HeaderSmall
-};
+export { TabItemsContent, tabItems, Banner, CardMore, CardsDeals, dealsOverviewDropdownDummy, CTASimple, HeaderSmall };

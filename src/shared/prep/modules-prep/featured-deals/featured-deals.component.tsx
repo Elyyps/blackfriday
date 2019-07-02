@@ -21,9 +21,7 @@ const FeaturedDealsComponent = (props: IFeaturedDealsComponentProps) => {
   return (
     <div className="featured-deals" style={styles}>
       <div className="uk-container">
-        {props.title && (
-          <h2 className="featured-deals__title">{props.title}</h2>
-        )}
+        {props.title && <h2 className="featured-deals__title">{props.title}</h2>}
         <div className="uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m">
           {props.items &&
             props.items.map((item, key) => (
