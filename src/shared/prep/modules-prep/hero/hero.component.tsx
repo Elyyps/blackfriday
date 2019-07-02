@@ -42,19 +42,23 @@ const HeroComponent = (props: IHeroComponentProps) => {
   const cards = [
     {
       title: "Productdeals",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     },
     {
       title: "Productdeals 2",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     },
     {
       title: "Productdeals 2",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     },
     {
       title: "Productdeals 2",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     }
   ];
   const sliceNumber = 2;

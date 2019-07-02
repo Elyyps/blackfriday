@@ -1,0 +1,22 @@
+.featured-categories {
+  &__title {
+    margin-bottom: 36px;
+    @media (max-width: $breakpoint-small-max) {
+      margin-bottom: 16px;
+    }
+  }
+  
+  .uk-grid-posts {
+    margin-bottom: -16px;
+    > div {
+      display: flex;
+      margin-bottom: 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      margin-bottom: -8px;
+      > div {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
