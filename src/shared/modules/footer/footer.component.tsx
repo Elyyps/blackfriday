@@ -1,95 +1,181 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import "./footer-component.scss";
+import styles from "./footer-component.module.scss";
 import { ImageComponent, Button, IconComponent, USP } from "@app/core/";
 
 import { Footer } from "@app/api/modules/footer/models/footer.module";
 import { LinkComponent } from "@app/core/link";
 import { StarsRatingComponent } from "@app/core/stars-rating";
+import { ExpandablePanelComponent } from "@app/core/expandable-panel";
 
 export interface IFooterComponentProps {
   footerModule: Footer;
 }
-
+const CLOSE = "close";
+const numberStars = 5;
 const FooterComponent = (props: IFooterComponentProps) => {
-  const numberStars = 5;
   const rating =
     props.footerModule.middleFooter.googleReviews.rating > numberStars
       ? 0
       : props.footerModule.middleFooter.googleReviews.rating;
 
+  const [openedPanel, setOpenedPanel] = React.useState<string | undefined>(
+    undefined
+  );
+
+  const panelClicked = (key?: string) => {
+    if (openedPanel === key) {
+      setOpenedPanel(CLOSE);
+    } else {
+      setOpenedPanel(key);
+    }
+  };
+
   return (
-    <div className="footer">
-      <div className="footer__top">
+    <div className={styles["footer"]}>
+      <div className={styles["footer__top"]}>
         <div className="uk-container">
-          <div className="footer__top-holder">
-            <div className="footer__top-left">
-              <ul className="footer__top-list">
+          <div className={styles["footer__top-holder"]}>
+            <div className={styles["footer__top-left"]}>
+              <ul className={styles["footer__top-list"]}>
                 {props.footerModule.topFooter.topLeftFooter.map(
                   (item, index) => (
                     <li key={index}>
                       <IconComponent icon={item.icon} size="20px" />
-                      <span>{item.text}</span>
+                      <span style={{ marginLeft: "10px" }}>{item.text}</span>
                     </li>
                   )
                 )}
               </ul>
             </div>
-            <div className="footer__top-right uk-visible@m">
+            <div className={`${styles["footer__top-right"]} uk-visible@m`}>
               <USP uspModule={props.footerModule.topFooter.topRightFooter} />
             </div>
           </div>
         </div>
       </div>
-      <div className="footer__holder">
+      <div className={styles["footer__holder"]}>
         <div className="uk-container">
-          <div className="footer__columns">
+          <div className={styles["footer__columns"]}>
             {props.footerModule.middleFooter.links.map((item, index) => (
-              <div key={index} className="footer__column-collapse">
-                <div className="footer__column-title">{item.title}</div>
-                <div className="footer__column-collapse-body">
-                  <ul className="footer__column-nav">
-                    {item.links.map((link, i) => (
-                      <li key={i}>
-                        <LinkComponent to={link.url}>
-                          {link.title}
-                        </LinkComponent>
-                      </li>
-                    ))}
-                  </ul>
+              <div key={index} className={styles["footer__column-collapse"]}>
+                <div className={styles["footer__column-desktop__container"]}>
+                  <div className={styles["footer__column-title"]}>
+                    {item.title}
+                  </div>
+                  <div className={styles["footer__column-collapse-body"]}>
+                    <ul className={styles["footer__column-nav"]}>
+                      {item.links.map((link, i) => (
+                        <li key={i}>
+                          <LinkComponent to={link.url}>
+                            {link.title}
+                          </LinkComponent>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className={styles["footer__column-mobile__container"]}>
+                  <ExpandablePanelComponent
+                    callback={panelClicked}
+                    identifier={item.id}
+                    opened={openedPanel === item.id}
+                    key={index}
+                    mainContent={
+                      <div className={styles["footer__column-title"]}>
+                        {item.title}
+                      </div>
+                    }
+                  >
+                    <div>
+                      <ul className={styles["footer__column-nav"]}>
+                        {item.links.map((link, i) => (
+                          <li key={i}>
+                            <LinkComponent to={link.url}>
+                              {link.title}
+                            </LinkComponent>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </ExpandablePanelComponent>
                 </div>
               </div>
             ))}
 
-            <div className="footer__column-collapse">
-              <div className="footer__column-title">
-                {props.footerModule.middleFooter.socialMedia.title}
-              </div>
-              <div className="footer__column-collapse-body">
-                <ul className="footer__social">
-                  {props.footerModule.middleFooter.socialMedia.socialItem.map(
-                    (item, index) => (
-                      <li key={index}>
-                        <Link to={item.link} className="footer__social-link">
-                          <div className="footer__social-icon">
-                            <IconComponent icon={item.image} size="15px" />
-                          </div>
-                          <div className="footer__social-text">
-                            <div className="footer__social-title">
-                              {item.nameSocialMedia}
+            <div className={styles["footer__column-collapse"]}>
+              <div className={styles["footer__column-desktop__container"]}>
+                <div className={styles["footer__column-title"]}>
+                  {props.footerModule.middleFooter.socialMedia.title}
+                </div>
+                <div className={styles["footer__column-collapse-body"]}>
+                  <ul className={styles["footer__social"]}>
+                    {props.footerModule.middleFooter.socialMedia.socialItem.map(
+                      (item, index) => (
+                        <li key={index}>
+                          <Link
+                            to={item.link}
+                            className={styles["footer__social-link"]}
+                          >
+                            <div className={styles["footer__social-icon"]}>
+                              <IconComponent icon={item.image} size="15px" />
                             </div>
-                            {item.text}
-                          </div>
-                        </Link>
-                      </li>
-                    )
-                  )}
-                </ul>
+                            <div className={styles["footer__social-text"]}>
+                              <div className={styles["footer__social-title"]}>
+                                {item.nameSocialMedia}
+                              </div>
+                              {item.text}
+                            </div>
+                          </Link>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              </div>
+
+              <div className={styles["footer__column-mobile__container"]}>
+                <ExpandablePanelComponent
+                  callback={panelClicked}
+                  identifier={props.footerModule.middleFooter.socialMedia.id}
+                  opened={
+                    openedPanel ===
+                    props.footerModule.middleFooter.socialMedia.id
+                  }
+                  mainContent={
+                    <div className={styles["footer__column-title"]}>
+                      {props.footerModule.middleFooter.socialMedia.title}
+                    </div>
+                  }
+                >
+                  <div className={styles["footer__social"]}>
+                    {props.footerModule.middleFooter.socialMedia.socialItem.map(
+                      (item, index) => (
+                        <li key={index}>
+                          <Link
+                            to={item.link}
+                            className={styles["footer__social-link"]}
+                          >
+                            <div className={styles["footer__social-icon"]}>
+                              <IconComponent icon={item.image} size="15px" />
+                            </div>
+                            <div className={styles["footer__social-text"]}>
+                              <div className={styles["footer__social-title"]}>
+                                {item.nameSocialMedia}
+                              </div>
+                              {item.text}
+                            </div>
+                          </Link>
+                        </li>
+                      )
+                    )}
+                  </div>
+                </ExpandablePanelComponent>
               </div>
             </div>
             <div>
-              <div className="footer__column-body">
-                <div className="footer__column-title">
+              <div className={styles["footer__column-body"]}>
+                <div className={styles["footer__column-title"]}>
                   {props.footerModule.middleFooter.newsletter.title}
                 </div>
                 <p> {props.footerModule.middleFooter.newsletter.text}</p>
@@ -100,9 +186,9 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   variant={"primary-inverted"}
                 />
               </div>
-              <div className="footer__column-footer">
-                <div className="rating">
-                  <div className="rating__mark">{rating}</div>
+              <div className={styles["footer__column-footer"]}>
+                <div className={styles["rating"]}>
+                  <div className={styles["rating__mark"]}>{rating}</div>
                   <StarsRatingComponent
                     rating={rating}
                     numberStars={numberStars}
@@ -122,11 +208,14 @@ const FooterComponent = (props: IFooterComponentProps) => {
           </div>
         </div>
       </div>
-      <div className="footer__bottom">
+      <div className={styles["footer__bottom"]}>
         <div className="uk-container">
-          <div className="footer__bottom-holder">
-            <div className="footer__logo-box">
-              <Link to="./" className="uk-visible@m footer__logo">
+          <div className={styles["footer__bottom-holder"]}>
+            <div className={styles["footer__logo-box"]}>
+              <Link
+                to="./"
+                className={`uk-visible@m ${styles["footer__logo"]}`}
+              >
                 <ImageComponent
                   src={props.footerModule.bottomFooter.logo}
                   alt="image"
@@ -134,7 +223,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
               </Link>
               {props.footerModule.bottomFooter.copyright}
             </div>
-            <ul className="footer__nav">
+            <ul className={styles["footer__nav"]}>
               {props.footerModule.bottomFooter.items.map((link, key) => (
                 <li key={key}>
                   <LinkComponent to={link.url}>{link.title}</LinkComponent>

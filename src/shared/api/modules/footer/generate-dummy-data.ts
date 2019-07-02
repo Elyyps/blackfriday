@@ -30,6 +30,7 @@ export const bottomFooter = (): BottomFotter => ({
 export const middleFooter = (): MiddleFooter => ({
   links: [
     {
+      id: "TRENDING_BLOCK",
       title: "Wat is er nu trending",
       links: [
         {
@@ -63,6 +64,7 @@ export const middleFooter = (): MiddleFooter => ({
       ]
     },
     {
+      id: "SHOPS_BLOCK",
       title: "Meer Black Friday",
       links: [
         {
@@ -112,6 +114,7 @@ export const middleFooter = (): MiddleFooter => ({
     rating: 4.5
   },
   socialMedia: {
+    id: "SOCIAL_BLOCK",
     title: "Eenvoudig met ons in contact",
     socialItem: [
       {

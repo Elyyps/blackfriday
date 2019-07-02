@@ -1,0 +1,352 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ExpandablePanelComponent] should render component without crashing 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExpandablePanelComponent
+    title="Title"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <div
+        className="expandable-panel"
+      >
+        <div
+          className="expandable-panel__block"
+          onClick={[Function]}
+          role="Tabpanel"
+        >
+          <ul
+            className="expandable-panel__list"
+          >
+            <li>
+              <div
+                className="expandable-panel__title"
+              >
+                Title
+              </div>
+              <div
+                className="expandable-panel__content expandable-panel__hidden"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="expandable-panel__block"
+          onClick={[Function]}
+          role="Tabpanel"
+        >
+          <ul
+            className="expandable-panel__list"
+          >
+            <li>
+              <div
+                className="expandable-panel__title"
+              >
+                Title
+              </div>
+              <div
+                className="expandable-panel__content expandable-panel__hidden"
+              />
+            </li>
+          </ul>
+        </div>,
+        "className": "expandable-panel",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <ul
+            className="expandable-panel__list"
+          >
+            <li>
+              <div
+                className="expandable-panel__title"
+              >
+                Title
+              </div>
+              <div
+                className="expandable-panel__content expandable-panel__hidden"
+              />
+            </li>
+          </ul>,
+          "className": "expandable-panel__block",
+          "onClick": [Function],
+          "role": "Tabpanel",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <li>
+              <div
+                className="expandable-panel__title"
+              >
+                Title
+              </div>
+              <div
+                className="expandable-panel__content expandable-panel__hidden"
+              />
+            </li>,
+            "className": "expandable-panel__list",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="expandable-panel__title"
+                >
+                  Title
+                </div>,
+                <div
+                  className="expandable-panel__content expandable-panel__hidden"
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Title",
+                  "className": "expandable-panel__title",
+                },
+                "ref": null,
+                "rendered": "Title",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "expandable-panel__content expandable-panel__hidden",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+            ],
+            "type": "li",
+          },
+          "type": "ul",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <div
+          className="expandable-panel"
+        >
+          <div
+            className="expandable-panel__block"
+            onClick={[Function]}
+            role="Tabpanel"
+          >
+            <ul
+              className="expandable-panel__list"
+            >
+              <li>
+                <div
+                  className="expandable-panel__title"
+                >
+                  Title
+                </div>
+                <div
+                  className="expandable-panel__content expandable-panel__hidden"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="expandable-panel__block"
+            onClick={[Function]}
+            role="Tabpanel"
+          >
+            <ul
+              className="expandable-panel__list"
+            >
+              <li>
+                <div
+                  className="expandable-panel__title"
+                >
+                  Title
+                </div>
+                <div
+                  className="expandable-panel__content expandable-panel__hidden"
+                />
+              </li>
+            </ul>
+          </div>,
+          "className": "expandable-panel",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul
+              className="expandable-panel__list"
+            >
+              <li>
+                <div
+                  className="expandable-panel__title"
+                >
+                  Title
+                </div>
+                <div
+                  className="expandable-panel__content expandable-panel__hidden"
+                />
+              </li>
+            </ul>,
+            "className": "expandable-panel__block",
+            "onClick": [Function],
+            "role": "Tabpanel",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <li>
+                <div
+                  className="expandable-panel__title"
+                >
+                  Title
+                </div>
+                <div
+                  className="expandable-panel__content expandable-panel__hidden"
+                />
+              </li>,
+              "className": "expandable-panel__list",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="expandable-panel__title"
+                  >
+                    Title
+                  </div>,
+                  <div
+                    className="expandable-panel__content expandable-panel__hidden"
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Title",
+                    "className": "expandable-panel__title",
+                  },
+                  "ref": null,
+                  "rendered": "Title",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "expandable-panel__content expandable-panel__hidden",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "div",
+                },
+              ],
+              "type": "li",
+            },
+            "type": "ul",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

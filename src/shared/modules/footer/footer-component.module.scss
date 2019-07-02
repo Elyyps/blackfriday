@@ -79,6 +79,9 @@
 
   &__column-body {
     flex: 1 1 auto;
+    > p {
+      margin-top: 0;
+    }
   }
 
   &__column-footer {
@@ -91,9 +94,16 @@
       border-bottom: 1px solid $gray;
     }
   }
-  &__column-collapse-body {
+  &__column-desktop__container {
+    display: block;
     @media (max-width: $breakpoint-xsmall-max) {
       display: none;
+    }
+  }
+  &__column-mobile__container {
+    display: none;
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: block;
     }
   }
   &__column-title {
