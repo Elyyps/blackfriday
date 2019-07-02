@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import { FeaturedShopsComponent } from "../featured-shops";
-import { getFeaturedShopsDummyData } from "@app/api/modules/featured-shops";
+import { FeaturedDealsComponent } from "../featured-deals/featured-deals.component";
+import { getFeaturedDealsDummyData } from "@app/api/modules/featured-deals/endpoints";
 
 export interface IPlaygroundPedroComponentProps {}
 
-const PlaygroundPedroComponent = () => <FeaturedShopsComponent {...getFeaturedShopsDummyData()} />;
+const PlaygroundPedroComponent = () => <FeaturedDealsComponent {...getFeaturedDealsDummyData()} />;
 
 export { PlaygroundPedroComponent };
