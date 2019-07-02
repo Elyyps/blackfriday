@@ -12,6 +12,7 @@
     "start:analyzer": "webpack-bundle-analyzer build/client/static/bundle-stats.json",
     "test": "node scripts/test.js --env=jsdom",
     "test:update": "yarn-or-npm test --updateSnapshot",
+    "test:staged": "cross-env CI=true yarn-or-npm test --all",
     "start-server": "http-server-spa /build/client/static index.html 3002",
     "analyze": "source-map-explorer 'build/client/static/*.js'",
     "storybook": "start-storybook -p 6006",
@@ -201,7 +202,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run lint && npm run tsc",
+      "pre-commit": "lint-staged && npm run lint && npm run tsc && npm run test:staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
