@@ -16,7 +16,7 @@ declare global {
 // window.appConfig = window.appConfig || {};
 
 export const getConfig = (): IConfig => ({
-  API_URL: "http://localhost:5000",
-  BASE_URL: "https://terrasana.com",
+  API_URL: process.env.NODE_ENV !== "production" ? "http://localhost:5000" : "https://viper.webbio.dev:5000",
+  BASE_URL: "https://viper.com",
   SENTY_URL: "https://8c44bbeee82d48ac8730fdc7bf77ecdf@sentry.io/1460077"
 });

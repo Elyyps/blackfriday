@@ -40,11 +40,7 @@ const ExpandablePanelComponent = (props: IExpandablePanelComponentProps) => {
                 className={`${style["expandable-panel__title"]}`}
               >
                 <div className={style["expandable-panel__icon"]}>
-                  <IconComponent
-                    icon={props.opened ? ArrowUp : ArrowDown}
-                    size="20px"
-                    color={"#fff"}
-                  />
+                  <IconComponent icon={props.opened ? ArrowUp : ArrowDown} size="20px" fillColor={"#fff"} />
                 </div>
 
                 {props.mainContent}

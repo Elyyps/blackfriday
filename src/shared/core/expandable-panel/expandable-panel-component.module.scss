@@ -9,18 +9,7 @@
     margin: 0px;
     list-style: none;
   }
-  &__content {
-    z-index: 1;
-    position: relative;
-    font-size: 16px;
-    cursor: initial;
-    max-height: 0;
-    transition: max-height, margin 0.15s ease-out;
-    overflow: hidden;
-    @media (max-width: $breakpoint-xsmall-max) {
-      padding: 8px 16px;
-    }
-  }
+
   &__block {
     position: relative;
     z-index: 1;
@@ -42,18 +31,21 @@
 }
 .expandable-panel__block {
   .expandable-panel__content {
-    @media (max-width: $breakpoint-xsmall-max) {
-      display: none;
-    }
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease-in-out, margin 0.3s ease-in-out;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    font-size: 16px;
+    cursor: initial;
   }
   &__open {
     .expandable-panel__content {
-      margin: 8px 0;
+      margin: 5px 0 15px 0;
       max-height: 500px;
-      transition: max-height 0.25s ease-in;
-      @media (max-width: $breakpoint-xsmall-max) {
-        display: block;
-      }
+      height: auto;
+      transition: max-height 0.25s ease-in-out, margin 0.3s ease-in-out;
     }
   }
 }

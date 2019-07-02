@@ -1,19 +1,15 @@
-version: "3.5"
-
+version: "3"
 services:
-  viper-frontend:
-    container_name: viper-frontend
-    command: npm run build
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    links:
+      - viper
+  viper:
+    container_name: viper
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        app_env: ${APP_ENV}
-    volumes:
-      - ".:/usr/src/app"
-      - "/usr/src/app/node_modules"
     ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-      - CHOKIDAR_USEPOLLING=true
+      - 3000:3000

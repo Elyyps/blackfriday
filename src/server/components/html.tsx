@@ -10,10 +10,12 @@ type Props = {
 
 const HTML = ({ children, css = [], scripts = [], state = "{}" }: Props) => {
   const head = Helmet.renderStatic();
+
   return (
-    <html lang="">
+    <html lang="nl">
       <head>
         <meta charSet="utf-8" />
+        <link rel="shortcut icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {head.base.toComponent()}
         {head.title.toComponent()}

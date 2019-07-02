@@ -1,0 +1,45 @@
+.header-overview {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  @media (max-width: $breakpoint-small-max) {
+    margin-bottom: 24px;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 120px;
+    content: '';
+    background: $gray-dark;
+    z-index: -1;
+    @media (max-width: $breakpoint-small-max) {
+      bottom: 70px;
+    }
+  }
+  &::after {
+    background: url("../../../../assets/pattern.svg");
+    background-position: 50% 0;
+    background-size: 2000px auto;
+    opacity: .5;
+  }
+  
+  .header-basic {
+    margin: 0;
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  
+  .featured-blog__body {
+    @media (min-width: $breakpoint-large) {
+      margin: 0 -20px;
+      > div {
+        padding: 0 20px;
+      }
+    }
+  }
+}

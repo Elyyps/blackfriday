@@ -1,12 +1,6 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:all",
-    "tslint-config-airbnb",
-    "tslint-config-prettier",
-    "tslint-react-a11y",
-    "tslint-react"
-  ],
+  "extends": ["tslint:all", "tslint-config-airbnb", "tslint-config-prettier", "tslint-react-a11y", "tslint-react"],
   "jsRules": {},
   "rules": {
     "import-name": false,
@@ -51,12 +45,7 @@
     "react-this-binding-issue": false,
     "no-unsafe-any": false,
     "align": false,
-    "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format",
-      "allow-pascal-case"
-    ],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
     "no-import-side-effect": [
       true,
       {

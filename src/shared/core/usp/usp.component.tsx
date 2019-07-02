@@ -14,7 +14,7 @@ const USP = (props: IUSPProps) => (
       <div key={index} className="usp__item">
         <Link to={item.text.url} className="usp__link">
           <IconComponent icon={item.icon} size="14px" />
-          {item.text.title}
+          <span style={{ marginLeft: "10px" }}>{item.text.title}</span>
         </Link>
       </div>
     ))}

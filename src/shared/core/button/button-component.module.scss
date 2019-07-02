@@ -1,3 +1,40 @@
+$buttonVariants: "primary-default" $global-inverse-color $global-inverse-color,
+  "primary-brand" $global-inverse-color $global-inverse-color, "primary-inverted" $gray-dark $gray-dark,
+  "secondary" $gray-dark $gray-dark, "secondary-inverted" $gray-dark $gray-dark,
+  "tertiary" $gray-dark (darken($brand-primary, 7%) !important),
+  "tertiary-inverted" $global-inverse-color ($global-inverse-color !important);
+
+@each $name, $color, $colorHover in $buttonVariants {
+  .button--#{$name}--icon-filled {
+    .icon-svg path {
+      fill: $color;
+    }
+    &:hover .icon-svg path {
+      fill: $colorHover;
+    }
+  }
+
+  .button--#{$name}--icon-outline {
+    .icon-svg path {
+      stroke: $color;
+    }
+    &:hover .icon-svg path {
+      stroke: $colorHover;
+    }
+  }
+
+  .button--#{$name}--icon-outline-fill {
+    .icon-svg path {
+      fill: $color;
+      stroke: $color;
+    }
+    &:hover .icon-svg path {
+      fill: $colorHover;
+      stroke: $colorHover;
+    }
+  }
+}
+
 .button,
 .button--primary-default {
   margin: 0;
@@ -30,9 +67,6 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    path {
-      fill: $global-inverse-color;
-    }
   }
 
   &:hover,
@@ -43,7 +77,6 @@
 
   &--primary-brand {
     background-color: $gray-dark;
-
     &:hover {
       background-color: lighten($gray-dark, 10%);
     }
@@ -56,9 +89,6 @@
     &:hover {
       background-color: $global-muted-background;
     }
-    .icon-svg path {
-      fill: $gray-dark;
-    }
   }
 
   &--secondary {
@@ -66,9 +96,6 @@
     background-color: $tint-gray-light;
     &:hover {
       background-color: darken($tint-gray-light, 7%);
-    }
-    .icon-svg path {
-      fill: $gray-dark;
     }
   }
 
@@ -82,14 +109,8 @@
       -webkit-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
       -moz-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
       box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
-      background-color: transparent;
       color: darken($brand-primary, 7%) !important;
-      & > .icon-svg path {
-        fill: darken($brand-primary, 7%) !important;
-      }
-    }
-    .icon-svg path {
-      fill: $gray-dark;
+      background-color: lighten($brand-primary, 51%) !important;
     }
   }
 
@@ -99,19 +120,19 @@
     -webkit-box-shadow: inset 0px 0px 0px 2px $brand-primary;
     -moz-box-shadow: inset 0px 0px 0px 2px $brand-primary;
     box-shadow: inset 0px 0px 0px 2px $brand-primary;
+
     &:hover {
       -webkit-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
       -moz-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
       box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
-      background-color: transparent;
-    }
-    .icon-svg path {
-      fill: $global-inverse-color;
+      background-color: darken($brand-primary, 35%) !important;
     }
   }
 
   &--FAB {
-    padding: 16px 16px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
   }
 
   &--small {
@@ -125,7 +146,4 @@
 
 .icon-right {
   margin-left: 8px;
-}
-
-.icon-center {
 }
