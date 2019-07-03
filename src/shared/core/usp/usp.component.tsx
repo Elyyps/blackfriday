@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./usp-component.module.scss";
 import { Link } from "react-router-dom";
 import { IconComponent } from "@app/core";
-import { USP as USP_CLASS } from "@app/api/core/usp";
+import { USP as USP_CLASS } from "@app/api/core/usp/usp";
 
 interface IUSPProps {
   uspModule: USP_CLASS;

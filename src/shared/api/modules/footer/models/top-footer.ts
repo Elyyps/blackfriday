@@ -1,4 +1,4 @@
-import { USP } from "@app/api/core/usp";
+import { USP } from "@app/api/core/usp/usp";
 
 export class TopFooter {
   public topLeftFooter: TopLeftFooterItem[];

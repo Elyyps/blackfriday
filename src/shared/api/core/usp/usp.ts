@@ -1,4 +1,4 @@
-import { IconLink } from "./icon-link";
+import { IconLink } from "../icon-link";
 
 export class USP {
   public uniqueSellingPoints: IconLink[];
