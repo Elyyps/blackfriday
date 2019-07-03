@@ -5,16 +5,23 @@ exports[`[MediumHero] should render component without crashing 1`] = `
   className="medium-hero"
 >
   <div
-    className="header-single"
+    className="uk-container"
   >
-    Breadcrumbs komen hier
-    <h1 />
     <div
-      className="uk-container"
+      className="top"
+    >
+      USPS
+    </div>
+    <div
+      className="holder"
     >
       <div
-        className="header-single__image"
-      />
+        className="image"
+      >
+        <img
+          alt="temp alt"
+        />
+      </div>
     </div>
   </div>
 </div>

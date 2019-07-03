@@ -1,0 +1,12 @@
+h1 {
+  font-weight: bold;
+  color: currentColor;
+  &.subtitle {
+    font-weight: normal;
+    margin-top: -16px;
+  }
+}
+
+.text {
+  color: currentColor;
+}

@@ -1,23 +1,41 @@
 import * as React from "react";
 import styles from "./medium-hero-component.module.scss";
+import { HeaderContentComponent } from "@app/core/header-content";
 
 export interface IMediumHeroComponentProps {
-  backButtonText?: string;
-  backButtonURL?: string;
-  children?: any;
+  backButtonProps?: {};
+  breadcrumbItems?: {}[];
   image?: string;
+  subtitle?: string;
+  text?: string;
   title?: string;
 }
 
-const MediumHeroComponent = (props: IMediumHeroComponentProps) => (
-  <div className={styles["medium-hero"]}>
-    <div className="header-single">
-      Breadcrumbs komen hier
-      <h1>{props.children}</h1>
+const MediumHeroComponent = (props: IMediumHeroComponentProps) => {
+  const { backButtonProps, breadcrumbItems, title, subtitle, text } = props;
+
+  return (
+    <div className={styles["medium-hero"]}>
       <div className="uk-container">
-        <div className="header-single__image">{/* <ImageComponent src={props.image} /> */}</div>
+        <div className={styles["top"]}>USPS</div>
+        <div className={styles["holder"]}>
+          <div className={styles["image"]}>
+            <img src={props.image} alt="temp alt" />
+          </div>
+          {title && (
+            <div className={styles["content"]}>
+              <HeaderContentComponent
+                title={title}
+                subtitle={subtitle}
+                text={text}
+                backButtonProps={backButtonProps}
+                breadcrumbItems={breadcrumbItems}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 export { MediumHeroComponent };

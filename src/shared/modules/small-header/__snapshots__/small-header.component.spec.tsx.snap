@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SmallHeader] should render component without crashing 1`] = `
+<div
+  className="small-header"
+>
+  <div
+    className="uk-container"
+  >
+    <HeaderContentComponent
+      title="Black Friday 2019 blog"
+    />
+  </div>
+</div>
+`;
