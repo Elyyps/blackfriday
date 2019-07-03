@@ -19,11 +19,11 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
   const [orderedBy, setOrderedBy] = React.useState<string>("");
   useEffect(() => {
     const cards = getShopsOverviewCards("", [], [], "");
-    // setCards(cards);
+    setCards(cards);
   }, []);
   useEffect(() => {
     const cards = getShopsOverviewCards(selectedStatus, [selectedCategories], [selectedBrand], orderedBy);
-    setCards(cards);
+    // setCards(cards);
   }, [selectedBrand]);
 
   function onBrandSelected() {}
@@ -34,10 +34,10 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
         <div className={styles["stores-overview__header"]}>
           <FilterBarComponent
             filterBar={generateDummyFilterBar()}
-            onBrandChange={setSelectedBrand}
-            onCategoryChange={setSelectedCategories}
-            onStatusChange={setSelectedStatus}
-            onOrderByChange={setOrderedBy}
+            onBrandChanged={setSelectedBrand}
+            onCategoryChanged={setSelectedCategories}
+            onStatusChanged={setSelectedStatus}
+            onOrderByChanged={setOrderedBy}
           />
         </div>
         <div className={styles["stores-overview__body"]}>

@@ -20,25 +20,11 @@ const stories = storiesOf("Button", module).addDecorator(withA11y);
 // .addDecorator(withProvider)
 buttonVariants.forEach(element => {
   stories.add(`Icon right ${element}`, () => (
-    <Button
-      icon={IconDefault}
-      iconPosition="right"
-      title="Button"
-      variant={element}
-    />
+    <Button icon={IconDefault} iconPosition="right" title="Button" variant={element} />
   ));
   stories.add(`Icon left ${element}`, () => (
-    <Button
-      icon={IconDefault}
-      iconPosition="left"
-      title="Button"
-      variant={element}
-    />
+    <Button icon={IconDefault} iconPosition="left" title="Button" variant={element} />
   ));
-  stories.add(`Icon only ${element}`, () => (
-    <Button icon={IconDefault} variant={element} />
-  ));
-  stories.add(`Text only ${element}`, () => (
-    <Button title="Button" variant={element} />
-  ));
+  stories.add(`Icon only ${element}`, () => <Button icon={IconDefault} variant={element} />);
+  stories.add(`Text only ${element}`, () => <Button title="Button" variant={element} />);
 });

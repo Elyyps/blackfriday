@@ -12,10 +12,10 @@ import { useEffect } from "react";
 
 export interface IFilterBarComponentProps {
   filterBar: FilterBar;
-  onBrandChange: (value: string) => void;
-  onCategoryChange: (value: string) => void;
-  onOrderByChange: (value: string) => void;
-  onStatusChange: (value: string) => void;
+  onBrandChanged: (value: string) => void;
+  onCategoryChanged: (value: string) => void;
+  onOrderByChanged: (value: string) => void;
+  onStatusChanged: (value: string) => void;
 }
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
@@ -55,7 +55,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           <DropdownComponent title="Merk" buttonVariant="secondary" orientation="bottom-right">
             <SearchFilterControlComponent
               checkbox={props.filterBar.brands}
-              onChange={value => props.onBrandChange(value)}
+              onChange={value => props.onBrandChanged(value)}
             />
           </DropdownComponent>
         </div>
