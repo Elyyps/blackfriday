@@ -16,21 +16,11 @@ const iconStyleClassName = (props: IIconComponentProps) => {
   const { fillColor, strokeColor, strokeWidth } = props;
 
   const defaultStyle = "icon-svg";
-  const fillClassName =
-    typeof fillColor !== "undefined" ? style[`${defaultStyle}--filled`] : "";
-  const strokeWidthClassName =
-    typeof strokeWidth !== "undefined"
-      ? style[`${defaultStyle}--stroke-width`]
-      : "";
-  const outlineClassName =
-    typeof strokeColor !== "undefined" ? style[`${defaultStyle}--outline`] : "";
+  const fillClassName = typeof fillColor !== "undefined" ? style[`${defaultStyle}--filled`] : "";
+  const strokeWidthClassName = typeof strokeWidth !== "undefined" ? style[`${defaultStyle}--stroke-width`] : "";
+  const outlineClassName = typeof strokeColor !== "undefined" ? style[`${defaultStyle}--outline`] : "";
 
-  return classNames(
-    style[defaultStyle],
-    fillClassName,
-    outlineClassName,
-    strokeWidthClassName
-  );
+  return classNames(style[defaultStyle], fillClassName, outlineClassName, strokeWidthClassName);
 };
 
 const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
