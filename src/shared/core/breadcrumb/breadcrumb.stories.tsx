@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
-// import { withProvider } from "@app/modules/core/storybook-provider";
+import { withProvider } from "@app/util";
 import { BreadcrumbComponent, IBreadcrumbComponentProps } from "./breadcrumb.component";
 
 const breadcrumbItems: IBreadcrumbComponentProps = {
@@ -19,7 +19,7 @@ const styles = {
 
 storiesOf("Breadcrumb", module)
   .addDecorator(withA11y)
-  // .addDecorator(withProvider)
+  .addDecorator(withProvider)
   .add("Basic implementation", () => (
     <div style={styles}>
       <BreadcrumbComponent links={breadcrumbItems.links} backButton={breadcrumbItems.backButton} />
