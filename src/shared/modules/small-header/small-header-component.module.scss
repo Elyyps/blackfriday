@@ -33,5 +33,9 @@
   h1 {
     font-weight: bold;
     color: $global-inverse-color;
+    &.subtitle {
+      font-weight: normal;
+      margin-top: -16px;
+    }
   }
 }

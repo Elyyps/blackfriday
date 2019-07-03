@@ -7,10 +7,11 @@ exports[`[SmallHeader] should render component without crashing 1`] = `
   <div
     className="uk-container"
   >
-    Hier komt de breadcrumb
-    <h1>
-      Black Friday 2019 blog
-    </h1>
+    Hier komt de breadcrumb 
+     
+    <HeaderContentComponent
+      title="Black Friday 2019 blog"
+    />
   </div>
 </div>
 `;
