@@ -4,6 +4,7 @@
   "jsRules": {},
   "rules": {
     "import-name": false,
+    "array-type": [true, "array"],
     "ordered-imports": false,
     "no-angle-bracket-type-assertion": false,
     "no-reference": false,
