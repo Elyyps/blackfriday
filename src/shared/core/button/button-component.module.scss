@@ -142,8 +142,10 @@ $buttonVariants: "primary-default" $global-inverse-color $global-inverse-color,
 
 .icon-left {
   margin-right: 8px;
+  display: inherit;
 }
 
 .icon-right {
   margin-left: 8px;
+  display: inherit;
 }
