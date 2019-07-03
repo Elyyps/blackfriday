@@ -6,6 +6,7 @@ import IconDefault from "@assets/icons/link.svg";
 
 interface ICardShopProps {
   button_link?: any;
+  button_secondary?: any;
   button_text?: any;
   content?: any;
   image?: any;
@@ -24,7 +25,8 @@ const CardShop = (props: ICardShopProps) => {
     range,
     button_text,
     button_link,
-    variant
+    variant,
+    button_secondary
   } = props;
 
   const statusBarFilled = {
@@ -71,6 +73,7 @@ const CardShop = (props: ICardShopProps) => {
         </div>
       </div>
       <div className="card-shop__action">
+        {button_secondary ? <Button {...button_secondary} /> : ""}
         <Button
           title={button_text}
           href={button_link}
