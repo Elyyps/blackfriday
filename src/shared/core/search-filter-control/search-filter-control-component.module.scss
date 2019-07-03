@@ -11,6 +11,9 @@
   &-body {
     max-height: 210px;
     overflow-y: auto;
+    overflow-x: hidden;
+    width: 95%;
+    margin: auto;
     padding-top: 24px;
     box-sizing: border-box;
     @media (max-width: $breakpoint-medium-max) {
@@ -36,7 +39,7 @@
         width: 100%;
         position: relative;
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;
