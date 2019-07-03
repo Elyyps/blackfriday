@@ -5,6 +5,7 @@ const root = pathToResolve => {
   return resolvedPath;
 };
 
+// Webpack configuration specific for storybook
 module.exports = ({ config, mode }) => {
   config.module.rules.push(
     {
