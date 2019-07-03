@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[IconComponent] Should render icon with fill and stroke without crashing 1`] = `
+<ReactSVG
+  afterInjection={[Function]}
+  beforeInjection={[Function]}
+  className="icon-svg icon-svg--filled icon-svg--outline"
+  evalScripts="never"
+  fallback={[Function]}
+  loading={[Function]}
+  renumerateIRIElements={true}
+  src="link.svg"
+  style={
+    Object {
+      "fill": "red",
+      "height": "24px",
+      "stroke": "red",
+      "strokeWidth": undefined,
+      "width": "24px",
+    }
+  }
+  wrapper="span"
+/>
+`;
+
+exports[`[IconComponent] Should render icon with fill without crashing 1`] = `
+<ReactSVG
+  afterInjection={[Function]}
+  beforeInjection={[Function]}
+  className="icon-svg icon-svg--filled"
+  evalScripts="never"
+  fallback={[Function]}
+  loading={[Function]}
+  renumerateIRIElements={true}
+  src="link.svg"
+  style={
+    Object {
+      "fill": "red",
+      "height": "24px",
+      "stroke": undefined,
+      "strokeWidth": undefined,
+      "width": "24px",
+    }
+  }
+  wrapper="span"
+/>
+`;
+
+exports[`[IconComponent] Should render icon with stroke and strokeWidth without crashing 1`] = `
+<ReactSVG
+  afterInjection={[Function]}
+  beforeInjection={[Function]}
+  className="icon-svg icon-svg--outline icon-svg--stroke-width"
+  evalScripts="never"
+  fallback={[Function]}
+  loading={[Function]}
+  renumerateIRIElements={true}
+  src="link.svg"
+  style={
+    Object {
+      "fill": undefined,
+      "height": "24px",
+      "stroke": "red",
+      "strokeWidth": "2px",
+      "width": "24px",
+    }
+  }
+  wrapper="span"
+/>
+`;
+
+exports[`[IconComponent] Should render original icon without crashing 1`] = `
+<ReactSVG
+  afterInjection={[Function]}
+  beforeInjection={[Function]}
+  className="icon-svg"
+  evalScripts="never"
+  fallback={[Function]}
+  loading={[Function]}
+  renumerateIRIElements={true}
+  src="link.svg"
+  style={
+    Object {
+      "fill": undefined,
+      "height": "14px",
+      "stroke": undefined,
+      "strokeWidth": undefined,
+      "width": "14px",
+    }
+  }
+  wrapper="span"
+/>
+`;

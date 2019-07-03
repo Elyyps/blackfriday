@@ -13,11 +13,7 @@ interface IDispatchProps {}
 
 addLocaleData([...nl, ...en]);
 
-const mapStateToProps: MapStateToProps<
-  IStateProps,
-  IProps,
-  IAppState
-> = state => {
+const mapStateToProps: MapStateToProps<IStateProps, IProps, IAppState> = state => {
   const { locale, messages } = state.locales;
 
   return {
