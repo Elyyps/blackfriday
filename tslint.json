@@ -5,6 +5,7 @@
   "rules": {
     "import-name": false,
     "ordered-imports": false,
+    "array-type": [true, "array"],
     "no-angle-bracket-type-assertion": false,
     "no-reference": false,
     "no-implicit-dependencies": false,

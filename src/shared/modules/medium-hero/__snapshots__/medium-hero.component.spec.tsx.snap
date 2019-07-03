@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[MediumHero] should render component without crashing 1`] = `
+<div
+  className="medium-hero"
+>
+  <div
+    className="header-single"
+  >
+    Breadcrumbs komen hier
+    <h1 />
+    <div
+      className="uk-container"
+    >
+      <div
+        className="header-single__image"
+      />
+    </div>
+  </div>
+</div>
+`;
