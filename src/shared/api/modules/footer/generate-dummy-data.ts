@@ -1,6 +1,7 @@
 import { MiddleFooter } from "./models/middle-footer";
 import { BottomFotter } from "./models/bottom-footer";
 import { TopFooter } from "./models/top-footer";
+import { generateUSP } from "@app/api/core/usp/endpoints";
 
 export const generateBottomFooter = (): BottomFotter => ({
   copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
@@ -147,29 +148,5 @@ export const generateTopFooter = (): TopFooter => ({
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
     }
   ],
-  usp: {
-    uniqueSellingPoints: [
-      {
-        icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
-        link: {
-          url: "./",
-          title: "Overzicht van álle black friday winkels"
-        }
-      },
-      {
-        icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
-        link: {
-          url: "./",
-          title: "Altijd up-to-date van de laatste deals"
-        }
-      },
-      {
-        icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg",
-        link: {
-          url: "./",
-          title: "Mis niets van Black Friday 2019"
-        }
-      }
-    ]
-  }
+  usp: generateUSP()
 });
