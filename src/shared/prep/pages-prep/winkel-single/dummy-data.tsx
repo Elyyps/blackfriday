@@ -1,223 +1,64 @@
-import Oasis from "@assets/oasis.jpg";
 import CoolBlue from "@assets/cool-blue.svg";
-import Party from "@assets/icons/party.svg";
-import Sign from "@assets/icons/sign.svg";
+import Wehkamp from "@assets/logo-wehkamp.svg";
+import Oasis from "@assets/oasis.jpg";
 
-const HeaderData = {
-  title: "Vijf voorspellingen van Black Friday Nederland",
-  backButtonText: "Alle blogs",
-  backButtonURL: "/",
-  image: Oasis
-};
+const Cards = [
+  {
+    title: "Bekbeddiscounter.nl",
+    sub_title: "Nu geldig",
+    content: "Een selectie van bizarre vele aanbiedingen.",
+    image: CoolBlue,
+    button_text: "Naar deals",
+    button_link: "#"
+  }
+];
 
-const FeaturedDeals = {
-  title: "Onze beste deals",
-  paddingTop: "72px",
-  paddingBottom: "72px",
-  bgcolor: "#f7f7f7",
-  items: [
+const ProductDetail = {
+  image: Oasis,
+  breadcrumbs: [
     {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
+      text: "Home",
+      link: "#"
     },
     {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
-    },
-    {
-      image: Oasis,
-      sub_title: "Coolblue",
-      title: "Apple AirPods 2 met draadloze oplaadcase",
-      sale: "Bespaar 40% ",
-      price: "€2.429",
-      old_price: "€3.429",
-      button_text: "Naar deals",
-      button_link: "#"
+      text: "Alle winkels",
+      link: "#"
     }
   ],
-  buttonMore: [
-    {
-      title: "Er zijn meer interessante Apple deals!",
-      image: Party,
-      button_text: "Naar deals",
-      button_link: "#"
-    }
-  ]
-};
-
-const CTASimple = {
-  bgcolor: "#f7f7f7",
-  paddingTop: "70px",
-  paddingBottom: "70px",
-  title: "Op de hoogte blijven? Meld je dan aan voor onze nieuwsbrief!",
-  buttonTitle: "Meld je aan",
-  buttonLink: "#",
-  icon: Sign
-};
-
-const BlogFeaturedFields = {
-  bgcolor: "#f7f7f7",
-  title: "Ook interessant om te lezen",
-  items: [
-    {
-      title: "De beste Moederdag cadeau deals",
-      link: "/",
-      image: Oasis
-    },
-    {
-      title: "Black Friday wordt Black Week – deals beginnen eerder",
-      link: "/",
-      image: Oasis
-    }
-  ]
-};
-
-const BodyBlogData = {
-  date: "2 minuten leestijd",
-  bgcolor: "",
-  paddingTop: "",
-  paddingBottom: "72px",
-  sidebar: true,
-  social: true,
-  banner: {
-    title: "Black Friday bij Coolblue",
-    buttonTitle: "Meer deals",
-    buttonLink: "#",
-    image: Oasis,
-    label: "22 t/m 26 nov.",
-    text: "Een selectie van bizarre aanbiedingen. Meer info",
-    logo: CoolBlue
+  title: "Black Friday 2019 bij Beddenreus",
+  rating: {
+    stars: 5,
+    description: "Beoordeel deze deal"
   },
-  items: [
-    {
-      title: "Een greep uit onze deals",
-      links: [
-        {
-          title: "Apple Airpods",
-          link: "/",
-          image: Oasis
-        },
-        {
-          title: "Apple iPhones",
-          link: "/",
-          image: Oasis
-        },
-        {
-          title: "Apple MacBooks",
-          link: "/",
-          image: Oasis
-        },
-        {
-          title: "Naar alle deals!",
-          link: "/",
-          image: Party
-        }
-      ]
-    },
-    {
-      title: "Black Friday Winkels",
-      links: [
-        {
-          title: "Coolblue",
-          link: "/",
-          image: CoolBlue
-        },
-        {
-          title: "Alternate",
-          link: "/",
-          image: CoolBlue
-        },
-        {
-          title: "Beddenreus",
-          link: "/",
-          image: CoolBlue
-        },
-        {
-          title: "Naar alle Winkels!",
-          link: "/",
-          image: Party
-        }
-      ]
-    }
-  ]
+  content:'Vier Black Friday bij Beddenreus en ontvang 15% korting op alles!Black Friday bij Beddenreus wil je niet missen! Je geniet van maar liefst 15% korting op alles. Extra interessant: Black Friday duurt bij Beddenreus niet één dag maar ruim een week. Dé week om eens goed na te denken over een nieuwe boxspring, matras of dekbedovertrek! Want 15% korting dat is héél veel! Hét ideale moment dus om jouw favoriete boxspring, matras of winterdekbed te kopen. Online én in de winkel. Meer info',
+  list:{
+    ListTitle:'De voordelen van shoppen bij Beddenreus tijdens Black Friday.',
+    items:[
+      'Profiteer van 15% op korting op alles',
+      'Online én in de winkels',
+      'De hele week aanbiedingen van 16-11 t/m 26-11',
+      'Ruimere openingstijden',
+    ]
+  },
+  beddenreus:"Beddenreus",
+  labelList:[
+    'Wonen & slapen',
+    'Swiss sense',
+    'hastens'
+  ],
+  favorite_button: {
+   text:"Winkel opslaan als favoriet",
+   link:"#",
+  },
+  delen: {
+   text:"Winkel opslaan als favoriet",
+   iconChevron:"Winkel opslaan als favoriet",
+  }
+
+
+
 };
 
 export {
-  BodyBlogData,
-  HeaderData,
-  FeaturedDeals,
-  CTASimple,
-  BlogFeaturedFields
+  Cards,ProductDetail
 };
