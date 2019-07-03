@@ -4,6 +4,7 @@ import { HomepageComponent } from "@app/prep/pages-prep/homepage/homepage.compon
 import { WinkleoverviewComponent } from "@app/prep/pages-prep/winkleoverview/winkleoverview.component";
 import { BlogSingleComponent } from "@app/prep/pages-prep/blog-single/blog-single.component";
 import { BlogOverviewPageComponent } from "@app/prep/pages-prep/blog-overview/blog-overview.component";
+import { WinkelSingleComponent } from "@app/prep/pages-prep/winkel-single/winkel-single.component";
 
 const Routes: React.FunctionComponent<{}> = props => (
   <React.Fragment>
@@ -11,6 +12,7 @@ const Routes: React.FunctionComponent<{}> = props => (
     <Route exact path="/winkleoverview" component={WinkleoverviewComponent} />
     <Route exact path="/blog-single" component={BlogSingleComponent} />
     <Route exact path="/blog-overview" component={BlogOverviewPageComponent} />
+    <Route exact path="/winkel-single" component={WinkelSingleComponent} />
   </React.Fragment>
 );
 

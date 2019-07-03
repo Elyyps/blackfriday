@@ -56,6 +56,14 @@
       background-color: $button-primary-hover-background;
     }
   }
+  &--secondary {
+    background-color: $tint-gray-light;
+    color: $gray-dark;
+    &:hover {
+      background-color: $tint-gray;
+      color: $gray-dark;
+    }
+  }
 
   &--invert {
     color: $gray-dark;
@@ -100,7 +108,29 @@
   &--small {
     padding: 8px 18px;
   }
-
+  &--simple{
+    background-color: transparent;
+    border: 1px solid $tint-gray;
+    color: $gray-light;
+    font-size: 10px;
+    text-transform: uppercase;
+    &:hover{
+      color: $gray-dark;
+      border-color: $gray-dark;
+      background-color: transparent;
+    }
+  }
+  &--link{
+    background-color: transparent;
+    font-size: 14px;
+    color: $gray-dark;
+    font-weight: bold;
+    font-family: $global-font-family-secondary;
+    &:hover{
+      background-color: transparent;
+      color: $brand-primary;
+    }
+  }
   &--icon-left {
     > .icon-svg {
       order: -1;

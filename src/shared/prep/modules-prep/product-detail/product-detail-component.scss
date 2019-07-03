@@ -1,3 +1,119 @@
 .product-detail {
-
+  background-color: $bg-muted;
+  padding-top: 40px;
+  &__header {
+    height: 216px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__body {
+    background-color: $global-inverse-color;
+  }
+  &__content {
+    padding: 16px 32px 32px;
+    .breadcrumbs {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin: 0 -10px;
+      font-size: 12px;
+      li {
+        padding: 0 10px;
+        display: flex;
+        font-weight: 600;
+        justify-content: space-between;
+        color: #999999;
+        position: relative;
+        &:not(:last-child) {
+          &:after {
+            content: '';
+            width: 10px;
+            height: 1px;
+            color: #999999;
+            background-color: #999999;
+            position: absolute;
+            top: 50%;
+            right: -4px;
+          }
+        }
+      }
+    }
+    .content {
+      &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &__body {
+        margin-bottom: 32px;
+      }
+    }
+    .uk-list{
+      margin-bottom: 32px;
+    }
+  }
+  &__footer {
+    border-top: 1px solid $tint-gray-light;
+    padding-top: 16px;
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      &__item {
+        display: flex;
+        align-items: center;
+        &-wrap {
+          margin: 0 -4px;
+          > * {
+            margin: 0 4px;
+          }
+        }
+        .button {
+          &--link {
+            padding: 0;
+          }
+        }
+      }
+    }
+    .labels {
+      display: flex;
+      align-items: center;
+      margin: 0 -4px;
+      &__item {
+        padding: 0 4px;
+      }
+    }
+  }
+  .rating {
+    flex-direction: column;
+    align-items: flex-end;
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      margin: 0 -2px;
+      > li {
+        padding: 0 2px;
+      }
+      .icon-svg {
+        svg {
+          fill: $tint-gray;
+        }
+      }
+    }
+    &__description {
+      font-size: 12px;
+      font-weight: bold;
+      color: #00a82f;
+      margin-top: 4px;
+    }
+  }
 }
