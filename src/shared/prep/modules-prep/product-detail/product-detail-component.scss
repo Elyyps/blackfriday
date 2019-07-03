@@ -1,6 +1,50 @@
 .product-detail {
   background-color: $bg-muted;
   padding-top: 40px;
+  .card{
+    &-shop{
+      height: auto;
+      padding-bottom: 52px;
+    }
+    &-message{
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $global-inverse-color;
+      background-color: $gray-dark;
+      text-align: center;
+      position: relative;
+      &:after{
+        content: '';
+        width: 40px;
+        height: 40px;
+        background-color: $gray-dark;
+        transform: rotate(45deg) translateX(-50%);
+        position: absolute;
+        top: 0;
+        left: 50%;
+      }
+      .card{
+        &__body{
+          margin-top: 18px;
+        }
+        &__action{
+          margin-top: 16px;
+          .button{
+            width: 100%;
+          }
+        }
+        &__head{
+          .icon-svg{
+            path{
+              fill:$global-inverse-color;
+            }
+          }
+        }
+      }
+    }
+  }
   &__header {
     height: 216px;
     overflow: hidden;
