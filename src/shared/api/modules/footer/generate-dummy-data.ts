@@ -3,8 +3,7 @@ import { BottomFotter } from "./models/bottom-footer";
 import { TopFooter } from "./models/top-footer";
 
 export const bottomFooter = (): BottomFotter => ({
-  copyright:
-    "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
+  copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
   items: [
     {
       title: "Partner worden?",
@@ -23,8 +22,7 @@ export const bottomFooter = (): BottomFotter => ({
       url: "/"
     }
   ],
-  logo:
-    "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
+  logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
 });
 
 export const middleFooter = (): MiddleFooter => ({
@@ -102,8 +100,7 @@ export const middleFooter = (): MiddleFooter => ({
     title: "Aanmelden voor onze nieuwsbrief",
     text: "En ontvang ons de allerbeste aanbiedingen",
     bottonText: "Nieuwsbrief",
-    bottonIcon:
-      "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
+    bottonIcon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
   },
   googleReviews: {
     link: {
@@ -120,22 +117,19 @@ export const middleFooter = (): MiddleFooter => ({
       {
         text: "4.240 mensen vinden ons leuk",
         nameSocialMedia: "Facebook",
-        image:
-          "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/facebook.svg",
+        image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/facebook.svg",
         link: "https://www.facebook.com/BlackFridayNederland/"
       },
       {
         text: "Volg ons voor leuke acties",
-        image:
-          "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/instagram.svg",
+        image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/instagram.svg",
         link: "https://www.instagram.com/blackfridaynl/",
         nameSocialMedia: "Instagram"
       },
       {
         link: "mailto:info@blackfridaynederland.nl",
         nameSocialMedia: "Mailtje",
-        image:
-          "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/mail.svg",
+        image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/mail.svg",
         text: "Heeft u een vraag? Stel hem gerust!"
       }
     ]
@@ -146,39 +140,36 @@ export const topFooter = (): TopFooter => ({
   topLeftFooter: [
     {
       text: "132 winkels",
-      icon:
-        "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
     },
     {
       text: "560 Deals",
-      icon:
-        "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
     }
   ],
-  topRightFooter: [
-    {
-      icon:
-        "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
-      text: {
-        url: "./",
-        title: "Overzicht van álle black friday winkels"
+  usp: {
+    uniqueSellingPoints: [
+      {
+        icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
+        link: {
+          url: "./",
+          title: "Overzicht van álle black friday winkels"
+        }
+      },
+      {
+        icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
+        link: {
+          url: "./",
+          title: "Altijd up-to-date van de laatste deals"
+        }
+      },
+      {
+        icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg",
+        link: {
+          url: "./",
+          title: "Mis niets van Black Friday 2019"
+        }
       }
-    },
-    {
-      icon:
-        "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
-      text: {
-        url: "./",
-        title: "Altijd up-to-date van de laatste deals"
-      }
-    },
-    {
-      icon:
-        "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg",
-      text: {
-        url: "./",
-        title: "Mis niets van Black Friday 2019"
-      }
-    }
-  ]
+    ]
+  }
 });

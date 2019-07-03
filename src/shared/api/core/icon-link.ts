@@ -1,6 +1,6 @@
 import { Link } from "@app/api/core/link";
 
-export class TopRightFooterItem {
+export class IconLink {
   public icon: string;
-  public text: Link;
+  public link: Link;
 }

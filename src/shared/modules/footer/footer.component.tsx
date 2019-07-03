@@ -45,7 +45,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
               </ul>
             </div>
             <div className={`${styles["footer__top-right"]} uk-visible@m`}>
-              <USP uspModule={props.footerModule.topFooter.topRightFooter} />
+              <USP uspModule={props.footerModule.topFooter.usp} />
             </div>
           </div>
         </div>
