@@ -53,7 +53,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
       <div className={style["filter-modal-bottom"]}>
         <ul className={style["filter-modal-bottom__action"]}>
           <li>
-            <Link to="#">Verwijder merk filters (2){brandList.length}</Link>
+            <Link to="#">Verwijder merk filters (2)</Link>
           </li>
           <li>
             <Button title={"Toon 123 Winkels"} variant={"primary-brand"} />

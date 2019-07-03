@@ -2,8 +2,9 @@ import style from "./dropdown-component.module.scss";
 import * as React from "react";
 import ChevronDown from "@assets/icons/chevron-down.svg";
 import ChevronUp from "@assets/icons/chevron-up.svg";
-
+import { useState } from "react";
 import { Button } from "../button";
+import { ShadowCardComponent } from "../shadow-card";
 
 export interface IDropdownComponentProps {
   buttonVariant?:
@@ -20,15 +21,15 @@ export interface IDropdownComponentProps {
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
-  const [isDropdownOpened, setIsDropdownOpened] = React.useState(false);
+  const [isDropdownOpened, setIsDropdownOpened] = useState(false);
 
   const toggleOpened = () => {
     setIsDropdownOpened(!isDropdownOpened);
   };
 
   return (
-    <React.Fragment>
-      <div className={style["dropdown"]}>
+    <div className={style["dropdown"]}>
+      <ShadowCardComponent shadowSize="small">
         <div className={style["dropdown-button"]}>
           <Button
             title={props.title}
@@ -37,9 +38,11 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
             onClick={toggleOpened}
           />
         </div>
-        <div uk-dropdown=" mode:click">{props.children}</div>
-      </div>
-    </React.Fragment>
+        <div className={`${style["dropdown-content"]}`} data-uk-dropdown={"pos:" + props.orientation}>
+          {props.children}
+        </div>
+      </ShadowCardComponent>
+    </div>
   );
 };
 export { DropdownComponent };

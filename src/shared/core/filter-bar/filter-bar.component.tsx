@@ -7,9 +7,12 @@ import { IconComponent } from "@app/prep/modules-prep/core";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
+import Filter from "@assets/icons/filter.svg";
+
 import { FilterBar } from "@app/api/core/filter-bar";
 import { useEffect } from "react";
 import classNames from "classnames";
+import { ShadowCardComponent } from "../shadow-card";
 
 export interface IFilterBarComponentProps {
   filterBar: FilterBar;
@@ -31,11 +34,23 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
       <div className={styles["filter-bar__filter-list"]}>
         <div className={` ${styles["filter-label"]}  ${"uk-visible@m"} `}>
           Filters
-          <IconComponent icon={HandPointing} size={"20px"} />
+          <span>
+            <IconComponent icon={HandPointing} size={"20px"} />
+          </span>
+        </div>
+        <div className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}>
+          Filters
+          <span>
+            <IconComponent icon={Filter} size={"16px"} />
+          </span>
         </div>
 
-        <div className={styles[""]}>
-          <DropdownComponent title="Status" buttonVariant="primary-brand" orientation="bottom-left">
+        <div className="uk-visible@m">
+          <DropdownComponent
+            title={props.filterBar.statusFilterTitle}
+            buttonVariant="primary-brand"
+            orientation="bottom-left"
+          >
             <ul>
               {props.filterBar.status.map((value, key) => (
                 <li key={key}>{value}</li>
@@ -43,8 +58,12 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             </ul>
           </DropdownComponent>
         </div>
-        <div className={styles[""]}>
-          <DropdownComponent title="Categorie" buttonVariant="secondary" orientation="bottom-left">
+        <div className="uk-visible@m">
+          <DropdownComponent
+            title={props.filterBar.categoryFilterTitle}
+            buttonVariant="secondary"
+            orientation="bottom-left"
+          >
             <ul>
               {props.filterBar.categories.map((value, key) => (
                 <li key={key}>{value}</li>
@@ -52,8 +71,12 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             </ul>
           </DropdownComponent>
         </div>
-        <div className={styles[""]}>
-          <DropdownComponent title="Merk" buttonVariant="secondary" orientation="bottom-right">
+        <div className="uk-visible@m">
+          <DropdownComponent
+            title={props.filterBar.brandFilterTitle}
+            buttonVariant="secondary"
+            orientation="bottom-left"
+          >
             <SearchFilterControlComponent
               checkbox={props.filterBar.brands}
               onChange={value => props.onBrandChanged(value)}
@@ -63,20 +86,22 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
       </div>
       <div className={styles["filter-bar__sort"]}>
         <div className={styles["filter__sort-item"]}>
-          <IconComponent icon={StoreIcon} size={"20px"} />
+          <span>
+            <IconComponent icon={StoreIcon} size={"20px"} />
+          </span>
           132 winkels
         </div>
         <div className={styles["filter__sort-item"]}>
-          Sorteer op:
-          <span
-            role={"button"}
-            className={classNames("filter__sort-change", {
-              ["isActive"]: filterSort
-            })}
-            onClick={filterSortChange}
-          >
+          {props.filterBar.sortByFilterTitle}
+          <span role={"button"} className={styles["filter__sort-change"]} onClick={filterSortChange}>
             Relevantie
-            <IconComponent icon={ArrowLongDown} size={"6px"} />
+            <span
+              className={` ${styles["filter__sort-change-icon"]} ${
+                styles[filterSort ? "filter__sort-change-icon-isActive" : ""]
+              } `}
+            >
+              <IconComponent icon={ArrowLongDown} size={"6px"} />
+            </span>
           </span>
         </div>
       </div>

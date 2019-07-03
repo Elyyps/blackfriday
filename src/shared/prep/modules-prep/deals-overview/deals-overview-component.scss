@@ -37,7 +37,7 @@
               color: $brand-primary;
               @media (min-width: $breakpoint-medium) {
                 &:after {
-                  content: '';
+                  content: "";
                   width: 100%;
                   bottom: 0;
                   position: absolute;
@@ -81,8 +81,8 @@
           }
         }
         &--mobile {
-          flex: 1 1 100%;
-          background-color: $tint-gray-light;
+          width: 500px;
+          background-color: black;
           justify-content: space-between;
           .icon-svg {
             transform: rotate(0) translateX(-2px);
@@ -380,7 +380,7 @@
             width: 100%;
             position: relative;
             &:after {
-              content: '';
+              content: "";
               position: absolute;
               bottom: 0;
               left: 0;
