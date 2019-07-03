@@ -3,19 +3,28 @@ import "./product-detail-component.scss";
 import { Cards } from "@app/prep/pages-prep/winkel-single/dummy-data";
 import { Button, CardShop, IconComponent } from "@app/prep/modules-prep/core";
 import { RatingComponent } from "./rating.component";
+import { Link } from "react-router-dom";
 
 export interface IProductDetailComponentComponentProps {
+  breadcrumbs?: any;
   cards: object;
+  content?: string;
   image?: string;
-  labelList?: string[];
+  labelList?: any;
+  list?: any;
   rating?: any;
+  title?: string;
 }
 
 const ProductDetailComponent = ({
+  title,
+  content,
   image,
   labelList,
   cards,
-  rating
+  rating,
+  breadcrumbs,
+  list
 }: IProductDetailComponentComponentProps) => (
   <div className="product-detail">
     <div className="uk-container">
@@ -47,36 +56,30 @@ const ProductDetailComponent = ({
               {image ? <img src={image} alt="image" /> : ""}
             </div>
             <div className="product-detail__content">
-              <ul className="breadcrumbs">
-                <li>Home</li>
-                <li>Alle winkels</li>
-              </ul>
+              {breadcrumbs ? (
+                <ul className="breadcrumbs">
+                  {breadcrumbs.map((item: any, key: number) => (
+                    <li key={key}>
+                      <Link to={item.link}>{item.text}</Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                ""
+              )}
               <div className="content">
                 <div className="content__head">
-                  <h1>Black Friday 2019 bij Beddenreus</h1>
+                  <h1>{title}</h1>
                   <div className="uk-visible@s">
                     <RatingComponent {...rating} />
                   </div>
                 </div>
-                <div className="content__body">
-                  Vier Black Friday bij Beddenreus en ontvang 15% korting op
-                  alles! Black Friday bij Beddenreus wil je niet missen! Je
-                  geniet van maar liefst 15% korting op alles. Extra
-                  interessant: Black Friday duurt bij Beddenreus niet één dag
-                  maar ruim een week. Dé week om eens goed na te denken over een
-                  nieuwe boxspring, matras of dekbedovertrek! Want 15% korting
-                  dat is héél veel! Hét ideale moment dus om jouw favoriete
-                  boxspring, matras of winterdekbed te kopen. Online én in de
-                  winkel. Meer info
-                </div>
-                <h3>
-                  De voordelen van shoppen bij Beddenreus tijdens Black Friday.
-                </h3>
+                <div className="content__body">{content}</div>
+                {list ? <h3>{list.list_title}</h3> : ""}
                 <ul className={"uk-list-check radtin__list"}>
-                  <li>Profiteer van 15% op korting op alles</li>
-                  <li>Online én in de winkels</li>
-                  <li>De hele week aanbiedingen van 16-11 t/m 26-11</li>
-                  <li>Ruimere openingstijden</li>
+                  {list.items.map((item: string, key: number) => (
+                    <li key={key}>{item}</li>
+                  ))}
                 </ul>
               </div>
               <div className="product-detail__footer">
@@ -104,7 +107,7 @@ const ProductDetailComponent = ({
                 </div>
                 <div className="labels">
                   {labelList
-                    ? labelList.map((item, key) => (
+                    ? labelList.map((item: any, key: number) => (
                         <div key={key} className="labels__item">
                           <Button title={item} variant={"simple"} />
                         </div>
