@@ -1,0 +1,115 @@
+.header-info {
+  position: relative;
+
+  &__image {
+    height: 424px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: -80px;
+    @media (max-width: $breakpoint-small-max) {
+      height: 250px;
+      margin: 0;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      height: 216px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    background: $global-background;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    padding: 40px 194px 40px 40px;
+    color: $gray-light;
+    @media (max-width: $breakpoint-small-max) {
+      padding: 52px 32px 32px;
+      margin: 0 -24px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 52px 24px 24px;
+      margin: 0 -16px;
+    }
+    a {
+      color: $gray-dark;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: solid 2px $tint-gray-light;
+    margin-right: 28px;
+    background: $global-background;
+    @media (max-width: $breakpoint-small-max) {
+      position: absolute;
+      top: -36px;
+      left: 24px;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__content {
+    flex: 1 1 auto;
+  }
+
+  .shared-box {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    @media (max-width: $breakpoint-small-max) {
+      right: 0;
+      top: 0;
+      .button--dropdown {
+        line-height: 0;
+        font-size: 0;
+        width: 56px;
+        height: 56px;
+        padding: 0 0 0 13px;
+        background: none;
+        overflow: hidden;
+        position: relative;
+        &:hover,
+        &.uk-open {
+          box-shadow: none;
+        }
+        &::before {
+          width: 100px;
+          height: 100px;
+          background: $tint-gray-light;
+          position: absolute;
+          border-radius: 100%;
+          left: 0;
+          bottom: 0;
+          content: "";
+          z-index: -1;
+        }
+        .button__arrow {
+          display: none;
+        }
+      }
+    }
+  }
+}
