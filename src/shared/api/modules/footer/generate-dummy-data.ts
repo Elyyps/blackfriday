@@ -2,7 +2,7 @@ import { MiddleFooter } from "./models/middle-footer";
 import { BottomFotter } from "./models/bottom-footer";
 import { TopFooter } from "./models/top-footer";
 
-export const bottomFooter = (): BottomFotter => ({
+export const generateBottomFooter = (): BottomFotter => ({
   copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
   items: [
     {
@@ -25,7 +25,7 @@ export const bottomFooter = (): BottomFotter => ({
   logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
 });
 
-export const middleFooter = (): MiddleFooter => ({
+export const generateMiddleFooter = (): MiddleFooter => ({
   links: [
     {
       id: "TRENDING_BLOCK",
@@ -99,8 +99,8 @@ export const middleFooter = (): MiddleFooter => ({
   newsletter: {
     title: "Aanmelden voor onze nieuwsbrief",
     text: "En ontvang ons de allerbeste aanbiedingen",
-    bottonText: "Nieuwsbrief",
-    bottonIcon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
+    buttonText: "Nieuwsbrief",
+    buttonIcon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
   },
   googleReviews: {
     link: {
@@ -136,7 +136,7 @@ export const middleFooter = (): MiddleFooter => ({
   }
 });
 
-export const topFooter = (): TopFooter => ({
+export const generateTopFooter = (): TopFooter => ({
   topLeftFooter: [
     {
       text: "132 winkels",

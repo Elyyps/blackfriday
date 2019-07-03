@@ -5,9 +5,7 @@ const numberStar = 5;
 const rating = 1;
 describe("[StarsRating]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(
-      <StarsRatingComponent numberStars={numberStar} rating={rating} />
-    );
+    const renderedComponent = shallow(<StarsRatingComponent numberStars={numberStar} rating={rating} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

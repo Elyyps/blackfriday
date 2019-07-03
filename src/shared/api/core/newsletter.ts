@@ -1,6 +1,6 @@
 export class Newsletter {
-  public bottonIcon: string;
-  public bottonText: string;
+  public buttonIcon: string;
+  public buttonText: string;
   public text: string;
   public title: string;
 }

@@ -21,20 +21,9 @@ enum StarsType {
 
 const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
   const [stars, setStars] = React.useState<StarsType[]>([]);
-
+  const rating = props.rating > props.numberStars ? 0 : props.rating;
   React.useEffect(() => {
-    let starsList: StarsType[] = stars.concat(
-      getStars(Math.floor(props.rating), StarsType.full)
-    );
-
-    if (props.rating % 1 !== 0) {
-      starsList = starsList.concat(getStars(1, StarsType.half));
-    }
-    starsList = starsList.concat(
-      getStars(Math.floor(props.numberStars - props.rating), StarsType.empty)
-    );
-
-    setStars(starsList);
+    setStars(getListStars(props.numberStars, rating));
   }, []);
 
   return (
@@ -47,13 +36,7 @@ const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
           }`}
         >
           <IconComponent
-            icon={
-              star === StarsType.full
-                ? Star
-                : star === StarsType.half
-                ? HalfStar
-                : EmptyStar
-            }
+            icon={star === StarsType.full ? Star : star === StarsType.half ? HalfStar : EmptyStar}
             size="14px"
           />
         </span>
@@ -64,9 +47,20 @@ const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
 
 export { StarsRatingComponent };
 
-const getStars = (numberStars: number, starsType: StarsType): StarsType[] => {
+const getListSingleTypeStars = (numberStars: number, starsType: StarsType): StarsType[] => {
   const stars: StarsType[] = Array(numberStars);
-  [...Array(Math.floor(numberStars))].map((e, i) => stars.push(starsType));
+  [...Array(Math.floor(numberStars))].map(e => stars.push(starsType));
 
   return stars;
+};
+
+const getListStars = (numberStars: number, rating: number): StarsType[] => {
+  let starsList: StarsType[] = Array().concat(getListSingleTypeStars(Math.floor(rating), StarsType.full));
+
+  if (rating % 1 !== 0) {
+    starsList = starsList.concat(getListSingleTypeStars(1, StarsType.half));
+  }
+  starsList = starsList.concat(getListSingleTypeStars(Math.floor(numberStars - rating), StarsType.empty));
+
+  return starsList;
 };

@@ -11,19 +11,14 @@ import { ExpandablePanelComponent } from "@app/core/expandable-panel";
 export interface IFooterComponentProps {
   footerModule: Footer;
 }
-const CLOSE = "close";
+const CLOSE_PANEL = "close";
 const numberStars = 5;
 const FooterComponent = (props: IFooterComponentProps) => {
-  const rating =
-    props.footerModule.middleFooter.googleReviews.rating > numberStars
-      ? 0
-      : props.footerModule.middleFooter.googleReviews.rating;
-
   const [openedPanel, setOpenedPanel] = React.useState<string | undefined>(undefined);
 
   const panelClicked = (key?: string) => {
     if (openedPanel === key) {
-      setOpenedPanel(CLOSE);
+      setOpenedPanel(CLOSE_PANEL);
     } else {
       setOpenedPanel(key);
     }
@@ -148,15 +143,22 @@ const FooterComponent = (props: IFooterComponentProps) => {
                 <p> {props.footerModule.middleFooter.newsletter.text}</p>
 
                 <Button
-                  title={props.footerModule.middleFooter.newsletter.bottonText}
-                  icon={props.footerModule.middleFooter.newsletter.bottonIcon}
+                  title={props.footerModule.middleFooter.newsletter.buttonText}
+                  icon={props.footerModule.middleFooter.newsletter.buttonIcon}
                   variant={"primary-inverted"}
                 />
               </div>
               <div className={styles["footer__column-footer"]}>
                 <div className={styles["rating"]}>
-                  <div className={styles["rating__mark"]}>{rating}</div>
-                  <StarsRatingComponent rating={rating} numberStars={numberStars} />
+                  <div className={styles["rating__mark"]}>
+                    {props.footerModule.middleFooter.googleReviews.rating > numberStars
+                      ? 0
+                      : props.footerModule.middleFooter.googleReviews.rating}
+                  </div>
+                  <StarsRatingComponent
+                    rating={props.footerModule.middleFooter.googleReviews.rating}
+                    numberStars={numberStars}
+                  />
                   <div style={{ marginLeft: "10px" }}>
                     <LinkComponent to={props.footerModule.middleFooter.googleReviews.link.url}>
                       {props.footerModule.middleFooter.googleReviews.link.title}

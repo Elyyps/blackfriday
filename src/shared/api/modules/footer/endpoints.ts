@@ -1,8 +1,8 @@
-import { bottomFooter, middleFooter, topFooter } from "./generate-dummy-data";
+import { generateBottomFooter, generateMiddleFooter, generateTopFooter } from "./generate-dummy-data";
 import { Footer } from "./models/footer.module";
 
 export const getFullfooter = (): Footer => ({
-  bottomFooter: bottomFooter(),
-  middleFooter: middleFooter(),
-  topFooter: topFooter()
+  bottomFooter: generateBottomFooter(),
+  middleFooter: generateMiddleFooter(),
+  topFooter: generateTopFooter()
 });
