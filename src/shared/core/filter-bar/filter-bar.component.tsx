@@ -9,6 +9,7 @@ import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
 import { FilterBar } from "@app/api/core/filter-bar";
 import { useEffect } from "react";
+import classNames from "classnames";
 
 export interface IFilterBarComponentProps {
   filterBar: FilterBar;
@@ -28,7 +29,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   return (
     <div className={styles["filter-bar"]}>
       <div className={styles["filter-bar__filter-list"]}>
-        <div className={` ${styles["filter-label"]}  uk-visible@m`}>
+        <div className={` ${styles["filter-label"]}  ${"uk-visible@m"} `}>
           Filters
           <IconComponent icon={HandPointing} size={"20px"} />
         </div>
@@ -67,7 +68,13 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
         </div>
         <div className={styles["filter__sort-item"]}>
           Sorteer op:
-          <span role={"button"} onClick={filterSortChange}>
+          <span
+            role={"button"}
+            className={classNames("filter__sort-change", {
+              ["isActive"]: filterSort
+            })}
+            onClick={filterSortChange}
+          >
             Relevantie
             <IconComponent icon={ArrowLongDown} size={"6px"} />
           </span>
