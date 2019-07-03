@@ -11,16 +11,10 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
   <React.Fragment>
     <div className={style["checkbox"]}>
       <label className={style["checkbox__label"]}>
-        <input
-          type="checkbox"
-          className={style["checkbox__input"]}
-          aria-checked="false"
-        />
+        <input type="checkbox" className={style["checkbox__input"]} aria-checked="false" />
         {props.checkbox.text}
       </label>
-      <span className={style["checkbox__count-item"]}>
-        {props.checkbox.quantity}
-      </span>
+      <span className={style["checkbox__count-item"]}>{props.checkbox.quantity}</span>
     </div>
   </React.Fragment>
 );
