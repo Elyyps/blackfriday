@@ -1,4 +1,5 @@
 import Oasis from "@assets/oasis.jpg";
+import CoolBlue from "@assets/cool-blue.svg";
 import Party from "@assets/icons/party.svg";
 import Sign from "@assets/icons/sign.svg";
 
@@ -7,24 +8,6 @@ const HeaderData = {
   backButtonText: "Alle blogs",
   backButtonURL: "/",
   image: Oasis
-};
-
-const HeaderOverviewData = {
-  title: "Vijf voorspellingen van Black Friday Nederland",
-  backButtonText: "Alle blogs",
-  backButtonURL: "/",
-  items: [
-    {
-      title: "De beste Moederdag cadeau deals",
-      link: "/",
-      image: Oasis
-    },
-    {
-      title: "Black Friday wordt Black Week – deals beginnen eerder",
-      link: "/",
-      image: Oasis
-    }
-  ]
 };
 
 const FeaturedDeals = {
@@ -161,10 +144,74 @@ const BlogFeaturedFields = {
   ]
 };
 
-export {
-  HeaderData,
-  HeaderOverviewData,
-  FeaturedDeals,
-  CTASimple,
-  BlogFeaturedFields
+const BodyBlogData = {
+  date: "2 minuten leestijd",
+  bgcolor: "",
+  paddingTop: "",
+  paddingBottom: "72px",
+  sidebar: true,
+  social: true,
+  banner: {
+    title: "Black Friday bij Coolblue",
+    buttonTitle: "Meer deals",
+    buttonLink: "#",
+    image: Oasis,
+    label: "22 t/m 26 nov.",
+    text: "Een selectie van bizarre aanbiedingen. Meer info",
+    logo: CoolBlue
+  },
+  items: [
+    {
+      title: "Een greep uit onze deals",
+      links: [
+        {
+          title: "Apple Airpods",
+          link: "/",
+          image: Oasis
+        },
+        {
+          title: "Apple iPhones",
+          link: "/",
+          image: Oasis
+        },
+        {
+          title: "Apple MacBooks",
+          link: "/",
+          image: Oasis
+        },
+        {
+          title: "Naar alle deals!",
+          link: "/",
+          image: Party
+        }
+      ]
+    },
+    {
+      title: "Black Friday Winkels",
+      links: [
+        {
+          title: "Coolblue",
+          link: "/",
+          image: CoolBlue
+        },
+        {
+          title: "Alternate",
+          link: "/",
+          image: CoolBlue
+        },
+        {
+          title: "Beddenreus",
+          link: "/",
+          image: CoolBlue
+        },
+        {
+          title: "Naar alle Winkels!",
+          link: "/",
+          image: Party
+        }
+      ]
+    }
+  ]
 };
+
+export { BodyBlogData, HeaderData, FeaturedDeals, CTASimple, BlogFeaturedFields };

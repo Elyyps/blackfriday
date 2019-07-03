@@ -18,7 +18,7 @@ const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
       height: props.size,
       width: props.size
     }}
-    className="icon-svg"
+    className={"icon-svg"}
   />
 );
 

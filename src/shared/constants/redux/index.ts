@@ -5,6 +5,7 @@ import { CARD } from "./card";
 import { NEWS } from "./news";
 import { NAVBARSEARCH } from "./navbar-search";
 import { BUSINESS_OVERVIEW } from "./business-overview";
+import { SETTINGS } from "./settings";
 
 export const REDUX = {
   LOCALES,
@@ -13,5 +14,6 @@ export const REDUX = {
   BUSINESS_OVERVIEW,
   NAVBARSEARCH,
   CARD,
-  NEWS
+  NEWS,
+  SETTINGS
 };

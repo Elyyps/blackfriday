@@ -5,13 +5,12 @@ import cors from "cors";
 import chalk from "chalk";
 import manifestHelpers from "express-manifest-helpers";
 import bodyParser from "body-parser";
-import paths from "../../config/paths";
-import { configureStore, getInitialState } from "@app/stores";
 
-import createHistory from "../shared/stores/history";
+import paths from "../../config/paths";
 import errorHandler from "./middleware/error-handler";
 import serverRenderer from "./middleware/server-renderer";
-import moduleFetcher from "./middleware/fetch-modules";
+import { moduleFetcher, setIsMobile } from "./middleware/initial-store-handler";
+import { addStore } from "./middleware/store-handler";
 
 require("dotenv").config();
 
@@ -25,28 +24,15 @@ app.use(paths.publicPath, express.static(path.join(paths.clientBuild, paths.publ
 
 app.use(cors());
 
+// Middleware requires to handle post requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const addStore = async (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction | undefined
-): Promise<void> => {
-  const history = createHistory({ initialEntries: [req.url] });
-
-  res.locals.store = configureStore({ history, initialState: getInitialState() });
-
-  if (typeof next !== "function") {
-    throw new Error("Next handler is missing");
-  }
-  next();
-};
-
+// Add Redux store
 app.use(addStore);
 
+// Add manifest to the requests
 const manifestPath = path.join(paths.clientBuild, paths.publicPath);
-
 app.use(
   manifestHelpers({
     manifestPath: `${manifestPath}/manifest.json`
@@ -57,12 +43,16 @@ app.use(
 // If you want to fetch more data, do it in this middleware.
 app.use(moduleFetcher());
 
+// Set mobile state in redux state for initial margin purposes
+app.use(setIsMobile());
+
 // Render the HTML and sent it to the server.
 app.use(serverRenderer());
 
 // Deal with errors
 app.use(errorHandler);
 
+// Let the world know we're up and running
 app.listen(process.env.PORT || 3000, () => {
   console.log(
     `[${new Date().toISOString()}]`,

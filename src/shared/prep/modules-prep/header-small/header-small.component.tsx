@@ -5,11 +5,11 @@ import { ImageComponent } from "@app/prep/modules-prep/core";
 
 export interface IHeaderSmallComponentProps {
   image?: any;
-  subtitle?: string;
+  sub_title?: string;
   title?: string;
 }
 
-const HeaderSmallComponent = (props: IHeaderSmallComponentProps) => (
+const HeaderSmallComponent = ({ image, title, sub_title }: IHeaderSmallComponentProps) => (
   <div className="header-small">
     <div className="uk-container">
       <div className="header-small__top">
@@ -17,12 +17,12 @@ const HeaderSmallComponent = (props: IHeaderSmallComponentProps) => (
       </div>
       <div className="header-small__holder">
         <div className="header-small__image">
-          <ImageComponent src={props.image} />
+          <ImageComponent src={image} />
         </div>
-        {props.title && (
+        {title && (
           <div className="header-small__content">
-            <h1 className="header-small__title">{props.title}</h1>
-            <h2 className="header-small__subtitle">{props.subtitle}</h2>
+            <h1 className="header-small__title">{title}</h1>
+            <h2 className="header-small__subtitle">{sub_title}</h2>
           </div>
         )}
       </div>

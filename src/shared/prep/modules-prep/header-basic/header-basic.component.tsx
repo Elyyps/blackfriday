@@ -23,10 +23,7 @@ const HeaderBasicComponent = (props: IHeaderBasicComponentProps) => (
       </ul>
 
       {props.backButtonURL && (
-        <Link
-          className="uk-hidden@s header-basic__back"
-          to={props.backButtonURL}
-        >
+        <Link className="uk-hidden@s header-basic__back" to={props.backButtonURL}>
           <IconComponent icon={IconBack} size={"6px"} />
           {props.backButtonText}
         </Link>
