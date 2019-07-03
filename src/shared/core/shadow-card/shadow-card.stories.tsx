@@ -3,12 +3,14 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { ShadowCardComponent } from "./shadow-card.component";
+import { withProvider } from "@app/util";
 
 const topCssPixelString = "24px";
 const sideCssPixelString = "16px";
 
 storiesOf("ShadowCard", module)
   .addDecorator(withA11y)
+  .addDecorator(withProvider)
   .add("Basic implementation with only shadow defined", () => (
     <ShadowCardComponent shadowSize="small">
       <div>Content</div>

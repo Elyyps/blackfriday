@@ -1,11 +1,14 @@
 const path = require("path");
+const webpack = require("webpack");
 
 const root = pathToResolve => {
   const resolvedPath = path.join(process.cwd(), pathToResolve);
   return resolvedPath;
 };
 
-// Webpack configuration specific for storybook
+const sassRegex = /\.(scss|sass)$/;
+const sassModuleRegex = /\.module\.(scss|sass)$/;
+
 module.exports = ({ config, mode }) => {
   config.module.rules.push(
     {
@@ -21,14 +24,26 @@ module.exports = ({ config, mode }) => {
       enforce: "pre"
     },
     {
-      test: /\.scss$/,
+      test: sassModuleRegex,
       loaders: [
         "style-loader",
+        require.resolve("css-hot-loader"),
         {
           loader: "css-loader",
           options: {
             modules: true
           }
+        }
+      ]
+    },
+    {
+      test: sassRegex,
+      exclude: sassModuleRegex,
+      loaders: [
+        require.resolve("css-hot-loader"),
+        "style-loader",
+        {
+          loader: "css-loader"
         }
       ]
     },
@@ -43,6 +58,12 @@ module.exports = ({ config, mode }) => {
       },
       include: path.resolve(__dirname, "../")
     }
+  );
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      __SERVER__: "false",
+      __BROWSER__: "true"
+    })
   );
   config.resolve.extensions.push(".ts", ".tsx");
   config.resolve.alias = {

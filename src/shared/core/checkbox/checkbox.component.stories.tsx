@@ -9,15 +9,6 @@ const notes = require("./checkbox.md");
 
 storiesOf("checkbox", module)
   .addDecorator(withA11y)
-  .add(
-    "Basic implementation",
-    () => (
-      <CheckboxComponent
-        checkbox={generateDummyCheckbox()}
-        onClick={() => ""}
-      />
-    ),
-    {
-      notes
-    }
-  );
+  .add("Basic implementation", () => <CheckboxComponent checkbox={generateDummyCheckbox()} onClick={() => ""} />, {
+    notes
+  });
