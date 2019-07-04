@@ -45,6 +45,8 @@
     "react-this-binding-issue": false,
     "no-unsafe-any": false,
     "align": false,
+    "space-before-function-paren": false,
+    "whitespace": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
     "no-import-side-effect": [
       true,

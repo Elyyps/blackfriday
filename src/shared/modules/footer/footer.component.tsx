@@ -24,6 +24,10 @@ const FooterComponent = (props: IFooterComponentProps) => {
     }
   };
 
+  const mainContent = () => (
+    <div className={styles["footer__column-title"]}>{props.footerModule.middleFooter.socialMedia.title}</div>
+  );
+
   return (
     <div className={styles["footer"]}>
       <div className={styles["footer__top"]}>
@@ -113,11 +117,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   callback={panelClicked}
                   identifier={props.footerModule.middleFooter.socialMedia.id}
                   opened={openedPanel === props.footerModule.middleFooter.socialMedia.id}
-                  mainContent={
-                    <div className={styles["footer__column-title"]}>
-                      {props.footerModule.middleFooter.socialMedia.title}
-                    </div>
-                  }
+                  mainContent={mainContent()}
                 >
                   <div className={styles["footer__social"]}>
                     {props.footerModule.middleFooter.socialMedia.socialItem.map((item, index) => (
