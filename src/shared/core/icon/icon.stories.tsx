@@ -4,11 +4,11 @@ import IconDefault from "@assets/icons/link.svg";
 import { IconComponent } from "@app/core/icon/";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
-// import { withProvider } from "@app/core/storybook-provider";
+import { withProvider } from "@app/util";
 
-storiesOf("Button", module)
+storiesOf("Icon", module)
   .addDecorator(withA11y)
-  // .addDecorator(withProvider)
+  .addDecorator(withProvider)
   .add("Basic implementation of icon component, stroke and stroke width given", () => (
     <IconComponent icon={IconDefault} strokeColor="red" strokeWidth="2px" size="24px" />
   ))

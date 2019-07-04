@@ -1,6 +1,7 @@
-import React from "react";
-import { shallow } from "enzyme";
+import * as React from "react";
+
 import { SeeMoreCardComponent } from "./see-more-card.component";
+import { shallow } from "enzyme";
 
 describe("[SeeMoreCard]", () => {
   it("should render component without crashing", () => {
