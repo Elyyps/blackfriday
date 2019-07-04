@@ -45,7 +45,7 @@ const DealCardComponent = (props: IDealCardComponentProps) => {
             <div className={styles["deal-card__price-new"]}>{newPrice}</div>
           </div>
         </div>
-        <Button title={buttonText} fullWidth variant={"primary"} icon={IconDefault} />
+        <Button title={buttonText} fullWidth variant={"primary-default"} icon={IconDefault} />
       </div>
     </div>
   );

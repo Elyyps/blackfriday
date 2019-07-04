@@ -21,7 +21,7 @@ export interface IShopCardComponentProps {
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
   const { title, seeMoreLink, subtitle, seeMoreText, content, image, range, buttonText } = props;
-  const statusBarColor = () => {
+  const getStatusBarColor = () => {
     const rangeNumber = range;
     const limit = 0.5;
     if (rangeNumber === 0 || typeof rangeNumber === "undefined") {
@@ -42,8 +42,8 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
           <div className={styles["shop-card__image"]}>
             <ImageComponent src={image} />
           </div>
-          <div className={`${styles["shop-card__status-title"]} ${styles[statusBarColor()]}`}>{subtitle}</div>
-          <TimeLeftBarComponent range={range} />
+          <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>{subtitle}</div>
+          <TimeLeftBarComponent color={getStatusBarColor()} range={range} />
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{title}</div>
             {content} {seeMoreText && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}
