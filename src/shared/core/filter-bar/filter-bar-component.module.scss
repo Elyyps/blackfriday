@@ -20,7 +20,7 @@
         margin: 0;
         display: none;
         position: relative;
-        &.isActive {
+        &-isActive {
           display: block;
         }
         &-label {
@@ -71,7 +71,7 @@
               outline: none;
             }
           }
-          .icon-svg {
+          &-icon {
             margin-left: 8px;
             transform: rotate(90deg);
           }
@@ -117,14 +117,14 @@
           font-size: 14px;
           justify-content: center;
           line-height: 1;
-          .icon-svg {
+          span {
             transform: rotate(90deg) translateX(-2px);
           }
         }
         &--mobile {
           background-color: $tint-gray-light;
           justify-content: space-between;
-          .icon-svg {
+          span {
             transform: rotate(0) translateX(-2px);
             path {
               fill: $gray-dark;

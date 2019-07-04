@@ -34,7 +34,7 @@ const renderButtonVariations = (
       title="test"
       iconPosition="right"
       icon={IconDefault}
-      iconStyle="outline-fill"
+      iconStyle="outline"
       variant={buttonVariant}
       onClick={() => alert(`clicked button 2: ${buttonVariant}`)}
       fullWidth

@@ -81,8 +81,8 @@
           }
         }
         &--mobile {
-          width: 500px;
-          background-color: black;
+          flex: 1 1 100%;
+          background-color: $tint-gray-light;
           justify-content: space-between;
           .icon-svg {
             transform: rotate(0) translateX(-2px);

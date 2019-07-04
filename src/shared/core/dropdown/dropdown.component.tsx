@@ -7,6 +7,7 @@ import { Button } from "../button";
 import { ShadowCardComponent } from "../shadow-card";
 
 export interface IDropdownComponentProps {
+  buttonColor?: "outline" | "filled" | "outline-fill";
   buttonVariant?:
     | "primary-default"
     | "primary-brand"
@@ -36,6 +37,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
             variant={props.buttonVariant}
             icon={isDropdownOpened ? ChevronUp : ChevronDown}
             onClick={toggleOpened}
+            iconStyle={props.buttonColor}
           />
         </div>
         <div className={`${style["dropdown-content"]}`} data-uk-dropdown={"pos:" + props.orientation}>

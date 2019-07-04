@@ -2,7 +2,19 @@
   width: auto;
   height: auto;
   display: inline-block;
-
+  &-button {
+    * {
+      @media (max-width: $breakpoint-small-max) {
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: green;
+      }
+      @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        background-color: red;
+      }
+    }
+  }
   &-content {
     margin-top: 10px;
     background-color: white;

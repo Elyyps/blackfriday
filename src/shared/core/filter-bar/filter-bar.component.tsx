@@ -10,7 +10,6 @@ import Filter from "@assets/icons/filter.svg";
 import { FilterBar } from "@app/api/core/filter-bar";
 import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
-import classNames from "classnames";
 
 export interface IFilterBarComponentProps {
   filterBar: FilterBar;
@@ -23,9 +22,16 @@ export interface IFilterBarComponentProps {
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const [filterSort, setfilterSort] = React.useState(false);
   const [prevIcon, setPrevIcon] = React.useState(false);
+  const [filterContent, setFilterContent] = React.useState(false);
 
   const filterSortChange = (e: any) => {
     setfilterSort(!filterSort);
+  };
+  const handleClickLAbel = () => {
+    setFilterContent(!filterContent);
+  };
+  const handleClick = () => {
+    setPrevIcon(!prevIcon);
   };
 
   return (
@@ -37,36 +43,43 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             <IconComponent icon={HandPointing} size={"20px"} />
           </span>
         </div>
-        <div className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}>
+        <div
+          className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}
+          onClick={handleClickLAbel}
+        >
           Filters
           <span>
             <IconComponent icon={Filter} size={"16px"} />
           </span>
         </div>
-        <div className={` ${styles["filter-content-label"]}  uk-hidden@m`}>
-          {prevIcon ? (
-            <span role="button" className={classNames({ ["arrow-control"]: prevIcon })}>
-              <IconComponent color={"#fff"} icon={ChevronLeft} size={"7px"} />
-            </span>
-          ) : (
-            <span role="button" className={"button-control"}>
-              <IconComponent color={"#fff"} icon={Cross} size={"12px"} />
-            </span>
-          )}
-
-          <span>
-            Filters
-            <IconComponent icon={HandPointing} size={"16px"} />
-          </span>
-          <a role="button" className={styles["filter-content-clear"]}>
-            Wis alle filters
-          </a>
+        <div className={` ${styles["filter-content"]} ${styles[filterContent ? "filter-content-isActive" : ""]}  `}>
+          <div className={` ${styles["filter-content-label"]}  uk-hidden@m`}>
+            {prevIcon ? (
+              <span role="button" className={styles["arrow-control"]} onClick={handleClick}>
+                <IconComponent color={"#fff"} icon={ChevronLeft} size={"7px"} />
+              </span>
+            ) : (
+              <span role="button" className={styles["button-control"]} onClick={handleClickLAbel}>
+                <IconComponent color={"#fff"} icon={Cross} size={"12px"} />
+              </span>
+            )}
+            <div>
+              Filters
+              <span className={styles["filter-content-label-icon"]}>
+                <IconComponent icon={HandPointing} size={"16px"} />
+              </span>
+            </div>
+            <a role="button" className={styles["filter-content-clear"]}>
+              Wis alle filters
+            </a>
+          </div>
         </div>
         <div className="uk-visible@m">
           <DropdownComponent
             title={props.filterBar.statusFilterTitle}
             buttonVariant="primary-brand"
             orientation="bottom-left"
+            buttonColor="outline"
           >
             <ul>
               {props.filterBar.status.map((value, key) => (
