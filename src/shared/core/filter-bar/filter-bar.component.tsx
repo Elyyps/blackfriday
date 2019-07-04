@@ -2,17 +2,15 @@ import * as React from "react";
 import styles from "./filter-bar-component.module.scss";
 import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
 import { SearchFilterControlComponent } from "@app/core/search-filter-control/search-filter-control.component";
-import { generateDummyCheckboxArray } from "@app/api/core/checkbox";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
 import Filter from "@assets/icons/filter.svg";
-
 import { FilterBar } from "@app/api/core/filter-bar";
-import { useEffect } from "react";
+import Cross from "@assets/icons/cross.svg";
+import ChevronLeft from "@assets/icons/chevron-left.svg";
 import classNames from "classnames";
-import { ShadowCardComponent } from "../shadow-card";
 
 export interface IFilterBarComponentProps {
   filterBar: FilterBar;
@@ -24,6 +22,7 @@ export interface IFilterBarComponentProps {
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const [filterSort, setfilterSort] = React.useState(false);
+  const [prevIcon, setPrevIcon] = React.useState(false);
 
   const filterSortChange = (e: any) => {
     setfilterSort(!filterSort);
@@ -44,7 +43,25 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             <IconComponent icon={Filter} size={"16px"} />
           </span>
         </div>
+        <div className={` ${styles["filter-content-label"]}  uk-hidden@m`}>
+          {prevIcon ? (
+            <span role="button" className={classNames({ ["arrow-control"]: prevIcon })}>
+              <IconComponent color={"#fff"} icon={ChevronLeft} size={"7px"} />
+            </span>
+          ) : (
+            <span role="button" className={"button-control"}>
+              <IconComponent color={"#fff"} icon={Cross} size={"12px"} />
+            </span>
+          )}
 
+          <span>
+            Filters
+            <IconComponent icon={HandPointing} size={"16px"} />
+          </span>
+          <a role="button" className={styles["filter-content-clear"]}>
+            Wis alle filters
+          </a>
+        </div>
         <div className="uk-visible@m">
           <DropdownComponent
             title={props.filterBar.statusFilterTitle}
