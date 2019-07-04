@@ -1,0 +1,774 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Footer] should render component without crashing 1`] = `
+<div
+  className="footer"
+>
+  <div
+    className="footer__top"
+  >
+    <div
+      className="uk-container"
+    >
+      <div
+        className="footer__top-holder"
+      >
+        <div
+          className="footer__top-left"
+        >
+          <ul
+            className="footer__top-list"
+          >
+            <li
+              key="0"
+            >
+              <IconComponent
+                icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                size="20px"
+              />
+              <span
+                style={
+                  Object {
+                    "marginLeft": "10px",
+                  }
+                }
+              >
+                132 winkels
+              </span>
+            </li>
+            <li
+              key="1"
+            >
+              <IconComponent
+                icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                size="20px"
+              />
+              <span
+                style={
+                  Object {
+                    "marginLeft": "10px",
+                  }
+                }
+              >
+                560 Deals
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="footer__top-right uk-visible@m"
+        >
+          <USP
+            uspModule={
+              Object {
+                "uniqueSellingPoints": Array [
+                  Object {
+                    "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
+                    "link": Object {
+                      "title": "Overzicht van álle black friday winkels",
+                      "url": "./",
+                    },
+                  },
+                  Object {
+                    "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
+                    "link": Object {
+                      "title": "Altijd up-to-date van de laatste deals",
+                      "url": "./",
+                    },
+                  },
+                  Object {
+                    "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg",
+                    "link": Object {
+                      "title": "Mis niets van Black Friday 2019",
+                      "url": "./",
+                    },
+                  },
+                ],
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="footer__holder"
+  >
+    <div
+      className="uk-container"
+    >
+      <div
+        className="footer__columns"
+      >
+        <div
+          className="footer__column-collapse"
+          key="0"
+        >
+          <div
+            className="footer__column-desktop__container"
+          >
+            <div
+              className="footer__column-title"
+            >
+              Wat is er nu trending
+            </div>
+            <div
+              className="footer__column-collapse-body"
+            >
+              <ul
+                className="footer__column-nav"
+              >
+                <li
+                  key="0"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday 2019
+                  </LinkComponent>
+                </li>
+                <li
+                  key="1"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Apple
+                  </LinkComponent>
+                </li>
+                <li
+                  key="2"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Deals
+                  </LinkComponent>
+                </li>
+                <li
+                  key="3"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Elektronica
+                  </LinkComponent>
+                </li>
+                <li
+                  key="4"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Gaming
+                  </LinkComponent>
+                </li>
+                <li
+                  key="5"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Winkels
+                  </LinkComponent>
+                </li>
+                <li
+                  key="6"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Cyber Monday 2019
+                  </LinkComponent>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="footer__column-mobile__container"
+          >
+            <ExpandablePanelComponent
+              callback={[Function]}
+              identifier="TRENDING_BLOCK"
+              key="0"
+              mainContent={
+                <div
+                  className="footer__column-title"
+                >
+                  Wat is er nu trending
+                </div>
+              }
+              opened={false}
+            >
+              <div>
+                <ul
+                  className="footer__column-nav"
+                >
+                  <li
+                    key="0"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday 2019
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="1"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Apple
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="2"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Deals
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="3"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Elektronica
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="4"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Gaming
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="5"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Winkels
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="6"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Cyber Monday 2019
+                    </LinkComponent>
+                  </li>
+                </ul>
+              </div>
+            </ExpandablePanelComponent>
+          </div>
+        </div>
+        <div
+          className="footer__column-collapse"
+          key="1"
+        >
+          <div
+            className="footer__column-desktop__container"
+          >
+            <div
+              className="footer__column-title"
+            >
+              Meer Black Friday
+            </div>
+            <div
+              className="footer__column-collapse-body"
+            >
+              <ul
+                className="footer__column-nav"
+              >
+                <li
+                  key="0"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Airpods Black Friday
+                  </LinkComponent>
+                </li>
+                <li
+                  key="1"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Kleding
+                  </LinkComponent>
+                </li>
+                <li
+                  key="2"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Jumbo
+                  </LinkComponent>
+                </li>
+                <li
+                  key="3"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Rituals
+                  </LinkComponent>
+                </li>
+                <li
+                  key="4"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday G-star
+                  </LinkComponent>
+                </li>
+                <li
+                  key="5"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Center Parcs
+                  </LinkComponent>
+                </li>
+                <li
+                  key="6"
+                >
+                  <LinkComponent
+                    to="/"
+                  >
+                    Black Friday Computer
+                  </LinkComponent>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="footer__column-mobile__container"
+          >
+            <ExpandablePanelComponent
+              callback={[Function]}
+              identifier="SHOPS_BLOCK"
+              key="1"
+              mainContent={
+                <div
+                  className="footer__column-title"
+                >
+                  Meer Black Friday
+                </div>
+              }
+              opened={false}
+            >
+              <div>
+                <ul
+                  className="footer__column-nav"
+                >
+                  <li
+                    key="0"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Airpods Black Friday
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="1"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Kleding
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="2"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Jumbo
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="3"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Rituals
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="4"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday G-star
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="5"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Center Parcs
+                    </LinkComponent>
+                  </li>
+                  <li
+                    key="6"
+                  >
+                    <LinkComponent
+                      to="/"
+                    >
+                      Black Friday Computer
+                    </LinkComponent>
+                  </li>
+                </ul>
+              </div>
+            </ExpandablePanelComponent>
+          </div>
+        </div>
+        <div
+          className="footer__column-collapse"
+        >
+          <div
+            className="footer__column-desktop__container"
+          >
+            <div
+              className="footer__column-title"
+            >
+              Eenvoudig met ons in contact
+            </div>
+            <div
+              className="footer__column-collapse-body"
+            >
+              <ul
+                className="footer__social"
+              >
+                <li
+                  key="0"
+                >
+                  <a
+                    className="footer__social-link"
+                    href="https://www.facebook.com/BlackFridayNederland/"
+                    target="_blank"
+                  >
+                    <div
+                      className="footer__social-icon"
+                    >
+                      <IconComponent
+                        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/facebook.svg"
+                        size="15px"
+                      />
+                    </div>
+                    <div
+                      className="footer__social-text"
+                    >
+                      <div
+                        className="footer__social-title"
+                      >
+                        Facebook
+                      </div>
+                      4.240 mensen vinden ons leuk
+                    </div>
+                  </a>
+                </li>
+                <li
+                  key="1"
+                >
+                  <a
+                    className="footer__social-link"
+                    href="https://www.instagram.com/blackfridaynl/"
+                    target="_blank"
+                  >
+                    <div
+                      className="footer__social-icon"
+                    >
+                      <IconComponent
+                        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/instagram.svg"
+                        size="15px"
+                      />
+                    </div>
+                    <div
+                      className="footer__social-text"
+                    >
+                      <div
+                        className="footer__social-title"
+                      >
+                        Instagram
+                      </div>
+                      Volg ons voor leuke acties
+                    </div>
+                  </a>
+                </li>
+                <li
+                  key="2"
+                >
+                  <a
+                    className="footer__social-link"
+                    href="mailto:info@blackfridaynederland.nl"
+                    target="_blank"
+                  >
+                    <div
+                      className="footer__social-icon"
+                    >
+                      <IconComponent
+                        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/mail.svg"
+                        size="15px"
+                      />
+                    </div>
+                    <div
+                      className="footer__social-text"
+                    >
+                      <div
+                        className="footer__social-title"
+                      >
+                        Mailtje
+                      </div>
+                      Heeft u een vraag? Stel hem gerust!
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="footer__column-mobile__container"
+          >
+            <ExpandablePanelComponent
+              callback={[Function]}
+              identifier="SOCIAL_BLOCK"
+              mainContent={
+                <div
+                  className="footer__column-title"
+                >
+                  Eenvoudig met ons in contact
+                </div>
+              }
+              opened={false}
+            >
+              <div
+                className="footer__social"
+              >
+                <li
+                  key="0"
+                >
+                  <Link
+                    className="footer__social-link"
+                    to="https://www.facebook.com/BlackFridayNederland/"
+                  >
+                    <div
+                      className="footer__social-icon"
+                    >
+                      <IconComponent
+                        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/facebook.svg"
+                        size="15px"
+                      />
+                    </div>
+                    <div
+                      className="footer__social-text"
+                    >
+                      <div
+                        className="footer__social-title"
+                      >
+                        Facebook
+                      </div>
+                      4.240 mensen vinden ons leuk
+                    </div>
+                  </Link>
+                </li>
+                <li
+                  key="1"
+                >
+                  <Link
+                    className="footer__social-link"
+                    to="https://www.instagram.com/blackfridaynl/"
+                  >
+                    <div
+                      className="footer__social-icon"
+                    >
+                      <IconComponent
+                        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/instagram.svg"
+                        size="15px"
+                      />
+                    </div>
+                    <div
+                      className="footer__social-text"
+                    >
+                      <div
+                        className="footer__social-title"
+                      >
+                        Instagram
+                      </div>
+                      Volg ons voor leuke acties
+                    </div>
+                  </Link>
+                </li>
+                <li
+                  key="2"
+                >
+                  <Link
+                    className="footer__social-link"
+                    to="mailto:info@blackfridaynederland.nl"
+                  >
+                    <div
+                      className="footer__social-icon"
+                    >
+                      <IconComponent
+                        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/mail.svg"
+                        size="15px"
+                      />
+                    </div>
+                    <div
+                      className="footer__social-text"
+                    >
+                      <div
+                        className="footer__social-title"
+                      >
+                        Mailtje
+                      </div>
+                      Heeft u een vraag? Stel hem gerust!
+                    </div>
+                  </Link>
+                </li>
+              </div>
+            </ExpandablePanelComponent>
+          </div>
+        </div>
+        <div>
+          <div
+            className="footer__column-body"
+          >
+            <div
+              className="footer__column-title"
+            >
+              Aanmelden voor onze nieuwsbrief
+            </div>
+            <p>
+               
+              En ontvang ons de allerbeste aanbiedingen
+            </p>
+            <Button
+              icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
+              title="Nieuwsbrief"
+              variant="primary-inverted"
+            />
+          </div>
+          <div
+            className="footer__column-footer"
+          >
+            <div
+              className="rating"
+            >
+              <div
+                className="rating__mark"
+              >
+                4.5
+              </div>
+              <StarsRatingComponent
+                numberStars={5}
+                rating={4.5}
+              />
+              <div
+                style={
+                  Object {
+                    "marginLeft": "10px",
+                  }
+                }
+              >
+                <LinkComponent
+                  to="https://www.google.com/search?output=search&q=Black+Friday+Nederland&ludocid=1020966209707573937&kgs=5565f77d0465e24f&shndl=-1&source=sh/x/kp/local&entrypoint=sh/x/kp/local#lrd=0x47c6eebed8f7cb0f:0xe2b335bc14c02b1,1"
+                >
+                  8 Google Reviews
+                </LinkComponent>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="footer__bottom"
+  >
+    <div
+      className="uk-container"
+    >
+      <div
+        className="footer__bottom-holder"
+      >
+        <div
+          className="footer__logo-box"
+        >
+          <Link
+            className="uk-visible@m footer__logo"
+            to="./"
+          >
+            <ImageComponent
+              alt="image"
+              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
+            />
+          </Link>
+          © 2019 · Black Friday Expert is een initiatief van Maddox Media B.V
+        </div>
+        <ul
+          className="footer__nav"
+        >
+          <li
+            key="0"
+          >
+            <LinkComponent
+              to="/"
+            >
+              Partner worden?
+            </LinkComponent>
+          </li>
+          <li
+            key="1"
+          >
+            <LinkComponent
+              to="/"
+            >
+              Algemene voorwaarden
+            </LinkComponent>
+          </li>
+          <li
+            key="2"
+          >
+            <LinkComponent
+              to="/"
+            >
+              Privacy
+            </LinkComponent>
+          </li>
+          <li
+            key="3"
+          >
+            <LinkComponent
+              to="/"
+            >
+              Cookiebeleid
+            </LinkComponent>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,48 @@
+.breadcrumb {
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray-light;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+  li {
+    margin: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    &:not(:last-child) {
+      &::after {
+        margin-left: 8px;
+        display: block;
+        content: "\2014";
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    color: #999;
+    text-decoration: none;
+    span {
+      stroke: $gray-light !important;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $global-inverse-color;
+      span {
+        stroke: $global-inverse-color !important;
+      }
+    }
+  }
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+}
+
+.back-button-text {
+  margin-left: 8px;
+}
