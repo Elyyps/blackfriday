@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from "./link";
 
 export class SeeMoreCard {
-  public icon?: string;
+  public icon: string;
   public link: Link;
   public title: string;
 }

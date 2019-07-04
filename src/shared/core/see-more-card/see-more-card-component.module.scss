@@ -1,18 +1,25 @@
 .see-more-card {
   max-height: 288px;
   min-height: 288px;
-  max-width: 227px;
-  min-width: 227px;
+  min-width: 215px;
+  width: 100%;
   background-color: white;
   text-align: left;
-  padding: 0 32px;
+  padding: 0 16px;
   color: black;
   display: flex;
   flex-direction: column;
+  height: 88px;
   justify-content: center;
   webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
+  @media (max-width: 699px) {
+    min-height: 168px;
+    height: 168px;
+    max-height: 168px;
+  }
+
   &__icon {
     margin-bottom: 8px;
   }
@@ -20,5 +27,15 @@
     font-size: 16px;
     font-weight: bold;
     margin: 8px 0;
+  }
+  &__content {
+    align-items: center;
+    @media (max-width: 699px) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-end;
+      
+    }
   }
 }
