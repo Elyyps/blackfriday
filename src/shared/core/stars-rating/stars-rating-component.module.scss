@@ -1,0 +1,17 @@
+.stars-rating {
+  display: flex;
+  &__star {
+    margin-right: 4px;
+  }
+}
+.full {
+  path {
+    fill: #ffbd03;
+  }
+}
+
+.empty {
+  path {
+    fill: #fff;
+  }
+}
