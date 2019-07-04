@@ -6,9 +6,7 @@ import { getFullfooter } from "@app/api/modules/footer/endpoints";
 
 export interface IPlaygroundDanieleComponentProps {}
 
-const PlaygroundDanieleComponent = (
-  props: IPlaygroundDanieleComponentProps
-) => (
+const PlaygroundDanieleComponent = (props: IPlaygroundDanieleComponentProps) => (
   <div>
     <FooterComponent footerModule={getFullfooter()} />
   </div>
