@@ -180,7 +180,9 @@ const HeroComponent = (props: IHeroComponentProps) => {
                   </div>
                   <div className={styles["hero-bottom__cards"]}>
                     {cards.map((item, key) => (
-                      <CardSimple key={key} {...item} />
+                      <div key={key}>
+                        <CardSimple {...item} />
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -190,7 +192,9 @@ const HeroComponent = (props: IHeroComponentProps) => {
                   </div>
                   <div className={styles["hero-bottom__cards"]}>
                     {cards.map((item, key) => (
-                      <CardSimple key={key} {...item} />
+                      <div key={key}>
+                        <CardSimple {...item} />
+                      </div>
                     ))}
                   </div>
                 </div>

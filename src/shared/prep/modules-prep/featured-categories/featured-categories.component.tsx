@@ -23,12 +23,14 @@ const FeaturedCategoriesComponent = (
   return (
     <div className="featured-categories" style={styles}>
       <div className="uk-container">
-        {props.items &&
-          props.items.map((item, key) => (
-            <div key={key}>
-              <CardSimple {...item} />
-            </div>
-          ))}
+        <div className="featured-categories__holder">
+          {props.items &&
+            props.items.map((item, key) => (
+              <div key={key}>
+                <CardSimple {...item} />
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const HeaderInfoDummy = {
 const FeaturedCategories = {
   bgcolor: "#f7f7f7",
   paddingBottom: "72px",
-  paddingTop: "72px",
+  paddingTop: "0",
   items: [
     {
       title: "Apple Airpods",
@@ -45,7 +45,8 @@ const FeaturedCategories = {
       icon: Store
     },
     {
-      title: "Categorie item met een nog langere na...",
+      title:
+        "Categorie item met een nog langere na xdfasdfasdfasdfasd dfgasdfasdfasd",
       link: "/",
       icon: Store
     },
