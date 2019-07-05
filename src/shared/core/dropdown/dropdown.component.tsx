@@ -16,6 +16,7 @@ export interface IDropdownComponentProps {
     | "tertiary"
     | "tertiary-inverted";
   children?: any;
+  icon?: string;
   orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";
   title?: string;
 }
@@ -34,16 +35,12 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           <Button
             title={props.title}
             variant={props.buttonVariant}
-            icon={isDropdownOpened ? ChevronUp : ChevronDown}
+            icon={props.icon ? props.icon : isDropdownOpened ? ChevronUp : ChevronDown}
             onClick={toggleOpened}
           />
         </div>
 
-        <div
-          className={`${style["dropdown-content"]}`}
-          uk-dropdown="mode: click"
-          data-uk-dropdown={"pos:" + props.orientation}
-        >
+        <div className={`${style["dropdown-content"]}`} uk-dropdown="mode: click" data-uk-dropdown={props.orientation}>
           {props.children}
         </div>
       </ShadowCardComponent>

@@ -7,5 +7,5 @@ export const HeaderInfoDummy: HeaderInfo = {
   icon: Store,
   bgcolor: "#f7f7f7",
   content: "Vier Black Friday bij Apple en ontvang 15% korting op alles! Meer info",
-  paddingBottom: "72px"
+  paddingBottom: "200px"
 };
