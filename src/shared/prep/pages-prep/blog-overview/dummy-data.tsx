@@ -149,22 +149,22 @@ const BlogOverview = {
         {
           title: "Apple Airpods",
           link: "/",
-          image: Oasis
+          icon: Oasis
         },
         {
           title: "Apple iPhones",
           link: "/",
-          image: Oasis
+          icon: Oasis
         },
         {
           title: "Apple MacBooks",
           link: "/",
-          image: Oasis
+          icon: Oasis
         },
         {
           title: "Naar alle deals!",
           link: "/",
-          image: Party
+          icon: Party
         }
       ]
     },
@@ -174,22 +174,22 @@ const BlogOverview = {
         {
           title: "Coolblue",
           link: "/",
-          image: CoolBlue
+          icon: CoolBlue
         },
         {
           title: "Alternate",
           link: "/",
-          image: CoolBlue
+          icon: CoolBlue
         },
         {
           title: "Beddenreus",
           link: "/",
-          image: CoolBlue
+          icon: CoolBlue
         },
         {
           title: "Naar alle Winkels!",
           link: "/",
-          image: Party
+          icon: Party
         }
       ]
     }

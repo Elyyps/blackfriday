@@ -14,7 +14,7 @@ import { BlogOverviewComponent } from "@app/prep/modules-prep/blog-overview";
 export interface IBlogOverviewComponentProps {}
 
 const BlogOverviewPageComponent = (props: IBlogOverviewComponentProps) => (
-  <div className={styles["homepage"]}>
+  <div className={styles["blog-overview"]}>
     <NavBarComponent />
     <HeaderOverviewComponent {...HeaderOverviewData} />
     <BlogOverviewComponent {...BlogOverview} />

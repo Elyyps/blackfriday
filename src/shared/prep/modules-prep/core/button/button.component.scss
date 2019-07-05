@@ -96,21 +96,26 @@
         fill: $gray-light;
       }
     }
+    
     .button__arrow {
       transition: transform .3s;
     }
+    
     &:hover,
     &.uk-open {
       background: $global-background;
       color: $gray-dark;
       box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
     }
+    
     &.uk-open {
+      z-index: 1022;
       box-shadow: 0 -3px 3px 0 rgba(0,0,0,.1);
       .button__arrow {
         transform: scale(1,-1);
       }
     }
+    
     &:focus,
     &:active {
       outline: none;

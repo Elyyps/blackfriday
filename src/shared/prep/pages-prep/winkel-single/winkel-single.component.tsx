@@ -11,9 +11,9 @@ export interface IWinkelSingleComponentProps {}
 
 const WinkelSingleComponent = (props: IWinkelSingleComponentProps) => (
   <div className={styles["homepage"]}>
-    <NavBarComponent/>
-    <ProductDetailComponent {...ProductDetail} cards={Cards}/>
-    <FooterComponent/>
+    <NavBarComponent />
+    <ProductDetailComponent {...ProductDetail} cards={Cards} />
+    <FooterComponent />
   </div>
 );
 

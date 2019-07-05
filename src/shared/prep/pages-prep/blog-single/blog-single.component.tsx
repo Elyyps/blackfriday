@@ -18,7 +18,7 @@ import Oasis from "@assets/oasis.jpg";
 export interface IBlogSingleComponentProps {}
 
 const BlogSingleComponent = (props: IBlogSingleComponentProps) => (
-  <div className={styles["homepage"]}>
+  <div className={styles["blog-single"]}>
     <NavBarComponent />
     <HeaderSingleComponent {...HeaderData} />
     <BodyBlogComponent {...BodyBlogData}>
