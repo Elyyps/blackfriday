@@ -1,10 +1,29 @@
 .product-detail {
   background-color: $bg-muted;
   padding-top: 40px;
+  @media(max-width: $breakpoint-xsmall-max){
+    padding-top: 16px;
+    .uk-container{
+      padding: 0;
+    }
+    .card-wrap{
+      padding: 0 16px;
+    }
+  }
+  .uk-margin-small-top{
+    margin-top: 8px;
+    @media (max-width: $breakpoint-small-max) {
+      margin-top: 0;
+    }
+  }
   .card{
     &-shop{
       height: auto;
       padding-bottom: 52px;
+      @media (max-width: $breakpoint-small-max) {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
     }
     &-message{
       padding: 32px;
@@ -24,6 +43,11 @@
         position: absolute;
         top: 0;
         left: 50%;
+        @media(max-width: $breakpoint-xsmall-max){
+          height: 20px;
+          width: 20px;
+
+        }
       }
       .card{
         &__body{
@@ -59,6 +83,9 @@
   }
   &__content {
     padding: 16px 32px 32px;
+    @media(max-width: $breakpoint-xsmall-max){
+      padding: 16px;
+    }
     .breadcrumbs {
       display: flex;
       margin: 0;
@@ -114,18 +141,39 @@
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 8px;
+      @media(max-width: $breakpoint-xsmall-max){
+        margin-bottom: 0;
+      }
       &__item {
         display: flex;
         align-items: center;
+        order: 1;
+        @media(max-width: $breakpoint-xsmall-max){
+          flex: 1 1 100%;
+          justify-content: space-between;
+          & + .actions__item{
+            order: 0;
+            margin-bottom: 16px;
+          }
+        }
+
         &-wrap {
           margin: 0 -4px;
+          flex: 1 1 100%;
+          display: flex;
           > * {
             margin: 0 4px;
+            @media(max-width: $breakpoint-xsmall-max){
+              width: 50%;
+            }
           }
         }
         .button {
           &--link {
             padding: 0;
+            @media(max-width: $breakpoint-xsmall-max){
+              width: auto;
+            }
           }
         }
       }
