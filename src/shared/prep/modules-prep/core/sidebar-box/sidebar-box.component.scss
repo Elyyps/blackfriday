@@ -22,35 +22,6 @@
       }
     }
   }
-  &__link {
-    display: flex;
-    align-items: center;
-    color: $gray-dark;
-    position: relative;
-    padding: 8px 30px 8px 16px;
-    text-decoration: none;
-    background: $global-background;
-    min-height: 40px;
-    &:hover {
-      text-decoration: none;
-      color: currentColor;
-      .icon-svg {
-        right: 10px;
-      }
-    }
-  }
-  &__image {
-    width: 40px;
-    margin-right: 16px;
-    text-align: center;
-  }
-  .icon-svg {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: right .2s;
-  }
   &:not(:last-child) {
     margin-bottom: 32px;
   }
