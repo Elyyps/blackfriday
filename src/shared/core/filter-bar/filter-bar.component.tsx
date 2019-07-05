@@ -10,9 +10,13 @@ import Filter from "@assets/icons/filter.svg";
 import { FilterBar } from "@app/api/core/filter-bar";
 import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
+import { CheckboxComponent } from "../checkbox/checkbox.component";
 
 export interface IFilterBarComponentProps {
+  brandsChecked?: number;
+  categoriesChecked?: number;
   filterBar: FilterBar;
+  numberOfShops: number;
   onBrandChanged: (value: string) => void;
   onCategoryChanged: (value: string) => void;
   onOrderByChanged: (value: string) => void;
@@ -23,8 +27,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const [filterSort, setfilterSort] = React.useState(false);
   const [prevIcon, setPrevIcon] = React.useState(false);
   const [filterContent, setFilterContent] = React.useState(false);
+  const [orderBy, setOrderBy] = React.useState("Relevant");
 
-  const filterSortChange = (e: any) => {
+  const filterSortChange = () => {
     setfilterSort(!filterSort);
   };
   const handleClickLAbel = () => {
@@ -32,6 +37,10 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   };
   const handleClick = () => {
     setPrevIcon(!prevIcon);
+  };
+  const onOrderBySelected = (value: string) => {
+    props.onOrderByChanged(value);
+    setOrderBy(value);
   };
 
   return (
@@ -78,12 +87,14 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           <DropdownComponent
             title={props.filterBar.statusFilterTitle}
             buttonVariant="primary-brand"
-            orientation="bottom-left"
+            orientation="bottom-right"
             buttonColor="outline"
           >
-            <ul>
+            <ul className={styles["filter-bar-ul"]}>
               {props.filterBar.status.map((value, key) => (
-                <li key={key}>{value}</li>
+                <li key={key} className={styles["filter-bar-li"]}>
+                  <CheckboxComponent onClick={() => props.onStatusChanged(value.text)}>{value.text}</CheckboxComponent>
+                </li>
               ))}
             </ul>
           </DropdownComponent>
@@ -94,11 +105,11 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             buttonVariant="secondary"
             orientation="bottom-left"
           >
-            <ul>
-              {props.filterBar.categories.map((value, key) => (
-                <li key={key}>{value}</li>
-              ))}
-            </ul>
+            <SearchFilterControlComponent
+              checked={props.categoriesChecked}
+              checkbox={props.filterBar.categories}
+              onSelect={props.onCategoryChanged}
+            />
           </DropdownComponent>
         </div>
         <div className="uk-visible@m">
@@ -108,8 +119,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             orientation="bottom-left"
           >
             <SearchFilterControlComponent
+              checked={props.brandsChecked}
               checkbox={props.filterBar.brands}
-              onChange={value => props.onBrandChanged(value)}
+              onSelect={props.onBrandChanged}
             />
           </DropdownComponent>
         </div>
@@ -119,12 +131,12 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           <span>
             <IconComponent icon={StoreIcon} size={"20px"} />
           </span>
-          132 winkels
+          {props.numberOfShops} winkels
         </div>
         <div className={styles["filter__sort-item"]}>
           {props.filterBar.sortByFilterTitle}
           <span role={"button"} className={styles["filter__sort-change"]} onClick={filterSortChange}>
-            Relevantie
+            {orderBy}
             <span
               className={` ${styles["filter__sort-change-icon"]} ${
                 styles[filterSort ? "filter__sort-change-icon-isActive" : ""]
@@ -133,6 +145,14 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               <IconComponent icon={ArrowLongDown} size={"6px"} />
             </span>
           </span>
+
+          <ul data-uk-dropdown="mode: click" className={styles["filter-bar-ul"]}>
+            {props.filterBar.sortBy.map((value, key) => (
+              <li className={styles["filter-bar-li"]} key={key} onClick={() => onOrderBySelected(value)}>
+                {value}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

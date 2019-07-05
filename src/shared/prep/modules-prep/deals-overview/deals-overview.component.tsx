@@ -41,9 +41,10 @@ export interface IDealsOverviewComponentProps {
 
 const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   const postFrom = 15;
+  const ObjectKeys: any = {};
   const connectClass = "uk-switcher-list";
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
-  const [checkedItems, setCheckedItems] = useState(new Map());
+  const [checkedItems, setCheckedItems] = useState(ObjectKeys);
   const [textLabel, setTextLabel] = useState("");
   const [prevIcon, setPrevIcon] = useState(false);
   const [filterContent, setFilterContent] = useState(false);
@@ -64,10 +65,24 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   const handleClickLAbel = () => {
     setFilterContent(!filterContent);
   };
-  const handleChange = (event: any) => {
-    setCheckedItems(
-      checkedItems.set(event.target.getAttribute("data-category"), [{ [event.target.name]: event.target.checked }])
-    );
+
+  const handleChange = (event: any, status?: any) => {
+    setCheckedItems({
+      ...checkedItems,
+      [status]: {
+        ...checkedItems[status],
+        [event.target.name]: event.target.checked
+      }
+    });
+
+    return;
+  };
+  const isSomeCheckboxctive = (status: any) => {
+    if (checkedItems[status]) {
+      const isActive = Object.keys(checkedItems[status]).some(key => checkedItems[status][key] === true);
+
+      return isActive ? "active" : "";
+    }
   };
 
   return (
@@ -75,6 +90,17 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
       <div className="deals-overview">
         <div className="deals-overview__header">
           <div className="uk-container">
+            <div className="deals-overview__tab">
+              <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
+                {tabItems
+                  ? tabItems.map((item, key) => (
+                      <TabComponent attrAction={"link"} key={key}>
+                        {item.title}
+                      </TabComponent>
+                    ))
+                  : ""}
+              </TabContainerComponent>
+            </div>
             <div className="deals-overview__filters">
               <div className="deals-overview__filter-list">
                 <div className={"filter-label  uk-visible@m"}>
@@ -123,20 +149,106 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   </div>
                   {dealsOverviewDropdownDummy
                     ? dealsOverviewDropdownDummy.map((item, index) => (
-                        <div key={index} className="filter-item">
+                        <div key={index} className={`filter-item ${isSomeCheckboxctive(item.button_text)} `}>
                           <Button
                             title={item.button_text}
                             type={"button"}
-                            variant={`dropdown ${item.isActive}`}
+                            variant={`dropdown-modify`}
                             onClick={handleClick}
                             icon={ChevronDown}
                           />
+                          <div data-uk-dropdown="mode: click">
+                            <div className="dropdown-head">
+                              <Input
+                                placeholder={item.dropdwon.placehoder}
+                                classModify={"large"}
+                                icon={Search}
+                                name={"search"}
+                              />
+                            </div>
+                            <div className="dropdown-body">
+                              <div className="uk-grid uk-child-width-1-2@s">
+                                {item.dropdwon.status
+                                  ? item.dropdwon.status.map((itemCheckbox, key) => (
+                                      <div key={key} className={"dropdown-item"}>
+                                        <Checkbox
+                                          onChange={(event: any): void => handleChange(event, item.button_text)}
+                                          key={key}
+                                          name={itemCheckbox.name}
+                                          label={itemCheckbox.label}
+                                        />
+                                        <span className="count-item uk-visible@m">({itemCheckbox.count})</span>
+                                      </div>
+                                    ))
+                                  : ""}
+                              </div>
+                            </div>
+                            <div className="dropdown-bottom">
+                              <ul className="dropdown-bottom__action">
+                                <li className={"uk-visible@s"}>
+                                  <Link to="#">Verwijder merk filters (2)</Link>
+                                </li>
+                                <li>
+                                  <Button title={"Toon 123 Winkels"} href={"#"} />
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                       ))
                     : ""}
                 </div>
               </div>
+              <div className="deals-overview__sort">
+                <div className="filter__sort-item">
+                  <IconComponent icon={StoreIcon} size={"20px"} />
+                  132 winkels
+                </div>
+                <div className="filter__sort-item">
+                  Sorteer op:
+                  <span
+                    role={"button"}
+                    className={classNames("filter__sort-change", {
+                      ["isActive"]: filterSort
+                    })}
+                    onClick={filterSortChange}
+                  >
+                    Relevantie
+                    <IconComponent icon={ArrowLongDown} size={"6px"} />
+                  </span>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+        <div className="deals-overview__body">
+          <div className="uk-container">
+            <TabContainerComponent classTabList={`uk-switcher ${connectClass}`}>
+              {TabItemsContent
+                ? TabItemsContent.map((item, key) => (
+                    <TabComponent key={key}>
+                      <div
+                        className="uk-grid-posts uk-grid uk-grid-small  uk-child-width-1-3@s uk-child-width-1-5@m"
+                        data-uk-margin
+                      >
+                        {CardsDeals &&
+                          CardsDeals.slice(0, postFrom).map((itemCard, keyCard) => (
+                            <div key={keyCard}>
+                              <CardProduct {...itemCard} />
+                            </div>
+                          ))}
+                        <BannerComponent {...Banner} />
+                        {CardsDeals &&
+                          CardsDeals.slice(postFrom).map((itemCard, keyCard) => (
+                            <div key={keyCard}>
+                              <CardProduct {...itemCard} />
+                            </div>
+                          ))}
+                      </div>
+                    </TabComponent>
+                  ))
+                : ""}
+            </TabContainerComponent>
           </div>
         </div>
       </div>

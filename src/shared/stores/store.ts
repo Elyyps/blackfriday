@@ -7,7 +7,8 @@ import { History } from "history";
 import { localesReducer, ILocalesState } from "@app/stores/locales";
 
 import { IPageState, pageReducer } from "./page";
-
+import { IShopsOverview } from "./stores-overview/stores-overview.types";
+import { shopsOverviewReducer } from "./stores-overview/stores-overview.reducer";
 type StoreParams = {
   history: History;
   initialState: IAppState;
@@ -18,6 +19,7 @@ export interface IAppState {
   locales: ILocalesState;
   page: IPageState;
   router: RouterState;
+  shopsOverview: IShopsOverview;
 }
 
 export const getInitialState = () => {
@@ -41,6 +43,8 @@ export const configureStore = ({ history, initialState, middleware = [] }: Store
     combineReducers({
       locales: localesReducer,
       page: pageReducer,
+      shopsOverview: shopsOverviewReducer,
+
       router: connectRouter(history)
     }),
     initialState,

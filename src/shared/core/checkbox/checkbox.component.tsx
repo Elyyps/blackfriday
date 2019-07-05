@@ -3,7 +3,7 @@ import style from "./checkbox-component.module.scss";
 import { Checkbox } from "@app/api/core/checkbox";
 
 export interface ICheckboxComponentProps {
-  checkbox: Checkbox;
+  children: any;
   onClick: (value: string) => void;
 }
 
@@ -14,12 +14,11 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
         <input
           type="checkbox"
           className={style["checkbox__input"]}
-          aria-checked="false"
-          onChange={() => props.onClick(props.checkbox.text)}
+          aria-checked={"false"}
+          onChange={() => props.onClick(props.children)}
         />
-        {props.checkbox.text}
+        {props.children}
       </label>
-      <span className={style["checkbox__count-item"]}>({props.checkbox.quantity})</span>
     </div>
   </React.Fragment>
 );

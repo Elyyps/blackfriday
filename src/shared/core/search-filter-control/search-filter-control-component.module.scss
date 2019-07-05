@@ -8,9 +8,14 @@
       background: $global-inverse-color;
     }
   }
+
+  ::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
   &-body {
-    max-height: 210px;
-    overflow-y: scroll;
+    height: 225px;
+    overflow: scroll;
     overflow-x: hidden;
     width: 95%;
     margin: auto;

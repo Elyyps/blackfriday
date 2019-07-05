@@ -6,27 +6,26 @@ import { Checkbox, generateDummyCheckboxArray } from "@app/api/core/checkbox";
 import { Button } from "../button";
 import Search from "@assets/icons/search.svg";
 import { Input } from "@app/prep/modules-prep/core";
+import { optionalCallExpression } from "@babel/types";
 
 export interface ISearchFilterControlComponentProps {
   checkbox: Checkbox[];
-  onChange: (value: string) => void;
+  checked?: number;
+  onSelect: (value: string) => void;
 }
 
 const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
-  const [value, setValue] = React.useState("");
   const [brandList, setBrandList] = React.useState<Checkbox[]>([]);
+
   const searchBrand = (value: string) => {
     const list: Checkbox[] = [];
     props.checkbox.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand));
     setBrandList(list);
   };
+
   useEffect(() => {
-    if (value.length > 0) {
-      searchBrand(value);
-    } else {
-      setBrandList(props.checkbox);
-    }
-  }, [value]);
+    setBrandList(props.checkbox);
+  }, []);
 
   return (
     <div className={style["filter-modal"]}>
@@ -36,7 +35,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
           classModify={"large"}
           icon={Search}
           onChange={event => {
-            setValue(event);
+            searchBrand(event);
           }}
         />
       </div>
@@ -44,7 +43,8 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
         <div className="uk-grid uk-child-width-1-2@s">
           {brandList.map((checkbox, key) => (
             <div key={key} className={style["filter-modal-item"]}>
-              <CheckboxComponent checkbox={checkbox} onClick={setValue} />
+              <CheckboxComponent onClick={() => props.onSelect(checkbox.text)}>{checkbox.text}</CheckboxComponent>
+              <span>({checkbox.quantity})</span>
             </div>
           ))}
         </div>
@@ -53,7 +53,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
       <div className={style["filter-modal-bottom"]}>
         <ul className={style["filter-modal-bottom__action"]}>
           <li>
-            <Link to="#">Verwijder merk filters (2)</Link>
+            <Link to="#">Verwijder merk filters ({props.checked})</Link>
           </li>
           <li>
             <Button title={"Toon 123 Winkels"} variant={"primary-brand"} />
