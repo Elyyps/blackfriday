@@ -46,19 +46,8 @@
   .uk-margin-small-top{
     margin-top: 8px;
   }
-}
-.input, .textarea {
-  background-color: $bg-muted;
-  min-height: 36px;
-  width: 100%;
-  border: none;
-  font-size: 16px;
-  padding: 0 32px 0 12px;
-  box-sizing: border-box;
-  &--large {
-    min-height: 40px;
-  }
-  .form-item {
+  &-item{
+    position: relative;
     position: relative;
     &.isIcon {
       input {
@@ -105,6 +94,18 @@
         fill: currentColor;
       }
     }
+  }
+}
+.input, .textarea {
+  background-color: $bg-muted;
+  min-height: 36px;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 0 32px 0 12px;
+  box-sizing: border-box;
+  &--large {
+    min-height: 40px;
   }
   &-icon {
     cursor: pointer;
