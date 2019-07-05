@@ -16,7 +16,7 @@ interface IInputProps {
   placeholder?: string;
 }
 
-const Input = (props: IInputProps) => {
+const TextArea = (props: IInputProps) => {
   const {
     name,
     placeholder,
@@ -26,8 +26,8 @@ const Input = (props: IInputProps) => {
     isError,
     isSuccess
   } = props;
-  const inputClassName = classNames("input", {
-    [`input--${classModify}`]: classModify
+  const inputClassName = classNames("textarea", {
+    [`textarea--${classModify}`]: classModify
   });
   const [value, setValue] = useState("");
   const wrapperClassnames = classNames({
@@ -49,15 +49,13 @@ const Input = (props: IInputProps) => {
     <React.Fragment>
       <div className={`form-item ${wrapperClassnames}`}>
         {label ? <label htmlFor="label">{label}</label> : ""}
-        <input
+        <textarea
           onChange={handelChange}
-          type="text"
           placeholder={placeholder}
           className={inputClassName}
           name={name}
           value={value}
         />
-        {icon ? <IconComponent icon={icon} size={"15px"} /> : ""}
         {value && !isSuccess ? (
           <div role={"button"} className="input-icon" onClick={handelClear}>
             <IconComponent icon={Cross} size={"10px"} />
@@ -83,4 +81,4 @@ const Input = (props: IInputProps) => {
   );
 };
 
-export { Input };
+export { TextArea };

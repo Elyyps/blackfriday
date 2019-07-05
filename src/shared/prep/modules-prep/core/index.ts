@@ -11,3 +11,4 @@ export * from "./form";
 export * from "./shared-box";
 export * from "./sidebar";
 export * from "./sidebar-box";
+export * from "./modal";
