@@ -56,6 +56,11 @@ const CardsDeals = [
     button_link: "#"
   }
 ];
+const ModalData = {
+  modal_target: "modal-product-detail",
+  modal_title: "Inschrijven nieuwsbrief",
+  button_icon: Paper
+};
 
 const Card = [
   {
@@ -193,5 +198,6 @@ export {
   CardsDeals,
   CardMore,
   Banner,
-  CTASimple
+  CTASimple,
+  ModalData
 };

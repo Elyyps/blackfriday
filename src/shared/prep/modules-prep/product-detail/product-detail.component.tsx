@@ -1,7 +1,16 @@
 import * as React from "react";
 import "./product-detail-component.scss";
-import { Card } from "@app/prep/pages-prep/winkel-single/dummy-data";
-import { Button, CardShop, IconComponent } from "@app/prep/modules-prep/core";
+import { Card, ModalData } from "@app/prep/pages-prep/winkel-single/dummy-data";
+import IconDefault from "@assets/icons/link.svg";
+import {
+  Button,
+  CardShop,
+  IconComponent,
+  SharedBox,
+  Modal,
+  Input,
+  TextArea
+} from "@app/prep/modules-prep/core";
 import { RatingComponent } from "./rating.component";
 import { Link } from "react-router-dom";
 
@@ -31,7 +40,7 @@ const ProductDetailComponent = ({
           <div className="card-wrap">
             {Card &&
               Card.map((item, key) => (
-                <>
+                <React.Fragment key={key}>
                   <CardShop key={key} {...item} />
                   <div className="card-message uk-visible@s">
                     <div className="card__head">
@@ -42,11 +51,14 @@ const ProductDetailComponent = ({
                         {item.message.description}
                       </div>
                       <div className="card__action">
-                        <Button {...item.message.button} />
+                        <Button
+                          {...item.message.button}
+                          data-uk-toggle={`target: #${ModalData.modal_target}`}
+                        />
                       </div>
                     </div>
                   </div>
-                </>
+                </React.Fragment>
               ))}
           </div>
         </div>
@@ -85,7 +97,12 @@ const ProductDetailComponent = ({
               <div className="product-detail__footer">
                 <div className="actions" data-uk-margin>
                   <div className="actions__item">
-                    <Button href={"#"} title={"Beddenreus"} variant={"link"} />
+                    <Button
+                      href={"#"}
+                      title={"Beddenreus"}
+                      variant={"link"}
+                      icon={IconDefault}
+                    />
                     <div className="uk-hidden@s">
                       <RatingComponent {...rating} />
                     </div>
@@ -97,11 +114,7 @@ const ProductDetailComponent = ({
                         title={"Winkel opslaan als favoriet"}
                         variant={"secondary"}
                       />
-                      <Button
-                        href={"#"}
-                        title={"secondary"}
-                        variant={"dropdown"}
-                      />
+                      <SharedBox title={"Delen"} />
                     </div>
                   </div>
                 </div>
@@ -119,25 +132,50 @@ const ProductDetailComponent = ({
           </div>
           {Card &&
             Card.map((item, key) => (
-              <>
-                <div className="card-message uk-hidden@s">
-                  <div className="card__head">
-                    <IconComponent icon={item.message.icon} size={"30px"} />
+              <div key={key} className="card-message uk-hidden@s">
+                <div className="card__head">
+                  <IconComponent icon={item.message.icon} size={"30px"} />
+                </div>
+                <div className="card__body">
+                  <div className="card__content">
+                    {item.message.description}
                   </div>
-                  <div className="card__body">
-                    <div className="card__content">
-                      {item.message.description}
-                    </div>
-                    <div className="card__action">
-                      <Button {...item.message.button} />
-                    </div>
+                  <div className="card__action">
+                    <Button
+                      {...item.message.button}
+                      data-uk-toggle={`target: #${ModalData.modal_target}`}
+                    />
                   </div>
                 </div>
-              </>
+              </div>
             ))}
         </div>
       </div>
     </div>
+    <Modal {...ModalData}>
+      <>
+        <form action="/" className={"form"}>
+          <div className="uk-grid" data-uk-margin>
+            <div className="uk-width-1-2@s">
+              <Input name={"text"} label={"Naam"} />
+            </div>
+            <div className="uk-width-1-2@s">
+              <Input name={"text"} label={"E-mailadres"} />
+            </div>
+          </div>
+          <div className="uk-margin-small-top">
+            <TextArea name={"text"} label={"Bericht"} />
+          </div>
+          <div className="form-bottom uk-margin-small-top">
+            <Button
+              type={"submit"}
+              title={"Verzenden"}
+              icon={ModalData.button_icon}
+            />
+          </div>
+        </form>
+      </>
+    </Modal>
   </div>
 );
 

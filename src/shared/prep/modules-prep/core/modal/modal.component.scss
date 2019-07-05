@@ -1,0 +1,29 @@
+.uk-modal{
+  &.uk-open{
+    display: flex;
+    align-items: center;
+  }
+  &-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    @media(max-width: $breakpoint-xsmall-max){
+      margin-bottom: 16px;
+    }
+    h1,h2,h3,h4,h5,h6{
+      margin: 0;
+    }
+  }
+  &-close{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+  }
+  &-body{
+    padding: 24px 40px 40px;
+    @media(max-width: $breakpoint-xsmall-max){
+      padding: 24px;
+    }
+  }
+}

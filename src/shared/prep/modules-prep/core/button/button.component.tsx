@@ -2,7 +2,6 @@ import * as React from "react";
 import "./button.component.scss";
 import { Link } from "react-router-dom";
 import { IconComponent } from "@app/prep/modules-prep/core";
-import IconDefault from "@assets/icons/link.svg";
 import ArrowDown from "@assets/icons/chevron-down.svg";
 import classNames from "classnames";
 
@@ -42,7 +41,7 @@ const Button = (props: IButtonProps) => {
       {href ? (
         <Link {...other} to={href} className={buttonClassName} target={target}>
           <span>{title}</span>
-          {icon ? <IconComponent icon={icon || IconDefault} size="12px" /> : ""}
+          {icon ? <IconComponent icon={icon} size="12px" /> : ""}
         </Link>
       ) : (
         <button
@@ -52,7 +51,7 @@ const Button = (props: IButtonProps) => {
           className={buttonClassName}
         >
           <span>{title}</span>
-          {icon ? <IconComponent icon={icon || IconDefault} size="12px" /> : ""}
+          {icon ? <IconComponent icon={icon} size="12px" /> : ""}
           {variant === "dropdown" && (
             <div className="button__arrow">
               <IconComponent icon={ArrowDown} size={"12px"} />
