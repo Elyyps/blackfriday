@@ -1,7 +1,16 @@
 .uk-modal{
+  display: block;
+  visibility: hidden;
   &.uk-open{
     display: flex;
     align-items: center;
+    visibility: visible;
+    .uk-modal{
+      &-dialog{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
   &-head{
     display: flex;
