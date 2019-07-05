@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./shared-box.component.scss";
-import { Button } from "@app/prep/modules-prep/core";
-import Share from "@assets/icons/share.svg";
+import { DropdownComponent } from "../dropdown/dropdown.component";
 
 interface ISharedBoxProps {
   title: string;
@@ -10,10 +9,9 @@ interface ISharedBoxProps {
 const SharedBox = (props: ISharedBoxProps) => (
   <div className="shared-box">
     {props.title && (
-      <div>
-        <Button title={props.title} type={"button"} variant={"dropdown"} icon={Share} position={"left"} />
-        <div data-uk-dropdown="mode: click">Social Shared</div>
-      </div>
+      <DropdownComponent title="Status" buttonVariant="secondary" orientation="bottom-left">
+        <div>ciao</div>
+      </DropdownComponent>
     )}
   </div>
 );
