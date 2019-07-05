@@ -4,7 +4,6 @@ import ChevronDown from "@assets/icons/chevron-down.svg";
 import ChevronUp from "@assets/icons/chevron-up.svg";
 import { useState } from "react";
 import { Button } from "@app/core/button";
-import { ShadowCardComponent } from "../shadow-card";
 
 export interface IDropdownComponentProps {
   buttonVariant?:
@@ -30,20 +29,18 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
 
   return (
     <div className={style["dropdown"]}>
-      <ShadowCardComponent shadowSize="small">
-        <div className={style["dropdown-button"]}>
-          <Button
-            title={props.title}
-            variant={props.buttonVariant}
-            icon={props.icon ? props.icon : isDropdownOpened ? ChevronUp : ChevronDown}
-            onClick={toggleOpened}
-          />
-        </div>
+      <div className={style["dropdown-button"]}>
+        <Button
+          title={props.title}
+          variant={props.buttonVariant}
+          icon={props.icon ? props.icon : isDropdownOpened ? ChevronUp : ChevronDown}
+          onClick={toggleOpened}
+        />
+      </div>
 
-        <div className={`${style["dropdown-content"]}`} uk-dropdown="mode: click" data-uk-dropdown={props.orientation}>
-          {props.children}
-        </div>
-      </ShadowCardComponent>
+      <div className={`${style["dropdown-content"]}`} uk-dropdown="mode: click" data-uk-dropdown={props.orientation}>
+        {props.children}
+      </div>
     </div>
   );
 };
