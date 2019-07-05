@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[FeaturedShops] should render component without crashing 1`] = `
+<div
+  className="featured-deals"
+>
+  <h2
+    className="featured-deals__title"
+  >
+    Meer deals
+  </h2>
+  <div
+    className="featured-deals__list"
+  >
+    <div
+      className="featured-deals__item-0"
+      key="0"
+    >
+      <DealCardComponent
+        buttonLink="/"
+        buttonText="Naar deal"
+        image="https://d2ddoduugvun08.cloudfront.net/items/2q1D2t2D003Z1X023z18/Image%202019-07-01%20at%204.45.18%20PM.png?X-CloudApp-Visitor-Id=3342233&v=d96f45c6"
+        key="0"
+        newPrice="€2.429"
+        oldPrice="€3.429"
+        sale="Bespaar 40%"
+        subtitle="Mediamarkt"
+        title="Pocketveermatas Pocket Comfort x2000"
+      />
+    </div>
+    <div
+      className="featured-deals__item-1"
+      key="1"
+    >
+      <DealCardComponent
+        buttonLink="/"
+        buttonText="Naar deal"
+        image="https://d2ddoduugvun08.cloudfront.net/items/42013C072O2711070D0a/Image%202019-07-01%20at%204.46.51%20PM.png?X-CloudApp-Visitor-Id=3342233&v=c0749925"
+        key="1"
+        label="Hot"
+        newPrice="€2.429"
+        oldPrice="€3.429"
+        sale="Bespaar 40%"
+        subtitle="Mediamarkt"
+        title="Hoofdkussen Actie kussenset"
+      />
+    </div>
+    <div
+      className="featured-deals__item-2"
+      key="2"
+    >
+      <DealCardComponent
+        buttonLink="/"
+        buttonText="Naar deal"
+        image="https://d2ddoduugvun08.cloudfront.net/items/193s25422A3q0v2F1f35/Image%202019-07-01%20at%204.47.42%20PM.png?X-CloudApp-Visitor-Id=3342233&v=b6e3280e"
+        key="2"
+        newPrice="€2.429"
+        oldPrice="€3.429"
+        sale="Bespaar 40%"
+        subtitle="Mediamarkt"
+        title="Lattenbodem FLEXUS 2600 VL"
+      />
+    </div>
+    <div
+      className="featured-deals__item-3"
+      key="3"
+    >
+      <DealCardComponent
+        buttonLink="/"
+        buttonText="Naar deal"
+        image="https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a"
+        key="3"
+        newPrice="€2.429"
+        oldPrice="€3.429"
+        sale="Bespaar 40%"
+        subtitle="Mediamarkt"
+        title="Dyson apparaten met korting"
+      />
+    </div>
+    <div>
+      <SeeMoreCardComponent
+        icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+        link={
+          Object {
+            "title": "Alle winkels",
+            "url": "/",
+          }
+        }
+        title="Wij hebben meer winkels in ons overzicht"
+      />
+    </div>
+  </div>
+</div>
+`;

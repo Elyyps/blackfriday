@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SeeMoreCard] should render component without crashing 1`] = `
+<ShadowCardComponent
+  shadowSize="small"
+>
+  <div
+    className="see-more-card"
+  >
+    <div
+      className="see-more-card__content"
+    >
+      <div
+        className="see-more-card__icon"
+      >
+        <IconComponent
+          icon="https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0"
+          size="24px"
+        />
+      </div>
+      <div
+        className="see-more-card__title"
+      >
+        Wij hebben meer winkels in ons overzicht
+      </div>
+    </div>
+    <LinkComponent
+      animated={true}
+      icon={
+        Object {
+          "ReactComponent": [Function],
+          "__esModule": true,
+          "default": "chevron-right.svg",
+        }
+      }
+      to="/"
+      variant="tertiary"
+    >
+      Alle winkels
+    </LinkComponent>
+  </div>
+</ShadowCardComponent>
+`;
