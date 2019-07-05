@@ -32,7 +32,9 @@ const Button = (props: IButtonProps) => {
   const { variant, title, buttonType, icon, disabled, iconStyle, iconPosition } = props;
   const classModify = variant || "primary-default";
   const buttonFAB = !title ? style["button--FAB"] : "";
-  const iconOutline = iconStyle ? style[`button--${classModify}--icon-${iconStyle}`] : "";
+  const iconOutline = iconStyle
+    ? style[`button--${classModify}--icon-${iconStyle}`]
+    : style[`button--${classModify}--icon-filled`];
   const buttonClassName = classNames(style["button"], style[`button--${classModify}`], buttonFAB, iconOutline, {
     "button--fullWidth": props.fullWidth
   });

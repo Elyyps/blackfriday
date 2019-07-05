@@ -11,6 +11,7 @@ import { History } from "history";
 import { localesReducer, ILocalesState } from "@app/stores/locales";
 
 import { IPageState, pageReducer } from "./page";
+import { INavbarSearchState, navbarSearchReducer } from "./navbar-seach";
 
 type StoreParams = {
   history: History;
@@ -20,6 +21,7 @@ type StoreParams = {
 
 export interface IAppState {
   locales: ILocalesState;
+  navbarSearch: INavbarSearchState;
   page: IPageState;
   router: RouterState;
 }
@@ -48,6 +50,7 @@ export const configureStore = ({
   const store = createStore<IAppState>(
     combineReducers({
       locales: localesReducer,
+      navbarSearch: navbarSearchReducer,
       page: pageReducer,
       router: connectRouter(history)
     }),

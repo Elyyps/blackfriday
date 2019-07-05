@@ -2,11 +2,12 @@ import * as React from "react";
 import styles from "./featured-deals-component.module.scss";
 import { SeeMoreCard } from "@app/api/core/see-more-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
-import { DealCard } from "@app/api/core/deal-card";
 import { DealCardComponent } from "@app/core/deal-card";
+import { DealCardModule } from "@app/api/core/deal-card";
+
 
 export interface IFeaturedDealsComponentProps {
-  deals: [DealCard, DealCard, DealCard, DealCard];
+  deals: [DealCardModule, DealCardModule, DealCardModule, DealCardModule];
   seeMoreCard: SeeMoreCard;
   title: string;
 }
@@ -35,7 +36,7 @@ const FeaturedDealsComponent = (props: IFeaturedDealsComponentProps) => {
           </div>
         ))}
         <div>
-          <SeeMoreCardComponent title={seeMoreCard.title} link={seeMoreCard.link} icon={seeMoreCard.icon} />
+          <SeeMoreCardComponent title={seeMoreCard.title} buttonText={seeMoreCard.link.title} buttonLink={seeMoreCard.link.url} icon={seeMoreCard.icon} />
         </div>
       </div>
     </div>
