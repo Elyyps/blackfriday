@@ -22,7 +22,7 @@ interface IButtonProps {
   icon?: string;
   iconPosition?: string;
   iconStyle?: IconStyle;
-  onClick?: () => void;
+  onClick?: (() => void) | string;
   size?: number;
   title?: string;
   variant?: ButtonType;
@@ -40,6 +40,8 @@ const Button = (props: IButtonProps) => {
     width: props.fullWidth ? "100%" : props.size,
     height: props.size
   };
+
+  const onClick = typeof props.onClick === "string" ? () => (location.href = `/${props.onClick}`) : props.onClick;
 
   const renderIconMargin = (margin = "right") => {
     let newMargin = "";
@@ -62,7 +64,7 @@ const Button = (props: IButtonProps) => {
         type={buttonType}
         name={title}
         className={buttonClassName}
-        onClick={!disabled && typeof props.onClick !== "undefined" ? props.onClick : undefined}
+        onClick={onClick}
       >
         <span className={style["icon-svg"]}>
           {((icon && iconPosition === "right") || (icon && !iconPosition)) && title}

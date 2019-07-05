@@ -1,4 +1,8 @@
 .medium-hero {
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
 }
 
 .holder {
@@ -39,14 +43,25 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  @media (max-width: $breakpoint-xsmall-max) {
+    align-items: flex-start;
+  }
+  @media (max-width: 360px) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
   h1 {
     color: $global-inverse-color;
   }
-  span {
+  span:nth-child(n + 3) {
     color: $global-inverse-color;
   }
 }
 
 .top {
   padding: 16px 0;
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 }

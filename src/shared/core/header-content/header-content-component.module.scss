@@ -10,3 +10,9 @@ h1 {
 .text {
   color: currentColor;
 }
+
+@media (max-width: $breakpoint-xsmall-max) {
+  .header-content {
+    text-align: left;
+  }
+}

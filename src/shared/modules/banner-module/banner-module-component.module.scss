@@ -1,0 +1,47 @@
+.banner-module {
+  &__holder {
+    background: $global-background;
+    border-radius: $global-border-radius;
+    color: $gray-light;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-small) {
+      display: flex;
+    }
+  }
+
+  &--responsive,
+  .sidebar & {
+    .banner {
+      &__holder {
+        display: block;
+      }
+
+      &__image {
+        height: 165px;
+      }
+
+      &__body {
+        padding: 16px;
+      }
+
+      &__title {
+        font-size: 20px;
+      }
+
+      &__label {
+        font-size: 11px;
+      }
+
+      &__logo {
+        display: none;
+      }
+
+      &__footer {
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

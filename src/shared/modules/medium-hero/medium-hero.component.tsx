@@ -1,35 +1,35 @@
 import * as React from "react";
 import styles from "./medium-hero-component.module.scss";
-import { HeaderContentComponent } from "@app/core/header-content";
+import { HeaderContentComponent, IHeaderContentComponentProps } from "@app/core/header-content";
+import { USP } from "@app/core";
+import { USP as USP_CLASS } from "@app/api/core/usp/usp";
 
 export interface IMediumHeroComponentProps {
-  backButtonProps?: {};
-  breadcrumbItems?: {}[];
+  headerContent?: IHeaderContentComponentProps;
   image?: string;
-  subtitle?: string;
-  text?: string;
-  title?: string;
+  usps: USP_CLASS;
 }
 
 const MediumHeroComponent = (props: IMediumHeroComponentProps) => {
-  const { backButtonProps, breadcrumbItems, title, subtitle, text } = props;
+  const { image, usps, headerContent } = props;
 
   return (
     <div className={styles["medium-hero"]}>
       <div className="uk-container">
-        <div className={styles["top"]}>USPS</div>
+        <div className={styles["top"]}>
+          <USP uspModule={usps} />
+        </div>
         <div className={styles["holder"]}>
           <div className={styles["image"]}>
-            <img src={props.image} alt="temp alt" />
+            <img src={image} alt="temp alt" />
           </div>
-          {title && (
+          {headerContent && (
             <div className={styles["content"]}>
               <HeaderContentComponent
-                title={title}
-                subtitle={subtitle}
-                text={text}
-                backButtonProps={backButtonProps}
-                breadcrumbItems={breadcrumbItems}
+                title={headerContent.title}
+                subtitle={headerContent.subtitle}
+                text={headerContent.text}
+                breadcrumbProps={headerContent.breadcrumbProps}
               />
             </div>
           )}

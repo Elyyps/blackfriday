@@ -1,28 +1,25 @@
 import * as React from "react";
 import styles from "./small-header-component.module.scss";
-import { HeaderContentComponent } from "@app/core/header-content";
+import { HeaderContentComponent, IHeaderContentComponentProps } from "@app/core/header-content";
 
 export interface ISmallHeaderComponentProps {
-  backButtonProps?: {};
-  breadcrumbItems?: {}[];
-  subtitle?: string;
-  text?: string;
-  title?: string;
+  headerContent?: IHeaderContentComponentProps;
 }
 
 const SmallHeaderComponent = (props: ISmallHeaderComponentProps) => {
-  const { backButtonProps, breadcrumbItems, title, subtitle, text } = props;
+  const { headerContent } = props;
 
   return (
     <div className={styles["small-header"]}>
       <div className="uk-container">
-        <HeaderContentComponent
-          title={title}
-          subtitle={subtitle}
-          text={text}
-          backButtonProps={backButtonProps}
-          breadcrumbItems={breadcrumbItems}
-        />
+        {headerContent && (
+          <HeaderContentComponent
+            title={headerContent.title}
+            subtitle={headerContent.subtitle}
+            text={headerContent.text}
+            breadcrumbProps={headerContent.breadcrumbProps}
+          />
+        )}
       </div>
     </div>
   );

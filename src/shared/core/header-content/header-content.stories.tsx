@@ -4,14 +4,16 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
 import { HeaderContentComponent } from "./header-content.component";
+import { headerContent } from "@app/api/core/header-content";
 
 storiesOf("HeaderContent", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
     <HeaderContentComponent
-      title="Black Friday Winkels"
-      subtitle="Deelnemende winkels van 2019"
-      text="Bodytext voor extra informatie wanneer nodig"
+      title={headerContent.title}
+      subtitle={headerContent.subtitle}
+      text={headerContent.text}
+      breadcrumbProps={headerContent.breadcrumbProps}
     />
   ));

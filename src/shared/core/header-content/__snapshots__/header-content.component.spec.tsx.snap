@@ -4,8 +4,26 @@ exports[`[HeaderContent] should render component without crashing 1`] = `
 <div
   className="header-content"
 >
-  Hier komt de breadcrumb 
-   
+  <BreadcrumbComponent
+    backButton={
+      Object {
+        "title": "Terug",
+        "url": "/#",
+      }
+    }
+    links={
+      Array [
+        Object {
+          "title": "Home",
+          "url": "/#",
+        },
+        Object {
+          "title": "Blog",
+          "url": "/#",
+        },
+      ]
+    }
+  />
   <h1>
     Black Friday Winkels
   </h1>

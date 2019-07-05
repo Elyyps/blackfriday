@@ -8,7 +8,27 @@ exports[`[SmallHeader] should render component without crashing 1`] = `
     className="uk-container"
   >
     <HeaderContentComponent
-      title="Black Friday 2019 blog"
+      breadcrumbProps={
+        Object {
+          "backButton": Object {
+            "title": "Terug",
+            "url": "/#",
+          },
+          "links": Array [
+            Object {
+              "title": "Home",
+              "url": "/#",
+            },
+            Object {
+              "title": "Blog",
+              "url": "/#",
+            },
+          ],
+        }
+      }
+      subtitle="Deelnemende winkels van 2019"
+      text="Bodytext voor extra informatie wanneer nodig"
+      title="Black Friday Winkels"
     />
   </div>
 </div>

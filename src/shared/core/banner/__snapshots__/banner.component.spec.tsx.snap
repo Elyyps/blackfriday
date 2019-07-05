@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Banner] should render component without crashing 1`] = `
+<div
+  className="banner"
+>
+  <div
+    className="banner__holder"
+  >
+    <div
+      className="banner__image"
+    >
+      <Link
+        to="#"
+      >
+        <ImageComponent
+          alt="alt text oasis"
+          src="oasis.jpg"
+        />
+      </Link>
+    </div>
+    <div
+      className="banner__body"
+    >
+      <div
+        className="banner__content"
+      >
+        <div
+          className="banner__label"
+        >
+          22 t/m 26 nov.
+        </div>
+        <h2
+          className="banner__title"
+        >
+          Black Friday bij Coolblue
+        </h2>
+        Een selectie van bizarre aanbiedingen. Meer info
+      </div>
+      <div
+        className="banner__footer"
+      >
+        <Button
+          icon="link.svg"
+          iconStyle="filled"
+          onClick="#"
+          title="Meer deals"
+          variant="primary-default"
+        />
+        <div
+          className="banner__logo"
+        >
+          <ImageComponent
+            alt="alt text CoolBlue"
+            src="cool-blue.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

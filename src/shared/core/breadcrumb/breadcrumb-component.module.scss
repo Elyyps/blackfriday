@@ -1,7 +1,7 @@
 .breadcrumb {
   font-size: 14px;
   font-weight: 600;
-  color: $gray-light;
+  color: rgba(255, 255, 255, 0.5);
   display: flex;
   justify-content: center;
   margin-bottom: 8px;
@@ -23,10 +23,10 @@
   }
 
   a {
-    color: #999;
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     span {
-      stroke: $gray-light !important;
+      stroke: rgba(255, 255, 255, 0.5) !important;
     }
     &:hover {
       text-decoration: none;
@@ -45,4 +45,10 @@
 
 .back-button-text {
   margin-left: 8px;
+}
+
+@media (max-width: $breakpoint-xsmall-max) {
+  .breadcrumb {
+    justify-content: flex-start;
+  }
 }

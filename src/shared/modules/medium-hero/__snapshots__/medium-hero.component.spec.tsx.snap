@@ -10,7 +10,35 @@ exports[`[MediumHero] should render component without crashing 1`] = `
     <div
       className="top"
     >
-      USPS
+      <USP
+        uspModule={
+          Object {
+            "uniqueSellingPoints": Array [
+              Object {
+                "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
+                "link": Object {
+                  "title": "Overzicht van álle black friday winkels",
+                  "url": "./",
+                },
+              },
+              Object {
+                "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
+                "link": Object {
+                  "title": "Altijd up-to-date van de laatste deals",
+                  "url": "./",
+                },
+              },
+              Object {
+                "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg",
+                "link": Object {
+                  "title": "Mis niets van Black Friday 2019",
+                  "url": "./",
+                },
+              },
+            ],
+          }
+        }
+      />
     </div>
     <div
       className="holder"
@@ -20,6 +48,34 @@ exports[`[MediumHero] should render component without crashing 1`] = `
       >
         <img
           alt="temp alt"
+          src="oasis.jpg"
+        />
+      </div>
+      <div
+        className="content"
+      >
+        <HeaderContentComponent
+          breadcrumbProps={
+            Object {
+              "backButton": Object {
+                "title": "Terug",
+                "url": "/#",
+              },
+              "links": Array [
+                Object {
+                  "title": "Home",
+                  "url": "/#",
+                },
+                Object {
+                  "title": "Blog",
+                  "url": "/#",
+                },
+              ],
+            }
+          }
+          subtitle="Deelnemende winkels van 2019"
+          text="Bodytext voor extra informatie wanneer nodig"
+          title="Black Friday Winkels"
         />
       </div>
     </div>
