@@ -2,7 +2,6 @@ import style from "./dropdown-component.module.scss";
 import * as React from "react";
 import ChevronDown from "@assets/icons/chevron-down.svg";
 import ChevronUp from "@assets/icons/chevron-up.svg";
-import { useState } from "react";
 import { Button } from "@app/core/button";
 
 export interface IDropdownComponentProps {
@@ -21,7 +20,7 @@ export interface IDropdownComponentProps {
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
-  const [isDropdownOpened, setIsDropdownOpened] = useState(false);
+  const [isDropdownOpened, setIsDropdownOpened] = React.useState(false);
 
   const toggleOpened = () => {
     setIsDropdownOpened(!isDropdownOpened);
