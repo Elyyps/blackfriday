@@ -1,37 +1,32 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import styles from "./card-simple.module.scss";
-import { IconComponent } from "@app/prep/modules-prep/core";
+import "./card-simple-component.scss";
+import { IconComponent, ImageComponent } from "@app/prep/modules-prep/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
+import classNames from "classnames";
 
 interface ICardSimpleProps {
-  content?: JSX.Element;
   icon?: string;
-  link?: string;
+  link: string;
   title?: string;
+  variant?: string;
 }
 
-const CardSimple = (props: ICardSimpleProps) => (
-  <Link
-    to="#"
-    draggable={false}
-    href={props.link}
-    className={styles["card-simple"]}
-    target="_blank"
-  >
-    <div className={styles["card-simple__body"]}>
-      <div className={styles["card-simple__head"]}>
-        {props.title && (
-          <div className={styles["card-simple__media"]}>
-            <div className={styles["card-simple__image"]}>
-              <IconComponent icon={props.icon} size="40px" />
-            </div>
-          </div>
-        )}
-        <div className={styles["card-simple__title"]}>{props.title}</div>
-      </div>
+const CardSimple = ({ title, icon, link, variant }: ICardSimpleProps) => {
+  const buttonClassName = classNames("card-simple", {
+    [`card-simple--${variant}`]: variant
+  });
+
+  return (
+    <Link to={link} className={buttonClassName}>
+      {icon && (
+        <div className="card-simple__image">
+          <ImageComponent src={icon} />
+        </div>
+      )}
+      <div className="card-simple__title">{title}</div>
       <IconComponent icon={CHEVRON_RIGHT} size="5px" />
-    </div>
-  </Link>
-);
+    </Link>
+  );
+};
 export { CardSimple };

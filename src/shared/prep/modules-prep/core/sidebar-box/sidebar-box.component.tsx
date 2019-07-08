@@ -1,8 +1,6 @@
 import * as React from "react";
 import "./sidebar-box.component.scss";
-import { Link } from "react-router-dom";
-import { ImageComponent, IconComponent } from "@app/prep/modules-prep/core";
-import Arrow from "@assets/icons/chevron-right.svg";
+import { CardSimple } from "@app/prep/modules-prep/core";
 
 interface ISidebarBoxProps {
   items?: any[];
@@ -16,13 +14,7 @@ const SidebarBoxComponent = (props: ISidebarBoxProps) => (
       <ul className="sidebar-box__list">
         {props.items.map((link, key) => (
           <li key={key}>
-            <Link to={link.link} className="sidebar-box__link">
-              <div className="sidebar-box__image">
-                <ImageComponent src={link.image} />
-              </div>
-              {link.title}
-              <IconComponent icon={Arrow} size={"5px"} />
-            </Link>
+            <CardSimple variant={"small"} {...link} />
           </li>
         ))}
       </ul>

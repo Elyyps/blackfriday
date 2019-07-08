@@ -3,6 +3,7 @@
   "extends": ["tslint:all", "tslint-config-airbnb", "tslint-config-prettier", "tslint-react-a11y", "tslint-react"],
   "jsRules": {},
   "rules": {
+    "no-void-expression": [true, "ignore-arrow-function-shorthand"],
     "import-name": false,
     "ordered-imports": false,
     "no-angle-bracket-type-assertion": false,
