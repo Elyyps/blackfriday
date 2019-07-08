@@ -1,0 +1,215 @@
+.product-detail {
+  background-color: $bg-muted;
+  padding-top: 40px;
+  @media(max-width: $breakpoint-xsmall-max){
+    padding-top: 16px;
+    .uk-container{
+      padding: 0;
+    }
+    .card-wrap{
+      padding: 0 16px;
+    }
+  }
+  .uk-margin-small-top{
+    margin-top: 8px;
+    @media (max-width: $breakpoint-small-max) {
+      margin-top: 0;
+    }
+  }
+  .card{
+    &-shop{
+      height: auto;
+      padding-bottom: 52px;
+      @media (max-width: $breakpoint-small-max) {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+    }
+    &-message{
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $global-inverse-color;
+      background-color: $gray-dark;
+      text-align: center;
+      position: relative;
+      &:after{
+        content: '';
+        width: 40px;
+        height: 40px;
+        background-color: $gray-dark;
+        transform: rotate(45deg) translateX(-50%);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        @media(max-width: $breakpoint-xsmall-max){
+          height: 20px;
+          width: 20px;
+
+        }
+      }
+      .card{
+        &__body{
+          margin-top: 18px;
+        }
+        &__action{
+          margin-top: 16px;
+          .button{
+            width: 100%;
+          }
+        }
+        &__head{
+          .icon-svg{
+            path{
+              fill:$global-inverse-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__header {
+    height: 216px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__body {
+    background-color: $global-inverse-color;
+  }
+  &__content {
+    padding: 16px 32px 32px;
+    @media(max-width: $breakpoint-xsmall-max){
+      padding: 16px;
+    }
+    .breadcrumbs {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin: 0 -10px;
+      font-size: 12px;
+      li {
+        padding: 0 10px;
+        display: flex;
+        font-weight: 600;
+        justify-content: space-between;
+        color: #999999;
+        position: relative;
+        >a{
+          color: inherit;
+          text-decoration: none;
+        }
+        &:not(:last-child) {
+          &:after {
+            content: '';
+            width: 10px;
+            height: 1px;
+            color: #999999;
+            background-color: #999999;
+            position: absolute;
+            top: 50%;
+            right: -4px;
+          }
+        }
+      }
+    }
+    .content {
+      &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &__body {
+        margin-bottom: 32px;
+      }
+    }
+    .uk-list{
+      margin-bottom: 32px;
+    }
+  }
+  &__footer {
+    border-top: 1px solid $tint-gray-light;
+    padding-top: 16px;
+    .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      @media(max-width: $breakpoint-xsmall-max){
+        margin-bottom: 0;
+      }
+      &__item {
+        display: flex;
+        align-items: center;
+        order: 1;
+        @media(max-width: $breakpoint-xsmall-max){
+          flex: 1 1 100%;
+          justify-content: space-between;
+          & + .actions__item{
+            order: 0;
+            margin-bottom: 16px;
+          }
+        }
+
+        &-wrap {
+          margin: 0 -4px;
+          flex: 1 1 100%;
+          display: flex;
+          > * {
+            margin: 0 4px;
+            @media(max-width: $breakpoint-xsmall-max){
+              width: 50%;
+            }
+          }
+        }
+        .button {
+          &--link {
+            padding: 0;
+            @media(max-width: $breakpoint-xsmall-max){
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+    .labels {
+      display: flex;
+      align-items: center;
+      margin: 0 -4px;
+      &__item {
+        padding: 0 4px;
+      }
+    }
+  }
+  .rating {
+    flex-direction: column;
+    align-items: flex-end;
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      margin: 0 -2px;
+      > li {
+        padding: 0 2px;
+      }
+      .icon-svg {
+        svg {
+          fill: $tint-gray;
+        }
+      }
+    }
+    &__description {
+      font-size: 12px;
+      font-weight: bold;
+      color: #00a82f;
+      margin-top: 4px;
+    }
+  }
+}

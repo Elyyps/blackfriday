@@ -42,19 +42,23 @@ const HeroComponent = (props: IHeroComponentProps) => {
   const cards = [
     {
       title: "Productdeals",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     },
     {
       title: "Productdeals 2",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     },
     {
       title: "Productdeals 2",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     },
     {
       title: "Productdeals 2",
-      icon: CardIcon
+      icon: CardIcon,
+      link: "/"
     }
   ];
   const sliceNumber = 2;
@@ -176,7 +180,9 @@ const HeroComponent = (props: IHeroComponentProps) => {
                   </div>
                   <div className={styles["hero-bottom__cards"]}>
                     {cards.map((item, key) => (
-                      <CardSimple key={key} {...item} />
+                      <div key={key}>
+                        <CardSimple {...item} />
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -186,7 +192,9 @@ const HeroComponent = (props: IHeroComponentProps) => {
                   </div>
                   <div className={styles["hero-bottom__cards"]}>
                     {cards.map((item, key) => (
-                      <CardSimple key={key} {...item} />
+                      <div key={key}>
+                        <CardSimple {...item} />
+                      </div>
                     ))}
                   </div>
                 </div>
