@@ -4,6 +4,7 @@ import { Checkbox } from "@app/api/core/checkbox";
 
 export interface ICheckboxComponentProps {
   children: any;
+  isChecked?: boolean;
   onClick: (value: string) => void;
 }
 
@@ -14,9 +15,10 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
         <input
           type="checkbox"
           className={style["checkbox__input"]}
-          aria-checked={"false"}
+          defaultChecked={props.isChecked}
           onChange={() => props.onClick(props.children)}
         />
+
         {props.children}
       </label>
     </div>

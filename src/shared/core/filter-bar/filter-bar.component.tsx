@@ -11,16 +11,17 @@ import { FilterBar } from "@app/api/core/filter-bar";
 import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
+import { Checkbox } from "@app/api/core/checkbox";
+import { useEffect } from "react";
 
 export interface IFilterBarComponentProps {
-  brandsChecked?: number;
-  categoriesChecked?: number;
+  applyFilter: () => void;
   filterBar: FilterBar;
   numberOfShops: number;
-  onBrandChanged: (value: string) => void;
-  onCategoryChanged: (value: string) => void;
+  onBrandChanged: (value: Checkbox[]) => void;
+  onCategoryChanged: (value: Checkbox[]) => void;
   onOrderByChanged: (value: string) => void;
-  onStatusChanged: (value: string) => void;
+  onStatusChanged: (value: Checkbox[]) => void;
 }
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
@@ -28,7 +29,10 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const [prevIcon, setPrevIcon] = React.useState(false);
   const [filterContent, setFilterContent] = React.useState(false);
   const [orderBy, setOrderBy] = React.useState("Relevant");
-
+  const [checkboxList, setCheckboxList] = React.useState<Checkbox[]>([]);
+  useEffect(() => {
+    setCheckboxList(props.filterBar.status);
+  }, []);
   const filterSortChange = () => {
     setfilterSort(!filterSort);
   };
@@ -41,6 +45,26 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const onOrderBySelected = (value: string) => {
     props.onOrderByChanged(value);
     setOrderBy(value);
+  };
+  // const clearFilters = () => {
+  //   const newSelected = checkboxList.map(option => {
+  //     option.isChecked = false;
+
+  //     return option;
+  //   });
+
+  //   return newSelected;
+  // };
+  const onStatusSelected = (id: string) => {
+    const newSelectedStatus = checkboxList.map(option => {
+      if (option.text.toUpperCase() === id.toUpperCase()) {
+        option.isChecked = !option.isChecked;
+      }
+
+      return option;
+    });
+
+    props.onStatusChanged(newSelectedStatus);
   };
 
   return (
@@ -93,7 +117,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             <ul className={styles["filter-bar-ul"]}>
               {props.filterBar.status.map((value, key) => (
                 <li key={key} className={styles["filter-bar-li"]}>
-                  <CheckboxComponent onClick={() => props.onStatusChanged(value.text)}>{value.text}</CheckboxComponent>
+                  <CheckboxComponent onClick={() => onStatusSelected(value.text)}>{value.text}</CheckboxComponent>
                 </li>
               ))}
             </ul>
@@ -106,9 +130,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             orientation="bottom-left"
           >
             <SearchFilterControlComponent
-              checked={props.categoriesChecked}
               checkbox={props.filterBar.categories}
               onSelect={props.onCategoryChanged}
+              applyFilter={props.applyFilter}
             />
           </DropdownComponent>
         </div>
@@ -119,9 +143,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             orientation="bottom-left"
           >
             <SearchFilterControlComponent
-              checked={props.brandsChecked}
               checkbox={props.filterBar.brands}
               onSelect={props.onBrandChanged}
+              applyFilter={props.applyFilter}
             />
           </DropdownComponent>
         </div>

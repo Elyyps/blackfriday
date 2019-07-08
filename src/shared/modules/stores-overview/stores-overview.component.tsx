@@ -8,72 +8,22 @@ import { useEffect, useState } from "react";
 import { Checkbox } from "@app/api/core/checkbox";
 import { BannerComponent } from "@app/prep/modules-prep/banner";
 import { Banner } from "@app/prep/pages-prep/winkleoverview/dummy-data";
-import { Link } from "react-router-dom";
 
 export interface IStoresOverviewComponentProps {}
 
 const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOverviewContainerProps) => {
-  const [selectedBrand, setSelectedBrand] = useState<Checkbox[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<Checkbox[]>([]);
   const [selectedStatus, setSelectedStatus] = useState<Checkbox[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<Checkbox[]>([]);
-  const [orderedBy, setOrderedBy] = useState<string[]>([]);
-  const [categoriesChecked, setCategoriesChecked] = useState<number>(0);
-  const [brandsChecked, setBrandsChecked] = useState<number>(0);
 
   useEffect(() => {
     props.setShopCards(getShopsOverviewData());
-    setSelectedBrand(getShopsOverviewData().filterBar.brands);
-    setSelectedStatus(getShopsOverviewData().filterBar.status);
-    setSelectedCategories(getShopsOverviewData().filterBar.categories);
-    setOrderedBy(getShopsOverviewData().filterBar.sortBy);
   }, []);
-
-  useEffect(() => {
-    applyBrandFilter(selectedBrand);
-  }, [selectedBrand]);
 
   useEffect(() => {
     applyStatusFilter(selectedStatus);
   }, [selectedStatus]);
 
-  useEffect(() => {
-    applyCategoryFilter(selectedCategories);
-  }, [selectedCategories]);
-
-  const onBrandSelected = (id: string) => {
-    const newSelectedBrands = selectedBrand.map(option => {
-      if (option.text.toUpperCase() === id.toUpperCase()) {
-        option.isChecked = !option.isChecked;
-      }
-
-      return option;
-    });
-
-    setSelectedBrand(newSelectedBrands);
-  };
-  const onStatusSelected = (id: string) => {
-    const newSelectedStatus = selectedStatus.map(option => {
-      if (option.text.toUpperCase() === id.toUpperCase()) {
-        option.isChecked = !option.isChecked;
-      }
-
-      return option;
-    });
-
-    setSelectedStatus(newSelectedStatus);
-  };
-
-  const onCategorySelected = (id: string) => {
-    const newSelectedCategories = selectedCategories.map(option => {
-      if (option.text.toUpperCase() === id.toUpperCase()) {
-        option.isChecked = !option.isChecked;
-      }
-
-      return option;
-    });
-
-    setSelectedCategories(newSelectedCategories);
-  };
   const applyOrderByFilter = (id: string) => {
     props.getShopCards([], [], [], id);
   };
@@ -84,7 +34,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
         list.push(option.text.toUpperCase());
       }
     });
-    setBrandsChecked(list.length);
+    // setBrandsChecked(list.length);
     props.getShopCards([], [], list, "");
   };
   const applyStatusFilter = (checkbox: Checkbox[]) => {
@@ -106,8 +56,12 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
         list.push(option.text.toUpperCase());
       }
     });
-    setCategoriesChecked(list.length);
+    // setCategoriesChecked(list.length);
     props.getShopCards([], list, [], "");
+  };
+  const applyFilters = () => {
+    applyCategoryFilter(selectedCategories);
+    //  applyBrandFilter(selectedBrands);
   };
 
   return (
@@ -116,13 +70,12 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
         <div className={styles["stores-overview__header"]}>
           <FilterBarComponent
             filterBar={getShopsOverviewData().filterBar}
-            onBrandChanged={onBrandSelected}
-            onCategoryChanged={onCategorySelected}
-            onStatusChanged={onStatusSelected}
+            onBrandChanged={setSelectedBrands}
+            onCategoryChanged={setSelectedCategories}
+            onStatusChanged={setSelectedStatus}
             onOrderByChanged={applyOrderByFilter}
             numberOfShops={props.shopCards.length}
-            brandsChecked={brandsChecked}
-            categoriesChecked={categoriesChecked}
+            applyFilter={applyFilters}
           />
         </div>
         <div className={styles["stores-overview__body"]}>
@@ -133,18 +86,18 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
             >
               {props.shopCards.slice(0, 20).map((item, key) => (
                 <div key={key} className={styles["stores-overview__body__cards"]}>
-                  <Link to="">
-                    <ShopCardComponent
-                      title={item.title}
-                      url={item.button.url}
-                      seeMoreText={item.seeMore.title}
-                      image={item.picture}
-                      content={item.content}
-                      button_text={item.button.title}
-                      range={item.timeLeftBar.value}
-                      sub_title={item.timeLeftBar.text}
-                    />
-                  </Link>
+                  <ShopCardComponent
+                    title={item.title}
+                    url={item.button.url}
+                    seeMoreText={item.seeMore.title}
+                    image={item.picture}
+                    content={item.content}
+                    button_text={item.button.title}
+                    range={item.timeLeftBar.value}
+                    sub_title={item.timeLeftBar.text}
+                  />
+
+                  <br />
                 </div>
               ))}
               {props.shopCards.length > 20 && <BannerComponent {...Banner} />}

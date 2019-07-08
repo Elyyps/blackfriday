@@ -40,7 +40,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
             iconStyle={props.buttonColor}
           />
         </div>
-        <div className={`${style["dropdown-content"]}`} data-uk-dropdown="mode:click">
+        <div className={`${style["dropdown-content"]}`} data-uk-dropdown="mode:click" uk-dropdown={props.orientation}>
           {props.children}
         </div>
       </ShadowCardComponent>

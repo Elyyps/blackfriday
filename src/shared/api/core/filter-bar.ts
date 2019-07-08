@@ -22,7 +22,7 @@ export const generateDummyFilterBar = (): FilterBar => ({
   categories: [
     { text: "Audio", isChecked: false, quantity: 255 },
     { text: "Electronic", isChecked: false, quantity: 0 },
-    { text: "Sport", isChecked: false, quantity: 20 },
+    { text: "Sport", isChecked: true, quantity: 20 },
     { text: "Mode", isChecked: false, quantity: 2 },
     { text: "Games", isChecked: false, quantity: 51 }
   ],
