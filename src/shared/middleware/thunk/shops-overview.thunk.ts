@@ -8,7 +8,7 @@ const getShopsCards = (status: string[], categories: string[], brands: string[],
   try {
     const cards = filterShopsOverviewCards(status, categories, brands, sortBy);
     dispatch(
-      shopsOverviewActions.setShopsOverview({
+      shopsOverviewActions.setShopsCards({
         shopCards: cards
       })
     );

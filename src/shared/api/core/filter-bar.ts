@@ -20,9 +20,9 @@ export const generateDummyFilterBar = (): FilterBar => ({
     { text: "Actie verlopen", isChecked: false }
   ],
   categories: [
-    { text: "Audio", isChecked: false, quantity: 255 },
-    { text: "Electronic", isChecked: false, quantity: 0 },
-    { text: "Sport", isChecked: true, quantity: 20 },
+    { text: "Audio", isChecked: false, quantity: 12 },
+    { text: "Electronic", isChecked: false, quantity: 3 },
+    { text: "Sport", isChecked: false, quantity: 20 },
     { text: "Mode", isChecked: false, quantity: 2 },
     { text: "Games", isChecked: false, quantity: 51 }
   ],
@@ -32,4 +32,14 @@ export const generateDummyFilterBar = (): FilterBar => ({
   sortByFilterTitle: "Sorted by",
   statusFilterTitle: "Status",
   sortBy: ["Newest", "Relevant", "Price"]
+});
+export const generateEmptyDummyFilterBar = (): FilterBar => ({
+  status: [{ text: "", isChecked: false }],
+  categories: [{ text: "", isChecked: false, quantity: 12 }],
+  brands: [{ text: "" }],
+  brandFilterTitle: "",
+  categoryFilterTitle: "",
+  sortByFilterTitle: " ",
+  statusFilterTitle: "",
+  sortBy: [""]
 });

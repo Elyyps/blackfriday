@@ -15,8 +15,8 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
         <input
           type="checkbox"
           className={style["checkbox__input"]}
-          defaultChecked={props.isChecked}
           onChange={() => props.onClick(props.children)}
+          checked={props.isChecked}
         />
 
         {props.children}

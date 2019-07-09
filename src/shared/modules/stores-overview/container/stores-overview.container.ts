@@ -6,8 +6,10 @@ import { withRouter, RouteComponentProps } from "react-router";
 import { shopsOverviewThunks } from "@app/middleware/thunk/shops-overview.thunk";
 import { StoresOverviewModule } from "@app/api/modules/stores-overview/stores-overview.module";
 import { shopsOverviewActions } from "@app/stores/stores-overview/stores-overview.action";
+import { FilterBar } from "@app/api/core/filter-bar";
 
 interface IStateProps {
+  filterBar: FilterBar;
   shopCards: ShopCard[];
 }
 
@@ -17,9 +19,9 @@ interface IDispatchProps {
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IStoresOverviewComponentProps, IAppState> = state => {
-  const { shopCards } = state.shopsOverview;
+  const { shopCards, filterBar } = state.shopsOverview;
 
-  return { shopCards };
+  return { shopCards, filterBar };
 };
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IStoresOverviewComponentProps> = dispatch => ({
   getShopCards: (status: string[], categories: string[], brands: string[], sortBy: string) =>

@@ -18,6 +18,7 @@ export const shuffleArray = (a: any) => {
 
 export function getShopCards(status: string[], categories: string[], brands: string[], sortBy: string) {
   const shopCards: ShopCard[] = generateData();
+
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];

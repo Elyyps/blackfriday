@@ -8,16 +8,6 @@ import { generateDummyFilterBar } from "@app/api/core/filter-bar";
 
 export interface IPlaygroundAhmedComponentProps {}
 
-const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => (
-  <div className="uk-container">
-    <FilterBarComponent
-      filterBar={generateDummyFilterBar()}
-      onBrandChanged={() => ""}
-      onStatusChanged={() => ""}
-      onOrderByChanged={() => ""}
-      onCategoryChanged={() => ""}
-    />
-  </div>
-);
+const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => <div className="uk-container" />;
 
 export { PlaygroundAhmedComponent };

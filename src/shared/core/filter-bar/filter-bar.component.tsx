@@ -12,27 +12,28 @@ import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Checkbox } from "@app/api/core/checkbox";
-import { useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export interface IFilterBarComponentProps {
   applyFilter: () => void;
   filterBar: FilterBar;
-  numberOfShops: number;
-  onBrandChanged: (value: Checkbox[]) => void;
-  onCategoryChanged: (value: Checkbox[]) => void;
+  onBrandChanged: (value: string[]) => void;
+  onCategoryChanged: (value: string[]) => void;
   onOrderByChanged: (value: string) => void;
-  onStatusChanged: (value: Checkbox[]) => void;
+  onStatusChanged: (value: string[]) => void;
 }
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
-  const [filterSort, setfilterSort] = React.useState(false);
-  const [prevIcon, setPrevIcon] = React.useState(false);
-  const [filterContent, setFilterContent] = React.useState(false);
-  const [orderBy, setOrderBy] = React.useState("Relevant");
-  const [checkboxList, setCheckboxList] = React.useState<Checkbox[]>([]);
-  useEffect(() => {
-    setCheckboxList(props.filterBar.status);
-  }, []);
+  const [filterSort, setfilterSort] = useState(false);
+  const [prevIcon, setPrevIcon] = useState(false);
+  const [filterContent, setFilterContent] = useState(false);
+  const [orderBy, setOrderBy] = useState("Relevant");
+  const [checkedStatusFilters, setCheckedStatusFilters] = useState<number>(0);
+  const [checkedCategoryFilters, setCheckedCategoryFilters] = useState<number>(0);
+  const [checkedBrandFilters, setCheckedBrandFilters] = useState<number>(0);
+  const [numberOfShops, setNumberOfShops] = useState<number>(0);
+
   const filterSortChange = () => {
     setfilterSort(!filterSort);
   };
@@ -46,17 +47,12 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
     props.onOrderByChanged(value);
     setOrderBy(value);
   };
-  // const clearFilters = () => {
-  //   const newSelected = checkboxList.map(option => {
-  //     option.isChecked = false;
 
-  //     return option;
-  //   });
-
-  //   return newSelected;
-  // };
+  const countNumberOfShops = (value: number) => {
+    setNumberOfShops(numberOfShops + value);
+  };
   const onStatusSelected = (id: string) => {
-    const newSelectedStatus = checkboxList.map(option => {
+    const newSelectedStatus = props.filterBar.status.map(option => {
       if (option.text.toUpperCase() === id.toUpperCase()) {
         option.isChecked = !option.isChecked;
       }
@@ -64,7 +60,39 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
       return option;
     });
 
-    props.onStatusChanged(newSelectedStatus);
+    applyStatusFilter(newSelectedStatus);
+  };
+  const applyStatusFilter = (checkbox: Checkbox[]) => {
+    const list: string[] = [];
+
+    checkbox.forEach(option => {
+      if (option.isChecked === true) {
+        list.push(option.text.toUpperCase());
+      }
+    });
+    setCheckedStatusFilters(list.length);
+    props.onStatusChanged(list);
+  };
+
+  const clearFilters = () => {
+    props.filterBar.categories.map(option => {
+      option.isChecked = false;
+    });
+    props.filterBar.brands.map(option => {
+      option.isChecked = false;
+    });
+    props.filterBar.status.map(option => {
+      option.isChecked = false;
+    });
+    props.onBrandChanged([]);
+    props.onCategoryChanged([]);
+    props.onStatusChanged([]);
+
+    setCheckedBrandFilters(0);
+    setCheckedStatusFilters(0);
+    setCheckedCategoryFilters(0);
+
+    setNumberOfShops(0);
   };
 
   return (
@@ -115,9 +143,11 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             buttonColor="outline"
           >
             <ul className={styles["filter-bar-ul"]}>
-              {props.filterBar.status.map((value, key) => (
+              {props.filterBar.status.map((checkbox, key) => (
                 <li key={key} className={styles["filter-bar-li"]}>
-                  <CheckboxComponent onClick={() => onStatusSelected(value.text)}>{value.text}</CheckboxComponent>
+                  <CheckboxComponent isChecked={checkbox.isChecked} onClick={() => onStatusSelected(checkbox.text)}>
+                    {checkbox.text}
+                  </CheckboxComponent>
                 </li>
               ))}
             </ul>
@@ -133,6 +163,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               checkbox={props.filterBar.categories}
               onSelect={props.onCategoryChanged}
               applyFilter={props.applyFilter}
+              checkedFilters={setCheckedCategoryFilters}
+              numberOfFilters={checkedCategoryFilters}
+              totalShops={countNumberOfShops}
             />
           </DropdownComponent>
         </div>
@@ -146,8 +179,16 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               checkbox={props.filterBar.brands}
               onSelect={props.onBrandChanged}
               applyFilter={props.applyFilter}
+              checkedFilters={setCheckedBrandFilters}
+              numberOfFilters={checkedBrandFilters}
+              totalShops={countNumberOfShops}
             />
           </DropdownComponent>
+        </div>
+        <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
+          <span onClick={clearFilters} style={{ color: "red", cursor: "pointer" }}>
+            Verwijder merk filters ({checkedBrandFilters + checkedCategoryFilters + checkedStatusFilters})
+          </span>
         </div>
       </div>
       <div className={styles["filter-bar__sort"]}>
@@ -155,7 +196,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           <span>
             <IconComponent icon={StoreIcon} size={"20px"} />
           </span>
-          {props.numberOfShops} winkels
+          {numberOfShops} winkels
         </div>
         <div className={styles["filter__sort-item"]}>
           {props.filterBar.sortByFilterTitle}

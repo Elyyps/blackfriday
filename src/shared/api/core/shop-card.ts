@@ -13,17 +13,19 @@ export class ShopCard {
   public timeLeftBar: TimeLeftBar;
   public title: string;
 }
-export const generateDummyShopCards = (): ShopCard => ({
-  button: { title: "button", url: "" },
-  content: "content",
-  picture: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png",
-  seeMore: { title: "button", url: "" },
-  timeLeftBar: { text: "", value: 5 },
-  title: "title ",
-  postedAt: "27/05/1995",
-  category: "fdsfds",
-  brand: "coolblue"
-});
+export const generateDummyShopCards = (): ShopCard[] => [
+  {
+    button: { title: "button", url: "" },
+    content: "content",
+    picture: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png",
+    seeMore: { title: "button", url: "" },
+    timeLeftBar: { text: "", value: 5 },
+    title: "title ",
+    postedAt: "27/05/1995",
+    category: "fdsfds",
+    brand: "coolblue"
+  }
+];
 export function generateData(): ShopCard[] {
   const data = [];
   const brand = ["jbl", "adidas", "guess", "converse", "only"];

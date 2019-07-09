@@ -5,63 +5,30 @@ import { ShopCardComponent } from "@app/core/shop-card";
 import { StoresOverviewContainerProps } from "./container/stores-overview.container";
 import { getShopsOverviewData } from "@app/api/modules/stores-overview/endpoints";
 import { useEffect, useState } from "react";
-import { Checkbox } from "@app/api/core/checkbox";
 import { BannerComponent } from "@app/prep/modules-prep/banner";
 import { Banner } from "@app/prep/pages-prep/winkleoverview/dummy-data";
 
 export interface IStoresOverviewComponentProps {}
 
 const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOverviewContainerProps) => {
-  const [selectedBrands, setSelectedBrands] = useState<Checkbox[]>([]);
-  const [selectedStatus, setSelectedStatus] = useState<Checkbox[]>([]);
-  const [selectedCategories, setSelectedCategories] = useState<Checkbox[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedStatus, setSelectedStatus] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   useEffect(() => {
     props.setShopCards(getShopsOverviewData());
   }, []);
 
   useEffect(() => {
-    applyStatusFilter(selectedStatus);
+    props.getShopCards(selectedStatus, selectedCategories, selectedBrands, "");
   }, [selectedStatus]);
 
   const applyOrderByFilter = (id: string) => {
-    props.getShopCards([], [], [], id);
+    props.getShopCards(selectedStatus, selectedCategories, selectedBrands, id);
   };
-  const applyBrandFilter = (checkbox: Checkbox[]) => {
-    const list: string[] = [];
-    checkbox.forEach(option => {
-      if (option.isChecked === true) {
-        list.push(option.text.toUpperCase());
-      }
-    });
-    // setBrandsChecked(list.length);
-    props.getShopCards([], [], list, "");
-  };
-  const applyStatusFilter = (checkbox: Checkbox[]) => {
-    const list: string[] = [];
 
-    checkbox.forEach(option => {
-      if (option.isChecked === true) {
-        list.push(option.text.toUpperCase());
-      }
-    });
-
-    props.getShopCards(list, [], [], "");
-  };
-  const applyCategoryFilter = (checkbox: Checkbox[]) => {
-    const list: string[] = [];
-
-    checkbox.forEach(option => {
-      if (option.isChecked === true) {
-        list.push(option.text.toUpperCase());
-      }
-    });
-    // setCategoriesChecked(list.length);
-    props.getShopCards([], list, [], "");
-  };
   const applyFilters = () => {
-    applyCategoryFilter(selectedCategories);
-    //  applyBrandFilter(selectedBrands);
+    props.getShopCards(selectedStatus, selectedCategories, selectedBrands, "");
   };
 
   return (
@@ -69,12 +36,11 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
       <div className="uk-container">
         <div className={styles["stores-overview__header"]}>
           <FilterBarComponent
-            filterBar={getShopsOverviewData().filterBar}
+            filterBar={props.filterBar}
             onBrandChanged={setSelectedBrands}
             onCategoryChanged={setSelectedCategories}
             onStatusChanged={setSelectedStatus}
             onOrderByChanged={applyOrderByFilter}
-            numberOfShops={props.shopCards.length}
             applyFilter={applyFilters}
           />
         </div>

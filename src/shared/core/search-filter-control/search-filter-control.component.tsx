@@ -10,43 +10,34 @@ import { Input } from "@app/prep/modules-prep/core";
 export interface ISearchFilterControlComponentProps {
   applyFilter: () => void;
   checkbox: Checkbox[];
-  onSelect: (checkbox: Checkbox[]) => void;
+  checkedFilters: (filters: number) => void;
+  numberOfFilters: number;
+  onSelect: (checkbox: string[]) => void;
+  totalShops: (filters: number) => void;
 }
 
 const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
-  const [checkboxList, setCheckboxList] = React.useState<Checkbox[]>([]);
-  const [checkedFilters, setCheckedFilters] = React.useState<number>(0);
+  const [checkboxList, setCheckboxList] = useState<Checkbox[]>([]);
 
-  const searchBrand = (value: string) => {
+  const searchFilter = (value: string) => {
     const list: Checkbox[] = [];
-    props.checkbox.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand));
-    setCheckboxList(list);
+    value
+      ? (checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand)),
+        setCheckboxList(list))
+      : setCheckboxList(props.checkbox);
   };
 
-  const onSelected = (id: string) => {
-    const newSelected = checkboxList.map(option => {
-      if (option.text.toUpperCase() === id.toUpperCase()) {
+  const onSelected = (text: string) => {
+    const newSelectedFilters = checkboxList.map(option => {
+      if (option.text.toUpperCase() === text.toUpperCase()) {
         option.isChecked = !option.isChecked;
       }
 
       return option;
     });
-    setCheckboxList(newSelected);
 
-    props.onSelect(newSelected);
-  };
-
-  const countSelectedFilters = () => {
-    let i = 0;
-    checkboxList.forEach(option => {
-      if (option.isChecked === true) {
-        i += 1;
-      }
-
-      return i;
-    });
-
-    setCheckedFilters(i);
+    setCheckboxList(newSelectedFilters);
+    applyFilter(newSelectedFilters);
   };
 
   const clearFilters = () => {
@@ -55,14 +46,32 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
 
       return option;
     });
+    props.onSelect([]);
+
     setCheckboxList(newSelected);
+    props.checkedFilters(0);
+    props.totalShops(0);
+  };
+  const applyFilter = (checkbox: Checkbox[]) => {
+    const list: string[] = [];
+
+    checkbox.forEach(option => {
+      if (option.isChecked === true) {
+        list.push(option.text.toUpperCase());
+        option.quantity && props.totalShops(option.quantity);
+      }
+    });
+    props.checkedFilters(list.length);
+    props.onSelect(list);
   };
 
   useEffect(() => {
     setCheckboxList(props.checkbox);
-  }, []);
+    console.log("for danniel");
+  }, [props.checkbox]);
+
   useEffect(() => {
-    countSelectedFilters();
+    // applyFilter(checkboxList);
   }, [checkboxList]);
 
   return (
@@ -73,23 +82,22 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
           classModify={"large"}
           icon={Search}
           onChange={event => {
-            searchBrand(event);
+            searchFilter(event);
           }}
         />
       </div>
+
       <div className={style["filter-modal-body"]}>
         <div className="uk-grid uk-child-width-1-2@s">
-          {checkboxList.map((checkbox, key) => (
-            <div key={key} className={style["filter-modal-item"]}>
-              <CheckboxComponent
-                isChecked={checkbox.isChecked && checkbox.isChecked}
-                onClick={() => onSelected(checkbox.text)}
-              >
-                {checkbox.text}
-              </CheckboxComponent>
-              <span>({checkbox.quantity})</span>
-            </div>
-          ))}
+          {checkboxList &&
+            checkboxList.map((checkbox, key) => (
+              <div key={key} className={style["filter-modal-item"]}>
+                <CheckboxComponent isChecked={checkbox.isChecked} onClick={() => onSelected(checkbox.text)}>
+                  {checkbox.text}
+                </CheckboxComponent>
+                <span>({checkbox.quantity})</span>
+              </div>
+            ))}
         </div>
       </div>
 
@@ -97,7 +105,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
         <ul className={style["filter-modal-bottom__action"]}>
           <li>
             <Link to="#" onClick={clearFilters}>
-              Verwijder merk filters ({checkedFilters})
+              Verwijder merk filters ({props.numberOfFilters})
             </Link>
           </li>
           <li>
