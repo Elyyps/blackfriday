@@ -1,46 +1,27 @@
 import style from "./dropdown-component.module.scss";
 import * as React from "react";
 import ChevronDown from "@assets/icons/chevron-down.svg";
-import ChevronUp from "@assets/icons/chevron-up.svg";
-import { Button } from "@app/core/button";
+import { IconComponent } from "../icon";
 
 export interface IDropdownComponentProps {
-  buttonVariant?:
-    | "primary-default"
-    | "primary-brand"
-    | "primary-inverted"
-    | "secondary"
-    | "secondary-inverted"
-    | "tertiary"
-    | "tertiary-inverted";
   children?: any;
   icon?: string;
-  orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";
   title?: string;
 }
 
-const DropdownComponent = (props: IDropdownComponentProps) => {
-  const [isDropdownOpened, setIsDropdownOpened] = React.useState(false);
-
-  const toggleOpened = () => {
-    setIsDropdownOpened(!isDropdownOpened);
-  };
-
-  return (
-    <div className={style["dropdown"]}>
-      <div className={style["dropdown-button"]}>
-        <Button
-          title={props.title}
-          variant={props.buttonVariant}
-          icon={props.icon ? props.icon : isDropdownOpened ? ChevronUp : ChevronDown}
-          onClick={toggleOpened}
-        />
-      </div>
-
-      <div className={`${style["dropdown-content"]}`} uk-dropdown="mode: click" data-uk-dropdown={props.orientation}>
-        {props.children}
-      </div>
+const DropdownComponent = (props: IDropdownComponentProps) => (
+  <div className={style["dropdown"]}>
+    <div>
+      <button>
+        {props.icon ? <IconComponent icon={props.icon} size="18px" /> : ""}
+        <span className={style["dropdown__title"]}>{props.title}</span>
+        <IconComponent icon={ChevronDown} size="18px" />
+      </button>
     </div>
-  );
-};
+
+    <div className={`${style["dropdown-content"]}`} uk-dropdown="mode: click">
+      {props.children}
+    </div>
+  </div>
+);
 export { DropdownComponent };

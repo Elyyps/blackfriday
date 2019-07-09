@@ -1,11 +1,17 @@
 .share {
+  > div:not(:last-child) {
+    margin-bottom: 15px;
+  }
   &__social-link {
     display: inline-flex;
     align-items: center;
-    margin-bottom: 15px;
+
     cursor: pointer;
+
     &:hover {
-      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
+      .share__social-title {
+        color: $gray-dark;
+      }
     }
     width: 100%;
   }
@@ -32,6 +38,6 @@
 
   &__social-title {
     font-size: 15px;
-    color: $gray-dark;
+    color: $gray-light;
   }
 }

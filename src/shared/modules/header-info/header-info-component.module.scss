@@ -50,7 +50,7 @@
   &__share-dropdown {
     position: absolute;
     right: 60px;
-    top: 75px;
+    top: 50px;
     z-index: 2;
     @media (max-width: $breakpoint-small-max) {
       display: none;

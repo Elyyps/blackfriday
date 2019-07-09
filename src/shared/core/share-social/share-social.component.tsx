@@ -6,6 +6,7 @@ import { IconComponent } from "@app/core/icon";
 import FacebookSVG from "@assets/icons/facebook.svg";
 import TwitterSVG from "@assets/icons/twitter.svg";
 import MailSVG from "@assets/icons/mail.svg";
+import WhatsApp from "@assets/icons/whatsapp.svg";
 
 import { FacebookShareButton, TwitterShareButton, EmailShareButton, WhatsappShareButton } from "react-share";
 
@@ -47,7 +48,7 @@ export const MailShareButtonComponent = (props: IMailShare) => (
 );
 export const WhatsappShareButtonComponent = (props: IWhatsappShare) => (
   <WhatsappShareButton title={props.title} url={props.url}>
-    {getShareControl(props.nameSocialShare, MailSVG)}
+    {getShareControl(props.nameSocialShare, WhatsApp)}
   </WhatsappShareButton>
 );
 
