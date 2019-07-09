@@ -35,25 +35,30 @@ export interface IClickableComponentProps {
 }
 
 const renderIconMargin = (margin = "right", title: string | undefined, icon: string | undefined) => {
-  let newMargin = "";
+  let style;
   if (title) {
-    newMargin = margin;
+    style = styles[`icon-${margin}`];
   }
 
   return (
-    <span className={styles[`icon-${newMargin}`]}>
+    <span className={style}>
       <IconComponent icon={icon} size="14px" />
     </span>
   );
 };
 
-const renderIconText = (icon: string | undefined, iconPosition: string | undefined, title: string | undefined) => (
-  <span className={styles["icon-svg"]}>
-    {((icon && iconPosition === "right") || (icon && !iconPosition)) && title}
-    {icon ? renderIconMargin(iconPosition, title, icon) : title}
-    {icon && iconPosition === "left" && title}
-  </span>
-);
+const renderIconText = (icon: string | undefined, iconPosition: string | undefined, title: string | undefined) => {
+  const showIconOnTheLeft = ((icon && iconPosition === "right") || (icon && !iconPosition)) && title;
+  const showIconOnTheRight = icon && iconPosition === "left" && title;
+
+  return (
+    <span className={styles["icon-svg"]}>
+      {showIconOnTheLeft}
+      {icon ? renderIconMargin(iconPosition, title, icon) : title}
+      {showIconOnTheRight}
+    </span>
+  );
+};
 
 const ClickableComponent = (props: IClickableComponentProps) => {
   const {
