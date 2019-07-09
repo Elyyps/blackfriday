@@ -48,14 +48,14 @@ const renderIconMargin = (margin = "right", title: string | undefined, icon: str
 };
 
 const renderIconText = (icon: string | undefined, iconPosition: string | undefined, title: string | undefined) => {
-  const showIconOnTheLeft = ((icon && iconPosition === "right") || (icon && !iconPosition)) && title;
-  const showIconOnTheRight = icon && iconPosition === "left" && title;
+  const showTextOnTheLeft = (icon && iconPosition === "right") || (icon && !iconPosition);
+  const showTextOnTheRight = icon && iconPosition === "left";
 
   return (
     <span className={styles["icon-svg"]}>
-      {showIconOnTheLeft}
+      {showTextOnTheLeft && title}
       {icon ? renderIconMargin(iconPosition, title, icon) : title}
-      {showIconOnTheRight}
+      {showTextOnTheRight && title}
     </span>
   );
 };
