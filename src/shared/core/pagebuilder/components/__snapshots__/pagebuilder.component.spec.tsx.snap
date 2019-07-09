@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`] = `
+<Fragment>
+  <HelmetComponent
+    content=""
+    description=""
+    title=""
+  />
+  <div
+    key="0"
+    style={
+      Object {
+        "marginBottom": "0px",
+        "marginTop": "0px",
+        "position": "relative",
+        "zIndex": "auto",
+      }
+    }
+  >
+    <ModuleComponent
+      isMobile={false}
+      wordPressModule={
+        Object {
+          "bottomMargin": "0px",
+          "id": "1",
+          "name": "FeaturedShopsModule",
+          "seeMoreCard": Object {
+            "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
+            "link": Object {
+              "title": "Alle winkels",
+              "url": "/",
+            },
+            "title": "Wij hebben meer winkels in ons overzicht",
+          },
+          "shops": Array [
+            Object {
+              "button": Object {
+                "title": "Naar deals",
+                "url": "/",
+              },
+              "content": "Een seletie van bizarre vele aanbiedingen.",
+              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
+              "seeMore": Object {
+                "title": "Meer info",
+                "url": "/",
+              },
+              "timeLeftBar": Object {
+                "text": "Nu geldig",
+                "value": 0.8,
+              },
+              "title": "Bekbeddiscounter.nl",
+            },
+            Object {
+              "button": Object {
+                "title": "Naar deals",
+                "url": "/",
+              },
+              "content": "Een seletie van bizarre vele aanbiedingen.",
+              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
+              "seeMore": Object {
+                "title": "Meer info",
+                "url": "/",
+              },
+              "timeLeftBar": Object {
+                "text": "ACTIE START OVER 5 DAGEN!",
+                "value": 0,
+              },
+              "title": "Swiss Sense",
+            },
+            Object {
+              "button": Object {
+                "title": "Naar deals",
+                "url": "/",
+              },
+              "content": "Een seletie van bizarre vele aanbiedingen.",
+              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
+              "seeMore": Object {
+                "title": "Meer info",
+                "url": "/",
+              },
+              "timeLeftBar": Object {
+                "text": "Nu geldig",
+                "value": 1,
+              },
+              "title": "Beter Bed",
+            },
+            Object {
+              "button": Object {
+                "title": "Naar deals",
+                "url": "/",
+              },
+              "content": "Een seletie van bizarre vele aanbiedingen.",
+              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
+              "seeMore": Object {
+                "title": "Meer info",
+                "url": "/",
+              },
+              "timeLeftBar": Object {
+                "text": "Nu geldig",
+                "value": 0.2,
+              },
+              "title": "Beter Bed",
+            },
+          ],
+          "title": "Vergelijkbare winkels",
+          "topMargin": "0px",
+        }
+      }
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `
+<Fragment>
+  <HelmetComponent
+    content=""
+    description=""
+    title=""
+  />
+</Fragment>
+`;

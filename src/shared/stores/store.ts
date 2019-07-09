@@ -2,15 +2,12 @@
 
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import {
-  routerMiddleware,
-  RouterState,
-  connectRouter
-} from "connected-react-router";
+import { routerMiddleware, RouterState, connectRouter } from "connected-react-router";
 import { History } from "history";
 import { localesReducer, ILocalesState } from "@app/stores/locales";
 
 import { IPageState, pageReducer } from "./page";
+import { ISettingsState, settingsReducer } from "./settings";
 
 type StoreParams = {
   history: History;
@@ -22,6 +19,7 @@ export interface IAppState {
   locales: ILocalesState;
   page: IPageState;
   router: RouterState;
+  settings: ISettingsState;
 }
 
 export const getInitialState = () => {
@@ -32,11 +30,7 @@ export const getInitialState = () => {
 
 declare let window: ExtendedWindow;
 
-export const configureStore = ({
-  history,
-  initialState,
-  middleware = []
-}: StoreParams) => {
+export const configureStore = ({ history, initialState, middleware = [] }: StoreParams) => {
   const devtools =
     process.env.NODE_ENV === "development" &&
     typeof window !== "undefined" &&
@@ -49,14 +43,11 @@ export const configureStore = ({
     combineReducers({
       locales: localesReducer,
       page: pageReducer,
-      router: connectRouter(history)
+      router: connectRouter(history),
+      settings: settingsReducer
     }),
     initialState,
-    composeEnhancers(
-      applyMiddleware(
-        ...[thunk, routerMiddleware(history)].concat(...middleware)
-      )
-    )
+    composeEnhancers(applyMiddleware(...[thunk, routerMiddleware(history)].concat(...middleware)))
   );
 
   // if (process.env.NODE_ENV !== "production") {
