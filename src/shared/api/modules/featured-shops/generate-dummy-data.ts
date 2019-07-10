@@ -12,7 +12,7 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
       },
       seeMore: {
         url: "/",
-        title: "Naar deals"
+        title: "Meer info"
       },
       timeLeftBar: { value: 0.8, text: "Nu geldig" },
       picture:
@@ -27,7 +27,7 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
       },
       seeMore: {
         url: "/",
-        title: "Naar deals"
+        title: "Meer info"
       },
       timeLeftBar: { value: 0, text: "ACTIE START OVER 5 DAGEN!" },
       picture:
@@ -42,7 +42,7 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
       },
       seeMore: {
         url: "/",
-        title: "Naar deals"
+        title: "Meer info"
       },
       timeLeftBar: { value: 1, text: "Nu geldig" },
       picture:
@@ -57,16 +57,15 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
       },
       seeMore: {
         url: "/",
-        title: "Naar deals"
+        title: "Meer info"
       },
-      timeLeftBar: { value: 1, text: "Nu geldig" },
+      timeLeftBar: { value: 0.2, text: "Nu geldig" },
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0"
     }
   ],
   seeMoreCard: {
-    icon:
-      "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
+    icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
     title: "Wij hebben meer winkels in ons overzicht",
     link: { url: "/", title: "Alle winkels" }
   }

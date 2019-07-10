@@ -1,12 +1,12 @@
-import * as React from "react";
-
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-//import { withProvider } from "@app/modules/core/storybook-provider";
+import React from "react";
+import { shallow } from "enzyme";
 import { ShopCardComponent } from "./shop-card.component";
 
-storiesOf("ShopCard", module).addDecorator(withA11y);
-//.addDecorator(withProvider)
-//.add("Basic implementation", () => (
-//  <ShopCardComponent />
-//));
+describe("[ShopCard]", () => {
+  it("should render component without crashing", () => {
+    const renderedComponent = shallow(
+      <ShopCardComponent range={0} title="" subtitle="" buttonLink="" seeMoreLink="" seeMoreText="" />
+    );
+    expect(renderedComponent).toMatchSnapshot();
+  });
+});

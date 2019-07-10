@@ -3,6 +3,7 @@
   "extends": ["tslint:all", "tslint-config-airbnb", "tslint-config-prettier", "tslint-react-a11y", "tslint-react"],
   "jsRules": {},
   "rules": {
+    "no-void-expression": [true, "ignore-arrow-function-shorthand"],
     "import-name": false,
     "ordered-imports": false,
     "no-angle-bracket-type-assertion": false,
@@ -45,6 +46,8 @@
     "react-this-binding-issue": false,
     "no-unsafe-any": false,
     "align": false,
+    "space-before-function-paren": false,
+    "whitespace": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
     "no-import-side-effect": [
       true,

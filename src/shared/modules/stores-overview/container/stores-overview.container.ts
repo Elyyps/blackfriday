@@ -11,21 +11,35 @@ import { FilterBar } from "@app/api/core/filter-bar";
 interface IStateProps {
   filterBar: FilterBar;
   shopCards: ShopCard[];
+  totalCards: number;
 }
 
 interface IDispatchProps {
-  getShopCards: (status: string[], categories: string[], brands: string[], sortBy: string) => void;
+  getShopCards: (
+    oldItems: ShopCard[],
+    currentPage: number,
+    status: string[],
+    categories: string[],
+    brands: string[],
+    sortBy: string
+  ) => void;
   setShopCards: (shopCards: StoresOverviewModule) => void;
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IStoresOverviewComponentProps, IAppState> = state => {
-  const { shopCards, filterBar } = state.shopsOverview;
+  const { filterBar, shopCards, totalCards } = state.shopsOverview;
 
-  return { shopCards, filterBar };
+  return { shopCards, filterBar, totalCards };
 };
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IStoresOverviewComponentProps> = dispatch => ({
-  getShopCards: (status: string[], categories: string[], brands: string[], sortBy: string) =>
-    dispatch(shopsOverviewThunks.getShopsCards(status, categories, brands, sortBy)),
+  getShopCards: (
+    oldItems: ShopCard[],
+    currentPage: number,
+    status: string[],
+    categories: string[],
+    brands: string[],
+    sortBy: string
+  ) => dispatch(shopsOverviewThunks.getShopsCards(oldItems, currentPage, status, categories, brands, sortBy)),
   setShopCards: (shopCards: StoresOverviewModule) => dispatch(shopsOverviewActions.setShopsOverview(shopCards))
 });
 

@@ -8,7 +8,9 @@ interface IAction {
 export interface IShopsOverview extends IAction {
   filterBar: FilterBar;
   shopCards: ShopCard[];
+  totalCards: number;
 }
 export interface IShopsCards extends IAction {
   shopCards: ShopCard[];
+  totalCards: number;
 }

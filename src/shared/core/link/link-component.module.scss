@@ -8,55 +8,59 @@
   }
   &--animated {
     &:hover {
+      color: black;
       svg {
         transform: translateX(4px);
+        * {
+          stroke: black;
+        }
       }
     }
   }
   &--primary {
-    color: black !important;
+    color: black;
     svg {
       * {
         stroke: $gray-light;
       }
     }
     &:hover {
-      color: $brand-primary !important;
+      color: $brand-primary;
       svg {
         * {
-          stroke: $brand-primary !important;
+          stroke: $brand-primary;
         }
       }
     }
   }
   &--tertiary {
-    color: $brand-secondary !important;
+    color: $brand-secondary;
     svg {
       * {
-        stroke: $brand-secondary !important;
+        stroke: $brand-secondary;
       }
     }
     &:hover {
-      color: $brand-secondary-darker !important;
+      color: $brand-secondary-darker;
       svg {
         * {
-          stroke: $brand-secondary-darker !important;
+          stroke: $brand-secondary-darker;
         }
       }
     }
   }
   &--secondary {
-    color: $brand-primary !important;
+    color: $brand-primary;
     svg {
       * {
-        stroke: $brand-primary !important;
+        stroke: $brand-primary;
       }
     }
     &:hover {
-      color: $brand-primary-darker !important;
+      color: $brand-primary-darker;
       svg {
         * {
-          stroke: $brand-primary-darker !important;
+          stroke: $brand-primary-darker;
         }
       }
     }

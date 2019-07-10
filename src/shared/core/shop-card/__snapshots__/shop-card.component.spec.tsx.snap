@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ShopCard] should render component without crashing 1`] = `
+<ShadowCardComponent
+  shadowSize="small"
+>
+  <div
+    className="shop-card"
+  >
+    <div
+      className="shop-card__body"
+    >
+      <div
+        className="shop-card__image"
+      >
+        <ImageComponent />
+      </div>
+      <div
+        className="shop-card__status-title none"
+      />
+      <TimeLeftBarComponent
+        color="none"
+        range={0}
+      />
+      <div
+        className="shop-card__content"
+      >
+        <div
+          className="shop-card__title"
+        />
+         
+      </div>
+    </div>
+    <div
+      className="shop-card__action"
+    >
+      <Button
+        icon="link.svg"
+        iconPosition="right"
+      />
+    </div>
+  </div>
+</ShadowCardComponent>
+`;

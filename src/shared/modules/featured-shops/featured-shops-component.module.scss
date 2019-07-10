@@ -6,13 +6,40 @@
   padding: 16px;
 
   &__list {
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
     box-sizing: border-box;
-
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
     > * {
-      padding: 0 8px;
-      flex: 0 1 25%;
+      width: 100%;
+      flex: 0 1 19%;
+      @media (max-width: 1139px) {
+        flex: 0 1 24%;
+      }
+      @media (max-width: 914px) {
+        flex: 0 1 32%;
+      }
+      @media (max-width: 699px) {
+        width: 100%;
+        padding: 4px 0px;
+        flex: 0 1 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1139px) {
+  .featured-shop {
+    &__item-3 {
+      display: none;
+    }
+  }
+}
+@media (max-width: 914px) {
+  .featured-shop {
+    &__item-2 {
+      display: none;
     }
   }
 }

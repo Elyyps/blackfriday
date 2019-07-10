@@ -13,7 +13,6 @@ import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Checkbox } from "@app/api/core/checkbox";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 export interface IFilterBarComponentProps {
   applyFilter: () => void;

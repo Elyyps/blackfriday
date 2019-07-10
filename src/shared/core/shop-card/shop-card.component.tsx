@@ -1,60 +1,59 @@
 import * as React from "react";
 import styles from "./shop-card-component.module.scss";
-import classNames from "classnames";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { ImageComponent } from "@app/prep/modules-prep/core";
 import { LinkComponent } from "../link";
-import { getArrow } from "@app/constants/icons";
 import { Button } from "../button";
 import ShopIcon from "@assets/icons/link.svg";
+import { ShadowCardComponent } from "../shadow-card";
 
 export interface IShopCardComponentProps {
-  button_text: any;
-  content: string;
-  image?: any;
-  range?: any;
-  seeMoreLink?: string;
+  buttonLink: string;
+  buttonText?: string;
+  content?: string;
+  image?: string;
+  range: number;
+  seeMoreLink: string;
   seeMoreText: string;
-  sub_title?: any;
-  title: any;
-  url: string;
-
-  variant?: string;
+  subtitle: string;
+  title: string;
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const {
-    title,
-    seeMoreLink,
-    seeMoreText,
-    sub_title,
-    content,
-    image,
-    range,
-    button_text,
-    url,
-    variant
-  } = props;
+  const { title, seeMoreLink, subtitle, seeMoreText, content, image, range, buttonText } = props;
+  const getStatusBarColor = () => {
+    const rangeNumber = range;
+    const limit = 0.5;
+    if (rangeNumber === 0 || typeof rangeNumber === "undefined") {
+      return "none";
+    }
+
+    if (rangeNumber <= limit) {
+      return "orange";
+    }
+
+    return "green";
+  };
 
   return (
-    <div className={styles["shop-card"]}>
-      <div className={styles["shop-card__body"]}>
-        <div className={styles["shop-card__image"]}>
-          <ImageComponent src={image} />
+    <ShadowCardComponent>
+      <div className={styles["shop-card"]}>
+        <div className={styles["shop-card__body"]}>
+          <div className={styles["shop-card__image"]}>
+            <ImageComponent src={image} />
+          </div>
+          <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>{subtitle}</div>
+          <TimeLeftBarComponent color={getStatusBarColor()} range={range} />
+          <div className={styles["shop-card__content"]}>
+            <div className={styles["shop-card__title"]}>{title}</div>
+            {content} {seeMoreText && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}
+          </div>
         </div>
-        <TimeLeftBarComponent range={range} title={sub_title} />
-        <div className={styles["shop-card__content"]}>
-          <div className={styles["shop-card__title"]}>{title}</div>
-          {content}
-          {seeMoreText && (
-            <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>
-          )}
+        <div className={styles["shop-card__action"]}>
+          <Button title={buttonText} iconPosition="right" icon={ShopIcon} />
         </div>
       </div>
-      <div className={styles["shop-card__action"]}>
-        <Button title={button_text} iconPosition="right" icon={ShopIcon} />
-      </div>
-    </div>
+    </ShadowCardComponent>
   );
 };
 

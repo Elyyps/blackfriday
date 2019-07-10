@@ -43,6 +43,7 @@
         @media (min-width: $breakpoint-small) {
           padding-top: 48px;
           width: 40%;
+          flex-shrink: 0;
           margin-left: 24px;
         }
         @media (min-width: $breakpoint-medium) {

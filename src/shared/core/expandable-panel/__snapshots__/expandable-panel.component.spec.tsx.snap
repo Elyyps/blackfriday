@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ExpandablePanelComponent] should render component without crashing 1`] = `
+<Fragment>
+  <div
+    className="expandable-panel"
+  >
+    <div
+      className="expandable-panel__block"
+      role="listitem"
+    >
+      <ul
+        className="expandable-panel__list"
+      >
+        <li>
+          <div
+            aria-label="expandButton"
+            className="expandable-panel__title"
+            onClick={[Function]}
+            role="button"
+          >
+            <div
+              className="expandable-panel__icon"
+            >
+              <IconComponent
+                fillColor="#fff"
+                icon="chevron-down.svg"
+                size="20px"
+              />
+            </div>
+            <span>
+              Title
+            </span>
+          </div>
+          <div
+            className="expandable-panel__content expandable-panel__hidden"
+          />
+        </li>
+      </ul>
+    </div>
+  </div>
+</Fragment>
+`;

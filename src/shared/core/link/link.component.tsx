@@ -9,7 +9,7 @@ export interface ILinkComponentProps {
   children: any;
   icon?: string;
   target?: string;
-  to?: string;
+  to: string;
   variant?: "primary" | "secondary" | "tertiary";
 }
 

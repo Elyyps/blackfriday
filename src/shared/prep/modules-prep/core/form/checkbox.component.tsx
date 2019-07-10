@@ -2,7 +2,6 @@ import * as React from "react";
 import "./form.component.scss";
 
 interface ICheckboxProps {
-  buttonText: any;
   isChecked?: any;
   key?: any;
   label?: string;
@@ -10,11 +9,10 @@ interface ICheckboxProps {
   onChange?: any;
 }
 
-const Checkbox = ({ name, label, key, onChange, isChecked, buttonText }: ICheckboxProps) => (
+const Checkbox = ({ name, label, key, onChange, isChecked }: ICheckboxProps) => (
   <React.Fragment>
     <label htmlFor={key} className={"checkbox-label"}>
       <input
-        data-category={buttonText}
         checked={isChecked}
         type="checkbox"
         name={name}

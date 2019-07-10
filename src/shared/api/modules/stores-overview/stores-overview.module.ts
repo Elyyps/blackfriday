@@ -4,6 +4,7 @@ import { FilterBar, generateDummyFilterBar } from "@app/api/core/filter-bar";
 export class StoresOverviewModule {
   public filterBar: FilterBar;
   public shopCards: ShopCard[];
+  public totalCards: number;
 }
 export const shuffleArray = (a: any) => {
   const result = [...a];
@@ -16,14 +17,20 @@ export const shuffleArray = (a: any) => {
   return result;
 };
 
-export function getShopCards(status: string[], categories: string[], brands: string[], sortBy: string) {
+export function getShopCards(
+  currentPage: number,
+  status: string[],
+  categories: string[],
+  brands: string[],
+  sortBy: string
+) {
   const shopCards: ShopCard[] = generateData();
-
+  const slicedList: ShopCard[] = [];
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];
   let SortedCards: ShopCard[] = [];
-
+  const skip: number = 15 * currentPage;
   if (status.length >= 1) {
     shopCards.map(card => status.includes(card.timeLeftBar.text.toUpperCase()) && filteredCardsByStatus.push(card));
   } else {
@@ -50,6 +57,10 @@ export function getShopCards(status: string[], categories: string[], brands: str
   } else {
     SortedCards = filteredCardsByBrand;
   }
+  for (let i = skip; i < 15 + skip; i++) {
+    slicedList.push(SortedCards[i]);
+  }
+  console.log("heyyyyy gg");
 
-  return SortedCards;
+  return { shopCards: slicedList, totalCards: SortedCards.length };
 }

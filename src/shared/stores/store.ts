@@ -7,7 +7,7 @@ import { History } from "history";
 import { localesReducer, ILocalesState } from "@app/stores/locales";
 
 import { IPageState, pageReducer } from "./page";
-import { IShopsOverview } from "./stores-overview/stores-overview.types";
+import { IShopsOverview, IShopsCards } from "./stores-overview/stores-overview.types";
 import { shopsOverviewReducer } from "./stores-overview/stores-overview.reducer";
 type StoreParams = {
   history: History;
@@ -19,6 +19,7 @@ export interface IAppState {
   locales: ILocalesState;
   page: IPageState;
   router: RouterState;
+  shopsCards: IShopsCards;
   shopsOverview: IShopsOverview;
 }
 

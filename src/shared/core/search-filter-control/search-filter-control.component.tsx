@@ -58,7 +58,6 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
     checkbox.forEach(option => {
       if (option.isChecked === true) {
         list.push(option.text.toUpperCase());
-        option.quantity && props.totalShops(option.quantity);
       }
     });
     props.checkedFilters(list.length);
@@ -67,7 +66,6 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
 
   useEffect(() => {
     setCheckboxList(props.checkbox);
-    console.log("for danniel");
   }, [props.checkbox]);
 
   useEffect(() => {
