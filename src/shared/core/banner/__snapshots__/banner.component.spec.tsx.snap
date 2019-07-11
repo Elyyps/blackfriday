@@ -2,43 +2,44 @@
 
 exports[`[Banner] should render component without crashing 1`] = `
 <div
-  className="banner"
+  className="banner--default"
 >
   <div
-    className="banner__holder"
+    className="holder"
   >
     <div
-      className="banner__image"
+      className="image"
     >
       <Link
         to="#"
       >
         <ImageComponent
           alt="alt text oasis"
-          src="oasis.jpg"
+          errorImage="link.svg"
+          errorMessage="Message"
         />
       </Link>
     </div>
     <div
-      className="banner__body"
+      className="body"
     >
       <div
-        className="banner__content"
+        className="content"
       >
         <div
-          className="banner__label"
+          className="label"
         >
           22 t/m 26 nov.
         </div>
         <h2
-          className="banner__title"
+          className="title"
         >
           Black Friday bij Coolblue
         </h2>
         Een selectie van bizarre aanbiedingen. Meer info
       </div>
       <div
-        className="banner__footer"
+        className="footer"
       >
         <Button
           icon="link.svg"
@@ -48,7 +49,7 @@ exports[`[Banner] should render component without crashing 1`] = `
           variant="primary-default"
         />
         <div
-          className="banner__logo"
+          className="logo"
         >
           <ImageComponent
             alt="alt text CoolBlue"

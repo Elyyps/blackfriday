@@ -3,7 +3,7 @@ import style from "./button-component.module.scss";
 import classNames from "classnames";
 import { IconComponent } from "@app/core/icon/icon.component";
 
-export type ButtonType =
+export type ButtonVariant =
   | "primary-default"
   | "primary-brand"
   | "primary-inverted"
@@ -14,9 +14,8 @@ export type ButtonType =
 
 export type IconStyle = "outline" | "filled" | "outline-fill";
 
-interface IButtonProps {
+export interface IButtonProps {
   buttonType?: string;
-  classNames?: void;
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: string;
@@ -24,8 +23,9 @@ interface IButtonProps {
   iconStyle?: IconStyle;
   onClick?: (() => void) | string;
   size?: number;
+  target?: "_blank" | "_self";
   title?: string;
-  variant?: ButtonType;
+  variant?: ButtonVariant;
 }
 
 const Button = (props: IButtonProps) => {
@@ -41,7 +41,8 @@ const Button = (props: IButtonProps) => {
     height: props.size
   };
 
-  const onClick = typeof props.onClick === "string" ? () => (location.href = `/${props.onClick}`) : props.onClick;
+  const target = props.target || "_blank";
+  const onClick = typeof props.onClick === "string" ? () => window.open(`${props.onClick}`, target) : props.onClick;
 
   const renderIconMargin = (margin = "right") => {
     let newMargin = "";

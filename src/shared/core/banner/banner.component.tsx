@@ -4,10 +4,13 @@ import { Button, ImageComponent } from "@app/core/";
 import { Link } from "react-router-dom";
 import IconDefault from "@assets/icons/link.svg";
 
+export type BannerVariant = "default" | "small";
+
 export type ImageType = {
   alt: string;
   src: string;
 };
+
 export interface IBannerComponentProps {
   buttonLink?: any;
   buttonTitle?: string;
@@ -16,43 +19,48 @@ export interface IBannerComponentProps {
   logo?: ImageType;
   text?: any;
   title?: string;
+  variant?: BannerVariant;
 }
 
-const BannerComponent = (props: IBannerComponentProps) => (
-  <div className={styles["banner"]}>
-    <div className={styles["banner__holder"]}>
-      <div className="banner__image">
-        {props.image && (
-          <Link to={props.buttonLink}>
-            <ImageComponent src={props.image.src} alt={props.image.alt} />
-          </Link>
-        )}
-      </div>
-      <div className={styles["banner__body"]}>
-        <div className={styles["banner__content"]}>
-          <div className={styles["banner__label"]}>{props.label}</div>
-          <h2 className={styles["banner__title"]}>{props.title}</h2>
-          {props.text}
+const BannerComponent = (props: IBannerComponentProps) => {
+  const classModify = `banner--${props.variant || "default"}`;
+
+  return (
+    <div className={styles[classModify]}>
+      <div className={styles["holder"]}>
+        <div className={styles["image"]}>
+          {props.image && (
+            <Link to={props.buttonLink}>
+              <ImageComponent alt={props.image.alt} errorImage={IconDefault} errorMessage="Message" />
+            </Link>
+          )}
         </div>
-        <div className={styles["banner__footer"]}>
-          {props.buttonTitle && (
-            <Button
-              title={props.buttonTitle}
-              onClick={props.buttonLink}
-              variant={"primary-default"}
-              iconStyle={"filled"}
-              icon={IconDefault}
-            />
-          )}
-          {props.logo && (
-            <div className={styles["banner__logo"]}>
-              <ImageComponent src={props.logo.src} alt={props.logo.alt} />
-            </div>
-          )}
+        <div className={styles["body"]}>
+          <div className={styles["content"]}>
+            <div className={styles["label"]}>{props.label}</div>
+            <h2 className={styles["title"]}>{props.title}</h2>
+            {props.text}
+          </div>
+          <div className={styles["footer"]}>
+            {props.buttonTitle && (
+              <Button
+                title={props.buttonTitle}
+                onClick={props.buttonLink}
+                variant={"primary-default"}
+                iconStyle={"filled"}
+                icon={IconDefault}
+              />
+            )}
+            {props.logo && (
+              <div className={styles["logo"]}>
+                <ImageComponent src={props.logo.src} alt={props.logo.alt} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export { BannerComponent };

@@ -7,15 +7,20 @@ exports[`[StarsRating] should render component without crashing 1`] = `
 >
   <div
     className="usp__item"
-    data-key={0}
     key="0"
+    style={
+      Object {
+        "display": "flex",
+        "opacity": 0,
+      }
+    }
   >
     <Link
       className="usp__link"
       to="./"
     >
       <IconComponent
-        fillColor="#777777"
+        fillColor="#777"
         icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg"
         size="14px"
       />
@@ -32,15 +37,20 @@ exports[`[StarsRating] should render component without crashing 1`] = `
   </div>
   <div
     className="usp__item"
-    data-key={1}
     key="1"
+    style={
+      Object {
+        "display": "flex",
+        "opacity": 0,
+      }
+    }
   >
     <Link
       className="usp__link"
       to="./"
     >
       <IconComponent
-        fillColor="#777777"
+        fillColor="#777"
         icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg"
         size="14px"
       />
@@ -57,15 +67,20 @@ exports[`[StarsRating] should render component without crashing 1`] = `
   </div>
   <div
     className="usp__item"
-    data-key={2}
     key="2"
+    style={
+      Object {
+        "display": "flex",
+        "opacity": 0,
+      }
+    }
   >
     <Link
       className="usp__link"
       to="./"
     >
       <IconComponent
-        fillColor="#777777"
+        fillColor="#777"
         icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/megaphone.svg"
         size="14px"
       />

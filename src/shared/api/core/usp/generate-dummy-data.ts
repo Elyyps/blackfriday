@@ -1,6 +1,6 @@
-import { USP } from "./usp";
+import { UspModule } from "./usp";
 
-export const uniqueSellingPoints: USP = {
+export const uniqueSellingPoints: UspModule = {
   uniqueSellingPoints: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",

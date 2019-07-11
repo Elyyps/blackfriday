@@ -1,5 +1,5 @@
 import { IconLink } from "../icon-link";
 
-export class USP {
+export class UspModule {
   public uniqueSellingPoints: IconLink[];
 }

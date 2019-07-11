@@ -2,12 +2,12 @@ import * as React from "react";
 import styles from "./medium-hero-component.module.scss";
 import { HeaderContentComponent, IHeaderContentComponentProps } from "@app/core/header-content";
 import { USP } from "@app/core";
-import { USP as USP_CLASS } from "@app/api/core/usp/usp";
+import { UspModule } from "@app/api/core/usp";
 
 export interface IMediumHeroComponentProps {
   headerContent?: IHeaderContentComponentProps;
   image?: string;
-  usps: USP_CLASS;
+  usps: UspModule;
 }
 
 const MediumHeroComponent = (props: IMediumHeroComponentProps) => {

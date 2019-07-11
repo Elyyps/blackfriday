@@ -18,8 +18,8 @@ const BannerModuleComponent = (props: IBannerModuleComponentProps) => {
 
   return (
     <div className={styles["banner-module"]}>
-      <div className={styles["banner"]} style={inlineStyles}>
-        <div className="uk-container">
+      <div className={styles["holder"]} style={inlineStyles}>
+        <div className={`uk-container ${styles["container"]}`}>
           <BannerComponent
             buttonLink={props.bannerProps.buttonLink}
             buttonTitle={props.bannerProps.buttonTitle}

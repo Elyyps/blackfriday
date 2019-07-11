@@ -5,7 +5,7 @@ exports[`[BannerModule] should render component without crashing 1`] = `
   className="banner-module"
 >
   <div
-    className="banner"
+    className="holder"
     style={
       Object {
         "backgroundColor": "#eee",
@@ -15,7 +15,7 @@ exports[`[BannerModule] should render component without crashing 1`] = `
     }
   >
     <div
-      className="uk-container"
+      className="uk-container container"
     >
       <BannerComponent
         buttonLink="#"
