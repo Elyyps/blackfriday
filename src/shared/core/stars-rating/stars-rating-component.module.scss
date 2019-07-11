@@ -1,5 +1,6 @@
 .stars-rating {
-  display: flex;
+  display: block;
+  min-width: 86px;
   &__star {
     margin-right: 4px;
   }

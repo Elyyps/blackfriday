@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { TimeLeftBarComponent } from "./time-left-bar.component";
+import { BackLinkComponent } from "./back-button.component";
 
-describe("[TimeLeftBar]", () => {
+describe("[BackLink]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(<TimeLeftBarComponent range={1} />);
+    const renderedComponent = shallow(<BackLinkComponent />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

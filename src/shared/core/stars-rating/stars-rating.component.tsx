@@ -1,15 +1,13 @@
 import * as React from "react";
 
 import styles from "./stars-rating-component.module.scss";
-
 import Star from "@assets/icons/star-filled.svg";
 import HalfStar from "@assets/icons/star-half.svg";
 import EmptyStar from "@assets/icons/star-empty.svg";
-
 import { IconComponent } from "@app/core/";
 
 export interface IStarsRatingComponentProps {
-  numberStars: number;
+  numberStars?: number;
   rating: number;
 }
 
@@ -18,12 +16,13 @@ enum StarsType {
   full = "FULL",
   half = "HALF"
 }
-
+const defaultStars = 5;
 const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
   const [stars, setStars] = React.useState<StarsType[]>([]);
-  const rating = props.rating > props.numberStars ? 0 : props.rating;
+  const totalStars = props.numberStars ? props.numberStars : defaultStars;
+  const rating = props.rating > totalStars ? 0 : props.rating;
   React.useEffect(() => {
-    setStars(getListStars(props.numberStars, rating));
+    setStars(getListStars(totalStars, rating));
   }, []);
 
   return (
