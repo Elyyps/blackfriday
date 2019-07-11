@@ -1,4 +1,4 @@
 import { uniqueSellingPoints } from "./generate-dummy-data";
-import { USP } from "./usp";
+import { UspModule } from "./usp";
 
-export const generateUSP = (): USP => uniqueSellingPoints;
+export const generateUSP = (): UspModule => uniqueSellingPoints;
