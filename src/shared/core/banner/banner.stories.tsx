@@ -21,4 +21,14 @@ storiesOf("Banner", module)
       text={bannerProps.text}
       title={bannerProps.title}
     />
+  ))
+  .add("Basic implementation without image", () => (
+    <BannerComponent
+      buttonLink={bannerProps.buttonLink}
+      buttonTitle={bannerProps.buttonTitle}
+      label={bannerProps.label}
+      logo={bannerProps.logo}
+      text={bannerProps.text}
+      title={bannerProps.title}
+    />
   ));

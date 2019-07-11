@@ -1,0 +1,12 @@
+.posts-list {
+  > div {
+    padding: 16px 0;
+    border-bottom: 1px solid $tint-gray;
+    @media (max-width: $breakpoint-small-max) {
+      padding: 10px 0;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+}

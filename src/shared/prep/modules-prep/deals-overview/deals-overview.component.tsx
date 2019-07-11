@@ -41,9 +41,10 @@ export interface IDealsOverviewComponentProps {
 
 const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   const postFrom = 15;
+  const ObjectKeys: any = {};
   const connectClass = "uk-switcher-list";
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
-  const [checkedItems, setCheckedItems] = useState(new Map());
+  const [checkedItems, setCheckedItems] = useState(ObjectKeys);
   const [textLabel, setTextLabel] = useState("");
   const [prevIcon, setPrevIcon] = useState(false);
   const [filterContent, setFilterContent] = useState(false);
@@ -64,10 +65,24 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   const handleClickLAbel = () => {
     setFilterContent(!filterContent);
   };
-  const handleChange = (event: any) => {
-    setCheckedItems(
-      checkedItems.set(event.target.getAttribute("data-category"), [{ [event.target.name]: event.target.checked }])
-    );
+
+  const handleChange = (event: any, status?: any) => {
+    setCheckedItems({
+      ...checkedItems,
+      [status]: {
+        ...checkedItems[status],
+        [event.target.name]: event.target.checked
+      }
+    });
+
+    return;
+  };
+  const isSomeCheckboxctive = (status: any) => {
+    if (checkedItems[status]) {
+      const isActive = Object.keys(checkedItems[status]).some(key => checkedItems[status][key] === true);
+
+      return isActive ? "active" : "";
+    }
   };
 
   return (
@@ -134,19 +149,22 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   </div>
                   {dealsOverviewDropdownDummy
                     ? dealsOverviewDropdownDummy.map((item, index) => (
-                        <div key={index} className="filter-item">
+                        <div key={index} className={`filter-item ${isSomeCheckboxctive(item.button_text)} `}>
                           <Button
                             title={item.button_text}
                             type={"button"}
-                            variant={`dropdown ${item.isActive}`}
+                            variant={`dropdown-modify`}
                             onClick={handleClick}
                             icon={ChevronDown}
                           />
-                          {/*<span className={'uk-hidden@m filter-selected-items'}>Nu geldig, Bijna verlopen</span>*/}
-
                           <div data-uk-dropdown="mode: click">
                             <div className="dropdown-head">
-                              <Input placeholder={item.dropdwon.placehoder} classModify={"large"} icon={Search} />
+                              <Input
+                                placeholder={item.dropdwon.placehoder}
+                                classModify={"large"}
+                                icon={Search}
+                                name={"search"}
+                              />
                             </div>
                             <div className="dropdown-body">
                               <div className="uk-grid uk-child-width-1-2@s">
@@ -154,11 +172,10 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                                   ? item.dropdwon.status.map((itemCheckbox, key) => (
                                       <div key={key} className={"dropdown-item"}>
                                         <Checkbox
-                                          onChange={handleChange}
+                                          onChange={(event: any): void => handleChange(event, item.button_text)}
                                           key={key}
                                           name={itemCheckbox.name}
                                           label={itemCheckbox.label}
-                                          buttonText={item.button_text}
                                         />
                                         <span className="count-item uk-visible@m">({itemCheckbox.count})</span>
                                       </div>

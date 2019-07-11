@@ -16,9 +16,11 @@ exports[`[Banner] should render component without crashing 1`] = `
         <ImageComponent
           alt="alt text oasis"
           errorImage="link.svg"
-          errorMessage="Message"
+          errorMessage="Custom error message"
+          src="oasis.jpg"
         />
       </Link>
+      )
     </div>
     <div
       className="body"

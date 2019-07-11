@@ -29,11 +29,15 @@ const BannerComponent = (props: IBannerComponentProps) => {
     <div className={styles[classModify]}>
       <div className={styles["holder"]}>
         <div className={styles["image"]}>
-          {props.image && (
-            <Link to={props.buttonLink}>
-              <ImageComponent alt={props.image.alt} errorImage={IconDefault} errorMessage="Message" />
-            </Link>
-          )}
+          <Link to={props.buttonLink}>
+            <ImageComponent
+              alt={props.image && props.image.alt}
+              src={props.image && props.image.src}
+              errorImage={IconDefault}
+              errorMessage="Custom error message"
+            />
+          </Link>
+          )
         </div>
         <div className={styles["body"]}>
           <div className={styles["content"]}>
