@@ -27,7 +27,7 @@ const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => {
       )}
       <div className="uk-container">
         <div className={styles["header-info__body"]}>
-          <div style={{ display: "flex" }}>
+          <div className={styles["header-info__body__content"]}>
             {props.headerInfo.icon && (
               <div className={styles["header-info__icon"]}>
                 <ImageComponent src={props.headerInfo.icon} />

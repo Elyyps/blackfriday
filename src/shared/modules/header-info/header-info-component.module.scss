@@ -30,6 +30,9 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
     padding: 40px 194px 40px 40px;
     color: $gray-light;
+    &__content {
+      display: flex;
+    }
     @media (max-width: $breakpoint-small-max) {
       padding: 52px 32px 32px;
       margin: 0 -24px;

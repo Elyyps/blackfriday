@@ -7,7 +7,7 @@ import { Badge } from "./badge.component";
 import ShareSVG from "@assets/icons/share.svg";
 const notes = require("./badge.md");
 
-storiesOf("dropdown", module)
+storiesOf("Badge", module)
   .addDecorator(withA11y)
   .add("Basic implementation", () => <Badge position={"right"} icon={ShareSVG} />, {
     notes
