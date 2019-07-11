@@ -12,7 +12,7 @@ exports[`[TimeLeftBar] should render component without crashing 1`] = `
       style={
         Object {
           "backgroundColor": "none",
-          "width": "calc( 0.5 * 100%)",
+          "width": "calc( 1 * 100%)",
         }
       }
     />
