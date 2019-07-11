@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import IconDefault from "@assets/icons/chevron-right.svg";
-import { Button, ButtonType } from "@app/core/button/";
+import { Button, ButtonVariant } from "@app/core/button/";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
@@ -34,7 +34,7 @@ storiesOf("Button", module)
   ));
 
 const renderButtonVariations = (
-  buttonVariant: ButtonType = "primary-default",
+  buttonVariant: ButtonVariant = "primary-default",
   bgColor = "#fff",
   textColor = "#1c1c1c"
 ) => (
@@ -76,6 +76,14 @@ const renderButtonVariations = (
       iconPosition="left"
       variant={buttonVariant}
       onClick={() => alert(`clicked button 6: ${buttonVariant}`)}
+    />
+    <br />
+    <Button
+      title="custom link (url)"
+      target="_self"
+      iconPosition="left"
+      variant={buttonVariant}
+      onClick={"https://youtube.com"}
     />
   </div>
 );
