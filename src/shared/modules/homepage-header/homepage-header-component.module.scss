@@ -1,4 +1,4 @@
-.hero__slick-slider {
+.homepage-header__slick-slider {
   position: absolute;
   height: 100%;
   width: 50%;
@@ -22,7 +22,7 @@
     }
   }
 }
-.hero {
+.homepage-header {
   background-color: $bg-muted;
   &-top {
     position: relative;
@@ -62,6 +62,7 @@
   }
   &__title {
     margin-bottom: 32px;
+    margin-top: 10px;
     @media (max-width: $breakpoint-small-max) {
       margin-bottom: 24px;
     }
@@ -72,18 +73,7 @@
       }
     }
   }
-  &__label {
-    background-color: rgba($brand-primary, 0.15);
-    font-size: 12px;
-    font-weight: bold;
-    color: $brand-primary;
-    padding: 6px 10px;
-    display: inline-flex;
-    text-transform: uppercase;
-    border-radius: $global-border-radius;
-    font-family: $global-font-family-secondary;
-    margin-bottom: 8px;
-  }
+
   &-wrap {
     padding: 80px 0 96px 0;
     @media (max-width: $breakpoint-small-max) {
@@ -151,8 +141,7 @@
       }
     }
   }
-  &__list {
-  }
+
   &__cards {
     padding: 0;
     margin: 0;
@@ -217,9 +206,7 @@
       background-repeat: no-repeat;
       background-position: center center;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      color: $global-inverse-color;
+
       padding: 0 0 72px 72px !important;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -240,13 +227,21 @@
         top: 0;
       }
     }
-    &-title,
-    &-button {
+    &__slide-container {
+      position: relative;
+    }
+    &-control {
+      color: $global-inverse-color;
+      height: auto !important;
+      position: relative;
+      bottom: 25%;
+      left: 6%;
+    }
+    &-title {
       height: auto !important;
       color: inherit;
       display: flex;
       align-items: baseline;
-      max-width: 70%;
       z-index: 1;
       @media (max-width: $breakpoint-small-max) {
         max-width: 100%;

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styles from "./arrow-panel-component.module.scss";
 import { IconComponent, ImageComponent } from "@app/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
-import classNames from "classnames";
 
 interface ICardSimpleProps {
   brands?: string[];
@@ -12,20 +11,23 @@ interface ICardSimpleProps {
   title?: string;
   variant?: string;
 }
-
+const MAX_ITEMS = 3;
+const LAST_ITEM_INDEX = -2;
 const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) => {
   const [listBrands, setListBrands] = React.useState("");
   React.useEffect(() => {
     let listWords = "";
     if (brands) {
-      if (brands.length > 3) {
-        for (let i = 0; i < 2; i++) {
-          listWords += `${brands[i]}, `;
+      if (brands.length > MAX_ITEMS) {
+        for (let i = 0; i < MAX_ITEMS - 1; i = +1) {
+          listWords = `${listWords}${brands[i]}, `;
         }
-        listWords += `${brands[3]}..."`;
+        listWords = `${listWords}${brands[MAX_ITEMS]}...`;
       } else {
-        listWords += brands.map(brand => `${brand}, `);
-        listWords = listBrands.slice(0, -2);
+        brands.map(brand => {
+          listWords = `${listWords}${brand}, `;
+        });
+        listWords = listWords.slice(0, LAST_ITEM_INDEX);
       }
     }
     setListBrands(listWords);
@@ -45,7 +47,7 @@ const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) =>
       )}
       <div className={styles["card-simple__title"]}>{title}</div>
       <div className={styles["card-simple__body"]}>
-        <div className={styles["card-simple__list-brands"]}>{listBrands}</div>
+        {!icon && <div className={styles["card-simple__list-brands"]}>{listBrands}</div>}
         <IconComponent icon={CHEVRON_RIGHT} size="5px" />
       </div>
     </Link>

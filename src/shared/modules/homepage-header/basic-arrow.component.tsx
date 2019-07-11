@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { getArrow } from "@app/constants/icons";
-import styles from "./hero-component.module.scss";
+import styles from "./homepage-header-component.module.scss";
 
 interface IBasicArrowProps {
   className?: string;
@@ -13,11 +13,11 @@ interface IBasicArrowProps {
 const BasicArrow = (props: IBasicArrowProps) => {
   const { className, onClick } = props;
   let result;
-  const customStyle = "hero__slick-arrow-" + `${props.prev ? "prev" : "next"}`;
+  const customStyle = "homepage-header__slick-arrow-" + `${props.prev ? "prev" : "next"}`;
   if (props.customArrow === undefined) {
     result = (
       <button
-        className={`${className} ${styles["hero__slick-arrow"]} ${styles[customStyle]}`}
+        className={`${className} ${styles["homepage-header__slick-arrow"]} ${styles[customStyle]}`}
         style={{ display: "block" }}
         onClick={onClick}
       >
