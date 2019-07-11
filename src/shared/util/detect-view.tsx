@@ -1,5 +1,5 @@
 const breakPointMobile = 360;
-const breakPointTablet = 768;
+const breakPointTablet = 769;
 const breakPointDesktop = 960;
 const breakPointDesktopLarge = 1200;
 

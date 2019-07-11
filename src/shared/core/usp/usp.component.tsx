@@ -19,46 +19,28 @@ const timerIntervalDuration = 3000;
 let timerInterval: NodeJS.Timeout;
 
 const USP = (props: IUSPProps) => {
-  const isMobile = useIsMobile(false);
+  const isMobile = useIsMobile();
   const [uspItems, setUspItems] = useState<UspPropsWrapper[]>(
     createUspPropsWrapperArray([...props.uspModule.uniqueSellingPoints], false)
   );
-
-  const startFadingSlider: () => NodeJS.Timeout = () => {
-    let selectedElement = 0;
-    setUspItems(setUspVisibility(uspItems, selectedElement));
-
-    return (timerInterval = setInterval(() => {
-      if (selectedElement + 1 > uspItems.length - 1) {
-        selectedElement = 0;
-      } else {
-        selectedElement += 1;
-      }
-      setUspItems(setUspVisibility(uspItems, selectedElement));
-    }, timerIntervalDuration));
-  };
-
-  const stopFadingSlider = () => {
-    clearInterval(timerInterval);
-    setUspItems(setUspVisibility(uspItems));
-  };
+  let visibleElementIndex = 0;
 
   useEffect(() => {
     if (isMobile) {
-      setUspItems(setUspVisibility(uspItems, 0));
+      setUspVisibility(uspItems, 0);
     }
   }, []);
 
   useEffect(() => {
     if (isMobile) {
-      setUspItems(setUspVisibility(uspItems, 0));
+      setUspVisibility(uspItems, 0);
       startFadingSlider();
     } else {
       stopFadingSlider();
     }
   }, [isMobile]);
 
-  return (
+  const component = (
     <div id="uspHolder" className={styles["usp"]}>
       {uspItems.map((item, index) => (
         <div key={index} className={styles["usp__item"]} style={setStyle(item.visible)}>
@@ -70,6 +52,43 @@ const USP = (props: IUSPProps) => {
       ))}
     </div>
   );
+
+  const startFadingSlider = (): NodeJS.Timeout => {
+    setUspVisibility(uspItems, 0);
+
+    return (timerInterval = setInterval(setNextVisibleElement, timerIntervalDuration));
+  };
+
+  const setNextVisibleElement = () => {
+    if (visibleElementIndex === uspItems.length) {
+      visibleElementIndex = 0;
+    } else {
+      visibleElementIndex += 1;
+    }
+    setUspVisibility(uspItems, visibleElementIndex);
+  };
+
+  const stopFadingSlider = () => {
+    clearInterval(timerInterval);
+    setUspVisibility(uspItems);
+  };
+
+  const setUspVisibility = (array: UspPropsWrapper[], visibleItem?: number) => {
+    const items = array.map((item, index) => {
+      if (typeof visibleItem !== "undefined") {
+        index === visibleItem ? (item.visible = true) : (item.visible = false);
+
+        return item;
+      }
+      item.visible = true;
+
+      return item;
+    });
+
+    setUspItems(items);
+  };
+
+  return component;
 };
 
 const setStyle = (isVisible: boolean) =>
@@ -78,19 +97,8 @@ const setStyle = (isVisible: boolean) =>
 const createUspPropsWrapperArray = (array: IconLink[], visibleState: boolean): UspPropsWrapper[] =>
   array.map(item => ({ usp: item, visible: visibleState }));
 
-const setUspVisibility = (array: UspPropsWrapper[], visibleItem?: number) =>
-  array.map((item, index) => {
-    if (typeof visibleItem !== "undefined") {
-      index === visibleItem ? (item.visible = true) : (item.visible = false);
-
-      return item;
-    }
-    item.visible = true;
-
-    return item;
-  });
-
-const useIsMobile = (defaultValue: boolean) => {
+// move to util
+const useIsMobile = (defaultValue?: boolean) => {
   const isClient = typeof window === "object";
 
   const getIsMobile = () => {
@@ -98,7 +106,7 @@ const useIsMobile = (defaultValue: boolean) => {
       return isTabletView(window.innerWidth);
     }
 
-    return defaultValue;
+    return defaultValue || false;
   };
 
   const [isMobile, setIsMobile] = useState(getIsMobile());
