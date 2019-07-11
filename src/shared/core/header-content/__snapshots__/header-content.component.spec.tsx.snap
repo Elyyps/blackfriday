@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[HeaderContent] should render component without crashing 1`] = `
+<div
+  className="header-content"
+>
+  <BreadcrumbComponent
+    backButton={
+      Object {
+        "title": "Terug",
+        "url": "/#",
+      }
+    }
+    links={
+      Array [
+        Object {
+          "title": "Home",
+          "url": "/#",
+        },
+        Object {
+          "title": "Blog",
+          "url": "/#",
+        },
+      ]
+    }
+  />
+  <h1>
+    Black Friday Winkels
+  </h1>
+  <h1
+    className="subtitle"
+  >
+    Deelnemende winkels van 2019
+  </h1>
+  <span
+    className="text"
+  >
+    Bodytext voor extra informatie wanneer nodig
+  </span>
+</div>
+`;
