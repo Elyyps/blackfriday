@@ -38,9 +38,9 @@ export function generateData(): ShopCard[] {
   const status = ["Actie nog onbekend", "Actie start over 5 dagen!", "Nu geldig", "Bijna Verlopen!", "Actie verlopen"];
   for (let y = 0; y < 5; y++) {
     for (let i = 1; i <= 5; i++) {
-      // const number16 = Math.floor(Math.random() * (6 - 1)) + 1;
+      const number16 = Math.floor(Math.random() * (1 - 0)) + 0;
 
-      const timebar = Math.random() * 1;
+      const timebar = Math.random();
 
       data.push({
         button: { title: "Naar deals", url: "" },

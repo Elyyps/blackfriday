@@ -24,8 +24,7 @@ export function getShopCards(
   brands: string[],
   sortBy: string
 ) {
-  const shopCards: ShopCard[] = generateDummyShopCards();
-  // const slicedList: ShopCard[] = [];
+  const shopCards: ShopCard[] = generateData();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];

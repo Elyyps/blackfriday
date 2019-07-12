@@ -43,11 +43,9 @@ const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IStoresOverviewComp
   setShopCards: (shopCards: StoresOverviewModule) => dispatch(shopsOverviewActions.setShopsOverview(shopCards))
 });
 
-export type StoresOverviewContainerProps = IStateProps & IDispatchProps & RouteComponentProps;
+export type StoresOverviewContainerProps = IStateProps & IDispatchProps;
 
-export const StoresOverviewContainer = withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(StoresOverviewComponent)
-);
+export const StoresOverviewContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StoresOverviewComponent);
