@@ -1,4 +1,4 @@
-import { ShopCard, generateData } from "@app/api/core/shop-card";
+import { ShopCard, generateData, generateDummyShopCards } from "@app/api/core/shop-card";
 import { FilterBar, generateDummyFilterBar } from "@app/api/core/filter-bar";
 
 export class StoresOverviewModule {
@@ -24,13 +24,16 @@ export function getShopCards(
   brands: string[],
   sortBy: string
 ) {
-  const shopCards: ShopCard[] = generateData();
-  const slicedList: ShopCard[] = [];
+  const shopCards: ShopCard[] = generateDummyShopCards();
+  // const slicedList: ShopCard[] = [];
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];
   let SortedCards: ShopCard[] = [];
-  const skip: number = 15 * currentPage;
+  const TAKE = 15;
+  const skip: number = TAKE * currentPage;
+  const numberOfCards = skip + TAKE;
+
   if (status.length >= 1) {
     shopCards.map(card => status.includes(card.timeLeftBar.text.toUpperCase()) && filteredCardsByStatus.push(card));
   } else {
@@ -57,10 +60,12 @@ export function getShopCards(
   } else {
     SortedCards = filteredCardsByBrand;
   }
-  for (let i = skip; i < 15 + skip; i++) {
-    slicedList.push(SortedCards[i]);
-  }
-  console.log("heyyyyy gg");
+  SortedCards = SortedCards.slice(skip, numberOfCards);
+  // console.log(skip + " skip");
+  // console.log(numberOfCards + " numberOfCards");
+  console.log(currentPage + " currentPage");
 
-  return { shopCards: slicedList, totalCards: SortedCards.length };
+  // console.log(SortedCards.length);
+
+  return { shopCards: SortedCards, totalCards: SortedCards.length };
 }

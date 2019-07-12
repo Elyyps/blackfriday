@@ -15,7 +15,7 @@ export class ShopCard {
 }
 export const generateDummyShopCards = (): ShopCard[] => {
   const data: ShopCard[] = [];
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 200; i++) {
     data.push({
       button: { title: "button", url: "" },
       content: "content",

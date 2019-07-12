@@ -13,10 +13,15 @@ const getShopsCards = (
 ) => async (dispatch: Dispatch<any>) => {
   try {
     const cards = filterShopsOverviewCards(currentPage, status, categories, brands, sortBy);
-    // cards.shopCards = oldItems.concat(cards.shopCards);
+    let newCardList: ShopCard[] = [];
+    if (currentPage === 0) {
+      newCardList = cards.shopCards;
+    } else {
+      newCardList = oldItems.concat(cards.shopCards);
+    }
     dispatch(
       shopsOverviewActions.setShopsCards({
-        shopCards: oldItems.concat(cards.shopCards),
+        shopCards: newCardList,
         totalCards: cards.totalCards
       })
     );
