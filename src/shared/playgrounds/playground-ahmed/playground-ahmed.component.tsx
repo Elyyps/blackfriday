@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CheckboxComponent } from "@app/core/checkbox/checkbox.component";
+import { CheckboxComponent } from "@app/core/checkbox/";
 import { generateDummyCheckbox } from "@app/api/core/checkbox";
 
 // import styles from "./playground-ahmed-component.module.scss";

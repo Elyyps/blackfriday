@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { FeaturedDealsComponent } from "../featured-deals/featured-deals.component";
+import { FeaturedDealsComponent } from "@app/modules/featured-deals/";
 import { getFeaturedDealsDummyData } from "@app/api/modules/featured-deals/endpoints";
 
 export interface IPlaygroundPedroComponentProps {}

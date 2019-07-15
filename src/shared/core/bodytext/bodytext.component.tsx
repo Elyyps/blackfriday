@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./bodytext-component.module.scss";
 
 export interface IBodytextComponentProps {
-  bgcolor?: string;
+  bgColor?: string;
   children: any;
   paddingBottom?: string;
   paddingTop?: string;
@@ -10,10 +10,10 @@ export interface IBodytextComponentProps {
 }
 
 const BodytextComponent = (props: IBodytextComponentProps) => {
-  const { bgcolor, children, paddingBottom, paddingTop } = props;
+  const { bgColor, children, paddingBottom, paddingTop } = props;
 
   const style = {
-    backgroundColor: bgcolor,
+    backgroundColor: bgColor,
     paddingTop: paddingTop || "72px",
     paddingBottom: paddingBottom || "72px",
     ...props.style

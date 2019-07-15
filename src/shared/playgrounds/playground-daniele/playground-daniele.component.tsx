@@ -1,8 +1,8 @@
 import * as React from "react";
-import { HeaderInfoComponent } from "../header-info";
+import { HeaderInfoComponent } from "@app/modules/header-info";
 
 import { getHeaderInfoDummyData } from "@app/api/modules/header-info/endpoints";
-import { FooterComponent } from "../footer";
+import { FooterComponent } from "@app/modules/footer";
 import { getFullfooter } from "@app/api/modules/footer/endpoints";
 
 // import styles from "./playground-daniele-component.module.scss";
