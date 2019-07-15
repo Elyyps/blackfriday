@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Sidebar] should render component without crashing 1`] = `
+<div
+  className="sidebar"
+>
+  <BannerComponent
+    buttonLink="#"
+    buttonTitle="Meer deals"
+    image={
+      Object {
+        "alt": "alt text oasis",
+        "src": "oasis.jpg",
+      }
+    }
+    label="22 t/m 26 nov."
+    logo={
+      Object {
+        "alt": "alt text CoolBlue",
+        "src": "cool-blue.svg",
+      }
+    }
+    text="Een selectie van bizarre aanbiedingen. Meer info"
+    title="Black Friday bij Coolblue"
+    variant="small"
+  />
+  <SidebarBoxComponent
+    items={
+      Array [
+        Object {
+          "icon": "oasis.jpg",
+          "link": "/",
+          "title": "Apple Airpods",
+        },
+        Object {
+          "icon": "oasis.jpg",
+          "link": "/",
+          "title": "Apple iPhones",
+        },
+        Object {
+          "icon": "oasis.jpg",
+          "link": "/",
+          "title": "Apple MacBooks",
+        },
+        Object {
+          "icon": "party.svg",
+          "link": "/",
+          "title": "Naar alle deals!",
+        },
+      ]
+    }
+    key="0"
+    title="Een greep uit onze deals"
+  />
+  <SidebarBoxComponent
+    items={
+      Array [
+        Object {
+          "icon": "cool-blue.svg",
+          "link": "/",
+          "title": "Coolblue",
+        },
+        Object {
+          "icon": "cool-blue.svg",
+          "link": "/",
+          "title": "Alternate",
+        },
+        Object {
+          "icon": "cool-blue.svg",
+          "link": "/",
+          "title": "Beddenreus",
+        },
+        Object {
+          "icon": "party.svg",
+          "link": "/",
+          "title": "Naar alle Winkels!",
+        },
+      ]
+    }
+    key="1"
+    title="Black Friday Winkels"
+  />
+</div>
+`;

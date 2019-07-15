@@ -20,7 +20,6 @@ exports[`[Banner] should render component without crashing 1`] = `
           src="oasis.jpg"
         />
       </Link>
-      )
     </div>
     <div
       className="body"
