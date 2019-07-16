@@ -1,10 +1,14 @@
-import { NavbarSearchModule } from "./featured-deals.module";
+import { NavbarSearchModuleInitial, NavbarSearchModule } from "./navbar-search";
 
-export const dummyNavbarSearchInitialData = {
-  titleDeals: "Gevonden",
-  titleShops: "Gevonden winkels"
+export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
+  titleDeals: "Gevonden deals",
+  titleShops: "Gevonden winkels",
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "NavbarSearchModuleInitial"
 };
-export const dummyNavbarSearchData = {
+export const dummyNavbarSearchData: NavbarSearchModule = {
   deals: [
     {
       title: "Pocketveermatas Pocket Comfort x2000",
@@ -67,8 +71,10 @@ export const dummyNavbarSearchData = {
       button: { title: "Naar deals", url: "/" },
       timeLeftBar: { value: 0.3, text: "BIJNA AFGELOPEN!" },
       content: "Een selectie van bizarre vele aanbiedingen",
-      seeMoreText: "Meer Info",
-      seeMoreLink: "/"
+      seeMore: { title: "Meer Info", url: "/" },
+      postedAt: "27/05/1995",
+      category: "fdsfds",
+      brand: "coolblue"
     },
     {
       title: "Nike",
@@ -78,8 +84,10 @@ export const dummyNavbarSearchData = {
       button: { title: "Naar deals", url: "/" },
       timeLeftBar: { value: 0.1, text: "BIJNA AFGELOPEN!" },
       content: "Een selectie van bizarre vele aanbiedingen",
-      seeMoreText: "Meer Info",
-      seeMoreLink: "/"
+      seeMore: { title: "Meer Info", url: "/" },
+      postedAt: "27/05/1995",
+      category: "fdsfds",
+      brand: "coolblue"
     },
     {
       title: "50Five",
@@ -89,8 +97,14 @@ export const dummyNavbarSearchData = {
       button: { title: "Meer info", url: "/" },
       timeLeftBar: { value: 0.8, text: "nu geldig" },
       content: "Een selectie van bizarre vele aanbiedingen",
-      seeMoreText: "Meer Info",
-      seeMoreLink: "/"
+      seeMore: { title: "Meer Info", url: "/" },
+      postedAt: "27/05/1995",
+      category: "fdsfds",
+      brand: "coolblue"
     }
-  ]
+  ],
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "NavbarSearchModule"
 };

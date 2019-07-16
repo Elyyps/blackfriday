@@ -1,8 +1,9 @@
 import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 import { generateShopCardData, generateShopCardData2 } from "@app/api/core/shop-card/endpoint";
+import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 
-export class StoresOverviewModule {
+export class StoresOverviewModule extends WordPressPostModule {
   public filterBar: FilterBar;
   public shopCards: ShopCard[];
   public totalCards: number;

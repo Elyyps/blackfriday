@@ -15,7 +15,7 @@ interface IState {
 }
 
 const withStyling = <P extends IInjectedStylingProps>(Component: React.ComponentType<P>) =>
-  class MakeCounter extends React.Component<Subtract<P, IInjectedStylingProps> & IWithStylingProps, IState> {
+  class WithStyling extends React.Component<Subtract<P, IInjectedStylingProps> & IWithStylingProps, IState> {
     public constructor(props: any) {
       super(props);
 

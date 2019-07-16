@@ -8,7 +8,9 @@ export const getFilteredNavbarSearchDummyData = (text: string) => {
     shop => shop.content.toUpperCase().includes(textUpperCase) || shop.title.toUpperCase().includes(textUpperCase)
   );
   const foundDeals = data.deals.filter(
-    deal => deal.subtitle.toUpperCase().includes(textUpperCase) || deal.title.toUpperCase().includes(textUpperCase)
+    deal =>
+      (deal.subtitle || "").toUpperCase().includes(textUpperCase) ||
+      (deal.title || "").toUpperCase().includes(textUpperCase)
   );
 
   return {

@@ -1,6 +1,6 @@
 import { HomepageHeader } from "./homepage-header";
 
-export const generateHomePageHeader: HomepageHeader = {
+export const generateHomePageHeader = (): HomepageHeader => ({
   title: "Black Friday België",
   durationBlackFridayText: "Hoe lang nog?",
   startingDateText: "Wanneer is Black Friday",
@@ -85,5 +85,9 @@ export const generateHomePageHeader: HomepageHeader = {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
       text: { title: "Deelnemende winkels", url: "./" }
     }
-  ]
-};
+  ],
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "HomepageHeader"
+});

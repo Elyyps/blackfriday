@@ -1,6 +1,6 @@
 import { FeaturedStoresModule } from "./featured-shops.module";
 
-export const dummyFeaturedShopsData: FeaturedStoresModule = {
+export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
   title: "Vergelijkbare winkels",
   shops: [
     {
@@ -81,5 +81,9 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
     icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
     title: "Wij hebben meer winkels in ons overzicht",
     link: { url: "/", title: "Alle winkels" }
-  }
-};
+  },
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "FeaturedStoresModule"
+});
