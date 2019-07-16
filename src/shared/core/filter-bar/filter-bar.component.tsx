@@ -162,9 +162,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               checkbox={props.filterBar.categories}
               onSelect={props.onCategoryChanged}
               applyFilter={props.applyFilter}
-              checkedFilters={setCheckedCategoryFilters}
+              getCheckedFilters={setCheckedCategoryFilters}
               numberOfFilters={checkedCategoryFilters}
-              totalShops={countNumberOfShops}
+              getTotalShops={countNumberOfShops}
             />
           </DropdownComponent>
         </div>
@@ -178,9 +178,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               checkbox={props.filterBar.brands}
               onSelect={props.onBrandChanged}
               applyFilter={props.applyFilter}
-              checkedFilters={setCheckedBrandFilters}
+              getCheckedFilters={setCheckedBrandFilters}
               numberOfFilters={checkedBrandFilters}
-              totalShops={countNumberOfShops}
+              getTotalShops={countNumberOfShops}
             />
           </DropdownComponent>
         </div>

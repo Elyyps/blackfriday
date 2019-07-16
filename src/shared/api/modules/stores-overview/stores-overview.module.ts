@@ -1,6 +1,6 @@
 import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
-import { generateShopCardData } from "@app/api/core/shop-card/endpoint";
+import { generateShopCardData, generateShopCardData2 } from "@app/api/core/shop-card/endpoint";
 
 export class StoresOverviewModule {
   public filterBar: FilterBar;
@@ -25,7 +25,7 @@ export function getShopCards(
   brands: string[],
   sortBy: string
 ) {
-  const shopCards: ShopCard[] = generateShopCardData();
+  const shopCards: ShopCard[] = generateShopCardData2();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];
