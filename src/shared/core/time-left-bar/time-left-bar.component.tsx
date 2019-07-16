@@ -4,6 +4,7 @@ import styles from "./time-left-bar-component.module.scss";
 export interface ITimeLeftBarComponentProps {
   color?: string;
   range: number;
+  variant?: string;
 }
 
 const TimeLeftBarComponent = (props: ITimeLeftBarComponentProps) => {

@@ -1,13 +1,13 @@
 import * as React from "react";
 import styles from "./featured-shops-component.module.scss";
-import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { SeeMoreCard } from "@app/api/core/see-more-card";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
+import { ShopCardModule } from "@app/api/core/shop-card";
 
 export interface IFeaturedShopsComponentProps {
   seeMoreCard: SeeMoreCard;
-  shops: [ShopCard, ShopCard, ShopCard, ShopCard];
+  shops: [ShopCardModule, ShopCardModule, ShopCardModule, ShopCardModule];
   title: string;
 }
 
@@ -29,13 +29,18 @@ const FeaturedShopsComponent = (props: IFeaturedShopsComponentProps) => {
               image={shop.picture}
               buttonText={shop.button.title}
               content={shop.content}
-              seeMoreLink={shop.seeMore.url}
-              seeMoreText={shop.seeMore.title}
+              seeMoreLink={shop.seeMore && shop.seeMore.url}
+              seeMoreText={shop.seeMore && shop.seeMore.title}
             />
           </div>
         ))}
         <div>
-          <SeeMoreCardComponent title={seeMoreCard.title} link={seeMoreCard.link} icon={seeMoreCard.icon} />
+          <SeeMoreCardComponent
+            buttonText={seeMoreCard.link.title}
+            title={seeMoreCard.title}
+            buttonLink={seeMoreCard.link.url}
+            icon={seeMoreCard.icon}
+          />
         </div>
       </div>
     </div>

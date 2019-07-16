@@ -1,6 +1,6 @@
 import { Link } from "./link";
 
-export class DealCard {
+export class DealCardModule {
   public button: Link;
   public discountText: string;
   public label?: string;

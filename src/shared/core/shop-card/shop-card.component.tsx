@@ -13,14 +13,15 @@ export interface IShopCardComponentProps {
   content?: string;
   image?: string;
   range: number;
-  seeMoreLink: string;
-  seeMoreText: string;
+  seeMoreLink?: string;
+  seeMoreText?: string;
   subtitle: string;
   title: string;
+  variant?: string;
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const { title, seeMoreLink, subtitle, seeMoreText, content, image, range, buttonText } = props;
+  const { title, seeMoreLink, variant, subtitle, seeMoreText, content, image, range, buttonText } = props;
   const getStatusBarColor = () => {
     const rangeNumber = range;
     const limit = 0.5;
@@ -36,17 +37,17 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
   };
 
   return (
-    <ShadowCardComponent>
-      <div className={styles["shop-card"]}>
+    <ShadowCardComponent fullWidth>
+      <div className={`${styles["shop-card"]} ${styles[`shop-card--${variant || "default"}`]}`}>
         <div className={styles["shop-card__body"]}>
           <div className={styles["shop-card__image"]}>
             <ImageComponent src={image} />
           </div>
           <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>{subtitle}</div>
-          <TimeLeftBarComponent color={getStatusBarColor()} range={range} />
+          <TimeLeftBarComponent variant="responsive" color={getStatusBarColor()} range={range} />
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{title}</div>
-            {content} {seeMoreText && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}
+            {content} {seeMoreText && seeMoreLink && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}
           </div>
         </div>
         <div className={styles["shop-card__action"]}>

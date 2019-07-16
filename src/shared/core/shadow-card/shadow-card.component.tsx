@@ -7,6 +7,7 @@ export interface IShadowCardComponentProps {
   backgroundColor?: string;
   borderRadius?: CssCornerProperties | undefined;
   children?: any;
+  fullWidth?: boolean;
   padding?: CssCornerProperties | undefined;
   shadowSize?: "small" | "medium";
 }
@@ -25,7 +26,8 @@ const ShadowCardComponent = (props: IShadowCardComponentProps) => {
       style={{
         backgroundColor: props.backgroundColor,
         borderRadius: renderCssCornerProperties(props.borderRadius),
-        padding: renderCssCornerProperties(props.padding)
+        padding: renderCssCornerProperties(props.padding),
+        width: props.fullWidth ? "100%" : "auto"
       }}
       className={`${styles["shadow-card"]} ${styles[`shadow-card--${props.shadowSize}`]}`}
     >
