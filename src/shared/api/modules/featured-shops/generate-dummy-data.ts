@@ -1,6 +1,6 @@
 import { FeaturedStoresModule } from "./featured-shops.module";
 
-export const dummyFeaturedShopsData: FeaturedStoresModule = {
+export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
   title: "Vergelijkbare winkels",
   shops: [
     {
@@ -86,4 +86,4 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
   topMargin: "0px",
   id: "1",
   name: "FeaturedStoresModule"
-};
+});

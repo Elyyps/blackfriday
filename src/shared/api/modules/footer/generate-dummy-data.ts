@@ -152,7 +152,7 @@ export const generateTopFooter = (): TopFooter => ({
   usp: generateUSP()
 });
 
-export const footerData: Footer = {
+export const generateDummyFooterData = (): Footer => ({
   bottomFooter: generateBottomFooter(),
   middleFooter: generateMiddleFooter(),
   topFooter: generateTopFooter(),
@@ -160,4 +160,4 @@ export const footerData: Footer = {
   topMargin: "0px",
   id: "1",
   name: "FooterModule"
-};
+});

@@ -10,8 +10,13 @@ import { dummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy
 import { generateDummyNewsletterModule } from "../modules/newsletter/generate-dummy-data";
 import {
   generateDummyBodyTextModule,
-  generateHomepageBodytextDummyData
+  generateHomepageBodytextDummyData,
+  generateShopSingleDummydata
 } from "../modules/body-text/generate-dummy-data";
+import { generateBottomFooter, generateDummyFooterData } from "../modules/footer/generate-dummy-data";
+import { MediumHeroComponent } from "@app/modules/medium-hero";
+import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
+import { generateDummyStoresOverview } from "../modules/stores-overview/generate-dummy-data";
 
 export const pageList: PageModel[] = [
   {
@@ -30,7 +35,8 @@ export const pageList: PageModel[] = [
       dummyFeaturedDealsData(),
       generateDummyNewsletterModule(),
       generateNotYetImplemented("Ook interessant om te lezen"),
-      generateDummyBodyTextModule(generateHomepageBodytextDummyData())
+      generateDummyBodyTextModule(generateHomepageBodytextDummyData()),
+      generateDummyFooterData()
     ]
   } as PageModel,
   {
@@ -41,7 +47,13 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateMediumHeroDummyData(),
+      generateDummyStoresOverview(),
+      generateDummyNewsletterModule(),
+      generateDummyFooterData()
+    ]
   } as PageModel,
   {
     id: uuid(),
@@ -51,7 +63,15 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateNotYetImplemented("Winkel Single informatie"),
+      dummyFeaturedDealsData(),
+      dummyFeaturedShopsData(),
+      generateDummyNewsletterModule(),
+      generateDummyBodyTextModule(generateShopSingleDummydata()),
+      generateDummyFooterData()
+    ]
   } as PageModel,
   {
     id: uuid(),
@@ -61,7 +81,13 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateMediumHeroDummyData(),
+      generateDummyStoresOverview(),
+      generateDummyNewsletterModule(),
+      generateDummyFooterData()
+    ]
   } as PageModel,
   {
     id: uuid(),
