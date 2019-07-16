@@ -17,16 +17,17 @@ import { PagebuilderContainer } from "./core/pagebuilder";
 const Routes: React.FunctionComponent = props => (
   <React.Fragment>
     <Route exact path="/" component={PagebuilderContainer} />
-    <Route exact path="/winkleoverview" component={WinkleoverviewComponent} />
-    <Route exact path="/blog-single" component={BlogSingleComponent} />
+    <Route exact path="/store-overview" component={PagebuilderContainer} />
+    <Route exact path="/store-single" component={PagebuilderContainer} />
+    <Route exact path="/deals-overview" component={PagebuilderContainer} />
+    <Route exact path="/productline-overview" component={PagebuilderContainer} />
+    <Route exact path="/blog-overview" component={PagebuilderContainer} />
+    <Route exact path="/blog-single" component={PagebuilderContainer} />
+
     <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
     <Route exact path="/playground-pedro" component={PlaygroundPedroComponent} />
     <Route exact path="/playground-daniele" component={PlaygroundDanieleComponent} />
     <Route exact path="/playground-martijn" component={PlaygroundMartijnComponent} />
-    <Route exact path="/stores-overview" component={StoresOverviewContainer} />
-    <Route exact path="/blog-overview" component={BlogOverviewPageComponent} />
-    <Route exact path="/product-overview" component={ProductOverviewComponent} />
-    <Route exact path="/winkel-single" component={WinkelSingleComponent} />
   </React.Fragment>
 );
 

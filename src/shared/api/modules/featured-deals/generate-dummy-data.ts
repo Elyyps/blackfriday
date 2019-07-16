@@ -49,5 +49,9 @@ export const dummyFeaturedDealsData: FeaturedDealsModule = {
     icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
     title: "Wij hebben meer winkels in ons overzicht",
     link: { url: "/", title: "Alle winkels" }
-  }
+  },
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "FeaturedDealsModule"
 };
