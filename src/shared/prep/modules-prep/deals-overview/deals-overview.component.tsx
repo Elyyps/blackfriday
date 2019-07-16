@@ -58,7 +58,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   };
   const handleClick = (e: any) => {
     {
-      e.target.innerText ? setTextLabel(e.target.innerText) : setTextLabel("");
+      setTextLabel(e.target.innerText || "");
     }
     setPrevIcon(!prevIcon);
   };

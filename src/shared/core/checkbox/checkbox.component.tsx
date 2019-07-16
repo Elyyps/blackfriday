@@ -3,7 +3,8 @@ import style from "./checkbox-component.module.scss";
 import { Checkbox } from "@app/api/core/checkbox";
 
 export interface ICheckboxComponentProps {
-  checkbox: Checkbox;
+  children: any;
+  isChecked?: boolean;
   onClick: (value: string) => void;
 }
 
@@ -11,10 +12,15 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
   <React.Fragment>
     <div className={style["checkbox"]}>
       <label className={style["checkbox__label"]}>
-        <input type="checkbox" className={style["checkbox__input"]} aria-checked="false" />
-        {props.checkbox.text}
+        <input
+          type="checkbox"
+          className={style["checkbox__input"]}
+          onChange={() => props.onClick(props.children)}
+          checked={props.isChecked}
+        />
+
+        {props.children}
       </label>
-      <span className={style["checkbox__count-item"]}>{props.checkbox.quantity}</span>
     </div>
   </React.Fragment>
 );

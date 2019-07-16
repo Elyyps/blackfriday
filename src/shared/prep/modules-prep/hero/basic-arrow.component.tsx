@@ -10,7 +10,7 @@ interface IBasicArrowProps {
   prev?: boolean;
 }
 
-const BasicArrow = (props: IBasicArrowProps) => {
+const BasicArrowComponent = (props: IBasicArrowProps) => {
   const { className, onClick } = props;
   let result;
   const customStyle = "hero__slick-arrow-" + `${props.prev ? "prev" : "next"}`;
@@ -34,4 +34,4 @@ const BasicArrow = (props: IBasicArrowProps) => {
 
   return result;
 };
-export { BasicArrow };
+export { BasicArrowComponent };

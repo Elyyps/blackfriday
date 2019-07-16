@@ -26,7 +26,6 @@
     min-height: 168px;
     height: 168px;
     max-height: 168px;
-    
   }
 
   &__body {
@@ -157,6 +156,10 @@
   }
 
   &--responsive {
+    max-height: 166px;
+    min-height: 166px;
+    min-width: 315px;
+    padding: 16px;
     .shop-card {
       &__body {
         display: flex;
@@ -191,8 +194,8 @@
         position: relative;
         &-title {
           position: absolute;
-          left: 0;
-          top: 28px;
+          left: 16px;
+          bottom: 35px;
           width: 50%;
         }
       }

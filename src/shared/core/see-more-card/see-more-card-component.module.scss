@@ -35,7 +35,44 @@
       flex-direction: row-reverse;
       justify-content: space-between;
       align-items: flex-end;
-      
+    }
+  }
+
+  &--responsive {
+    max-height: 166px;
+    min-height: 166px;
+    padding: 16px;
+    width: 100%;
+    min-width: 315px;
+    .see-more-card {
+      &__body {
+        display: flex;
+        align-items: flex-start;
+      }
+      &__content {
+        flex: 1 1 auto;
+      }
+      &__image {
+        order: 2;
+        width: 90px;
+        height: auto;
+        flex: 0 0 90px;
+        margin: 0 0 0 10px;
+      }
+
+      &__price {
+        display: block;
+        margin: 0;
+        flex: 0 0 50%;
+      }
+
+      &__action {
+        display: flex;
+        align-items: flex-end;
+        .button {
+          width: 50%;
+        }
+      }
     }
   }
 }

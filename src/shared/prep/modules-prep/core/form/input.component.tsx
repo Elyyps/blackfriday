@@ -12,8 +12,9 @@ interface IInputProps {
   isError?: string;
   isSuccess?: boolean;
   label?: string;
-  name: string;
+  name?: string;
   placeholder?: string;
+  onChange?: any;
 }
 
 const Input = (props: IInputProps) => {
@@ -30,6 +31,7 @@ const Input = (props: IInputProps) => {
   const handelChange = (event: any) => {
     {
       setValue(event.target.value);
+      props.onChange(event);
     }
   };
 
