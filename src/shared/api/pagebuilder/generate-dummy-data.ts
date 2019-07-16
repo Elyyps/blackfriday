@@ -17,7 +17,7 @@ export const pageList: PageModel[] = [
   } as PageModel,
   {
     id: uuid(),
-    route: "/store-overview",
+    route: "/stores-overview",
     metaData: {
       title: "Homepage",
       content: "The landing page of the webpage",
@@ -27,7 +27,7 @@ export const pageList: PageModel[] = [
   } as PageModel,
   {
     id: uuid(),
-    route: "/store-single",
+    route: "/stores-single",
     metaData: {
       title: "Homepage",
       content: "The landing page of the webpage",

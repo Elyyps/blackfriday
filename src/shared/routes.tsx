@@ -17,8 +17,8 @@ import { PagebuilderContainer } from "./core/pagebuilder";
 const Routes: React.FunctionComponent = props => (
   <React.Fragment>
     <Route exact path="/" component={PagebuilderContainer} />
-    <Route exact path="/store-overview" component={PagebuilderContainer} />
-    <Route exact path="/store-single" component={PagebuilderContainer} />
+    <Route exact path="/stores-overview" component={PagebuilderContainer} />
+    <Route exact path="/stores-single" component={PagebuilderContainer} />
     <Route exact path="/deals-overview" component={PagebuilderContainer} />
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
