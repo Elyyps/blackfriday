@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import { FeaturedDealsComponent } from "@app/modules/featured-deals/";
-import { getFeaturedDealsDummyData } from "@app/api/modules/featured-deals/endpoints";
+import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
+import { dummyShopSingleHeaderData } from "@app/api/modules/shop-single-header/generate-dummy-data";
 
 export interface IPlaygroundPedroComponentProps {}
 
-const PlaygroundPedroComponent = () => <FeaturedDealsComponent {...getFeaturedDealsDummyData()} />;
+const PlaygroundPedroComponent = () => <ShopSingleHeaderComponent {...dummyShopSingleHeaderData} />;
 
 export { PlaygroundPedroComponent };

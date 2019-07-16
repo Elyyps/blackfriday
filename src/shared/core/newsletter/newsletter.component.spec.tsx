@@ -1,10 +1,15 @@
+
 import React from "react";
 import { shallow } from "enzyme";
-import { TimeLeftBarComponent } from "./time-left-bar.component";
+import { NewsletterComponent } from "./newsletter.component";
 
-describe("[TimeLeftBar]", () => {
+describe("[Newsletter]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(<TimeLeftBarComponent range={1} />);
+    const renderedComponent = shallow(
+      <NewsletterComponent />
+    );
     expect(renderedComponent).toMatchSnapshot();
   });
 });
+
+  
