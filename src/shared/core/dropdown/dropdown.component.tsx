@@ -18,13 +18,19 @@ export interface IDropdownComponentProps {
   children?: any;
   orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";
   title?: string;
+  icon?: any;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => (
   <div className={style["dropdown"]}>
     <ShadowCardComponent shadowSize="small">
       <div className={style["dropdown-button"]}>
-        <Button title={props.title} variant={props.buttonVariant} icon={ChevronDown} iconStyle={props.buttonColor} />
+        <Button
+          title={props.title}
+          variant={props.buttonVariant}
+          icon={props.icon || ChevronDown}
+          iconStyle={props.buttonColor}
+        />
       </div>
       <div className={`${style["dropdown-content"]}`} data-uk-dropdown="mode:click">
         {props.children}

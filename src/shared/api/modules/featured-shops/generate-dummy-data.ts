@@ -4,6 +4,9 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
   title: "Vergelijkbare winkels",
   shops: [
     {
+      brand: "",
+      category: "",
+      postedAt: "",
       title: "Bekbeddiscounter.nl",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
@@ -18,7 +21,11 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0"
     },
+
     {
+      brand: "",
+      category: "",
+      postedAt: "",
       title: "Swiss Sense",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
@@ -34,6 +41,9 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
         "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0"
     },
     {
+      brand: "",
+      category: "",
+      postedAt: "",
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
@@ -49,6 +59,9 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
         "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0"
     },
     {
+      brand: "",
+      category: "",
+      postedAt: "",
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
