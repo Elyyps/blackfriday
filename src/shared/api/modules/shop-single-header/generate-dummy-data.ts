@@ -1,6 +1,7 @@
 import { ShopSingleHeaderModule } from "./shop-single-header.module";
 import Oasis from "@assets/oasis.jpg";
 import CoolBlue from "@assets/cool-blue.svg";
+
 export const dummyShopSingleHeaderData: ShopSingleHeaderModule = {
   title: "15% korting op het hele assortiment",
   rating: { value: 5, text: "Beoordeel deze deal" },
@@ -37,5 +38,9 @@ export const dummyShopSingleHeaderData: ShopSingleHeaderModule = {
   timeLeftBar: {
     value: 0.8,
     text: "NU geldig"
-  }
+  },
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "ShopSingleHeaderModule"
 };

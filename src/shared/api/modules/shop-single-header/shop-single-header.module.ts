@@ -1,8 +1,9 @@
 import { Link } from "@app/api/core/link";
 import { RatingModule } from "@app/api/core/rating";
 import { TimeLeftBar } from "@app/api/core/time-left-bar";
+import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 
-export class ShopSingleHeaderModule {
+export class ShopSingleHeaderModule extends WordPressPostModule {
   public backLink: Link;
   public checkList: string[];
   public CheckListTitle: string;

@@ -1,7 +1,8 @@
 import { ArrowPanel } from "@app/api/core/arrow-panel";
 import { Slide } from "@app/api/core/slide";
+import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 
-export class HomepageHeader {
+export class HomepageHeader extends WordPressPostModule {
   public arrowPanelslinks: ArrowPanel[];
   public description: string[];
   public durationBlackFriday: string;

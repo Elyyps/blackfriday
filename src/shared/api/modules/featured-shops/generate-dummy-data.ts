@@ -85,5 +85,5 @@ export const dummyFeaturedShopsData: FeaturedStoresModule = {
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  name: "FeaturedShopsModule"
+  name: "FeaturedStoresModule"
 };

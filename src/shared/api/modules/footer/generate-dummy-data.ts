@@ -1,9 +1,10 @@
 import { MiddleFooter } from "./models/middle-footer";
-import { BottomFotter } from "./models/bottom-footer";
+import { BottomFooter } from "./models/bottom-footer";
 import { TopFooter } from "./models/top-footer";
 import { generateUSP } from "@app/api/core/usp/endpoints";
+import { Footer } from "./footer.module";
 
-export const generateBottomFooter = (): BottomFotter => ({
+export const generateBottomFooter = (): BottomFooter => ({
   copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
   items: [
     {
@@ -150,3 +151,13 @@ export const generateTopFooter = (): TopFooter => ({
   ],
   usp: generateUSP()
 });
+
+export const footerData: Footer = {
+  bottomFooter: generateBottomFooter(),
+  middleFooter: generateMiddleFooter(),
+  topFooter: generateTopFooter(),
+  bottomMargin: "0px",
+  topMargin: "0px",
+  id: "1",
+  name: "FooterModule"
+};
