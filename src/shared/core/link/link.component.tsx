@@ -10,7 +10,7 @@ export interface ILinkComponentProps {
   icon?: string;
   target?: string;
   to: string;
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "quaternary";
 }
 
 const LinkComponent = (props: ILinkComponentProps) => {

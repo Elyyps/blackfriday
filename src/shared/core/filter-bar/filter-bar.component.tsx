@@ -161,6 +161,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             title={props.filterBar.categoryFilterTitle}
             buttonVariant="secondary"
             orientation="bottom-left"
+            buttonColor="outline"
           >
             <SearchFilterControlComponent
               checkbox={props.filterBar.categories}
@@ -177,6 +178,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             title={props.filterBar.brandFilterTitle}
             buttonVariant="secondary"
             orientation="bottom-left"
+            buttonColor="outline"
           >
             <SearchFilterControlComponent
               checkbox={props.filterBar.brands}

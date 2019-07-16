@@ -9,6 +9,8 @@ import { localesReducer, ILocalesState } from "@app/stores/locales";
 import { IPageState, pageReducer } from "./page";
 import { IShopsOverview, IShopsCards } from "./stores-overview/stores-overview.types";
 import { shopsOverviewReducer } from "./stores-overview/stores-overview.reducer";
+import { INavbarSearchState, navbarSearchReducer } from "./navbar-seach";
+
 type StoreParams = {
   history: History;
   initialState: IAppState;
@@ -17,6 +19,7 @@ type StoreParams = {
 
 export interface IAppState {
   locales: ILocalesState;
+  navbarSearch: INavbarSearchState;
   page: IPageState;
   router: RouterState;
   shopsCards: IShopsCards;
@@ -43,6 +46,7 @@ export const configureStore = ({ history, initialState, middleware = [] }: Store
   const store = createStore<IAppState>(
     combineReducers({
       locales: localesReducer,
+      navbarSearch: navbarSearchReducer,
       page: pageReducer,
       shopsOverview: shopsOverviewReducer,
 

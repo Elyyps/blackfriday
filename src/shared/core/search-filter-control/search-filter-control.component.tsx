@@ -82,7 +82,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
           placeholder={"search"}
           classModify={"large"}
           icon={Search}
-          onChange={event => {
+          onChange={(event: any) => {
             searchFilter(event);
           }}
         />

@@ -11,7 +11,7 @@ import { bannerProps } from "@app/api/core/banner";
 const paddingBottom = "72px";
 const paddingTop = paddingBottom;
 
-storiesOf("BannerModule", module)
+storiesOf("Banner Module", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (

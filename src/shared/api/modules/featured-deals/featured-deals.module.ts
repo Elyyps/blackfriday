@@ -1,8 +1,8 @@
 import { SeeMoreCard } from "@app/api/core/see-more-card";
-import { DealCard } from "@app/api/core/deal-card";
+import { DealCardModule } from "@app/api/core/deal-card";
 
 export class FeaturedDealsModule {
-  public deals: [DealCard, DealCard, DealCard, DealCard];
+  public deals: [DealCardModule, DealCardModule, DealCardModule, DealCardModule];
   public seeMoreCard: SeeMoreCard;
   public title: string;
 }

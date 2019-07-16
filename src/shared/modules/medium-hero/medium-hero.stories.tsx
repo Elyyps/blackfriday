@@ -10,7 +10,7 @@ import { headerContent } from "@app/api/core/header-content";
 import Oasis from "@assets/oasis.jpg";
 import { uniqueSellingPoints } from "@app/api/core/usp";
 
-storiesOf("MediumHero", module)
+storiesOf("Medium Hero", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (

@@ -1,16 +1,33 @@
 .stores-overview {
+  background-color: var(--tint-grey-97);
   &__header {
     padding-bottom: 16px;
-    background-color: $global-inverse-color;
+    background-color: var(--tint-white);
   }
   &__body {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
+    margin: auto;
+    &__list {
+      flex-wrap: wrap;
+      flex-direction: row;
+      display: flex;
+    }
     &__cards {
-      width: 20%;
+      flex: 0 1 19%;
+      padding: 4px;
+      @media (max-width: 1160px) {
+        flex: 0 1 24%;
+      }
+      @media (max-width: 950px) {
+        padding: 3px;
+        flex: 0 1 32.5%;
+      }
+      @media (max-width: 770px) {
+        padding: 1.5px;
+      }
+      @media (max-width: 699px) {
+        flex: 0 1 100%;
+      }
     }
   }
   &__tab {
@@ -38,7 +55,7 @@
               position: relative;
               color: $brand-primary;
               &:after {
-                content: '';
+                content: "";
                 width: 100%;
                 bottom: 0;
                 position: absolute;

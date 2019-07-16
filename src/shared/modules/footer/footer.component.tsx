@@ -157,7 +157,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   </div>
                   <StarsRatingComponent
                     rating={props.footerModule.middleFooter.googleReviews.rating}
-                    numberStars={numberStars}
+                    numberOfStars={numberStars}
                   />
                   <div style={{ marginLeft: "10px" }}>
                     <LinkComponent to={props.footerModule.middleFooter.googleReviews.link.url}>
