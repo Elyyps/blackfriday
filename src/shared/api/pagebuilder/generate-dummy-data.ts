@@ -3,6 +3,7 @@ import uuid from "uuid";
 import { dummyFeaturedShopsData } from "../modules/featured-shops/generate-dummy-data";
 import { NavBarComponent } from "@app/modules/nav-bar";
 import { generateDummyNavbarData } from "../modules/navbar/generate-dummy-data";
+import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 
 export const pageList: PageModel[] = [
   {
@@ -13,7 +14,7 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [generateDummyNavbarData(), generateNotYetImplemented("header")]
   } as PageModel,
   {
     id: uuid(),
