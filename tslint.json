@@ -3,9 +3,10 @@
   "extends": ["tslint:all", "tslint-config-airbnb", "tslint-config-prettier", "tslint-react-a11y", "tslint-react"],
   "jsRules": {},
   "rules": {
-    "no-void-expression": [true, "ignore-arrow-function-shorthand"],
+    "no-void-expression": false,
     "import-name": false,
     "ordered-imports": false,
+    "array-type": [true, "array"],
     "no-angle-bracket-type-assertion": false,
     "no-reference": false,
     "no-implicit-dependencies": false,
@@ -31,7 +32,6 @@
     "prefer-method-signature": false,
     "no-inferrable-types": true,
     "typedef": false,
-    "no-unused-expression": true,
     "no-unused-variable": true,
     "no-magic-numbers": true,
     "match-default-export-name": false,
@@ -61,8 +61,7 @@
     "interface-over-type-literal": false,
     "no-default-export": false,
     "no-use-before-declare": false,
-    "strict-type-predicates": false,
-    "no-void-expression": false
+    "strict-type-predicates": false
   },
   "linterOptions": {
     "exclude": ["./node_modules"]

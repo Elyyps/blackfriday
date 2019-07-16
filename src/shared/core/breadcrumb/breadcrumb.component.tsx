@@ -6,7 +6,7 @@ import { IconComponent } from "../icon";
 import IconBack from "@assets/icons/chevron-left.svg";
 
 export interface IBreadcrumbComponentProps {
-  backButton?: { text: string; url: string };
+  backButton?: LinkType;
   links: LinkType[];
 }
 
@@ -23,7 +23,7 @@ const BreadcrumbComponent = (props: IBreadcrumbComponentProps) => (
     {props.backButton && (
       <Link className={`uk-hidden@s ${styles["back-button"]}`} to={props.backButton.url}>
         <IconComponent icon={IconBack} size="10px" strokeColor="#fff" />
-        <span className={styles["back-button-text"]}>{props.backButton.text}</span>
+        <span className={styles["back-button-text"]}>{props.backButton.title}</span>
       </Link>
     )}
   </div>

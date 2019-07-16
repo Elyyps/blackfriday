@@ -1,11 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { BreadcrumbComponent, IBreadcrumbComponentProps } from "./breadcrumb.component";
+import { BreadcrumbComponent } from "./breadcrumb.component";
 
-const breadcrumbItems: IBreadcrumbComponentProps = {
-  links: [{ title: "Home", url: "#/" }, { title: "Blogs", url: "#/" }],
-  backButton: { text: "Alle blogs", url: "/#" }
-};
+// Dummy data
+import { breadcrumbItems } from "@app/api/core/breadcrumb";
 
 describe("[Breadcrumb]", () => {
   it("should render component without crashing", () => {

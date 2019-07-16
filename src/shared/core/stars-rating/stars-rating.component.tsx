@@ -7,7 +7,7 @@ import EmptyStar from "@assets/icons/star-empty.svg";
 import { IconComponent } from "@app/core/";
 
 export interface IStarsRatingComponentProps {
-  numberStars?: number;
+  numberOfStars?: number;
   rating: number;
 }
 
@@ -19,10 +19,9 @@ enum StarsType {
 const defaultStars = 5;
 const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
   const [stars, setStars] = React.useState<StarsType[]>([]);
-  const totalStars = props.numberStars ? props.numberStars : defaultStars;
-  const rating = props.rating > totalStars ? 0 : props.rating;
+  const rating = props.rating > (props.numberOfStars || defaultStars) ? 0 : props.rating;
   React.useEffect(() => {
-    setStars(getListStars(totalStars, rating));
+    setStars(getListStars(props.numberOfStars || defaultStars, rating));
   }, []);
 
   return (
