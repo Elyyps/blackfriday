@@ -29,7 +29,7 @@ exports[`[Newsletter] should render component without crashing 1`] = `
           fullWidth={true}
           icon="paper.svg"
           iconStyle="filled"
-          title="Niewusbrief"
+          title="Nieuwsbrief"
           variant="secondary-inverted"
         />
       </div>

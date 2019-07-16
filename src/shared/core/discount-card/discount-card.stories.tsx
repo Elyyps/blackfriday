@@ -6,7 +6,7 @@ import { withProvider } from "@app/util";
 import { DiscountCardComponent } from "./discount-card.component";
 import CoolBlue from "@assets/cool-blue.svg";
 
-storiesOf("DiscountCard", module)
+storiesOf("Discount Card", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (

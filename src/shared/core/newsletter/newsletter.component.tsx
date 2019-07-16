@@ -19,7 +19,7 @@ const NewsletterComponent = (props: INewsletterComponentProps) => (
       <div className={styles["newsletter__body"]}>
         <div className={styles["newsletter__content"]}>Op de hoogte blijven? Meld je dan aan!</div>
         <div data-uk-toggle={`target: #modal-product-detail`} className={styles["newsletter__action"]}>
-          <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Niewusbrief" icon={Paper} />
+          <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />
         </div>
       </div>
     </div>
