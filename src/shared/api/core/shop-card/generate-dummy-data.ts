@@ -1,18 +1,5 @@
-import { TimeLeftBar } from "./time-left-bar";
-import { Link } from "./link";
+import { ShopCard } from "./shop-card";
 
-export class ShopCard {
-  public brand: string;
-  public button: Link;
-  public category: string;
-  public content: string;
-  public picture: string;
-  public postedAt: string;
-
-  public seeMore: Link;
-  public timeLeftBar: TimeLeftBar;
-  public title: string;
-}
 export const generateDummyShopCards = (): ShopCard[] => {
   const data: ShopCard[] = [];
   for (let i = 0; i < 200; i++) {

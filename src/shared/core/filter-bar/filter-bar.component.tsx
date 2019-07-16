@@ -7,7 +7,7 @@ import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
 import Filter from "@assets/icons/filter.svg";
-import { FilterBar } from "@app/api/core/filter-bar";
+import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";

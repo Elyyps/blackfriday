@@ -21,30 +21,16 @@ export interface IDropdownComponentProps {
   title?: string;
 }
 
-const DropdownComponent = (props: IDropdownComponentProps) => {
-  const [isDropdownOpened, setIsDropdownOpened] = useState(false);
-
-  const toggleOpened = () => {
-    setIsDropdownOpened(!isDropdownOpened);
-  };
-
-  return (
-    <div className={style["dropdown"]}>
-      <ShadowCardComponent shadowSize="small">
-        <div className={style["dropdown-button"]}>
-          <Button
-            title={props.title}
-            variant={props.buttonVariant}
-            icon={isDropdownOpened ? ChevronUp : ChevronDown}
-            onClick={toggleOpened}
-            iconStyle={props.buttonColor}
-          />
-        </div>
-        <div className={`${style["dropdown-content"]}`} data-uk-dropdown="mode:click" uk-dropdown={props.orientation}>
-          {props.children}
-        </div>
-      </ShadowCardComponent>
-    </div>
-  );
-};
+const DropdownComponent = (props: IDropdownComponentProps) => (
+  <div className={style["dropdown"]}>
+    <ShadowCardComponent shadowSize="small">
+      <div className={style["dropdown-button"]}>
+        <Button title={props.title} variant={props.buttonVariant} icon={ChevronDown} iconStyle={props.buttonColor} />
+      </div>
+      <div className={`${style["dropdown-content"]}`} data-uk-dropdown="mode:click">
+        {props.children}
+      </div>
+    </ShadowCardComponent>
+  </div>
+);
 export { DropdownComponent };

@@ -1,7 +1,7 @@
 import { Dispatch } from "react-redux";
 import { shopsOverviewActions } from "@app/stores/stores-overview/stores-overview.action";
 import { filterShopsOverviewCards } from "@app/api/modules/stores-overview/endpoints";
-import { ShopCard } from "@app/api/core/shop-card";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
 
 const getShopsCards = (
   oldItems: ShopCard[],

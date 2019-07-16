@@ -27,7 +27,7 @@
     width: 100%;
   }
   .icon-svg {
-    line-height: .5;
+    line-height: 0.5;
     margin-left: 8px;
     path {
       fill: currentColor;
@@ -64,16 +64,16 @@
       color: $gray-dark;
     }
   }
-  &--dashed{
+  &--dashed {
     border: 1px dashed $global-secondary-background;
     background-color: transparent;
     color: $brand-secondary;
-    &:hover{
+    &:hover {
       background-color: $brand-secondary;
       color: $global-inverse-color;
       border: 1px solid $brand-secondary;
     }
-    &+.button{
+    & + .button {
       margin-top: 8px;
     }
   }
@@ -96,26 +96,26 @@
         fill: $gray-light;
       }
     }
-    
+
     .button__arrow {
-      transition: transform .3s;
+      transition: transform 0.3s;
     }
-    
+
     &:hover,
     &.uk-open {
       background: $global-background;
       color: $gray-dark;
-      box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
     }
-    
+
     &.uk-open {
       z-index: 1022;
-      box-shadow: 0 -3px 3px 0 rgba(0,0,0,.1);
+      box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.1);
       .button__arrow {
-        transform: scale(1,-1);
+        transform: scale(1, -1);
       }
     }
-    
+
     &:focus,
     &:active {
       outline: none;
@@ -125,25 +125,25 @@
   &--small {
     padding: 8px 18px;
   }
-  &--simple{
+  &--simple {
     background-color: transparent;
     border: 1px solid $tint-gray;
     color: $gray-light;
     font-size: 10px;
     text-transform: uppercase;
-    &:hover{
+    &:hover {
       color: $gray-dark;
       border-color: $gray-dark;
       background-color: transparent;
     }
   }
-  &--link{
+  &--link {
     background-color: transparent;
     font-size: 14px;
     color: $gray-dark;
     font-weight: bold;
     font-family: $global-font-family-secondary;
-    &:hover{
+    &:hover {
       background-color: transparent;
       color: $brand-primary;
     }

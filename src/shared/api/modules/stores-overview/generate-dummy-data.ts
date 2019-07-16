@@ -1,9 +1,9 @@
 import { StoresOverviewModule } from "./stores-overview.module";
-import { generateData, generateDummyShopCards } from "@app/api/core/shop-card";
-import { generateDummyFilterBar } from "@app/api/core/filter-bar";
+import { generateFilterBarData } from "@app/api/core/filter-bar/endpoint";
+import { generateShopCardData } from "@app/api/core/shop-card/endpoint";
 
 export const generateDummyStoresOverview = (): StoresOverviewModule => ({
-  shopCards: generateDummyShopCards(),
-  filterBar: generateDummyFilterBar(),
+  shopCards: generateShopCardData(),
+  filterBar: generateFilterBarData(),
   totalCards: 1
 });

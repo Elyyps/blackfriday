@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./featured-shops-component.module.scss";
-import { ShopCard } from "@app/api/core/shop-card";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { SeeMoreCard } from "@app/api/core/see-more-card";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";

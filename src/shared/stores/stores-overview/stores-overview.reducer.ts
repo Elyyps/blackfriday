@@ -1,8 +1,9 @@
 import { REDUX } from "@app/constants/redux";
 import { Action } from "redux";
 import * as ActionType from "./stores-overview.types";
-import { ShopCard } from "@app/api/core/shop-card";
-import { FilterBar, generateEmptyDummyFilterBar } from "@app/api/core/filter-bar";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
+import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
+import { generateEmptyFilterBarData } from "@app/api/core/filter-bar/endpoint";
 
 export interface IShopsOverviewState {
   filterBar: FilterBar;
@@ -13,7 +14,7 @@ export interface IShopsOverviewState {
 const INITIAL_STATE: IShopsOverviewState = {
   shopCards: [],
   totalCards: 0,
-  filterBar: generateEmptyDummyFilterBar()
+  filterBar: generateEmptyFilterBarData()
 };
 
 export const shopsOverviewReducer = (

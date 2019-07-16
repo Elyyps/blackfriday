@@ -3,12 +3,10 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
-import { BreadcrumbComponent, IBreadcrumbComponentProps } from "./breadcrumb.component";
+import { BreadcrumbComponent } from "./breadcrumb.component";
 
-const breadcrumbItems: IBreadcrumbComponentProps = {
-  links: [{ title: "Home", url: "#/" }, { title: "Blogs", url: "#/" }],
-  backButton: { text: "Alle blogs", url: "/#" }
-};
+// Dummy data
+import { breadcrumbItems } from "@app/api/core/breadcrumb";
 
 const styles = {
   display: "flex",

@@ -5,7 +5,9 @@
   "rules": {
     "no-void-expression": [true, "ignore-arrow-function-shorthand"],
     "import-name": false,
+    "array-type": [true, "array"],
     "ordered-imports": false,
+    "array-type": [true, "array"],
     "no-angle-bracket-type-assertion": false,
     "no-reference": false,
     "no-implicit-dependencies": false,

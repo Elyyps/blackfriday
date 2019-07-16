@@ -1,5 +1,5 @@
-import { ShopCard } from "@app/api/core/shop-card";
-import { FilterBar } from "@app/api/core/filter-bar";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
+import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 
 interface IAction {
   type?: string;

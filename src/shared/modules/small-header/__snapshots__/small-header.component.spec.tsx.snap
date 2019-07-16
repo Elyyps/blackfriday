@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SmallHeader] should render component without crashing 1`] = `
+<div
+  className="small-header"
+>
+  <div
+    className="uk-container"
+  >
+    <HeaderContentComponent
+      breadcrumbProps={
+        Object {
+          "backButton": Object {
+            "title": "Terug",
+            "url": "/#",
+          },
+          "links": Array [
+            Object {
+              "title": "Home",
+              "url": "/#",
+            },
+            Object {
+              "title": "Blog",
+              "url": "/#",
+            },
+          ],
+        }
+      }
+      subtitle="Deelnemende winkels van 2019"
+      text="Bodytext voor extra informatie wanneer nodig"
+      title="Black Friday Winkels"
+    />
+  </div>
+</div>
+`;

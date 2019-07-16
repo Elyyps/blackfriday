@@ -27,10 +27,8 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
       setIsLoading(true);
       setTimeout(() => {
         setIsLoading(false);
-        console.log("loaded");
-      }, 1000);
+      }, 2000);
       const newCurrentPage = currentPage + 1;
-      console.log("you're at the bottom of the page", newCurrentPage);
       setCurrentPage(newCurrentPage);
     }
   }
@@ -114,7 +112,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                 <BottomScrollListener onBottom={bottomPageCallback} />
 
                 {props.shopCards.length > 20 && <BannerComponent {...Banner} />}
-                {props.shopCards.slice(TAKE * currentPage, 1000).map((item, key) => (
+                {props.shopCards.slice(15, 100).map((item, key) => (
                   <div key={key} className={styles["stores-overview__body__cards"]}>
                     <ShopCardComponent
                       title={item.title}

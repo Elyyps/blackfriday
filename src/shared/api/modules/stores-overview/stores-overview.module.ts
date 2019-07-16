@@ -1,5 +1,6 @@
-import { ShopCard, generateData, generateDummyShopCards } from "@app/api/core/shop-card";
-import { FilterBar, generateDummyFilterBar } from "@app/api/core/filter-bar";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
+import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
+import { generateShopCardData } from "@app/api/core/shop-card/endpoint";
 
 export class StoresOverviewModule {
   public filterBar: FilterBar;
@@ -24,7 +25,7 @@ export function getShopCards(
   brands: string[],
   sortBy: string
 ) {
-  const shopCards: ShopCard[] = generateData();
+  const shopCards: ShopCard[] = generateShopCardData();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];
