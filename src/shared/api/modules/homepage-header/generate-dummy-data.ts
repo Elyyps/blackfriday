@@ -1,6 +1,6 @@
-import { HomepageHeader } from "./homepage-header";
+import { HomepageHeader } from "./homepage-header.module";
 
-export const generateHomePageHeader: HomepageHeader = {
+export const generateHomePageHeader = (): HomepageHeader => ({
   title: "Black Friday België",
   durationBlackFridayText: "Hoe lang nog?",
   startingDateText: "Wanneer is Black Friday",
@@ -90,4 +90,4 @@ export const generateHomePageHeader: HomepageHeader = {
   topMargin: "0px",
   id: "1",
   name: "HomepageHeader"
-};
+});

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { detectView } from "@app/util/detect-view";
+import { isMobileView } from "@app/util/detect-view";
 import { getComponent } from "@app/util/get-modules-from-page";
 
 import styles from "./module-component.module.scss";
@@ -66,7 +66,7 @@ const useIsMobile = (defaultValue: boolean) => {
 
   const getIsMobile = () => {
     if (isClient) {
-      return detectView(window.innerWidth);
+      return isMobileView(window.innerWidth);
     }
 
     return defaultValue;

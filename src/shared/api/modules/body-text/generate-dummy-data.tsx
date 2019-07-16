@@ -5,7 +5,7 @@ export const generateDummyBodyTextModule = (dummyJSX: JSX.Element): BodyTextModu
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  name: "BannerModule",
+  name: "BodyTextModule",
   dummyJSX
 });
 
@@ -32,6 +32,24 @@ export const generateHomepageBodytextDummyData = () => (
       deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen
       geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
       uw wensen bij elkaar te shoppen.
+    </p>
+  </React.Fragment>
+);
+
+export const generateShopSingleDummydata = () => (
+  <React.Fragment>
+    <h1>
+      <strong>Black Friday Beddenreus</strong>
+    </h1>
+    <p>
+      Sed ipsum metus, sodales sit amet vulputate a, lobortis mollis odio. Orci varius natoque penatibus et magnis dis
+      parturient montes, nascetur ridiculus mus. Vivamus sed velit in ligula finibus viverra. Donec eleifend commodo
+      ipsum nec commodo. Cras vehicula lectus et felis suscipit, vel commodo metus sagittis. Vestibulum quam elit,
+      dignissim sit amet risus in, luctus accumsan lectus. Sed rutrum metus ut massa tempus, eget blandit lacus
+      molestie. Pellentesque sit amet aliquam lacus. Etiam ultrices velit eu neque pharetra, vitae scelerisque sapien
+      fermentum. Morbi egestas bibendum est. Donec at felis hendrerit, iaculis lorem vel, porta enim. Quisque suscipit
+      condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
+      tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
     </p>
   </React.Fragment>
 );

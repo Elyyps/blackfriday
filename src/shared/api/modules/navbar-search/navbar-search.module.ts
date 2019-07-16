@@ -12,12 +12,3 @@ export class NavbarSearchModule extends WordPressPostModule {
   public deals: DealCardModule[];
   public shops: ShopCard[];
 }
-
-export class NavbarSearchModule2 {
-  currentFilter: string;
-  deals?: DealCardModule[];
-  dealsTitle: string;
-  getCardsFiltered?: (text: string) => void;
-  shops?: ShopCard[];
-  shopsTitle: string;
-}
