@@ -8,7 +8,7 @@ import { getHeaderpageHeader } from "@app/api/modules/homepage-header/endpoints"
 
 import { withProvider } from "@app/util";
 
-storiesOf("homePage-header", module)
+storiesOf("Homepage Header", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => <HomePageHeaderComponent homePageModule={getHeaderpageHeader()} />);

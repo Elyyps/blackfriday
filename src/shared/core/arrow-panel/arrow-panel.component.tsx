@@ -4,40 +4,40 @@ import styles from "./arrow-panel-component.module.scss";
 import { IconComponent, ImageComponent } from "@app/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
 
-interface ICardSimpleProps {
-  brands?: string[];
+interface IArrowPanelProps {
   icon?: string;
+  items?: string[];
   link: string;
   title?: string;
   variant?: string;
 }
 const MAX_ITEMS = 3;
-const LAST_ITEM_INDEX = -2;
-const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) => {
-  const [listBrands, setListBrands] = React.useState("");
-  React.useEffect(() => {
+const ArrowPanel = ({ title, items, icon, link, variant }: IArrowPanelProps) => {
+  const [itemsList] = React.useState<string[]>(items || []);
+
+  const getItems = (itemsToConcatenate: string[]): string => {
     let listWords = "";
-    if (brands) {
-      if (brands.length > MAX_ITEMS) {
-        for (let i = 0; i < MAX_ITEMS - 1; i = +1) {
-          listWords = `${listWords}${brands[i]}, `;
+    if (itemsToConcatenate) {
+      itemsToConcatenate.slice(0, MAX_ITEMS).map((item, index) => {
+        listWords = `${listWords}${item}`;
+        if (index + 1 !== MAX_ITEMS && index + 1 !== itemsToConcatenate.length) {
+          listWords += ", ";
         }
-        listWords = `${listWords}${brands[MAX_ITEMS]}...`;
-      } else {
-        brands.map(brand => {
-          listWords = `${listWords}${brand}, `;
-        });
-        listWords = listWords.slice(0, LAST_ITEM_INDEX);
+      });
+
+      if (itemsToConcatenate.length > MAX_ITEMS) {
+        listWords = `${listWords}...`;
       }
     }
-    setListBrands(listWords);
-  }, []);
+
+    return listWords;
+  };
 
   return (
     <Link
       to={link}
       className={`${styles["card-simple"]} ${variant ? styles[`card-simple--${variant}`] : ""}  ${
-        brands ? styles[`card-simple--list-brands`] : ""
+        itemsList.length > 0 ? styles[`card-simple--list-brands`] : ""
       }`}
     >
       {icon && (
@@ -47,7 +47,7 @@ const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) =>
       )}
       <div className={styles["card-simple__title"]}>{title}</div>
       <div className={styles["card-simple__body"]}>
-        {!icon && <div className={styles["card-simple__list-brands"]}>{listBrands}</div>}
+        {!icon && <div className={styles["card-simple__list-brands"]}>{getItems(itemsList)}</div>}
         <IconComponent icon={CHEVRON_RIGHT} size="5px" />
       </div>
     </Link>

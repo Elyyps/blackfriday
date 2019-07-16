@@ -10,6 +10,7 @@ storiesOf("Arrow-panel", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => <ArrowPanel title="Productdeals" icon={CardIcon} link={"/"} />)
-  .add("Emtpy implementation", () => (
-    <ArrowPanel title="Productdeals" brands={["Nike", "Adidas", "New Balance", "Versace"]} link={"/"} />
+  .add("Implementation with items", () => <ArrowPanel title="Productdeals" items={["Nike", "Adidas"]} link={"/"} />)
+  .add("Implementation with many items", () => (
+    <ArrowPanel title="Productdeals" items={["Nike", "Adidas", "New Balance", "Versace"]} link={"/"} />
   ));
