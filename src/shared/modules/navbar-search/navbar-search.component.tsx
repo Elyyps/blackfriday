@@ -8,7 +8,7 @@ import Oasis from "@assets/oasis.jpg";
 import { DealCardComponent } from "@app/core/deal-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
 import { DealCardModule } from "@app/api/core/deal-card";
-import { ShopCardModule } from "@app/api/core/shop-card";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { ShopCardComponent } from "@app/core/shop-card";
 
 export interface INavbarSearchComponentProps {
@@ -16,7 +16,7 @@ export interface INavbarSearchComponentProps {
   deals?: DealCardModule[];
   dealsTitle: string;
   getCardsFiltered?: (text: string) => void;
-  shops?: ShopCardModule[];
+  shops?: ShopCard[];
   shopsTitle: string;
 }
 

@@ -1,7 +1,7 @@
 import { SeeMoreCard } from "@app/api/core/see-more-card";
 import { DealCardModule } from "@app/api/core/deal-card";
-import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
+import { ShopCard } from "@app/api/core/shop-card/shop-card";
 
 export class NavbarSearchModuleInitial extends WordPressPostModule {
   public titleDeals: "Gevonden deals";
@@ -11,4 +11,13 @@ export class NavbarSearchModuleInitial extends WordPressPostModule {
 export class NavbarSearchModule extends WordPressPostModule {
   public deals: DealCardModule[];
   public shops: ShopCard[];
+}
+
+export class NavbarSearchModule2 {
+  currentFilter: string;
+  deals?: DealCardModule[];
+  dealsTitle: string;
+  getCardsFiltered?: (text: string) => void;
+  shops?: ShopCard[];
+  shopsTitle: string;
 }

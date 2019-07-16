@@ -1,4 +1,4 @@
-import { NavbarSearchModuleInitial, NavbarSearchModule } from "./navbar-search";
+import { NavbarSearchModuleInitial, NavbarSearchModule } from "./navbar-search.module";
 
 export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
   titleDeals: "Gevonden deals",
@@ -8,6 +8,7 @@ export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
   id: "1",
   name: "NavbarSearchModuleInitial"
 };
+
 export const dummyNavbarSearchData: NavbarSearchModule = {
   deals: [
     {
