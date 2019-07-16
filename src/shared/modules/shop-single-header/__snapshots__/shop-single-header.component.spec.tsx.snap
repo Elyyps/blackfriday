@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ShopSingleHeader] should render component without crashing 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="product-detail"
+  >
+    <div
+      className="uk-grid uk-grid-small"
+    >
+      <div
+        className="uk-width-1-3@s"
+      >
+        <div
+          className="card-wrap"
+        >
+          <DiscountCardComponent
+            buttonLink="/"
+            buttonText="Naar deals"
+            content="Gebruik deze kortingscode:"
+            coupon="black15"
+            image="cool-blue.svg"
+            range={0.8}
+            status="NU geldig"
+            title="15% korting op het hele assortiment"
+          />
+          <div
+            className="uk-visible@s"
+          >
+            <NewsletterComponent />
+          </div>
+        </div>
+      </div>
+      <div
+        className="uk-width-2-3@s"
+      >
+        <div
+          className="product-detail__body"
+        >
+          <div
+            className="product-detail__header"
+          >
+            <img
+              alt="image"
+              src="oasis.jpg"
+            />
+          </div>
+          <div
+            className="product-detail__content"
+          >
+            <div
+              className="product-detail__content__subtitle"
+            >
+              <a
+                className="uk-visible@s"
+                href="/"
+              >
+                Home  - Alle winkels
+              </a>
+              <BackLinkComponent
+                className="uk-hidden@s"
+                href="/"
+              >
+                Alle winkels
+              </BackLinkComponent>
+            </div>
+            <div
+              className="content"
+            >
+              <div
+                className="content__head"
+              >
+                <h1
+                  style={
+                    Object {
+                      "margin": "0",
+                    }
+                  }
+                >
+                  15% korting op het hele assortiment
+                </h1>
+                <div
+                  className="content__head__stars uk-visible@s"
+                >
+                  <StarsRatingComponent
+                    rating={5}
+                  />
+                  Beoordeel deze deal
+                </div>
+              </div>
+              <div
+                className="content__body"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "Vier Black Friday bij Beddenreus en ontvang 15% korting op alles!Black Friday bij Beddenreus wil je niet missen! Je geniet van maar liefst 15% korting op alles. Extra interessant: Black Friday duurt bij Beddenreus niet één dag maar ruim een week. Dé week om eens goed na te denken over een nieuwe boxspring, matras of dekbedovertrek! Want 15% korting dat is héél veel! Hét ideale moment dus om jouw favoriete boxspring, matras of winterdekbed te kopen. Online én in de winkel. Meer info",
+                  }
+                }
+              />
+              <div
+                className="uk-visible@s"
+              >
+                <h4>
+                  De voordelen van shoppen bij Beddenreus tijdens Black Friday.
+                </h4>
+                <div
+                  className="product-detail__list"
+                >
+                  <div
+                    className="product-detail__list__item"
+                    key="0"
+                  >
+                    <IconComponent
+                      icon="check.svg"
+                      size="16px"
+                    />
+                    <div
+                      className="product-detail__list__item__text"
+                    >
+                      Profiteer van 15% op korting op alles
+                    </div>
+                  </div>
+                  <div
+                    className="product-detail__list__item"
+                    key="1"
+                  >
+                    <IconComponent
+                      icon="check.svg"
+                      size="16px"
+                    />
+                    <div
+                      className="product-detail__list__item__text"
+                    >
+                      Online én in de winkels
+                    </div>
+                  </div>
+                  <div
+                    className="product-detail__list__item"
+                    key="2"
+                  >
+                    <IconComponent
+                      icon="check.svg"
+                      size="16px"
+                    />
+                    <div
+                      className="product-detail__list__item__text"
+                    >
+                      De hele week aanbiedingen van 16-11 t/m 26-11
+                    </div>
+                  </div>
+                  <div
+                    className="product-detail__list__item"
+                    key="3"
+                  >
+                    <IconComponent
+                      icon="check.svg"
+                      size="16px"
+                    />
+                    <div
+                      className="product-detail__list__item__text"
+                    >
+                      Ruimere openingstijden
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="product-detail__footer"
+            >
+              <div
+                className="actions"
+                data-uk-margin={true}
+              >
+                <div
+                  className="actions__item"
+                >
+                  <a
+                    className="actions__item__first"
+                    href="/"
+                    role="button"
+                  >
+                    <h5
+                      style={
+                        Object {
+                          "marginBottom": "0",
+                        }
+                      }
+                    >
+                      Beddenreus
+                    </h5>
+                    <IconComponent
+                      icon="link.svg"
+                      size="14px"
+                    />
+                  </a>
+                  <div
+                    className="content__head__stars uk-hidden@s"
+                  >
+                    <StarsRatingComponent
+                      rating={5}
+                    />
+                    Beoordeel deze deal
+                  </div>
+                </div>
+                <div
+                  className="actions__item"
+                >
+                  <div
+                    className="actions__item-wrap"
+                  >
+                    <div
+                      className="uk-hidden@s"
+                    >
+                      <Button
+                        icon="heart-filled.svg"
+                        iconPosition="left"
+                        title="Alle winkels"
+                        variant="secondary"
+                      />
+                    </div>
+                    <div
+                      className="uk-visible@s"
+                    >
+                      <Button
+                        icon="heart-filled.svg"
+                        iconPosition="left"
+                        title="Winkel opslaan als favoriet"
+                        variant="secondary"
+                      />
+                    </div>
+                    <Button
+                      icon="share.svg"
+                      iconPosition="left"
+                      title="Delen"
+                      variant="secondary"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="labels uk-visible@s"
+              >
+                <KeywordTagComponent
+                  key="0"
+                >
+                  Wonen & slapen
+                </KeywordTagComponent>
+                <KeywordTagComponent
+                  key="1"
+                >
+                  Swiss sense
+                </KeywordTagComponent>
+                <KeywordTagComponent
+                  key="2"
+                >
+                  hastens
+                </KeywordTagComponent>
+              </div>
+            </div>
+            <div
+              className="uk-hidden@s"
+            >
+              <NewsletterComponent />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

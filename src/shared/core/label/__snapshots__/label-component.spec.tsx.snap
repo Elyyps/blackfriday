@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[LabelComponent] should render component without crashing 1`] = `
+<div
+  className="label  "
+>
+  Black Friday 2019: NOG 10 dagen!
+</div>
+`;

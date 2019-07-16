@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[homepageHeader] should render component without crashing 1`] = `
+<div
+  className="homepage-header"
+>
+  <div
+    className="homepage-header-top"
+  >
+    <div
+      className="uk-container"
+    >
+      <div
+        className="uk-grid uk-child-width-1-2@m"
+      >
+        <div>
+          <div
+            className="homepage-header-wrap"
+          >
+            <LabelComponent
+              text="Black Friday 2019: NOG 10 dagen!"
+            />
+            <div
+              className="homepage-header__title"
+            >
+              <h1>
+                <strong>
+                  Black Friday België
+                </strong>
+              </h1>
+            </div>
+            <ul
+              className="uk-list-check homepage-header__list"
+            >
+              <li
+                key="0"
+              >
+                Overzicht van alle Black Friday winkels
+              </li>
+              <li
+                key="1"
+              >
+                Altijd up-to-date van de laatste deals
+              </li>
+              <li
+                key="2"
+              >
+                Mis niets van Black Friday 2019
+              </li>
+            </ul>
+            <div
+              className="homepage-header__cards"
+            >
+              <ArrowPanel
+                icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                key="0"
+                link="./"
+                title="Productdeals"
+              />
+              <ArrowPanel
+                icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                key="1"
+                link="./"
+                title="Deelnemende winkels"
+              />
+            </div>
+          </div>
+          <div
+            className="uk-invert homepage-header-info"
+          >
+            <div
+              className="homepage-header-info__col"
+            >
+              <div
+                className="homepage-header-info__label"
+              >
+                Wanneer is Black Friday
+              </div>
+              <div
+                className="homepage-header-info__item"
+              >
+                <h3>
+                  29 November 2019
+                </h3>
+              </div>
+            </div>
+            <div
+              className="homepage-header-info__col"
+            >
+              <div
+                className="homepage-header-info__label"
+              >
+                Hoe lang nog?
+              </div>
+              <div
+                className="homepage-header-info__item"
+              >
+                <h3>
+                  6 maanden & 2 dagen 
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Slider
+            className="homepage-header__slick-slider"
+            dots={false}
+            infinite={false}
+            nextArrow={<BasicArrow />}
+            prevArrow={
+              <BasicArrow
+                prev={true}
+              />
+            }
+            slidesToScroll={1}
+            slidesToShow={1}
+            speed={500}
+          >
+            <div
+              className="homepage-header__slide-container"
+              key="0"
+            >
+              <div
+                className="homepage-header__slider-item"
+                style={
+                  Object {
+                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png)",
+                  }
+                }
+              />
+              <div
+                className="homepage-header__slider-control"
+              >
+                <div
+                  className="homepage-header__slider-title"
+                >
+                   
+                  Handige Black Friday Tips
+                </div>
+                <LinkComponent
+                  animated={true}
+                  icon={
+                    Object {
+                      "ReactComponent": [Function],
+                      "__esModule": true,
+                      "default": "chevron-right.svg",
+                    }
+                  }
+                  to="./"
+                  variant="quaternary"
+                >
+                  Lees meer
+                </LinkComponent>
+              </div>
+            </div>
+            <div
+              className="homepage-header__slide-container"
+              key="1"
+            >
+              <div
+                className="homepage-header__slider-item"
+                style={
+                  Object {
+                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png)",
+                  }
+                }
+              />
+              <div
+                className="homepage-header__slider-control"
+              >
+                <div
+                  className="homepage-header__slider-title"
+                >
+                   
+                  Handige Black Friday Tips
+                </div>
+                <LinkComponent
+                  animated={true}
+                  icon={
+                    Object {
+                      "ReactComponent": [Function],
+                      "__esModule": true,
+                      "default": "chevron-right.svg",
+                    }
+                  }
+                  to="./"
+                  variant="quaternary"
+                >
+                  Lees meer
+                </LinkComponent>
+              </div>
+            </div>
+            <div
+              className="homepage-header__slide-container"
+              key="2"
+            >
+              <div
+                className="homepage-header__slider-item"
+                style={
+                  Object {
+                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png)",
+                  }
+                }
+              />
+              <div
+                className="homepage-header__slider-control"
+              >
+                <div
+                  className="homepage-header__slider-title"
+                >
+                   
+                  Handige Black Friday Tips
+                </div>
+                <LinkComponent
+                  animated={true}
+                  icon={
+                    Object {
+                      "ReactComponent": [Function],
+                      "__esModule": true,
+                      "default": "chevron-right.svg",
+                    }
+                  }
+                  to="./"
+                  variant="quaternary"
+                >
+                  Lees meer
+                </LinkComponent>
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="homepage-header-bottom"
+  >
+    <div
+      className="uk-invert homepage-header-bottom__wrap"
+    >
+      <div
+        className="uk-container"
+      >
+        <div
+          className="uk-grid uk-child-width-1-2@s"
+        >
+          <div>
+            <div
+              className="homepage-header-bottom__label"
+            >
+              <h2>
+                Populaire onderwerpen
+              </h2>
+            </div>
+            <div
+              className="homepage-header-bottom__cards"
+            >
+              <div
+                key="0"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                  link="./"
+                  title="Productdeals"
+                />
+              </div>
+              <div
+                key="1"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+              <div
+                key="2"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+              <div
+                key="3"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="homepage-header-bottom__label"
+            >
+              <h2>
+                Populaire winkels
+              </h2>
+            </div>
+            <div
+              className="homepage-header-bottom__cards"
+            >
+              <div
+                key="0"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+              <div
+                key="1"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+              <div
+                key="2"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+              <div
+                key="3"
+              >
+                <ArrowPanel
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                  link="./"
+                  title="Deelnemende winkels"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
