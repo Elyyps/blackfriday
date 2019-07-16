@@ -26,7 +26,7 @@ export function getShopCards(
   brands: string[],
   sortBy: string
 ) {
-  const shopCards: ShopCard[] = generateShopCardData2();
+  const shopCards: ShopCard[] = generateShopCardData();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];
@@ -64,7 +64,7 @@ export function getShopCards(
   SortedCards = SortedCards.slice(skip, numberOfCards);
   // console.log(skip + " skip");
   // console.log(numberOfCards + " numberOfCards");
-  console.log(currentPage + " currentPage");
+  // console.log(currentPage + " currentPage");
 
   // console.log(SortedCards.length);
 

@@ -37,7 +37,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
   };
 
   return (
-    <ShadowCardComponent fullWidth>
+    <ShadowCardComponent>
       <div className={`${styles["shop-card"]} ${styles[`shop-card--${variant || "default"}`]}`}>
         <div className={styles["shop-card__body"]}>
           <div className={styles["shop-card__image"]}>

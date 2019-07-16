@@ -31,7 +31,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const [checkedStatusFilters, setCheckedStatusFilters] = useState<number>(0);
   const [checkedCategoryFilters, setCheckedCategoryFilters] = useState<number>(0);
   const [checkedBrandFilters, setCheckedBrandFilters] = useState<number>(0);
-  const [numberOfShops, setNumberOfShops] = useState<number>(0);
+  const [numberOfShopsFromCategory, setNumberOfShopsFromCategory] = useState<number>(0);
+  const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = useState<number>(0);
+  const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = useState<number>(0);
 
   const filterSortChange = () => {
     setfilterSort(!filterSort);
@@ -47,9 +49,6 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
     setOrderBy(value);
   };
 
-  const countNumberOfShops = (value: number) => {
-    setNumberOfShops(numberOfShops + value);
-  };
   const onStatusSelected = (id: string) => {
     const newSelectedStatus = props.filterBar.status.map(option => {
       if (option.text.toUpperCase() === id.toUpperCase()) {
@@ -63,12 +62,14 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   };
   const applyStatusFilter = (checkbox: Checkbox[]) => {
     const list: string[] = [];
-
+    let total = 0;
     checkbox.forEach(option => {
       if (option.isChecked === true) {
         list.push(option.text.toUpperCase());
+        total += option.quantity ? option.quantity : 0;
       }
     });
+    setNumberOfShopsFromStatus(total);
     setCheckedStatusFilters(list.length);
     props.onStatusChanged(list);
   };
@@ -91,7 +92,9 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
     setCheckedStatusFilters(0);
     setCheckedCategoryFilters(0);
 
-    setNumberOfShops(0);
+    setNumberOfShopsFromCategory(0);
+    setNumberOfShopsFromBrands(0);
+    setNumberOfShopsFromStatus(0);
   };
 
   return (
@@ -147,6 +150,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
                   <CheckboxComponent isChecked={checkbox.isChecked} onClick={() => onStatusSelected(checkbox.text)}>
                     {checkbox.text}
                   </CheckboxComponent>
+                  {checkbox.quantity}
                 </li>
               ))}
             </ul>
@@ -157,6 +161,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             title={props.filterBar.categoryFilterTitle}
             buttonVariant="secondary"
             orientation="bottom-left"
+            buttonColor="outline"
           >
             <SearchFilterControlComponent
               checkbox={props.filterBar.categories}
@@ -164,7 +169,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               applyFilter={props.applyFilter}
               getCheckedFilters={setCheckedCategoryFilters}
               numberOfFilters={checkedCategoryFilters}
-              getTotalShops={countNumberOfShops}
+              getTotalShops={setNumberOfShopsFromCategory}
             />
           </DropdownComponent>
         </div>
@@ -173,6 +178,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             title={props.filterBar.brandFilterTitle}
             buttonVariant="secondary"
             orientation="bottom-left"
+            buttonColor="outline"
           >
             <SearchFilterControlComponent
               checkbox={props.filterBar.brands}
@@ -180,7 +186,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
               applyFilter={props.applyFilter}
               getCheckedFilters={setCheckedBrandFilters}
               numberOfFilters={checkedBrandFilters}
-              getTotalShops={countNumberOfShops}
+              getTotalShops={setNumberOfShopsFromBrands}
             />
           </DropdownComponent>
         </div>
@@ -195,7 +201,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           <span>
             <IconComponent icon={StoreIcon} size={"20px"} />
           </span>
-          {numberOfShops} winkels
+          {numberOfShopsFromBrands + numberOfShopsFromCategory + numberOfShopsFromStatus} winkels
         </div>
         <div className={styles["filter__sort-item"]}>
           {props.filterBar.sortByFilterTitle}
