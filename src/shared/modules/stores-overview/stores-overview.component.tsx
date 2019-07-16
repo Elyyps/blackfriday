@@ -5,7 +5,6 @@ import { ShopCardComponent } from "@app/core/shop-card";
 import { StoresOverviewContainerProps } from "./container/stores-overview.container";
 import { getShopsOverviewData } from "@app/api/modules/stores-overview/endpoints";
 import { useEffect, useState } from "react";
-import { Banner } from "@app/prep/pages-prep/winkleoverview/dummy-data";
 import BottomScrollListener from "react-bottom-scroll-listener";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
@@ -21,13 +20,10 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const TAKE = 15;
-  const SHOW_AD_EVERY = 10;
   let currentNumberOfItems = 0;
-  const skip: number = TAKE * currentPage;
   const paddingBottom = "50px";
   const paddingTop = paddingBottom;
 
-  const numberOfCards = skip + TAKE;
   function bottomPageCallback() {
     if (!isLoading) {
       setIsLoading(true);
@@ -97,7 +93,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
               >
                 {props.shopCards.map((item, key) => {
                   let showAd = false;
-                  if (currentNumberOfItems + 1 === SHOW_AD_EVERY) {
+                  if (currentNumberOfItems + 1 === TAKE) {
                     showAd = true;
                     currentNumberOfItems = 0;
                   } else {
@@ -105,8 +101,8 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                   }
 
                   return (
-                    <React.Fragment>
-                      <div key={key}>
+                    <React.Fragment key={key}>
+                      <div>
                         <ShopCardComponent
                           title={item.title}
                           buttonLink={item.button.url}
@@ -121,7 +117,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                       </div>
                       <br />
                       {showAd && (
-                        <div key={key} style={{ width: "100%" }}>
+                        <div style={{ width: "100%" }}>
                           <BannerModuleComponent
                             bgcolor="#eee"
                             paddingBottom={paddingBottom}
@@ -136,9 +132,9 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                 <BottomScrollListener onBottom={bottomPageCallback} />
               </div>
             )}
-            <div>{props.shopCards.length === 0 && <h1>Empty</h1>}</div>
+            <div>{props.shopCards.length === 0 && <h1>No results for your search</h1>}</div>
             <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-              {isLoading && <ClipLoader css={override} sizeUnit={"px"} size={30} color={"green"} loading={true} />}
+              <ClipLoader css={override} sizeUnit={"px"} size={30} color={"red"} loading={isLoading} />
             </div>
           </div>
         </div>

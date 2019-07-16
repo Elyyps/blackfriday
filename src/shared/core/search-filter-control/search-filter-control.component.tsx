@@ -55,26 +55,20 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
   };
   const filterData = (checkbox: Checkbox[]) => {
     const list: string[] = [];
-    const num: number[] = [0];
-
-    setNumberOfShops(0);
+    let total = 0;
     checkbox.forEach(option => {
       if (option.isChecked === true) {
         list.push(option.text.toUpperCase());
-        num.push(option.quantity ? option.quantity : 0);
-        //  props.getTotalShops(option.quantity ? option.quantity : 0);
+        total += option.quantity ? option.quantity : 0;
       }
     });
-    const total = num.reduce((total, num) => total + num, 0);
-    setNumberOfShops(total);
-
+    props.getTotalShops(total);
     props.getCheckedFilters(list.length);
     props.onSelect(list);
   };
 
   const applyFilter = () => {
     props.applyFilter();
-    props.getTotalShops(numberOfShops);
   };
 
   useEffect(() => {

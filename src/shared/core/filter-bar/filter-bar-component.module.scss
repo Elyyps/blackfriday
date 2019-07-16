@@ -5,14 +5,15 @@
   padding: 16px 0;
   &-ul {
     list-style: none;
+    width: 230px;
   }
   &-li {
-    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   &-li:hover {
     cursor: pointer;
-    border-bottom: 0.2px solid grey;
-    background-color: white;
   }
   &__filter-list {
     display: flex;

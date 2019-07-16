@@ -3,11 +3,11 @@ import { generateDummyCheckboxArray } from "../checkbox";
 
 export const generateDummyFilterBar = (): FilterBar => ({
   status: [
-    { text: "Actie nog onbekend", isChecked: false },
-    { text: "Actie start over 5 dagen!", isChecked: false },
-    { text: "Nu geldig", isChecked: false },
-    { text: "Bijna Verlopen!", isChecked: false },
-    { text: "Actie verlopen", isChecked: false }
+    { text: "Actie nog onbekend", isChecked: false, quantity: 12 },
+    { text: "Actie start over 5 dagen!", isChecked: false, quantity: 12 },
+    { text: "Nu geldig", isChecked: false, quantity: 3 },
+    { text: "Bijna Verlopen!", isChecked: false, quantity: 3 },
+    { text: "Actie verlopen", isChecked: false, quantity: 3 }
   ],
   categories: [
     { text: "Audio", isChecked: false, quantity: 12 },
