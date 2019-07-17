@@ -19,6 +19,7 @@ import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import { Footer as FooterModule } from "@app/api/modules/footer/footer.module";
 
 import { WordPressPostModule } from "@app/api/modules/wordpress-module/wordpress-module";
+import { NewsletterComponent } from "@app/core/newsletter";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -34,10 +35,14 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <BannerModuleComponent bannerProps={wordPressModule as BannerModule} />;
     case "HomepageHeader":
       return <HomePageHeaderComponent homePageModule={wordPressModule as HomepageHeader} />;
-    case "BodyTextModule":
-      return <BodytextComponent>{(wordPressModule as BodyTextModule).dummyJSX}</BodytextComponent>;
-    case "Footer":
+    // case "BodyTextModule":
+    //   return <BodytextComponent>{(wordPressModule as BodyTextModule).dummyJSX}</BodytextComponent>;
+    case "FooterModule":
       return <FooterComponent footerModule={wordPressModule as FooterModule} />;
+    case "FeaturedDealsModule":
+      return <FeaturedDealsComponent {...wordPressModule as FeaturedDealsModule} />;
+    case "NewsletterModule":
+      return <NewsletterComponent />;
     default:
   }
 };
