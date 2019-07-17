@@ -7,13 +7,14 @@ import { CHEVRON_RIGHT } from "@app/constants/icons";
 interface ICardSimpleProps {
   brands?: string[];
   icon?: string;
-  link: string;
+
+  onClick?: () => void;
   title?: string;
   variant?: string;
 }
 const MAX_ITEMS = 3;
 const LAST_ITEM_INDEX = -2;
-const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) => {
+const ArrowPanelComponent = ({ title, brands, icon, onClick, variant }: ICardSimpleProps) => {
   const [listBrands, setListBrands] = React.useState("");
   React.useEffect(() => {
     let listWords = "";
@@ -34,8 +35,11 @@ const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) =>
   }, []);
 
   return (
-    <Link
-      to={link}
+    <div
+      onClick={() => {
+        if (onClick) onClick();
+      }}
+      role="button"
       className={`${styles["card-simple"]} ${variant ? styles[`card-simple--${variant}`] : ""}  ${
         brands ? styles[`card-simple--list-brands`] : ""
       }`}
@@ -46,11 +50,11 @@ const ArrowPanel = ({ title, brands, icon, link, variant }: ICardSimpleProps) =>
         </div>
       )}
       <div className={styles["card-simple__title"]}>{title}</div>
+      <IconComponent icon={CHEVRON_RIGHT} size="5px" />
       <div className={styles["card-simple__body"]}>
         {!icon && <div className={styles["card-simple__list-brands"]}>{listBrands}</div>}
-        <IconComponent icon={CHEVRON_RIGHT} size="5px" />
       </div>
-    </Link>
+    </div>
   );
 };
-export { ArrowPanel };
+export { ArrowPanelComponent };
