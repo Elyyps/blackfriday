@@ -1,4 +1,12 @@
 .playground-pk {
+  &__header{
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
   display: flex;
   flex-direction: column;
   margin: 0;
