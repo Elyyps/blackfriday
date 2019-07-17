@@ -58,7 +58,7 @@ const MobileFilterComponent = (props: IMobileFilterComponentProps) => {
               setCurrentFilterItem(undefined);
             }}
           >
-            <IconComponent strokeColor="#fff" icon={ChevronLeft} size={"12spx"} />
+            <IconComponent strokeColor="#fff" icon={ChevronLeft} size={"12px"} />
           </span>
           <span className={styles["mobile-filter__header__title"]}>
             <span>{currentFilterItem.title}</span>

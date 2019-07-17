@@ -10,6 +10,7 @@
   margin: 8px;
   overflow: hidden;
   min-height: 52px;
+  cursor: pointer;
   box-sizing: border-box;
   svg {
     position: absolute;
@@ -51,7 +52,7 @@
     display: flex;
     align-items: center;
   }
-  &__list-brands {
+  &__list-items {
     color: $gray-light;
     font-weight: 600;
     font-family: $global-font-family-secondary;
@@ -80,7 +81,7 @@
     padding-bottom: 8px;
   }
 
-  &--list-brands {
+  &--list-items {
     justify-content: space-between;
   }
 }
