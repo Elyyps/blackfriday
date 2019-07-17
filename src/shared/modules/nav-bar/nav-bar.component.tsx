@@ -4,11 +4,9 @@ import { ImageComponent } from "@app/prep/modules-prep/core";
 
 import { SEARCH_ICON, MENU_ICON } from "@app/constants/icons";
 import { ModalNavBar } from "@app/prep/modules-prep/core/modal-navbar";
-import LOGO from "@assets/bf-expert-brand.svg";
 import { HamburgerMenuComponent } from "@app/prep/modules-prep/hamburger-menu";
 import { LinkComponent } from "@app/core/link";
 import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
-import { NavbarSearchComponent } from "../navbar-search";
 import { NavbarSearchContainer } from "../navbar-search/container/navbar-search.container";
 import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar-search/endpoints";
 
