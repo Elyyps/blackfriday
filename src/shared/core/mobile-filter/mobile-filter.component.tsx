@@ -96,7 +96,7 @@ const MobileFilterComponent = (props: IMobileFilterComponentProps) => {
         currentFilterItems.map((item, key) => (
           <ArrowPanelComponent
             key={key}
-            brands={item.selectedItems}
+            items={item.selectedItems}
             onClick={() => {
               setCurrentFilterItem(item);
             }}

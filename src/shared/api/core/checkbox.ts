@@ -1,91 +1,83 @@
 export class Checkbox {
+  public isChecked?: boolean;
   public quantity?: number;
   public text: string;
 }
 export const generateDummyCheckboxArray = (): Checkbox[] => [
   {
     quantity: 0,
-    text: "Appel "
+    text: "Appel ",
+    isChecked: false
   },
   {
     quantity: 255,
-    text: "Adidas"
+    text: "Adidas",
+    isChecked: false
   },
   {
     quantity: 22,
-    text: "Converse"
+    text: "Converse",
+    isChecked: false
   },
   {
     quantity: 12,
-    text: "Guess"
+    text: "Guess",
+    isChecked: false
   },
   {
     quantity: 2,
-    text: "JBL"
+    text: "JBL",
+    isChecked: false
   },
   {
     quantity: 25,
-    text: "Only"
+    text: "Only",
+    isChecked: false
   },
   {
     quantity: 0,
-    text: "Appel "
+    text: "Test1 ",
+    isChecked: false
   },
   {
     quantity: 255,
-    text: "Adidas"
+    text: "Test2",
+    isChecked: false
   },
   {
     quantity: 22,
-    text: "Converse"
+    text: "Test3",
+    isChecked: false
   },
   {
     quantity: 12,
-    text: "Guess"
+    text: "Test4",
+    isChecked: false
   },
   {
     quantity: 2,
-    text: "JBL"
+    text: "Test5",
+    isChecked: false
   },
   {
     quantity: 25,
-    text: "Only"
+    text: "Test6",
+    isChecked: false
   },
   {
     quantity: 12,
-    text: "Guess"
+    text: "Test7",
+    isChecked: false
   },
   {
     quantity: 2,
-    text: "JBL"
+    text: "Test8",
+    isChecked: false
   },
   {
     quantity: 25,
-    text: "Only"
-  },
-  {
-    quantity: 0,
-    text: "Appel "
-  },
-  {
-    quantity: 255,
-    text: "Adidas"
-  },
-  {
-    quantity: 22,
-    text: "Converse"
-  },
-  {
-    quantity: 12,
-    text: "Guess"
-  },
-  {
-    quantity: 2,
-    text: "JBL"
-  },
-  {
-    quantity: 25,
-    text: "Only"
+    text: "Test9",
+    isChecked: false
   }
 ];
 export const generateDummyCheckbox = (): Checkbox => ({

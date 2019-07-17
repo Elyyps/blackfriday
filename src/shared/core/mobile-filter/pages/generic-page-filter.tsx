@@ -25,7 +25,6 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
   };
   React.useEffect(() => {
     initializeItems();
- 
   }, []);
   const setNewCheckedItems = () => {
     const newCheckedItems = items.filter(item => item.checked).map(item => item.title);
@@ -58,9 +57,10 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
             onClick={() => {
               handleCheckboxClick(item.title);
             }}
-            title={item.title}
             isChecked={item.checked}
-          />
+          >
+            {item.title}
+          </CheckboxComponent>
         </div>
       ))}
     </div>

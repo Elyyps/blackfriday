@@ -1,4 +1,4 @@
 import { generateHomePageHeader } from "./generate-dummy-data";
-import { HomepageHeader } from "./homepage-header";
+import { HomepageHeader } from "./homepage-header.module";
 
-export const getHeaderpageHeader = (): HomepageHeader => generateHomePageHeader;
+export const getHeaderpageHeader = (): HomepageHeader => generateHomePageHeader();

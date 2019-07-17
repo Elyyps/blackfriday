@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./hero-component.module.scss";
 import { CardSimple, IconComponent } from "@app/prep/modules-prep/core";
-import { BasicArrow } from "./basic-arrow.component";
+import { BasicArrowComponent } from "./basic-arrow.component";
 import Slider, { Settings } from "react-slick";
 import CardIcon from "@assets/icons/store.svg";
 import Oasis from "@assets/oasis.jpg";
@@ -22,8 +22,8 @@ const HeroComponent = (props: IHeroComponentProps) => {
   };
   const settings: Settings = {
     className: `${styles["hero__slick-slider"]}`,
-    nextArrow: <BasicArrow />,
-    prevArrow: <BasicArrow prev={true} />,
+    nextArrow: <BasicArrowComponent />,
+    prevArrow: <BasicArrowComponent prev={true} />,
     dots: false,
     infinite: false,
     responsive: [

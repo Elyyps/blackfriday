@@ -11,7 +11,7 @@ const history = createHistory();
 // Create/use the store
 // history MUST be passed here if you want syncing between server on initial route
 const store =
-  window.store ||
+  (typeof window !== "undefined" && window.store) ||
   configureStore({
     initialState: getInitialState(),
     history

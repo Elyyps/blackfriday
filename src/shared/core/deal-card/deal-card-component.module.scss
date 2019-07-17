@@ -4,7 +4,6 @@
   border-radius: $global-border-radius;
   background: $global-background;
   color: $gray-lighter;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
   font-size: 12px;
   font-weight: 600;
   padding: 16px;
@@ -40,6 +39,10 @@
     > * {
       margin-right: 5px;
       fill: $global-inverse-color;
+    }
+     @media (max-width: 699px) {
+       right: 8px;
+       left: auto;
     }
   }
   &__body {
@@ -140,6 +143,44 @@
       .button {
         width: 50%;
       }
+    }
+  }
+
+  &--responsive {
+    max-height: 166px;
+    min-height: 166px;
+    min-width: 315px;
+    padding: 16px;
+    .deal-card {
+      &__body {
+        display: flex;
+        align-items: flex-start;
+      }
+      &__content {
+        flex: 1 1 auto;
+      }
+      &__image {
+        order: 2;
+        width: 90px;
+        height: auto;
+        flex: 0 0 90px;
+        margin: 0 0 0 10px;
+      }
+
+      &__price {
+        display: block;
+        margin: 0;
+        flex: 0 0 50%;
+      }
+
+      &__action {
+        display: flex;
+        align-items: flex-end;
+        .button {
+          width: 50%;
+        }
+      }
+      
     }
   }
 }

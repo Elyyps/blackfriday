@@ -2,7 +2,7 @@
 
 exports[`[TimeLeftBar] should render component without crashing 1`] = `
 <div
-  className="time-left-bar 0"
+  className="time-left-bar"
 >
   <div
     className="time-left-bar-control"
@@ -11,7 +11,8 @@ exports[`[TimeLeftBar] should render component without crashing 1`] = `
       className="time-left-bar-control-filled"
       style={
         Object {
-          "width": "calc( 0 * 100%)",
+          "backgroundColor": "none",
+          "width": "calc( 1 * 100%)",
         }
       }
     />

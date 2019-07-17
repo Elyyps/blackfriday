@@ -1,0 +1,86 @@
+.filter-modal {
+  width: 500px;
+  height: 100%;
+
+  &-head {
+    @media (max-width: $breakpoint-small-max) {
+      padding: 16px 16px 0;
+      background: $global-inverse-color;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
+  &-body {
+    height: 225px;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 95%;
+    margin: auto;
+    padding-top: 24px;
+    box-sizing: border-box;
+    @media (max-width: $breakpoint-medium-max) {
+      min-height: calc(100% - 55px);
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 0;
+    }
+  }
+  &-item {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+      .checkbox-label {
+        padding: 16px;
+        width: 100%;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background-color: $gray-dark;
+        }
+      }
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+    .count-item {
+      color: $gray-light;
+    }
+  }
+  &-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $global-inverse-color;
+    width: 100%;
+    &__action {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid $gray;
+      padding: 16px;
+      box-sizing: border-box;
+      @media (max-width: $breakpoint-xsmall-max) {
+        justify-content: center;
+      }
+      > li {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -24,7 +24,7 @@ const LinkComponent = (props: ILinkComponentProps) => {
   );
 
   return (
-    <Link target={target} className={linkClassName} to={to}>
+    <Link target={target} className={linkClassName} to={to ? to : ""}>
       {props.children}
       {icon && <IconComponent icon={icon} size="14px" />}
     </Link>
