@@ -45,20 +45,16 @@
       font-weight: 600;
       text-decoration: underline;
     }
-    &:first-child {
-      display: inline-flex;
-    }
-
     &__title {
       display: inline-flex;
       box-sizing: border-box;
       span {
-        margin-right: 12px;
+        margin-right: 11px;
       }
-      &:first-child {
-        svg {
-          transform: rotate(90deg);
-        }
+
+      svg {
+        transform: rotate(90deg);
+        margin-top: 2px;
       }
     }
     &__clear {
@@ -68,12 +64,11 @@
     &__nav-button {
       position: absolute;
       left: 16px;
+      cursor: pointer;
       svg {
-        transform: rotate(180deg);
         margin: 0;
         &:hover,
         &:active {
-          cursor: pointer;
           outline: none;
         }
       }

@@ -7,7 +7,6 @@ import { CHEVRON_RIGHT } from "@app/constants/icons";
 interface ICardSimpleProps {
   brands?: string[];
   icon?: string;
-
   onClick?: () => void;
   title?: string;
   variant?: string;
@@ -32,7 +31,7 @@ const ArrowPanelComponent = ({ title, brands, icon, onClick, variant }: ICardSim
       }
     }
     setListBrands(listWords);
-  }, []);
+  });
 
   return (
     <div
