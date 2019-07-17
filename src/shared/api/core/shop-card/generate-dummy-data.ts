@@ -10,14 +10,27 @@ export const generateDummyShopCards = (): ShopCard[] => {
       seeMore: { title: "button", url: "" },
       timeLeftBar: { text: "", value: 5 },
       title: "title " + i,
-      postedAt: "27/05/1995",
-      category: "fdsfds",
+      category: "audio",
       brand: "coolblue"
     });
   }
 
   return data;
 };
+export const generateEmptyDummyShopCards = (): ShopCard[] => [
+  {
+    button: { title: "", url: "" },
+    content: "",
+    picture: "",
+    seeMore: { title: "", url: "" },
+    timeLeftBar: { text: "", value: 5 },
+    title: " ",
+
+    category: "",
+    brand: ""
+  }
+];
+
 export function generateData(): ShopCard[] {
   const data = [];
   const brand = ["jbl", "adidas", "guess", "converse", "only"];
@@ -36,7 +49,6 @@ export function generateData(): ShopCard[] {
         seeMore: { title: "Meer info", url: "" },
         timeLeftBar: { text: status[y], value: timebar },
         title: "Item n: " + i,
-        postedAt: "7/06/2019",
         category: category[y],
         brand: brand[y]
       });

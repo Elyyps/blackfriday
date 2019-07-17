@@ -2,6 +2,7 @@ import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 import { generateShopCardData, generateShopCardData2 } from "@app/api/core/shop-card/endpoint";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
+import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 export class StoresOverviewModule extends WordPressPostModule {
   public filterBar: FilterBar;
@@ -26,7 +27,7 @@ export function getShopCards(
   brands: string[],
   sortBy: string
 ) {
-  const shopCards: ShopCard[] = generateShopCardData();
+  const shopCards: ShopCard[] = generateShopCardData2();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
   let filteredCardsByBrand: ShopCard[] = [];
@@ -61,12 +62,16 @@ export function getShopCards(
   } else {
     SortedCards = filteredCardsByBrand;
   }
-  SortedCards = SortedCards.slice(skip, numberOfCards);
-  // console.log(skip + " skip");
-  // console.log(numberOfCards + " numberOfCards");
-  // console.log(currentPage + " currentPage");
 
-  // console.log(SortedCards.length);
+  SortedCards = SortedCards.slice(skip, numberOfCards);
+
+  console.log(skip + " skip");
+
+  console.log(numberOfCards + " numberOfCards");
+  console.log(currentPage + " currentPage");
+
+  console.log(SortedCards.length);
+  console.log("////////////////////");
 
   return { shopCards: SortedCards, totalCards: SortedCards.length };
 }

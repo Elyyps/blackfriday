@@ -18,7 +18,6 @@ export interface ISearchFilterControlComponentProps {
 
 const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
   const [checkboxList, setCheckboxList] = useState<Checkbox[]>([]);
-  const [numberOfShops, setNumberOfShops] = useState<number>(0);
 
   const searchFilter = (value: string) => {
     const list: Checkbox[] = [];

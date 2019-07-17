@@ -18,4 +18,4 @@ storiesOf("CtaSmall", module)
       icon={IconDefault}
     />
   ))
-  .add("Emtpy implementation", () => <CtaSmallComponent />);
+  .add("Empty implementation", () => <CtaSmallComponent />);

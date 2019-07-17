@@ -7,8 +7,6 @@ export class ShopCard {
   public category: string;
   public content: string;
   public picture: string;
-  public postedAt: string;
-
   public seeMore: Link;
   public timeLeftBar: TimeLeftBar;
   public title: string;
