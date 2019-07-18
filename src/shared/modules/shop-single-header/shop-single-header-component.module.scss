@@ -171,7 +171,7 @@
     .content {
       &__head {
         display: flex;
-        align-items: end;
+        align-items: flex-end;
         margin-bottom: 24px;
         justify-content: space-between;
         &__stars {
@@ -184,7 +184,7 @@
           color: #00a82f;
           display: flex;
           flex-direction: column;
-          align-items: end;
+          align-items: flex-end;
         }
       }
       &__body {
@@ -246,7 +246,7 @@
       &__item__first {
         display: inline-flex;
         align-items: baseline;
-         :hover {
+        :hover {
           color: $brand_secondary !important;
           svg {
             path {
@@ -260,7 +260,6 @@
             fill: #777;
           }
         }
-       
       }
     }
     .labels {

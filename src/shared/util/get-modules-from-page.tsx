@@ -8,6 +8,7 @@ import { BannerModuleComponent } from "@app/modules/banner-module";
 import { HomePageHeaderComponent } from "@app/modules/homepage-header";
 import { BodytextComponent } from "@app/core/bodytext";
 import { FooterComponent } from "@app/modules/footer";
+import { CtaSmallComponent } from "@app/modules/cta-small";
 
 import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
 import { FeaturedStoresModule } from "@app/api/modules/featured-shops/featured-shops.module";
@@ -16,6 +17,7 @@ import { NotYetImplemented } from "@app/api/modules/not-implemented/not-yet-impl
 import { BannerModule } from "@app/api/modules/banner/banner.module";
 import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header.module";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
+import { CtaSmallModule } from "@app/api/modules/cta-small/cta-small.module";
 import { Footer as FooterModule } from "@app/api/modules/footer/footer.module";
 
 import { WordPressPostModule } from "@app/api/modules/wordpress-module/wordpress-module";
@@ -43,6 +45,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <FeaturedDealsComponent {...wordPressModule as FeaturedDealsModule} />;
     case "NewsletterModule":
       return <NewsletterComponent />;
+    case "CtaSmallModule":
+      return <CtaSmallComponent {...wordPressModule as CtaSmallModule} />;
     default:
   }
 };

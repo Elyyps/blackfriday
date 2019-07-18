@@ -38,7 +38,6 @@ const BannerComponent = (props: IBannerComponentProps) => {
                 errorMessage="Custom error message"
               />
             </Link>
-            )
           </div>
           <div className={styles["body"]}>
             <div className={styles["content"]}>
