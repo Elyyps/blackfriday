@@ -13,6 +13,7 @@ import { BlogOverviewPageComponent } from "@app/prep/pages-prep/blog-overview/bl
 import { ProductOverviewComponent } from "@app/prep/pages-prep/product-overview/product-overview.component";
 import { WinkelSingleComponent } from "@app/prep/pages-prep/winkel-single/winkel-single.component";
 import { PagebuilderContainer } from "./core/pagebuilder";
+import { TabComponentComponent } from "./core/tab";
 
 const Routes: React.FunctionComponent = props => (
   <React.Fragment>
@@ -25,6 +26,8 @@ const Routes: React.FunctionComponent = props => (
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-single" component={PagebuilderContainer} />
+    <Route exact path="/ahmed" component={TabComponentComponent} />
+    <Route exact path="/design" component={WinkleoverviewComponent} />
 
     <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
     <Route exact path="/playground-pedro" component={PlaygroundPedroComponent} />

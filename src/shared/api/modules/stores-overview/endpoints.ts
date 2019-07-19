@@ -1,5 +1,12 @@
 import { getShopCards } from "./stores-overview.module";
-import { generateDummyStoresOverview } from "./generate-dummy-data";
+import {
+  generateDummyStoresOverview,
+  generateEmptyDummyStoresOverview,
+  generateDummyStoresOverviewForInfiniteScrolling
+} from "./generate-dummy-data";
 
 export const filterShopsOverviewCards = getShopCards;
-export const getShopsOverviewData = generateDummyStoresOverview;
+export const generateShopsOverviewData = generateDummyStoresOverview;
+export const generateEmptyShopsOverviewData = generateEmptyDummyStoresOverview;
+
+export const generateShopsOverviewDataForInfiniteScrolling = generateDummyStoresOverviewForInfiniteScrolling;
