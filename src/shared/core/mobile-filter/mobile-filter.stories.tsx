@@ -1,4 +1,3 @@
-
 import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
@@ -10,7 +9,5 @@ storiesOf("MobileFilter", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
-    <MobileFilterComponent />
+    <MobileFilterComponent totalStores={1} filterItems={[]} onClose={jest.fn} onClear={jest.fn} />
   ));
-
-  
