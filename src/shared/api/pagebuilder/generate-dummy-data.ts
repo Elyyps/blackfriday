@@ -33,8 +33,7 @@ export const pageList: PageModel[] = [
       dummyFeaturedShopsData(),
       generateDummyBannerModule(),
       dummyFeaturedDealsData(),
-      // generateDummyNewsletterModule(),
-      generateCtaSmallModule(),
+      generateNotYetImplemented("Call to action nieuwsbrief"),
       generateNotYetImplemented("Ook interessant om te lezen"),
       generateDummyBodyTextModule(generateHomepageBodytextDummyData()),
       generateDummyFooterData()
