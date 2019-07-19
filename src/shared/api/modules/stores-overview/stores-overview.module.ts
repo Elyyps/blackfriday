@@ -63,7 +63,7 @@ export function getShopCards(
     SortedCards = filteredCardsByBrand;
   }
 
-  SortedCards = SortedCards.slice(skip, numberOfCards);
+  const slicedList = SortedCards.slice(skip, numberOfCards);
 
-  return { shopCards: SortedCards, totalCards: shopCards.length };
+  return { shopCards: slicedList, totalCards: SortedCards.length };
 }
