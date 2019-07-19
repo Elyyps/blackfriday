@@ -12,12 +12,12 @@ export interface IPlaygroundPedroComponentProps {}
 const PlaygroundPedroComponent = (props: IPlaygroundPedroComponentProps) => (
   <div className={styles["playground-pk"]}>
     <NavBarComponent navBarModule={generateDummyNavbarData()} />
-    <div>
+    {/* <div>
       <FeaturedDealsComponent {...getFeaturedDealsDummyData()} />
     </div>
     <div>
       <FeaturedShopsComponent {...getFeaturedShopsDummyData()} />
-    </div>
+    </div> */}
   </div>
 );
 

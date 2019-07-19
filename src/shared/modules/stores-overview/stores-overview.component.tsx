@@ -8,10 +8,7 @@ import BottomScrollListener from "react-bottom-scroll-listener";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { bannerProps } from "@app/api/core/banner";
-import { BannerModuleComponent } from "../banner-module";
-import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
-import { tabItems } from "@app/prep/pages-prep/winkleoverview/dummy-data";
-import { TabComponentComponent } from "@app/core/tab";
+import { BannerComponent } from "@app/core/banner";
 
 export interface IStoresOverviewComponentProps {}
 
@@ -23,8 +20,6 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const TAKE = 15;
   let currentNumberOfItems = 0;
-  const paddingBottom = "30px";
-  const paddingTop = paddingBottom;
   const ClipLoaderSize = 30;
   const ClipLoaderTimer = 2000;
 
@@ -79,9 +74,6 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
 
       <div className="uk-container">
         <div className={styles["stores-overview__header"]}>
-          <div className={styles["stores-overview__tab"]}>
-            <TabComponentComponent />
-          </div>
           <FilterBarComponent
             filterBar={props.filterBar}
             onBrandChanged={setSelectedBrands}
@@ -121,12 +113,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
 
                     {showAd && (
                       <div style={{ width: "100%" }}>
-                        <BannerModuleComponent
-                          bgcolor="#eee"
-                          paddingBottom={paddingBottom}
-                          paddingTop={paddingTop}
-                          bannerProps={bannerProps}
-                        />
+                        <BannerComponent {...bannerProps} />
                         <br />
                       </div>
                     )}
@@ -136,9 +123,10 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
               <BottomScrollListener onBottom={bottomPageCallback} />
             </div>
           )}
+
           <div>{props.shopCards.length === 0 && <h1>No results for your search</h1>}</div>
           <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-            {props.shopCards.length >= TAKE && (
+            {props.shopCards.length >= TAKE && props.shopCards.length < props.totalCards && (
               <ClipLoader css={override} sizeUnit={"px"} size={ClipLoaderSize} color={"red"} loading={isLoading} />
             )}
           </div>

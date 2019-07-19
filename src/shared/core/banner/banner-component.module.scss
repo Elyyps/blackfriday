@@ -35,6 +35,13 @@
   }
 }
 
+.container {
+  width: 100%;
+  @media (max-width: $breakpoint-small) {
+    width: auto;
+  }
+}
+
 .holder {
   background: $global-background;
   border-radius: $global-border-radius;

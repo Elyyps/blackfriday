@@ -8,17 +8,7 @@ import { BannerModuleComponent } from "./banner-module.component";
 // Dummy data
 import { bannerProps } from "@app/api/core/banner";
 
-const paddingBottom = "72px";
-const paddingTop = paddingBottom;
-
 storiesOf("Banner Module", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => (
-    <BannerModuleComponent
-      bgcolor="#eee"
-      paddingBottom={paddingBottom}
-      paddingTop={paddingTop}
-      bannerProps={bannerProps}
-    />
-  ));
+  .add("Basic implementation", () => <BannerModuleComponent bannerProps={bannerProps} />);

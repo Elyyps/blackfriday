@@ -7,7 +7,7 @@ import { CHEVRON_RIGHT } from "@app/constants/icons";
 import { ArrowPanel, LabelComponent } from "@app/core";
 import { getHomePageHeaderSetting } from "./slider-settings";
 import { LinkComponent } from "@app/core/link";
-import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header";
+import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header.module";
 
 export interface IHomePageHeaderComponentProps {
   customNextArrow?: JSX.Element | undefined;

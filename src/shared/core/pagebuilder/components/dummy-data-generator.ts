@@ -9,5 +9,5 @@ export const generatePageModel = (id: string, addWordPressModules: boolean): Pag
   },
   id,
   route: "",
-  wordPressPostModules: addWordPressModules ? [dummyFeaturedShopsData] : []
+  wordPressPostModules: addWordPressModules ? [dummyFeaturedShopsData()] : []
 });

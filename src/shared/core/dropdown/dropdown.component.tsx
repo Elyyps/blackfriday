@@ -16,9 +16,9 @@ export interface IDropdownComponentProps {
     | "tertiary"
     | "tertiary-inverted";
   children?: any;
+  icon?: any;
   orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";
   title?: string;
-  icon?: any;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => (

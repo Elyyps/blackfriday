@@ -1,4 +1,4 @@
-import { HomepageHeader } from "./homepage-header";
+import { HomepageHeader } from "./homepage-header.module";
 
 export const generateHomePageHeader = (): HomepageHeader => ({
   title: "Black Friday België",

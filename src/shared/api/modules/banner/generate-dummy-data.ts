@@ -1,4 +1,4 @@
-import { BannerModule } from "./banner";
+import { BannerModule } from "./banner.module";
 import CoolBlue from "@assets/cool-blue.svg";
 import Oasis from "@assets/oasis.jpg";
 

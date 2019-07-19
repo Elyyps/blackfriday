@@ -5,7 +5,7 @@ export const generateDummyBodyTextModule = (dummyJSX: JSX.Element): BodyTextModu
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  name: "BannerModule",
+  name: "BodyTextModule",
   dummyJSX
 });
 
