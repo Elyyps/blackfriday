@@ -5,27 +5,22 @@
     background-color: var(--tint-white);
   }
   &__body {
-    width: 100%;
-    margin: auto;
     &__list {
-      flex-wrap: wrap;
-      flex-direction: row;
       display: flex;
+      flex-wrap: wrap;
     }
     &__cards {
       flex: 0 1 19%;
-      padding: 4px;
-      @media (max-width: 1160px) {
+      padding: 5px;
+      @media (max-width: 1180px) {
         flex: 0 1 24%;
+        padding: 4px;
       }
-      @media (max-width: 950px) {
-        padding: 3px;
-        flex: 0 1 32.5%;
-      }
-      @media (max-width: 770px) {
-        padding: 1.5px;
+      @media (max-width: 914px) {
+        flex: 0 1 32%;
       }
       @media (max-width: 699px) {
+        padding: 4px 0px;
         flex: 0 1 100%;
       }
     }

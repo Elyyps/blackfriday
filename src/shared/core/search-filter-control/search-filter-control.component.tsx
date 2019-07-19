@@ -14,6 +14,7 @@ export interface ISearchFilterControlComponentProps {
   getTotalShops: (filters: number) => void;
   numberOfFilters: number;
   onSelect: (checkbox: string[]) => void;
+  placeholder?: string;
 }
 
 const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
@@ -78,7 +79,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
     <div className={style["filter-control"]}>
       <div className={style["filter-control-head"]}>
         <Input
-          placeholder={"search"}
+          placeholder={props.placeholder && props.placeholder}
           classModify={"large"}
           icon={Search}
           onChange={(event: any) => {

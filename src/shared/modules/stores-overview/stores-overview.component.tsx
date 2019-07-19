@@ -9,6 +9,7 @@ import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { bannerProps } from "@app/api/core/banner";
 import { BannerComponent } from "@app/core/banner";
+import { ShadowCardComponent } from "@app/core/shadow-card";
 
 export interface IStoresOverviewComponentProps {}
 
@@ -101,7 +102,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
 
                 return (
                   <React.Fragment key={key}>
-                    <div className={styles["stores-overview__body__cards"]}>
+                    <div className={styles[`stores-overview__body__cards`]}>
                       <ShopCardComponent
                         title={item.title}
                         buttonLink={item.button.url}
@@ -113,11 +114,13 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                         range={item.timeLeftBar.value}
                         subtitle={item.timeLeftBar.text}
                       />
+                      <br />
                     </div>
-
                     {showAd && (
-                      <div style={{ width: "100%" }}>
-                        <BannerComponent {...bannerProps} />
+                      <div>
+                        <ShadowCardComponent>
+                          <BannerComponent {...bannerProps} />
+                        </ShadowCardComponent>
                         <br />
                       </div>
                     )}

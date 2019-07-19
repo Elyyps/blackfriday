@@ -19,8 +19,6 @@ const Routes: React.FunctionComponent = props => (
   <React.Fragment>
     <Route exact path="/" component={PagebuilderContainer} />
     <Route exact path="/stores-overview" component={PagebuilderContainer} />
-    <Route exact path="/ahmed-demo" component={StoresOverviewContainer} />
-
     <Route exact path="/stores-single" component={PagebuilderContainer} />
     <Route exact path="/deals-overview" component={PagebuilderContainer} />
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
