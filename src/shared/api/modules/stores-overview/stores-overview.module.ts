@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 import { generateShopCardData, generateShopCardData2, generateDemoData } from "@app/api/core/shop-card/endpoint";

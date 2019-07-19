@@ -6,7 +6,6 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
     {
       brand: "",
       category: "",
-      postedAt: "",
       title: "Bekbeddiscounter.nl",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
@@ -25,7 +24,6 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
     {
       brand: "",
       category: "",
-      postedAt: "",
       title: "Swiss Sense",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
@@ -43,7 +41,6 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
     {
       brand: "",
       category: "",
-      postedAt: "",
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
@@ -61,7 +58,6 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
     {
       brand: "",
       category: "",
-      postedAt: "",
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {

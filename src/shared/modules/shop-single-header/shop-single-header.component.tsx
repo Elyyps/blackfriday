@@ -76,7 +76,7 @@ const ShopSingleHeaderComponent = (props: ShopSingleHeaderModule) => {
                   <div className={styles["content__head"]}>
                     <h1 style={{ margin: "0" }}>{title}</h1>
                     <div className={`${styles["content__head__stars"]} uk-visible@s`}>
-                      <StarsRatingComponent numberStars={5} rating={rating.value} />
+                      <StarsRatingComponent rating={rating.value} />
                       {rating.text}
                     </div>
                   </div>
@@ -103,7 +103,7 @@ const ShopSingleHeaderComponent = (props: ShopSingleHeaderModule) => {
                         <IconComponent icon={IconDefault} size="14px" />
                       </a>
                       <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
-                        <StarsRatingComponent numberStars={5} rating={rating.value} />
+                        <StarsRatingComponent rating={rating.value} />
                         {rating.text}
                       </div>
                     </div>

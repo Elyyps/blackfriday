@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./checkbox-component.module.scss";
-import { Checkbox } from "@app/api/core/checkbox";
 
 export interface ICheckboxComponentProps {
   children: any;
@@ -14,11 +13,12 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
       <label className={style["checkbox__label"]}>
         <input
           type="checkbox"
+          role="checkbox"
+          aria-checked="false"
           className={style["checkbox__input"]}
           onChange={() => props.onClick(props.children)}
           checked={props.isChecked}
         />
-
         {props.children}
       </label>
     </div>

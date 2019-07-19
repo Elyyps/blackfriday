@@ -1,10 +1,8 @@
 import * as React from "react";
 import styles from "./see-more-card-component.module.scss";
 import { IconComponent } from "@app/prep/modules-prep/core";
-import { Link } from "@app/api/core/link";
 import { LinkComponent } from "../link";
 import { getArrow } from "@app/constants/icons";
-import { ShadowCardComponent } from "../shadow-card";
 
 export interface ISeeMoreCardComponentProps {
   buttonLink: string;

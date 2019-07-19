@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import styles from "./filter-bar-component.module.scss";
 import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
 import { SearchFilterControlComponent } from "@app/core/search-filter-control/search-filter-control.component";
@@ -11,7 +11,6 @@ import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Checkbox } from "@app/api/core/checkbox";
-import { useState } from "react";
 import CheckIcon from "@assets/icons/check.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
 
@@ -25,16 +24,16 @@ export interface IFilterBarComponentProps {
 }
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
-  const [filterSort, setFilterSort] = useState(false);
-  const [prevIcon, setPrevIcon] = useState(false);
-  const [filterContent, setFilterContent] = useState(false);
-  const [orderBy, setOrderBy] = useState("Relevant");
-  const [checkedStatusFilters, setCheckedStatusFilters] = useState<number>(0);
-  const [checkedCategoryFilters, setCheckedCategoryFilters] = useState<number>(0);
-  const [checkedBrandFilters, setCheckedBrandFilters] = useState<number>(0);
-  const [numberOfShopsFromCategory, setNumberOfShopsFromCategory] = useState<number>(0);
-  const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = useState<number>(0);
-  const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = useState<number>(0);
+  const [filterSort, setFilterSort] = React.useState(false);
+  const [prevIcon, setPrevIcon] = React.useState(false);
+  const [filterContent, setFilterContent] = React.useState(false);
+  const [orderBy, setOrderBy] = React.useState("Relevant");
+  const [checkedStatusFilters, setCheckedStatusFilters] = React.useState<number>(0);
+  const [checkedCategoryFilters, setCheckedCategoryFilters] = React.useState<number>(0);
+  const [checkedBrandFilters, setCheckedBrandFilters] = React.useState<number>(0);
+  const [numberOfShopsFromCategory, setNumberOfShopsFromCategory] = React.useState<number>(0);
+  const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = React.useState<number>(0);
+  const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = React.useState<number>(0);
 
   const filterSortChange = () => {
     setFilterSort(!filterSort);
@@ -108,6 +107,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           </span>
         </div>
         <div
+          role="button"
           className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}
           onClick={handleClickLAbel}
         >
@@ -192,7 +192,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           </DropdownComponent>
         </div>
         <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
-          <span onClick={clearFilters} style={{ color: "red", cursor: "pointer" }}>
+          <span role="link" onClick={clearFilters} style={{ color: "red", cursor: "pointer" }}>
             Verwijder merk filters ({checkedBrandFilters + checkedCategoryFilters + checkedStatusFilters})
           </span>
         </div>
@@ -219,7 +219,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
 
           <ul data-uk-dropdown="mode: click" className={styles["filter__sort-ul"]}>
             {props.filterBar.sortBy.map((value, key) => (
-              <li className={styles["filter__sort-li"]} key={key} onClick={() => onOrderBySelected(value)}>
+              <li role="link" className={styles["filter__sort-li"]} key={key} onClick={() => onOrderBySelected(value)}>
                 {value}
                 {value === orderBy && <IconComponent color={"red"} icon={CheckIcon} size={"15px"} />}
               </li>

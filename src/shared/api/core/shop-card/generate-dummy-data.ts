@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { ShopCard } from "./shop-card";
 import { generateDummyFilterBar } from "../filter-bar/generate-dummy-data";
 import { generateFilterBarData } from "../filter-bar/endpoint";
@@ -59,7 +60,7 @@ export function generateData(): ShopCard[] {
 
   return data;
 }
-export function generateDemoDummyData(): ShopCard[] {
+export const generateDemoDummyData = (): ShopCard[] => {
   const data: ShopCard[] = [];
   const brand = ["Appel", "Adidas", "Converse", "Guess", "JBL", "Only", "Test1", "Test2", "Test3"];
   const category = ["Audio", "Electronic", "Sport", "Mode", "Games"];
@@ -92,4 +93,4 @@ export function generateDemoDummyData(): ShopCard[] {
   }
 
   return data;
-}
+};

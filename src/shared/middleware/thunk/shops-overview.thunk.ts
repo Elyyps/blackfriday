@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { Dispatch } from "react-redux";
 import { shopsOverviewActions } from "@app/stores/stores-overview/stores-overview.action";
 import { filterShopsOverviewCards } from "@app/api/modules/stores-overview/endpoints";
