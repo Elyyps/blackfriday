@@ -64,6 +64,8 @@ export function getShopCards(
   }
 
   const slicedList = SortedCards.slice(skip, numberOfCards);
+  console.log(SortedCards.length);
+  console.log(slicedList.length);
 
   return { shopCards: slicedList, totalCards: SortedCards.length };
 }

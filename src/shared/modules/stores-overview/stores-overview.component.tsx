@@ -38,15 +38,19 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
   }, []);
 
   React.useEffect(() => {
-    props.getShopCards(props.shopCards, 0, selectedStatus, selectedCategories, selectedBrands, "");
+    setCurrentPage(0);
+
+    props.getShopCards(props.shopCards, currentPage, selectedStatus, selectedCategories, selectedBrands, "");
   }, [selectedStatus]);
 
   const applyOrderByFilter = (id: string) => {
-    props.getShopCards(props.shopCards, 0, selectedStatus, selectedCategories, selectedBrands, id);
+    setCurrentPage(0);
+    props.getShopCards(props.shopCards, currentPage, selectedStatus, selectedCategories, selectedBrands, id);
   };
 
   const applyFilters = () => {
-    props.getShopCards(props.shopCards, 0, selectedStatus, selectedCategories, selectedBrands, "");
+    setCurrentPage(0);
+    props.getShopCards(props.shopCards, currentPage, selectedStatus, selectedCategories, selectedBrands, "");
   };
 
   React.useEffect(() => {
