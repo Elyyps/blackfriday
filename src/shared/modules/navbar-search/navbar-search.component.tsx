@@ -1,10 +1,8 @@
 import * as React from "react";
 import styles from "./navbar-search-component.module.scss";
-import { CardButton, CardShop, CardProduct, IconComponent } from "@app/prep/modules-prep/core";
+import { IconComponent } from "@app/prep/modules-prep/core";
 import { SEARCH_ICON } from "@app/constants/icons";
-import CoolBlue from "@assets/cool-blue.svg";
 import Store from "@assets/icons/store.svg";
-import Oasis from "@assets/oasis.jpg";
 import { DealCardComponent } from "@app/core/deal-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
 import { DealCardModule } from "@app/api/core/deal-card";
@@ -19,71 +17,6 @@ export interface INavbarSearchComponentProps {
   shops?: ShopCard[];
   shopsTitle: string;
 }
-
-const SearchProducts = [
-  {
-    image: Oasis,
-    sub_title: "Coolblue",
-    title: "Apple AirPods 2 met draadloze oplaadcase",
-    sale: "Bespaar 40% ",
-    price: "€2.429",
-    old_price: "€3.429",
-    button_text: "Naar deals",
-    button_link: "#"
-  },
-  {
-    image: Oasis,
-    sub_title: "Coolblue",
-    title: "Apple AirPods 2 met draadloze oplaadcase",
-    sale: "Bespaar 40% ",
-    price: "€2.429",
-    old_price: "€3.429",
-    button_text: "Naar deals",
-    button_link: "#"
-  },
-  {
-    image: Oasis,
-    sub_title: "Coolblue",
-    title: "Apple AirPods 2 met draadloze oplaadcase",
-    sale: "Bespaar 40% ",
-    price: "€2.429",
-    old_price: "€3.429",
-    button_text: "Naar deals",
-    button_link: "#"
-  },
-  {
-    image: Oasis,
-    sub_title: "Coolblue",
-    title: "Apple AirPods 2 met draadloze oplaadcase",
-    sale: "Bespaar 40% ",
-    price: "€2.429",
-    old_price: "€3.429",
-    button_text: "Naar deals",
-    button_link: "#"
-  },
-  {
-    image: Oasis,
-    sub_title: "Coolblue",
-    title: "Apple AirPods 2 met draadloze oplaadcase",
-    sale: "Bespaar 40% ",
-    price: "€2.429",
-    old_price: "€3.429",
-    button_text: "Naar deals",
-    button_link: "#"
-  }
-];
-
-const SearchItems = [
-  {
-    title: "Amac",
-    sub_title: "Nu geldig",
-    range: ".7",
-    content: "Een selectie van bizarre vele aanbiedingen.",
-    image: CoolBlue,
-    button_text: "Naar deals",
-    button_link: "#"
-  }
-];
 
 const CardMoreDeals = (
   <SeeMoreCardComponent

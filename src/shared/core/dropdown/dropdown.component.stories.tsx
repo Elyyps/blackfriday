@@ -26,7 +26,7 @@ storiesOf("dropdown", module)
     <DropdownComponent buttonColor="outline" buttonVariant="primary-brand">
       <SearchFilterControlComponent
         checkbox={dropdownData.filterBar.brands}
-        onSelect={clea}
+        onSelect={jest.fn}
         applyFilter={() => ""}
         getCheckedFilters={() => ""}
         numberOfFilters={0}

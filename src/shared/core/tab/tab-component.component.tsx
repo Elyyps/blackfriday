@@ -1,3 +1,4 @@
+/* tslint:disable */
 import * as React from "react";
 import styles from "./tab-component-component.module.scss";
 import { Link } from "react-router-dom";

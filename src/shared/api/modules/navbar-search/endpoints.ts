@@ -1,6 +1,8 @@
 import { dummyNavbarSearchData, dummyNavbarSearchInitialData } from "./generate-dummy-data";
 
 export const getInitialNavbarSearchDummyData = () => dummyNavbarSearchInitialData;
+
+const LIMIT = 5;
 export const getFilteredNavbarSearchDummyData = (text: string) => {
   const data = dummyNavbarSearchData;
   const textUpperCase = text.toUpperCase();
@@ -14,7 +16,7 @@ export const getFilteredNavbarSearchDummyData = (text: string) => {
   );
 
   return {
-    shops: foundShops.slice(0, 5),
-    deals: foundDeals.slice(0, 5)
+    shops: foundShops.slice(0, LIMIT),
+    deals: foundDeals.slice(0, LIMIT)
   };
 };

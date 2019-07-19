@@ -1,3 +1,4 @@
+/* tslint:disable */
 import * as React from "react";
 
 import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
@@ -8,7 +9,6 @@ export interface IPlaygroundPedroComponentProps {}
 
 const PlaygroundPedroComponent = () => {
   const [value, setValue] = React.useState(0);
-  const prev = 0;
   const handleNavigation = (e: any) => {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 

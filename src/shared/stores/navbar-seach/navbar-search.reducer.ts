@@ -1,6 +1,6 @@
 import { Action } from "redux";
 
-import { REDUX, LOCALES } from "@app/constants";
+import { REDUX } from "@app/constants";
 import * as ActionType from "./navbar-search.types";
 import { ShopCardModule } from "@app/api/core/shop-card";
 import { DealCardModule } from "@app/api/core/deal-card";
