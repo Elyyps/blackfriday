@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./search-input-field-component.module.scss";
-import { InputType } from "zlib";
 import SearchIcon from "@assets/icons/search.svg";
 import { IconComponent } from "../icon";
 export interface ISearchInputFieldComponentProps {

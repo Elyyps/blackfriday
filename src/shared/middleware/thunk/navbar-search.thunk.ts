@@ -1,5 +1,4 @@
 import { Dispatch } from "react-redux";
-import { IAppState } from "@app/stores";
 import { getFilteredNavbarSearchDummyData } from "@app/api/modules/navbar-search/endpoints";
 import { navBarSearchActions } from "@app/stores/navbar-seach";
 

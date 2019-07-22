@@ -13,16 +13,17 @@ interface IInputProps {
   isSuccess?: boolean;
   label?: string;
   name?: string;
-  placeholder?: string;
   onChange?: any;
+  placeholder?: string;
+  value?: string;
 }
 
 const Input = (props: IInputProps) => {
-  const { name, placeholder, classModify, icon, label, isError, isSuccess } = props;
+  const { name, placeholder, value, classModify, icon, label, isError, isSuccess } = props;
   const inputClassName = classNames("input", {
     [`input--${classModify}`]: classModify
   });
-  const [value, setValue] = useState("");
+  const [internalValue, setValue] = useState("");
   const wrapperClassnames = classNames({
     ["error"]: isError,
     ["isIcon"]: icon,
@@ -30,14 +31,19 @@ const Input = (props: IInputProps) => {
   });
   const handelChange = (event: any) => {
     {
-      setValue(event.target.value);
-      props.onChange(event);
+      const newValue = event.target.value;
+      setValue(newValue);
+      props.onChange(newValue);
     }
   };
 
   const handelClear = () => {
     setValue("");
   };
+
+  React.useEffect(() => {
+    if (value) setValue(value);
+  }, [value]);
 
   return (
     <React.Fragment>
@@ -49,7 +55,7 @@ const Input = (props: IInputProps) => {
           placeholder={placeholder}
           className={inputClassName}
           name={name}
-          value={value}
+          value={internalValue}
         />
         {icon ? <IconComponent icon={icon} size={"15px"} /> : ""}
         {value && !isSuccess ? (

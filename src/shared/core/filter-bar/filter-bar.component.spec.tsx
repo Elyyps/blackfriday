@@ -1,25 +1,22 @@
-import * as React from "react";
+import React from "react";
+import { shallow } from "enzyme";
 
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-// import { generateDummyFilterBar } from "@app/api/core/filter-bar/filter-bar";
-// import { FilterBarComponent } from "./filter-bar.component";
-const notes = require("./filter-bar.md");
+import { FilterBarComponent } from "@app/core/filter-bar";
+import { generateFilterBarData } from "@app/api/core/filter-bar/endpoint";
 
-// storiesOf("FilterBar", module)
-//   .addDecorator(withA11y)
-//   .add(
-//     "Basic implementation",
-//     () => (
-//       <FilterBarComponent
-//         filterBar={generateDummyFilterBar()}
-//         onBrandChanged={() => ""}
-//         onStatusChanged={() => ""}
-//         onOrderByChanged={() => ""}
-//         onCategoryChanged={() => ""}
-//       />
-//     ),
-//     {
-//       notes
-//     }
-//   );
+describe("[FilterBarComponent]", () => {
+  it("should render without crashing", () => {
+    const renderedComponent = shallow(
+      <FilterBarComponent
+        applyFilter={jest.fn()}
+        filterBar={generateFilterBarData()}
+        onBrandChanged={jest.fn()}
+        onStatusChanged={jest.fn()}
+        onOrderByChanged={jest.fn()}
+        onCategoryChanged={jest.fn()}
+      />
+    );
+
+    expect(renderedComponent).toMatchSnapshot();
+  });
+});

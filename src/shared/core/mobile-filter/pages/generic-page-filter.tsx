@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./mobile-filter-pages.module.scss";
-
 import { IMobileFilterCheckBox } from "../mobile-filter-check-box";
 import { CheckboxComponent } from "@app/core/checkbox/checkbox.component";
 import { IMobileFilterItem } from "../mobile-filter-item";
@@ -16,7 +15,6 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
   const { filterItem, setCheckedItems, hideSearchBar } = props;
   const [items, setItems] = React.useState<IMobileFilterCheckBox[]>([]);
   const [filteredItems, setFilteredItems] = React.useState<IMobileFilterCheckBox[]>([]);
-  const [internalCheckedItems, setInternalCheckedItems] = React.useState<string[]>([]);
   const [currentFilter, setCurrentFilter] = React.useState<string>("");
 
   const initializeItems = () => {

@@ -7,14 +7,12 @@ import { generateHomePageHeader } from "../modules/homepage-header/generate-dumm
 import { generateDummyBannerModule } from "../modules/banner/generate-dummy-data";
 import { dummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
 import { generateDummyNewsletterModule } from "../modules/newsletter/generate-dummy-data";
-import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import {
   generateDummyBodyTextModule,
   generateHomepageBodytextDummyData,
   generateShopSingleDummydata
 } from "../modules/body-text/generate-dummy-data";
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
-import { MediumHeroComponent } from "@app/modules/medium-hero";
 import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
 import { generateDummyStoresOverview } from "../modules/stores-overview/generate-dummy-data";
 
@@ -33,8 +31,7 @@ export const pageList: PageModel[] = [
       dummyFeaturedShopsData(),
       generateDummyBannerModule(),
       dummyFeaturedDealsData(),
-      // generateDummyNewsletterModule(),
-      generateCtaSmallModule(),
+      generateNotYetImplemented("Call to action nieuwsbrief"),
       generateNotYetImplemented("Ook interessant om te lezen"),
       generateDummyBodyTextModule(generateHomepageBodytextDummyData()),
       generateDummyFooterData()

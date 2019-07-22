@@ -1,9 +1,5 @@
 import React from "react";
 import styles from "./mobile-filter-pages.module.scss";
-
-import { IMobileFilterCheckBox } from "../mobile-filter-check-box";
-import { CheckboxComponent } from "@app/core/checkbox/checkbox.component";
-import { IMobileFilterItem } from "../mobile-filter-item";
 import CheckIcon from "@assets/icons/check.svg";
 import { IconComponent } from "@app/core/icon";
 
@@ -28,7 +24,7 @@ const SingleFilterComponent = (props: ISingleFilterComponentProps) => {
         <div
           role="button"
           onClick={() => {
-            if (item === selectedItem) setCheckedItem('');
+            if (item === selectedItem) setCheckedItem("");
             else setCheckedItem(item);
           }}
           key={key}

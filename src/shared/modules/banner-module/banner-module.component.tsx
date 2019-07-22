@@ -6,12 +6,10 @@ export interface IBannerModuleComponentProps {
   bannerProps: IBannerComponentProps;
 }
 
-const BannerModuleComponent = (props: IBannerModuleComponentProps) => {
-  return (
-    <React.Fragment>
-      <BannerComponent {...bannerProps} />
-    </React.Fragment>
-  );
-};
+const BannerModuleComponent = (props: IBannerModuleComponentProps) => (
+  <React.Fragment>
+    <BannerComponent {...bannerProps} />
+  </React.Fragment>
+);
 
 export { BannerModuleComponent };

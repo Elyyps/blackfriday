@@ -1,0 +1,395 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[FilterBarComponent] should render without crashing 1`] = `
+<div
+  className="filter-bar"
+>
+  <div
+    className="filter-bar__filter-list"
+  >
+    <div
+      className=" filter-label  uk-visible@m "
+    >
+      Filters
+      <span>
+        <IconComponent
+          icon="hand-pointing.svg"
+          size="20px"
+        />
+      </span>
+    </div>
+    <div
+      className=" filter-label filter-label--mobile  uk-hidden@m"
+      onClick={[Function]}
+      role="button"
+    >
+      Filters
+      <span>
+        <IconComponent
+          icon="filter.svg"
+          size="16px"
+        />
+      </span>
+    </div>
+    <div
+      className=" filter-content   "
+    >
+      <div
+        className=" filter-content-label  uk-hidden@m"
+      >
+        <span
+          className="button-control"
+          onClick={[Function]}
+          role="button"
+        >
+          <IconComponent
+            color="#fff"
+            icon="cross.svg"
+            size="12px"
+          />
+        </span>
+        <div>
+          Filters
+          <span
+            className="filter-content-label-icon"
+          >
+            <IconComponent
+              icon="hand-pointing.svg"
+              size="16px"
+            />
+          </span>
+        </div>
+        <a
+          className="filter-content-clear"
+          onClick={[Function]}
+          role="button"
+        >
+          Wis alle filters
+        </a>
+      </div>
+    </div>
+    <div
+      className="uk-visible@m"
+    >
+      <DropdownComponent
+        buttonColor="outline"
+        buttonVariant="primary-brand"
+        orientation="bottom-right"
+        title="Status"
+      >
+        <ul
+          className="filter-bar-ul"
+        >
+          <li
+            className="filter-bar-li"
+            key="0"
+          >
+            <CheckboxComponent
+              isChecked={false}
+              onClick={[Function]}
+            >
+              Actie nog onbekend
+            </CheckboxComponent>
+            (
+            12
+            )
+          </li>
+          <li
+            className="filter-bar-li"
+            key="1"
+          >
+            <CheckboxComponent
+              isChecked={false}
+              onClick={[Function]}
+            >
+              Actie start over 5 dagen!
+            </CheckboxComponent>
+            (
+            12
+            )
+          </li>
+          <li
+            className="filter-bar-li"
+            key="2"
+          >
+            <CheckboxComponent
+              isChecked={false}
+              onClick={[Function]}
+            >
+              Nu geldig
+            </CheckboxComponent>
+            (
+            3
+            )
+          </li>
+          <li
+            className="filter-bar-li"
+            key="3"
+          >
+            <CheckboxComponent
+              isChecked={false}
+              onClick={[Function]}
+            >
+              Bijna Verlopen!
+            </CheckboxComponent>
+            (
+            3
+            )
+          </li>
+          <li
+            className="filter-bar-li"
+            key="4"
+          >
+            <CheckboxComponent
+              isChecked={false}
+              onClick={[Function]}
+            >
+              Actie verlopen
+            </CheckboxComponent>
+            (
+            3
+            )
+          </li>
+        </ul>
+      </DropdownComponent>
+    </div>
+    <div
+      className="uk-visible@m"
+    >
+      <DropdownComponent
+        buttonColor="outline"
+        buttonVariant="secondary"
+        orientation="bottom-left"
+        title="Categories"
+      >
+        <SearchFilterControlComponent
+          applyFilter={[MockFunction]}
+          checkbox={
+            Array [
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Audio",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Electronic",
+              },
+              Object {
+                "isChecked": false,
+                "label": 20,
+                "text": "Sport",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Mode",
+              },
+              Object {
+                "isChecked": false,
+                "label": 9,
+                "text": "Games",
+              },
+            ]
+          }
+          getCheckedFilters={[Function]}
+          getTotalShops={[Function]}
+          numberOfFilters={0}
+          onSelect={[MockFunction]}
+        />
+      </DropdownComponent>
+    </div>
+    <div
+      className="uk-visible@m"
+    >
+      <DropdownComponent
+        buttonColor="outline"
+        buttonVariant="secondary"
+        orientation="bottom-left"
+        title="Brands"
+      >
+        <SearchFilterControlComponent
+          applyFilter={[MockFunction]}
+          checkbox={
+            Array [
+              Object {
+                "isChecked": false,
+                "label": 0,
+                "text": "Appel ",
+              },
+              Object {
+                "isChecked": false,
+                "label": 255,
+                "text": "Adidas",
+              },
+              Object {
+                "isChecked": false,
+                "label": 22,
+                "text": "Converse",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Guess",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "JBL",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Only",
+              },
+              Object {
+                "isChecked": false,
+                "label": 0,
+                "text": "Test1 ",
+              },
+              Object {
+                "isChecked": false,
+                "label": 255,
+                "text": "Test2",
+              },
+              Object {
+                "isChecked": false,
+                "label": 22,
+                "text": "Test3",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Test4",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Test5",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Test6",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Test7",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Test8",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Test9",
+              },
+            ]
+          }
+          getCheckedFilters={[Function]}
+          getTotalShops={[Function]}
+          numberOfFilters={0}
+          onSelect={[MockFunction]}
+        />
+      </DropdownComponent>
+    </div>
+    <div
+      className="uk-visible@m"
+      style={
+        Object {
+          "marginLeft": "20px",
+        }
+      }
+    >
+      <span
+        onClick={[Function]}
+        role="link"
+        style={
+          Object {
+            "color": "red",
+            "cursor": "pointer",
+          }
+        }
+      >
+        Verwijder merk filters (
+        0
+        )
+      </span>
+    </div>
+  </div>
+  <div
+    className="filter-bar__sort"
+  >
+    <div
+      className="filter__sort-item"
+    >
+      <span>
+        <IconComponent
+          icon="store.svg"
+          size="20px"
+        />
+      </span>
+      0
+       winkels
+    </div>
+    <div
+      className="filter__sort-item"
+    >
+      Sorted by
+      <span
+        className="filter__sort-change"
+        onClick={[Function]}
+        role="button"
+      >
+        Relevant
+        <span
+          className=" filter__sort-change-icon  "
+        >
+          <IconComponent
+            icon="arrow-long-down.svg"
+            size="6px"
+          />
+        </span>
+      </span>
+      <ul
+        className="filter__sort-ul"
+        data-uk-dropdown="mode: click"
+      >
+        <li
+          className="filter__sort-li"
+          key="0"
+          onClick={[Function]}
+          role="link"
+        >
+          Newest
+        </li>
+        <li
+          className="filter__sort-li"
+          key="1"
+          onClick={[Function]}
+          role="link"
+        >
+          Relevant
+          <IconComponent
+            color="red"
+            icon="check.svg"
+            size="15px"
+          />
+        </li>
+        <li
+          className="filter__sort-li"
+          key="2"
+          onClick={[Function]}
+          role="link"
+        >
+          Price
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

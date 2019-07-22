@@ -1,7 +1,5 @@
 import React from "react";
 import style from "./checkbox-component.module.scss";
-import { Checkbox } from "@app/api/core/checkbox";
-import { bannerProps } from "@app/api/core/banner";
 
 export interface ICheckboxComponentProps {
   children: any;
@@ -16,11 +14,11 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
         <input
           aria-checked="true"
           type="checkbox"
+          role="checkbox"
           className={style["checkbox__input"]}
           onChange={() => props.onClick(props.children)}
           checked={props.isChecked}
         />
-
         {props.children}
       </label>
     </div>

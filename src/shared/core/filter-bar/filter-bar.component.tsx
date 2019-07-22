@@ -1,8 +1,7 @@
-import * as React from "react";
+import React from "react";
 import styles from "./filter-bar-component.module.scss";
 import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
 import { SearchFilterControlComponent } from "@app/core/search-filter-control/search-filter-control.component";
-import { IconComponent } from "@app/prep/modules-prep/core";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
@@ -12,7 +11,8 @@ import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Checkbox } from "@app/api/core/checkbox";
-import { useState } from "react";
+import CheckIcon from "@assets/icons/check.svg";
+import { IconComponent } from "@app/prep/modules-prep/core";
 
 export interface IFilterBarComponentProps {
   applyFilter: () => void;
@@ -24,19 +24,19 @@ export interface IFilterBarComponentProps {
 }
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
-  const [filterSort, setfilterSort] = useState(false);
-  const [prevIcon, setPrevIcon] = useState(false);
-  const [filterContent, setFilterContent] = useState(false);
-  const [orderBy, setOrderBy] = useState("Relevant");
-  const [checkedStatusFilters, setCheckedStatusFilters] = useState<number>(0);
-  const [checkedCategoryFilters, setCheckedCategoryFilters] = useState<number>(0);
-  const [checkedBrandFilters, setCheckedBrandFilters] = useState<number>(0);
-  const [numberOfShopsFromCategory, setNumberOfShopsFromCategory] = useState<number>(0);
-  const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = useState<number>(0);
-  const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = useState<number>(0);
+  const [filterSort, setFilterSort] = React.useState(false);
+  const [prevIcon, setPrevIcon] = React.useState(false);
+  const [filterContent, setFilterContent] = React.useState(false);
+  const [orderBy, setOrderBy] = React.useState("Relevant");
+  const [checkedStatusFilters, setCheckedStatusFilters] = React.useState<number>(0);
+  const [checkedCategoryFilters, setCheckedCategoryFilters] = React.useState<number>(0);
+  const [checkedBrandFilters, setCheckedBrandFilters] = React.useState<number>(0);
+  const [numberOfShopsFromCategory, setNumberOfShopsFromCategory] = React.useState<number>(0);
+  const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = React.useState<number>(0);
+  const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = React.useState<number>(0);
 
   const filterSortChange = () => {
-    setfilterSort(!filterSort);
+    setFilterSort(!filterSort);
   };
   const handleClickLAbel = () => {
     setFilterContent(!filterContent);
@@ -66,7 +66,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
     checkbox.forEach(option => {
       if (option.isChecked === true) {
         list.push(option.text.toUpperCase());
-        total += option.quantity ? option.quantity : 0;
+        total += option.label ? option.label : 0;
       }
     });
     setNumberOfShopsFromStatus(total);
@@ -107,6 +107,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           </span>
         </div>
         <div
+          role="button"
           className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}
           onClick={handleClickLAbel}
         >
@@ -132,7 +133,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
                 <IconComponent icon={HandPointing} size={"16px"} />
               </span>
             </div>
-            <a role="button" className={styles["filter-content-clear"]}>
+            <a role="button" className={styles["filter-content-clear"]} onClick={clearFilters}>
               Wis alle filters
             </a>
           </div>
@@ -150,7 +151,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
                   <CheckboxComponent isChecked={checkbox.isChecked} onClick={() => onStatusSelected(checkbox.text)}>
                     {checkbox.text}
                   </CheckboxComponent>
-                  {checkbox.quantity}
+                  ({checkbox.label})
                 </li>
               ))}
             </ul>
@@ -191,7 +192,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           </DropdownComponent>
         </div>
         <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
-          <span onClick={clearFilters} style={{ color: "red", cursor: "pointer" }}>
+          <span role="link" onClick={clearFilters} style={{ color: "red", cursor: "pointer" }}>
             Verwijder merk filters ({checkedBrandFilters + checkedCategoryFilters + checkedStatusFilters})
           </span>
         </div>
@@ -216,10 +217,11 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             </span>
           </span>
 
-          <ul data-uk-dropdown="mode: click" className={styles["filter-bar-ul"]}>
+          <ul data-uk-dropdown="mode: click" className={styles["filter__sort-ul"]}>
             {props.filterBar.sortBy.map((value, key) => (
-              <li className={styles["filter-bar-li"]} key={key} onClick={() => onOrderBySelected(value)}>
+              <li role="link" className={styles["filter__sort-li"]} key={key} onClick={() => onOrderBySelected(value)}>
                 {value}
+                {value === orderBy && <IconComponent color={"red"} icon={CheckIcon} size={"15px"} />}
               </li>
             ))}
           </ul>

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[SearchInputField] should render component without crashing 1`] = `
+<div
+  className="search-input-field"
+>
+  <div
+    className="search-input-field__icon"
+  >
+    <IconComponent
+      fillColor="#777"
+      icon="search.svg"
+      size="14px"
+    />
+  </div>
+  <input
+    onChange={[Function]}
+  />
+</div>
+`;

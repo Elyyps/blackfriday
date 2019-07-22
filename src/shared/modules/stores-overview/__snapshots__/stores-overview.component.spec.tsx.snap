@@ -1,0 +1,606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[StoresOverview] should render component without crashing 1`] = `
+<div
+  className="stores-overview"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "red",
+        "color": "white",
+        "fontSize": 15,
+        "position": "fixed",
+        "right": 16,
+        "top": 16,
+        "zIndex": 100,
+      }
+    }
+  />
+  <div
+    className="uk-container"
+  >
+    <div
+      className="stores-overview__header"
+    >
+      <FilterBarComponent
+        applyFilter={[Function]}
+        filterBar={
+          Object {
+            "brandFilterTitle": "Brands",
+            "brands": Array [
+              Object {
+                "isChecked": false,
+                "label": 0,
+                "text": "Appel ",
+              },
+              Object {
+                "isChecked": false,
+                "label": 255,
+                "text": "Adidas",
+              },
+              Object {
+                "isChecked": false,
+                "label": 22,
+                "text": "Converse",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Guess",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "JBL",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Only",
+              },
+              Object {
+                "isChecked": false,
+                "label": 0,
+                "text": "Test1 ",
+              },
+              Object {
+                "isChecked": false,
+                "label": 255,
+                "text": "Test2",
+              },
+              Object {
+                "isChecked": false,
+                "label": 22,
+                "text": "Test3",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Test4",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Test5",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Test6",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Test7",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Test8",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Test9",
+              },
+            ],
+            "categories": Array [
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Audio",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Electronic",
+              },
+              Object {
+                "isChecked": false,
+                "label": 20,
+                "text": "Sport",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Mode",
+              },
+              Object {
+                "isChecked": false,
+                "label": 9,
+                "text": "Games",
+              },
+            ],
+            "categoryFilterTitle": "Categories",
+            "sortBy": Array [
+              "Newest",
+              "Relevant",
+              "Price",
+            ],
+            "sortByFilterTitle": "Sorted by",
+            "status": Array [
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Actie nog onbekend",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Actie start over 5 dagen!",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Nu geldig",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Bijna Verlopen!",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Actie verlopen",
+              },
+            ],
+            "statusFilterTitle": "Status",
+          }
+        }
+        onBrandChanged={[Function]}
+        onCategoryChanged={[Function]}
+        onOrderByChanged={[Function]}
+        onStatusChanged={[Function]}
+      />
+    </div>
+    <div
+      className="stores-overview__body"
+    >
+      <div
+        className="stores-overview__body__list"
+      >
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content1"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.5225367497141384}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie nog onbekend"
+            title="Item n: 1"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content2"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.41264156219905246}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie nog onbekend"
+            title="Item n: 2"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content3"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.5016433512263758}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie nog onbekend"
+            title="Item n: 3"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content4"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.11076079280959794}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie nog onbekend"
+            title="Item n: 4"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content5"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.872133392860093}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie nog onbekend"
+            title="Item n: 5"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content1"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.30947790356452254}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: 1"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content2"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.16665745075209282}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: 2"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content3"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.898395882510197}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: 3"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content4"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.4310147042736008}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: 4"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content5"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.39201160136893365}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: 5"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content1"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.19259265167979067}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: 1"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content2"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.2654890064320299}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: 2"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content3"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.4269670377868091}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: 3"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content4"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.5072587691970698}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: 4"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content5"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.824544780543339}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: 5"
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
+          <BannerComponent
+            buttonLink="#"
+            buttonTitle="Meer deals"
+            image={
+              Object {
+                "alt": "alt text oasis",
+                "src": "oasis.jpg",
+              }
+            }
+            label="22 t/m 26 nov."
+            logo={
+              Object {
+                "alt": "alt text CoolBlue",
+                "src": "cool-blue.svg",
+              }
+            }
+            text="Een selectie van bizarre aanbiedingen. Meer info"
+            title="Black Friday bij Coolblue"
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content1"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.6661759589643144}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: 1"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content2"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.265630185375783}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: 2"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content3"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.3352001372054354}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: 3"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content4"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.332279970875885}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: 4"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content5"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.0884637201889873}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: 5"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content1"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.8826203830143191}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: 1"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content2"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.7902590380714767}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: 2"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content3"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.7184526885867806}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: 3"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content4"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.9596066332828161}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: 4"
+          />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content5"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.7709805153390024}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: 5"
+          />
+        </div>
+        <BottomScrollListener
+          debounce={200}
+          offset={0}
+          onBottom={[Function]}
+        />
+      </div>
+      <div />
+      <div
+        style={
+          Object {
+            "margin": "auto",
+            "paddingTop": "30px",
+            "width": "50px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

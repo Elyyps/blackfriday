@@ -1,3 +1,4 @@
+/* tslint:disable */
 import React, { useState, useEffect } from "react";
 import style from "./search-filter-control-component.module.scss";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
@@ -18,7 +19,6 @@ export interface ISearchFilterControlComponentProps {
 
 const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
   const [checkboxList, setCheckboxList] = useState<Checkbox[]>([]);
-  const [numberOfShops, setNumberOfShops] = useState<number>(0);
 
   const searchFilter = (value: string) => {
     const list: Checkbox[] = [];
@@ -59,7 +59,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
     checkbox.forEach(option => {
       if (option.isChecked === true) {
         list.push(option.text.toUpperCase());
-        total += option.quantity ? option.quantity : 0;
+        total += option.label ? option.label : 0;
       }
     });
     props.getTotalShops(total);
@@ -76,8 +76,8 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
   }, [props.checkbox]);
 
   return (
-    <div className={style["filter-modal"]}>
-      <div className={style["filter-modal-head"]}>
+    <div className={style["filter-control"]}>
+      <div className={style["filter-control-head"]}>
         <Input
           placeholder={"search"}
           classModify={"large"}
@@ -88,22 +88,22 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
         />
       </div>
 
-      <div className={style["filter-modal-body"]}>
+      <div className={style["filter-control-body"]}>
         <div className="uk-grid uk-child-width-1-2@s">
           {checkboxList &&
             checkboxList.map((checkbox, key) => (
-              <div key={key} className={style["filter-modal-item"]}>
+              <div key={key} className={style["filter-control-item"]}>
                 <CheckboxComponent isChecked={checkbox.isChecked} onClick={() => onSelected(checkbox.text)}>
                   {checkbox.text}
                 </CheckboxComponent>
-                <span>({checkbox.quantity})</span>
+                ({checkbox.label})
               </div>
             ))}
         </div>
       </div>
 
-      <div className={style["filter-modal-bottom"]}>
-        <ul className={style["filter-modal-bottom__action"]}>
+      <div className={style["filter-control-bottom"]}>
+        <ul className={style["filter-control-bottom__action"]}>
           <li>
             <Link to="#" onClick={clearFilters}>
               Verwijder merk filters ({props.numberOfFilters})

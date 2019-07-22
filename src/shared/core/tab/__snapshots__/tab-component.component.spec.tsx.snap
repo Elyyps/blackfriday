@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[tabComponent] should render component without crashing 1`] = `
+<Fragment>
+  <div
+    className="tab"
+  >
+    <ul
+      className="uk-tab__list"
+    >
+      <li
+        className="tab__selected"
+        onClick={[Function]}
+      >
+        <Link
+          to="#"
+        >
+          Winkels
+        </Link>
+      </li>
+      <li
+        className=""
+        onClick={[Function]}
+      >
+        <Link
+          to="#"
+        >
+          Productdeals
+        </Link>
+      </li>
+    </ul>
+  </div>
+  <Connect(StoresOverviewComponent) />
+</Fragment>
+`;

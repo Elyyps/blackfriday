@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import styles from "./arrow-panel-component.module.scss";
 import { IconComponent, ImageComponent } from "@app/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";

@@ -1,12 +1,20 @@
-import * as React from "react";
-
-import { storiesOf } from "@storybook/react";
-import { withA11y } from "@storybook/addon-a11y";
-//import { withProvider } from "@app/modules/core/storybook-provider";
+import React from "react";
+import { shallow } from "enzyme";
 import { StoresOverviewComponent } from "./stores-overview.component";
+import { generateDummyStoresOverview } from "@app/api/modules/stores-overview/generate-dummy-data";
 
-storiesOf("StoresOverview", module).addDecorator(withA11y);
-//.addDecorator(withProvider)
-//.add("Basic implementation", () => (
-//  <StoresOverviewComponent />
-//));
+const storesOvervieData = generateDummyStoresOverview();
+describe("[StoresOverview]", () => {
+  it("should render component without crashing", () => {
+    const renderedComponent = shallow(
+      <StoresOverviewComponent
+        filterBar={storesOvervieData.filterBar}
+        shopCards={storesOvervieData.shopCards}
+        getShopCards={jest.fn()}
+        setShopCards={jest.fn()}
+        totalCards={1}
+      />
+    );
+    expect(renderedComponent).toMatchSnapshot();
+  });
+});
