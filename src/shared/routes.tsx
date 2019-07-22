@@ -24,7 +24,7 @@ const Routes: React.FunctionComponent = props => (
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-single" component={PagebuilderContainer} />
-    <Route exact path="/ahmed" component={TabComponentComponent} />
+    <Route exact path="/tab" component={TabComponentComponent} />
     <Route exact path="/design" component={WinkleoverviewComponent} />
 
     <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />

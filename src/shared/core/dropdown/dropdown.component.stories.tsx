@@ -21,16 +21,16 @@ storiesOf("dropdown", module)
     {
       notes
     }
-  )
-  .add("Implementation with Brands Filter ", () => (
-    <DropdownComponent buttonColor="outline" buttonVariant="primary-brand">
-      <SearchFilterControlComponent
-        checkbox={dropdownData.filterBar.brands}
-        onSelect={clea}
-        applyFilter={() => ""}
-        getCheckedFilters={() => ""}
-        numberOfFilters={0}
-        getTotalShops={() => ""}
-      />
-    </DropdownComponent>
-  ));
+  );
+// .add("Implementation with Brands Filter ", () => (
+//   <DropdownComponent buttonColor="outline" buttonVariant="primary-brand">
+//     <SearchFilterControlComponent
+//       checkbox={dropdownData.filterBar.brands}
+//       onSelect={jest.fn}
+//       applyFilter={() => ""}
+//       getCheckedFilters={() => ""}
+//       numberOfFilters={0}
+//       getTotalShops={() => ""}
+//     />
+//   </DropdownComponent>
+// ));
