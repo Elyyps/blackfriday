@@ -9,6 +9,7 @@ import { Button } from "../button";
 import { GenericPageFilterComponent } from "./pages/generic-page-filter";
 import { IMobileFilterItem } from "./mobile-filter-item";
 import { SingleFilterComponent } from "./pages/single-page-filter";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
@@ -17,7 +18,7 @@ export interface IMobileFilterComponentProps {
   totalStores: number;
 }
 
-const MobileFilterComponent = (props: IMobileFilterComponentProps) => {
+const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
   const initialTitle = "Filters";
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
@@ -135,4 +136,5 @@ const MobileFilterComponent = (props: IMobileFilterComponentProps) => {
   );
 };
 
+const MobileFilterComponent = injectIntl(component);
 export { MobileFilterComponent };

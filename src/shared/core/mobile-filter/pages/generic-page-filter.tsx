@@ -8,11 +8,12 @@ import { SearchInputFieldComponent } from "@app/core/search-input-field";
 export interface IGenericPageFilterComponentProps {
   filterItem: IMobileFilterItem;
   hideSearchBar?: boolean;
+  placeholder?: string;
   setCheckedItems: (items: string[]) => void;
 }
 
 const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => {
-  const { filterItem, setCheckedItems, hideSearchBar } = props;
+  const { filterItem, setCheckedItems, hideSearchBar, placeholder } = props;
   const [items, setItems] = React.useState<IMobileFilterCheckBox[]>([]);
   const [filteredItems, setFilteredItems] = React.useState<IMobileFilterCheckBox[]>([]);
   const [currentFilter, setCurrentFilter] = React.useState<string>("");
@@ -27,7 +28,6 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
   };
   React.useEffect(() => {
     initializeItems();
-
     setCurrentFilter("");
   }, []);
   const setNewCheckedItems = () => {
@@ -65,7 +65,7 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
           onChange={value => {
             filterByText(value);
           }}
-          placeholder="Merk zoeken"
+          placeholder={placeholder}
         />
       )}
       {filteredItems.map((item: IMobileFilterCheckBox, key: number) => (
