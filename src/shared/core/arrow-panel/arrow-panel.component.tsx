@@ -33,7 +33,6 @@ const ArrowPanelComponent = ({ title, items, icon, onClick }: IArrowPanelCompone
   };
   React.useEffect(() => {
     setItems(items);
-
   }, [items]);
 
   return (
@@ -53,7 +52,6 @@ const ArrowPanelComponent = ({ title, items, icon, onClick }: IArrowPanelCompone
       <IconComponent icon={CHEVRON_RIGHT} size="12px" />
       <div className={styles["arrow-panel__body"]}>
         {!icon && <div className={styles["arrow-panel__list-items"]}>{labelItems}</div>}
-        <IconComponent icon={CHEVRON_RIGHT} size="12px" />
       </div>
     </div>
   );

@@ -24,6 +24,7 @@
       background-color: #f0f0f0;
       height: 40px;
       width: 100%;
+      font-weight: 600;
     }
     &__item {
       padding: 16px 0;
@@ -40,9 +41,10 @@
     width: 100%;
     text-align: center;
     background-color: #1c1c1c;
+    font-weight: 600;
     a {
       color: white;
-      font-weight: 600;
+      font-weight: 500;
       text-decoration: underline;
     }
     &__title {
