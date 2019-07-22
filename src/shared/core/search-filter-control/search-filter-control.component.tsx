@@ -1,3 +1,4 @@
+/* tslint:disable */
 import React, { useState, useEffect } from "react";
 import style from "./search-filter-control-component.module.scss";
 import { CheckboxComponent } from "../checkbox/checkbox.component";

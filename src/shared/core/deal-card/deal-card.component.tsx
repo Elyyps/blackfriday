@@ -4,7 +4,6 @@ import { ImageComponent, IconComponent } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
 import IconHot from "@assets/icons/hot.svg";
 import { Button } from "../button";
-import { string } from "prop-types";
 import { ShadowCardComponent } from "../shadow-card";
 
 interface IDealCardComponentProps {
