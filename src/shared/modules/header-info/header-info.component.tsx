@@ -4,7 +4,7 @@ import { ImageComponent } from "@app/core/image";
 import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
 import { ShareSocialComponent } from "@app/core/share-social";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
-import { generateShareSocialModule } from "@app/api/modules/share-social/endpoints";
+import { generateShareSocialModule } from "@app/api/core/share-social/endpoints";
 import { Badge } from "@app/core/badge";
 
 import ShareSVG from "@assets/icons/share.svg";

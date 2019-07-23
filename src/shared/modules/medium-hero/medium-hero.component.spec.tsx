@@ -3,15 +3,11 @@ import { shallow } from "enzyme";
 import { MediumHeroComponent } from "./medium-hero.component";
 
 // Dummy Data
-import { headerContent } from "@app/api/core/header-content";
-import Oasis from "@assets/oasis.jpg";
-import { uniqueSellingPoints } from "@app/api/core/usp";
+import { generateMediumHeroDummyData } from "@app/api/modules/medium-hero/generate-dummy-data";
 
 describe("[MediumHero]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(
-      <MediumHeroComponent headerContent={headerContent} image={Oasis} usps={uniqueSellingPoints} />
-    );
+    const renderedComponent = shallow(<MediumHeroComponent mediumHeroModule={generateMediumHeroDummyData()} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

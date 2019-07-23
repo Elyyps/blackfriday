@@ -1,14 +1,14 @@
 import * as React from "react";
-import { BannerComponent, IBannerComponentProps } from "@app/core/banner";
-import { bannerProps } from "@app/api/core/banner";
+import { BannerComponent } from "@app/core/banner";
+import { BannerModule } from "@app/api/modules/banner/banner.module";
 
 export interface IBannerModuleComponentProps {
-  bannerProps: IBannerComponentProps;
+  bannerModule: BannerModule;
 }
 
 const BannerModuleComponent = (props: IBannerModuleComponentProps) => (
   <React.Fragment>
-    <BannerComponent {...bannerProps} />
+    <BannerComponent bannerModule={props.bannerModule} />
   </React.Fragment>
 );
 

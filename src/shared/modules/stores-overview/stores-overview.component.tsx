@@ -7,8 +7,8 @@ import { generateShopsOverviewData } from "@app/api/modules/stores-overview/endp
 import BottomScrollListener from "react-bottom-scroll-listener";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
-import { bannerProps } from "@app/api/core/banner";
 import { BannerComponent } from "@app/core/banner";
+import { generateDummyBannerModule } from "@app/api/modules/banner/generate-dummy-data";
 
 export interface IStoresOverviewComponentProps {}
 
@@ -117,7 +117,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
 
                     {showAd && (
                       <div style={{ width: "100%" }}>
-                        <BannerComponent {...bannerProps} />
+                        <BannerComponent bannerModule={generateDummyBannerModule()} />
                         <br />
                       </div>
                     )}

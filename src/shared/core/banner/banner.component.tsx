@@ -3,6 +3,7 @@ import styles from "./banner-component.module.scss";
 import { Button, ImageComponent } from "@app/core/";
 import { Link } from "react-router-dom";
 import IconDefault from "@assets/icons/link.svg";
+import { BannerModule } from "@app/api/modules/banner/banner.module";
 
 export type BannerVariant = "default" | "small";
 
@@ -12,28 +13,23 @@ export type ImageType = {
 };
 
 export interface IBannerComponentProps {
-  buttonLink?: any;
-  buttonTitle?: string;
-  image?: ImageType;
-  label?: string;
-  logo?: ImageType;
-  text?: any;
-  title?: string;
-  variant?: BannerVariant;
+  bannerModule: BannerModule;
 }
 
 const BannerComponent = (props: IBannerComponentProps) => {
-  const classModify = `banner--${props.variant || "default"}`;
+  const { variant, buttonLink, image, label, title, text, buttonTitle, logo } = props.bannerModule;
+
+  const classModify = `banner--${variant || "default"}`;
 
   return (
     <div className={`uk-container ${styles["container"]}`}>
       <div className={styles[classModify]}>
         <div className={styles["holder"]}>
           <div className={styles["image"]}>
-            <Link to={props.buttonLink}>
+            <Link to={buttonLink}>
               <ImageComponent
-                alt={props.image && props.image.alt}
-                src={props.image && props.image.src}
+                alt={image && image.alt}
+                src={image && image.src}
                 errorImage={IconDefault}
                 errorMessage="Custom error message"
               />
@@ -41,23 +37,23 @@ const BannerComponent = (props: IBannerComponentProps) => {
           </div>
           <div className={styles["body"]}>
             <div className={styles["content"]}>
-              <div className={styles["label"]}>{props.label}</div>
-              <h2 className={styles["title"]}>{props.title}</h2>
-              {props.text}
+              <div className={styles["label"]}>{label}</div>
+              <h2 className={styles["title"]}>{title}</h2>
+              {text}
             </div>
             <div className={styles["footer"]}>
-              {props.buttonTitle && (
+              {buttonTitle && (
                 <Button
-                  title={props.buttonTitle}
-                  onClick={props.buttonLink}
+                  title={buttonTitle}
+                  onClick={buttonLink}
                   variant={"primary-default"}
                   iconStyle={"filled"}
                   icon={IconDefault}
                 />
               )}
-              {props.logo && (
+              {logo && (
                 <div className={styles["logo"]}>
-                  <ImageComponent src={props.logo.src} alt={props.logo.alt} />
+                  <ImageComponent src={logo.src} alt={logo.alt} />
                 </div>
               )}
             </div>

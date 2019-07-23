@@ -1,17 +1,15 @@
 import * as React from "react";
 import styles from "./medium-hero-component.module.scss";
-import { HeaderContentComponent, IHeaderContentComponentProps } from "@app/core/header-content";
+import { HeaderContentComponent } from "@app/core/header-content";
 import { USP } from "@app/core";
-import { UspModule } from "@app/api/core/usp";
+import { MediumHeroModule } from "@app/api/modules/medium-hero/medium-hero";
 
 export interface IMediumHeroComponentProps {
-  headerContent?: IHeaderContentComponentProps;
-  image?: string;
-  usps: UspModule;
+  mediumHeroModule: MediumHeroModule;
 }
 
 const MediumHeroComponent = (props: IMediumHeroComponentProps) => {
-  const { image, usps, headerContent } = props;
+  const { image, usps, headerContent } = props.mediumHeroModule;
 
   return (
     <div className={styles["medium-hero"]}>

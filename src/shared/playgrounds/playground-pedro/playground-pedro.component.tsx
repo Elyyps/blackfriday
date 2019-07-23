@@ -26,7 +26,7 @@ const PlaygroundPedroComponent = () => {
       <div className={styles["playground-pk__header"]}>
         <PageProgressBarComponent value={value} />
       </div>
-      <ShopSingleHeaderComponent {...dummyShopSingleHeaderData} />;
+      <ShopSingleHeaderComponent shopSingleHeaderModule={dummyShopSingleHeaderData} />;
     </div>
   );
 };
