@@ -10,8 +10,8 @@ describe("[StoresOverview]", () => {
       <StoresOverviewComponent
         filterBar={storesOvervieData.filterBar}
         shopCards={storesOvervieData.shopCards}
-        getShopCards={() => ""}
-        setShopCards={() => ""}
+        getShopCards={jest.fn()}
+        setShopCards={jest.fn()}
         totalCards={1}
       />
     );

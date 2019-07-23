@@ -7,12 +7,12 @@ describe("[FilterBar]", () => {
   it("should render component without crashing", () => {
     const renderedComponent = shallow(
       <FilterBarComponent
-        applyFilter={() => ""}
+        applyFilter={jest.fn()}
         filterBar={generateFilterBarData()}
-        onBrandChanged={() => ""}
-        onStatusChanged={() => ""}
-        onOrderByChanged={() => ""}
-        onCategoryChanged={() => ""}
+        onBrandChanged={jest.fn()}
+        onStatusChanged={jest.fn()}
+        onOrderByChanged={jest.fn()}
+        onCategoryChanged={jest.fn()}
       />
     );
     expect(renderedComponent).toMatchSnapshot();

@@ -12,9 +12,9 @@ const CheckboxComponent = (props: ICheckboxComponentProps) => (
     <div className={style["checkbox"]}>
       <label className={style["checkbox__label"]}>
         <input
+          aria-checked="true"
           type="checkbox"
           role="checkbox"
-          aria-checked="false"
           className={style["checkbox__input"]}
           onChange={() => props.onClick(props.children)}
           checked={props.isChecked}
