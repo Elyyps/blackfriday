@@ -3,7 +3,7 @@
 exports[`[Button] Should render button with icon left and full width without crashing 1`] = `
 <Fragment>
   <button
-    className="button button--primary-default button--fullWidth"
+    className="button button--primary-default button--primary-default--icon-filled button--fullWidth"
     name="Primary"
     style={
       Object {
@@ -32,7 +32,7 @@ exports[`[Button] Should render button with icon left and full width without cra
 exports[`[Button] Should render button with icon right without crashing 1`] = `
 <Fragment>
   <button
-    className="button button--primary-default"
+    className="button button--primary-default button--primary-default--icon-filled"
     name="Primary"
     style={
       Object {
@@ -61,7 +61,7 @@ exports[`[Button] Should render button with icon right without crashing 1`] = `
 exports[`[Button] Should render button without icon without crashing 1`] = `
 <Fragment>
   <button
-    className="button button--primary-default"
+    className="button button--primary-default button--primary-default--icon-filled"
     name="Primary"
     style={
       Object {
@@ -82,7 +82,7 @@ exports[`[Button] Should render button without icon without crashing 1`] = `
 exports[`[Button] Should render button without text (FAB) without crashing 1`] = `
 <Fragment>
   <button
-    className="button button--primary-default button--FAB"
+    className="button button--primary-default button--FAB button--primary-default--icon-filled"
     style={
       Object {
         "height": undefined,
