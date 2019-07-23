@@ -2,30 +2,47 @@ import React from "react";
 import styles from "./mobile-filter-pages.module.scss";
 import CheckIcon from "@assets/icons/check.svg";
 import { IconComponent } from "@app/core/icon";
+import { SearchInputFieldComponent } from "@app/core/search-input-field";
 
 export interface ISingleFilterComponentProps {
   hideSearchBar?: boolean;
   items: string[];
+  placeholder?: string;
   selectedItem: string;
   setCheckedItem: (item: string) => void;
 }
 
 const SingleFilterComponent = (props: ISingleFilterComponentProps) => {
-  const { items, selectedItem, hideSearchBar, setCheckedItem } = props;
+  const { items, placeholder, selectedItem, hideSearchBar, setCheckedItem } = props;
+  const [currentFilter, setCurrentFilter] = React.useState<string>("");
+  const [filteredItems, setFilteredItems] = React.useState<string[]>([]);
+
+  const filterByText = (text: string) => {
+    const textUpperCase = text.toUpperCase();
+    const newFilteredItems: string[] = items.filter(item => item.toUpperCase().includes(textUpperCase));
+    setFilteredItems(newFilteredItems);
+    setCurrentFilter(text);
+  };
+  React.useEffect(() => {
+    setFilteredItems(items);
+  }, []);
 
   return (
     <div className={styles["mobile-filter-pages__list"]}>
       {!hideSearchBar && (
-        <div className={styles["mobile-filter-pages__list__header"]}>
-          <></>
-        </div>
+        <SearchInputFieldComponent
+          value={currentFilter}
+          onChange={value => {
+            filterByText(value);
+          }}
+          placeholder={placeholder}
+        />
       )}
-      {items.map((item: any, key: number) => (
+      {filteredItems.map((item: string, key: number) => (
         <div
           role="button"
           onClick={() => {
-            if (item === selectedItem) setCheckedItem("");
-            else setCheckedItem(item);
+            setCheckedItem(item);
           }}
           key={key}
           className={styles["mobile-filter-pages__list__item"]}

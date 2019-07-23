@@ -111,6 +111,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
               hideSearchBar={!currentFilterItem.hasSearchBar}
               items={currentFilterItem.items}
               selectedItem={currentFilterItem.selectedItems[0]}
+              placeholder={currentFilterItem.searchBarPlaceholder}
               setCheckedItem={(selectedItem: string) => {
                 const selectedItemArray = [];
                 selectedItemArray.push(selectedItem);
@@ -124,6 +125,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
               setCheckedItems={(selectedItems: string[]) => {
                 setSelectedItems(currentFilterItem, selectedItems);
               }}
+              placeholder={currentFilterItem.searchBarPlaceholder}
               filterItem={currentFilterItem}
             />
           )}
