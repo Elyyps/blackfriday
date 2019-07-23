@@ -1,42 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[BannerModule] should render component without crashing 1`] = `
-<div
-  className="banner-module"
->
-  <div
-    className="holder"
-    style={
+<Fragment>
+  <BannerComponent
+    buttonLink="#"
+    buttonTitle="Meer deals"
+    image={
       Object {
-        "backgroundColor": "#eee",
-        "paddingBottom": "72px",
-        "paddingTop": "72px",
+        "alt": "alt text oasis",
+        "src": "oasis.jpg",
       }
     }
-  >
-    <div
-      className="uk-container container"
-    >
-      <BannerComponent
-        buttonLink="#"
-        buttonTitle="Meer deals"
-        image={
-          Object {
-            "alt": "alt text oasis",
-            "src": "oasis.jpg",
-          }
-        }
-        label="22 t/m 26 nov."
-        logo={
-          Object {
-            "alt": "alt text CoolBlue",
-            "src": "cool-blue.svg",
-          }
-        }
-        text="Een selectie van bizarre aanbiedingen. Meer info"
-        title="Black Friday bij Coolblue"
-      />
-    </div>
-  </div>
-</div>
+    label="22 t/m 26 nov."
+    logo={
+      Object {
+        "alt": "alt text CoolBlue",
+        "src": "cool-blue.svg",
+      }
+    }
+    text="Een selectie van bizarre aanbiedingen. Meer info"
+    title="Black Friday bij Coolblue"
+  />
+</Fragment>
 `;
