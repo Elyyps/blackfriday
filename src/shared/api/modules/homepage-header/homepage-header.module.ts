@@ -1,4 +1,4 @@
-import { ArrowPanel } from "@app/api/core/arrow-panel";
+import { ArrowPanel } from "@app/api/core/arrow-panel/arrow-panel";
 import { Slide } from "@app/api/core/slide";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 
