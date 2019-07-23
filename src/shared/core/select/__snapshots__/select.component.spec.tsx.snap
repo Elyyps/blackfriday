@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Select] should render component without crashing 1`] = `
+<div
+  className="select"
+>
+  <select
+    className="select-title"
+    onChange={[Function]}
+    onSelect={[Function]}
+  >
+    <option
+      value="newest"
+    >
+      newest
+    </option>
+    <option
+      value="price"
+    >
+      price
+    </option>
+    <option
+      value="relevance"
+    >
+      relevance
+    </option>
+  </select>
+  <span
+    className=" select-icon "
+  >
+    <IconComponent
+      icon="arrow-long-down.svg"
+      size="12px"
+    />
+  </span>
+</div>
+`;
