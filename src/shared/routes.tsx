@@ -4,9 +4,7 @@ import { PlaygroundAhmedComponent } from "./playgrounds/playground-ahmed/playgro
 import { PlaygroundPedroComponent } from "./playgrounds/playground-pedro/playground-pedro.component";
 import { PlaygroundDanieleComponent } from "./playgrounds/playground-daniele/playground-daniele.component";
 import { PlaygroundMartijnComponent } from "./playgrounds/playground-martijn/playground-martijn.component";
-import { WinkleoverviewComponent } from "@app/prep/pages-prep/winkleoverview/winkleoverview.component";
 import { PagebuilderContainer } from "./core/pagebuilder";
-import { TabComponentComponent } from "./core/tab";
 
 const Routes: React.FunctionComponent = () => (
   <React.Fragment>
@@ -17,8 +15,6 @@ const Routes: React.FunctionComponent = () => (
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-single" component={PagebuilderContainer} />
-    <Route exact path="/ahmed" component={TabComponentComponent} />
-    <Route exact path="/design" component={WinkleoverviewComponent} />
 
     <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
     <Route exact path="/playground-pedro" component={PlaygroundPedroComponent} />

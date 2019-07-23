@@ -2,7 +2,7 @@ import { CtaSmallModule } from "./cta-small.module";
 import IconDefault from "@assets/icons/sign.svg";
 
 export const generateCtaSmallModule = (): CtaSmallModule => ({
-  buttonClick: () => (location.href = "#"),
+  buttonLink: "/deals-overview",
   buttonTitle: "Naar deals",
   text: "Niet helemaal wat je zoekt? Geeft niks want we hebben meer!",
   icon: IconDefault,
