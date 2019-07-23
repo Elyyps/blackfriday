@@ -12,6 +12,8 @@ export interface IModuleComponentProps {
   wordPressModule: WordPressPostModule;
 }
 
+const Z_INDEX_MAX = 100;
+
 const ModuleComponent = (props: IModuleComponentProps) => {
   const component = getComponent(props.wordPressModule);
   const isMobile = useIsMobile(props.isMobile);
@@ -31,8 +33,22 @@ const ModuleComponent = (props: IModuleComponentProps) => {
   };
 
   return (
-    <div className={styles["contentComponent"]} style={styleMainContainerModule}>
-      {component}
+    <div
+      style={{
+        marginTop: props.wordPressModule.topMargin,
+        marginBottom: props.wordPressModule.bottomMargin,
+        position: "relative",
+        zIndex:
+          props.wordPressModule.name === "NavBarModule" || props.wordPressModule.name === "gallerySlider"
+            ? Z_INDEX_MAX
+            : props.wordPressModule.name === "RecipeDetailModule"
+            ? Z_INDEX_MAX - 1
+            : "auto"
+      }}
+    >
+      <div className={styles["contentComponent"]} style={styleMainContainerModule}>
+        {component}
+      </div>
     </div>
   );
 };

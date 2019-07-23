@@ -1,11 +1,10 @@
 import React from "react";
+import { FilterBarComponent } from "./filter-bar.component";
+import { generateFilterBarData } from "@app/api/core/filter-bar/endpoint";
 import { shallow } from "enzyme";
 
-import { FilterBarComponent } from "@app/core/filter-bar";
-import { generateFilterBarData } from "@app/api/core/filter-bar/endpoint";
-
-describe("[FilterBarComponent]", () => {
-  it("should render without crashing", () => {
+describe("[FilterBar]", () => {
+  it("should render component without crashing", () => {
     const renderedComponent = shallow(
       <FilterBarComponent
         applyFilter={jest.fn()}
@@ -16,7 +15,6 @@ describe("[FilterBarComponent]", () => {
         onCategoryChanged={jest.fn()}
       />
     );
-
     expect(renderedComponent).toMatchSnapshot();
   });
 });

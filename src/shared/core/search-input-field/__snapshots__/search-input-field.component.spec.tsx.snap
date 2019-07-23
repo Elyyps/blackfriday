@@ -16,5 +16,21 @@ exports[`[SearchInputField] should render component without crashing 1`] = `
   <input
     onChange={[Function]}
   />
+  <div
+    className="search-input-field__clear-icon"
+    onClick={[Function]}
+    role="button"
+    style={
+      Object {
+        "opacity": 0,
+      }
+    }
+  >
+    <IconComponent
+      fillColor="#777"
+      icon="cross.svg"
+      size="14px"
+    />
+  </div>
 </div>
 `;

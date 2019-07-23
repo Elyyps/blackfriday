@@ -81,5 +81,5 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  name: "FeaturedStoresModule"
+  name: "FeaturedShopsModule"
 });

@@ -10,11 +10,14 @@ import { generateDummyNewsletterModule } from "../modules/newsletter/generate-du
 import {
   generateDummyBodyTextModule,
   generateHomepageBodytextDummyData,
-  generateShopSingleDummydata
+  generateShopSingleDummydata,
+  generateProductLineDummyData
 } from "../modules/body-text/generate-dummy-data";
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
 import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
 import { generateDummyStoresOverview } from "../modules/stores-overview/generate-dummy-data";
+import { generateFeaturedDealsDummyData } from "../modules/featured-deals/endpoints";
+import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
 
 export const pageList: PageModel[] = [
   {
@@ -31,8 +34,8 @@ export const pageList: PageModel[] = [
       dummyFeaturedShopsData(),
       generateDummyBannerModule(),
       dummyFeaturedDealsData(),
-      generateNotYetImplemented("Call to action nieuwsbrief"),
-      generateNotYetImplemented("Ook interessant om te lezen"),
+      generateNotYetImplemented("Call to action Module"),
+      generateNotYetImplemented("Blog Featured Module"),
       generateDummyBodyTextModule(generateHomepageBodytextDummyData()),
       generateDummyFooterData()
     ]
@@ -95,7 +98,17 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateMediumHeroDummyData(),
+      generateNotYetImplemented("Featured Categories"),
+      generateFeaturedDealsDummyData(),
+      generateDummyBannerModule(),
+      generateFeaturedShopsDummyData(),
+      generateDummyNewsletterModule(),
+      generateDummyBodyTextModule(generateProductLineDummyData()),
+      generateDummyFooterData()
+    ]
   } as PageModel,
   {
     id: uuid(),
@@ -105,7 +118,14 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateMediumHeroDummyData(),
+      generateNotYetImplemented("Blog Overview Module"),
+      generateFeaturedDealsDummyData(),
+      generateDummyNewsletterModule(),
+      generateDummyFooterData()
+    ]
   } as PageModel,
   {
     id: uuid(),
@@ -115,6 +135,14 @@ export const pageList: PageModel[] = [
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
-    wordPressPostModules: [generateDummyNavbarData()]
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateNotYetImplemented("Blog Single Header"),
+      generateNotYetImplemented("Blog BodyText"),
+      generateFeaturedDealsDummyData(),
+      generateNotYetImplemented("Blog Featured"),
+      generateDummyNewsletterModule(),
+      generateDummyFooterData()
+    ]
   } as PageModel
 ];

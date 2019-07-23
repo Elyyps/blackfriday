@@ -15,7 +15,7 @@ const PlaygroundPedroComponent = () => {
       onClear={() => {
         const newItems: IMobileFilterItem[] = [];
         currentItems.forEach(item => {
-          item.selectedItems = [];
+          if (!item.isSingleSelection) item.selectedItems = [];
           newItems.push(item);
         });
         setCurrentItems(newItems);

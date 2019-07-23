@@ -1,1 +1,1 @@
-export * from './search-input-field.component'
+export * from "./search-input-field.component";

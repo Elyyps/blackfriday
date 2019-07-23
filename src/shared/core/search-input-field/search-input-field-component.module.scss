@@ -4,8 +4,13 @@
   padding: 10px 12px;
   background-color: #f0f0f0;
   align-items: center;
+  box-sizing: border-box;
   &__icon {
     margin-right: 12px;
+  }
+  &__clear-icon {
+    margin-left: 10px;
+    cursor: pointer;
   }
   svg {
     padding: 1px;
@@ -14,7 +19,12 @@
     border: none;
     box-shadow: none;
     padding: 0px;
+    box-sizing: border-box;
+    width: 100%;
     background-color: #f0f0f0;
     font-size: 15px;
+    &:focus {
+      outline: none;
+    }
   }
 }

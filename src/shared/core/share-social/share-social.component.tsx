@@ -16,7 +16,7 @@ import {
   IWhatsappShare,
   IMailShare,
   IShareSocialComponent
-} from "@app/api/modules/share-social";
+} from "@app/api/core/share-social";
 
 const getShareControl = (nameSocial: string | undefined, icon: string) => (
   <div className={styles["share__social-link"]}>

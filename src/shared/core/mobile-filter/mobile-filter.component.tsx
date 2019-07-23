@@ -19,7 +19,6 @@ export interface IMobileFilterComponentProps {
 }
 
 const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
-  const initialTitle = "Filters";
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
   const { filterItems, onClear, totalStores } = props;
@@ -35,15 +34,6 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
     }
   };
 
-  const onClearHandler = () => {
-    onClear();
-    const newItems: IMobileFilterItem[] = [];
-    filterItems.forEach(item => {
-      item.selectedItems = [];
-      newItems.push(item);
-    });
-    setCurrentFilterItems(newItems);
-  };
   React.useEffect(() => {
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
@@ -78,17 +68,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           </span>
 
           <div className={styles["mobile-filter__header__title"]}>
-            <span>{initialTitle}</span>
+            <span>{props.intl.formatMessage({ id: "mobile-filter-title" })}</span>
             <IconComponent icon={HandPointing} size={"16px"} />
           </div>
-          <a
-            role="button"
-            onClick={() => {
-              onClearHandler();
-            }}
-            className={styles["mobile-filter__header__clear"]}
-          >
-            Wis alle filters
+          <a role="button" onClick={onClear} className={styles["mobile-filter__header__clear"]}>
+            {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
           </a>
         </div>
       )}
@@ -132,7 +116,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
         </div>
       )}
       <div className={styles["mobile-filter__footer"]}>
-        <Button variant="secondary-inverted" fullWidth title={`Toon ${totalStores} Winkels`} />
+        <Button
+          variant="secondary-inverted"
+          fullWidth
+          title={props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores })}
+        />
       </div>
     </div>
   );

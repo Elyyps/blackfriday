@@ -1,6 +1,7 @@
 import * as React from "react";
 import styles from "./search-input-field-component.module.scss";
 import SearchIcon from "@assets/icons/search.svg";
+import CrossIcon from "@assets/icons/cross.svg";
 import { IconComponent } from "../icon";
 export interface ISearchInputFieldComponentProps {
   onChange?: (value: string) => void;
@@ -20,6 +21,16 @@ const SearchInputFieldComponent = ({ value, placeholder, onChange }: ISearchInpu
         if (onChange) onChange(event.currentTarget.value);
       }}
     />
+    <div
+      onClick={() => {
+        if (onChange) onChange("");
+      }}
+      role="button"
+      style={{ opacity: value && value.length > 0 ? 1 : 0 }}
+      className={styles["search-input-field__clear-icon"]}
+    >
+      <IconComponent size="14px" icon={CrossIcon} fillColor="#777" />
+    </div>
   </div>
 );
 
