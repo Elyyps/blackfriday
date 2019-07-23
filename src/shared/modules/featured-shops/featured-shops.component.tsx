@@ -7,19 +7,20 @@ import { ShopCardModule } from "@app/api/core/shop-card";
 
 export interface IFeaturedShopsComponentProps {
   seeMoreCard: SeeMoreCard;
-  shops: [ShopCardModule, ShopCardModule, ShopCardModule, ShopCardModule];
+  shops: ShopCardModule[];
   title: string;
 }
 
 const FeaturedShopsComponent = (props: IFeaturedShopsComponentProps) => {
   const { shops, title, seeMoreCard } = props;
+  const INLINE_LIMIT = 4;
 
   return (
     <div className={styles["featured-shops"]}>
       <h2 className={styles["featured-shop__title"]}>{title}</h2>
-      <div className={styles["featured-shops__list"]}>
+      <div className={`${shops.length > INLINE_LIMIT && styles[`featured-shops__list-blocks`]} ${styles["featured-shops__list"]}`}>
         {shops.map((shop, key) => (
-          <div className={styles[`featured-shop__item-${key}`]} key={key}>
+          <div className={shops.length <= INLINE_LIMIT ? `${styles[`featured-shop__item-${key}`]}` : ""} key={key}>
             <ShopCardComponent
               key={key}
               subtitle={shop.timeLeftBar.text}
