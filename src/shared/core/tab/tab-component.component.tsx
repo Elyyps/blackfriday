@@ -14,6 +14,11 @@ const TabComponentComponent = (props: ITabComponentComponentProps) => {
     switch (title) {
       case "Winkels":
         tabComponent = <StoresOverviewContainer />;
+        break;
+      case "Productdeals":
+        tabComponent = <h1>Will be implemented</h1>;
+        break;
+      default:
     }
 
     return tabComponent;
@@ -24,7 +29,11 @@ const TabComponentComponent = (props: ITabComponentComponentProps) => {
       <div className={`${styles["tab"]}`}>
         <ul className={styles["uk-tab__list"]}>
           {tabData.title.map((title: string) => (
-            <li className={selectedTab === title ? styles["tab__selected"] : ""} onClick={() => setSelectedTab(title)}>
+            <li
+              role="button"
+              className={selectedTab === title ? styles["tab__selected"] : ""}
+              onClick={() => setSelectedTab(title)}
+            >
               {<Link to="#">{title}</Link>}
             </li>
           ))}

@@ -1,8 +1,7 @@
 import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
-import { generateShopCardData, generateShopCardData2, generateDemoData } from "@app/api/core/shop-card/endpoint";
+import { generateDemoData } from "@app/api/core/shop-card/endpoint";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 export class StoresOverviewModule extends WordPressPostModule {
   public filterBar: FilterBar;
@@ -12,7 +11,7 @@ export class StoresOverviewModule extends WordPressPostModule {
 export const shuffleArray = (a: any) => {
   const result = [...a];
 
-  for (let i = 1; result.length > i; i++) {
+  for (let i = 1; result.length > i; i += 1) {
     const j = Math.floor(Math.random() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
   }
@@ -20,13 +19,13 @@ export const shuffleArray = (a: any) => {
   return result;
 };
 
-export function getShopCards(
+export const getShopCards = (
   currentPage: number,
   status: string[],
   categories: string[],
   brands: string[],
   sortBy: string
-) {
+) => {
   const shopCards: ShopCard[] = generateDemoData();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
@@ -64,8 +63,6 @@ export function getShopCards(
   }
 
   const slicedList = SortedCards.slice(skip, numberOfCards);
-  console.log(SortedCards.length);
-  console.log(slicedList.length);
 
   return { shopCards: slicedList, totalCards: SortedCards.length };
-}
+};

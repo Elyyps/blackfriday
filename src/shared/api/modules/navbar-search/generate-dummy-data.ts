@@ -1,4 +1,5 @@
-import { NavbarSearchModuleInitial, NavbarSearchModule } from "./navbar-search.module";
+import { NavbarSearchModuleInitial } from "./navbar-search-initial";
+import { NavbarSearchModule } from "./navbar-search.module";
 
 export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
   titleDeals: "Gevonden deals",
@@ -73,7 +74,6 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       timeLeftBar: { value: 0.3, text: "BIJNA AFGELOPEN!" },
       content: "Een selectie van bizarre vele aanbiedingen",
       seeMore: { title: "Meer Info", url: "/" },
-      postedAt: "27/05/1995",
       category: "fdsfds",
       brand: "coolblue"
     },
@@ -86,7 +86,6 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       timeLeftBar: { value: 0.1, text: "BIJNA AFGELOPEN!" },
       content: "Een selectie van bizarre vele aanbiedingen",
       seeMore: { title: "Meer Info", url: "/" },
-      postedAt: "27/05/1995",
       category: "fdsfds",
       brand: "coolblue"
     },
@@ -99,7 +98,6 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       timeLeftBar: { value: 0.8, text: "nu geldig" },
       content: "Een selectie van bizarre vele aanbiedingen",
       seeMore: { title: "Meer Info", url: "/" },
-      postedAt: "27/05/1995",
       category: "fdsfds",
       brand: "coolblue"
     }

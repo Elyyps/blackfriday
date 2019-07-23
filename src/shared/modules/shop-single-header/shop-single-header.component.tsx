@@ -1,3 +1,4 @@
+/* tslint:disable */
 import * as React from "react";
 import styles from "./shop-single-header-component.module.scss";
 import IconDefault from "@assets/icons/link.svg";

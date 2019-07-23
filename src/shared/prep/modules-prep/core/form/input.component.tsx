@@ -4,7 +4,6 @@ import classNames from "classnames";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import Cross from "@assets/icons/cross.svg";
 import Check from "@assets/icons/check.svg";
-import { string } from "prop-types";
 
 interface IInputProps {
   classModify?: string;

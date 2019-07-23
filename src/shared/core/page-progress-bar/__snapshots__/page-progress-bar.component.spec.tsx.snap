@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[PageProgressBar] should render component without crashing 1`] = `
+<div
+  className="page-progress-bar"
+>
+  <div
+    className="page-progress-bar__progress"
+    style={
+      Object {
+        "width": "0%",
+      }
+    }
+  />
+</div>
+`;

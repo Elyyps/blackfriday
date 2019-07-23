@@ -1,3 +1,4 @@
+/* tslint:disable */
 import * as React from "react";
 import styles from "./playground-pedro-component.module.scss";
 import { NavBarComponent } from "../nav-bar";
