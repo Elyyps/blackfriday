@@ -3,11 +3,7 @@ import { NavbarSearchModule } from "./navbar-search.module";
 
 export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
   titleDeals: "Gevonden deals",
-  titleShops: "Gevonden winkels",
-  bottomMargin: "0px",
-  topMargin: "0px",
-  id: "1",
-  name: "NavbarSearchModuleInitial"
+  titleShops: "Gevonden winkels"
 };
 
 export const dummyNavbarSearchData: NavbarSearchModule = {
@@ -101,9 +97,5 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       category: "fdsfds",
       brand: "coolblue"
     }
-  ],
-  bottomMargin: "0px",
-  topMargin: "0px",
-  id: "1",
-  name: "NavbarSearchModule"
+  ]
 };

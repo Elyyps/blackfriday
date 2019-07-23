@@ -3,13 +3,6 @@
 exports[`[CtaSmall] should render component without crashing 1`] = `
 <div
   className="cta-small"
-  style={
-    Object {
-      "bgColor": undefined,
-      "paddingBottom": undefined,
-      "paddingTop": undefined,
-    }
-  }
 >
   <div
     className="uk-container"
@@ -25,10 +18,14 @@ exports[`[CtaSmall] should render component without crashing 1`] = `
       <div
         className="cta-small__wrapper"
       >
-        <IconComponent
-          icon="sign.svg"
-          size="32px"
-        />
+        <div
+          className="icon"
+        >
+          <IconComponent
+            icon="sign.svg"
+            size="32px"
+          />
+        </div>
         <div
           className="cta-small__title"
         >
@@ -48,13 +45,6 @@ exports[`[CtaSmall] should render component without crashing 1`] = `
 exports[`[CtaSmall] should render empty component without crashing 1`] = `
 <div
   className="cta-small"
-  style={
-    Object {
-      "bgColor": undefined,
-      "paddingBottom": undefined,
-      "paddingTop": undefined,
-    }
-  }
 >
   <div
     className="uk-container"

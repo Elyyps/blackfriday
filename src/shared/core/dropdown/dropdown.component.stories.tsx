@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { DropdownComponent } from "./dropdown.component";
 import { ShareSocialComponent } from "@app/core/share-social";
-import { generateShareSocialModule } from "@app/api/modules/share-social/endpoints";
+import { generateShareSocialModule } from "@app/api/core/share-social/endpoints";
 
 const notes = require("./dropdown.md");
 storiesOf("dropdown", module)

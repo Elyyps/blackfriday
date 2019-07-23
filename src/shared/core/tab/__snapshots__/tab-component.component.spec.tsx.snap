@@ -11,6 +11,7 @@ exports[`[tabComponent] should render component without crashing 1`] = `
       <li
         className="tab__selected"
         onClick={[Function]}
+        role="button"
       >
         <Link
           to="#"
@@ -21,6 +22,7 @@ exports[`[tabComponent] should render component without crashing 1`] = `
       <li
         className=""
         onClick={[Function]}
+        role="button"
       >
         <Link
           to="#"

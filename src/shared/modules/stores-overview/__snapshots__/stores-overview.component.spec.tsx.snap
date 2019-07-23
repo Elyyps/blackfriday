@@ -189,250 +189,13 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content1"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
-            range={0.12109766309466985}
+            range={0.5231940009037104}
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie nog onbekend"
-            title="Item n: 1"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content2"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
-            range={0.15515683864704544}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie nog onbekend"
-            title="Item n: 2"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content3"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
-            range={0.6946576320080913}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie nog onbekend"
-            title="Item n: 3"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content4"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
-            range={0.5926587274201549}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie nog onbekend"
-            title="Item n: 4"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content5"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
-            range={0.7430553867153595}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie nog onbekend"
-            title="Item n: 5"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content1"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
-            range={0.3235917309101528}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie start over 5 dagen!"
-            title="Item n: 1"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content2"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
-            range={0.07237227048640693}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie start over 5 dagen!"
-            title="Item n: 2"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content3"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
-            range={0.2981278184239049}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie start over 5 dagen!"
-            title="Item n: 3"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content4"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
-            range={0.13388283812571422}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie start over 5 dagen!"
-            title="Item n: 4"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content5"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
-            range={0.6472641077380838}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Actie start over 5 dagen!"
-            title="Item n: 5"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content1"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
-            range={0.17636433174501964}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Nu geldig"
-            title="Item n: 1"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content2"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
-            range={0.23929349769900798}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Nu geldig"
-            title="Item n: 2"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content3"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
-            range={0.01420411367242247}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Nu geldig"
-            title="Item n: 3"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content4"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
-            range={0.3471913218233147}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Nu geldig"
-            title="Item n: 4"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content5"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
-            range={0.8976293091845442}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Nu geldig"
-            title="Item n: 5"
-          />
-        </div>
-        <div
-          style={
-            Object {
-              "width": "100%",
-            }
-          }
-        >
-          <BannerComponent
-            buttonLink="#"
-            buttonTitle="Meer deals"
-            image={
-              Object {
-                "alt": "alt text oasis",
-                "src": "oasis.jpg",
-              }
-            }
-            label="22 t/m 26 nov."
-            logo={
-              Object {
-                "alt": "alt text CoolBlue",
-                "src": "cool-blue.svg",
-              }
-            }
-            text="Een selectie van bizarre aanbiedingen. Meer info"
-            title="Black Friday bij Coolblue"
+            title="Item n: "
           />
           <br />
         </div>
@@ -442,29 +205,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content1"
-            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
-            range={0.4578131952692446}
-            seeMoreLink=""
-            seeMoreText="Meer info"
-            subtitle="Bijna Verlopen!"
-            title="Item n: 1"
-          />
-        </div>
-        <div
-          className="stores-overview__body__cards"
-        >
-          <ShopCardComponent
-            buttonLink=""
-            buttonText="Naar deals"
-            content="content2"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
-            range={0.6237192023436715}
+            range={0.4137451333696629}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Bijna Verlopen!"
-            title="Item n: 2"
+            subtitle="Actie nog onbekend"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -472,14 +221,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content3"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
-            range={0.4748492083945195}
+            range={0.09570183289346867}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Bijna Verlopen!"
-            title="Item n: 3"
+            subtitle="Actie nog onbekend"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -487,14 +237,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content4"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
-            range={0.47299450428111367}
+            range={0.7879454923003939}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Bijna Verlopen!"
-            title="Item n: 4"
+            subtitle="Actie nog onbekend"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -502,14 +253,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content5"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
-            range={0.1337401898269608}
+            range={0.9182913581378149}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Bijna Verlopen!"
-            title="Item n: 5"
+            subtitle="Actie nog onbekend"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -517,14 +269,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content1"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
-            range={0.4533910058883204}
+            range={0.9149340622894486}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Actie verlopen"
-            title="Item n: 1"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -532,14 +285,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content2"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
-            range={0.1536092706490748}
+            range={0.5681754686605816}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Actie verlopen"
-            title="Item n: 2"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -547,14 +301,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content3"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
-            range={0.6722934182750708}
+            range={0.7993857464196275}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Actie verlopen"
-            title="Item n: 3"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -562,14 +317,15 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content4"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
-            range={0.8398955064909861}
+            range={0.23406839552564174}
             seeMoreLink=""
             seeMoreText="Meer info"
-            subtitle="Actie verlopen"
-            title="Item n: 4"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: "
           />
+          <br />
         </div>
         <div
           className="stores-overview__body__cards"
@@ -577,14 +333,287 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           <ShopCardComponent
             buttonLink=""
             buttonText="Naar deals"
-            content="content5"
+            content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
-            range={0.16210874547965326}
+            range={0.5067175596851332}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie start over 5 dagen!"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.4546224847057041}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.6778387109617825}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.9263976408464949}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.6859738170675971}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.5768079243741586}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Nu geldig"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
+          <BannerComponent
+            bannerModule={
+              Object {
+                "bottomMargin": "0px",
+                "buttonLink": "#",
+                "buttonTitle": "Meer deals",
+                "id": "1",
+                "image": Object {
+                  "alt": "alt text oasis",
+                  "src": "oasis.jpg",
+                },
+                "label": "22 t/m 26 nov.",
+                "logo": Object {
+                  "alt": "alt text CoolBlue",
+                  "src": "cool-blue.svg",
+                },
+                "name": "BannerModule",
+                "text": "Een selectie van bizarre aanbiedingen. Meer info",
+                "title": "Black Friday bij Coolblue",
+                "topMargin": "0px",
+              }
+            }
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.797459581424836}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.49529399119966144}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.8628736523134071}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.7042037407783655}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.7209251989825181}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Bijna Verlopen!"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+            range={0.6015896069543785}
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie verlopen"
-            title="Item n: 5"
+            title="Item n: "
           />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+            range={0.5733945975755474}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+            range={0.7633510880902525}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+            range={0.5445926922409619}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: "
+          />
+          <br />
+        </div>
+        <div
+          className="stores-overview__body__cards"
+        >
+          <ShopCardComponent
+            buttonLink=""
+            buttonText="Naar deals"
+            content="content"
+            image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+            range={0.8904580012202925}
+            seeMoreLink=""
+            seeMoreText="Meer info"
+            subtitle="Actie verlopen"
+            title="Item n: "
+          />
+          <br />
         </div>
         <BottomScrollListener
           debounce={200}

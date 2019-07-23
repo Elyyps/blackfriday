@@ -8,6 +8,7 @@ exports[`[ShadowCard] Should render component without crashing (only shadow defi
       "backgroundColor": undefined,
       "borderRadius": undefined,
       "padding": undefined,
+      "width": "auto",
     }
   }
 >
@@ -25,6 +26,7 @@ exports[`[ShadowCard] Should render component without crashing (only shadow defi
       "backgroundColor": undefined,
       "borderRadius": undefined,
       "padding": undefined,
+      "width": "auto",
     }
   }
 >
@@ -54,6 +56,7 @@ exports[`[ShadowCard] Should render component without crashing (with only 1 padd
       "backgroundColor": undefined,
       "borderRadius": "24px",
       "padding": "24px",
+      "width": "auto",
     }
   }
 >
@@ -71,6 +74,7 @@ exports[`[ShadowCard] Should render component without crashing (with padding and
       "backgroundColor": undefined,
       "borderRadius": "24px 16px 24px 16px",
       "padding": "24px 16px",
+      "width": "auto",
     }
   }
 >
