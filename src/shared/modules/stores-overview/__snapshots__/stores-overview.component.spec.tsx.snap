@@ -191,7 +191,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+<<<<<<< HEAD
             range={0.5231940009037104}
+=======
+            range={0.8666193629294792}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie nog onbekend"
@@ -207,7 +211,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+<<<<<<< HEAD
             range={0.4137451333696629}
+=======
+            range={0.8656509563559192}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie nog onbekend"
@@ -223,7 +231,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+<<<<<<< HEAD
             range={0.09570183289346867}
+=======
+            range={0.2889599294363878}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie nog onbekend"
@@ -239,7 +251,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+<<<<<<< HEAD
             range={0.7879454923003939}
+=======
+            range={0.02451662277007549}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie nog onbekend"
@@ -255,7 +271,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+<<<<<<< HEAD
             range={0.9182913581378149}
+=======
+            range={0.28620902377285673}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie nog onbekend"
@@ -271,7 +291,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+<<<<<<< HEAD
             range={0.9149340622894486}
+=======
+            range={0.859997775444866}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie start over 5 dagen!"
@@ -287,7 +311,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+<<<<<<< HEAD
             range={0.5681754686605816}
+=======
+            range={0.04909875783764761}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie start over 5 dagen!"
@@ -303,7 +331,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+<<<<<<< HEAD
             range={0.7993857464196275}
+=======
+            range={0.36868934227560635}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie start over 5 dagen!"
@@ -319,7 +351,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+<<<<<<< HEAD
             range={0.23406839552564174}
+=======
+            range={0.16381194188113946}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie start over 5 dagen!"
@@ -335,7 +371,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+<<<<<<< HEAD
             range={0.5067175596851332}
+=======
+            range={0.32102861022622275}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie start over 5 dagen!"
@@ -351,7 +391,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+<<<<<<< HEAD
             range={0.4546224847057041}
+=======
+            range={0.8489169923214028}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Nu geldig"
@@ -367,7 +411,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+<<<<<<< HEAD
             range={0.6778387109617825}
+=======
+            range={0.6279378896278167}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Nu geldig"
@@ -383,7 +431,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+<<<<<<< HEAD
             range={0.9263976408464949}
+=======
+            range={0.2536756648617824}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Nu geldig"
@@ -399,7 +451,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+<<<<<<< HEAD
             range={0.6859738170675971}
+=======
+            range={0.8126324844088779}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Nu geldig"
@@ -415,7 +471,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+<<<<<<< HEAD
             range={0.5768079243741586}
+=======
+            range={0.9899780894140373}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Nu geldig"
@@ -431,6 +491,7 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
           }
         >
           <BannerComponent
+<<<<<<< HEAD
             bannerModule={
               Object {
                 "bottomMargin": "0px",
@@ -452,6 +513,25 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
                 "topMargin": "0px",
               }
             }
+=======
+            buttonLink="#"
+            buttonTitle="Meer deals"
+            image={
+              Object {
+                "alt": "alt text oasis",
+                "src": "oasis.jpg",
+              }
+            }
+            label="22 t/m 26 nov."
+            logo={
+              Object {
+                "alt": "alt text CoolBlue",
+                "src": "cool-blue.svg",
+              }
+            }
+            text="Een selectie van bizarre aanbiedingen. Meer info"
+            title="Black Friday bij Coolblue"
+>>>>>>> develop
           />
           <br />
         </div>
@@ -463,7 +543,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+<<<<<<< HEAD
             range={0.797459581424836}
+=======
+            range={0.43293947171049973}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Bijna Verlopen!"
@@ -479,7 +563,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+<<<<<<< HEAD
             range={0.49529399119966144}
+=======
+            range={0.9401576258816624}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Bijna Verlopen!"
@@ -495,7 +583,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+<<<<<<< HEAD
             range={0.8628736523134071}
+=======
+            range={0.7674763118088384}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Bijna Verlopen!"
@@ -511,7 +603,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+<<<<<<< HEAD
             range={0.7042037407783655}
+=======
+            range={0.0824971515701669}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Bijna Verlopen!"
@@ -527,7 +623,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+<<<<<<< HEAD
             range={0.7209251989825181}
+=======
+            range={0.34094817054965976}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Bijna Verlopen!"
@@ -543,7 +643,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/1.png"
+<<<<<<< HEAD
             range={0.6015896069543785}
+=======
+            range={0.8003016343383624}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie verlopen"
@@ -559,7 +663,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/2.png"
+<<<<<<< HEAD
             range={0.5733945975755474}
+=======
+            range={0.28210413829510395}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie verlopen"
@@ -575,7 +683,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/3.png"
+<<<<<<< HEAD
             range={0.7633510880902525}
+=======
+            range={0.09670489789464254}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie verlopen"
@@ -591,7 +703,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/4.png"
+<<<<<<< HEAD
             range={0.5445926922409619}
+=======
+            range={0.9443337155346603}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie verlopen"
@@ -607,7 +723,11 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
             buttonText="Naar deals"
             content="content"
             image="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/5.png"
+<<<<<<< HEAD
             range={0.8904580012202925}
+=======
+            range={0.7495598550332692}
+>>>>>>> develop
             seeMoreLink=""
             seeMoreText="Meer info"
             subtitle="Actie verlopen"

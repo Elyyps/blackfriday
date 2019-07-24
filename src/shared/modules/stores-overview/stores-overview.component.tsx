@@ -8,7 +8,6 @@ import BottomScrollListener from "react-bottom-scroll-listener";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { BannerComponent } from "@app/core/banner";
-import { ShadowCardComponent } from "@app/core/shadow-card";
 import { generateDummyBannerModule } from "@app/api/modules/banner/generate-dummy-data";
 
 export interface IStoresOverviewComponentProps {}
