@@ -1,9 +1,10 @@
 import { connect, MapStateToProps } from "react-redux";
 import { IAppState } from "@app/stores";
 import { FeaturedCategories, IFeaturedCategoriesProps } from "@app/modules/featured-categories";
+import { IScreenSize } from "@app/stores/settings";
 
 interface IStateProps {
-  screenSize: {} | undefined;
+  screenSize: IScreenSize | undefined;
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IFeaturedCategoriesProps, IAppState> = state => {

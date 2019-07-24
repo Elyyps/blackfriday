@@ -1,4 +1,4 @@
-.arrow-panel {
+.card-simple {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,10 +24,9 @@
     }
   }
   @media (max-width: $breakpoint-small-max) {
-    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
     height: 40px;
-    border-bottom: #e0e0e0 1px solid;
-    width: 100%;
   }
 
   .content {

@@ -2,8 +2,10 @@
 }
 
 .wrapper {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 24px;
   @media (max-width: $breakpoint-medium-max) {
     grid-template-columns: 1fr 1fr 1fr;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./filter-item-row.component.module.scss";
+import styles from "./filter-item-row-component.module.scss";
 import { IconComponent, ImageComponent } from "@app/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
 
