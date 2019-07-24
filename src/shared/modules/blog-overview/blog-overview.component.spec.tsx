@@ -1,11 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { generateBlogPostData } from "@app/api/core/blog-post/endpoint";
 import { BlogOverviewComponent } from "./blog-overview.component";
-const posts = generateBlogPostData();
+import { generateBlogOverviewData } from "@app/api/modules/blog-overview/endpoint";
+const blog = generateBlogOverviewData();
 describe("[BlogOverview]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(<BlogOverviewComponent posts={posts} />);
+    const renderedComponent = shallow(<BlogOverviewComponent blog={blog} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

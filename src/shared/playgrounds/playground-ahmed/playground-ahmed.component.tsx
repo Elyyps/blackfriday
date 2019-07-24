@@ -1,18 +1,12 @@
 import * as React from "react";
-
-import { BlogOverviewComponent } from "@app/modules/blog-overview";
-import { generateBlogPostData } from "@app/api/core/blog-post/endpoint";
+import { SelectComponent } from "@app/core/select";
 
 export interface IPlaygroundAhmedComponentProps {}
 
-const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => {
-  const posts = generateBlogPostData();
-
-  return (
-    <div className="uk-container">
-      <BlogOverviewComponent posts={posts} />
-    </div>
-  );
-};
+const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => (
+  <div className="uk-container">
+    <SelectComponent onSelect={() => ""} options={["Relevance", "Newest", "Price"]} />
+  </div>
+);
 
 export { PlaygroundAhmedComponent };

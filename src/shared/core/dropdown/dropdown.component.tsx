@@ -1,7 +1,6 @@
 import style from "./dropdown-component.module.scss";
 import * as React from "react";
 import ChevronDown from "@assets/icons/chevron-down.svg";
-
 import { Button } from "../button";
 import { ShadowCardComponent } from "../shadow-card";
 

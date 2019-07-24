@@ -12,7 +12,6 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
     key="0"
     wordPressModule={
       Object {
-<<<<<<< HEAD
         "bottomMargin": "0px",
         "id": "1",
         "name": "FeaturedShopsModule",
@@ -55,26 +54,6 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-=======
-        "marginBottom": "0px",
-        "marginTop": "0px",
-        "position": "relative",
-        "zIndex": "auto",
-      }
-    }
-  >
-    <ModuleComponent
-      isMobile={false}
-      wordPressModule={
-        Object {
-          "bottomMargin": "0px",
-          "id": "1",
-          "name": "FeaturedStoresModule",
-          "seeMoreCard": Object {
-            "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-            "link": Object {
-              "title": "Alle winkels",
->>>>>>> develop
               "url": "/",
             },
             "timeLeftBar": Object {
@@ -83,7 +62,6 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             },
             "title": "Swiss Sense",
           },
-<<<<<<< HEAD
           Object {
             "brand": "",
             "button": Object {
@@ -108,84 +86,6 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             "button": Object {
               "title": "Naar deals",
               "url": "/",
-=======
-          "shops": Array [
-            Object {
-              "brand": "",
-              "button": Object {
-                "title": "Naar deals",
-                "url": "/",
-              },
-              "category": "",
-              "content": "Een seletie van bizarre vele aanbiedingen.",
-              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-              "seeMore": Object {
-                "title": "Meer info",
-                "url": "/",
-              },
-              "timeLeftBar": Object {
-                "text": "Nu geldig",
-                "value": 0.8,
-              },
-              "title": "Bekbeddiscounter.nl",
-            },
-            Object {
-              "brand": "",
-              "button": Object {
-                "title": "Naar deals",
-                "url": "/",
-              },
-              "category": "",
-              "content": "Een seletie van bizarre vele aanbiedingen.",
-              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-              "seeMore": Object {
-                "title": "Meer info",
-                "url": "/",
-              },
-              "timeLeftBar": Object {
-                "text": "ACTIE START OVER 5 DAGEN!",
-                "value": 0,
-              },
-              "title": "Swiss Sense",
-            },
-            Object {
-              "brand": "",
-              "button": Object {
-                "title": "Naar deals",
-                "url": "/",
-              },
-              "category": "",
-              "content": "Een seletie van bizarre vele aanbiedingen.",
-              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-              "seeMore": Object {
-                "title": "Meer info",
-                "url": "/",
-              },
-              "timeLeftBar": Object {
-                "text": "Nu geldig",
-                "value": 1,
-              },
-              "title": "Beter Bed",
-            },
-            Object {
-              "brand": "",
-              "button": Object {
-                "title": "Naar deals",
-                "url": "/",
-              },
-              "category": "",
-              "content": "Een seletie van bizarre vele aanbiedingen.",
-              "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-              "seeMore": Object {
-                "title": "Meer info",
-                "url": "/",
-              },
-              "timeLeftBar": Object {
-                "text": "Nu geldig",
-                "value": 0.2,
-              },
-              "title": "Beter Bed",
->>>>>>> develop
             },
             "category": "",
             "content": "Een seletie van bizarre vele aanbiedingen.",

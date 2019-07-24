@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[CtaSmallModuleComponent] should render component without crashing 1`] = `
+<CtaSmallComponent
+  bottomMargin="10px"
+  buttonTitle="Meld je aan"
+  icon="send.svg"
+  id="1"
+  name="CtaNewsletterModule"
+  onClick={[Function]}
+  text="Op de hoogte blijven? Meld je dan aan voor onze nieuwsbrief!"
+  topMargin="0px"
+/>
+`;

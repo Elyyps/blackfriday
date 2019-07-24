@@ -18,6 +18,7 @@ import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoi
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
+import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 
 export const pageList: PageModel[] = [
   {
@@ -121,7 +122,9 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateNotYetImplemented("Blog Overview Module"),
+      generateNotYetImplemented("Blog Overview Sidebar"),
+
+      generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
       generateDummyFooterData()

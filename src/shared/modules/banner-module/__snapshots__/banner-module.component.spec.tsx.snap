@@ -3,7 +3,6 @@
 exports[`[BannerModule] should render component without crashing 1`] = `
 <Fragment>
   <BannerComponent
-<<<<<<< HEAD
     bannerModule={
       Object {
         "bottomMargin": "0px",
@@ -25,25 +24,6 @@ exports[`[BannerModule] should render component without crashing 1`] = `
         "topMargin": "0px",
       }
     }
-=======
-    buttonLink="#"
-    buttonTitle="Meer deals"
-    image={
-      Object {
-        "alt": "alt text oasis",
-        "src": "oasis.jpg",
-      }
-    }
-    label="22 t/m 26 nov."
-    logo={
-      Object {
-        "alt": "alt text CoolBlue",
-        "src": "cool-blue.svg",
-      }
-    }
-    text="Een selectie van bizarre aanbiedingen. Meer info"
-    title="Black Friday bij Coolblue"
->>>>>>> develop
   />
 </Fragment>
 `;

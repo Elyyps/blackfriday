@@ -4,11 +4,11 @@ import { LinkComponent } from "../link";
 import { ImageComponent } from "@app/prep/modules-prep/core";
 import { BlogPost } from "@app/api/core/blog-post/blog-post";
 
-export interface ICardPostComponentProps {
+export interface IBlogPostComponentProps {
   posts: BlogPost;
 }
 
-const BlogPostComponent = (props: ICardPostComponentProps) => (
+const BlogPostComponent = (props: IBlogPostComponentProps) => (
   <div className={styles["blog-post"]}>
     <LinkComponent to={props.posts.link}>
       {props.posts.image && (

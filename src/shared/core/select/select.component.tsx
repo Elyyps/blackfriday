@@ -1,7 +1,6 @@
 import * as React from "react";
 import styles from "./select-component.module.scss";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
-import CheckIcon from "@assets/icons/check.svg";
 import { IconComponent } from "../icon";
 
 export interface ISelectComponentProps {
@@ -21,7 +20,9 @@ const SelectComponent = (props: ISelectComponentProps) => {
     <div className={styles["select"]}>
       <select className={styles["select-title"]} onChange={handelChange} onSelect={() => props.onSelect}>
         {props.options.map(value => (
-          <option value={value}>{value}</option>
+          <option aria-selected value={value}>
+            {value}
+          </option>
         ))}
       </select>
       <span className={` ${styles["select-icon"]} `}>
