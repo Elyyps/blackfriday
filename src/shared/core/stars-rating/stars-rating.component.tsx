@@ -3,7 +3,6 @@ import * as React from "react";
 import styles from "./stars-rating-component.module.scss";
 import Star from "@assets/icons/star-filled.svg";
 import HalfStar from "@assets/icons/half-star-color.svg";
-import EmptyStar from "@assets/icons/star-empty.svg";
 import { IconComponent } from "@app/core/";
 
 export interface IStarsRatingComponentProps {
