@@ -1,5 +1,5 @@
 import { Dispatch } from "react-redux";
-import { getFilteredNavbarSearchDummyData } from "@app/api/modules/navbar-search/endpoints";
+import { getFilteredNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
 import { navBarSearchActions } from "@app/stores/navbar-seach";
 
 const getFilteredItems = (text: string) => async (dispatch: Dispatch<any>) => {

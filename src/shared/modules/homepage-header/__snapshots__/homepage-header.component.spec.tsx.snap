@@ -51,16 +51,14 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
             <div
               className="homepage-header__cards"
             >
-              <ArrowPanel
+              <ArrowPanelComponent
                 icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
                 key="0"
-                link="./"
                 title="Productdeals"
               />
-              <ArrowPanel
+              <ArrowPanelComponent
                 icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
                 key="1"
-                link="./"
                 title="Deelnemende winkels"
               />
             </div>
@@ -259,36 +257,32 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <div
                 key="0"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
                   title="Productdeals"
                 />
               </div>
               <div
                 key="1"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
               <div
                 key="2"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
               <div
                 key="3"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
@@ -308,36 +302,32 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <div
                 key="0"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
               <div
                 key="1"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
               <div
                 key="2"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
               <div
                 key="3"
               >
-                <ArrowPanel
+                <ArrowPanelComponent
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
                   title="Deelnemende winkels"
                 />
               </div>
