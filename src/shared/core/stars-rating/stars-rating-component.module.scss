@@ -1,8 +1,24 @@
 .stars-rating {
   display: flex;
   min-width: 86px;
+  align-items: baseline;
   &__star {
     margin-right: 4px;
+  }
+  &__hovered {
+    path {
+      fill: #ffbd03 !important;
+    }
+    &-empty {
+      path {
+        fill: rgb(224, 224, 224) !important;
+      }
+    }
+  }
+  &__label {
+    color: #ffbd03;
+    margin-right: 6px;
+    font-size: 14px;
   }
 }
 .full {
@@ -13,6 +29,8 @@
 
 .empty {
   path {
-    fill: #fff;
+    fill: rgb(224, 224, 224);
   }
+}
+.half {
 }
