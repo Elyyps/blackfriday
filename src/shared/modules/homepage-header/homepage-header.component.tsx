@@ -43,7 +43,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 </ul>
                 <div className={styles["homepage-header__cards"]}>
                   {props.homePageModule.arrowPanelslinks.map((panel, key) => (
-                    <ArrowPanel key={key} link={{ title: panel.text.title, url: panel.text.url }} icon={panel.icon} />
+                    <ArrowPanel key={key} link={{ title: panel.link.title, url: panel.link.url }} icon={panel.icon} />
                   ))}
                 </div>
               </div>
@@ -98,7 +98,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                     <div key={key}>
                       <ArrowPanel
                         key={key}
-                        link={{ title: product.text.title, url: product.text.url }}
+                        link={{ title: product.link.title, url: product.link.url }}
                         icon={product.icon}
                       />
                     </div>
@@ -112,7 +112,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-bottom__cards"]}>
                   {props.homePageModule.popularStores.map((store, key) => (
                     <div key={key}>
-                      <ArrowPanel key={key} link={{ title: store.text.title, url: store.text.url }} icon={store.icon} />
+                      <ArrowPanel key={key} link={{ title: store.link.title, url: store.link.url }} icon={store.icon} />
                     </div>
                   ))}
                 </div>

@@ -54,14 +54,22 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <ArrowPanel
                 icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
                 key="0"
-                link="./"
-                title="Productdeals"
+                link={
+                  Object {
+                    "title": "Productdeals",
+                    "url": "./",
+                  }
+                }
               />
               <ArrowPanel
                 icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
                 key="1"
-                link="./"
-                title="Deelnemende winkels"
+                link={
+                  Object {
+                    "title": "Deelnemende winkels",
+                    "url": "./",
+                  }
+                }
               />
             </div>
           </div>
@@ -261,8 +269,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
-                  title="Productdeals"
+                  key="0"
+                  link={
+                    Object {
+                      "title": "Productdeals",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
               <div
@@ -270,8 +283,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="1"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
               <div
@@ -279,8 +297,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="2"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
               <div
@@ -288,8 +311,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="3"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
             </div>
@@ -310,8 +338,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="0"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
               <div
@@ -319,8 +352,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="1"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
               <div
@@ -328,8 +366,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="2"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
               <div
@@ -337,8 +380,13 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               >
                 <ArrowPanel
                   icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  link="./"
-                  title="Deelnemende winkels"
+                  key="3"
+                  link={
+                    Object {
+                      "title": "Deelnemende winkels",
+                      "url": "./",
+                    }
+                  }
                 />
               </div>
             </div>

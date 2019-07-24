@@ -16,11 +16,11 @@ export const generateHomePageHeader = (): HomepageHeader => ({
   arrowPanelslinks: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Productdeals", url: "./" }
+      link: { title: "Productdeals", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     }
   ],
   label: "Black Friday 2019: NOG 10 dagen!",
@@ -53,37 +53,37 @@ export const generateHomePageHeader = (): HomepageHeader => ({
   popularProducts: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Productdeals", url: "./" }
+      link: { title: "Productdeals", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     }
   ],
   popularStores: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     }
   ],
   bottomMargin: "0px",

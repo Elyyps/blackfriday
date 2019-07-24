@@ -25,7 +25,7 @@ export interface IClickableComponentProps {
   fullWidth?: boolean;
   href?: string;
   icon?: string;
-  iconPosition?: string;
+  iconPosition?: "right" | "left";
   iconStyle?: IconStyle;
   onClick?: () => void;
   size?: number;
