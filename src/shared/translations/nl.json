@@ -35,5 +35,8 @@
   "product-line-overview_sortByCategory": "Productcategorieën",
   "product-line-overview_sortByGroup": "Voedingspatroon",
   "not-found-title": "OEPS, ER IS IETS MIS GEGAAN",
-  "not-found-text": "Aenean id lorem eleifend, malesuada arcu afringilla mauris. Pellentesque dolor lacus, luctus."
+  "not-found-text": "Aenean id lorem eleifend, malesuada arcu afringilla mauris. Pellentesque dolor lacus, luctus.",
+  "mobile-filter-title": "Filter",
+  "mobile-filter-clear-filter": "Wil alle filters",
+  "mobile-filter-button": "Toon {totalStores} Winkels."
 }

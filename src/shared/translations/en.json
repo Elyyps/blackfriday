@@ -14,5 +14,7 @@
   "subscribe-privacy": "Dit móeten we mededelen: wanneer je op verzenden klikt, ga je akkoord met ons",
   "subscribe-privacy-link": "privacy policy.",
   "search-empty-state": "No results found for your search",
-  "search-all-subjects": "Search in all subjects"
+  "search-all-subjects": "Search in all subjects",
+  "mobile-filter-title": "Filter",
+  "mobile-filter-button": "Toon {totalStores} Winkels."
 }

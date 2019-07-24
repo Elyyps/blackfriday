@@ -13,7 +13,7 @@ const HeaderInfoDummy = {
   paddingBottom: "72px"
 };
 
-const FeaturedCategories = {
+const generateFeaturedCategoriesDummyData = () => ({
   bgcolor: "#f7f7f7",
   paddingBottom: "72px",
   paddingTop: "0",
@@ -53,7 +53,7 @@ const FeaturedCategories = {
       link: "/"
     }
   ]
-};
+});
 
 const Cards = [
   {
@@ -209,4 +209,4 @@ const Banner = {
   logo: CoolBlue
 };
 
-export { HeaderInfoDummy, Cards, CardMore, CardsDeals, CTASimple, Banner, FeaturedCategories };
+export { HeaderInfoDummy, Cards, CardMore, CardsDeals, CTASimple, Banner, generateFeaturedCategoriesDummyData };

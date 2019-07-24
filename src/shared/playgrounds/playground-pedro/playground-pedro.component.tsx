@@ -7,28 +7,20 @@ import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import styles from "./playground-pedro-component.module.scss";
 import { FeaturedShopsComponent } from "@app/modules/featured-shops/featured-shops.component";
 import { dummyFeaturedShopsData } from "@app/api/modules/featured-shops/generate-dummy-data";
+import { MobileFilterComponent, mobileFilterDummyData } from "@app/core/mobile-filter";
+import { IMobileFilterItem } from "@app/core/mobile-filter/mobile-filter-item";
+
 export interface IPlaygroundPedroComponentProps {}
 
 const PlaygroundPedroComponent = () => {
-  const [value, setValue] = React.useState(0);
-  const handleNavigation = (e: any) => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-    const scrolled = winScroll / height;
-    setValue(scrolled * 100);
-  };
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleNavigation);
-  }, []);
+  const [currentItems, setCurrentItems] = React.useState<IMobileFilterItem[]>(mobileFilterDummyData);
 
   return (
     <div className={styles["playground-pk"]}>
       <div className={styles["playground-pk__header"]}>
-        <PageProgressBarComponent value={value} />
+        <PageProgressBarComponent value={50} />
       </div>
-      <FeaturedShopsComponent {...dummyFeaturedShopsData()}/>
+      <FeaturedShopsComponent {...dummyFeaturedShopsData()} />
     </div>
   );
 };

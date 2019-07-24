@@ -6,9 +6,9 @@ import { withProvider } from "@app/util";
 import { BannerModuleComponent } from "./banner-module.component";
 
 // Dummy data
-import { bannerProps } from "@app/api/core/banner";
+import { generateDummyBannerModule } from "@app/api/modules/banner/generate-dummy-data";
 
 storiesOf("Banner Module", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => <BannerModuleComponent bannerProps={bannerProps} />);
+  .add("Basic implementation", () => <BannerModuleComponent bannerModule={generateDummyBannerModule()} />);

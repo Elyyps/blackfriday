@@ -1,9 +1,8 @@
 /* tslint:disable */
 import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
-import { generateShopCardData, generateShopCardData2, generateDemoData } from "@app/api/core/shop-card/endpoint";
+import { generateDemoData } from "@app/api/core/shop-card/endpoint";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 export class StoresOverviewModule extends WordPressPostModule {
   public filterBar: FilterBar;
