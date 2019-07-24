@@ -3,23 +3,27 @@
 exports[`[BannerModule] should render component without crashing 1`] = `
 <Fragment>
   <BannerComponent
-    buttonLink="#"
-    buttonTitle="Meer deals"
-    image={
+    bannerModule={
       Object {
-        "alt": "alt text oasis",
-        "src": "oasis.jpg",
+        "bottomMargin": "0px",
+        "buttonLink": "#",
+        "buttonTitle": "Meer deals",
+        "id": "1",
+        "image": Object {
+          "alt": "alt text oasis",
+          "src": "oasis.jpg",
+        },
+        "label": "22 t/m 26 nov.",
+        "logo": Object {
+          "alt": "alt text CoolBlue",
+          "src": "cool-blue.svg",
+        },
+        "name": "BannerModule",
+        "text": "Een selectie van bizarre aanbiedingen. Meer info",
+        "title": "Black Friday bij Coolblue",
+        "topMargin": "0px",
       }
     }
-    label="22 t/m 26 nov."
-    logo={
-      Object {
-        "alt": "alt text CoolBlue",
-        "src": "cool-blue.svg",
-      }
-    }
-    text="Een selectie van bizarre aanbiedingen. Meer info"
-    title="Black Friday bij Coolblue"
   />
 </Fragment>
 `;
