@@ -1,14 +1,3 @@
-.c-modal-cover {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10; // This must be at a higher index to the rest of your page content
-  transform: translateZ(0);
-  background-color: rgba(#000, 0.15);
-}
-
 .c-modal {
   position: fixed;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
@@ -24,33 +13,45 @@
     width: 100% !important;
     max-height: 100vh;
   }
-}
-.c-modal__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4px;
-  line-height: 1;
-  background: transparent;
-  border: 0;
-  box-shadow: 0;
-  cursor: pointer;
-  transition: transform 0.2s;
-  outline: none !important;
-  &:hover {
-    transform: scale(1.2);
+
+  &-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; // This must be at a higher index to the rest of your page content
+    transform: translateZ(0);
+    background-color: rgba(#000, 0.15);
   }
-}
 
-.c-modal__close-icon {
-  width: 30px;
-  height: 30px;
-  fill: transparent;
-  stroke: black;
-  stroke-linecap: round;
-  stroke-width: 2;
-}
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    line-height: 1;
+    background: transparent;
+    border: 0;
+    box-shadow: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+    outline: none !important;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 
-.c-modal__body {
-  padding: 35px 30px 35px 30px;
+  &__close-icon {
+    width: 30px;
+    height: 30px;
+    fill: transparent;
+    stroke: black;
+    stroke-linecap: round;
+    stroke-width: 2;
+  }
+
+  &__body {
+    padding: 35px 30px 35px 30px;
+  }
 }

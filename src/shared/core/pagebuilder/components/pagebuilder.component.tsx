@@ -5,10 +5,11 @@ import { PagebuilderContainerProps } from "../index";
 import { EmptyPageComponent } from "@app/core/empty-page";
 import { ModuleComponent } from "./module.component";
 import { HelmetComponent } from "./helmet.component";
+import { getViewType } from "@app/util/detect-view";
+import { ViewType } from "@app/stores/settings";
 
 export interface IPagebuilderComponentProps {}
 
-const Z_INDEX_MAX = 100;
 // use this when calling the actual API
 // const getRoute = (pathname: string) => getConfig().BASE_URL + pathname;
 
@@ -18,10 +19,26 @@ export class PagebuilderComponent extends React.Component<
   IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps,
   IState
 > {
+  private isMobile =
+    this.props.screenSize &&
+    (this.props.screenSize.viewType === ViewType.Mobile || this.props.screenSize.viewType === ViewType.Tablet)
+      ? true
+      : false;
+
   public constructor(props: IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps) {
     super(props);
     if (props.location) {
       props.getPage(props.location.pathname);
+    }
+
+    if (typeof window === "object") {
+      window.addEventListener("resize", this.handleResize.bind(this));
+    }
+  }
+
+  public componentWillUnmount() {
+    if (typeof window === "object") {
+      window.removeEventListener("resize", this.handleResize.bind(this));
     }
   }
 
@@ -32,22 +49,7 @@ export class PagebuilderComponent extends React.Component<
           <React.Fragment>
             <HelmetComponent {...this.props.currentPage.metaData} />
             {this.props.currentPage.wordPressPostModules.map((wordPressModule, index) => (
-              <div
-                style={{
-                  marginTop: wordPressModule.topMargin,
-                  marginBottom: wordPressModule.bottomMargin,
-                  position: "relative",
-                  zIndex:
-                    wordPressModule.name === "Navbar" || wordPressModule.name === "gallerySlider"
-                      ? Z_INDEX_MAX
-                      : wordPressModule.name === "RecipeDetailModule"
-                      ? Z_INDEX_MAX - 1
-                      : "auto"
-                }}
-                key={index}
-              >
-                <ModuleComponent wordPressModule={wordPressModule} isMobile={this.props.isMobile} />
-              </div>
+              <ModuleComponent wordPressModule={wordPressModule} isMobile={this.isMobile} key={index} />
             ))}
           </React.Fragment>
         ) : (
@@ -55,5 +57,13 @@ export class PagebuilderComponent extends React.Component<
         )}
       </React.Fragment>
     );
+  }
+
+  private handleResize() {
+    const screenSize = getViewType(window.innerWidth);
+
+    if (this.props.screenSize === undefined || this.props.screenSize.viewType !== screenSize.viewType) {
+      this.props.setScreenSize(screenSize);
+    }
   }
 }

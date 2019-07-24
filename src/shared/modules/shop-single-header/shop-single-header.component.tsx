@@ -14,7 +14,11 @@ import { Button } from "@app/core";
 import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 
-const ShopSingleHeaderComponent = (props: ShopSingleHeaderModule) => {
+export interface IShopSingleHeaderComponentProps {
+  shopSingleHeaderModule: ShopSingleHeaderModule;
+}
+
+const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
   const {
     backLink,
     checkList,
@@ -33,7 +37,7 @@ const ShopSingleHeaderComponent = (props: ShopSingleHeaderModule) => {
     storeLink,
     timeLeftBar,
     title
-  } = props;
+  } = props.shopSingleHeaderModule;
 
   return (
     <div className={styles["container"]}>

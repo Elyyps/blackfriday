@@ -52,7 +52,10 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
                 <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
               </svg>
             </button>
-            <div className={styles["c-modal__body"]}> {props.children ? props.children : ""}</div>
+            <div className={styles["c-modal__body"]}>
+              <h2>ciaokwdowkdo wdiojkwediejk</h2>
+              {props.children ? props.children : ""}
+            </div>
           </div>
         </aside>
       </FocusLock>,

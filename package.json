@@ -26,6 +26,7 @@
     "connected-react-router": "6.4.0",
     "cors": "2.8.5",
     "dotenv": "8.0.0",
+    "enzyme-react-intl": "^2.0.4",
     "express": "4.16.4",
     "express-manifest-helpers": "0.6.0",
     "formik": "1.5.7",

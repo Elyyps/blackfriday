@@ -6,7 +6,7 @@ import { Badge } from "./badge.component";
 
 import ShareSVG from "@assets/icons/share.svg";
 import { ShareSocialComponent } from "../share-social";
-import { generateShareSocialModule } from "@app/api/modules/share-social/endpoints";
+import { generateShareSocialModule } from "@app/api/core/share-social/endpoints";
 const notes = require("./badge.md");
 
 storiesOf("Badge", module)

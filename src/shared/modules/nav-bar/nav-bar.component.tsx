@@ -7,8 +7,8 @@ import { ModalNavBar } from "@app/prep/modules-prep/core/modal-navbar";
 import { HamburgerMenuComponent } from "@app/prep/modules-prep/hamburger-menu";
 import { LinkComponent } from "@app/core/link";
 import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
-import { NavbarSearchContainer } from "../navbar-search/container/navbar-search.container";
-import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar-search/endpoints";
+import { NavbarSearchContainer } from "./navbar-search/container/navbar-search.container";
+import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
 
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
