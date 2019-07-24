@@ -10,7 +10,7 @@ export interface IBlogPostComponentProps {
 
 const BlogPostComponent = (props: IBlogPostComponentProps) => (
   <div className={styles["blog-post"]}>
-    <LinkComponent to={props.posts.link}>
+    <LinkComponent to={props.posts.link.url}>
       {props.posts.image && (
         <div className={styles["blog-post__image"]}>
           <ImageComponent src={props.posts.image} />
@@ -20,7 +20,7 @@ const BlogPostComponent = (props: IBlogPostComponentProps) => (
         <div className={styles["blog-post__title"]}>{props.posts.title}</div>
         <div className="uk-visible@m">
           {props.posts.content}
-          <span className={styles["blog-post__link"]}>{props.posts.linkTitle}</span>
+          <span className={styles["blog-post__link"]}>{props.posts.link.title}</span>
         </div>
       </div>
     </LinkComponent>

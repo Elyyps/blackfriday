@@ -24,8 +24,10 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                 Object {
                   "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
-                  "link": "",
-                  "linkTitle": "Lees meer",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
                   "title": "Vijf voorspellingen van Black Friday Nederland",
                 }
               }
@@ -39,8 +41,10 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                 Object {
                   "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
-                  "link": "",
-                  "linkTitle": "Lees meer",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
                   "title": "Top Black Friday deals van vorig jaar",
                 }
               }
@@ -54,8 +58,10 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                 Object {
                   "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
-                  "link": "",
-                  "linkTitle": "Lees meer",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
                   "title": "Mis geen enkele Black Friday deal!",
                 }
               }
@@ -69,8 +75,10 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                 Object {
                   "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
-                  "link": "",
-                  "linkTitle": "Lees meer",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
                   "title": "Wacht met shoppen tot Black Friday!",
                 }
               }
