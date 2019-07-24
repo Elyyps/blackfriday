@@ -9,4 +9,4 @@ import { dummyShopSingleHeaderData } from "@app/api/modules/shop-single-header/g
 storiesOf("Shop Single Header", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => <ShopSingleHeaderComponent {...dummyShopSingleHeaderData} />);
+  .add("Basic implementation", () => <ShopSingleHeaderComponent shopSingleHeaderModule={dummyShopSingleHeaderData} />);

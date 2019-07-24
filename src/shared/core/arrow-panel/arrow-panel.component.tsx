@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import styles from "./arrow-panel-component.module.scss";
 import { IconComponent, ImageComponent } from "@app/core";
 import { Link as ILink } from "@app/api/core/link";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
+import { Link } from "react-router-dom";
 
 export interface IArrowPanelProps {
   icon?: string;

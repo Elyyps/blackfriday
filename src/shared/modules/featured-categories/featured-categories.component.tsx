@@ -20,7 +20,7 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
         <div className={styles["wrapper"]}>
           {props.categoryItems &&
             props.categoryItems.map((item: IArrowPanelProps, index: number) => {
-              if (props.isMobile) {
+              if (props.screenSize) {
                 return (
                   index < itemsToShow && (
                     <div key={index}>
@@ -37,7 +37,7 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
               );
             })}
         </div>
-        {props.isMobile && (
+        {props.screenSize && (
           <div
             className={`${styles["show-button"]} ${
               itemsToShow > ITEMS_TO_SHOW_ON_MOBILE ? styles["less"] : styles["more"]
@@ -61,12 +61,5 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
     </div>
   );
 };
-
-// const useMobileStatus = (isMobile: boolean) => {
-//   if (isMobile) {
-//     return [...categoryItems].slice(0, itemsToShowOnMobile);
-//   }
-//   return [...categoryItems];
-// };
 
 export { FeaturedCategories };

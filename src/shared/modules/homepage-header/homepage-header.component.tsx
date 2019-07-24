@@ -1,8 +1,6 @@
 import * as React from "react";
 import styles from "./homepage-header-component.module.scss";
-
 import Slider, { Settings } from "react-slick";
-
 import { CHEVRON_RIGHT } from "@app/constants/icons";
 import { ArrowPanel, LabelComponent } from "@app/core";
 import { getHomePageHeaderSetting } from "./slider-settings";

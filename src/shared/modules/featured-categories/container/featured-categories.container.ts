@@ -3,13 +3,13 @@ import { IAppState } from "@app/stores";
 import { FeaturedCategories, IFeaturedCategoriesProps } from "@app/modules/featured-categories";
 
 interface IStateProps {
-  isMobile: boolean;
+  screenSize: {} | undefined;
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IFeaturedCategoriesProps, IAppState> = state => {
-  const { isMobile } = state.settings;
+  const { screenSize } = state.settings;
 
-  return { isMobile };
+  return { screenSize };
 };
 
 export type FeaturedCategoriesContainerProps = IStateProps;

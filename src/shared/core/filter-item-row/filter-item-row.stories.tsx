@@ -9,8 +9,8 @@ import { withProvider } from "@app/util";
 storiesOf("Arrow-panel", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => <FilterItemRow title="Productdeals" icon={CardIcon} link={"/"} />)
-  .add("Implementation with items", () => <FilterItemRow title="Productdeals" items={["Nike", "Adidas"]} link={"/"} />)
+  .add("Basic implementation", () => <FilterItemRow title="Productdeals" icon={CardIcon} />)
+  .add("Implementation with items", () => <FilterItemRow title="Productdeals" items={["Nike", "Adidas"]} />)
   .add("Implementation with many items", () => (
-    <FilterItemRow title="Productdeals" items={["Nike", "Adidas", "New Balance", "Versace"]} link={"/"} />
+    <FilterItemRow title="Productdeals" items={["Nike", "Adidas", "New Balance", "Versace"]} />
   ));

@@ -1,21 +1,19 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
-import styles from "./filter-item-row-component.module.scss";
+import styles from "./filter-item-row.component.module.scss";
 import { IconComponent, ImageComponent } from "@app/core";
 import { CHEVRON_RIGHT } from "@app/constants/icons";
 
 interface IFilterItemRowProps {
   icon?: string;
   items?: string[];
-  link: string;
+  onClick?: () => void;
   title?: string;
-  variant?: string;
 }
 const MAX_ITEMS = 3;
-const FilterItemRow = ({ title, items, icon, link, variant }: IFilterItemRowProps) => {
-  const [itemsList] = React.useState<string[]>(items || []);
+const FilterItemRow = ({ title, items, icon, onClick }: IFilterItemRowProps) => {
+  const [labelItems, setLabelItems] = React.useState<string>("");
 
-  const getItems = (itemsToConcatenate: string[]): string => {
+  const setItems = (itemsToConcatenate?: string[]): void => {
     let listWords = "";
     if (itemsToConcatenate) {
       itemsToConcatenate.slice(0, MAX_ITEMS).map((item, index) => {
@@ -30,27 +28,31 @@ const FilterItemRow = ({ title, items, icon, link, variant }: IFilterItemRowProp
       }
     }
 
-    return listWords;
+    setLabelItems(listWords);
   };
+  React.useEffect(() => {
+    setItems(items);
+  }, [items]);
 
   return (
-    <Link
-      to={link}
-      className={`${styles["card-simple"]} ${variant ? styles[`card-simple--${variant}`] : ""}  ${
-        itemsList.length > 0 ? styles[`card-simple--list-brands`] : ""
-      }`}
+    <div
+      onClick={() => {
+        if (onClick) onClick();
+      }}
+      role="button"
+      className={`${styles["filter-item"]} ${items && items.length > 0 ? styles[`filter-item--list-items`] : ""}`}
     >
       {icon && (
-        <div className={styles["card-simple__image"]}>
+        <div className={styles["filter-item__image"]}>
           <ImageComponent src={icon} />
         </div>
       )}
-      <div className={styles["card-simple__title"]}>{title}</div>
-      <div className={styles["card-simple__body"]}>
-        {!icon && <div className={styles["card-simple__list-brands"]}>{getItems(itemsList)}</div>}
-        <IconComponent icon={CHEVRON_RIGHT} size="5px" />
+      <div className={styles["filter-item__title"]}>{title}</div>
+      <IconComponent icon={CHEVRON_RIGHT} size="12px" />
+      <div className={styles["filter-item__body"]}>
+        {!icon && <div className={styles["filter-item__list-items"]}>{labelItems}</div>}
       </div>
-    </Link>
+    </div>
   );
 };
 export { FilterItemRow };

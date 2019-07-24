@@ -1,6 +1,10 @@
 import { StoresOverviewModule } from "./stores-overview.module";
 import { generateFilterBarData, generateEmptyFilterBarData } from "@app/api/core/filter-bar/endpoint";
-import { generateShopCardData, generateEmptyShopCardData, generateShopCardData2 } from "@app/api/core/shop-card/endpoint";
+import {
+  generateShopCardData,
+  generateEmptyShopCardData,
+  generateShopCardData2
+} from "@app/api/core/shop-card/endpoint";
 
 export const generateDummyStoresOverview = (): StoresOverviewModule => ({
   shopCards: generateShopCardData(),

@@ -1,3 +1,4 @@
+import React from "react";
 import { SeeMoreCardComponent } from "./see-more-card.component";
 import { shallow } from "enzyme";
 

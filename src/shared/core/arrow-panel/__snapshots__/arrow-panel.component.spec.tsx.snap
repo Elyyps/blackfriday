@@ -2,23 +2,27 @@
 
 exports[`[arrow-panel] should render component without crashing 1`] = `
 <Link
-  className="card-simple   "
+  className="card-simple"
   to="/"
 >
   <div
-    className="card-simple__image"
+    className="content"
   >
-    <ImageComponent
-      src="store.svg"
-    />
+    <div
+      className="image"
+    >
+      <ImageComponent
+        src="store.svg"
+      />
+    </div>
+    <div
+      className="title"
+    >
+      Productdeals
+    </div>
   </div>
   <div
-    className="card-simple__title"
-  >
-    Productdeals
-  </div>
-  <div
-    className="card-simple__body"
+    className="icon"
   >
     <IconComponent
       icon={
@@ -28,7 +32,7 @@ exports[`[arrow-panel] should render component without crashing 1`] = `
           "default": "chevron-right.svg",
         }
       }
-      size="5px"
+      size="10px"
     />
   </div>
 </Link>
