@@ -163,7 +163,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
         title="Categories"
       >
         <SearchFilterControlComponent
-          applyFilter={[Function]}
+          applyFilter={[MockFunction]}
           checkbox={
             Array [
               Object {
@@ -196,7 +196,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
           getCheckedFilters={[Function]}
           getTotalShops={[Function]}
           numberOfFilters={0}
-          onSelect={[Function]}
+          onSelect={[MockFunction]}
         />
       </DropdownComponent>
     </div>
@@ -210,7 +210,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
         title="Brands"
       >
         <SearchFilterControlComponent
-          applyFilter={[Function]}
+          applyFilter={[MockFunction]}
           checkbox={
             Array [
               Object {
@@ -293,7 +293,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
           getCheckedFilters={[Function]}
           getTotalShops={[Function]}
           numberOfFilters={0}
-          onSelect={[Function]}
+          onSelect={[MockFunction]}
         />
       </DropdownComponent>
     </div>
