@@ -1,6 +1,6 @@
 import { FeaturedDealsModule } from "./featured-deals.module";
 
-export const dummyFeaturedDealsData = (): FeaturedDealsModule => ({
+export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
   title: "Meer deals",
   deals: [
     {

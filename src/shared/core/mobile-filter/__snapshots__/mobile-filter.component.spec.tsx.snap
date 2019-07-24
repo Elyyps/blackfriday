@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[MobileFilter] should render component without crashing 1`] = `
+<div
+  className="mobile-filter"
+>
+  <div
+    className="mobile-filter__header"
+  >
+    <span
+      className="mobile-filter__header__nav-button"
+      onClick={[Function]}
+      role="button"
+    >
+      <IconComponent
+        icon="cross.svg"
+        size="12px"
+        strokeColor="#fff"
+      />
+    </span>
+    <div
+      className="mobile-filter__header__title"
+    >
+      <span>
+        Filters
+      </span>
+      <IconComponent
+        icon="hand-pointing.svg"
+        size="16px"
+      />
+    </div>
+    <a
+      className="mobile-filter__header__clear"
+      onClick={[Function]}
+      role="button"
+    >
+      Wis alle filters
+    </a>
+  </div>
+  <div
+    className="mobile-filter__footer"
+  >
+    <Button
+      fullWidth={true}
+      title="Toon 0 Winkels"
+      variant="secondary-inverted"
+    />
+  </div>
+</div>
+`;

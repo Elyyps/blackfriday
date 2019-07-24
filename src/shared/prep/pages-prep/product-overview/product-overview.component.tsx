@@ -4,7 +4,15 @@ import { BodyTextComponent, FooterComponent, NavBarComponent } from "@app/prep/m
 import { FeaturedCategoriesComponent } from "@app/prep/modules-prep/featured-categories";
 import { FeaturedShopComponent } from "@app/prep/modules-prep/featured-shop";
 import { FeaturedDealsComponent } from "@app/prep/modules-prep/featured-deals";
-import { Cards, CardMore, CardsDeals, CTASimple, Banner, HeaderInfoDummy, FeaturedCategories } from "./dummy-data";
+import {
+  Cards,
+  CardMore,
+  CardsDeals,
+  CTASimple,
+  Banner,
+  HeaderInfoDummy,
+  generateFeaturedCategoriesDummyData
+} from "./dummy-data";
 import { CtaSmallComponent } from "@app/prep/modules-prep/cta-small";
 import { BannerComponent } from "@app/prep/modules-prep/banner";
 import { HeaderInfoComponent } from "@app/prep/modules-prep/header-info";
@@ -15,7 +23,7 @@ const ProductOverviewComponent = (props: IProductOverviewComponentProps) => (
   <div className={styles["product-overview"]}>
     <NavBarComponent />
     <HeaderInfoComponent {...HeaderInfoDummy} />
-    <FeaturedCategoriesComponent {...FeaturedCategories} />
+    <FeaturedCategoriesComponent {...generateFeaturedCategoriesDummyData()} />
     <FeaturedDealsComponent
       items={[...CardsDeals]}
       buttonMore={[...CardMore]}

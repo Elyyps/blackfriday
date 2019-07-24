@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { DropdownComponent } from "./dropdown.component";
 import { ShareSocialComponent } from "@app/core/share-social";
-import { generateShareSocialModule } from "@app/api/modules/share-social/endpoints";
+import { generateShareSocialModule } from "@app/api/core/share-social/endpoints";
 import { SearchFilterControlComponent } from "../search-filter-control/search-filter-control.component";
 import { generateShopsOverviewData } from "@app/api/modules/stores-overview/endpoints";
 
@@ -22,15 +22,3 @@ storiesOf("dropdown", module)
       notes
     }
   );
-// .add("Implementation with Brands Filter ", () => (
-//   <DropdownComponent buttonColor="outline" buttonVariant="primary-brand">
-//     <SearchFilterControlComponent
-//       checkbox={dropdownData.filterBar.brands}
-//       onSelect={jest.fn}
-//       applyFilter={() => ""}
-//       getCheckedFilters={() => ""}
-//       numberOfFilters={0}
-//       getTotalShops={() => ""}
-//     />
-//   </DropdownComponent>
-// ));

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { generateTabsDummyData } from "@app/api/core/tab/endpoint";
 import { StoresOverviewContainer } from "@app/modules/stores-overview/container/stores-overview.container";
 
-export interface ITabComponentComponentProps {}
-const TabComponentComponent = (props: ITabComponentComponentProps) => {
+export interface ITabComponentProps {}
+const TabComponent = (props: ITabComponentProps) => {
   const tabData = generateTabsDummyData;
   const [selectedTab, setSelectedTab] = React.useState<string>("Winkels");
   const getComponentTabIndex = (title: string) => {
@@ -35,4 +35,4 @@ const TabComponentComponent = (props: ITabComponentComponentProps) => {
     </React.Fragment>
   );
 };
-export { TabComponentComponent };
+export { TabComponent };
