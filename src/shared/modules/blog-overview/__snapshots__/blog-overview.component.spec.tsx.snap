@@ -81,7 +81,23 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
       <div
         className="blog-overview__sidebar"
       >
-        <SidebarComponent />
+        <SidebarComponent
+          banner=""
+          items={
+            Array [
+              Object {
+                "brands": Array [
+                  "",
+                ],
+                "icon": "",
+                "text": Object {
+                  "title": "",
+                  "url": "",
+                },
+              },
+            ]
+          }
+        />
       </div>
     </div>
   </div>

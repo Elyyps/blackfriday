@@ -10,16 +10,19 @@ exports[`[Select] should render component without crashing 1`] = `
     onSelect={[Function]}
   >
     <option
+      aria-selected={true}
       value="newest"
     >
       newest
     </option>
     <option
+      aria-selected={true}
       value="price"
     >
       price
     </option>
     <option
+      aria-selected={true}
       value="relevance"
     >
       relevance
