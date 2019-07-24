@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[CtaSmall] should render component without crashing 1`] = `
+<div
+  className="cta-small"
+>
+  <div
+    className="uk-container"
+  >
+    <ShadowCardComponent
+      borderRadius={
+        Array [
+          "2px",
+        ]
+      }
+      shadowSize="small"
+    >
+      <div
+        className="cta-small__wrapper"
+      >
+        <div
+          className="icon"
+        >
+          <IconComponent
+            icon="sign.svg"
+            size="32px"
+          />
+        </div>
+        <div
+          className="cta-small__title"
+        >
+          Niet helemaal wat je zoekt? Geeft niks want we hebben meer!
+        </div>
+        <ClickableComponent
+          title="Naar deals"
+          variant="primary-brand"
+        />
+      </div>
+    </ShadowCardComponent>
+  </div>
+</div>
+`;

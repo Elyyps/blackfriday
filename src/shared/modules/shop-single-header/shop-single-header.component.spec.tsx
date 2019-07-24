@@ -5,7 +5,7 @@ import { dummyShopSingleHeaderData } from "@app/api/modules/shop-single-header/g
 
 describe("[ShopSingleHeader]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(<ShopSingleHeaderComponent {...dummyShopSingleHeaderData} />);
+    const renderedComponent = shallow(<ShopSingleHeaderComponent shopSingleHeaderModule={dummyShopSingleHeaderData} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

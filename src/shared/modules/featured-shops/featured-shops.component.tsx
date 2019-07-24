@@ -7,7 +7,7 @@ import { ShopCardModule } from "@app/api/core/shop-card";
 
 export interface IFeaturedShopsComponentProps {
   seeMoreCard: SeeMoreCard;
-  shops: [ShopCardModule, ShopCardModule, ShopCardModule, ShopCardModule];
+  shops: ShopCardModule[];
   title: string;
 }
 

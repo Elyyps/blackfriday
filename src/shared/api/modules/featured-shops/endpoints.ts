@@ -1,3 +1,3 @@
 import { dummyFeaturedShopsData } from "./generate-dummy-data";
 
-export const getFeaturedShopsDummyData = () => dummyFeaturedShopsData;
+export const generateFeaturedShopsDummyData = () => dummyFeaturedShopsData;

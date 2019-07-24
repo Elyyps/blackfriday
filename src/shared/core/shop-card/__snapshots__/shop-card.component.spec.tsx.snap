@@ -5,7 +5,7 @@ exports[`[ShopCard] should render component without crashing 1`] = `
   shadowSize="small"
 >
   <div
-    className="shop-card"
+    className="shop-card shop-card--default"
   >
     <div
       className="shop-card__body"
@@ -21,6 +21,7 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       <TimeLeftBarComponent
         color="none"
         range={0}
+        variant="responsive"
       />
       <div
         className="shop-card__content"
