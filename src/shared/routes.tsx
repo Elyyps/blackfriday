@@ -7,7 +7,6 @@ import { PlaygroundMartijnComponent } from "./playgrounds/playground-martijn/pla
 import { WinkleoverviewComponent } from "@app/prep/pages-prep/winkleoverview/winkleoverview.component";
 import { StoresOverviewContainer } from "./modules/stores-overview/container/stores-overview.container";
 import { PagebuilderContainer } from "./core/pagebuilder";
-import { TabComponent } from "./core/tab";
 
 const Routes: React.FunctionComponent = () => (
   <React.Fragment>
@@ -18,8 +17,6 @@ const Routes: React.FunctionComponent = () => (
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-single" component={PagebuilderContainer} />
-    <Route exact path="/tabs" component={PagebuilderContainer} />
-    <Route exact path="/design" component={WinkleoverviewComponent} />
     <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
     <Route exact path="/playground-pedro" component={PlaygroundPedroComponent} />
     <Route exact path="/playground-daniele" component={PlaygroundDanieleComponent} />

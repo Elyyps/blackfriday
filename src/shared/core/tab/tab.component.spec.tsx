@@ -1,10 +1,11 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { TabComponentComponent } from "./tab-component.component";
+import { TabComponent } from "./tab.component";
+const titles: string[] = ["Winkels", "Productdeals"];
 
 describe("[tabComponent]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(<TabComponentComponent />);
+    const renderedComponent = shallow(<TabComponent titles={titles} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });
