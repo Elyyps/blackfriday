@@ -1,26 +1,51 @@
 import * as React from "react";
-import styles from "./modal-component.module.scss";
 
+import { ModalDialogComponent } from "./modal-dialog.component";
+
+export type ModalVariant = "small" | "big";
+export type Role = "dialog" | "alertdialog";
 export interface IModalComponentProps {
-  children: any;
-  modalTarget: string;
-  modalTitle?: string;
+  ariaLabel?: string;
+  modalBackground?: string;
+  modalContent: JSX.Element;
+  role?: Role;
+  trigger: JSX.Element;
+  variant: ModalVariant;
 }
 
-const ModalComponent = ({ children, modalTarget, modalTitle }: IModalComponentProps) => (
-  <div id={modalTarget} className={`uk-modal uk-flex-top ${styles["uk-modal"]} ${styles["uk-flex-top"]}`} data-uk-modal>
-    <div
-      className={`uk-modal-dialog uk-modal-body uk-margin-auto-vertical ${styles["uk-modal-dialog"]} ${
-        styles["uk-modal-body"]
-      } ${styles["uk-margin-auto-vertical"]}`}
-    >
-      <div className={`uk-modal-head ${styles["uk-modal-head"]}`}>
-        {modalTitle && <h2>{modalTitle}</h2>}
-        <button role={"button"} className={`uk-modal-close ${styles["uk-modal-close"]}`} type="button" data-uk-close />
-      </div>
-      {children && <div className={`uk-modal-content ${styles["uk-modal-content"]}`}>{children}</div>}
-    </div>
-  </div>
-);
+const ModalComponent = (props: IModalComponentProps) => {
+  const [isModalOpen, setModal] = React.useState(false);
+  const modalRef = React.createRef<HTMLDivElement>();
+  const onKeyDown = ({ key }: KeyboardEvent) => {
+    if (key === "Escape") setModal(false);
+  };
 
+  const onClickAway = (e: any) => {
+    if (modalRef.current && modalRef.current && modalRef.current.contains(e.target)) return;
+    setModal(false);
+  };
+
+  return (
+    <React.Fragment>
+      <div role={"botton"} onClick={() => setModal(true)}>
+        {props.trigger}
+      </div>
+
+      {isModalOpen && (
+        <ModalDialogComponent
+          ariaLabel={props.ariaLabel ? props.ariaLabel : "dialog description"}
+          background={props.modalBackground ? props.modalBackground : "#fff"}
+          onClose={() => setModal(false)}
+          variant={props.variant}
+          role={props.role ? props.role : "dialog"}
+          onKeyDown={onKeyDown}
+          modalRef={modalRef}
+          onClickAway={onClickAway}
+        >
+          {props.modalContent}
+        </ModalDialogComponent>
+      )}
+    </React.Fragment>
+  );
+};
 export { ModalComponent };

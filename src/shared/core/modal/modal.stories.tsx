@@ -4,12 +4,11 @@ import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
 import { ModalComponent } from "./modal.component";
+import { Button } from "..";
 
 storiesOf("Modal", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
-    <ModalComponent modalTarget="" modalTitle="modalTitle">
-      Modal Content
-    </ModalComponent>
+    <ModalComponent trigger={<Button title={"test"} />} variant={"small"} modalContent={<p>test</p>} />
   ));
