@@ -1,3 +1,4 @@
+/* tslint:disable */
 import * as React from "react";
 
 import { HomePageHeaderComponent } from "@app/modules/homepage-header";
