@@ -45,7 +45,6 @@ const ModuleComponent = (props: IModuleComponentProps) => {
       }}
     >
       <div className={styles["contentComponent"]} style={styleMainContainerModule}>
-        <div>is mobile: {props.isMobile}</div>
         {component}
       </div>
     </div>
