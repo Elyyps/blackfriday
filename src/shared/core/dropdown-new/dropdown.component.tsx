@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import styles from "./dropdown-component.module.scss";
 import { ClickableComponent } from "../clickable";
 import ChevronDown from "@assets/icons/chevron-down.svg";
+import useOutsideClick from "@app/util/outside-click";
 
 export interface IDropdownComponentProps {
   children: any;
@@ -10,12 +11,17 @@ export interface IDropdownComponentProps {
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const zIndexWhenOpen = 1021;
   const buttonHeight = 38;
 
+  useOutsideClick(wrapperRef, () => {
+    setIsOpen(false);
+  });
+
   return (
-    <div className={styles["dropdown"]}>
+    <div className={styles["dropdown"]} ref={wrapperRef}>
       <div className={`${styles["dropdown-child"]} ${!!isOpen && styles["dropdown-child--open"]}`}>
         <ClickableComponent
           onClick={() => {
