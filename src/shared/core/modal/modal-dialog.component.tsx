@@ -7,10 +7,10 @@ export interface IModalDialogComponentProps {
   ariaLabel: string;
   background: string;
   children: JSX.Element;
-  modalRef: any;
+  modalRef: React.RefObject<HTMLDivElement>;
   onClickAway: (e: any) => void;
   onClose: () => void;
-  onKeyDown: ({ keyCode }: any) => void;
+  onKeyDown: ({ key }: KeyboardEvent) => void;
   role: Role;
   title?: string;
   variant: ModalVariant;
@@ -38,7 +38,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
           aria-label={props.ariaLabel}
           aria-modal="true"
           tabIndex={-1}
-          onClick={(e): any => {
+          onMouseDown={(e): any => {
             props.onClickAway(e);
           }}
         >
