@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import styles from "./clickable-component.module.scss";
 import { Link } from "react-router-dom";
 import { IconComponent } from "@app/core/icon";
@@ -32,6 +32,7 @@ export interface IClickableComponentProps {
   target?: "_blank" | "_self";
   title?: string;
   variant?: ButtonVariant;
+  zIndex?: number;
 }
 
 const renderIconMargin = (margin = "right", title: string | undefined, icon: string | undefined) => {
@@ -61,19 +62,17 @@ const renderIconText = (icon: string | undefined, iconPosition: string | undefin
 };
 
 const ClickableComponent = (props: IClickableComponentProps) => {
-  const {
-    buttonType,
-    animated,
-    onClick,
-    href,
-    variant,
-    title,
-    icon,
-    disabled,
-    iconStyle,
-    iconPosition,
-    target
-  } = props;
+  const [iconText, setIconText] = React.useState<JSX.Element>(
+    renderIconText(props.icon, props.iconPosition, props.title)
+  );
+  useEffect(() => setIconText(renderIconText(props.icon, props.iconPosition, props.title)), [
+    props.icon,
+    props.iconPosition,
+    props.title
+  ]);
+
+  const { buttonType, animated, onClick, href, variant, title, disabled, iconStyle, target, zIndex } = props;
+
   const classModify = variant || "primary-default";
   const buttonFAB = !title ? styles["button--FAB"] : "";
   const animatedIcon = animated ? styles[`button--animated`] : "";
@@ -90,7 +89,8 @@ const ClickableComponent = (props: IClickableComponentProps) => {
   );
   const buttonStyle = {
     width: props.fullWidth ? "100%" : props.size,
-    height: props.size
+    height: props.size,
+    zIndex
   };
 
   if (href) {
@@ -100,14 +100,14 @@ const ClickableComponent = (props: IClickableComponentProps) => {
     if (isExternalLink) {
       return (
         <a target={target || "_blank"} className={buttonClassName} style={buttonStyle} href={href}>
-          {renderIconText(icon, iconPosition, title)}
+          {iconText}
         </a>
       );
     }
 
     return (
       <Link target={target || "_self"} className={buttonClassName} style={buttonStyle} to={href}>
-        {renderIconText(icon, iconPosition, title)}
+        {iconText}
       </Link>
     );
   }
@@ -121,7 +121,7 @@ const ClickableComponent = (props: IClickableComponentProps) => {
       className={buttonClassName}
       onClick={onClick}
     >
-      <span className={styles["icon-svg"]}>{renderIconText(icon, iconPosition, title)}</span>
+      <span className={styles["icon-svg"]}>{iconText}</span>
     </button>
   );
 };
