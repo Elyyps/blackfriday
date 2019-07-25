@@ -30,12 +30,12 @@ const CheckboxDropDown = (props: ICheckboxDropDownProps) => {
       <DropdownComponent title={props.title}>
         <React.Fragment>
           {props.items.map((item, key) => (
-            <li key={key} className={styles["filter-bar-li"]}>
+            <div role="button" onClick={() => onChecked(item.displayName)} className={styles["filter-bar"]}>
               <CheckboxComponent isChecked={item.isSelected} onClick={onChecked}>
                 {item.displayName}
               </CheckboxComponent>
               <span className={styles["counter"]}>{item.totalAmount}</span>
-            </li>
+            </div>
           ))}
         </React.Fragment>
       </DropdownComponent>
