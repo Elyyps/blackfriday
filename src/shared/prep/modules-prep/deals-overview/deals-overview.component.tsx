@@ -228,7 +228,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                 ? TabItemsContent.map((item, key) => (
                     <TabComponent key={key}>
                       <div
-                        className="uk-grid-posts uk-grid uk-grid-small  uk-child-width-1-3@s uk-child-width-1-5@m"
+                        className="uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m"
                         data-uk-margin
                       >
                         {CardsDeals &&

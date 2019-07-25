@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./featured-categories-component.module.scss";
+import "./uk-grid-specification.scss";
 import { ArrowPanel, IArrowPanelProps } from "@app/core";
 import { FeaturedCategoriesContainerProps } from "./container/featured-categories.container";
 import { FeaturedCategoriesModule } from "@app/api/modules/featured-categories/featured-categories.module";
@@ -21,8 +22,8 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
     <div className={styles["featured-categories"]}>
       <div className="uk-container">
         <div
-          // className={`uk-grid uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l ${styles["wrapper"]}`}
-          className={`${styles["wrapper"]}`}
+          className={`uk-grid uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l ${styles["wrapper"]}`}
+          data-uk-margin
         >
           {categoryItems &&
             categoryItems.map((item: IArrowPanelProps, index: number) => {
