@@ -6,7 +6,10 @@ import { ModalComponent } from "../modal";
 import Paper from "@assets/icons/paper.svg";
 import Icon from "@assets/icons/send.svg";
 import { NewsletterFormComponent } from "./newsletter.forms.component";
-export interface INewsletterComponentProps {}
+import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
+export interface INewsletterComponentProps {
+  newsletterModule: NewsletterModule;
+}
 
 const onSubmit = () => {
   // Submit logic here
@@ -18,13 +21,12 @@ const NewsletterComponent = (props: INewsletterComponentProps) => (
         <IconComponent icon={Icon} size={"30px"} />
       </div>
       <div className={styles["newsletter__body"]}>
-        <div className={styles["newsletter__content"]}>Op de hoogte blijven? Meld je dan aan!</div>
+        <div className={styles["newsletter__content"]}>{props.newsletterModule.text}</div>
         <div className={styles["newsletter__action"]}>
           <ModalComponent
-            title={"pinuccio"}
+            title={props.newsletterModule.modalTitle}
             trigger={
-              <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />
-            }
+              <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />}
             modalContent={<NewsletterFormComponent onSubmit={onSubmit} />}
             variant={"big"}
           />
