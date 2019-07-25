@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BlogSingleHeader] should render component without crashing 1`] = `
+<div
+  className="blog-single-header"
+>
+  <div
+    className="blog-single-header-basic"
+  >
+    <div
+      className="uk-container"
+    >
+      <ul
+        className=" \\"uk-visible@s\\" blog-single-header-basic__breadcrumbs"
+      >
+        <li
+          key="0"
+        >
+          <Link
+            to=""
+          >
+            Home
+          </Link>
+        </li>
+        <li
+          key="1"
+        >
+          <Link
+            to=""
+          >
+            Alle blogs
+          </Link>
+        </li>
+      </ul>
+      <Link
+        className="\\"uk-hidden@s\\" blog-single-header-basic__back"
+        to=""
+      >
+        <IconComponent
+          icon="chevron-left.svg"
+          size="6px"
+        />
+      </Link>
+      <h1>
+        Black Friday 2019 blog
+      </h1>
+    </div>
+  </div>
+  <div
+    className="uk-container"
+  >
+    <div
+      className="blog-single-header__image"
+    >
+      <ImageComponent
+        src="oasis.jpg"
+      />
+    </div>
+  </div>
+</div>
+`;
