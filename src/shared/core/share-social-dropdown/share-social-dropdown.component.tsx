@@ -5,6 +5,8 @@ import { DropdownComponent } from "../dropdown/dropdown.component";
 import { ShareSocialComponent } from "../share-social/share-social.component";
 import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-data";
 import { IShareSocialComponent } from "@app/api/core/share-social";
+import { StarsRatingComponent } from "../stars-rating";
+import { shareSocialNative } from "@app/util/share-social";
 
 export interface IShareSocialDropdownComponentProps {
   buttonTitle: string;
@@ -20,10 +22,10 @@ const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps)
   }, []);
 
   const onClickHandler = () => {
-    const navigatorInstance: any = navigator;
     let title = "";
     let url = "";
     let content = "";
+
     if (shareSocial.facebook) {
       title = shareSocial.facebook.title;
       url = shareSocial.facebook.url;
@@ -38,22 +40,7 @@ const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps)
       title = shareSocial.whatsapp.title;
       url = shareSocial.whatsapp.url;
     }
-    if (navigatorInstance.share) {
-      navigatorInstance
-        .share({
-          title,
-          text: content,
-          url: window.location.href
-        })
-        .then(() => {
-          alert("Successful callback");
-        })
-        .catch((err: any) => {
-          alert("Error callback: ");
-        });
-    } else {
-      alert("web share not supported");
-    }
+    shareSocialNative(title, content);
   };
 
   return (
