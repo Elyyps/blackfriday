@@ -12,6 +12,7 @@ export interface IModalDialogComponentProps {
   onClose: () => void;
   onKeyDown: ({ keyCode }: any) => void;
   role: Role;
+  title?: string;
   variant: ModalVariant;
 }
 
@@ -20,7 +21,6 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
     window.addEventListener("keydown", props.onKeyDown);
     document.body.style.overflow = "hidden";
 
-    // Remove event listeners on cleanup
     return () => {
       document.body.style.overflow = "auto";
       if (!!window) {
@@ -28,7 +28,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
       }
     };
   }, []);
-  const modalSize = props.variant === "small" ? "600px" : props.variant === "big" ? "70%" : "600px";
+  const modalSize = props.variant === "small" ? "600px" : props.variant === "big" ? "50%" : "600px";
   if (typeof document !== "undefined") {
     return ReactDOM.createPortal(
       <FocusLock>
@@ -53,7 +53,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
               </svg>
             </button>
             <div className={styles["c-modal__body"]}>
-              <h2>ciaokwdowkdo wdiojkwediejk</h2>
+              {props.title && <h2>{props.title}</h2>}
               {props.children ? props.children : ""}
             </div>
           </div>

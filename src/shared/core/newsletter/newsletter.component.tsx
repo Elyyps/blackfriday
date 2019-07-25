@@ -21,10 +21,12 @@ const NewsletterComponent = (props: INewsletterComponentProps) => (
         <div className={styles["newsletter__content"]}>Op de hoogte blijven? Meld je dan aan!</div>
         <div className={styles["newsletter__action"]}>
           <ModalComponent
+            title={"pinuccio"}
             trigger={
-              <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />}
+              <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />
+            }
             modalContent={<NewsletterFormComponent onSubmit={onSubmit} />}
-            variant={"small"}
+            variant={"big"}
           />
         </div>
       </div>

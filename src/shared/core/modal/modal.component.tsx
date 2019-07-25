@@ -9,6 +9,7 @@ export interface IModalComponentProps {
   modalBackground?: string;
   modalContent: JSX.Element;
   role?: Role;
+  title?: string;
   trigger: JSX.Element;
   variant: ModalVariant;
 }
@@ -33,6 +34,7 @@ const ModalComponent = (props: IModalComponentProps) => {
 
       {isModalOpen && (
         <ModalDialogComponent
+          title={props.title}
           ariaLabel={props.ariaLabel ? props.ariaLabel : "dialog description"}
           background={props.modalBackground ? props.modalBackground : "#fff"}
           onClose={() => setModal(false)}

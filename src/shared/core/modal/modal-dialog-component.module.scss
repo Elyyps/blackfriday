@@ -5,6 +5,7 @@
   -webkit-overflow-scrolling: touch;
   height: auto;
   max-height: 60vh;
+  min-width: 600px;
   overflow: scroll;
   left: 50%;
   top: 50%;
@@ -12,6 +13,7 @@
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100% !important;
     max-height: 100vh;
+    min-width: auto;
   }
 
   &-cover {
