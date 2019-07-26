@@ -2,7 +2,7 @@ import * as React from "react";
 
 import styles from "./stars-rating-component.module.scss";
 import Star from "@assets/icons/star-filled.svg";
-import HalfStar from "@assets/icons/half-star-color.svg";
+import HalfStar from "@assets/icons/half-star-color-v2.svg";
 import { IconComponent } from "@app/core/";
 
 export interface IStarsRatingComponentProps {
