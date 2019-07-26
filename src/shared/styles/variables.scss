@@ -20,7 +20,7 @@ $bg-muted: #f7f7f7 !default;
 //
 $breakpoint-xsmall: 480px !important;
 $breakpoint-small: 640px !default;
-$breakpoint-small-medium: 768px !important;
+$breakpoint-small-medium: 768px !default;
 $breakpoint-medium: 960px !default;
 $breakpoint-large: 1200px !default;
 $breakpoint-xlarge: 1600px !default;
@@ -35,12 +35,10 @@ $breakpoint-large-max: ($breakpoint-xlarge - 1) !default;
 // Typography
 //
 
-$global-font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-  Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
-  'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
-$global-font-family-secondary: 'Bai Jamjuree', -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$global-font-family: "Assistant", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+  "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$global-font-family-secondary: "Bai Jamjuree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+  Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $global-font-size: 16px !default;
 $global-line-height: 1.438 !default;
 

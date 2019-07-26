@@ -4,13 +4,15 @@ import { IPagebuilderComponentProps, PagebuilderComponent } from "@app/core/page
 import { IAppState } from "@app/stores";
 import { pageThunks } from "@app/middleware";
 import { PageModel } from "@app/api/pagebuilder/page.model";
+import { settingsActions, IScreenSize } from "@app/stores/settings";
 
 interface IStateProps {
   currentPage: PageModel | undefined;
-  isMobile: boolean;
+  screenSize: IScreenSize | undefined;
 }
 interface IDispatchProps {
   getPage: (route: string) => void;
+  setScreenSize: (screenSize: IScreenSize) => void;
 }
 
 const mapStateToProps: MapStateToProps<
@@ -19,13 +21,14 @@ const mapStateToProps: MapStateToProps<
   IAppState
 > = state => {
   const { currentPage } = state.page;
-  const { isMobile } = state.settings;
+  const { screenSize } = state.settings;
 
-  return { currentPage, isMobile };
+  return { currentPage, screenSize };
 };
 
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IPagebuilderComponentProps> = dispatch => ({
-  getPage: (route: string) => dispatch(pageThunks.getPage(route))
+  getPage: (route: string) => dispatch(pageThunks.getPage(route)),
+  setScreenSize: (screenSize: IScreenSize) => dispatch(settingsActions.setScreenSize({ screenSize }))
 });
 
 export type PagebuilderContainerProps = IStateProps & IDispatchProps;

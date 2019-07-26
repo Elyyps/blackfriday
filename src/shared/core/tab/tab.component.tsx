@@ -1,16 +1,20 @@
 import * as React from "react";
 import styles from "./tab-component.module.scss";
 import { Link } from "react-router-dom";
-
+export interface ITabsInterface {
+  content: JSX.Element;
+  index: number;
+  title: string;
+}
 export interface ITabComponentProps {
-  data: any[];
+  tabs: any[];
 }
 const TabComponent = (props: ITabComponentProps) => {
-  const [selectedTab, setSelectedTab] = React.useState<string>("Winkels");
+  const [selectedTab, setSelectedTab] = React.useState<number>(1);
   const getComponentTabIndex = () => {
     let tabComponent;
-    props.data.map(tab => {
-      if (selectedTab === tab.title) {
+    props.tabs.map(tab => {
+      if (selectedTab === tab.index) {
         tabComponent = tab.content;
       }
     });
@@ -22,13 +26,13 @@ const TabComponent = (props: ITabComponentProps) => {
     <React.Fragment>
       <div className={`${styles["tab"]}`}>
         <ul className={styles["uk-tab__list"]}>
-          {props.data.map(value => (
+          {props.tabs.map(tab => (
             <li
               role="button"
-              className={selectedTab === value.title ? styles["tab__selected"] : ""}
-              onClick={() => setSelectedTab(value.title)}
+              className={selectedTab === tab.index ? styles["tab__selected"] : ""}
+              onClick={() => setSelectedTab(tab.index)}
             >
-              {<Link to="#">{value.title}</Link>}
+              {<Link to="#">{tab.title}</Link>}
             </li>
           ))}
         </ul>

@@ -23,7 +23,7 @@ exports[`[Newsletter] should render component without crashing 1`] = `
       </div>
       <div
         className="newsletter__action"
-        data-uk-toggle="target: #modal-product-detail"
+        data-uk-toggle="target: #modal-newsletter"
       >
         <Button
           fullWidth={true}
@@ -35,52 +35,6 @@ exports[`[Newsletter] should render component without crashing 1`] = `
       </div>
     </div>
   </div>
-  <ModalComponent
-    modalTarget="modal-product-detail"
-    modalTitle="Inschrijven nieuwsbrief"
-  >
-    <form
-      action="/"
-      className="form"
-    >
-      <div
-        className="uk-grid"
-        data-uk-margin={true}
-      >
-        <div
-          className="uk-width-1-2@s"
-        >
-          <Input
-            label="Naam"
-            name="text"
-          />
-        </div>
-        <div
-          className="uk-width-1-2@s"
-        >
-          <Input
-            label="E-mailadres"
-            name="text"
-          />
-        </div>
-      </div>
-      <div
-        className="uk-margin-small-top"
-      >
-        <TextArea
-          label="Bericht"
-          name="text"
-        />
-      </div>
-      <div
-        className="form-bottom uk-margin-small-top"
-      >
-        <Button
-          icon="paper.svg"
-          title="Verzenden"
-        />
-      </div>
-    </form>
-  </ModalComponent>
+  <NewsletterModalComponent />
 </div>
 `;

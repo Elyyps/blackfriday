@@ -25,12 +25,12 @@ exports[`[Dropdown] should render component without crashing 1`] = `
           Object {
             "nameSocialShare": "Email",
             "subject": "BlackFriday",
+            "title": "Email",
             "url": "https://www.webbio.nl",
           }
         }
         facebook={
           Object {
-            "hashtag": "BlackFriday",
             "nameSocialShare": "Facebook",
             "title": "BlackFriday",
             "url": "https://www.webbio.nl",

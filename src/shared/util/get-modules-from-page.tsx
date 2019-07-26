@@ -3,6 +3,7 @@ import * as React from "react";
 import { NavBarComponent } from "@app/modules/nav-bar";
 import { FeaturedShopsComponent } from "@app/modules/featured-shops/featured-shops.component";
 import { FeaturedDealsComponent } from "@app/modules/featured-deals/featured-deals.component";
+import { FeaturedCategoriesContainer } from "@app/modules/featured-categories/container/featured-categories.container";
 import { NotYetImplementedComponent } from "@app/modules/not-yet-implemented";
 import { HomePageHeaderComponent } from "@app/modules/homepage-header";
 import { FooterComponent } from "@app/modules/footer";
@@ -16,7 +17,7 @@ import { CtaSmallModule } from "@app/api/modules/cta-small/cta-small.module";
 import { Footer as FooterModule } from "@app/api/modules/footer/footer.module";
 import { WordPressPostModule } from "@app/api/modules/wordpress-module/wordpress-module";
 import { NewsletterComponent } from "@app/core/newsletter";
-import { BannerComponent } from "@app/core/banner";
+import { BannerModuleComponent } from "@app/modules/banner-module";
 import { MediumHeroComponent } from "@app/modules/medium-hero";
 import { MediumHeroModule } from "@app/api/modules/medium-hero/medium-hero";
 import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
@@ -25,11 +26,12 @@ import { StoresOverviewContainer } from "@app/modules/stores-overview/container/
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
+import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
     case "BannerModule":
-      return <BannerComponent bannerModule={wordPressModule as BannerModule} />;
+      return <BannerModuleComponent bannerModule={wordPressModule as BannerModule} />;
     case "CtaSmallModule":
       return <CtaSmallModuleComponent ctaSmallModule={wordPressModule as CtaSmallModule} />;
     case "CtaNewsletterModule":
@@ -56,6 +58,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     //   return <BodytextComponent bodyTextModule={wordPressModule as BodyTextModule} />;
     case "FeaturedDealsModule":
       return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
+    case "FeaturedCategoriesModule":
+      return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
 
     default:
   }
