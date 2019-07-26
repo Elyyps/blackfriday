@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Sidebar] should render component without crashing 1`] = `
+<div
+  className="sidebar"
+>
+  <BannerComponent
+    buttonLink="#"
+    buttonTitle="Meer deals"
+    image={
+      Object {
+        "alt": "alt text oasis",
+        "src": "oasis.jpg",
+      }
+    }
+    label="22 t/m 26 nov."
+    logo={
+      Object {
+        "alt": "alt text CoolBlue",
+        "src": "cool-blue.svg",
+      }
+    }
+    text="Een selectie van bizarre aanbiedingen. Meer info"
+    title="Black Friday bij Coolblue"
+    variant="small"
+  />
+  <FeaturedSidebarItems
+    featuredItems={
+      Array [
+        Object {
+          "image": "imac.png",
+          "link": Object {
+            "title": "Apple iPhones",
+            "url": "/",
+          },
+        },
+        Object {
+          "image": "iphone.png",
+          "link": Object {
+            "title": "Apple MacBooks",
+            "url": "/",
+          },
+        },
+        Object {
+          "image": "loader.png",
+          "link": Object {
+            "title": "Apple iMacs",
+            "url": "/",
+          },
+        },
+        Object {
+          "icon": "party.svg",
+          "link": Object {
+            "title": "Naar alle deals!",
+            "url": "/",
+          },
+        },
+      ]
+    }
+    key="0"
+    title="Een greep uit onze deals"
+  />
+  <FeaturedSidebarItems
+    featuredItems={
+      Array [
+        Object {
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Coolblue",
+            "url": "/",
+          },
+        },
+        Object {
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Alternate",
+            "url": "/",
+          },
+        },
+        Object {
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Beddenreus",
+            "url": "/",
+          },
+        },
+        Object {
+          "icon": "party.svg",
+          "link": Object {
+            "title": "Naar alle winkels!",
+            "url": "/",
+          },
+        },
+      ]
+    }
+    key="1"
+    title="Black Friday Winkels"
+  />
+</div>
+`;

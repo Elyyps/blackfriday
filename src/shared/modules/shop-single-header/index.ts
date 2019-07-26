@@ -1,1 +1,1 @@
-export * from './shop-single-header.component'
+export * from "./shop-single-header.component";

@@ -1,6 +1,6 @@
 export interface IWhatsappShare {
   nameSocialShare?: string;
   separator?: string;
-  title?: string;
+  title: string;
   url: string;
 }

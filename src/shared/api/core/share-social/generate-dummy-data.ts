@@ -3,7 +3,7 @@ import { IShareSocialComponent } from "./share-social.module";
 const webbioURL = "https://www.webbio.nl";
 const titleSharing = "BlackFriday";
 export const socialMediaButtons: IShareSocialComponent = {
-  facebook: { hashtag: "BlackFriday", url: webbioURL, title: titleSharing, nameSocialShare: "Facebook" },
+  facebook: { url: webbioURL, title: titleSharing, nameSocialShare: "Facebook" },
   twitter: {
     url: webbioURL,
     title: titleSharing,
@@ -12,6 +12,7 @@ export const socialMediaButtons: IShareSocialComponent = {
     nameSocialShare: "Twitter"
   },
   email: {
+    title: "Email",
     url: webbioURL,
     subject: titleSharing,
     nameSocialShare: "Email"
