@@ -21,12 +21,13 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
   const [checkboxList, setCheckboxList] = useState<Checkbox[]>([]);
 
   const searchFilter = (value: string) => {
-    let list: Checkbox[] = [];
-    value
-      ? checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand))
-      : (list = props.checkbox);
-
-    setCheckboxList(list);
+    const list: Checkbox[] = [];
+    if (value) {
+      checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand));
+      setCheckboxList(list);
+    } else {
+      setCheckboxList(props.checkbox);
+    }
   };
 
   const onSelected = (text: string) => {

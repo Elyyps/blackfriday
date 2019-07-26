@@ -1,1 +1,1 @@
-export * from './blog-overview.component'
+export * from "./blog-overview.component";
