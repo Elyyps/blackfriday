@@ -39,9 +39,9 @@ export const generateDummyFeaturedCategoriesData = (): FeaturedCategoriesModule 
   ],
   bottomPadding: { desktopPadding: 72, mobilePadding: 48 },
   topPadding: { desktopPadding: 72, mobilePadding: 48 },
+  background: { backgroundColour: "#f7f7f7" },
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  background: { backgroundColour: "#f7f7f7" },
   name: "FeaturedCategoriesModule"
 });

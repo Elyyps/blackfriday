@@ -50,8 +50,10 @@ export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
     title: "Wij hebben meer winkels in ons overzicht",
     link: { url: "/", title: "Alle winkels" }
   },
-  bottomMargin: "0px",
-  topMargin: "0px",
+  bottomMargin: "0",
+  topMargin: "0",
+  bottomPadding: { desktopPadding: 72, mobilePadding: 48 },
+  background: { backgroundColour: "#f7f7f7" },
   id: "1",
   name: "FeaturedDealsModule"
 });

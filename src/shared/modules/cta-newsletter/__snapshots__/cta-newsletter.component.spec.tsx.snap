@@ -2,13 +2,24 @@
 
 exports[`[CtaSmallModuleComponent] should render component without crashing 1`] = `
 <CtaSmallComponent
-  bottomMargin="10px"
+  background={
+    Object {
+      "backgroundColour": "#f7f7f7",
+    }
+  }
+  bottomMargin="0"
+  bottomPadding={
+    Object {
+      "desktopPadding": 72,
+      "mobilePadding": 48,
+    }
+  }
   buttonTitle="Meld je aan"
   icon="send.svg"
   id="1"
   name="CtaNewsletterModule"
   onClick={[Function]}
   text="Op de hoogte blijven? Meld je dan aan voor onze nieuwsbrief!"
-  topMargin="0px"
+  topMargin="0"
 />
 `;
