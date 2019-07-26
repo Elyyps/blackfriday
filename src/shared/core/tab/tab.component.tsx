@@ -1,21 +1,19 @@
-/* tslint:disable */
 import * as React from "react";
 import styles from "./tab-component.module.scss";
 import { Link } from "react-router-dom";
-import { StoresOverviewContainer } from "@app/modules/stores-overview/container/stores-overview.container";
 
 export interface ITabComponentProps {
-  titles: string[];
+  data: any[];
 }
 const TabComponent = (props: ITabComponentProps) => {
   const [selectedTab, setSelectedTab] = React.useState<string>("Winkels");
-  const getComponentTabIndex = (title: string) => {
+  const getComponentTabIndex = () => {
     let tabComponent;
-
-    switch (title) {
-      case "Winkels":
-        tabComponent = <StoresOverviewContainer />;
-    }
+    props.data.map(tab => {
+      if (selectedTab === tab.title) {
+        tabComponent = tab.content;
+      }
+    });
 
     return tabComponent;
   };
@@ -24,14 +22,18 @@ const TabComponent = (props: ITabComponentProps) => {
     <React.Fragment>
       <div className={`${styles["tab"]}`}>
         <ul className={styles["uk-tab__list"]}>
-          {props.titles.map((title: string) => (
-            <li className={selectedTab === title ? styles["tab__selected"] : ""} onClick={() => setSelectedTab(title)}>
-              {<Link to="#">{title}</Link>}
+          {props.data.map(value => (
+            <li
+              role="button"
+              className={selectedTab === value.title ? styles["tab__selected"] : ""}
+              onClick={() => setSelectedTab(value.title)}
+            >
+              {<Link to="#">{value.title}</Link>}
             </li>
           ))}
         </ul>
       </div>
-      {getComponentTabIndex(selectedTab)}
+      {getComponentTabIndex()}
     </React.Fragment>
   );
 };
