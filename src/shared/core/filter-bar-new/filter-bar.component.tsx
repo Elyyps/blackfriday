@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./filter-bar-component.module.scss";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
 import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
 import Filter from "@assets/icons/filter.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
-import { CheckboxDropDown } from "../checkbox-dropdown/checkbox-dropdown.component";
+import { CheckboxDropdown } from "../checkbox-dropdown/checkbox-dropdown.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
+import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/searchable-checkbox-dropdown.component";
 
 export interface IFilterBarProps {}
 
 const FilterBar = (props: IFilterBarProps) => {
-  const [filterItems, setFilterItems] = React.useState<FilterItem[]>([
+  const [filterItems, setFilterItems] = useState<FilterItem[]>([
     {
       displayName: "item 1",
       isSelected: false,
@@ -21,6 +22,33 @@ const FilterBar = (props: IFilterBarProps) => {
       displayName: "item 2",
       isSelected: false,
       totalAmount: 33
+    }
+  ]);
+  const [categoryItems, setCategoryItems] = useState<FilterItem[]>([
+    {
+      displayName: "Audio",
+      isSelected: false,
+      totalAmount: 12
+    },
+    {
+      displayName: "Sport",
+      isSelected: false,
+      totalAmount: 20
+    },
+    {
+      displayName: "Games",
+      isSelected: false,
+      totalAmount: 9
+    },
+    {
+      displayName: "Elektronisch",
+      isSelected: false,
+      totalAmount: 3
+    },
+    {
+      displayName: "Mode",
+      isSelected: false,
+      totalAmount: 2
     }
   ]);
 
@@ -48,27 +76,13 @@ const FilterBar = (props: IFilterBarProps) => {
         </div>
 
         <div>
-          <CheckboxDropDown title="Status" items={filterItems} onChange={onFilterItemsChanged} />
+          <CheckboxDropdown title="Status" items={filterItems} onChange={onFilterItemsChanged} />
         </div>
         <div className="uk-visible@m">
-          <CheckboxDropDown
-            title="Category"
-            items={[
-              {
-                displayName: "item 1",
-                isSelected: false,
-                totalAmount: 22
-              },
-              {
-                displayName: "item 2",
-                isSelected: false,
-                totalAmount: 33
-              }
-            ]}
-          />
+          <SearchableCheckboxDropdown title="Categorieen" items={categoryItems} />
         </div>
         <div className="uk-visible@m">
-          <CheckboxDropDown
+          <SearchableCheckboxDropdown
             title="Merk"
             items={[
               {
