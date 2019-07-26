@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[FeaturedBlog] should render component without crashing 1`] = `
+<div
+  className="featured-blog"
+>
+  <div
+    className="uk-container"
+  >
+    <h2
+      className="featured-blog__title"
+    >
+      Ook interessant om te lezen
+    </h2>
+    <div
+      className="featured-blog__body"
+    >
+      <div
+        className="featured-blog__card"
+        key="0"
+      >
+        <LinkComponent
+          to=""
+        >
+          <div
+            className="featured-blog__card-image"
+          >
+            <ImageComponent
+              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+            />
+          </div>
+          <h3
+            className="featured-blog__card-title"
+          >
+            Vijf voorspellingen van Black Friday Nederland
+          </h3>
+        </LinkComponent>
+      </div>
+      <div
+        className="featured-blog__card"
+        key="1"
+      >
+        <LinkComponent
+          to=""
+        >
+          <div
+            className="featured-blog__card-image"
+          >
+            <ImageComponent
+              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+            />
+          </div>
+          <h3
+            className="featured-blog__card-title"
+          >
+            Top Black Friday deals van vorig jaar
+          </h3>
+        </LinkComponent>
+      </div>
+    </div>
+  </div>
+</div>
+`;
