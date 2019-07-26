@@ -15,6 +15,7 @@ import { generateDummyFeaturedDealsData } from "../modules/featured-deals/genera
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
+import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
 
 export const pageList: PageModel[] = [
   {
@@ -63,7 +64,7 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateNotYetImplemented("Winkel Single informatie"),
+      generatedummyShopSingleHeaderData(),
       generateDummyFeaturedDealsData(),
       dummyFeaturedShopsData(),
       generateCtaNewsLetterModule(),
@@ -118,7 +119,6 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateNotYetImplemented("Blog Overview Sidebar"),
       generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
@@ -138,7 +138,7 @@ export const pageList: PageModel[] = [
       generateNotYetImplemented("Blog Single Header"),
       generateNotYetImplemented("Blog BodyText"),
       generateDummyFeaturedDealsData(),
-      generateNotYetImplemented("Blog Featured"),
+      generateNotYetImplemented("Blog Featured Module"),
       generateCtaNewsLetterModule(),
       generateDummyFooterData()
     ]

@@ -1,3 +1,3 @@
-import { dummyShopSingleHeaderData } from "./generate-dummy-data";
+import { generatedummyShopSingleHeaderData } from "./generate-dummy-data";
 
-export const getShopSingleHeaderDummyData = () => dummyShopSingleHeaderData;
+export const getShopSingleHeaderDummyData = () => generatedummyShopSingleHeaderData;
