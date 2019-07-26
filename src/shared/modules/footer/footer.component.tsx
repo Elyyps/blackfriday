@@ -7,6 +7,8 @@ import { Footer } from "@app/api/modules/footer/models/footer.module";
 import { LinkComponent } from "@app/core/link";
 import { StarsRatingComponent } from "@app/core/stars-rating";
 import { ExpandablePanelComponent } from "@app/core/expandable-panel";
+import { ModalComponent } from "@app/core/modal";
+import { NewsletterFormComponent } from "@app/core/newsletter";
 
 export interface IFooterComponentProps {
   footerModule: Footer;
@@ -27,6 +29,10 @@ const FooterComponent = (props: IFooterComponentProps) => {
   const mainContent = () => (
     <div className={styles["footer__column-title"]}>{props.footerModule.middleFooter.socialMedia.title}</div>
   );
+
+  const onSubmit = () => {
+    // Submit logic newsletter  here
+  };
 
   return (
     <div className={styles["footer"]}>
@@ -141,12 +147,19 @@ const FooterComponent = (props: IFooterComponentProps) => {
               <div className={styles["footer__column-body"]}>
                 <div className={styles["footer__column-title"]}>{props.footerModule.middleFooter.newsletter.title}</div>
                 <p> {props.footerModule.middleFooter.newsletter.text}</p>
-
-                <Button
-                  title={props.footerModule.middleFooter.newsletter.buttonText}
-                  icon={props.footerModule.middleFooter.newsletter.buttonIcon}
-                  variant={"primary-inverted"}
-                />
+                <ModalComponent
+                  title={props.footerModule.middleFooter.modalTitle}
+                  trigger={
+                    <Button
+                      title={props.footerModule.middleFooter.newsletter.buttonText}
+                      icon={props.footerModule.middleFooter.newsletter.buttonIcon}
+                      variant={"primary-inverted"}
+                    />
+                  }
+                  variant={"small"}
+                >
+                  <NewsletterFormComponent onSubmit={onSubmit} />
+                </ModalComponent>
               </div>
               <div className={styles["footer__column-footer"]}>
                 <div className={styles["rating"]}>

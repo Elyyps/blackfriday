@@ -6,6 +6,7 @@ import { GoogleReviews } from "@app/api/core/google-reviews";
 export class MiddleFooter {
   public googleReviews: GoogleReviews;
   public links: GroupLinks[];
+  public modalTitle: string;
   public newsletter: Newsletter;
   public socialMedia: SocialBlock;
 }

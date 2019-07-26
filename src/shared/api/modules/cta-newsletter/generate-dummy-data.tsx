@@ -8,5 +8,6 @@ export const generateCtaNewsLetterModule = (): CtaNewsletterModule => ({
   bottomMargin: "10px",
   topMargin: "0px",
   id: "1",
-  name: "CtaNewsletterModule"
+  name: "CtaNewsletterModule",
+  modalTitle: "Inschrijven nieuwsbrief"
 });
