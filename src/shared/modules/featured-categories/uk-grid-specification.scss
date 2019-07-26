@@ -1,0 +1,6 @@
+.uk-margin-small-top {
+  margin-top: 24px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 0px;
+  }
+}

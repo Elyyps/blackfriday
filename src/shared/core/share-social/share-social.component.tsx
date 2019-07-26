@@ -57,7 +57,11 @@ export const ShareSocialComponent = (props: IShareSocialComponent) => (
     {props.facebook && (
       <FacebookShareButtonComponent
         title={props.facebook.title}
-        hashtag={props.facebook.hashtag[0] !== "#" ? "#".concat(props.facebook.hashtag) : props.facebook.hashtag}
+        hashtag={
+          props.facebook.hashtag && props.facebook.hashtag[0] !== "#"
+            ? "#".concat(props.facebook.hashtag)
+            : props.facebook.hashtag
+        }
         url={props.facebook.url}
         nameSocialShare={props.facebook.nameSocialShare}
       />

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { SelectComponent } from "@app/core/select";
-import { ModalComponent } from "@app/core/modal";
 
 export interface IPlaygroundAhmedComponentProps {}
 

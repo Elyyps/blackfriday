@@ -57,7 +57,7 @@ export const getShopCards = (
       ? (SortedCards = shuffleArray(filteredCardsByBrand))
       : sortBy === "Price"
       ? (SortedCards = shuffleArray(filteredCardsByBrand))
-      : sortBy === "Relevant" && (SortedCards = shuffleArray(filteredCardsByBrand));
+      : (SortedCards = shuffleArray(filteredCardsByBrand));
   } else {
     SortedCards = filteredCardsByBrand;
   }

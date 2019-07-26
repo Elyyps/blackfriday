@@ -22,10 +22,12 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
 
   const searchFilter = (value: string) => {
     const list: Checkbox[] = [];
-    value
-      ? (checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand)),
-        setCheckboxList(list))
-      : setCheckboxList(props.checkbox);
+    if (value) {
+      checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand));
+      setCheckboxList(list);
+    } else {
+      setCheckboxList(props.checkbox);
+    }
   };
 
   const onSelected = (text: string) => {

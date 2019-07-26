@@ -38,7 +38,6 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const handleClick = () => {
     setPrevIcon(!prevIcon);
   };
-  const onOrderBySelected = (value: string) => {};
 
   const onStatusSelected = (id: string) => {
     const newSelectedStatus = props.filterBar.status.map(option => {

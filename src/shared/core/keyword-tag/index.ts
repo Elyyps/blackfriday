@@ -1,1 +1,1 @@
-export * from './keyword-tag.component'
+export * from "./keyword-tag.component";

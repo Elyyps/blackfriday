@@ -51,15 +51,25 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
             <div
               className="homepage-header__cards"
             >
-              <ArrowPanelComponent
+              <ArrowPanel
                 icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
                 key="0"
-                title="Productdeals"
+                link={
+                  Object {
+                    "title": "Productdeals",
+                    "url": "./",
+                  }
+                }
               />
-              <ArrowPanelComponent
+              <ArrowPanel
                 icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
                 key="1"
-                title="Deelnemende winkels"
+                link={
+                  Object {
+                    "title": "Deelnemende winkels",
+                    "url": "./",
+                  }
+                }
               />
             </div>
           </div>
@@ -257,33 +267,57 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <div
                 key="0"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  title="Productdeals"
+                <ArrowPanel
+                  image="iears.png"
+                  key="0"
+                  link={
+                    Object {
+                      "title": "Apple Airpods",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
               <div
                 key="1"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="imac.png"
+                  key="1"
+                  link={
+                    Object {
+                      "title": "Apple iPhones",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
               <div
                 key="2"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="iphone.png"
+                  key="2"
+                  link={
+                    Object {
+                      "title": "Apple MacBooks",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
               <div
                 key="3"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="loader.png"
+                  key="3"
+                  link={
+                    Object {
+                      "title": "Apple iMacs",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
             </div>
@@ -302,33 +336,57 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <div
                 key="0"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="cool-blue.svg"
+                  key="0"
+                  link={
+                    Object {
+                      "title": "Coolblue",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
               <div
                 key="1"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="cool-blue.svg"
+                  key="1"
+                  link={
+                    Object {
+                      "title": "Alternate",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
               <div
                 key="2"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="cool-blue.svg"
+                  key="2"
+                  link={
+                    Object {
+                      "title": "Beddenreus",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
               <div
                 key="3"
               >
-                <ArrowPanelComponent
-                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                  title="Deelnemende winkels"
+                <ArrowPanel
+                  image="cool-blue.svg"
+                  key="3"
+                  link={
+                    Object {
+                      "title": "De Bijenkorf",
+                      "url": "/",
+                    }
+                  }
                 />
               </div>
             </div>

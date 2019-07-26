@@ -8,8 +8,7 @@ import BottomScrollListener from "react-bottom-scroll-listener";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { BannerComponent } from "@app/core/banner";
-import { ShadowCardComponent } from "@app/core/shadow-card";
-import { generateDummyBannerModule } from "@app/api/modules/banner/generate-dummy-data";
+import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 
 export interface IStoresOverviewComponentProps {}
 
@@ -118,7 +117,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                     </div>
                     {showAd && (
                       <div style={{ width: "100%" }}>
-                        <BannerComponent bannerModule={generateDummyBannerModule()} />
+                        <BannerComponent {...generateDummyBannerComponentData()} />
                         <br />
                       </div>
                     )}
