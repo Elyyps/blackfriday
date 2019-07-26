@@ -2,13 +2,18 @@ import * as React from "react";
 import styles from "./newsletter-component.module.scss";
 import { IconComponent } from "../icon";
 import { Button } from "../button";
-
+import { ModalComponent } from "../modal";
 import Paper from "@assets/icons/paper.svg";
 import Icon from "@assets/icons/send.svg";
-import { NewsletterModalComponent } from "./newsletter.modal.component";
+import { NewsletterFormComponent } from "./newsletter.forms.component";
+import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
+export interface INewsletterComponentProps {
+  newsletterModule: NewsletterModule;
+}
 
-export interface INewsletterComponentProps {}
-
+const onSubmit = () => {
+  // Submit logic here
+};
 const NewsletterComponent = (props: INewsletterComponentProps) => (
   <div>
     <div className={styles["newsletter"]}>
@@ -16,13 +21,19 @@ const NewsletterComponent = (props: INewsletterComponentProps) => (
         <IconComponent icon={Icon} size={"30px"} />
       </div>
       <div className={styles["newsletter__body"]}>
-        <div className={styles["newsletter__content"]}>Op de hoogte blijven? Meld je dan aan!</div>
-        <div data-uk-toggle={`target: #modal-newsletter`} className={styles["newsletter__action"]}>
-          <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />
+        <div className={styles["newsletter__content"]}>{props.newsletterModule.text}</div>
+        <div className={styles["newsletter__action"]}>
+          <ModalComponent
+            title={props.newsletterModule.modalTitle}
+            trigger={
+              <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />}
+            variant={"big"}
+          >
+            <NewsletterFormComponent onSubmit={onSubmit} />
+          </ModalComponent>
         </div>
       </div>
     </div>
-    <NewsletterModalComponent />
   </div>
 );
 
