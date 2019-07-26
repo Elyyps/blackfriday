@@ -12,6 +12,7 @@ import { generateDummyStoresOverview } from "../modules/stores-overview/generate
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
+import { generateBlogSingleHeaderData } from "../modules/blog-single-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
@@ -135,7 +136,7 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateNotYetImplemented("Blog Single Header"),
+      generateBlogSingleHeaderData(),
       generateNotYetImplemented("Blog BodyText"),
       generateDummyFeaturedDealsData(),
       generateNotYetImplemented("Blog Featured Module"),

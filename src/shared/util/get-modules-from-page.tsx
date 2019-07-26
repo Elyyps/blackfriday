@@ -1,4 +1,5 @@
 import * as React from "react";
+/* tslint:disable*/
 
 import { NavBarComponent } from "@app/modules/nav-bar";
 import { FeaturedShopsComponent } from "@app/modules/featured-shops/featured-shops.component";
@@ -26,6 +27,7 @@ import { StoresOverviewContainer } from "@app/modules/stores-overview/container/
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
+import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
 import { BlogOverviewComponent } from "@app/modules/blog-overview";
 import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
@@ -37,6 +39,7 @@ import {
   generateProductLineDummyData
 } from "@app/api/modules/body-text/generate-dummy-data";
 import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
+import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -64,6 +67,10 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoresOverviewModule":
       return <StoresOverviewContainer />;
+    case "BlogSingleHeaderModule":
+      return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
+    // case "BodyTextModule":
+    //   return <BodytextComponent bodyTextModule={wordPressModule as BodyTextModule} />;
     case "BlogOverviewModule":
       return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
     case "BodyTextModule":

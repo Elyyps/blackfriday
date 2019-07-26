@@ -1,12 +1,13 @@
 import * as React from "react";
-import { SelectComponent } from "@app/core/select";
+import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
+import { generateBlogSingleHeaderData } from "@app/api/modules/blog-single-header/endpoint";
 
 export interface IPlaygroundAhmedComponentProps {}
 
-const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => (
-  <div className="uk-container">
-    <SelectComponent onSelect={() => ""} options={["Relevance", "Newest", "Price"]} />
-  </div>
-);
+const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => {
+  const data = generateBlogSingleHeaderData();
+
+  return <BlogSingleHeaderComponent blogSingleHeader={data} />;
+};
 
 export { PlaygroundAhmedComponent };
