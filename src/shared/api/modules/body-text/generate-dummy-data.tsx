@@ -1,16 +1,16 @@
 import { BodyTextModule } from "./body-text";
 import React from "react";
 
-export const generateDummyBodyTextModule = (dummyJSX: JSX.Element): BodyTextModule => ({
+export const generateDummyBodyTextModule = (type: string): BodyTextModule => ({
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
   name: "BodyTextModule",
-  dummyJSX
+  type
 });
 
 export const generateHomepageBodytextDummyData = () => (
-  <React.Fragment>
+  <div>
     <h1>
       <strong>Black Friday België</strong>
     </h1>
@@ -19,7 +19,7 @@ export const generateHomepageBodytextDummyData = () => (
       vindt elke vierde vrijdag van november plaats, de dag na het Amerikaanse Thanksgiving.Op die dag doet iedereen
       massaal inkopen vanwege de extra hoge kortingen die winkels en webshops geven.Het Black Friday fenomeen is nog
       niet bij iedereen bekend in België, maar dankzij het groeiende aantal deelnemende winkels wordt Zwarte Vrijdag ook
-      steeds populairder in België.Aangezien Black Friday bij uitstek dé dag is om producten met de hoogste korting te
+      steeds populairder in België. Aangezien Black Friday bij uitstek dé dag is om producten met de hoogste korting te
       kopen, is het ontzettend druk in de winkelstraten.Doordat wij van Black Friday Expert een compleet overzicht
       online bieden van alle deals en deelnemers, vindt u gemakkelijk en snel de allerbeste aanbiedingen.In veel
       gevallen is het heel wat goedkoper voor u met een online aankoop vanwege een goede vergelijking en de speciale
@@ -33,11 +33,11 @@ export const generateHomepageBodytextDummyData = () => (
       geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
       uw wensen bij elkaar te shoppen.
     </p>
-  </React.Fragment>
+  </div>
 );
 
 export const generateShopSingleDummydata = () => (
-  <React.Fragment>
+  <div>
     <h1>
       <strong>Black Friday Beddenreus</strong>
     </h1>
@@ -51,11 +51,11 @@ export const generateShopSingleDummydata = () => (
       condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
       tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
     </p>
-  </React.Fragment>
+  </div>
 );
 
 export const generateProductLineDummyData = () => (
-  <React.Fragment>
+  <div>
     <h1>
       <strong>Vanwaar de populariteit van Apple?</strong>
     </h1>
@@ -80,5 +80,5 @@ export const generateProductLineDummyData = () => (
       aanbiedingen worden regelmatig bijgewerkt. Op vrijdag 29 november worden de deals bekend gemaakt en zal hieronder
       een overzicht verschijnen met de beste deals!
     </p>
-  </React.Fragment>
+  </div>
 );

@@ -9,7 +9,7 @@ exports[`[tabComponent] should render component without crashing 1`] = `
       className="uk-tab__list"
     >
       <li
-        className=""
+        className="tab__selected"
         onClick={[Function]}
         role="button"
       >
@@ -32,5 +32,6 @@ exports[`[tabComponent] should render component without crashing 1`] = `
       </li>
     </ul>
   </div>
+  <Connect(StoresOverviewComponent) />
 </Fragment>
 `;
