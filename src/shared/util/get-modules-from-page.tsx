@@ -27,6 +27,13 @@ import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newslet
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
+import { BodytextComponent } from "@app/core/bodytext";
+import { BodyTextModule } from "@app/api/modules/body-text/body-text";
+import {
+  generateHomepageBodytextDummyData,
+  generateShopSingleDummydata,
+  generateProductLineDummyData
+} from "@app/api/modules/body-text/generate-dummy-data";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -54,8 +61,16 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoresOverviewModule":
       return <StoresOverviewContainer />;
-    // case "BodyTextModule":
-    //   return <BodytextComponent bodyTextModule={wordPressModule as BodyTextModule} />;
+    case "BodyTextModule":
+      const type = (wordPressModule as BodyTextModule).type;
+
+      return (
+        <BodytextComponent>
+          {type === "1" && <div>{generateHomepageBodytextDummyData()}</div>}
+          {type === "2" && <div>{generateShopSingleDummydata()}</div>}
+          {type === "3" && <div>{generateProductLineDummyData()}</div>}
+        </BodytextComponent>
+      );
     case "FeaturedDealsModule":
       return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
     case "FeaturedCategoriesModule":
