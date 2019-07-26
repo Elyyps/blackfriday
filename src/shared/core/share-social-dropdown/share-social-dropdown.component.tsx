@@ -1,11 +1,9 @@
 import * as React from "react";
 import styles from "./share-social-dropdown-component.module.scss";
 import { Button } from "../button";
-import { DropdownComponent } from "../dropdown/dropdown.component";
+import { DropdownComponent } from "../dropdown-new/dropdown.component";
 import { ShareSocialComponent } from "../share-social/share-social.component";
-import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-data";
 import { IShareSocialComponent } from "@app/api/core/share-social";
-import { StarsRatingComponent } from "../stars-rating";
 import { shareSocialNative } from "@app/util/share-social";
 
 export interface IShareSocialDropdownComponentProps {
@@ -46,10 +44,12 @@ const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps)
   return (
     <div className={styles["share-social-dropdown"]}>
       {isNativeSharingCompatible ? (
-        <Button variant="secondary" onClick={onClickHandler} title="Compatible" />
+        <Button variant="secondary" onClick={onClickHandler} title={buttonTitle} />
       ) : (
-        <DropdownComponent title={buttonTitle} buttonVariant="secondary">
-          <ShareSocialComponent {...shareSocial} />
+        <DropdownComponent title={buttonTitle}>
+          <div className={styles["share-social-dropdown__content"]}>
+            <ShareSocialComponent {...shareSocial} />
+          </div>
         </DropdownComponent>
       )}
     </div>

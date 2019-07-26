@@ -10,13 +10,10 @@ import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-da
 export interface IPlaygroundPedroComponentProps {}
 
 const PlaygroundPedroComponent = () => {
-  const [currentItems, setCurrentItems] = React.useState<IMobileFilterItem[]>(mobileFilterDummyData);
-
   return (
-   <div>
-     <ShareSocialDropdownComponent buttonTitle="Share" shareSocial={socialMediaButtons}/>
-   </div>
-
+    <div>
+      <ShareSocialDropdownComponent buttonTitle="Share" shareSocial={socialMediaButtons} />
+    </div>
   );
 };
 

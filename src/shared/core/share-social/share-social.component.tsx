@@ -53,42 +53,42 @@ export const WhatsappShareButtonComponent = (props: IWhatsappShare) => (
 );
 
 export const ShareSocialComponent = (props: IShareSocialComponent) => (
-         <div className={styles["share"]}>
-           {props.facebook && (
-             <FacebookShareButtonComponent
-               title={props.facebook.title}
-               hashtag={
-                 props.facebook.hashtag && props.facebook.hashtag[0] !== "#"
-                   ? "#".concat(props.facebook.hashtag)
-                   : props.facebook.hashtag
-               }
-               url={props.facebook.url}
-               nameSocialShare={props.facebook.nameSocialShare}
-             />
-           )}
-           {props.twitter && (
-             <TwitterShareButtonComponent
-               nameSocialShare={props.twitter.nameSocialShare}
-               title={props.twitter.title}
-               via={props.twitter.via}
-               url={props.twitter.url}
-             />
-           )}
-           {props.email && (
-             <MailShareButtonComponent
-               nameSocialShare={props.email.nameSocialShare}
-               title={props.email.title}
-               subject={props.email.subject}
-               url={props.email.url}
-             />
-           )}
-           {props.whatsapp && (
-             <WhatsappShareButtonComponent
-               nameSocialShare={props.whatsapp.nameSocialShare}
-               title={props.whatsapp.title}
-               separator={props.whatsapp.separator}
-               url={props.whatsapp.url}
-             />
-           )}
-         </div>
-       );
+  <div className={styles["share"]}>
+    {props.facebook && (
+      <FacebookShareButtonComponent
+        title={props.facebook.title}
+        hashtag={
+          props.facebook.hashtag && props.facebook.hashtag[0] !== "#"
+            ? "#".concat(props.facebook.hashtag)
+            : props.facebook.hashtag
+        }
+        url={props.facebook.url}
+        nameSocialShare={props.facebook.nameSocialShare}
+      />
+    )}
+    {props.twitter && (
+      <TwitterShareButtonComponent
+        nameSocialShare={props.twitter.nameSocialShare}
+        title={props.twitter.title}
+        via={props.twitter.via}
+        url={props.twitter.url}
+      />
+    )}
+    {props.email && (
+      <MailShareButtonComponent
+        nameSocialShare={props.email.nameSocialShare}
+        title={props.email.title}
+        subject={props.email.subject}
+        url={props.email.url}
+      />
+    )}
+    {props.whatsapp && (
+      <WhatsappShareButtonComponent
+        nameSocialShare={props.whatsapp.nameSocialShare}
+        title={props.whatsapp.title}
+        separator={props.whatsapp.separator}
+        url={props.whatsapp.url}
+      />
+    )}
+  </div>
+);

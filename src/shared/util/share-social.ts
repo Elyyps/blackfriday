@@ -1,5 +1,3 @@
-import { IShareSocialComponent } from "@app/api/core/share-social";
-
 export const shareSocialNative = (title: string, text: string) => {
   const navigatorInstance: any = navigator;
   if (navigatorInstance.share) {

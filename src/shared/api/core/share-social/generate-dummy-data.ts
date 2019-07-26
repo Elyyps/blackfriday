@@ -12,6 +12,7 @@ export const socialMediaButtons: IShareSocialComponent = {
     nameSocialShare: "Twitter"
   },
   email: {
+    title: "Email",
     url: webbioURL,
     subject: titleSharing,
     nameSocialShare: "Email"
