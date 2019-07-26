@@ -4,7 +4,7 @@ import style from "./checkbox-component.module.scss";
 export interface ICheckboxComponentProps {
   children: any;
   isChecked?: boolean;
-  onClick: (value: string) => void;
+  onClick: (value: any) => void;
 }
 
 const CheckboxComponent = (props: ICheckboxComponentProps) => (
