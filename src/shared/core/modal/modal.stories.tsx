@@ -10,5 +10,7 @@ storiesOf("Modal", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
-    <ModalComponent trigger={<Button title={"test"} />} variant={"small"} modalContent={<p>test</p>} />
+    <ModalComponent trigger={<Button title={"test"} />} variant={"small"}>
+      <p>test</p>
+    </ModalComponent>
   ));

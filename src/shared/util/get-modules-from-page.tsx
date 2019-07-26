@@ -34,6 +34,7 @@ import {
   generateShopSingleDummydata,
   generateProductLineDummyData
 } from "@app/api/modules/body-text/generate-dummy-data";
+import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -54,7 +55,7 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "NavBarModule":
       return <NavBarComponent navBarModule={wordPressModule as INavBarModule} />;
     case "NewsletterModule":
-      return <NewsletterComponent />;
+      return <NewsletterComponent newsletterModule={wordPressModule as NewsletterModule} />;
     case "notYetImplemented":
       return <NotYetImplementedComponent notYetImplemented={wordPressModule as NotYetImplemented} />;
     case "ShopSingleHeaderModule":
