@@ -29,7 +29,18 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
           <div
             className="uk-visible@s"
           >
-            <NewsletterComponent />
+            <NewsletterComponent
+              newsletterModule={
+                Object {
+                  "bottomMargin": "0px",
+                  "id": "1",
+                  "modalTitle": "Inschrijven nieuwsbrief",
+                  "name": "NewsletterModule",
+                  "text": "Op de hoogte blijven? Meld je dan aan!",
+                  "topMargin": "0px",
+                }
+              }
+            />
           </div>
         </div>
       </div>
@@ -262,7 +273,18 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
             <div
               className="uk-hidden@s"
             >
-              <NewsletterComponent />
+              <NewsletterComponent
+                newsletterModule={
+                  Object {
+                    "bottomMargin": "0px",
+                    "id": "1",
+                    "modalTitle": "Inschrijven nieuwsbrief",
+                    "name": "NewsletterModule",
+                    "text": "Op de hoogte blijven? Meld je dan aan!",
+                    "topMargin": "0px",
+                  }
+                }
+              />
             </div>
           </div>
         </div>

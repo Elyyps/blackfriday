@@ -53,11 +53,17 @@ export const getShopCards = (
     filteredCardsByBrand = filteredCardsByCategories;
   }
   if (sortBy.length >= 1) {
-    sortBy === "Newest"
-      ? (SortedCards = shuffleArray(filteredCardsByBrand))
-      : sortBy === "Price"
-      ? (SortedCards = shuffleArray(filteredCardsByBrand))
-      : (SortedCards = shuffleArray(filteredCardsByBrand));
+    switch (sortBy) {
+      case "Newest":
+        SortedCards = shuffleArray(filteredCardsByBrand);
+        break;
+      case "Price":
+        SortedCards = shuffleArray(filteredCardsByBrand);
+        break;
+      case "Relevant":
+        SortedCards = shuffleArray(filteredCardsByBrand);
+      default:
+    }
   } else {
     SortedCards = filteredCardsByBrand;
   }

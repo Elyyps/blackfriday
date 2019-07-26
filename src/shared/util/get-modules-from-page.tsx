@@ -26,6 +26,8 @@ import { StoresOverviewContainer } from "@app/modules/stores-overview/container/
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
+import { BlogOverviewComponent } from "@app/modules/blog-overview";
+import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
 import { BodytextComponent } from "@app/core/bodytext";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
@@ -34,6 +36,7 @@ import {
   generateShopSingleDummydata,
   generateProductLineDummyData
 } from "@app/api/modules/body-text/generate-dummy-data";
+import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -54,13 +57,15 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "NavBarModule":
       return <NavBarComponent navBarModule={wordPressModule as INavBarModule} />;
     case "NewsletterModule":
-      return <NewsletterComponent />;
+      return <NewsletterComponent newsletterModule={wordPressModule as NewsletterModule} />;
     case "notYetImplemented":
       return <NotYetImplementedComponent notYetImplemented={wordPressModule as NotYetImplemented} />;
     case "ShopSingleHeaderModule":
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoresOverviewModule":
       return <StoresOverviewContainer />;
+    case "BlogOverviewModule":
+      return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
     case "BodyTextModule":
       const type = (wordPressModule as BodyTextModule).type;
 

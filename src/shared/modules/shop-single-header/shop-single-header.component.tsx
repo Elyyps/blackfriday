@@ -13,6 +13,7 @@ import { KeywordTagComponent } from "@app/core/keyword-tag";
 import { Button } from "@app/core";
 import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
+import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
@@ -57,7 +58,7 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                   range={timeLeftBar.value}
                 />
                 <div className={"uk-visible@s"}>
-                  <NewsletterComponent />
+                  <NewsletterComponent newsletterModule={generateDummyNewsletterModule()} />
                 </div>
               </React.Fragment>
             </div>
@@ -140,7 +141,7 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                   </div>
                 </div>
                 <div className="uk-hidden@s">
-                  <NewsletterComponent />
+                  <NewsletterComponent newsletterModule={generateDummyNewsletterModule()} />
                 </div>
               </div>
             </div>

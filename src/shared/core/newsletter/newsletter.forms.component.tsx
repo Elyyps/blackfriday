@@ -5,6 +5,7 @@ import { validateEmail } from "@app/util";
 import Paper from "@assets/icons/paper.svg";
 import { ClickableComponent } from "../clickable";
 
+import styles from "./newsletter-forms-component.module.scss";
 export interface IContactFormValues {
   emailAddress: string;
   message: string;
@@ -43,7 +44,7 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
           />
         </div>
       </div>
-      <div className="uk-margin-small-top">
+      <div className={`${styles["newsletter-forms__text-field"]} "uk-margin-small-top"`}>
         <TextFieldComponent
           placeholder="Bericht"
           value={props.values.message}
