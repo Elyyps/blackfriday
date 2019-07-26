@@ -3,7 +3,7 @@ import MobileDetect from "mobile-detect";
 import { settingsActions, ViewType } from "@app/stores/settings";
 import { pageActions } from "@app/stores";
 import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
-import { breakPointMobile, breakPointTablet } from "@app/util/detect-view";
+import { breakPointMobile, breakPointTablet, breakPointDesktop } from "@app/util/detect-view";
 
 export const moduleFetcher: any = () => async (
   req: express.Request & { store: any },
@@ -44,7 +44,7 @@ export const setIsMobile: any = () => async (
   } else {
     screenSize = {
       viewType: ViewType.Desktop,
-      breakpointPixels: ViewType.Desktop
+      breakpointPixels: breakPointDesktop
     };
   }
 

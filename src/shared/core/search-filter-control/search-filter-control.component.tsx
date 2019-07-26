@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React, { useState, useEffect } from "react";
 import style from "./search-filter-control-component.module.scss";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
@@ -15,6 +14,7 @@ export interface ISearchFilterControlComponentProps {
   getTotalShops: (filters: number) => void;
   numberOfFilters: number;
   onSelect: (checkbox: string[]) => void;
+  placeholder?: string;
 }
 
 const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
@@ -22,10 +22,12 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
 
   const searchFilter = (value: string) => {
     const list: Checkbox[] = [];
-    value
-      ? (checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand)),
-        setCheckboxList(list))
-      : setCheckboxList(props.checkbox);
+    if (value) {
+      checkboxList.map(brand => brand.text.toUpperCase().includes(value.toUpperCase()) && list.push(brand));
+      setCheckboxList(list);
+    } else {
+      setCheckboxList(props.checkbox);
+    }
   };
 
   const onSelected = (text: string) => {
@@ -79,7 +81,7 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
     <div className={style["filter-control"]}>
       <div className={style["filter-control-head"]}>
         <Input
-          placeholder={"search"}
+          placeholder={props.placeholder && props.placeholder}
           classModify={"large"}
           icon={Search}
           onChange={(event: any) => {

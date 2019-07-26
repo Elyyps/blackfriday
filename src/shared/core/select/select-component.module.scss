@@ -1,0 +1,21 @@
+.select {
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  select {
+    border: 0 !important; /*Removes border*/
+    -webkit-appearance: none; /*Removes default chrome and safari style*/
+    -moz-appearance: none; /* Removes Default Firefox style*/
+    background-position: 82px 7px; /*Position of the background-image*/
+    text-indent: 0.01px; /* Removes default arrow from firefox*/
+    text-overflow: ""; /*Removes default arrow from firefox*/
+    background: transparent;
+    font-size: 15px;
+    /*My custom style for fonts*/
+  }
+  &-icon {
+    margin-top: 3px;
+  }
+}

@@ -23,18 +23,26 @@ exports[`[Newsletter] should render component without crashing 1`] = `
       </div>
       <div
         className="newsletter__action"
-        data-uk-toggle="target: #modal-newsletter"
       >
-        <Button
-          fullWidth={true}
-          icon="paper.svg"
-          iconStyle="filled"
-          title="Nieuwsbrief"
-          variant="secondary-inverted"
-        />
+        <ModalComponent
+          title="Inschrijven nieuwsbrief"
+          trigger={
+            <Button
+              fullWidth={true}
+              icon="paper.svg"
+              iconStyle="filled"
+              title="Nieuwsbrief"
+              variant="secondary-inverted"
+            />
+          }
+          variant="big"
+        >
+          <WithFormik(InnerForm)
+            onSubmit={[Function]}
+          />
+        </ModalComponent>
       </div>
     </div>
   </div>
-  <NewsletterModalComponent />
 </div>
 `;

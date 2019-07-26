@@ -4,7 +4,7 @@ import { ImageComponent } from "../../core/image";
 import { IconComponent } from "../../core/icon";
 import { Link } from "react-router-dom";
 import IconBack from "@assets/icons/chevron-left.svg";
-import { BlogSingleHeaderModule } from "@app/api/core/blog-single-header/blog-single-header";
+import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
 
 export interface IBlogSingleHeaderComponentProps {
   blogSingleHeader: BlogSingleHeaderModule;

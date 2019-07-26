@@ -1,0 +1,8 @@
+.sidebar {
+  background: $bg-muted;
+  padding: 24px;
+  border-radius: $global-border-radius;
+  > div:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}

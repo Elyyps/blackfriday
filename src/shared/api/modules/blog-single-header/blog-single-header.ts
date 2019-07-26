@@ -1,5 +1,5 @@
-import { Link } from "../link";
 import { WordPressPostModule } from "@app/api/modules/wordpress-module/wordpress-module";
+import { Link } from "@app/api/core/link";
 
 export class BlogSingleHeaderModule extends WordPressPostModule {
   public button: Link;
