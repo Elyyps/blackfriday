@@ -27,9 +27,10 @@ const NewsletterComponent = (props: INewsletterComponentProps) => (
             title={props.newsletterModule.modalTitle}
             trigger={
               <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />}
-            modalContent={<NewsletterFormComponent onSubmit={onSubmit} />}
             variant={"big"}
-          />
+          >
+            <NewsletterFormComponent onSubmit={onSubmit} />
+          </ModalComponent>
         </div>
       </div>
     </div>

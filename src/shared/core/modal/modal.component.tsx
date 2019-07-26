@@ -6,9 +6,9 @@ export type ModalVariant = "small" | "big";
 export type Role = "dialog" | "alertdialog";
 export interface IModalComponentProps {
   ariaLabel?: string;
+  children: JSX.Element;
   isTriggerOnClick?: boolean;
   modalBackground?: string;
-  modalContent: JSX.Element;
   role?: Role;
   title?: string;
   trigger: JSX.Element;
@@ -50,7 +50,7 @@ const ModalComponent = (props: IModalComponentProps) => {
           modalRef={modalRef}
           onClickAway={onClickAway}
         >
-          {props.modalContent}
+          {props.children}
         </ModalDialogComponent>
       )}
     </React.Fragment>

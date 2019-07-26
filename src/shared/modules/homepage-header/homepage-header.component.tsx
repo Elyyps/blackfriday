@@ -76,9 +76,6 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                     {slide.video ? (
                       <ModalComponent
                         isTriggerOnClick
-                        modalContent={
-                          <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
-                        }
                         variant={"big"}
                         trigger={
                           <div
@@ -90,7 +87,9 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                             <IconComponent icon={PLAY_BUTTON} size={"80px"} />
                           </div>
                         }
-                      />
+                      >
+                        <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
+                      </ModalComponent>
                     ) : (
                       <div
                         style={{ backgroundImage: `url(${slide.image})` }}
