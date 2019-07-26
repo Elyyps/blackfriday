@@ -9,12 +9,12 @@ import { generateDummyBodyTextModule } from "../modules/body-text/generate-dummy
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
 import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
 import { generateDummyStoresOverview } from "../modules/stores-overview/generate-dummy-data";
-// import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
+import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
 
 export const pageList: PageModel[] = [
   {
@@ -31,7 +31,7 @@ export const pageList: PageModel[] = [
       dummyFeaturedShopsData(),
       generateDummyBannerModule(),
       generateDummyFeaturedDealsData(),
-      generateNotYetImplemented("Call to action Module"),
+      generateCtaNewsLetterModule(),
       generateNotYetImplemented("Blog Featured Module"),
       generateDummyBodyTextModule("1"),
       generateDummyFooterData()
@@ -101,10 +101,10 @@ export const pageList: PageModel[] = [
       generateDummyFeaturedCategoriesData(),
       generateDummyFeaturedDealsData(),
       generateDummyBannerModule(),
-      // generateFeaturedShopsDummyData()
-      // generateCtaNewsLetterModule()
-      generateDummyBodyTextModule("3")
-      // generateDummyFooterData()
+      generateFeaturedShopsDummyData(),
+      generateCtaNewsLetterModule(),
+      generateDummyBodyTextModule("3"),
+      generateDummyFooterData()
     ]
   } as PageModel,
   {
@@ -119,7 +119,6 @@ export const pageList: PageModel[] = [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
       generateNotYetImplemented("Blog Overview Sidebar"),
-
       generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
