@@ -1,8 +1,10 @@
 import * as React from "react";
 import "./body-blog-component.scss";
-import { IconComponent, SharedBox, SidebarComponent } from "@app/prep/modules-prep/core";
+import { IconComponent, SharedBox } from "@app/prep/modules-prep/core";
 import Clock from "@assets/icons/clock.svg";
 import classNames from "classnames";
+
+import { SidebarComponent } from "@app/prep/modules-prep/core/sidebar";
 
 export interface IBodyBlogComponentProps {
   banner?: any;

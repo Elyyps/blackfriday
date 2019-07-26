@@ -33,6 +33,7 @@ export class PagebuilderComponent extends React.Component<
 
     if (typeof window === "object") {
       window.addEventListener("resize", this.handleResize.bind(this));
+      this.setScreenSize();
     }
   }
 
@@ -60,6 +61,10 @@ export class PagebuilderComponent extends React.Component<
   }
 
   private handleResize() {
+    this.setScreenSize();
+  }
+
+  private setScreenSize() {
     const screenSize = getViewType(window.innerWidth);
 
     if (this.props.screenSize === undefined || this.props.screenSize.viewType !== screenSize.viewType) {

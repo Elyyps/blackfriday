@@ -8,7 +8,7 @@ export interface IBannerModuleComponentProps {
 
 const BannerModuleComponent = (props: IBannerModuleComponentProps) => (
   <React.Fragment>
-    <BannerComponent bannerModule={props.bannerModule} />
+    <BannerComponent {...props.bannerModule.bannerComponentProps} />
   </React.Fragment>
 );
 
