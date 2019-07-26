@@ -21,6 +21,8 @@ export const generateDummyFilterBar = (): FilterBar => ({
   categoryFilterTitle: "Categories",
   sortByFilterTitle: "Sorted by",
   statusFilterTitle: "Status",
+  categoryFilterPlaceholder: "Categorieën zoeken",
+  brandFilterPlaceholder: "Merk zoeken",
   sortBy: ["Newest", "Relevant", "Price"]
 });
 export const generateEmptyDummyFilterBar = (): FilterBar => ({
@@ -31,5 +33,7 @@ export const generateEmptyDummyFilterBar = (): FilterBar => ({
   categoryFilterTitle: "",
   sortByFilterTitle: " ",
   statusFilterTitle: "",
-  sortBy: [""]
+  sortBy: [""],
+  categoryFilterPlaceholder: "",
+  brandFilterPlaceholder: ""
 });

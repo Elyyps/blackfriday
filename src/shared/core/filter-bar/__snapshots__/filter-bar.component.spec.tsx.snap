@@ -197,6 +197,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
           getTotalShops={[Function]}
           numberOfFilters={0}
           onSelect={[MockFunction]}
+          placeholder="Categorieën zoeken"
         />
       </DropdownComponent>
     </div>
@@ -294,6 +295,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
           getTotalShops={[Function]}
           numberOfFilters={0}
           onSelect={[MockFunction]}
+          placeholder="Merk zoeken"
         />
       </DropdownComponent>
     </div>
@@ -325,7 +327,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
     className="filter-bar__sort"
   >
     <div
-      className="filter__sort-item"
+      className="filter__sort-counter"
     >
       <span>
         <IconComponent

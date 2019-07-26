@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box;
   position: relative;
@@ -45,16 +45,16 @@
   }
 
   &__image {
-    margin-bottom: 16px;
+    padding-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: contain;
+    width: auto;
+    margin: auto;
+    padding-top: 16px;
+    height: 90px;
 
-    min-height: 4rem;
-    margin-top: 16px;
-    max-height: 90px;
-    overflow: hidden;
-    align-items: center;
     @media (max-width: 699px) {
       order: 2;
       width: 90px;

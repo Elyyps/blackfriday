@@ -18,7 +18,11 @@ const FeaturedShopsComponent = (props: IFeaturedShopsComponentProps) => {
   return (
     <div className={styles["featured-shops"]}>
       <h2 className={styles["featured-shop__title"]}>{title}</h2>
-      <div className={`${shops.length > INLINE_LIMIT && styles[`featured-shops__list-blocks`]} ${styles["featured-shops__list"]}`}>
+      <div
+        className={`${shops.length > INLINE_LIMIT && styles[`featured-shops__list-blocks`]} ${
+          styles["featured-shops__list"]
+        }`}
+      >
         {shops.map((shop, key) => (
           <div className={shops.length <= INLINE_LIMIT ? `${styles[`featured-shop__item-${key}`]}` : ""} key={key}>
             <ShopCardComponent

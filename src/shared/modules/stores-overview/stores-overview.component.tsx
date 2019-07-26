@@ -101,7 +101,7 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
 
                 return (
                   <React.Fragment key={key}>
-                    <div className={styles["stores-overview__body__cards"]}>
+                    <div className={styles[`stores-overview__body__cards`]}>
                       <ShopCardComponent
                         title={item.title}
                         buttonLink={item.button.url}
@@ -113,8 +113,8 @@ const StoresOverviewComponent = (props: IStoresOverviewComponentProps & StoresOv
                         range={item.timeLeftBar.value}
                         subtitle={item.timeLeftBar.text}
                       />
+                      <br />
                     </div>
-
                     {showAd && (
                       <div style={{ width: "100%" }}>
                         <BannerComponent {...generateDummyBannerComponentData()} />

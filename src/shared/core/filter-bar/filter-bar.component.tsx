@@ -165,6 +165,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             buttonColor="outline"
           >
             <SearchFilterControlComponent
+              placeholder={props.filterBar.categoryFilterPlaceholder}
               checkbox={props.filterBar.categories}
               onSelect={props.onCategoryChanged}
               applyFilter={props.applyFilter}
@@ -182,6 +183,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
             buttonColor="outline"
           >
             <SearchFilterControlComponent
+              placeholder={props.filterBar.brandFilterPlaceholder}
               checkbox={props.filterBar.brands}
               onSelect={props.onBrandChanged}
               applyFilter={props.applyFilter}
@@ -198,7 +200,7 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
         </div>
       </div>
       <div className={styles["filter-bar__sort"]}>
-        <div className={styles["filter__sort-item"]}>
+        <div className={styles["filter__sort-counter"]}>
           <span>
             <IconComponent icon={StoreIcon} size={"20px"} />
           </span>

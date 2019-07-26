@@ -1,1 +1,1 @@
-export * from './share-social-dropdown.component'
+export * from "./share-social-dropdown.component";
