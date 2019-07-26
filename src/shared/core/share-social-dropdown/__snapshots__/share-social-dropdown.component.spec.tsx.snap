@@ -1,24 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Dropdown] should render component without crashing 1`] = `
+exports[`[ShareSocialDropdown] should render component without crashing 1`] = `
 <div
-  className="dropdown"
+  className="share-social-dropdown"
 >
-  <ShadowCardComponent
-    shadowSize="small"
+  <DropdownComponent
+    title="Share"
   >
     <div
-      className="dropdown-button"
-    >
-      <Button
-        icon="chevron-down.svg"
-        iconStyle="outline"
-        variant="primary-brand"
-      />
-    </div>
-    <div
-      className="dropdown-content"
-      data-uk-dropdown="mode:click"
+      className="share-social-dropdown__content"
     >
       <ShareSocialComponent
         email={
@@ -60,6 +50,6 @@ exports[`[Dropdown] should render component without crashing 1`] = `
         }
       />
     </div>
-  </ShadowCardComponent>
+  </DropdownComponent>
 </div>
 `;

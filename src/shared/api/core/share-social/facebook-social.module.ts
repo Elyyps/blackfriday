@@ -1,5 +1,5 @@
 export interface IFacebookShare {
-  hashtag: string;
+  hashtag?: string;
   nameSocialShare?: string;
   title: string;
   url: string;

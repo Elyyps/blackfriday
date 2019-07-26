@@ -9,4 +9,8 @@ import { withProvider } from "@app/util";
 storiesOf("Arrow-panel", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => <ArrowPanel image={CardIcon} link={{ title: "Productdeals", url: "/" }} />);
+  .add("Basic implementation", () => <ArrowPanelComponent title="Productdeals" icon={CardIcon} />)
+  .add("Implementation with items", () => <ArrowPanelComponent title="Productdeals" items={["Nike", "Adidas"]} />)
+  .add("Implementation with many items", () => (
+    <ArrowPanelComponent title="Productdeals" items={["Nike", "Adidas", "New Balance", "Versace"]} />
+  ));
