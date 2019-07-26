@@ -4,13 +4,13 @@
   position: relative;
   background: $global-background;
   border-radius: $global-border-radius;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 16px 36px 16px 16px;
   height: 52px;
-  margin: 8px;
   overflow: hidden;
   min-height: 52px;
   cursor: pointer;
+  
   box-sizing: border-box;
   svg {
     position: absolute;
