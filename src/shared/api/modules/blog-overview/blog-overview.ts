@@ -1,6 +1,6 @@
 import { BlogPost } from "@app/api/core/blog-post/blog-post";
-import { ArrowPanel } from "@app/api/core/arrow-panel";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
+import { ArrowPanel } from "@app/api/core/arrow-panel/arrow-panel";
 
 export class BlogOverviewModule extends WordPressPostModule {
   public banner?: any;

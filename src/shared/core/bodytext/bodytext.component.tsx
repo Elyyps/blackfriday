@@ -1,17 +1,16 @@
 import * as React from "react";
 import styles from "./bodytext-component.module.scss";
-import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 
 export interface IBodytextComponentProps {
   bgColor?: string;
-  bodyTextModule: BodyTextModule;
+  children: any;
   paddingBottom?: string;
   paddingTop?: string;
   style?: object;
 }
 
 const BodytextComponent = (props: IBodytextComponentProps) => {
-  const { bgColor, bodyTextModule, paddingBottom, paddingTop } = props;
+  const { bgColor, paddingBottom, paddingTop } = props;
 
   const style = {
     backgroundColor: bgColor,
@@ -22,7 +21,7 @@ const BodytextComponent = (props: IBodytextComponentProps) => {
 
   return (
     <div className={styles["bodytext"]} style={style}>
-      <div className="uk-container">{bodyTextModule.dummyJSX}</div>
+      <div className="uk-container">{props.children}</div>
     </div>
   );
 };

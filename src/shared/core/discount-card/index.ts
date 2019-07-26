@@ -1,1 +1,1 @@
-export * from './discount-card.component'
+export * from "./discount-card.component";

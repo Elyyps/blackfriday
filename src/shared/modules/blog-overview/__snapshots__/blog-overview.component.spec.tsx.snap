@@ -94,14 +94,9 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
           items={
             Array [
               Object {
-                "brands": Array [
-                  "",
-                ],
                 "icon": "",
-                "text": Object {
-                  "title": "",
-                  "url": "",
-                },
+                "text": "",
+                "url": "",
               },
             ]
           }

@@ -1,11 +1,13 @@
 import * as React from "react";
 import styles from "./homepage-header-component.module.scss";
 import Slider, { Settings } from "react-slick";
-import { CHEVRON_RIGHT } from "@app/constants/icons";
-import { ArrowPanelComponent, LabelComponent } from "@app/core";
+import { CHEVRON_RIGHT, PLAY_BUTTON } from "@app/constants/icons";
+import { ArrowPanel, LabelComponent, IconComponent } from "@app/core";
 import { getHomePageHeaderSetting } from "./slider-settings";
 import { LinkComponent } from "@app/core/link";
 import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header.module";
+import { ModalComponent } from "@app/core/modal";
+import ReactPlayer from "react-player";
 
 export interface IHomePageHeaderComponentProps {
   customNextArrow?: JSX.Element | undefined;
@@ -41,7 +43,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 </ul>
                 <div className={styles["homepage-header__cards"]}>
                   {props.homePageModule.arrowPanelslinks.map((panel, key) => (
-                    <ArrowPanelComponent key={key} title={panel.text.title} icon={panel.icon} />
+                    <ArrowPanel
+                      key={key}
+                      link={{ title: panel.link.title, url: panel.link.url }}
+                      icon={panel.icon}
+                      image={panel.image}
+                    />
                   ))}
                 </div>
               </div>
@@ -66,16 +73,37 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
               <Slider {...settings}>
                 {props.homePageModule.slides.map((slide, index) => (
                   <div key={index} className={styles["homepage-header__slide-container"]}>
-                    <div
-                      style={{ backgroundImage: `url(${slide.image})` }}
-                      className={styles["homepage-header__slider-item"]}
-                    />
-                    <div className={styles["homepage-header__slider-control"]}>
-                      <div className={styles["homepage-header__slider-title"]}> {slide.title}</div>
-                      <LinkComponent icon={CHEVRON_RIGHT} to={slide.link.url} animated variant={"quaternary"}>
-                        {slide.link.title}
-                      </LinkComponent>
-                    </div>
+                    {slide.video ? (
+                      <ModalComponent
+                        isTriggerOnClick
+                        variant={"big"}
+                        trigger={
+                          <div
+                            style={{ backgroundImage: `url(${slide.image})` }}
+                            className={`${styles["homepage-header__slider-item"]} ${
+                              styles["homepage-header__slider-item-video"]
+                            }`}
+                          >
+                            <IconComponent icon={PLAY_BUTTON} size={"80px"} />
+                          </div>
+                        }
+                      >
+                        <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
+                      </ModalComponent>
+                    ) : (
+                      <div
+                        style={{ backgroundImage: `url(${slide.image})` }}
+                        className={styles["homepage-header__slider-item"]}
+                      />
+                    )}
+                    {!slide.video && (
+                      <div className={styles["homepage-header__slider-control"]}>
+                        <div className={styles["homepage-header__slider-title"]}> {slide.title}</div>
+                        <LinkComponent icon={CHEVRON_RIGHT} to={slide.link.url} animated variant={"quaternary"}>
+                          {slide.link.title}
+                        </LinkComponent>
+                      </div>
+                    )}
                   </div>
                 ))}
               </Slider>
@@ -94,7 +122,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-bottom__cards"]}>
                   {props.homePageModule.popularProducts.map((product, key) => (
                     <div key={key}>
-                      <ArrowPanelComponent title={product.text.title} icon={product.icon} />
+                      <ArrowPanel
+                        key={key}
+                        link={{ title: product.link.title, url: product.link.url }}
+                        image={product.image}
+                        icon={product.icon}
+                      />
                     </div>
                   ))}
                 </div>
@@ -106,7 +139,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-bottom__cards"]}>
                   {props.homePageModule.popularStores.map((store, key) => (
                     <div key={key}>
-                      <ArrowPanelComponent title={store.text.title} icon={store.icon} />
+                      <ArrowPanel
+                        key={key}
+                        link={{ title: store.link.title, url: store.link.url }}
+                        image={store.image}
+                        icon={store.icon}
+                      />
                     </div>
                   ))}
                 </div>

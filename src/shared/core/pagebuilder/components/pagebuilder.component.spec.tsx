@@ -19,7 +19,8 @@ describe("[PagebuilderComponent]", () => {
         match={routerProps.match}
         currentPage={page}
         getPage={jest.fn()}
-        isMobile={false}
+        screenSize={undefined}
+        setScreenSize={jest.fn()}
       />
     );
 
@@ -38,7 +39,8 @@ describe("[PagebuilderComponent]", () => {
         match={routerProps.match}
         currentPage={page}
         getPage={jest.fn()}
-        isMobile={false}
+        screenSize={undefined}
+        setScreenSize={jest.fn()}
       />
     );
 
