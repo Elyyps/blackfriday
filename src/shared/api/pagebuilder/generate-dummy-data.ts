@@ -15,6 +15,7 @@ import { generateDummyFeaturedDealsData } from "../modules/featured-deals/genera
 import { generateBlogSingleHeaderData } from "../modules/blog-single-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
+import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
 
@@ -139,7 +140,7 @@ export const pageList: PageModel[] = [
       generateBlogSingleHeaderData(),
       generateNotYetImplemented("Blog BodyText"),
       generateDummyFeaturedDealsData(),
-      generateNotYetImplemented("Blog Featured Module"),
+      generateFeaturedBlogData(),
       generateCtaNewsLetterModule(),
       generateDummyFooterData()
     ]

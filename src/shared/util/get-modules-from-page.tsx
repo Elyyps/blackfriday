@@ -40,6 +40,8 @@ import {
 } from "@app/api/modules/body-text/generate-dummy-data";
 import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
+import { FeaturedBlogComponent } from "@app/modules/featured-blog";
+import { FeaturedBlogModule } from "@app/api/modules/featured-blog/featured-blog";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -73,6 +75,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     //   return <BodytextComponent bodyTextModule={wordPressModule as BodyTextModule} />;
     case "BlogOverviewModule":
       return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
+    case "FeaturedBlogModule":
+      return <FeaturedBlogComponent featuredBlog={wordPressModule as FeaturedBlogModule} />;
     case "BodyTextModule":
       const type = (wordPressModule as BodyTextModule).type;
 
