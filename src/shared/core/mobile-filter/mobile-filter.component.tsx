@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./mobile-filter-component.module.scss";
-import { ArrowPanelComponent } from "../arrow-panel";
+import { FilterItemRow } from "@app/core/filter-item-row";
 import { IconComponent } from "../icon";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
@@ -79,7 +79,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
 
       {!currentFilterItem ? (
         currentFilterItems.map((item, key) => (
-          <ArrowPanelComponent
+          <FilterItemRow
             key={key}
             items={item.selectedItems}
             onClick={() => {
