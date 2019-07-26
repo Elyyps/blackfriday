@@ -39,7 +39,8 @@ export const generateHomePageHeader = (): HomepageHeader => ({
         url: "./"
       },
       title: "Handige Black Friday Tips",
-      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/video-thumbnail.jpg",
+      video: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/BlackFridayNederland-16x9.mp4"
     },
     {
       link: {

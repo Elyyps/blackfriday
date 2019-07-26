@@ -1,11 +1,13 @@
 import * as React from "react";
 import styles from "./homepage-header-component.module.scss";
 import Slider, { Settings } from "react-slick";
-import { CHEVRON_RIGHT } from "@app/constants/icons";
-import { ArrowPanelComponent, LabelComponent } from "@app/core";
+import { CHEVRON_RIGHT, PLAY_BUTTON } from "@app/constants/icons";
+import { ArrowPanelComponent, LabelComponent, IconComponent } from "@app/core";
 import { getHomePageHeaderSetting } from "./slider-settings";
 import { LinkComponent } from "@app/core/link";
 import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header.module";
+import { ModalComponent } from "@app/core/modal";
+import ReactPlayer from "react-player";
 
 export interface IHomePageHeaderComponentProps {
   customNextArrow?: JSX.Element | undefined;
@@ -66,16 +68,38 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
               <Slider {...settings}>
                 {props.homePageModule.slides.map((slide, index) => (
                   <div key={index} className={styles["homepage-header__slide-container"]}>
-                    <div
-                      style={{ backgroundImage: `url(${slide.image})` }}
-                      className={styles["homepage-header__slider-item"]}
-                    />
-                    <div className={styles["homepage-header__slider-control"]}>
-                      <div className={styles["homepage-header__slider-title"]}> {slide.title}</div>
-                      <LinkComponent icon={CHEVRON_RIGHT} to={slide.link.url} animated variant={"quaternary"}>
-                        {slide.link.title}
-                      </LinkComponent>
-                    </div>
+                    {slide.video ? (
+                      <ModalComponent
+                        isTriggerOnClick
+                        modalContent={
+                          <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
+                        }
+                        variant={"big"}
+                        trigger={
+                          <div
+                            style={{ backgroundImage: `url(${slide.image})` }}
+                            className={`${styles["homepage-header__slider-item"]} ${
+                              styles["homepage-header__slider-item-video"]
+                            }`}
+                          >
+                            <IconComponent icon={PLAY_BUTTON} size={"80px"} />
+                          </div>
+                        }
+                      />
+                    ) : (
+                      <div
+                        style={{ backgroundImage: `url(${slide.image})` }}
+                        className={styles["homepage-header__slider-item"]}
+                      />
+                    )}
+                    {!slide.video && (
+                      <div className={styles["homepage-header__slider-control"]}>
+                        <div className={styles["homepage-header__slider-title"]}> {slide.title}</div>
+                        <LinkComponent icon={CHEVRON_RIGHT} to={slide.link.url} animated variant={"quaternary"}>
+                          {slide.link.title}
+                        </LinkComponent>
+                      </div>
+                    )}
                   </div>
                 ))}
               </Slider>

@@ -6,6 +6,7 @@ export type ModalVariant = "small" | "big";
 export type Role = "dialog" | "alertdialog";
 export interface IModalComponentProps {
   ariaLabel?: string;
+  isTriggerOnClick?: boolean;
   modalBackground?: string;
   modalContent: JSX.Element;
   role?: Role;
@@ -28,14 +29,19 @@ const ModalComponent = (props: IModalComponentProps) => {
 
   return (
     <React.Fragment>
-      <div role={"botton"} onClick={() => setModal(true)}>
-        {props.trigger}
-      </div>
-
+      {props.isTriggerOnClick ? (
+        <div role={"botton"} onClick={() => setModal(true)}>
+          {props.trigger}
+        </div>
+      ) : (
+        <div role={"botton"} onMouseDown={() => setModal(true)}>
+          {props.trigger}
+        </div>
+      )}
       {isModalOpen && (
         <ModalDialogComponent
           title={props.title}
-          ariaLabel={props.ariaLabel ? props.ariaLabel : "dialog description"}
+          ariaLabel={props.ariaLabel ? props.ariaLabel : "dialog"}
           background={props.modalBackground ? props.modalBackground : "#fff"}
           onClose={() => setModal(false)}
           variant={props.variant}

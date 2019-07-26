@@ -19,10 +19,10 @@ export interface IModalDialogComponentProps {
 const ModalDialogComponent = (props: IModalDialogComponentProps) => {
   React.useEffect(() => {
     window.addEventListener("keydown", props.onKeyDown);
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
       if (!!window) {
         window.removeEventListener("keydown", props.onKeyDown);
       }
@@ -37,7 +37,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
           role={props.role}
           aria-label={props.ariaLabel}
           aria-modal="true"
-          tabIndex={-1}
+          tabIndex={0}
           onMouseDown={(e): any => {
             props.onClickAway(e);
           }}
