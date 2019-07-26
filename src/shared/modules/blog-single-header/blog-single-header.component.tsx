@@ -1,13 +1,13 @@
 import * as React from "react";
 import styles from "./blog-single-header-component.module.scss";
-import { ImageComponent } from "../image";
-import { IconComponent } from "../icon";
+import { ImageComponent } from "../../core/image";
+import { IconComponent } from "../../core/icon";
 import { Link } from "react-router-dom";
 import IconBack from "@assets/icons/chevron-left.svg";
-import { BlogSingleHeader } from "@app/api/core/blog-single-header/blog-single-header";
+import { BlogSingleHeaderModule } from "@app/api/core/blog-single-header/blog-single-header";
 
 export interface IBlogSingleHeaderComponentProps {
-  blogSingleHeader: BlogSingleHeader;
+  blogSingleHeader: BlogSingleHeaderModule;
 }
 
 const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (

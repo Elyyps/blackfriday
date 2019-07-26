@@ -25,6 +25,8 @@ import { StoresOverviewContainer } from "@app/modules/stores-overview/container/
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
+import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
+import { BlogSingleHeaderModule } from "@app/api/core/blog-single-header/blog-single-header";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -52,6 +54,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoresOverviewModule":
       return <StoresOverviewContainer />;
+    case "BlogSingleHeaderModule":
+      return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     // case "BodyTextModule":
     //   return <BodytextComponent bodyTextModule={wordPressModule as BodyTextModule} />;
     case "FeaturedDealsModule":

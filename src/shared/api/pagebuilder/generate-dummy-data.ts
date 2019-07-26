@@ -18,6 +18,7 @@ import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoi
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
+import { generateBlogSingleHeaderData } from "../modules/blog-single-header/endpoint";
 
 export const pageList: PageModel[] = [
   {
@@ -137,7 +138,7 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateNotYetImplemented("Blog Single Header"),
+      generateBlogSingleHeaderData(),
       generateNotYetImplemented("Blog BodyText"),
       generateDummyFeaturedDealsData(),
       generateNotYetImplemented("Blog Featured"),
