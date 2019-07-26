@@ -2,19 +2,12 @@ import style from "./dropdown-component.module.scss";
 import * as React from "react";
 import ChevronDown from "@assets/icons/chevron-down.svg";
 
-import { Button } from "../button";
+import { Button, ButtonVariant } from "../button";
 import { ShadowCardComponent } from "../shadow-card";
 
 export interface IDropdownComponentProps {
   buttonColor?: "outline" | "filled" | "outline-fill";
-  buttonVariant?:
-    | "primary-default"
-    | "primary-brand"
-    | "primary-inverted"
-    | "secondary"
-    | "secondary-inverted"
-    | "tertiary"
-    | "tertiary-inverted";
+  buttonVariant?: ButtonVariant;
   children?: any;
   icon?: any;
   orientation?: "bottom-left" | "bottom-right" | "top-left" | "top-right";

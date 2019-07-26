@@ -1,5 +1,7 @@
 .mobile-filter {
-  max-width: 600px;
+  @media (min-width: $breakpoint-xsmall-max) {
+    display: none 
+  }
   margin: auto;
   height: 100%;
   position: relative;
@@ -62,9 +64,8 @@
     &__clear {
       position: absolute;
       right: 16px;
-      
-        text-decoration: underline !important;
-      
+
+      text-decoration: underline !important;
     }
     &__nav-button {
       position: absolute;

@@ -19,7 +19,7 @@ a {
   letter-spacing: normal;
   color: black;
   &:hover {
-    color: black;
+    color: $brand-primary;
     text-decoration: none;
   }
 }

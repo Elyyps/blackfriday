@@ -3,7 +3,6 @@ import styles from "./banner-component.module.scss";
 import { Button, ImageComponent } from "@app/core/";
 import { Link } from "react-router-dom";
 import IconDefault from "@assets/icons/link.svg";
-import { BannerModule } from "@app/api/modules/banner/banner.module";
 
 export type BannerVariant = "default" | "small";
 
@@ -13,11 +12,18 @@ export type ImageType = {
 };
 
 export interface IBannerComponentProps {
-  bannerModule: BannerModule;
+  buttonLink?: any;
+  buttonTitle?: string;
+  image?: ImageType;
+  label?: string;
+  logo?: ImageType;
+  text?: any;
+  title?: string;
+  variant?: BannerVariant;
 }
 
 const BannerComponent = (props: IBannerComponentProps) => {
-  const { variant, buttonLink, image, label, title, text, buttonTitle, logo } = props.bannerModule;
+  const { variant, buttonLink, image, label, title, text, buttonTitle, logo } = props;
 
   const classModify = `banner--${variant || "default"}`;
 

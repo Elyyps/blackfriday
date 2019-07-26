@@ -8,9 +8,8 @@ import { StarsRatingComponent } from "@app/core/stars-rating";
 export interface IPlaygroundPedroComponentProps {}
 
 const PlaygroundPedroComponent = () => {
-  const [currentItems, setCurrentItems] = React.useState<IMobileFilterItem[]>(mobileFilterDummyData);
-
   return (
+
     <div style={{ maxWidth: "300px", margin: "auto" }}>
       <StarsRatingComponent showRating voteTrigger={() => alert("voted")} rating={2.5} />
     </div>

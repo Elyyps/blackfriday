@@ -1,35 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[arrow-panel] should render component without crashing 1`] = `
-<div
-  className="arrow-panel "
-  onClick={[Function]}
-  role="button"
+<Link
+  className="card-simple"
+  to="/"
 >
   <div
-    className="arrow-panel__image"
+    className="content"
   >
-    <ImageComponent
-      src="store.svg"
+    <div
+      className="image-container"
+    >
+      <ImageComponent
+        className="image"
+        src="store.svg"
+      />
+    </div>
+    <div
+      className="title"
+    >
+      Productdeals
+    </div>
+  </div>
+  <div
+    className="icon"
+  >
+    <IconComponent
+      icon={
+        Object {
+          "ReactComponent": [Function],
+          "__esModule": true,
+          "default": "chevron-right.svg",
+        }
+      }
+      size="10px"
+      strokeColor="#474747"
+      strokeWidth="3px"
     />
   </div>
-  <div
-    className="arrow-panel__title"
-  >
-    Productdeals
-  </div>
-  <IconComponent
-    icon={
-      Object {
-        "ReactComponent": [Function],
-        "__esModule": true,
-        "default": "chevron-right.svg",
-      }
-    }
-    size="12px"
-  />
-  <div
-    className="arrow-panel__body"
-  />
-</div>
+</Link>
 `;
