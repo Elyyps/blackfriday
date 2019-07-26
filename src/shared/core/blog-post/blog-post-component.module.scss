@@ -1,0 +1,44 @@
+.blog-post {
+  display: flex;
+  color: $gray-light;
+  align-items: center;
+  font-size: 14px;
+  &__title {
+    font-family: $global-font-family-secondary;
+    color: $gray-dark;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    @media (max-width: $breakpoint-small-max) {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+  &__body {
+    flex: 1 1 auto;
+  }
+  &__image {
+    width: 150px;
+    margin-right: 24px;
+    flex: 0 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2px;
+    @media (max-width: $breakpoint-small-max) {
+      margin-right: 16px;
+      width: 20%;
+    }
+    img,
+    svg {
+      width: 100%;
+    }
+  }
+  &__link {
+    color: $global-link-color;
+    font-weight: 600;
+  }
+  &:hover {
+    color: currentColor;
+    text-decoration: none;
+  }
+}

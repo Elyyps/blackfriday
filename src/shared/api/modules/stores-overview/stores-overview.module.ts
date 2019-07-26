@@ -1,4 +1,3 @@
-/* tslint:disable */
 import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 import { generateDemoData } from "@app/api/core/shop-card/endpoint";
@@ -12,7 +11,7 @@ export class StoresOverviewModule extends WordPressPostModule {
 export const shuffleArray = (a: any) => {
   const result = [...a];
 
-  for (let i = 1; result.length > i; i++) {
+  for (let i = 1; result.length > i; i += 1) {
     const j = Math.floor(Math.random() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
   }
@@ -20,13 +19,13 @@ export const shuffleArray = (a: any) => {
   return result;
 };
 
-export function getShopCards(
+export const getShopCards = (
   currentPage: number,
   status: string[],
   categories: string[],
   brands: string[],
   sortBy: string
-) {
+) => {
   const shopCards: ShopCard[] = generateDemoData();
   let filteredCardsByStatus: ShopCard[] = [];
   let filteredCardsByCategories: ShopCard[] = [];
@@ -54,11 +53,17 @@ export function getShopCards(
     filteredCardsByBrand = filteredCardsByCategories;
   }
   if (sortBy.length >= 1) {
-    sortBy === "Newest"
-      ? (SortedCards = shuffleArray(filteredCardsByBrand))
-      : sortBy === "Price"
-      ? (SortedCards = shuffleArray(filteredCardsByBrand))
-      : sortBy === "Relevant" && (SortedCards = shuffleArray(filteredCardsByBrand));
+    switch (sortBy) {
+      case "Newest":
+        SortedCards = shuffleArray(filteredCardsByBrand);
+        break;
+      case "Price":
+        SortedCards = shuffleArray(filteredCardsByBrand);
+        break;
+      case "Relevant":
+        SortedCards = shuffleArray(filteredCardsByBrand);
+      default:
+    }
   } else {
     SortedCards = filteredCardsByBrand;
   }
@@ -66,4 +71,4 @@ export function getShopCards(
   const slicedList = SortedCards.slice(skip, numberOfCards);
 
   return { shopCards: slicedList, totalCards: SortedCards.length };
-}
+};

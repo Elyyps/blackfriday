@@ -13,6 +13,7 @@ import { generateDummyStoresOverview } from "../modules/stores-overview/generate
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
+import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 
 export const pageList: PageModel[] = [
@@ -117,7 +118,9 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateNotYetImplemented("Blog Overview Module"),
+      generateNotYetImplemented("Blog Overview Sidebar"),
+
+      generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
       generateDummyFooterData()

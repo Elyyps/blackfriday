@@ -1,8 +1,7 @@
 import React from "react";
-import { shallowWithIntl } from "enzyme-react-intl";
-
 import { MobileFilterComponent } from "./mobile-filter.component";
 import { mobileFilterDummyData } from "./dummy-data";
+import { shallowWithIntl } from "enzyme-react-intl";
 
 describe("[MobileFilter]", () => {
   it("should render component without crashing", () => {

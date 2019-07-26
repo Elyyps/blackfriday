@@ -4,15 +4,14 @@ import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
 import { SearchFilterControlComponent } from "@app/core/search-filter-control/search-filter-control.component";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
-import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
 import Filter from "@assets/icons/filter.svg";
 import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
 import Cross from "@assets/icons/cross.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
 import { CheckboxComponent } from "../checkbox/checkbox.component";
 import { Checkbox } from "@app/api/core/checkbox";
-import CheckIcon from "@assets/icons/check.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
+import { SelectComponent } from "../select";
 
 export interface IFilterBarComponentProps {
   applyFilter: () => void;
@@ -24,10 +23,8 @@ export interface IFilterBarComponentProps {
 }
 
 const FilterBarComponent = (props: IFilterBarComponentProps) => {
-  const [filterSort, setFilterSort] = React.useState(false);
   const [prevIcon, setPrevIcon] = React.useState(false);
   const [filterContent, setFilterContent] = React.useState(false);
-  const [orderBy, setOrderBy] = React.useState("Relevant");
   const [checkedStatusFilters, setCheckedStatusFilters] = React.useState<number>(0);
   const [checkedCategoryFilters, setCheckedCategoryFilters] = React.useState<number>(0);
   const [checkedBrandFilters, setCheckedBrandFilters] = React.useState<number>(0);
@@ -35,18 +32,11 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
   const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = React.useState<number>(0);
   const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = React.useState<number>(0);
 
-  const filterSortChange = () => {
-    setFilterSort(!filterSort);
-  };
   const handleClickLAbel = () => {
     setFilterContent(!filterContent);
   };
   const handleClick = () => {
     setPrevIcon(!prevIcon);
-  };
-  const onOrderBySelected = (value: string) => {
-    props.onOrderByChanged(value);
-    setOrderBy(value);
   };
 
   const onStatusSelected = (id: string) => {
@@ -207,26 +197,8 @@ const FilterBarComponent = (props: IFilterBarComponentProps) => {
           {numberOfShopsFromBrands + numberOfShopsFromCategory + numberOfShopsFromStatus} winkels
         </div>
         <div className={styles["filter__sort-item"]}>
-          {props.filterBar.sortByFilterTitle}
-          <span role={"button"} className={styles["filter__sort-change"]} onClick={filterSortChange}>
-            {orderBy}
-            <span
-              className={` ${styles["filter__sort-change-icon"]} ${
-                styles[filterSort ? "filter__sort-change-icon-isActive" : ""]
-              } `}
-            >
-              <IconComponent icon={ArrowLongDown} size={"6px"} />
-            </span>
-          </span>
-
-          <ul data-uk-dropdown="mode: click" className={styles["filter__sort-ul"]}>
-            {props.filterBar.sortBy.map((value, key) => (
-              <li role="link" className={styles["filter__sort-li"]} key={key} onClick={() => onOrderBySelected(value)}>
-                {value}
-                {value === orderBy && <IconComponent color={"red"} icon={CheckIcon} size={"15px"} />}
-              </li>
-            ))}
-          </ul>
+          {props.filterBar.sortByFilterTitle} :
+          <SelectComponent options={props.filterBar.sortBy} onSelect={props.onOrderByChanged} />
         </div>
       </div>
     </div>
