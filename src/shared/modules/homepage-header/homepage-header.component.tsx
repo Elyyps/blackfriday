@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./homepage-header-component.module.scss";
 import Slider, { Settings } from "react-slick";
 import { CHEVRON_RIGHT, PLAY_BUTTON } from "@app/constants/icons";
-import { ArrowPanelComponent, LabelComponent, IconComponent } from "@app/core";
+import { ArrowPanel, LabelComponent, IconComponent } from "@app/core";
 import { getHomePageHeaderSetting } from "./slider-settings";
 import { LinkComponent } from "@app/core/link";
 import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header.module";
@@ -43,7 +43,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 </ul>
                 <div className={styles["homepage-header__cards"]}>
                   {props.homePageModule.arrowPanelslinks.map((panel, key) => (
-                    <ArrowPanelComponent key={key} title={panel.text.title} icon={panel.icon} />
+                    <ArrowPanel
+                      key={key}
+                      link={{ title: panel.link.title, url: panel.link.url }}
+                      icon={panel.icon}
+                      image={panel.image}
+                    />
                   ))}
                 </div>
               </div>
@@ -118,7 +123,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-bottom__cards"]}>
                   {props.homePageModule.popularProducts.map((product, key) => (
                     <div key={key}>
-                      <ArrowPanelComponent title={product.text.title} icon={product.icon} />
+                      <ArrowPanel
+                        key={key}
+                        link={{ title: product.link.title, url: product.link.url }}
+                        image={product.image}
+                        icon={product.icon}
+                      />
                     </div>
                   ))}
                 </div>
@@ -130,7 +140,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-bottom__cards"]}>
                   {props.homePageModule.popularStores.map((store, key) => (
                     <div key={key}>
-                      <ArrowPanelComponent title={store.text.title} icon={store.icon} />
+                      <ArrowPanel
+                        key={key}
+                        link={{ title: store.link.title, url: store.link.url }}
+                        image={store.image}
+                        icon={store.icon}
+                      />
                     </div>
                   ))}
                 </div>

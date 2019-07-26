@@ -4,6 +4,7 @@ import * as ActionType from "./settings.types";
 
 export enum ViewType {
   Mobile,
+  MobileBig,
   Tablet,
   Desktop,
   DesktopLarge
