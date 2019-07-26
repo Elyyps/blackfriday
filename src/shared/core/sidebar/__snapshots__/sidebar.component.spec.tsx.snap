@@ -24,56 +24,72 @@ exports[`[Sidebar] should render component without crashing 1`] = `
     title="Black Friday bij Coolblue"
     variant="small"
   />
-  <SidebarBoxComponent
-    items={
+  <FeaturedSidebarItems
+    featuredItems={
       Array [
         Object {
-          "icon": "oasis.jpg",
-          "link": "/",
-          "title": "Apple Airpods",
+          "image": "imac.png",
+          "link": Object {
+            "title": "Apple iPhones",
+            "url": "/",
+          },
         },
         Object {
-          "icon": "oasis.jpg",
-          "link": "/",
-          "title": "Apple iPhones",
+          "image": "iphone.png",
+          "link": Object {
+            "title": "Apple MacBooks",
+            "url": "/",
+          },
         },
         Object {
-          "icon": "oasis.jpg",
-          "link": "/",
-          "title": "Apple MacBooks",
+          "image": "loader.png",
+          "link": Object {
+            "title": "Apple iMacs",
+            "url": "/",
+          },
         },
         Object {
           "icon": "party.svg",
-          "link": "/",
-          "title": "Naar alle deals!",
+          "link": Object {
+            "title": "Naar alle deals!",
+            "url": "/",
+          },
         },
       ]
     }
     key="0"
     title="Een greep uit onze deals"
   />
-  <SidebarBoxComponent
-    items={
+  <FeaturedSidebarItems
+    featuredItems={
       Array [
         Object {
-          "icon": "cool-blue.svg",
-          "link": "/",
-          "title": "Coolblue",
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Coolblue",
+            "url": "/",
+          },
         },
         Object {
-          "icon": "cool-blue.svg",
-          "link": "/",
-          "title": "Alternate",
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Alternate",
+            "url": "/",
+          },
         },
         Object {
-          "icon": "cool-blue.svg",
-          "link": "/",
-          "title": "Beddenreus",
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Beddenreus",
+            "url": "/",
+          },
         },
         Object {
           "icon": "party.svg",
-          "link": "/",
-          "title": "Naar alle Winkels!",
+          "link": Object {
+            "title": "Naar alle winkels!",
+            "url": "/",
+          },
         },
       ]
     }

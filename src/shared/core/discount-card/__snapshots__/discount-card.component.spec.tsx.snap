@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[DiscountCard] should render component without crashing 1`] = `
+<div
+  className="discount-card"
+>
+  <div
+    className="discount-card__body"
+  >
+    <div
+      className="discount-card__image"
+    >
+      <ImageComponent
+        src="cool-blue.svg"
+      />
+    </div>
+    <div
+      className="discount-card__label"
+      style={
+        Object {
+          "color": "#00a82f",
+        }
+      }
+    >
+      status
+    </div>
+    <TimeLeftBarComponent
+      color="#00a82f"
+      range={1}
+    />
+    <div
+      className="discount-card__content"
+    >
+      <div
+        className="discount-card__title"
+      >
+        Title
+      </div>
+      <div
+        className="discount-card__subtitle  uk-visible@s"
+      >
+        Content
+      </div>
+    </div>
+  </div>
+  <div
+    className="discount-card__action"
+  >
+    <button
+      className="discount-card__coupon"
+    >
+      COUPON
+    </button>
+    <Button
+      href="/"
+      icon="link.svg"
+      title=""
+      variant="primary"
+    />
+  </div>
+</div>
+`;

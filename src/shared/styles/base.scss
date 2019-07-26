@@ -13,13 +13,13 @@
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 600;
   font-family: Assistant;
   letter-spacing: normal;
   color: black;
   &:hover {
-    color: black;
+    color: $brand-primary;
     text-decoration: none;
   }
 }
@@ -39,16 +39,16 @@ ul {
     > li {
       position: relative;
       list-style: none;
-      padding-left: 30px;
+      padding-left: 16px;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 4px;
         height: 4px;
-        top: 0.5em;
+        top: 0.7em;
         left: 0;
         border-radius: 50%;
-        background-color: $brand-secondary !important;
+        background-color: $brand-primary !important;
       }
       &:not(:first-child) {
         margin-top: 8px;
@@ -63,11 +63,11 @@ ul {
       padding-left: 30px;
       position: relative;
       line-height: 1.29;
-      &:not(:last-child){
+      &:not(:last-child) {
         margin-bottom: 8px;
       }
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0.2em;
         left: 0;
@@ -90,14 +90,14 @@ ol {
   > li {
     position: relative;
     list-style: none;
-    padding-left: 29px;
+    padding-left: 24px;
     &::before {
       counter-increment: ol;
-      content: counter(ol) '.';
+      content: counter(ol) ".";
       position: absolute;
       top: 0;
       left: 5px;
-      color: $global-color;
+      color: $brand-primary;
     }
     &:nth-child(n + 2) {
       margin-top: 8px;
@@ -114,7 +114,7 @@ blockquote {
   z-index: 1;
   &::before {
     color: $global-primary-background;
-    content: '\2033';
+    content: "\2033";
     opacity: 0.2;
     position: absolute;
     left: 8px;
@@ -164,7 +164,12 @@ blockquote {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
 }
 
@@ -245,5 +250,22 @@ h6 {
 .uk-container {
   &.uk-container-medium {
     max-width: $container-medium-max-width;
+  }
+}
+
+@mixin wb-container {
+  box-sizing: content-box;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding-horizontal;
+  padding-right: $container-padding-horizontal;
+  @media (min-width: $breakpoint-small) {
+    padding-left: $container-padding-horizontal-s;
+    padding-right: $container-padding-horizontal-s;
+  }
+  @media (min-width: $breakpoint-medium) {
+    padding-left: $container-padding-horizontal-m;
+    padding-right: $container-padding-horizontal-m;
   }
 }

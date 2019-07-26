@@ -1,19 +1,21 @@
 import * as React from "react";
 import styles from "./sidebar-component.module.scss";
 import { BannerComponent, IBannerComponentProps } from "@app/core/banner";
-import { SidebarBoxComponent } from "@app/prep/modules-prep/core";
+import { FeaturedSidebarItems, IFeaturedSidebarItemsProps } from "./components/featured-sidebar-items";
 
 export interface ISidebarComponentProps {
   banner?: IBannerComponentProps;
-  items?: any[];
+  featuredItemsGroups?: IFeaturedSidebarItemsProps[];
 }
 
 const SidebarComponent = (props: ISidebarComponentProps) => (
   <div className={styles["sidebar"]}>
     {props.banner && <BannerComponent {...props.banner} variant="small" />}
 
-    {props.items &&
-      props.items.map((item, key) => <SidebarBoxComponent key={key} title={item.title} items={item.links} />)}
+    {props.featuredItemsGroups &&
+      props.featuredItemsGroups.map((itemGroup, key) => (
+        <FeaturedSidebarItems key={key} title={itemGroup.title} featuredItems={itemGroup.featuredItems} />
+      ))}
   </div>
 );
 

@@ -65,4 +65,21 @@
       }
     }
   }
+
+  &--quaternary {
+    color: #fff;
+    svg {
+      * {
+        stroke: #fff;
+      }
+    }
+    &:hover {
+      color: $brand-primary-darker;
+      svg {
+        * {
+          stroke: $brand-primary-darker;
+        }
+      }
+    }
+  }
 }

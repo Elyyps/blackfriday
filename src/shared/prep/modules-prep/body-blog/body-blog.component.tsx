@@ -4,8 +4,7 @@ import { IconComponent, SharedBox } from "@app/prep/modules-prep/core";
 import Clock from "@assets/icons/clock.svg";
 import classNames from "classnames";
 
-import { SidebarComponent as SidebarComponent2 } from "@app/core/sidebar";
-import { sidebarContent } from "@app/api/core/sidebar";
+import { SidebarComponent } from "@app/prep/modules-prep/core/sidebar";
 
 export interface IBodyBlogComponentProps {
   banner?: any;
@@ -50,8 +49,7 @@ const BodyBlogComponent = (props: IBodyBlogComponentProps) => {
           </div>
           {props.sidebar && (
             <div className="body-blog__sidebar">
-              <SidebarComponent2 {...sidebarContent} />
-              {/* <SidebarComponent banner={props.banner} items={props.items} /> */}
+              <SidebarComponent banner={props.banner} items={props.items} />
             </div>
           )}
         </div>

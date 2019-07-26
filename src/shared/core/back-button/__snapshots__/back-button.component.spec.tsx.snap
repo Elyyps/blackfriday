@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BackLink] should render component without crashing 1`] = `
+<a
+  className="back-button undefined"
+>
+  <IconComponent
+    icon="chevron-left.svg"
+    size="13px"
+  />
+</a>
+`;

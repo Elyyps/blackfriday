@@ -6,13 +6,9 @@ import { withProvider } from "@app/util";
 import { MediumHeroComponent } from "./medium-hero.component";
 
 // Dummy Data
-import { headerContent } from "@app/api/core/header-content";
-import Oasis from "@assets/oasis.jpg";
-import { uniqueSellingPoints } from "@app/api/core/usp";
+import { generateMediumHeroDummyData } from "@app/api/modules/medium-hero/generate-dummy-data";
 
-storiesOf("MediumHero", module)
+storiesOf("Medium Hero", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => (
-    <MediumHeroComponent headerContent={headerContent} image={Oasis} usps={uniqueSellingPoints} />
-  ));
+  .add("Basic implementation", () => <MediumHeroComponent mediumHeroModule={generateMediumHeroDummyData()} />);

@@ -6,29 +6,10 @@ import { withProvider } from "@app/util";
 import { BannerComponent } from "./banner.component";
 
 // Dummy data
-import { bannerProps } from "@app/api/core/banner";
+import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 
 storiesOf("Banner", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => (
-    <BannerComponent
-      buttonLink={bannerProps.buttonLink}
-      buttonTitle={bannerProps.buttonTitle}
-      image={bannerProps.image}
-      label={bannerProps.label}
-      logo={bannerProps.logo}
-      text={bannerProps.text}
-      title={bannerProps.title}
-    />
-  ))
-  .add("Basic implementation without image", () => (
-    <BannerComponent
-      buttonLink={bannerProps.buttonLink}
-      buttonTitle={bannerProps.buttonTitle}
-      label={bannerProps.label}
-      logo={bannerProps.logo}
-      text={bannerProps.text}
-      title={bannerProps.title}
-    />
-  ));
+  .add("Basic implementation", () => <BannerComponent {...generateDummyBannerComponentData()} />)
+  .add("Basic implementation without image", () => <BannerComponent {...generateDummyBannerComponentData()} />);

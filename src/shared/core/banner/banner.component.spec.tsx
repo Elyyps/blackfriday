@@ -3,21 +3,11 @@ import { shallow } from "enzyme";
 import { BannerComponent } from "./banner.component";
 
 // Dummy data
-import { bannerProps } from "@app/api/core/banner";
+import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 
 describe("[Banner]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(
-      <BannerComponent
-        buttonLink={bannerProps.buttonLink}
-        buttonTitle={bannerProps.buttonTitle}
-        image={bannerProps.image}
-        label={bannerProps.label}
-        logo={bannerProps.logo}
-        text={bannerProps.text}
-        title={bannerProps.title}
-      />
-    );
+    const renderedComponent = shallow(<BannerComponent {...generateDummyBannerComponentData()} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

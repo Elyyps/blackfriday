@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[StoresOverview] should render component without crashing 1`] = `
+<div
+  className="stores-overview"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "red",
+        "color": "white",
+        "fontSize": 15,
+        "position": "fixed",
+        "right": 16,
+        "top": 16,
+        "zIndex": 100,
+      }
+    }
+  />
+  <div
+    className="uk-container"
+  >
+    <div
+      className="stores-overview__header"
+    >
+      <FilterBarComponent
+        applyFilter={[Function]}
+        filterBar={
+          Object {
+            "brandFilterTitle": "Brands",
+            "brands": Array [
+              Object {
+                "isChecked": false,
+                "label": 0,
+                "text": "Appel ",
+              },
+              Object {
+                "isChecked": false,
+                "label": 255,
+                "text": "Adidas",
+              },
+              Object {
+                "isChecked": false,
+                "label": 22,
+                "text": "Converse",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Guess",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "JBL",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Only",
+              },
+              Object {
+                "isChecked": false,
+                "label": 0,
+                "text": "Test1 ",
+              },
+              Object {
+                "isChecked": false,
+                "label": 255,
+                "text": "Test2",
+              },
+              Object {
+                "isChecked": false,
+                "label": 22,
+                "text": "Test3",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Test4",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Test5",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Test6",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Test7",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Test8",
+              },
+              Object {
+                "isChecked": false,
+                "label": 25,
+                "text": "Test9",
+              },
+            ],
+            "categories": Array [
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Audio",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Electronic",
+              },
+              Object {
+                "isChecked": false,
+                "label": 20,
+                "text": "Sport",
+              },
+              Object {
+                "isChecked": false,
+                "label": 2,
+                "text": "Mode",
+              },
+              Object {
+                "isChecked": false,
+                "label": 9,
+                "text": "Games",
+              },
+            ],
+            "categoryFilterTitle": "Categories",
+            "sortBy": Array [
+              "Newest",
+              "Relevant",
+              "Price",
+            ],
+            "sortByFilterTitle": "Sorted by",
+            "status": Array [
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Actie nog onbekend",
+              },
+              Object {
+                "isChecked": false,
+                "label": 12,
+                "text": "Actie start over 5 dagen!",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Nu geldig",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Bijna Verlopen!",
+              },
+              Object {
+                "isChecked": false,
+                "label": 3,
+                "text": "Actie verlopen",
+              },
+            ],
+            "statusFilterTitle": "Status",
+          }
+        }
+        onBrandChanged={[Function]}
+        onCategoryChanged={[Function]}
+        onOrderByChanged={[Function]}
+        onStatusChanged={[Function]}
+      />
+    </div>
+    <div
+      className="stores-overview__body"
+    >
+      <div
+        className="stores-overview__body__list"
+      >
+        <BottomScrollListener
+          debounce={200}
+          offset={0}
+          onBottom={[Function]}
+        />
+      </div>
+      <div>
+        <h1>
+          No results for your search
+        </h1>
+      </div>
+      <div
+        style={
+          Object {
+            "margin": "auto",
+            "paddingTop": "30px",
+            "width": "50px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

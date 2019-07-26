@@ -2,60 +2,64 @@
 
 exports[`[Banner] should render component without crashing 1`] = `
 <div
-  className="banner--default"
+  className="uk-container container"
 >
   <div
-    className="holder"
+    className="banner--default"
   >
     <div
-      className="image"
-    >
-      <Link
-        to="#"
-      >
-        <ImageComponent
-          alt="alt text oasis"
-          errorImage="link.svg"
-          errorMessage="Custom error message"
-          src="oasis.jpg"
-        />
-      </Link>
-    </div>
-    <div
-      className="body"
+      className="holder"
     >
       <div
-        className="content"
+        className="image"
       >
-        <div
-          className="label"
-        >
-          22 t/m 26 nov.
-        </div>
-        <h2
-          className="title"
-        >
-          Black Friday bij Coolblue
-        </h2>
-        Een selectie van bizarre aanbiedingen. Meer info
-      </div>
-      <div
-        className="footer"
-      >
-        <Button
-          icon="link.svg"
-          iconStyle="filled"
-          onClick="#"
-          title="Meer deals"
-          variant="primary-default"
-        />
-        <div
-          className="logo"
+        <Link
+          to="#"
         >
           <ImageComponent
-            alt="alt text CoolBlue"
-            src="cool-blue.svg"
+            alt="alt text oasis"
+            errorImage="link.svg"
+            errorMessage="Custom error message"
+            src="oasis.jpg"
           />
+        </Link>
+      </div>
+      <div
+        className="body"
+      >
+        <div
+          className="content"
+        >
+          <div
+            className="label"
+          >
+            22 t/m 26 nov.
+          </div>
+          <h2
+            className="title"
+          >
+            Black Friday bij Coolblue
+          </h2>
+          Een selectie van bizarre aanbiedingen. Meer info
+        </div>
+        <div
+          className="footer"
+        >
+          <Button
+            icon="link.svg"
+            iconStyle="filled"
+            onClick="#"
+            title="Meer deals"
+            variant="primary-default"
+          />
+          <div
+            className="logo"
+          >
+            <ImageComponent
+              alt="alt text CoolBlue"
+              src="cool-blue.svg"
+            />
+          </div>
         </div>
       </div>
     </div>

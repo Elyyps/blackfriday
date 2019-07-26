@@ -6,19 +6,9 @@ import { withProvider } from "@app/util";
 import { BannerModuleComponent } from "./banner-module.component";
 
 // Dummy data
-import { bannerProps } from "@app/api/core/banner";
+import { generateDummyBannerModule } from "@app/api/modules/banner/generate-dummy-data";
 
-const paddingBottom = "72px";
-const paddingTop = paddingBottom;
-
-storiesOf("BannerModule", module)
+storiesOf("Banner Module", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => (
-    <BannerModuleComponent
-      bgcolor="#eee"
-      paddingBottom={paddingBottom}
-      paddingTop={paddingTop}
-      bannerProps={bannerProps}
-    />
-  ));
+  .add("Basic implementation", () => <BannerModuleComponent bannerModule={generateDummyBannerModule()} />);

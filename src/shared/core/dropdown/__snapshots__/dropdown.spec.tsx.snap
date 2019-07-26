@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Dropdown] should render component without crashing 1`] = `
+<div
+  className="dropdown"
+>
+  <ShadowCardComponent
+    shadowSize="small"
+  >
+    <div
+      className="dropdown-button"
+    >
+      <Button
+        icon="chevron-down.svg"
+        iconStyle="outline"
+        variant="primary-brand"
+      />
+    </div>
+    <div
+      className="dropdown-content"
+      data-uk-dropdown="mode:click"
+    >
+      <ShareSocialComponent
+        email={
+          Object {
+            "nameSocialShare": "Email",
+            "subject": "BlackFriday",
+            "url": "https://www.webbio.nl",
+          }
+        }
+        facebook={
+          Object {
+            "hashtag": "BlackFriday",
+            "nameSocialShare": "Facebook",
+            "title": "BlackFriday",
+            "url": "https://www.webbio.nl",
+          }
+        }
+        twitter={
+          Object {
+            "hashtags": Array [
+              "BlackFriday",
+              "Netherlands",
+              "Sale",
+              "Shops",
+            ],
+            "nameSocialShare": "Twitter",
+            "title": "BlackFriday",
+            "url": "https://www.webbio.nl",
+            "via": "BlackFriday",
+          }
+        }
+        whatsapp={
+          Object {
+            "nameSocialShare": "WhatsApp",
+            "separator": " - ",
+            "title": "BlackFriday",
+            "url": "https://www.webbio.nl",
+          }
+        }
+      />
+    </div>
+  </ShadowCardComponent>
+</div>
+`;

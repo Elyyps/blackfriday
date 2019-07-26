@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Newsletter] should render component without crashing 1`] = `
+<div>
+  <div
+    className="newsletter"
+  >
+    <div
+      className="newsletter__head"
+    >
+      <IconComponent
+        icon="send.svg"
+        size="30px"
+      />
+    </div>
+    <div
+      className="newsletter__body"
+    >
+      <div
+        className="newsletter__content"
+      >
+        Op de hoogte blijven? Meld je dan aan!
+      </div>
+      <div
+        className="newsletter__action"
+        data-uk-toggle="target: #modal-newsletter"
+      >
+        <Button
+          fullWidth={true}
+          icon="paper.svg"
+          iconStyle="filled"
+          title="Nieuwsbrief"
+          variant="secondary-inverted"
+        />
+      </div>
+    </div>
+  </div>
+  <NewsletterModalComponent />
+</div>
+`;

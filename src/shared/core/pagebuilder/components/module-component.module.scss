@@ -1,0 +1,6 @@
+.contentComponent {
+  > :first-child {
+    z-index: 98;
+    position: relative;
+  }
+}
