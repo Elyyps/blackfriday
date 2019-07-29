@@ -1,25 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[CtaSmallModuleComponent] should render component without crashing 1`] = `
-<CtaSmallComponent
-  background={
-    Object {
-      "backgroundColour": "#f7f7f7",
-    }
-  }
-  bottomMargin="0"
-  bottomPadding={
-    Object {
-      "desktopPadding": 72,
-      "mobilePadding": 48,
-    }
-  }
-  buttonTitle="Meld je aan"
-  icon="send.svg"
-  id="1"
-  name="CtaNewsletterModule"
-  onClick={[Function]}
-  text="Op de hoogte blijven? Meld je dan aan voor onze nieuwsbrief!"
-  topMargin="0"
-/>
+<div
+  className="cta-small-newsletter"
+>
+  <div
+    className="uk-container"
+  >
+    <ShadowCardComponent
+      borderRadius={
+        Array [
+          "2px",
+        ]
+      }
+      shadowSize="small"
+    >
+      <div
+        className="cta-small-newsletter__wrapper"
+      >
+        <div
+          className="icon"
+        >
+          <IconComponent
+            icon="send.svg"
+            size="32px"
+          />
+        </div>
+        <div
+          className="cta-small-newsletter__title"
+        >
+          Op de hoogte blijven? Meld je dan aan voor onze nieuwsbrief!
+        </div>
+        <ModalComponent
+          title="Inschrijven nieuwsbrief"
+          trigger={
+            <ClickableComponent
+              title="Meld je aan"
+              variant="primary-brand"
+            />
+          }
+          variant="small"
+        >
+          <WithFormik(InnerForm)
+            onSubmit={[Function]}
+          />
+        </ModalComponent>
+      </div>
+    </ShadowCardComponent>
+  </div>
+</div>
 `;
