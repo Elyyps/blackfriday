@@ -1,6 +1,4 @@
 import { BodyTextModule } from "./body-text";
-import React from "react";
-import TouchRipple from "material-ui/internal/TouchRipple";
 
 export const generateDummyFullBodyTextModule = (html: string): BodyTextModule => ({
   bottomMargin: "0px",
@@ -12,8 +10,8 @@ export const generateDummyFullBodyTextModule = (html: string): BodyTextModule =>
   html
 });
 
-export const generateHomepageBodytextDummyData = () =>
-  `<div>
+export const generateHomepageBodytextDummyData = () => ({
+  html: `<div>
     <h1>
       <strong>Black Friday België</strong>
     </h1>
@@ -36,7 +34,18 @@ export const generateHomepageBodytextDummyData = () =>
       geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
       uw wensen bij elkaar te shoppen.
     </p>
-  </div>`;
+  </div>`,
+  containerAlignment: "left",
+  containerSize: "full",
+  id: "0",
+  name: "BodyTextModule",
+  topMargin: "0",
+  bottomMargin: "0",
+  topPadding: { mobilePadding: 48, desktopPadding: 72 },
+  bottomPadding: { mobilePadding: 48, desktopPadding: 72 },
+  style: { color: "#777" },
+  background: { backgroundColour: "rgb(247, 247, 247)" }
+});
 
 export const generateShopSingleBodyTextDummydata = () =>
   ` <div>
@@ -68,7 +77,7 @@ export const generateProductLineDummyData = (): BodyTextModule => ({
   name: "BodyTextModule",
   topMargin: "0",
   bottomMargin: "0",
-  bottomPadding: {mobilePadding: 32, desktopPadding: 72},
+  bottomPadding: { mobilePadding: 32, desktopPadding: 72 },
   style: { color: "#777" },
   background: { backgroundColour: "rgb(247, 247, 247)" },
   html: `<div>
