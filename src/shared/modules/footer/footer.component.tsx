@@ -170,6 +170,8 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   </div>
                   <StarsRatingComponent
                     rating={props.footerModule.middleFooter.googleReviews.rating}
+                    // tslint:disable-next-line
+                    voteTrigger={() => {}}
                     numberOfStars={numberStars}
                   />
                   <div style={{ marginLeft: "10px" }}>

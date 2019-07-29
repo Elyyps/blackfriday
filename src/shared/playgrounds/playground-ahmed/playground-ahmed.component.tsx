@@ -1,20 +1,13 @@
 import * as React from "react";
-import { TabComponent, ITabsInterface } from "@app/core/tab/tab.component";
-import { StoresOverviewContainer } from "@app/modules/stores-overview/container/stores-overview.container";
+import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
+import { generateBlogSingleHeaderData } from "@app/api/modules/blog-single-header/endpoint";
 
 export interface IPlaygroundAhmedComponentProps {}
 
 const PlaygroundAhmedComponent = (props: IPlaygroundAhmedComponentProps) => {
-  const data: ITabsInterface[] = [
-    { title: "Winkels", content: <StoresOverviewContainer />, index: 1 },
-    { title: "Productdeals", content: <h1>Will be implemented</h1>, index: 2 }
-  ];
+  const data = generateBlogSingleHeaderData();
 
-  return (
-    <div className="uk-container">
-      <TabComponent tabs={data} />
-    </div>
-  );
+  return <BlogSingleHeaderComponent blogSingleHeader={data} />;
 };
 
 export { PlaygroundAhmedComponent };

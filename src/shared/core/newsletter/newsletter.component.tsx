@@ -14,27 +14,28 @@ export interface INewsletterComponentProps {
 const onSubmit = () => {
   // Submit logic here
 };
-const NewsletterComponent = (props: INewsletterComponentProps) => (
-  <div>
-    <div className={styles["newsletter"]}>
-      <div className={styles["newsletter__head"]}>
-        <IconComponent icon={Icon} size={"30px"} />
-      </div>
-      <div className={styles["newsletter__body"]}>
-        <div className={styles["newsletter__content"]}>{props.newsletterModule.text}</div>
-        <div className={styles["newsletter__action"]}>
-          <ModalComponent
-            title={props.newsletterModule.modalTitle}
-            trigger={
-              <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />}
-            variant={"big"}
-          >
-            <NewsletterFormComponent onSubmit={onSubmit} />
-          </ModalComponent>
+const NewsletterComponent = (props: INewsletterComponentProps) => {
+  const triggerButton = (
+    <Button iconStyle="filled" fullWidth variant="secondary-inverted" title="Nieuwsbrief" icon={Paper} />
+  );
+
+  return (
+    <div>
+      <div className={styles["newsletter"]}>
+        <div className={styles["newsletter__head"]}>
+          <IconComponent icon={Icon} size={"30px"} />
+        </div>
+        <div className={styles["newsletter__body"]}>
+          <div className={styles["newsletter__content"]}>{props.newsletterModule.text}</div>
+          <div className={styles["newsletter__action"]}>
+            <ModalComponent title={props.newsletterModule.modalTitle} trigger={triggerButton} variant={"big"}>
+              <NewsletterFormComponent onSubmit={onSubmit} />
+            </ModalComponent>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export { NewsletterComponent };

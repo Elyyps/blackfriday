@@ -2,7 +2,6 @@
 import * as React from "react";
 
 import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
-import { dummyShopSingleHeaderData } from "@app/api/modules/shop-single-header/generate-dummy-data";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import styles from "./playground-pedro-component.module.scss";
 import { FeaturedShopsComponent } from "@app/modules/featured-shops/featured-shops.component";

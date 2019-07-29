@@ -342,55 +342,17 @@ exports[`[FilterBar] should render component without crashing 1`] = `
       className="filter__sort-item"
     >
       Sorted by
-      <span
-        className="filter__sort-change"
-        onClick={[Function]}
-        role="button"
-      >
-        Relevant
-        <span
-          className=" filter__sort-change-icon  "
-        >
-          <IconComponent
-            icon="arrow-long-down.svg"
-            size="6px"
-          />
-        </span>
-      </span>
-      <ul
-        className="filter__sort-ul"
-        data-uk-dropdown="mode: click"
-      >
-        <li
-          className="filter__sort-li"
-          key="0"
-          onClick={[Function]}
-          role="link"
-        >
-          Newest
-        </li>
-        <li
-          className="filter__sort-li"
-          key="1"
-          onClick={[Function]}
-          role="link"
-        >
-          Relevant
-          <IconComponent
-            color="red"
-            icon="check.svg"
-            size="15px"
-          />
-        </li>
-        <li
-          className="filter__sort-li"
-          key="2"
-          onClick={[Function]}
-          role="link"
-        >
-          Price
-        </li>
-      </ul>
+       :
+      <SelectComponent
+        onSelect={[MockFunction]}
+        options={
+          Array [
+            "Newest",
+            "Relevant",
+            "Price",
+          ]
+        }
+      />
     </div>
   </div>
 </div>

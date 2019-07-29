@@ -1,32 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Modal] should render component without crashing 1`] = `
-<div
-  className="uk-modal uk-flex-top uk-modal uk-flex-top"
-  data-uk-modal={true}
-  id=""
->
+<Fragment>
   <div
-    className="uk-modal-dialog uk-modal-body uk-margin-auto-vertical uk-modal-dialog uk-modal-body uk-margin-auto-vertical"
+    onMouseDown={[Function]}
+    role="botton"
   >
-    <div
-      className="uk-modal-head uk-modal-head"
-    >
-      <h2>
-        modalTitle
-      </h2>
-      <button
-        className="uk-modal-close uk-modal-close"
-        data-uk-close={true}
-        role="button"
-        type="button"
-      />
-    </div>
-    <div
-      className="uk-modal-content uk-modal-content"
-    >
-      Modal Content
-    </div>
+    <Button
+      title="test"
+    />
   </div>
-</div>
+</Fragment>
 `;

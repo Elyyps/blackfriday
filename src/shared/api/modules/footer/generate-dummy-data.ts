@@ -131,7 +131,7 @@ export const generateMiddleFooter = (): MiddleFooter => ({
       },
       {
         link: "mailto:info@blackfridaynederland.nl",
-        nameSocialMedia: "Mailtje",
+        nameSocialMedia: "Mailtje",
         image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/Social-Icons/mail.svg",
         text: "Heeft u een vraag? Stel hem gerust!"
       }
