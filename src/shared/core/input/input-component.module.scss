@@ -1,0 +1,46 @@
+.input-component {
+  .uk-margin-small-top {
+    margin-top: 8px;
+  }
+  position: relative;
+  position: relative;
+
+  label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: $gray-dark;
+  }
+  .icon-svg {
+    position: absolute;
+    left: 12px;
+    bottom: 4px;
+    transform: translateY(-50%);
+    svg,
+    path {
+      fill: currentColor;
+    }
+  }
+
+  input {
+    padding-left: 36px;
+    background-color: $bg-muted;
+    min-height: 36px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    min-height: 40px;
+  }
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  bottom: 4px;
+  transform: translateY(-50%);
+  svg,
+  path {
+    fill: currentColor;
+  }
+}

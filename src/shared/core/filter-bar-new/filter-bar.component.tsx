@@ -12,13 +12,15 @@ import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/sear
 export interface IFilterBarProps {}
 
 const FilterBar = (props: IFilterBarProps) => {
-  const [filterItems, setFilterItems] = useState<FilterItem[]>([
+  const [statusItems, setStatusItems] = useState<FilterItem[]>([
     {
+      id: "1",
       displayName: "item 1",
       isSelected: false,
       totalAmount: 22
     },
     {
+      id: "2",
       displayName: "item 2",
       isSelected: false,
       totalAmount: 33
@@ -26,34 +28,43 @@ const FilterBar = (props: IFilterBarProps) => {
   ]);
   const [categoryItems, setCategoryItems] = useState<FilterItem[]>([
     {
+      id: "1",
       displayName: "Audio",
       isSelected: false,
       totalAmount: 12
     },
     {
+      id: "2",
       displayName: "Sport",
       isSelected: false,
       totalAmount: 20
     },
     {
+      id: "3",
       displayName: "Games",
       isSelected: false,
       totalAmount: 9
     },
     {
+      id: "4",
       displayName: "Elektronisch",
       isSelected: false,
       totalAmount: 3
     },
     {
+      id: "5",
       displayName: "Mode",
       isSelected: false,
       totalAmount: 2
     }
   ]);
 
-  const onFilterItemsChanged = (items: FilterItem[]) => {
-    setFilterItems([...items]);
+  const onStatusFilterItemsChanged = (items: FilterItem[]) => {
+    setStatusItems([...items]);
+  };
+
+  const onCategoryFilterItemsChanged = (items: FilterItem[]) => {
+    setCategoryItems([...items]);
   };
 
   return (
@@ -67,7 +78,7 @@ const FilterBar = (props: IFilterBarProps) => {
         </div>
         <div
           className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}
-          // onClick={handleClickLAbel}
+          // onClick={handleClickLabel}
         >
           Filters
           <span>
@@ -76,27 +87,35 @@ const FilterBar = (props: IFilterBarProps) => {
         </div>
 
         <div>
-          <CheckboxDropdown title="Status" items={filterItems} onChange={onFilterItemsChanged} />
-        </div>
-        <div className="uk-visible@m">
-          <SearchableCheckboxDropdown title="Categorieen" items={categoryItems} />
+          <CheckboxDropdown title="Status" items={statusItems} onChange={onStatusFilterItemsChanged} />
         </div>
         <div className="uk-visible@m">
           <SearchableCheckboxDropdown
+            searchPlaceholder="Merk zoeken"
+            deleteFilterLabel="Verwijder merk filters"
+            title="Categorieen"
+            items={categoryItems}
+            onChange={onCategoryFilterItemsChanged}
+          />
+        </div>
+        <div className="uk-visible@m">
+          {/* <SearchableCheckboxDropdown
             title="Merk"
             items={[
               {
+                id: "1",
                 displayName: "item 1",
                 isSelected: false,
                 totalAmount: 22
               },
               {
+                id: "2",
                 displayName: "item 2",
                 isSelected: false,
                 totalAmount: 33
               }
             ]}
-          />
+          /> */}
         </div>
         <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
           <span
