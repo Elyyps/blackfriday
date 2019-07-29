@@ -31,19 +31,17 @@ import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
 import { BlogOverviewComponent } from "@app/modules/blog-overview";
 import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
-import { BodytextComponent } from "@app/core/bodytext";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import {
   generateHomepageBodytextDummyData,
-  generateShopSingleDummydata,
-  generateProductLineDummyData,
-  generateDummyBodyTextModule
+  generateProductLineDummyData
 } from "@app/api/modules/body-text/generate-dummy-data";
 import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
 import { FeaturedBlogComponent } from "@app/modules/featured-blog";
 import { FeaturedBlogModule } from "@app/api/modules/featured-blog/featured-blog";
 import { generateBodytextDummyData } from "@app/api/core/bodytext";
+import { BodyTextComponent } from "@app/core/bodytext";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -80,23 +78,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "FeaturedBlogModule":
       return <FeaturedBlogComponent featuredBlog={wordPressModule as FeaturedBlogModule} />;
     case "BodyTextModule":
-      const bodyText = wordPressModule as BodyTextModule;
-      const type = bodyText.type;
-
-      return (
-        <BodytextComponent
-          bodyTextModule={bodyText}
-          // html={
-          //   type === "1"
-          //     ? generateHomepageBodytextDummyData()
-          //     : type === "2"
-          //     ? generateShopSingleDummydata()
-          //     : type === "3"
-          //     ? generateProductLineDummyData()
-          //     : ""
-          // }
-        />
-      );
+      const bodyTextModule = wordPressModule as BodyTextModule;
+      return <BodyTextComponent style={bodyTextModule.style} bodyTextModule={bodyTextModule as BodyTextModule} />;
     case "FeaturedDealsModule":
       return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
     case "FeaturedCategoriesModule":
