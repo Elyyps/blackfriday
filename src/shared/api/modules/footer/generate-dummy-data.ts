@@ -98,6 +98,7 @@ export const generateMiddleFooter = (): MiddleFooter => ({
       ]
     }
   ],
+  modalTitle: "Inschrijven nieuwsbrief",
   newsletter: {
     title: "Aanmelden voor onze nieuwsbrief",
     text: "En ontvang ons de allerbeste aanbiedingen",

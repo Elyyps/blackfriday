@@ -10,5 +10,6 @@ export const generateCtaNewsLetterModule = (): CtaNewsletterModule => ({
   bottomPadding: { desktopPadding: 72, mobilePadding: 48 },
   background: { backgroundColour: "#f7f7f7" },
   id: "1",
-  name: "CtaNewsletterModule"
+  name: "CtaNewsletterModule",
+  modalTitle: "Inschrijven nieuwsbrief"
 });
