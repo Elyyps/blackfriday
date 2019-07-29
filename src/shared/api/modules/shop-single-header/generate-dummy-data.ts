@@ -2,7 +2,7 @@ import { ShopSingleHeaderModule } from "./shop-single-header.module";
 import Oasis from "@assets/oasis.jpg";
 import CoolBlue from "@assets/cool-blue.svg";
 
-export const dummyShopSingleHeaderData: ShopSingleHeaderModule = {
+export const generatedummyShopSingleHeaderData = (): ShopSingleHeaderModule => ({
   title: "15% korting op het hele assortiment",
   rating: { value: 5, text: "Beoordeel deze deal" },
   content:
@@ -43,4 +43,4 @@ export const dummyShopSingleHeaderData: ShopSingleHeaderModule = {
   topMargin: "0px",
   id: "1",
   name: "ShopSingleHeaderModule"
-};
+});

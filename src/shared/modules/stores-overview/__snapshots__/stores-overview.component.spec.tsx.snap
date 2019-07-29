@@ -27,6 +27,7 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
         applyFilter={[Function]}
         filterBar={
           Object {
+            "brandFilterPlaceholder": "Merk zoeken",
             "brandFilterTitle": "Brands",
             "brands": Array [
               Object {
@@ -132,6 +133,7 @@ exports[`[StoresOverview] should render component without crashing 1`] = `
                 "text": "Games",
               },
             ],
+            "categoryFilterPlaceholder": "Categorieën zoeken",
             "categoryFilterTitle": "Categories",
             "sortBy": Array [
               "Newest",

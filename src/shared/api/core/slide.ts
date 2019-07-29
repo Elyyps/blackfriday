@@ -4,4 +4,5 @@ export class Slide {
   public image: string;
   public link: Link;
   public title: string;
+  public video?: string;
 }

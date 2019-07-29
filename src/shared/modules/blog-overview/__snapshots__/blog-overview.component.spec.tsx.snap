@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BlogOverview] should render component without crashing 1`] = `
+<div
+  className="blog-overview"
+>
+  <div
+    className="uk-container"
+  >
+    <div
+      className="blog-overview__holder"
+    >
+      <div
+        className="blog-overview__content"
+      >
+        <div
+          className="posts-list"
+        >
+          <div
+            key="0"
+          >
+            <BlogPostComponent
+              posts={
+                Object {
+                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
+                  "title": "Vijf voorspellingen van Black Friday Nederland",
+                }
+              }
+            />
+          </div>
+          <div
+            key="1"
+          >
+            <BlogPostComponent
+              posts={
+                Object {
+                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
+                  "title": "Top Black Friday deals van vorig jaar",
+                }
+              }
+            />
+          </div>
+          <div
+            key="2"
+          >
+            <BlogPostComponent
+              posts={
+                Object {
+                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
+                  "title": "Mis geen enkele Black Friday deal!",
+                }
+              }
+            />
+          </div>
+          <div
+            key="3"
+          >
+            <BlogPostComponent
+              posts={
+                Object {
+                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "",
+                  },
+                  "title": "Wacht met shoppen tot Black Friday!",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="blog-overview__sidebar"
+      >
+        <SidebarComponent
+          banner=""
+          items={
+            Array [
+              Object {
+                "icon": "",
+                "text": "",
+                "url": "",
+              },
+            ]
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

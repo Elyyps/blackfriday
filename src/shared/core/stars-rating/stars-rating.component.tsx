@@ -2,13 +2,14 @@ import * as React from "react";
 
 import styles from "./stars-rating-component.module.scss";
 import Star from "@assets/icons/star-filled.svg";
-import HalfStar from "@assets/icons/star-half.svg";
-import EmptyStar from "@assets/icons/star-empty.svg";
+import HalfStar from "@assets/icons/half-star-color-v2.svg";
 import { IconComponent } from "@app/core/";
 
 export interface IStarsRatingComponentProps {
   numberOfStars?: number;
   rating: number;
+  showRating?: boolean;
+  voteTrigger?: () => void;
 }
 
 enum StarsType {
@@ -18,23 +19,60 @@ enum StarsType {
 }
 const defaultStars = 5;
 const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
+  const { showRating, voteTrigger } = props;
   const [stars, setStars] = React.useState<StarsType[]>([]);
-  const rating = props.rating > (props.numberOfStars || defaultStars) ? 0 : props.rating;
+  const [currentHoverStar, setCurrentHoverStar] = React.useState<number>(-1);
+  const totalStars = props.numberOfStars || defaultStars;
+  const rating = props.rating > totalStars ? 0 : props.rating;
+  const defineStars = () => {
+    const finalStarsArray: StarsType[] = [];
+    const integerPart = Math.trunc(rating);
+    const hasHalfStar = rating - integerPart > 0;
+    const emptyStars = totalStars - ((hasHalfStar ? 1 : 0) + integerPart);
+    [...Array(Math.floor(integerPart))].map(e => finalStarsArray.push(StarsType.full));
+    if (hasHalfStar) finalStarsArray.push(StarsType.half);
+    [...Array(Math.floor(emptyStars))].map(e => finalStarsArray.push(StarsType.empty));
+    setStars(finalStarsArray);
+  };
   React.useEffect(() => {
-    setStars(getListStars(props.numberOfStars || defaultStars, rating));
+    defineStars();
   }, []);
 
   return (
-    <div className={styles["stars-rating"]}>
+    <div
+      style={{ cursor: voteTrigger ? "pointer" : "default" }}
+      onClick={() => {
+        if (voteTrigger) voteTrigger();
+      }}
+      role="button"
+      onMouseLeave={() => setCurrentHoverStar(-1)}
+      className={styles["stars-rating"]}
+    >
+      {showRating && <span className={styles["stars-rating__label"]}>{rating}</span>}
       {stars.map((star, i) => (
         <span
+          onMouseOver={() => setCurrentHoverStar(i)}
           key={i}
-          className={`${styles["stars-rating__star"]} ${
-            styles[star === StarsType.full || StarsType.half ? "full" : "empty"]
+          role="button"
+          className={`${voteTrigger &&
+            (currentHoverStar >= 0
+              ? currentHoverStar >= i
+                ? styles["stars-rating__hovered"]
+                : styles["stars-rating__hovered-empty"]
+              : "")} ${styles["stars-rating__star"]} ${
+            styles[star === StarsType.full ? "full" : star === StarsType.half ? "half" : "empty"]
           }`}
         >
           <IconComponent
-            icon={star === StarsType.full ? Star : star === StarsType.half ? HalfStar : EmptyStar}
+            icon={
+              voteTrigger && currentHoverStar >= 0
+                ? Star
+                : star === StarsType.full
+                ? Star
+                : star === StarsType.half
+                ? HalfStar
+                : Star
+            }
             size="14px"
           />
         </span>
@@ -44,21 +82,3 @@ const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
 };
 
 export { StarsRatingComponent };
-
-const getListSingleTypeStars = (numberStars: number, starsType: StarsType): StarsType[] => {
-  const stars: StarsType[] = Array(numberStars);
-  [...Array(Math.floor(numberStars))].map(e => stars.push(starsType));
-
-  return stars;
-};
-
-const getListStars = (numberStars: number, rating: number): StarsType[] => {
-  let starsList: StarsType[] = Array().concat(getListSingleTypeStars(Math.floor(rating), StarsType.full));
-
-  if (rating % 1 !== 0) {
-    starsList = starsList.concat(getListSingleTypeStars(1, StarsType.half));
-  }
-  starsList = starsList.concat(getListSingleTypeStars(Math.floor(numberStars - rating), StarsType.empty));
-
-  return starsList;
-};

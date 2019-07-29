@@ -1,5 +1,12 @@
 import { HomepageHeader } from "./homepage-header.module";
 
+import iears from "@assets/dummy-images/product-thumbnails/iears.png";
+import imac from "@assets/dummy-images/product-thumbnails/imac.png";
+import iphone from "@assets/dummy-images/product-thumbnails/iphone.png";
+import loader from "@assets/dummy-images/product-thumbnails/loader.png";
+
+import CoolBlue from "@assets/cool-blue.svg";
+
 export const generateHomePageHeader = (): HomepageHeader => ({
   title: "Black Friday België",
   durationBlackFridayText: "Hoe lang nog?",
@@ -16,11 +23,11 @@ export const generateHomePageHeader = (): HomepageHeader => ({
   arrowPanelslinks: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Productdeals", url: "./" }
+      link: { title: "Productdeals", url: "./" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "./" }
     }
   ],
   label: "Black Friday 2019: NOG 10 dagen!",
@@ -39,7 +46,8 @@ export const generateHomePageHeader = (): HomepageHeader => ({
         url: "./"
       },
       title: "Handige Black Friday Tips",
-      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/video-thumbnail.jpg",
+      video: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/BlackFridayNederland-16x9.mp4"
     },
     {
       link: {
@@ -52,38 +60,38 @@ export const generateHomePageHeader = (): HomepageHeader => ({
   ],
   popularProducts: [
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Productdeals", url: "./" }
+      image: iears,
+      link: { url: "/", title: "Apple Airpods" }
     },
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: imac,
+      link: { url: "/", title: "Apple iPhones" }
     },
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: iphone,
+      link: { url: "/", title: "Apple MacBooks" }
     },
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: loader,
+      link: { url: "/", title: "Apple iMacs" }
     }
   ],
   popularStores: [
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: CoolBlue,
+      link: { url: "/", title: "Coolblue" }
     },
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: CoolBlue,
+      link: { url: "/", title: "Alternate" }
     },
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: CoolBlue,
+      link: { url: "/", title: "Beddenreus" }
     },
     {
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      text: { title: "Deelnemende winkels", url: "./" }
+      image: CoolBlue,
+      link: { url: "/", title: "De Bijenkorf" }
     }
   ],
   bottomMargin: "0px",

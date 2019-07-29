@@ -3,5 +3,13 @@
 exports[`[StarsRating] should render component without crashing 1`] = `
 <div
   className="stars-rating"
+  onClick={[Function]}
+  onMouseLeave={[Function]}
+  role="button"
+  style={
+    Object {
+      "cursor": "default",
+    }
+  }
 />
 `;

@@ -48,6 +48,7 @@
     "align": false,
     "space-before-function-paren": false,
     "whitespace": false,
+    "prefer-for-of": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
     "no-import-side-effect": [
       true,
