@@ -49,8 +49,10 @@
   &__results-posts {
     margin-bottom: -16px;
     > div {
+      border: 1px solid red;
       display: flex;
-      margin-bottom: 16px;
+      box-sizing: border-box;
+      margin: 16px;
     }
   }
 }
