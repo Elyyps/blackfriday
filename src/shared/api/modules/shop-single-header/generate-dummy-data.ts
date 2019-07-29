@@ -31,7 +31,7 @@ export const generatedummyShopSingleHeaderData = (): ShopSingleHeaderModule => (
     url: "/"
   },
   discountTitle: "15% korting op het hele assortiment",
-  backLink: { title: "Home  - Alle winkels", url: "/" },
+  backLink: [{ title: "Home", url: "/" }, { title: " Alle winkels", url: "/" }],
   smallBackLink: { title: "Alle winkels", url: "/" },
   discountSubtitle: "Gebruik deze kortingscode:",
   couponCode: "black15",

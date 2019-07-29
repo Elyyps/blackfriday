@@ -68,11 +68,18 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
                 className="uk-visible@s"
                 href="/"
               >
-                Home  - Alle winkels
+                Home
+              </a>
+              <a
+                className="uk-visible@s"
+                href="/"
+              >
+                 Alle winkels
               </a>
               <BackLinkComponent
                 className="uk-hidden@s"
                 href="/"
+                strokeColor="#999999"
               >
                 Alle winkels
               </BackLinkComponent>
@@ -221,27 +228,8 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
                   <div
                     className="actions__item-wrap"
                   >
-                    <div
-                      className="uk-hidden@s"
-                    >
-                      <Button
-                        icon="heart-filled.svg"
-                        iconPosition="left"
-                        title="Alle winkels"
-                        variant="secondary"
-                      />
-                    </div>
-                    <div
-                      className="uk-visible@s"
-                    >
-                      <Button
-                        icon="heart-filled.svg"
-                        iconPosition="left"
-                        title="Winkel opslaan als favoriet"
-                        variant="secondary"
-                      />
-                    </div>
                     <Button
+                      fullWidth={true}
                       icon="share.svg"
                       iconPosition="left"
                       title="Delen"

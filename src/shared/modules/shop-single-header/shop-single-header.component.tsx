@@ -70,10 +70,12 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
               </div>
               <div className={styles["product-detail__content"]}>
                 <div className={styles["product-detail__content__subtitle"]}>
-                  <a className="uk-visible@s" href={backLink.url}>
-                    {backLink.title}
-                  </a>
-                  <BackLinkComponent href={smallBackLink.url} className="uk-hidden@s">
+                  {backLink.map(link => (
+                    <a className="uk-visible@s" href={link.url}>
+                      {link.title}
+                    </a>
+                  ))}
+                  <BackLinkComponent href={smallBackLink.url} className="uk-hidden@s" strokeColor={"#999999"}>
                     {smallBackLink.title}
                   </BackLinkComponent>
                 </div>
@@ -114,14 +116,14 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                     </div>
                     <div className={styles["actions__item"]}>
                       <div className={styles["actions__item-wrap"]}>
-                        <div className="uk-hidden@s">
+                        {/* <div className="uk-hidden@s">
                           <Button
                             icon={HeartIcon}
                             iconPosition="left"
                             title={smallBackLink.title}
                             variant={"secondary"}
                           />
-                        </div>
+                        </div> 
                         <div className="uk-visible@s">
                           <Button
                             icon={HeartIcon}
@@ -129,8 +131,8 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                             title={favoriteButton.title}
                             variant={"secondary"}
                           />
-                        </div>
-                        <Button icon={ShareIcon} iconPosition="left" title={"Delen"} variant={"secondary"} />
+                        </div>*/}
+                        <Button fullWidth icon={ShareIcon} iconPosition="left" title={"Delen"} variant={"secondary"} />
                       </div>
                     </div>
                   </div>

@@ -10,20 +10,23 @@ export interface IBlogPostComponentProps {
 
 const BlogPostComponent = (props: IBlogPostComponentProps) => (
   <div className={styles["blog-post"]}>
-    <LinkComponent to={props.posts.link.url}>
-      {props.posts.image && (
-        <div className={styles["blog-post__image"]}>
-          <ImageComponent src={props.posts.image} />
-        </div>
-      )}
-      <div className={styles["blog-post__body"]}>
-        <div className={styles["blog-post__title"]}>{props.posts.title}</div>
-        <div className="uk-visible@m">
-          {props.posts.content}
-          <span className={styles["blog-post__link"]}>{props.posts.link.title}</span>
-        </div>
+    {props.posts.image && (
+      <div className={styles["blog-post__image"]}>
+        <ImageComponent src={props.posts.image} />
       </div>
-    </LinkComponent>
+    )}
+    <div className={styles["blog-post__body"]}>
+      <LinkComponent to={props.posts.link.url}>
+        <div className={styles["blog-post__title"]}>{props.posts.title}</div>
+      </LinkComponent>
+
+      <div className="uk-visible@m">
+        {props.posts.content}
+        <LinkComponent to={props.posts.link.url}>
+          <span className={styles["blog-post__link"]}>{props.posts.link.title}</span>
+        </LinkComponent>
+      </div>
+    </div>
   </div>
 );
 

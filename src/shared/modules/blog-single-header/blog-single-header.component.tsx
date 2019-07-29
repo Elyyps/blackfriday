@@ -14,7 +14,7 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (
   <div className={styles["blog-single-header"]}>
     <div className={styles["blog-single-header-basic"]}>
       <div className="uk-container">
-        <ul className={` "uk-visible@s" ${styles["blog-single-header-basic__breadcrumbs"]}`}>
+        <ul className={` ${"uk-visible@s"} ${styles["blog-single-header-basic__breadcrumbs"]}`}>
           {props.blogSingleHeader.links &&
             props.blogSingleHeader.links.map((link, key) => (
               <li key={key}>
@@ -25,10 +25,10 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (
 
         {props.blogSingleHeader.button && (
           <Link
-            className={`"uk-hidden@s" ${styles["blog-single-header-basic__back"]}`}
+            className={`${"uk-hidden@s"} ${styles["blog-single-header-basic__back"]}`}
             to={props.blogSingleHeader.button.url}
           >
-            <IconComponent icon={IconBack} size={"6px"} />
+            <IconComponent icon={IconBack} size={"15px"} strokeColor={"#999"} />
             {props.blogSingleHeader.button.title}
           </Link>
         )}
