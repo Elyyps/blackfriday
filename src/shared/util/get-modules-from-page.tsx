@@ -36,12 +36,14 @@ import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import {
   generateHomepageBodytextDummyData,
   generateShopSingleDummydata,
-  generateProductLineDummyData
+  generateProductLineDummyData,
+  generateDummyBodyTextModule
 } from "@app/api/modules/body-text/generate-dummy-data";
 import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
 import { FeaturedBlogComponent } from "@app/modules/featured-blog";
 import { FeaturedBlogModule } from "@app/api/modules/featured-blog/featured-blog";
+import { generateBodytextDummyData } from "@app/api/core/bodytext";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -78,14 +80,22 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "FeaturedBlogModule":
       return <FeaturedBlogComponent featuredBlog={wordPressModule as FeaturedBlogModule} />;
     case "BodyTextModule":
-      const type = (wordPressModule as BodyTextModule).type;
+      const bodyText = wordPressModule as BodyTextModule;
+      const type = bodyText.type;
 
       return (
-        <BodytextComponent>
-          {type === "1" && <div>{generateHomepageBodytextDummyData()}</div>}
-          {type === "2" && <div>{generateShopSingleDummydata()}</div>}
-          {type === "3" && <div>{generateProductLineDummyData()}</div>}
-        </BodytextComponent>
+        <BodytextComponent
+          bodyTextModule={bodyText}
+          // html={
+          //   type === "1"
+          //     ? generateHomepageBodytextDummyData()
+          //     : type === "2"
+          //     ? generateShopSingleDummydata()
+          //     : type === "3"
+          //     ? generateProductLineDummyData()
+          //     : ""
+          // }
+        />
       );
     case "FeaturedDealsModule":
       return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
