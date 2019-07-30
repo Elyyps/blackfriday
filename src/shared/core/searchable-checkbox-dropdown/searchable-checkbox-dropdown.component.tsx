@@ -15,6 +15,7 @@ export interface ISearchableCheckboxDropdownProps {
   title: string;
   searchPlaceholder: string;
   deleteFilterLabel: string;
+  showFilterName: string;
 }
 
 const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => {
@@ -48,7 +49,7 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
     props.onChange([...result]);
   };
 
-  const getCountString = () => {
+  const getFilterCountString = () => {
     const count = props.items.filter(item => item.isSelected).length;
     if (count > 0) {
       return `(${count})`;
@@ -56,9 +57,40 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
     return null;
   };
 
+  const hasSelectedItems = props.items.filter(item => item.isSelected).length > 0;
+
+  const getTotalCount = () => {
+    let count = 0;
+
+    if (hasSelectedItems) {
+      const selectedItems = props.items.filter(item => item.isSelected);
+      selectedItems.map(item => {
+        count += item.totalAmount || 0;
+      });
+    } else {
+      props.items.map(item => {
+        count += item.totalAmount || 0;
+      });
+    }
+
+    return count;
+  };
+
+  const clearFilters = () => {
+    const result = props.items.map(item => {
+      if (item.isSelected) {
+        item.isSelected = false;
+      }
+
+      return item;
+    });
+
+    props.onChange([...result]);
+  };
+
   return (
     <div>
-      <DropdownComponent title={props.title}>
+      <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems}>
         <div className={styles["content"]}>
           <div className={styles["dropdown-head"]}>
             <Input
@@ -71,22 +103,27 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
           </div>
           <div className={styles["dropdown-body"]}>
             <div className="uk-grid uk-child-width-1-2@s">
-              {internalItems.map((item, key) => (
-                <CheckboxCount key={key} item={item} onChecked={onChange} />
-              ))}
+              {internalItems.length > 0 ? (
+                internalItems.map((item, key) => <CheckboxCount key={key} item={item} onChecked={onChange} />)
+              ) : (
+                <div>Geen resultaten</div>
+              )}
             </div>
           </div>
           <div className={styles["dropdown-bottom"]}>
             <ul className={styles["dropdown-bottom__action"]}>
               <li>
-                <ClickableComponent
-                  title={`${props.deleteFilterLabel} ${!!getCountString() ? getCountString() : ""}`}
-                  variant="link-secondary"
-                  disabled={!getCountString()}
-                />
+                {getFilterCountString() && (
+                  <ClickableComponent
+                    title={`${props.deleteFilterLabel} ${!!getFilterCountString() ? getFilterCountString() : ""}`}
+                    variant="link-secondary"
+                    onClick={clearFilters}
+                  />
+                )}
               </li>
+
               <li>
-                <ClickableComponent title={"Toon 123 Winkels"} variant="primary-brand" />
+                <ClickableComponent title={`Toon ${getTotalCount()} ${props.showFilterName}`} variant="primary-brand" />
               </li>
             </ul>
           </div>

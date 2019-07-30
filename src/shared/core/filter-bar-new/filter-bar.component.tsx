@@ -8,6 +8,7 @@ import { IconComponent } from "@app/prep/modules-prep/core";
 import { CheckboxDropdown } from "../checkbox-dropdown/checkbox-dropdown.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/searchable-checkbox-dropdown.component";
+import { SelectComponent } from "../select";
 
 export interface IFilterBarProps {}
 
@@ -59,12 +60,103 @@ const FilterBar = (props: IFilterBarProps) => {
     }
   ]);
 
+  const [brandItems, setBrandItems] = useState<FilterItem[]>([
+    {
+      id: "1",
+      displayName: "Apple",
+      isSelected: false,
+      totalAmount: 28
+    },
+    {
+      id: "2",
+      displayName: "Jack & Jones",
+      isSelected: false,
+      totalAmount: 1
+    },
+    {
+      id: "3",
+      displayName: "Adidas",
+      isSelected: false,
+      totalAmount: 3
+    },
+    {
+      id: "4",
+      displayName: "JBL",
+      isSelected: false,
+      totalAmount: 8
+    },
+    {
+      id: "5",
+      displayName: "Converse",
+      isSelected: false,
+      totalAmount: 17
+    },
+    {
+      id: "6",
+      displayName: "Microsoft",
+      isSelected: false,
+      totalAmount: 9
+    },
+    {
+      id: "7",
+      displayName: "Guess",
+      isSelected: false,
+      totalAmount: 16
+    },
+    {
+      id: "8",
+      displayName: "Only",
+      isSelected: false,
+      totalAmount: 2
+    },
+    {
+      id: "9",
+      displayName: "Happy Socks",
+      isSelected: false,
+      totalAmount: 28
+    },
+    {
+      id: "10",
+      displayName: "Phillips",
+      isSelected: false,
+      totalAmount: 11
+    },
+    {
+      id: "11",
+      displayName: "HP",
+      isSelected: false,
+      totalAmount: 3
+    },
+    {
+      id: "12",
+      displayName: "Nintendo",
+      isSelected: false,
+      totalAmount: 20
+    },
+    {
+      id: "13",
+      displayName: "Samsung",
+      isSelected: false,
+      totalAmount: 11
+    },
+    {
+      id: "14",
+      displayName: "Sony",
+      isSelected: false,
+      totalAmount: 9
+    }
+  ]);
+
   const onStatusFilterItemsChanged = (items: FilterItem[]) => {
     setStatusItems([...items]);
   };
 
   const onCategoryFilterItemsChanged = (items: FilterItem[]) => {
     setCategoryItems([...items]);
+  };
+
+  const onBrandFilterItemsChanged = (items: FilterItem[]) => {
+    setBrandItems([...items]);
   };
 
   return (
@@ -94,28 +186,20 @@ const FilterBar = (props: IFilterBarProps) => {
             searchPlaceholder="Merk zoeken"
             deleteFilterLabel="Verwijder merk filters"
             title="Categorieen"
+            showFilterName="winkels"
             items={categoryItems}
             onChange={onCategoryFilterItemsChanged}
           />
         </div>
         <div className="uk-visible@m">
-          {/* <SearchableCheckboxDropdown
+          <SearchableCheckboxDropdown
+            searchPlaceholder="Merk zoeken"
+            deleteFilterLabel="Verwijder merk filters"
             title="Merk"
-            items={[
-              {
-                id: "1",
-                displayName: "item 1",
-                isSelected: false,
-                totalAmount: 22
-              },
-              {
-                id: "2",
-                displayName: "item 2",
-                isSelected: false,
-                totalAmount: 33
-              }
-            ]}
-          /> */}
+            showFilterName="merken"
+            items={brandItems}
+            onChange={onBrandFilterItemsChanged}
+          />
         </div>
         <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
           <span
@@ -129,31 +213,21 @@ const FilterBar = (props: IFilterBarProps) => {
       </div>
       <div className={styles["filter-bar__sort"]}>
         <div className={styles["filter__sort-item"]}>
-          <span>
+          <span className={styles["amount-of-shops"]}>
             <IconComponent icon={StoreIcon} size={"20px"} />
           </span>
-          55 winkels
+          132 winkels
         </div>
         <div className={styles["filter__sort-item"]}>
-          Sort Title
+          Sorteer op:
           <span
             role={"button"}
             className={styles["filter__sort-change"]}
             // onClick={filterSortChange}
           >
             {/* {orderBy} */}
-            <span className={` ${styles["filter__sort-change-icon"]}`}>
-              <IconComponent icon={ArrowLongDown} size={"6px"} />
-            </span>
+            <SelectComponent options={["Relevatie", "Nieuwste", "Prijs"]} onSelect={() => {}} />
           </span>
-          <ul data-uk-dropdown="mode: click" className={styles["filter__sort-ul"]}>
-            {/* {props.filterBar.sortBy.map((value, key) => (
-              <li role="link" className={styles["filter__sort-li"]} key={key} onClick={() => onOrderBySelected(value)}>
-                {value}
-                {value === orderBy && <IconComponent color={"red"} icon={CheckIcon} size={"15px"} />}
-              </li>
-            ))} */}
-          </ul>
         </div>
       </div>
     </div>

@@ -11,6 +11,9 @@
   color: $gray-dark;
   svg {
     transition: all 200ms;
+    // stroke: white !important;
+    stroke: black;
+    fill: none;
   }
   :focus {
     outline: none;
@@ -22,6 +25,11 @@
     }
     svg {
       transform: rotate(180deg);
+    }
+  }
+  &--has-selected {
+    svg {
+      stroke: white;
     }
   }
 }

@@ -4,31 +4,6 @@ const webpackConfig = require("../config/webpack.config.js")(process.env.NODE_EN
 const paths = require("../config/paths");
 const { logMessage, compilerPromise, sleep } = require("./utils");
 
-const { choosePort } = require("react-dev-utils/WebpackDevServerUtils");
-
-const HOST = process.env.HOST || "http://localhost";
-
-const generateStaticHTML = async () => {
-  const nodemon = require("nodemon");
-  const fs = require("fs");
-  const PORT = await choosePort("localhost", 3000);
-
-  process.env.PORT = PORT;
-
-  const script = nodemon({
-    script: `${paths.serverBuild}/server.js`,
-    ignore: ["*"]
-  });
-
-  script.on("exit", code => {
-    process.exit(code);
-  });
-
-  script.on("crash", () => {
-    process.exit(1);
-  });
-};
-
 const build = async () => {
   rimraf.sync(paths.clientBuild);
   rimraf.sync(paths.serverBuild);
@@ -60,8 +35,9 @@ const build = async () => {
   try {
     await serverPromise;
     await clientPromise;
-    await generateStaticHTML();
+    // await generateStaticHTML();
     logMessage("Done!", "info");
+    process.exit();
   } catch (error) {
     logMessage(error, "error");
   }

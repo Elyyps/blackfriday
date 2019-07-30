@@ -4,6 +4,7 @@
   padding-left: 12px;
   padding-right: 12px;
   width: 536px;
+  min-height: 330px;
 }
 
 .counter {
@@ -26,7 +27,8 @@
   }
   &-body {
     overflow-y: auto;
-    padding-top: 24px;
+    height: 205px;
+    padding-top: 27px;
     box-sizing: border-box;
     @media (max-width: $breakpoint-medium-max) {
       min-height: calc(100% - 55px);

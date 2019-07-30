@@ -8,6 +8,7 @@ import useOutsideClick from "@app/util/outside-click";
 export interface IDropdownComponentProps {
   children: any;
   title: string;
+  hasSelectedItems: boolean;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
@@ -20,19 +21,35 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
     setIsOpen(false);
   });
 
+  const getVariant = () => {
+    if (isOpen) {
+      return "primary-inverted";
+    } else if (props.hasSelectedItems) {
+      return "primary-brand";
+    } else {
+      return "secondary";
+    }
+  };
+
   return (
     <div className={styles["dropdown"]} ref={wrapperRef}>
-      <div className={`${styles["dropdown-child"]} ${!!isOpen && styles["dropdown-child--open"]}`}>
+      <div
+        className={`${styles["dropdown-child"]} ${!!isOpen &&
+          styles["dropdown-child--open"]} ${!!props.hasSelectedItems &&
+          !isOpen &&
+          styles["dropdown-child--has-selected"]}`}
+      >
         <ClickableComponent
           onClick={() => {
             setIsOpen(!isOpen);
           }}
           title={props.title}
-          variant={isOpen ? "primary-inverted" : "secondary"}
+          variant={getVariant()}
           icon={ChevronDown}
           zIndex={isOpen ? zIndexWhenOpen : undefined}
           size={buttonHeight}
           fullWidth
+          iconFillColor="#ffffff"
         />
       </div>
       <div className={`${styles["content"]} ${!!isOpen && styles["content--open"]} `}>{props.children}</div>

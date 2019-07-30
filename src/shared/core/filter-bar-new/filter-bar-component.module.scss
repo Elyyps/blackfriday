@@ -192,12 +192,6 @@
       font-size: 15px;
       color: $gray-light;
       padding: 0 12px;
-      span {
-        margin-right: 16px;
-        @media (max-width: 1000px) {
-          margin-right: 5px;
-        }
-      }
     }
     &-change {
       display: flex;
@@ -216,5 +210,12 @@
     &-change:hover {
       cursor: pointer;
     }
+  }
+}
+
+.amount-of-shops {
+  margin-right: 16px;
+  @media (max-width: 1000px) {
+    margin-right: 5px;
   }
 }

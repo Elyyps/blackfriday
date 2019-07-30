@@ -28,8 +28,10 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
     props.onChange([...result]);
   };
 
+  const hasSelectedItems = props.items.filter(item => item.isSelected).length > 0;
+
   return (
-    <DropdownComponent title={props.title}>
+    <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems}>
       <div className={styles["content"]}>
         {props.items.map((item, key) => (
           <CheckboxCount key={key} item={item} onChecked={onChange} />
