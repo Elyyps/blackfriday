@@ -1,6 +1,6 @@
 export class FilterItem {
-  public id: string;
   public displayName: string;
+  public id: string;
   public isSelected: boolean;
   public totalAmount?: number;
 }

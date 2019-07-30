@@ -5,19 +5,22 @@ import { FilterItem } from "@app/api/core/filter/filter-item";
 
 export interface IStoreOverviewState {
   brandFilterItems: FilterItem[];
-  sortBy: string;
   categoryFilterItems: FilterItem[];
+  sortBy: string;
   statusFilterItems: FilterItem[];
 }
 
 const INITIAL_STATE: IStoreOverviewState = {
   brandFilterItems: [],
-  sortBy: "",
   categoryFilterItems: [],
+  sortBy: "",
   statusFilterItems: []
 };
 
-export const settingsReducer = (state: IStoreOverviewState = INITIAL_STATE, action: Action): IStoreOverviewState => {
+export const storeOverviewReducer = (
+  state: IStoreOverviewState = INITIAL_STATE,
+  action: Action
+): IStoreOverviewState => {
   switch (action.type) {
     case REDUX.STORE_OVERVIEW.SET_STATUS_FILTERS: {
       const { filterItems } = <ActionType.IFilterItems>action;
@@ -39,8 +42,18 @@ export const settingsReducer = (state: IStoreOverviewState = INITIAL_STATE, acti
 
       return { ...state, sortBy };
     }
+    case REDUX.STORE_OVERVIEW.CLEAR_FILTERS: {
+      return {
+        ...state,
+        brandFilterItems: clearFilters(state.brandFilterItems),
+        categoryFilterItems: clearFilters(state.categoryFilterItems),
+        statusFilterItems: clearFilters(state.statusFilterItems)
+      };
+    }
     default: {
       return state;
     }
   }
 };
+
+const clearFilters = (filterItems: FilterItem[]) => filterItems.map(item => ({ ...item, isSelected: false }));

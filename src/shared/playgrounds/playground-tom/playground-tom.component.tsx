@@ -1,12 +1,12 @@
 import * as React from "react";
-
-import { StoresOverviewComponent } from "@app/modules/stores-overview-new/stores-overview.component";
+import { generateStoreOverviewModule } from "@app/api/modules/store-overview-new/generate-dummy-data";
+import { StoreOverviewContainer } from "@app/modules/store-overview/containers/store-overview.container";
 
 export interface IPlaygroundTomComponentProps {}
 
 const PlaygroundTomComponent = (props: IPlaygroundTomComponentProps) => (
   <div>
-    <StoresOverviewComponent />
+    <StoreOverviewContainer storeOverviewModule={generateStoreOverviewModule()} />
   </div>
 );
 

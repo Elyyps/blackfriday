@@ -8,9 +8,8 @@ import { localesReducer, ILocalesState } from "@app/stores/locales";
 
 import { IPageState, pageReducer } from "./page";
 import { ISettingsState, settingsReducer } from "./settings";
-import { IShopsOverview, IShopsCards } from "./stores-overview/stores-overview.types";
-import { shopsOverviewReducer } from "./stores-overview/stores-overview.reducer";
 import { INavbarSearchState, navbarSearchReducer } from "./navbar-seach";
+import { IStoreOverviewState, storeOverviewReducer } from "./store-overview";
 
 type StoreParams = {
   history: History;
@@ -24,8 +23,7 @@ export interface IAppState {
   page: IPageState;
   router: RouterState;
   settings: ISettingsState;
-  shopsCards: IShopsCards;
-  shopsOverview: IShopsOverview;
+  storeOverview: IStoreOverviewState;
 }
 
 export const getInitialState = () => {
@@ -52,7 +50,7 @@ export const configureStore = ({ history, initialState, middleware = [] }: Store
       page: pageReducer,
       router: connectRouter(history),
       settings: settingsReducer,
-      shopsOverview: shopsOverviewReducer
+      storeOverview: storeOverviewReducer
     }),
     initialState,
     composeEnhancers(applyMiddleware(...[thunk, routerMiddleware(history)].concat(...middleware)))

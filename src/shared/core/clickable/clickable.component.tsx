@@ -25,9 +25,9 @@ export interface IClickableComponentProps {
   fullWidth?: boolean;
   href?: string;
   icon?: string;
+  iconFillColor?: string;
   iconPosition?: "right" | "left";
   iconStyle?: IconStyle;
-  iconFillColor?: string;
   onClick?: () => void;
   size?: number;
   target?: "_blank" | "_self";
@@ -46,8 +46,6 @@ const renderIconMargin = (
   if (title) {
     style = styles[`icon-${margin}`];
   }
-
-  console.log(iconFillColor);
 
   return (
     <span className={style}>

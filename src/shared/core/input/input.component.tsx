@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./input-component.module.scss";
 import { IconComponent } from "@app/prep/modules-prep/core";
 

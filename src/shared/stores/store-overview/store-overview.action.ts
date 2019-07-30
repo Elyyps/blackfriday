@@ -22,9 +22,14 @@ const setStatusFilters = (payload: ActionType.IFilterItems) => ({
   ...payload
 });
 
-export const settingsActions = {
+const clearAllFilters = () => ({
+  type: REDUX.STORE_OVERVIEW.CLEAR_FILTERS
+});
+
+export const storeOverviewActions = {
   setBrandFilters,
   setCategoryFilters,
   setSortBy,
-  setStatusFilters
+  setStatusFilters,
+  clearAllFilters
 };

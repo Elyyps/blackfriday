@@ -10,12 +10,12 @@ import { Input } from "@app/core/input/input.component";
 import { useState, useEffect } from "react";
 
 export interface ISearchableCheckboxDropdownProps {
+  deleteFilterLabel: string;
   items: FilterItem[];
   onChange: (items: FilterItem[]) => void;
-  title: string;
   searchPlaceholder: string;
-  deleteFilterLabel: string;
   showFilterName: string;
+  title: string;
 }
 
 const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => {
@@ -54,6 +54,7 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
     if (count > 0) {
       return `(${count})`;
     }
+
     return null;
   };
 

@@ -1,163 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./filter-bar-component.module.scss";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
-import ArrowLongDown from "@assets/icons/arrow-long-down.svg";
 import Filter from "@assets/icons/filter.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { CheckboxDropdown } from "../checkbox-dropdown/checkbox-dropdown.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/searchable-checkbox-dropdown.component";
 import { SelectComponent } from "../select";
+import { FilterBarContainerProps } from "./container";
 
 export interface IFilterBarProps {}
 
-const FilterBar = (props: IFilterBarProps) => {
-  const [statusItems, setStatusItems] = useState<FilterItem[]>([
-    {
-      id: "1",
-      displayName: "item 1",
-      isSelected: false,
-      totalAmount: 22
-    },
-    {
-      id: "2",
-      displayName: "item 2",
-      isSelected: false,
-      totalAmount: 33
-    }
-  ]);
-  const [categoryItems, setCategoryItems] = useState<FilterItem[]>([
-    {
-      id: "1",
-      displayName: "Audio",
-      isSelected: false,
-      totalAmount: 12
-    },
-    {
-      id: "2",
-      displayName: "Sport",
-      isSelected: false,
-      totalAmount: 20
-    },
-    {
-      id: "3",
-      displayName: "Games",
-      isSelected: false,
-      totalAmount: 9
-    },
-    {
-      id: "4",
-      displayName: "Elektronisch",
-      isSelected: false,
-      totalAmount: 3
-    },
-    {
-      id: "5",
-      displayName: "Mode",
-      isSelected: false,
-      totalAmount: 2
-    }
-  ]);
-
-  const [brandItems, setBrandItems] = useState<FilterItem[]>([
-    {
-      id: "1",
-      displayName: "Apple",
-      isSelected: false,
-      totalAmount: 28
-    },
-    {
-      id: "2",
-      displayName: "Jack & Jones",
-      isSelected: false,
-      totalAmount: 1
-    },
-    {
-      id: "3",
-      displayName: "Adidas",
-      isSelected: false,
-      totalAmount: 3
-    },
-    {
-      id: "4",
-      displayName: "JBL",
-      isSelected: false,
-      totalAmount: 8
-    },
-    {
-      id: "5",
-      displayName: "Converse",
-      isSelected: false,
-      totalAmount: 17
-    },
-    {
-      id: "6",
-      displayName: "Microsoft",
-      isSelected: false,
-      totalAmount: 9
-    },
-    {
-      id: "7",
-      displayName: "Guess",
-      isSelected: false,
-      totalAmount: 16
-    },
-    {
-      id: "8",
-      displayName: "Only",
-      isSelected: false,
-      totalAmount: 2
-    },
-    {
-      id: "9",
-      displayName: "Happy Socks",
-      isSelected: false,
-      totalAmount: 28
-    },
-    {
-      id: "10",
-      displayName: "Phillips",
-      isSelected: false,
-      totalAmount: 11
-    },
-    {
-      id: "11",
-      displayName: "HP",
-      isSelected: false,
-      totalAmount: 3
-    },
-    {
-      id: "12",
-      displayName: "Nintendo",
-      isSelected: false,
-      totalAmount: 20
-    },
-    {
-      id: "13",
-      displayName: "Samsung",
-      isSelected: false,
-      totalAmount: 11
-    },
-    {
-      id: "14",
-      displayName: "Sony",
-      isSelected: false,
-      totalAmount: 9
-    }
-  ]);
-
+const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
   const onStatusFilterItemsChanged = (items: FilterItem[]) => {
-    setStatusItems([...items]);
+    props.setStatusFilters([...items]);
   };
 
   const onCategoryFilterItemsChanged = (items: FilterItem[]) => {
-    setCategoryItems([...items]);
+    props.setCategoryFilters([...items]);
   };
 
   const onBrandFilterItemsChanged = (items: FilterItem[]) => {
-    setBrandItems([...items]);
+    props.setBrandFilters([...items]);
   };
+
+  const getTotalNumberOfFilters = (): number =>
+    props.statusFilterItems.filter(item => item.isSelected).length +
+    props.categoryFilterItems.filter(item => item.isSelected).length +
+    props.brandFilterItems.filter(item => item.isSelected).length;
 
   return (
     <div className={styles["filter-bar"]}>
@@ -168,10 +39,7 @@ const FilterBar = (props: IFilterBarProps) => {
             <IconComponent icon={HandPointing} size={"20px"} />
           </span>
         </div>
-        <div
-          className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}
-          // onClick={handleClickLabel}
-        >
+        <div className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}>
           Filters
           <span>
             <IconComponent icon={Filter} size={"16px"} />
@@ -179,7 +47,7 @@ const FilterBar = (props: IFilterBarProps) => {
         </div>
 
         <div>
-          <CheckboxDropdown title="Status" items={statusItems} onChange={onStatusFilterItemsChanged} />
+          <CheckboxDropdown title="Status" items={props.statusFilterItems} onChange={onStatusFilterItemsChanged} />
         </div>
         <div className="uk-visible@m">
           <SearchableCheckboxDropdown
@@ -187,7 +55,7 @@ const FilterBar = (props: IFilterBarProps) => {
             deleteFilterLabel="Verwijder merk filters"
             title="Categorieen"
             showFilterName="winkels"
-            items={categoryItems}
+            items={props.categoryFilterItems}
             onChange={onCategoryFilterItemsChanged}
           />
         </div>
@@ -197,19 +65,17 @@ const FilterBar = (props: IFilterBarProps) => {
             deleteFilterLabel="Verwijder merk filters"
             title="Merk"
             showFilterName="merken"
-            items={brandItems}
+            items={props.brandFilterItems}
             onChange={onBrandFilterItemsChanged}
           />
         </div>
-        <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
-          <span
-            role="link"
-            //  onClick={clearFilters}
-            style={{ color: "red", cursor: "pointer" }}
-          >
-            Verwijder merk filters
-          </span>
-        </div>
+        {getTotalNumberOfFilters() > 0 && (
+          <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
+            <span role="link" onClick={() => props.clearFilters()} style={{ color: "red", cursor: "pointer" }}>
+              Verwijder alle filters
+            </span>
+          </div>
+        )}
       </div>
       <div className={styles["filter-bar__sort"]}>
         <div className={styles["filter__sort-item"]}>
@@ -220,13 +86,14 @@ const FilterBar = (props: IFilterBarProps) => {
         </div>
         <div className={styles["filter__sort-item"]}>
           Sorteer op:
-          <span
-            role={"button"}
-            className={styles["filter__sort-change"]}
-            // onClick={filterSortChange}
-          >
+          <span role={"button"} className={styles["filter__sort-change"]}>
             {/* {orderBy} */}
-            <SelectComponent options={["Relevatie", "Nieuwste", "Prijs"]} onSelect={() => {}} />
+            <SelectComponent
+              options={["Relevatie", "Nieuwste", "Prijs"]}
+              onSelect={() => {
+                // todo, implement filter properly
+              }}
+            />
           </span>
         </div>
       </div>

@@ -7,8 +7,8 @@ import useOutsideClick from "@app/util/outside-click";
 
 export interface IDropdownComponentProps {
   children: any;
+  hasSelectedItems?: boolean;
   title: string;
-  hasSelectedItems: boolean;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
@@ -24,11 +24,12 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
   const getVariant = () => {
     if (isOpen) {
       return "primary-inverted";
-    } else if (props.hasSelectedItems) {
-      return "primary-brand";
-    } else {
-      return "secondary";
     }
+    if (props.hasSelectedItems) {
+      return "primary-brand";
+    }
+
+    return "secondary";
   };
 
   return (

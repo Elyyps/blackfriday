@@ -1,9 +1,8 @@
-import * as React from "react";
+import React, { useRef } from "react";
 
 import styles from "./checkbox-count-component.module.scss";
 import { CheckboxComponent } from "../checkbox";
 import { FilterItem } from "@app/api/core/filter/filter-item";
-import { useRef } from "react";
 
 export interface ICheckboxCountProps {
   item: FilterItem;
