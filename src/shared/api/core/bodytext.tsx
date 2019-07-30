@@ -1,12 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ImageComponent } from "@app/core";
+import { BodyTextModule } from "../modules/body-text/body-text";
 
-import Oasis from "@assets/oasis.jpg";
-
-export const generateBodytextDummyData = () => (
-  <React.Fragment>
-    <h2>
+export const generateBodytextDummyData = (): BodyTextModule => ({
+  containerAlignment: "center",
+  containerSize: "full",
+  html: ` <h2>
       Hogere kortingen, meer producten en meer uiteenlopende productcategorieën. Dit gaat er gebeuren met Black Friday.
     </h2>
     <h3>1. Wees er snel bij, winkels beginnen eerder met Black Friday</h3>
@@ -64,6 +61,9 @@ export const generateBodytextDummyData = () => (
       <li>Second</li>
       <li>Third</li>
       <li>Fourth</li>
-    </ol>
-  </React.Fragment>
-);
+    </ol>`,
+  topMargin: "0",
+  id: "",
+  name: "BodyTextModule",
+  bottomMargin: ""
+});

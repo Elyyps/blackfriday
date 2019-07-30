@@ -14,6 +14,7 @@ import { Button } from "@app/core";
 import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
+import { BodyTextComponent } from "@app/core/bodytext";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
@@ -24,7 +25,7 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
     backLink,
     checkList,
     CheckListTitle,
-    content,
+    bodyTextModule,
     couponCode,
     discountButton,
     discountPicture,
@@ -85,7 +86,9 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                       {rating.text}
                     </div>
                   </div>
-                  <div dangerouslySetInnerHTML={{ __html: content }} className={styles["content__body"]} />
+                  <div className={styles["content__body"]}>
+                    <BodyTextComponent bodyTextModule={bodyTextModule} />
+                  </div>
                   {checkList && (
                     <div className="uk-visible@s">
                       <h4>{CheckListTitle}</h4>
