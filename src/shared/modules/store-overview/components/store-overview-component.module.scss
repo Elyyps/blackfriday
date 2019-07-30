@@ -1,0 +1,28 @@
+.stores-overview {
+  background-color: var(--tint-grey-97);
+  &__header {
+    padding-bottom: 16px;
+    background-color: var(--tint-white);
+  }
+  &__body {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__cards {
+      flex: 0 1 19%;
+      padding: 5px;
+      @media (max-width: 1180px) {
+        flex: 0 1 24%;
+        padding: 4px;
+      }
+      @media (max-width: 940px) {
+        flex: 0 1 32%;
+      }
+      @media (max-width: 720px) {
+        padding: 4px 0px;
+        flex: 0 1 100%;
+      }
+    }
+  }
+}

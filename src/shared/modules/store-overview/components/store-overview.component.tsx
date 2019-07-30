@@ -3,6 +3,9 @@ import { StoreOverviewModule } from "@app/api/modules/store-overview-new/store-o
 import { FilterBarContainer } from "@app/core/filter-bar-new";
 import { StoreOverviewContainerProps } from "../containers/store-overview.container";
 
+import styles from "./store-overview-component.module.scss";
+import { ShopCardComponent } from "@app/core/shop-card";
+
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
 }
@@ -25,13 +28,43 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     if (!props.sortBy) {
       props.setSortBy(props.storeOverviewModule.sortBy);
     }
+
+    if (props.shopCards.length === 0) {
+      props.setShopCards(props.storeOverviewModule.shopCards);
+    }
   };
 
   return (
     <div>
       <div>Stores overview</div>
-      <div>
-        <FilterBarContainer />
+      <div className="uk-container">
+        <div>
+          <FilterBarContainer />
+        </div>
+        <div className={styles["stores-overview__body"]}>
+          {props.shopCards && (
+            <div className={styles["stores-overview__body__list"]}>
+              {props.shopCards.map(shopCard => {
+                return (
+                  <div className={styles[`stores-overview__body__cards`]}>
+                    <ShopCardComponent
+                      title={shopCard.title}
+                      buttonLink={shopCard.button.url}
+                      seeMoreText={shopCard.seeMore.title}
+                      seeMoreLink={shopCard.seeMore.url}
+                      image={shopCard.picture}
+                      content={shopCard.content}
+                      buttonText={shopCard.button.title}
+                      range={shopCard.timeLeftBar.value}
+                      subtitle={shopCard.timeLeftBar.text}
+                    />
+                    <br />
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

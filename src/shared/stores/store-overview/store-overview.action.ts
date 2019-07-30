@@ -26,10 +26,16 @@ const clearAllFilters = () => ({
   type: REDUX.STORE_OVERVIEW.CLEAR_FILTERS
 });
 
+const setShopCards = (payload: ActionType.IShopCards) => ({
+  type: REDUX.STORE_OVERVIEW.SET_SHOP_CARDS,
+  ...payload
+});
+
 export const storeOverviewActions = {
   setBrandFilters,
   setCategoryFilters,
   setSortBy,
   setStatusFilters,
-  clearAllFilters
+  clearAllFilters,
+  setShopCards
 };
