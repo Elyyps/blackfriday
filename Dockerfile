@@ -11,7 +11,7 @@ RUN npm install
 
 COPY . /usr/src/app
 
-# RUN npm run build
-CMD ["npm", "run", "build"]
+RUN npm run build
+CMD ["npm", "run", "start-server"]
 
 EXPOSE 3000
