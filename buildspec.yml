@@ -34,6 +34,6 @@ phases:
       - docker push $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:latest
       - docker push $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"blackfriday-frontend","imageUri":"%s"},{"name":"blackfriday-frontend-reverse-proxy","imageUri":"%s"}]' $REPOSITORY_URI_VIPER_CLIENT:$IMAGE_TAG $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"blackfriday","imageUri":"%s"},{"name":"blackfriday-frontend-reverse-proxy","imageUri":"%s"}]' $REPOSITORY_URI_VIPER_CLIENT:$IMAGE_TAG $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
