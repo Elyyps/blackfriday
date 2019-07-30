@@ -1,0 +1,12 @@
+.blog-body-text{
+  max-width: $container-max-width;
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+  &__content{
+    width: 73%;
+  }
+  &__side-bar{
+    width: 27%;
+  }
+}
