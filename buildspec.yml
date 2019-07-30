@@ -18,7 +18,7 @@ phases:
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
-      - echo Build started on `date`
+      - echo Build started on `date` 
       - echo Building the Docker image viper client...
       - docker build -t $REPOSITORY_URI_VIPER_CLIENT:latest .
       - docker tag $REPOSITORY_URI_VIPER_CLIENT:latest $REPOSITORY_URI_VIPER_CLIENT:$IMAGE_TAG
