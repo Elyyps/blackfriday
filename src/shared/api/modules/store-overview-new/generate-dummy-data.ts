@@ -1,6 +1,5 @@
 import { StoreOverviewModule } from "./store-overview.module";
 import { FilterItem } from "@app/api/core/filter/filter-item";
-import { generateShopCardData } from "@app/api/core/shop-card/endpoint";
 
 export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   brandFilterItems: generateBrandFilterItems(),
@@ -11,19 +10,37 @@ export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   topMargin: "0px",
   id: "1",
   name: "StoreOverviewModule",
-  shopCards: generateShopCardData()
+  stores: []
 });
 
 const generateStatusFilterItems = (): FilterItem[] => [
   {
     id: "1",
-    displayName: "Nu geldig",
+    displayName: "Bijna afgelopen",
     isSelected: false,
     totalAmount: 22
   },
   {
     id: "2",
-    displayName: "Bijna afgelopen",
+    displayName: "Nu geldig",
+    isSelected: false,
+    totalAmount: 22
+  },
+  {
+    id: "3",
+    displayName: "Start binnenkort",
+    isSelected: false,
+    totalAmount: 33
+  },
+  {
+    id: "4",
+    displayName: "Verlopen",
+    isSelected: false,
+    totalAmount: 33
+  },
+  {
+    id: "5",
+    displayName: "Onbekend",
     isSelected: false,
     totalAmount: 33
   }

@@ -2,14 +2,14 @@ import { REDUX } from "@app/constants/redux";
 import { Action } from "redux";
 import * as ActionType from "./store-overview.types";
 import { FilterItem } from "@app/api/core/filter/filter-item";
-import { ShopCard } from "@app/api/core/shop-card/shop-card";
+import { Store } from "@app/api/core/store/store";
 
 export interface IStoreOverviewState {
   brandFilterItems: FilterItem[];
   categoryFilterItems: FilterItem[];
   sortBy: string;
   statusFilterItems: FilterItem[];
-  shopCards: ShopCard[];
+  stores: Store[];
 }
 
 const INITIAL_STATE: IStoreOverviewState = {
@@ -17,7 +17,7 @@ const INITIAL_STATE: IStoreOverviewState = {
   categoryFilterItems: [],
   sortBy: "",
   statusFilterItems: [],
-  shopCards: []
+  stores: []
 };
 
 export const storeOverviewReducer = (
@@ -53,10 +53,10 @@ export const storeOverviewReducer = (
         statusFilterItems: clearFilters(state.statusFilterItems)
       };
     }
-    case REDUX.STORE_OVERVIEW.SET_SHOP_CARDS: {
-      const { shopCards } = <ActionType.IShopCards>action;
+    case REDUX.STORE_OVERVIEW.SET_STORES: {
+      const { stores } = <ActionType.IStores>action;
 
-      return { ...state, shopCards };
+      return { ...state, stores };
     }
     default: {
       return state;

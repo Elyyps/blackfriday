@@ -1,3 +1,8 @@
+.store-overview {
+  padding: 24px 0;
+  background-color: #f7f7f7;
+}
+
 .stores-overview {
   background-color: var(--tint-grey-97);
   &__header {
@@ -5,13 +10,14 @@
     background-color: var(--tint-white);
   }
   &__body {
+    color: red;
     &__list {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
     &__cards {
       flex: 0 1 19%;
-      padding: 5px;
       @media (max-width: 1180px) {
         flex: 0 1 24%;
         padding: 4px;

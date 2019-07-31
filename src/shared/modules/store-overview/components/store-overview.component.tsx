@@ -30,18 +30,15 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     }
 
     if (props.shopCards.length === 0) {
-      props.setShopCards(props.storeOverviewModule.shopCards);
+      props.setShopCards(props.storeOverviewModule.stores);
     }
   };
 
   return (
     <div>
-      <div>Stores overview</div>
-      <div className="uk-container">
-        <div>
-          <FilterBarContainer />
-        </div>
-        <div className={styles["stores-overview__body"]}>
+      <div>
+        <FilterBarContainer />
+        <div className={styles["store-overview"]}>
           {props.shopCards && (
             <div className={styles["stores-overview__body__list"]}>
               {props.shopCards.map(shopCard => {

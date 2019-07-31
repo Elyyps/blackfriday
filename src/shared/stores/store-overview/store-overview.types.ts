@@ -1,5 +1,5 @@
 import { FilterItem } from "@app/api/core/filter/filter-item";
-import { ShopCard } from "@app/api/core/shop-card/shop-card";
+import { Store } from "@app/api/core/store/store";
 
 interface IAction {
   type?: string;
@@ -13,6 +13,6 @@ export interface ISortBy extends IAction {
   sortBy: string;
 }
 
-export interface IShopCards extends IAction {
-  shopCards: ShopCard[];
+export interface IStores extends IAction {
+  stores: Store[];
 }
