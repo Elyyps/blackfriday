@@ -13,7 +13,7 @@ export interface IBodyTextComponentProps {
   style?: object;
 }
 
-const BodyTextComponent = (props: IBodyTextComponentProps) => {
+export const BodyTextComponent = (props: IBodyTextComponentProps) => {
   const { style } = props;
 
   return (
@@ -25,6 +25,5 @@ const BodyTextComponent = (props: IBodyTextComponentProps) => {
     >
       <HtmlRenderComponent html={props.bodyTextModule.html} />
     </div>
-);
-
-export { BodyTextComponent };
+  );
+};

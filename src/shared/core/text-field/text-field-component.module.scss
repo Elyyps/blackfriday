@@ -208,7 +208,7 @@ $animation-duration: 0.4s;
     .form-field {
       &__notch {
         > * {
-          border-color: $brand-secondary;
+          border-color: black;
           border-width: 2px !important;
           text-overflow: clip;
           z-index: 10;
@@ -218,7 +218,7 @@ $animation-duration: 0.4s;
           width: auto;
           > * {
             transform: translateY(-105%) scale(0.75);
-            color: $brand-secondary;
+            color: black;
           }
         }
       }
@@ -229,13 +229,13 @@ $animation-duration: 0.4s;
   .form-field {
     &__notch {
       > * {
-        border-color: $brand-secondary !important;
+        border-color: black !important;
       }
       &-float {
         > * {
           transform: translateY(-105%) scale(0.75);
 
-          color: $brand-secondary !important;
+          color: black !important;
         }
       }
     }
