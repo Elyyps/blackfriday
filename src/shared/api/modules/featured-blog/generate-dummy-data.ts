@@ -7,5 +7,7 @@ export const generateFeaturedBlogDummyData = (): FeaturedBlogModule => ({
   name: "FeaturedBlogModule",
   topMargin: "",
   bottomMargin: "",
-  id: ""
+  id: "",
+  bottomPadding: { desktopPadding: 72, mobilePadding: 48 },
+  background: { backgroundColour: "#f7f7f7" }
 });

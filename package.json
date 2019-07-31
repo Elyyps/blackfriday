@@ -24,6 +24,7 @@
     "commitlint": "8.0.0",
     "compression-webpack-plugin": "3.0.0",
     "connected-react-router": "6.4.0",
+    "copy-webpack-plugin": "^5.0.4",
     "cors": "2.8.5",
     "dotenv": "8.0.0",
     "enzyme-react-intl": "^2.0.4",

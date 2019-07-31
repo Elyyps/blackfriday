@@ -2,7 +2,6 @@ import { PageModel } from "./page.model";
 import uuid from "uuid";
 import { dummyFeaturedShopsData } from "../modules/featured-shops/generate-dummy-data";
 import { generateDummyNavbarData } from "../modules/navbar/generate-dummy-data";
-import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateHomePageHeader } from "../modules/homepage-header/generate-dummy-data";
 import { generateDummyBannerModule } from "../modules/banner/generate-dummy-data";
 import {
@@ -22,6 +21,7 @@ import { generateDummyFeaturedCategoriesData } from "../modules/featured-categor
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
 import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
+import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
 
 export const pageList: PageModel[] = [
   {
@@ -39,7 +39,7 @@ export const pageList: PageModel[] = [
       generateDummyBannerModule(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
-      generateNotYetImplemented("Blog Featured Module"),
+      generateFeaturedBlogDummyData(),
       generateHomepageBodytextDummyData(),
       generateDummyFooterData()
     ]
