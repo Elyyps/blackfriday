@@ -3,7 +3,7 @@ import * as React from "react";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { CLOSE_ICON } from "@app/constants/icons";
 import styles from "./modal-navbar-component.module.scss";
-import FocusLock from "react-focus-lock";
+
 interface IModalNavBarProps {
   children?: any;
   className?: string;
@@ -64,6 +64,7 @@ const ModalNavBar = (props: IModalNavBarProps) => {
       </button>
 
       <div
+        role={"role"}
         className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
         onClick={(e): any => {
           onClickAway(e);

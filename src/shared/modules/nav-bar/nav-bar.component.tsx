@@ -9,9 +9,6 @@ import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
 import { NavbarSearchContainer } from "./navbar-search/container/navbar-search.container";
 import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
 import { HamburgerMenuComponent } from "../hamburger-menu";
-
-import { Link } from "@app/api/core/link";
-
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
