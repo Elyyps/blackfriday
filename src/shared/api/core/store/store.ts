@@ -7,6 +7,7 @@ export class Store {
   public description: string;
   public logo: string;
   public timeLeftPercentage: number;
+  public startsInDays?: number;
 }
 
 export enum StoreStatus {

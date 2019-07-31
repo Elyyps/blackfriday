@@ -12,7 +12,7 @@ import { ClickableComponent } from "../clickable";
 
 export interface IShopCardComponentProps {
   store: Store;
-  variant: string;
+  variant?: string;
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {

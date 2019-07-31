@@ -29,8 +29,8 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       props.setSortBy(props.storeOverviewModule.sortBy);
     }
 
-    if (props.shopCards.length === 0) {
-      props.setShopCards(props.storeOverviewModule.stores);
+    if (props.stores.length === 0) {
+      props.setStores(props.storeOverviewModule.stores);
     }
   };
 
@@ -39,22 +39,12 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       <div>
         <FilterBarContainer />
         <div className={styles["store-overview"]}>
-          {props.shopCards && (
+          {props.stores && (
             <div className={styles["stores-overview__body__list"]}>
-              {props.shopCards.map(shopCard => {
+              {props.stores.map(store => {
                 return (
                   <div className={styles[`stores-overview__body__cards`]}>
-                    <ShopCardComponent
-                      title={shopCard.title}
-                      buttonLink={shopCard.button.url}
-                      seeMoreText={shopCard.seeMore.title}
-                      seeMoreLink={shopCard.seeMore.url}
-                      image={shopCard.picture}
-                      content={shopCard.content}
-                      buttonText={shopCard.button.title}
-                      range={shopCard.timeLeftBar.value}
-                      subtitle={shopCard.timeLeftBar.text}
-                    />
+                    <ShopCardComponent store={store} />
                     <br />
                   </div>
                 );

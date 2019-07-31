@@ -1,5 +1,6 @@
 import { StoreOverviewModule } from "./store-overview.module";
 import { FilterItem } from "@app/api/core/filter/filter-item";
+import { generateDemoStoreDummyData } from "@app/api/core/store/generate-dummy-data";
 
 export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   brandFilterItems: generateBrandFilterItems(),
@@ -10,7 +11,7 @@ export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   topMargin: "0px",
   id: "1",
   name: "StoreOverviewModule",
-  stores: []
+  stores: generateDemoStoreDummyData()
 });
 
 const generateStatusFilterItems = (): FilterItem[] => [
@@ -74,6 +75,12 @@ const generateCategoryFilterItems = (): FilterItem[] => [
   {
     id: "5",
     displayName: "Mode",
+    isSelected: false,
+    totalAmount: 2
+  },
+  {
+    id: "6",
+    displayName: "Huishouden",
     isSelected: false,
     totalAmount: 2
   }
@@ -163,5 +170,17 @@ const generateBrandFilterItems = (): FilterItem[] => [
     displayName: "Sony",
     isSelected: false,
     totalAmount: 9
+  },
+  {
+    id: "15",
+    displayName: "Vodafone",
+    isSelected: false,
+    totalAmount: 6
+  },
+  {
+    id: "16",
+    displayName: "Nike",
+    isSelected: false,
+    totalAmount: 10
   }
 ];

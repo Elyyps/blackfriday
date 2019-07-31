@@ -11,7 +11,6 @@ import {
 } from "../modules/body-text/generate-dummy-data";
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
 import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
-import { generateDummyStoresOverview } from "../modules/stores-overview/generate-dummy-data";
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
@@ -22,6 +21,7 @@ import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
 import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
+import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 
 export const pageList: PageModel[] = [
   {
@@ -55,7 +55,7 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateDummyStoresOverview(),
+      generateNotYetImplemented("store overview"),
       generateCtaNewsLetterModule(),
       generateDummyFooterData()
     ]
@@ -89,7 +89,7 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateDummyStoresOverview(),
+      generateNotYetImplemented("deals overview"),
       generateCtaSmallModule(),
       generateDummyFooterData()
     ]

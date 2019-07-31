@@ -23,7 +23,6 @@ import { MediumHeroComponent } from "@app/modules/medium-hero";
 import { MediumHeroModule } from "@app/api/modules/medium-hero/medium-hero";
 import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
-import { StoresOverviewContainer } from "@app/modules/stores-overview/container/stores-overview.container";
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
@@ -70,7 +69,7 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "ShopSingleHeaderModule":
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoresOverviewModule":
-      return <StoresOverviewContainer />;
+      return <div>store overview</div>;
     case "BlogSingleHeaderModule":
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":

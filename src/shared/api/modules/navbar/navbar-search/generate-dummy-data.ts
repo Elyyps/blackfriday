@@ -1,5 +1,6 @@
 import { NavbarSearchModuleInitial } from "./navbar-search-initial";
 import { NavbarSearchModule } from "./navbar-search.module";
+import { generateDemoStoreDummyData } from "@app/api/core/store/generate-dummy-data";
 
 export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
   titleDeals: "Gevonden deals",
@@ -60,42 +61,5 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       button: { title: "Naar deals", url: "/" }
     }
   ],
-  shops: [
-    {
-      title: "Amac",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-
-      button: { title: "Naar deals", url: "/" },
-      timeLeftBar: { value: 0.3, text: "BIJNA AFGELOPEN!" },
-      content: "Een selectie van bizarre vele aanbiedingen",
-      seeMore: { title: "Meer Info", url: "/" },
-      category: "fdsfds",
-      brand: "coolblue"
-    },
-    {
-      title: "Nike",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-
-      button: { title: "Naar deals", url: "/" },
-      timeLeftBar: { value: 0.1, text: "BIJNA AFGELOPEN!" },
-      content: "Een selectie van bizarre vele aanbiedingen",
-      seeMore: { title: "Meer Info", url: "/" },
-      category: "fdsfds",
-      brand: "coolblue"
-    },
-    {
-      title: "50Five",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-
-      button: { title: "Meer info", url: "/" },
-      timeLeftBar: { value: 0.8, text: "nu geldig" },
-      content: "Een selectie van bizarre vele aanbiedingen",
-      seeMore: { title: "Meer Info", url: "/" },
-      category: "fdsfds",
-      brand: "coolblue"
-    }
-  ]
+  stores: generateDemoStoreDummyData()
 };

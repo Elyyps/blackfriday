@@ -2,26 +2,26 @@ import * as React from "react";
 import styles from "./navbar-search-component.module.scss";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { SEARCH_ICON } from "@app/constants/icons";
-import Store from "@assets/icons/store.svg";
+import StoreIcon from "@assets/icons/store.svg";
 import { DealCardComponent } from "@app/core/deal-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
 import { DealCardModule } from "@app/api/core/deal-card";
-import { ShopCard } from "@app/api/core/shop-card/shop-card";
 import { ShopCardComponent } from "@app/core/shop-card";
+import { Store } from "@app/api/core/store/store";
 
 export interface INavbarSearchComponentProps {
   currentFilter: string;
   deals?: DealCardModule[];
   dealsTitle: string;
   getCardsFiltered?: (text: string) => void;
-  shops?: ShopCard[];
+  stores?: Store[];
   shopsTitle: string;
 }
 
 const CardMoreDeals = (
   <SeeMoreCardComponent
     title="Wij hebben meer deals in ons overzicht"
-    icon={Store}
+    icon={StoreIcon}
     buttonText="Alle deals"
     buttonLink="#"
     variant={"responsive"}
@@ -31,7 +31,7 @@ const CardMoreDeals = (
 const CardMoreShops = (
   <SeeMoreCardComponent
     title="Wij hebben meer winkels in ons overzicht"
-    icon={Store}
+    icon={StoreIcon}
     buttonText="Alle winkels"
     buttonLink="#"
     variant={"responsive"}
@@ -85,7 +85,7 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
                   </div>
                 </div>
               )}
-              {props.shops && props.shops.length > 0 && (
+              {props.stores && props.stores.length > 0 && (
                 <h2 style={{ marginTop: props.deals && props.deals.length > 0 ? "32px" : "0", marginBottom: "16px" }}>
                   Gevonden winkels
                 </h2>
@@ -95,27 +95,18 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
                   styles["navbar-search__results-posts"]
                 }`}
               >
-                {props.shops &&
-                  props.shops.map((item, key) => (
+                {props.stores &&
+                  props.stores.map((store, key) => (
                     <div key={key}>
-                      <ShopCardComponent
-                        title={item.title}
-                        content={item.content}
-                        range={item.timeLeftBar.value}
-                        subtitle={item.timeLeftBar.text}
-                        image={item.picture}
-                        buttonLink={item.button.url}
-                        buttonText={item.button.title}
-                        variant={"responsive"}
-                      />
+                      <ShopCardComponent store={store} variant={"responsive"} />
                     </div>
                   ))}
-                {props.shops && props.shops.length > 0 && <div>{CardMoreShops}</div>}
+                {props.stores && props.stores.length > 0 && <div>{CardMoreShops}</div>}
               </div>
             </div>
 
-            {props.shops &&
-              props.shops.length === 0 &&
+            {props.stores &&
+              props.stores.length === 0 &&
               props.deals &&
               props.deals.length === 0 &&
               props.currentFilter && (
