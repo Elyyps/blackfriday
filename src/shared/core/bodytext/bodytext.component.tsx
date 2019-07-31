@@ -3,7 +3,7 @@ import styles from "./bodytext-component.module.scss";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import { HtmlRenderComponent } from "../html-render";
 
-export interface IBodytextComponentProps {
+export interface IBodyTextComponentProps {
   bgColor?: string;
   bodyTextModule: BodyTextModule;
   footer?: JSX.Element;
@@ -13,20 +13,18 @@ export interface IBodytextComponentProps {
   style?: object;
 }
 
-const BodytextComponent = (props: IBodytextComponentProps) => (
-  <div
-    className={`uk-container ${styles[`body-text`]} ${
-      styles[`body-text--${props.bodyTextModule.containerAlignment}`]
-    } ${styles[`body-text--${props.bodyTextModule.containerSize}`]}`}
-  >
-    <div className={styles["body-text-container-outer"]}>
-      <div className={styles["body-text-container"]}>
-        {props.header}
-        <HtmlRenderComponent html={props.bodyTextModule.html} />
-        {props.footer}
-      </div>
+const BodyTextComponent = (props: IBodyTextComponentProps) => {
+  const { style } = props;
+
+  return (
+    <div
+      style={style}
+      className={` ${styles[`body-text`]} ${styles[`body-text--${props.bodyTextModule.containerAlignment}`]} ${
+        styles[`body-text--${props.bodyTextModule.containerSize}`]
+      }`}
+    >
+      <HtmlRenderComponent html={props.bodyTextModule.html} />
     </div>
-  </div>
 );
 
-export { BodytextComponent };
+export { BodyTextComponent };
