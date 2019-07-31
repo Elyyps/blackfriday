@@ -4,5 +4,5 @@ export class BodyTextModule extends WordPressPostModule {
   public containerAlignment: string;
   public containerSize: string;
   public html: string;
-  public type: string;
+  public style?: object;
 }

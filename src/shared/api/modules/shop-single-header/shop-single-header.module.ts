@@ -2,12 +2,13 @@ import { Link } from "@app/api/core/link";
 import { RatingModule } from "@app/api/core/rating";
 import { TimeLeftBar } from "@app/api/core/time-left-bar";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
+import { BodyTextModule } from "../body-text/body-text";
 
 export class ShopSingleHeaderModule extends WordPressPostModule {
   public backLink: Link;
+  public bodyTextModule: BodyTextModule;
   public checkList: string[];
   public CheckListTitle: string;
-  public content: string;
   public couponCode: string;
   public discountButton: Link;
   public discountPicture: string;
