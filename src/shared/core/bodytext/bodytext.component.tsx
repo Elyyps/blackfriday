@@ -13,31 +13,20 @@ export interface IBodytextComponentProps {
   style?: object;
 }
 
-const BodytextComponent = (props: IBodytextComponentProps) => {
-  const { bgColor, paddingBottom, paddingTop } = props;
-
-  const style = {
-    backgroundColor: bgColor,
-    paddingTop: paddingTop || "72px",
-    paddingBottom: paddingBottom || "72px",
-    ...props.style
-  };
-
-  return (
-    <div
-      className={`uk-container ${styles[`body-text`]} ${
-        styles[`body-text--${props.bodyTextModule.containerAlignment}`]
-      } ${styles[`body-text--${props.bodyTextModule.containerSize}`]}`}
-    >
-      <div className={styles["body-text-container-outer"]}>
-        <div className={styles["body-text-container"]}>
-          {props.header}
-          <HtmlRenderComponent html={props.bodyTextModule.html} />
-          {props.footer}
-        </div>
+const BodytextComponent = (props: IBodytextComponentProps) => (
+  <div
+    className={`uk-container ${styles[`body-text`]} ${
+      styles[`body-text--${props.bodyTextModule.containerAlignment}`]
+    } ${styles[`body-text--${props.bodyTextModule.containerSize}`]}`}
+  >
+    <div className={styles["body-text-container-outer"]}>
+      <div className={styles["body-text-container"]}>
+        {props.header}
+        <HtmlRenderComponent html={props.bodyTextModule.html} />
+        {props.footer}
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export { BodytextComponent };

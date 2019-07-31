@@ -1,18 +1,17 @@
 import { BodyTextModule } from "./body-text";
-import React from "react";
 
 export const generateDummyBodyTextModule = (type: string): BodyTextModule => ({
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  containerAlignment:"center",
+  containerAlignment: "center",
   containerSize: "medium",
   name: "BodyTextModule",
   html: "",
   type
 });
 
-export const generateHomepageBodytextDummyData = () => (
+export const generateHomepageBodytextDummyData = () =>
   `<div>
     <h1>
       <strong>Black Friday België</strong>
@@ -36,11 +35,10 @@ export const generateHomepageBodytextDummyData = () => (
       geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
       uw wensen bij elkaar te shoppen.
     </p>
-  </div>`
-);
+  </div>`;
 
-export const generateShopSingleDummydata = () => (
- ` <div>
+export const generateShopSingleDummydata = () =>
+  ` <div>
     <h1>
       <strong>Black Friday Beddenreus</strong>
     </h1>
@@ -54,10 +52,9 @@ export const generateShopSingleDummydata = () => (
       condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
       tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
     </p>
-  </div>`
-);
+  </div>`;
 
-export const generateProductLineDummyData = () => (
+export const generateProductLineDummyData = () =>
   `<div>
     <h1>
       <strong>Vanwaar de populariteit van Apple?</strong>
@@ -83,5 +80,4 @@ export const generateProductLineDummyData = () => (
       aanbiedingen worden regelmatig bijgewerkt. Op vrijdag 29 november worden de deals bekend gemaakt en zal hieronder
       een overzicht verschijnen met de beste deals!
     </p>
-  </div>`
-);
+  </div>`;

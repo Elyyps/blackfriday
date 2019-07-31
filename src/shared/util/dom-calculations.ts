@@ -13,4 +13,4 @@ const getTextWidth = (text: string, fontSize: string, fontFace: string) => {
   return 0;
 };
 
-export const getLabelWidth = (placeholder: string) => getTextWidth(placeholder, "16", "Assistant, sans-serif");
+export const getLabelWidth = (placeholder: string) => getTextWidth(placeholder, "12", "Assistant, sans-serif");
