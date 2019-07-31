@@ -42,6 +42,8 @@ import { FeaturedBlogComponent } from "@app/modules/featured-blog";
 import { FeaturedBlogModule } from "@app/api/modules/featured-blog/featured-blog";
 import { generateBodytextDummyData } from "@app/api/core/bodytext";
 import { BodyTextComponent } from "@app/core/bodytext";
+import { BlogBodyTextComponent } from "@app/modules/blog-body-text";
+import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -71,10 +73,10 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <StoresOverviewContainer />;
     case "BlogSingleHeaderModule":
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
-    // case "BodyTextModule":
-    //   return <BodytextComponent bodyTextModule={wordPressModule as BodyTextModule} />;
     case "BlogOverviewModule":
       return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
+    case "BlogBodyTextModule":
+      return <BlogBodyTextComponent blogBodyTextModule={wordPressModule as BlogBodyTextModule} />;
     case "FeaturedBlogModule":
       return <FeaturedBlogComponent featuredBlog={wordPressModule as FeaturedBlogModule} />;
     case "BodyTextModule":

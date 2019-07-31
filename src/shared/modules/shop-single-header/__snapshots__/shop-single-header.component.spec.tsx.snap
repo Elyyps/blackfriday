@@ -103,12 +103,41 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
               </div>
               <div
                 className="content__body"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Vier Black Friday bij Beddenreus en ontvang 15% korting op alles!Black Friday bij Beddenreus wil je niet missen! Je geniet van maar liefst 15% korting op alles. Extra interessant: Black Friday duurt bij Beddenreus niet één dag maar ruim een week. Dé week om eens goed na te denken over een nieuwe boxspring, matras of dekbedovertrek! Want 15% korting dat is héél veel! Hét ideale moment dus om jouw favoriete boxspring, matras of winterdekbed te kopen. Online én in de winkel. Meer info",
+              >
+                <BodyTextComponent
+                  bodyTextModule={
+                    Object {
+                      "bottomMargin": "",
+                      "containerAlignment": "left",
+                      "containerSize": "full",
+                      "html": " <div>
+    <p>
+      Sed ipsum metus, sodales sit amet vulputate a, lobortis mollis odio. Orci varius natoque penatibus et magnis dis
+      parturient montes, nascetur ridiculus mus. Vivamus sed velit in ligula finibus viverra. Donec eleifend commodo
+      ipsum nec commodo. Cras vehicula lectus et felis suscipit, vel commodo metus sagittis. Vestibulum quam elit,
+      dignissim sit amet risus in, luctus accumsan lectus. Sed rutrum metus ut massa tempus, eget blandit lacus
+      molestie. Pellentesque sit amet aliquam lacus. Etiam ultrices velit eu neque pharetra, vitae scelerisque sapien
+      fermentum. Morbi egestas bibendum est. Donec at felis hendrerit, iaculis lorem vel, porta enim. Quisque suscipit
+      condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
+      tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
+    </p>
+     <h1>
+      <strong>Black Friday Beddenreus</strong>
+    </h1>
+     <p>
+      Noteer vrijdag 29 november alvast in uw agenda, want dan start Black Friday 2019. Vanaf dat moment kunt u mooie
+      deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen
+      geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
+      uw wensen bij elkaar te shoppen.
+    </p>
+  </div>",
+                      "id": "",
+                      "name": "shopSingleBodyText",
+                      "topMargin": "",
+                    }
                   }
-                }
-              />
+                />
+              </div>
               <div
                 className="uk-visible@s"
               >

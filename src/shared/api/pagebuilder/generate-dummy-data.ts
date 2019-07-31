@@ -21,6 +21,7 @@ import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
+import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
 
 export const pageList: PageModel[] = [
   {
@@ -141,7 +142,7 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateBlogSingleHeaderData(),
-      generateNotYetImplemented("Blog BodyText"),
+      generateBlogBodyTextData(),
       generateDummyFeaturedDealsData(),
       generateFeaturedBlogData(),
       generateCtaNewsLetterModule(),

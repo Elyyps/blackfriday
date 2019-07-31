@@ -664,11 +664,21 @@ exports[`[Footer] should render component without crashing 1`] = `
                
               En ontvang ons de allerbeste aanbiedingen
             </p>
-            <Button
-              icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
-              title="Nieuwsbrief"
-              variant="primary-inverted"
-            />
+            <ModalComponent
+              title="Inschrijven nieuwsbrief"
+              trigger={
+                <Button
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/newsletter/paper.svg"
+                  title="Nieuwsbrief"
+                  variant="primary-inverted"
+                />
+              }
+              variant="small"
+            >
+              <WithFormik(InnerForm)
+                onSubmit={[Function]}
+              />
+            </ModalComponent>
           </div>
           <div
             className="footer__column-footer"

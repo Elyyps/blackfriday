@@ -23,13 +23,7 @@ const BodyTextComponent = (props: IBodyTextComponentProps) => {
         styles[`body-text--${props.bodyTextModule.containerSize}`]
       }`}
     >
-      <div className={styles["body-text-container-outer"]}>
-        <div className={styles["body-text-container"]}>
-          {props.header}
-          <HtmlRenderComponent html={props.bodyTextModule.html} />
-          {props.footer}
-        </div>
-      </div>
+      <HtmlRenderComponent html={props.bodyTextModule.html} />
     </div>
   );
 };
