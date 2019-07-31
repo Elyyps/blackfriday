@@ -5,7 +5,11 @@ import { generateDummyNavbarData } from "../modules/navbar/generate-dummy-data";
 import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateHomePageHeader } from "../modules/homepage-header/generate-dummy-data";
 import { generateDummyBannerModule } from "../modules/banner/generate-dummy-data";
-import { generateDummyBodyTextModule } from "../modules/body-text/generate-dummy-data";
+import {
+  generateProductLineDummyData,
+  generateShopSingleBodyTextDummydata,
+  generateHomepageBodytextDummyData
+} from "../modules/body-text/generate-dummy-data";
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
 import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
 import { generateDummyStoresOverview } from "../modules/stores-overview/generate-dummy-data";
@@ -16,8 +20,8 @@ import { generateBlogSingleHeaderData } from "../modules/blog-single-header/endp
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
-import { generateFeaturedShopsDummyData } from "../modules/featured-shops/endpoints";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
+import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
 
 export const pageList: PageModel[] = [
   {
@@ -36,7 +40,7 @@ export const pageList: PageModel[] = [
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
       generateNotYetImplemented("Blog Featured Module"),
-      generateDummyBodyTextModule("1"),
+      generateHomepageBodytextDummyData(),
       generateDummyFooterData()
     ]
   } as PageModel,
@@ -70,7 +74,7 @@ export const pageList: PageModel[] = [
       generateDummyFeaturedDealsData(),
       dummyFeaturedShopsData(),
       generateCtaNewsLetterModule(),
-      generateDummyBodyTextModule("2"),
+      generateShopSingleBodyTextDummydata(),
       generateDummyFooterData()
     ]
   } as PageModel,
@@ -104,9 +108,9 @@ export const pageList: PageModel[] = [
       generateDummyFeaturedCategoriesData(),
       generateDummyFeaturedDealsData(),
       generateDummyBannerModule(),
-      generateFeaturedShopsDummyData(),
+      // generateFeaturedShopsDummyData(),
       generateCtaNewsLetterModule(),
-      generateDummyBodyTextModule("3"),
+      generateProductLineDummyData(),
       generateDummyFooterData()
     ]
   } as PageModel,
@@ -138,7 +142,7 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateBlogSingleHeaderData(),
-      generateNotYetImplemented("Blog BodyText"),
+      generateBlogBodyTextData(),
       generateDummyFeaturedDealsData(),
       generateFeaturedBlogData(),
       generateCtaNewsLetterModule(),

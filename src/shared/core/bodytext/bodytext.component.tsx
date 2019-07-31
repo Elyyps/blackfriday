@@ -1,29 +1,31 @@
 import * as React from "react";
 import styles from "./bodytext-component.module.scss";
+import { BodyTextModule } from "@app/api/modules/body-text/body-text";
+import { HtmlRenderComponent } from "../html-render";
 
-export interface IBodytextComponentProps {
+export interface IBodyTextComponentProps {
   bgColor?: string;
-  children: any;
+  bodyTextModule: BodyTextModule;
+  footer?: JSX.Element;
+  header?: JSX.Element;
   paddingBottom?: string;
   paddingTop?: string;
   style?: object;
 }
 
-const BodytextComponent = (props: IBodytextComponentProps) => {
-  const { bgColor, paddingBottom, paddingTop } = props;
-
-  const style = {
-    backgroundColor: bgColor,
-    paddingTop: paddingTop || "72px",
-    paddingBottom: paddingBottom || "72px",
-    ...props.style
-  };
+const BodyTextComponent = (props: IBodyTextComponentProps) => {
+  const { style } = props;
 
   return (
-    <div className={styles["bodytext"]} style={style}>
-      <div className="uk-container">{props.children}</div>
+    <div
+      style={style}
+      className={` ${styles[`body-text`]} ${styles[`body-text--${props.bodyTextModule.containerAlignment}`]} ${
+        styles[`body-text--${props.bodyTextModule.containerSize}`]
+      }`}
+    >
+      <HtmlRenderComponent html={props.bodyTextModule.html} />
     </div>
   );
 };
 
-export { BodytextComponent };
+export { BodyTextComponent };

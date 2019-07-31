@@ -1,16 +1,17 @@
 import { BodyTextModule } from "./body-text";
-import React from "react";
 
-export const generateDummyBodyTextModule = (type: string): BodyTextModule => ({
+export const generateDummyFullBodyTextModule = (html: string): BodyTextModule => ({
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
+  containerAlignment: "center",
+  containerSize: "full",
   name: "BodyTextModule",
-  type
+  html
 });
 
-export const generateHomepageBodytextDummyData = () => (
-  <div>
+export const generateHomepageBodytextDummyData = () => ({
+  html: `<div>
     <h1>
       <strong>Black Friday België</strong>
     </h1>
@@ -33,14 +34,21 @@ export const generateHomepageBodytextDummyData = () => (
       geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
       uw wensen bij elkaar te shoppen.
     </p>
-  </div>
-);
+  </div>`,
+  containerAlignment: "left",
+  containerSize: "full",
+  id: "0",
+  name: "BodyTextModule",
+  topMargin: "0",
+  bottomMargin: "0",
+  topPadding: { mobilePadding: 48, desktopPadding: 72 },
+  bottomPadding: { mobilePadding: 48, desktopPadding: 72 },
+  style: { color: "#777" },
+  background: { backgroundColour: "rgb(247, 247, 247)" }
+});
 
-export const generateShopSingleDummydata = () => (
-  <div>
-    <h1>
-      <strong>Black Friday Beddenreus</strong>
-    </h1>
+export const generateShopSingleBodyTextDummydata = () =>
+  ` <div>
     <p>
       Sed ipsum metus, sodales sit amet vulputate a, lobortis mollis odio. Orci varius natoque penatibus et magnis dis
       parturient montes, nascetur ridiculus mus. Vivamus sed velit in ligula finibus viverra. Donec eleifend commodo
@@ -51,11 +59,28 @@ export const generateShopSingleDummydata = () => (
       condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
       tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
     </p>
-  </div>
-);
+     <h1>
+      <strong>Black Friday Beddenreus</strong>
+    </h1>
+     <p>
+      Noteer vrijdag 29 november alvast in uw agenda, want dan start Black Friday 2019. Vanaf dat moment kunt u mooie
+      deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen
+      geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
+      uw wensen bij elkaar te shoppen.
+    </p>
+  </div>`;
 
-export const generateProductLineDummyData = () => (
-  <div>
+export const generateProductLineDummyData = (): BodyTextModule => ({
+  containerAlignment: "left",
+  containerSize: "full",
+  id: "0",
+  name: "BodyTextModule",
+  topMargin: "0",
+  bottomMargin: "0",
+  bottomPadding: { mobilePadding: 32, desktopPadding: 72 },
+  style: { color: "#777" },
+  background: { backgroundColour: "rgb(247, 247, 247)" },
+  html: `<div>
     <h1>
       <strong>Vanwaar de populariteit van Apple?</strong>
     </h1>
@@ -80,5 +105,5 @@ export const generateProductLineDummyData = () => (
       aanbiedingen worden regelmatig bijgewerkt. Op vrijdag 29 november worden de deals bekend gemaakt en zal hieronder
       een overzicht verschijnen met de beste deals!
     </p>
-  </div>
-);
+  </div>`
+});
