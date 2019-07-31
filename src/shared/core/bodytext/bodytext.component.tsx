@@ -19,9 +19,9 @@ const BodyTextComponent = (props: IBodyTextComponentProps) => {
   return (
     <div
       style={style}
-      className={` ${styles[`body-text`]} ${styles[`body-text--${props.bodyTextModule.containerAlignment}`]} ${
-        styles[`body-text--${props.bodyTextModule.containerSize}`]
-      }`}
+      className={`uk-container ${styles[`body-text`]} ${
+        styles[`body-text--${props.bodyTextModule.containerAlignment}`]
+      } ${styles[`body-text--${props.bodyTextModule.containerSize}`]}`}
     >
       <HtmlRenderComponent html={props.bodyTextModule.html} />
     </div>
