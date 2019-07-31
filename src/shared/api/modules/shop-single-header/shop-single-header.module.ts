@@ -4,7 +4,6 @@ import { TimeLeftBar } from "@app/api/core/time-left-bar";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 
 export class ShopSingleHeaderModule extends WordPressPostModule {
-  public backLink: Link;
   public checkList: string[];
   public CheckListTitle: string;
   public content: string;
@@ -15,6 +14,7 @@ export class ShopSingleHeaderModule extends WordPressPostModule {
   public discountTitle: string;
   public favoriteButton: Link;
   public keywords: string[];
+  public links: Link[];
   public picture: string;
   public rating: RatingModule;
   public smallBackLink: Link;

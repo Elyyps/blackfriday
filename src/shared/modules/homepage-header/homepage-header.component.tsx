@@ -73,30 +73,23 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
               <Slider {...settings}>
                 {props.homePageModule.slides.map((slide, index) => (
                   <div key={index} className={styles["homepage-header__slide-container"]}>
-                    {slide.video ? (
-                      <ModalComponent
-                        isTriggerOnClick
-                        variant={"big"}
-                        trigger={
-                          <div
-                            style={{ backgroundImage: `url(${slide.image})` }}
-                            className={`${styles["homepage-header__slider-item"]} ${
-                              styles["homepage-header__slider-item-video"]
-                            }`}
-                          >
-                            <IconComponent icon={PLAY_BUTTON} size={"80px"} />
-                          </div>
-                        }
-                      >
-                        <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
-                      </ModalComponent>
-                    ) : (
-                      <div
-                        style={{ backgroundImage: `url(${slide.image})` }}
-                        className={styles["homepage-header__slider-item"]}
-                      />
+                    <div
+                      style={{ backgroundImage: `url(${slide.image})` }}
+                      className={styles["homepage-header__slider-item"]}
+                    />
+                    {slide.video && (
+                      <div className={styles["homepage-header__slider-item-video"]}>
+                        <ModalComponent
+                          isTriggerOnClick
+                          variant={"big"}
+                          trigger={<IconComponent icon={PLAY_BUTTON} size={"80px"} />}
+                        >
+                          <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
+                        </ModalComponent>
+                      </div>
                     )}
-                    {!slide.video && (
+
+                    {slide.title && (
                       <div className={styles["homepage-header__slider-control"]}>
                         <div className={styles["homepage-header__slider-title"]}> {slide.title}</div>
                         <LinkComponent icon={CHEVRON_RIGHT} to={slide.link.url} animated variant={"quaternary"}>

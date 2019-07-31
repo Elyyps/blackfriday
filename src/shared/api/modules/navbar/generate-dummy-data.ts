@@ -1,4 +1,5 @@
 import { INavBarModule } from "./navbar.module";
+import { Link } from "@app/api/core/link";
 
 export const generateDummyNavbarData = (): INavBarModule => ({
   label: "Black Friday 2019: NOG 10 dagen!",
@@ -12,5 +13,6 @@ export const generateDummyNavbarData = (): INavBarModule => ({
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",
-  name: "NavBarModule"
+  name: "NavBarModule",
+  hamburgerMenu: [{ title: "ciao", url: "pino" }]
 });

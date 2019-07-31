@@ -47,7 +47,7 @@
       text-decoration: none;
       color: $tint-gray;
       &:hover {
-        color: $global-link-color;
+        color: $gray-lighter;
       }
     }
   }
@@ -184,8 +184,9 @@
   }
 
   &__social {
-    li {
+    &-items {
       padding-top: 8px;
+
       &:not(:last-child) {
         padding-bottom: 8px;
       }
@@ -193,6 +194,7 @@
   }
 
   &__social-link {
+    width: 100%;
     display: inline-flex;
     align-items: center;
   }

@@ -100,9 +100,9 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   {props.footerModule.middleFooter.socialMedia.title}
                 </div>
                 <div className={styles["footer__column-collapse-body"]}>
-                  <ul className={styles["footer__social"]}>
+                  <div className={styles["footer__social"]}>
                     {props.footerModule.middleFooter.socialMedia.socialItem.map((item, index) => (
-                      <li key={index}>
+                      <div className={styles["footer__social-items"]} key={index}>
                         <a href={item.link} className={styles["footer__social-link"]} target="_blank">
                           <div className={styles["footer__social-icon"]}>
                             <IconComponent icon={item.image} size="15px" />
@@ -112,9 +112,9 @@ const FooterComponent = (props: IFooterComponentProps) => {
                             {item.text}
                           </div>
                         </a>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
 
@@ -127,8 +127,8 @@ const FooterComponent = (props: IFooterComponentProps) => {
                 >
                   <div className={styles["footer__social"]}>
                     {props.footerModule.middleFooter.socialMedia.socialItem.map((item, index) => (
-                      <li key={index}>
-                        <Link to={item.link} className={styles["footer__social-link"]}>
+                      <div className={styles["footer__social-items"]} key={index}>
+                        <a href={item.link} className={styles["footer__social-link"]} target="_blank">
                           <div className={styles["footer__social-icon"]}>
                             <IconComponent icon={item.image} size="15px" />
                           </div>
@@ -136,8 +136,8 @@ const FooterComponent = (props: IFooterComponentProps) => {
                             <div className={styles["footer__social-title"]}>{item.nameSocialMedia}</div>
                             {item.text}
                           </div>
-                        </Link>
-                      </li>
+                        </a>
+                      </div>
                     ))}
                   </div>
                 </ExpandablePanelComponent>

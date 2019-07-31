@@ -43,13 +43,18 @@
     min-height: 166px;
     padding: 16px;
     width: 100%;
+    justify-content: flex-start;
     .see-more-card {
       &__body {
         display: flex;
         align-items: flex-start;
       }
+
+      &__title {
+        order: -1;
+      }
       &__content {
-        flex: 1 1 auto;
+        display: flex;
       }
       &__image {
         order: 2;
