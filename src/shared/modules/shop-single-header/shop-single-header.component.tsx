@@ -15,6 +15,7 @@ import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
 import { BodyTextComponent } from "@app/core/bodytext";
+import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
@@ -87,7 +88,7 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                     </div>
                   </div>
                   <div className={styles["content__body"]}>
-                    <BodyTextComponent bodyTextModule={bodyTextModule} />
+                    <BodyTextComponent style={{ margin: 0, padding: 0 }} bodyTextModule={bodyTextModule} />
                   </div>
                   {checkList && (
                     <div className="uk-visible@s">
@@ -133,13 +134,18 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                             variant={"secondary"}
                           />
                         </div>
-                        <Button icon={ShareIcon} iconPosition="left" title={"Delen"} variant={"secondary"} />
+                        <ShareSocialDropdownComponent
+                          buttonTitle="Delen"
+                          shareSocial={{ facebook: { title: "title", url: "google.com/" } }}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className={`${styles["labels"]} uk-visible@s`}>
                     {keywords.map((item, key) => (
-                      <KeywordTagComponent key={key}>{item}</KeywordTagComponent>
+                      <KeywordTagComponent style={{ marginLeft: key == 0 ? "0" : "4px" }} key={key}>
+                        {item}
+                      </KeywordTagComponent>
                     ))}
                   </div>
                 </div>
