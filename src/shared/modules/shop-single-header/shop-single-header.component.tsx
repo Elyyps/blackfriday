@@ -16,12 +16,13 @@ import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
 }
 
-const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
+const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) => {
   const {
     backLink,
     checkList,
@@ -39,7 +40,8 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
     smallBackLink,
     storeLink,
     timeLeftBar,
-    title
+    title,
+    shareSocial
   } = props.shopSingleHeaderModule;
 
   return (
@@ -135,8 +137,8 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                           />
                         </div>
                         <ShareSocialDropdownComponent
-                          buttonTitle="Delen"
-                          shareSocial={{ facebook: { title: "title", url: "google.com/" } }}
+                          buttonTitle={props.intl.formatMessage({ id: "social-media-share" })}
+                          shareSocial={shareSocial}
                         />
                       </div>
                     </div>
@@ -161,4 +163,5 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
   );
 };
 
+const ShopSingleHeaderComponent = injectIntl(component);
 export { ShopSingleHeaderComponent };

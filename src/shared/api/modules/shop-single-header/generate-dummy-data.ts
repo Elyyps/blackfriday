@@ -6,6 +6,9 @@ import { generateShopSingleBodyTextDummydata } from "../body-text/generate-dummy
 export const generatedummyShopSingleHeaderData = (): ShopSingleHeaderModule => ({
   title: "15% korting op het hele assortiment",
   rating: { value: 5, text: "Beoordeel deze deal" },
+  shareSocial: {
+    facebook: { title: "Facebook sharing", url: "http://viper.blackfridaynederland.nl/shop-single" }
+  },
   bodyTextModule: {
     html: generateShopSingleBodyTextDummydata(),
     containerSize: "full",
