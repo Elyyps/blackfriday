@@ -1,11 +1,11 @@
-export const shareSocialNative = (title: string, text: string) => {
+export const shareSocialNative = (title: string, text: string, url: string) => {
   const navigatorInstance: any = navigator;
   if (navigatorInstance.share) {
     navigatorInstance
       .share({
         title,
         text,
-        url: window.location.href
+        url
       })
       .then(() => {
         alert("Successful callback");

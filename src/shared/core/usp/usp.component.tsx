@@ -17,7 +17,6 @@ type UspPropsWrapper = {
 
 const timerIntervalDuration = 3000;
 let timerInterval: NodeJS.Timeout;
-
 const USP = (props: IUSPProps) => {
   const isMobile = useIsMobile();
   const [uspItems, setUspItems] = useState<UspPropsWrapper[]>(

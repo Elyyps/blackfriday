@@ -19,7 +19,7 @@ export interface IButtonProps {
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: string;
-  iconPosition?: string;
+  iconPosition?: "right" | "left";
   iconStyle?: IconStyle;
   onClick?: (() => void) | string;
   size?: number;
