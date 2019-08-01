@@ -9,6 +9,7 @@ export interface IDropdownComponentProps {
   children: any;
   hasSelectedItems?: boolean;
   title: string;
+  hasClosed?: () => void;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
@@ -18,8 +19,17 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
   const buttonHeight = 38;
 
   useOutsideClick(wrapperRef, () => {
-    setIsOpen(false);
+    if (isOpen) {
+      close();
+    }
   });
+
+  const close = () => {
+    setIsOpen(false);
+    if (props.hasClosed) {
+      props.hasClosed();
+    }
+  };
 
   const getVariant = () => {
     if (isOpen) {
@@ -42,7 +52,11 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
       >
         <ClickableComponent
           onClick={() => {
-            setIsOpen(!isOpen);
+            if (isOpen) {
+              close();
+            } else {
+              setIsOpen(true);
+            }
           }}
           title={props.title}
           variant={getVariant()}

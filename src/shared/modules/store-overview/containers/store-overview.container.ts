@@ -4,6 +4,7 @@ import { IAppState } from "@app/stores";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { storeOverviewActions } from "@app/stores/store-overview";
 import { Store } from "@app/api/core/store/store";
+import { storeOverviewThunks } from "@app/middleware/thunk/store-overview.thunk";
 
 interface IStateProps {
   brandFilterItems: FilterItem[];
@@ -18,6 +19,14 @@ interface IDispatchProps {
   setSortBy: (sortBy: string) => void;
   setStatusFilters: (filterItems: FilterItem[]) => void;
   setStores: (stores: Store[]) => void;
+  getStores: (
+    skip: number,
+    take: number,
+    storeStatusFilter: FilterItem[],
+    categoryFilters: FilterItem[],
+    brandFilters: FilterItem[],
+    sortBy?: string
+  ) => void;
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IStoreOverviewComponentProps, IAppState> = state => {
@@ -37,7 +46,15 @@ const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IStoreOverviewCompo
   setCategoryFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setCategoryFilters({ filterItems })),
   setSortBy: (sortBy: string) => dispatch(storeOverviewActions.setSortBy({ sortBy })),
   setStatusFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setStatusFilters({ filterItems })),
-  setStores: (stores: Store[]) => dispatch(storeOverviewActions.setStores({ stores }))
+  setStores: (stores: Store[]) => dispatch(storeOverviewActions.setStores({ stores })),
+  getStores: (
+    skip: number,
+    take: number,
+    storeStatusFilter: FilterItem[],
+    categoryFilters: FilterItem[],
+    brandFilters: FilterItem[],
+    sortBy?: string
+  ) => dispatch(storeOverviewThunks.getStores(skip, take, storeStatusFilter, categoryFilters, brandFilters, sortBy))
 });
 
 export type StoreOverviewContainerProps = IStateProps & IDispatchProps;

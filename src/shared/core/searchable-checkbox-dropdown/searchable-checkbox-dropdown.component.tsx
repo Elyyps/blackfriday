@@ -34,19 +34,19 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
   }, [props.items, search]);
 
   const onChange = (id: string) => {
-    const result = props.items.map(item => {
+    let result = props.items.map(item => {
       if (item.id === id) {
-        if (item.isSelected) {
-          item.isSelected = false;
-        } else {
-          item.isSelected = true;
-        }
+        item.isSelected = !item.isSelected;
       }
 
       return item;
     });
 
-    props.onChange([...result]);
+    result = result.filter(item => {
+      return item.displayName.toLowerCase().includes(search);
+    });
+
+    setInternalItems([...result]);
   };
 
   const getFilterCountString = () => {
@@ -86,12 +86,20 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
       return item;
     });
 
-    props.onChange([...result]);
+    setInternalItems([...result]);
+  };
+
+  const persistFilters = () => {
+    props.onChange([...internalItems]);
   };
 
   return (
     <div>
-      <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems}>
+      <DropdownComponent
+        title={props.title}
+        hasSelectedItems={hasSelectedItems}
+        hasClosed={() => props.onChange([...internalItems])}
+      >
         <div className={styles["content"]}>
           <div className={styles["dropdown-head"]}>
             <Input
@@ -124,7 +132,11 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
               </li>
 
               <li>
-                <ClickableComponent title={`Toon ${getTotalCount()} ${props.showFilterName}`} variant="primary-brand" />
+                <ClickableComponent
+                  title={`Toon ${getTotalCount()} ${props.showFilterName}`}
+                  variant="primary-brand"
+                  onClick={() => persistFilters()}
+                />
               </li>
             </ul>
           </div>

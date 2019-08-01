@@ -1,20 +1,27 @@
 import { Dispatch } from "react-redux";
-import { IAppState, pageActions } from "@app/stores";
-import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
+import { IAppState } from "@app/stores";
+import { FilterItem } from "@app/api/core/filter/filter-item";
+import { getStoresApi } from "@app/api/core/store/endpoint";
+import { storeOverviewActions } from "@app/stores/store-overview";
 
-const getPage = (page: string) => async (dispatch: Dispatch<any>, getState: () => IAppState) => {
+const getStores = (
+  skip: number,
+  take: number,
+  storeStatusFilter: FilterItem[],
+  categoryFilters: FilterItem[],
+  brandFilters: FilterItem[],
+  sortBy?: string
+) => async (dispatch: Dispatch<any>, getState: () => IAppState) => {
   try {
-    const currentPage = pageList.find(pageItem => pageItem.route === page);
+    const result = getStoresApi(skip, take, storeStatusFilter, categoryFilters, brandFilters, sortBy);
 
-    if (currentPage) {
-      dispatch(pageActions.setCurrentPage({ page: currentPage }));
-    }
+    dispatch(storeOverviewActions.setStores({ stores: result }));
   } catch (error) {
     // tslint:disable-next-line: no-unused-expression no-unsafe-any
     // new FatalError(error.name, error.message, error.stack);
   }
 };
 
-export const pageThunks = {
-  getPage
+export const storeOverviewThunks = {
+  getStores
 };

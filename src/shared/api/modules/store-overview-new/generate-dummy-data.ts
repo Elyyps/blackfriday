@@ -11,7 +11,7 @@ export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   topMargin: "0px",
   id: "1",
   name: "StoreOverviewModule",
-  stores: generateDemoStoreDummyData()
+  stores: []
 });
 
 const generateStatusFilterItems = (): FilterItem[] => [

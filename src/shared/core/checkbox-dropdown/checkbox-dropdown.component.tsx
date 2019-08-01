@@ -16,6 +16,8 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
     const result = props.items.map(item => {
       if (item.id === id) {
         item.isSelected = !item.isSelected;
+      } else {
+        item.isSelected = false;
       }
 
       return item;

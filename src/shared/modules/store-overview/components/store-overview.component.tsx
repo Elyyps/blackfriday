@@ -28,11 +28,11 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     if (!props.sortBy) {
       props.setSortBy(props.storeOverviewModule.sortBy);
     }
-
-    if (props.stores.length === 0) {
-      props.setStores(props.storeOverviewModule.stores);
-    }
   };
+
+  useEffect(() => {
+    props.getStores(0, 50, props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems, props.sortBy);
+  }, [props.brandFilterItems, props.categoryFilterItems, props.statusFilterItems, props.sortBy]);
 
   return (
     <div>
