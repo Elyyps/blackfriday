@@ -15,19 +15,17 @@
     &__list {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: row;
       justify-content: space-between;
+      i {
+        flex: 1 1 200px;
+        margin: 4px;
+      }
     }
     &__cards {
-      flex: 0 1 19%;
-      @media (max-width: 1180px) {
-        flex: 0 1 24%;
-        padding: 4px;
-      }
-      @media (max-width: 940px) {
-        flex: 0 1 32%;
-      }
+      flex: 0 1 200px;
+      margin: 4px;
       @media (max-width: 720px) {
-        padding: 4px 0px;
         flex: 0 1 100%;
       }
     }

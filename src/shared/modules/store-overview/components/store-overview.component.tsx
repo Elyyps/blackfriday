@@ -60,23 +60,28 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       <FilterBarContainer totalAmountOfStores={props.storeOverviewModule.totalAmountOfStores} />
       <div className={styles["store-overview"]}>
         {props.stores && (
-          <div className={styles["stores-overview__body__list"]}>
-            {props.stores.map(store => {
-              return (
-                <React.Fragment key={store.id}>
-                  <div className={styles[`stores-overview__body__cards`]}>
-                    <ShopCardComponent store={store} />
-                    <br />
-                  </div>
-                  {/* {showAd() && (
+          // <div className="uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m" data-uk-margin>
+          <div className={` ${styles["stores-overview__body__list"]}`}>
+            {props.stores.map(store => (
+              <React.Fragment key={store.id}>
+                <div className={styles[`stores-overview__body__cards`]}>
+                  <ShopCardComponent store={store} />
+                  <br />
+                </div>
+
+                {/* {showAd() && (
                     <div style={{ width: "100%" }}>
                       <BannerComponent {...generateDummyBannerComponentData()} alternate={showAlternativeBanner} />
                       <br />
                     </div>
                   )} */}
-                </React.Fragment>
-              );
-            })}
+              </React.Fragment>
+            ))}
+            <i aria-hidden={true} />
+            <i aria-hidden={true} />
+            <i aria-hidden={true} />
+            <i aria-hidden={true} />
+
             <BottomScrollListener onBottom={bottomPageCallback} offset={150} />
           </div>
         )}
@@ -104,18 +109,20 @@ const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewCon
   }
 };
 
-let currentIndexBeforeAd: number = 0;
-let showAlternativeBanner: boolean = false;
+let currentIndexBeforeAd = 0;
+let showAlternativeBanner = false;
 let counter = 0;
 const showAd = () => {
-  counter++;
+  counter += 1;
 
   if (currentIndexBeforeAd === SHOW_AD_EVERY - 1) {
     currentIndexBeforeAd = 0;
     showAlternativeBanner = !showAlternativeBanner;
+
     return true;
   }
-  currentIndexBeforeAd++;
+  currentIndexBeforeAd += 1;
+
   return false;
 };
 
