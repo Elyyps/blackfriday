@@ -21,6 +21,7 @@ export interface ISearchableCheckboxDropdownProps {
 const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => {
   const [search, setSearch] = useState<string>("");
   const [internalItems, setInternalItems] = useState<FilterItem[]>(props.items);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     let result = [...props.items];
@@ -32,6 +33,12 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
 
     setInternalItems(result);
   }, [props.items, search]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      props.onChange([...internalItems]);
+    }
+  }, [isOpen]);
 
   const onChange = (id: string) => {
     let result = props.items.map(item => {
@@ -90,16 +97,12 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
   };
 
   const persistFilters = () => {
-    props.onChange([...internalItems]);
+    setIsOpen(false);
   };
 
   return (
     <div>
-      <DropdownComponent
-        title={props.title}
-        hasSelectedItems={hasSelectedItems}
-        hasClosed={() => props.onChange([...internalItems])}
-      >
+      <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems} isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className={styles["content"]}>
           <div className={styles["dropdown-head"]}>
             <Input

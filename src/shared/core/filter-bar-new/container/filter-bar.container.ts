@@ -9,6 +9,7 @@ interface IStateProps {
   categoryFilterItems: FilterItem[];
   sortBy: string;
   statusFilterItems: FilterItem[];
+  totalResults: number;
 }
 interface IDispatchProps {
   clearFilters: () => void;
@@ -19,13 +20,14 @@ interface IDispatchProps {
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IFilterBarProps, IAppState> = state => {
-  const { brandFilterItems, categoryFilterItems, sortBy, statusFilterItems } = state.storeOverview;
+  const { brandFilterItems, categoryFilterItems, sortBy, statusFilterItems, totalResults } = state.storeOverview;
 
   return {
     brandFilterItems,
     categoryFilterItems,
     sortBy,
-    statusFilterItems
+    statusFilterItems,
+    totalResults
   };
 };
 

@@ -12,13 +12,13 @@ interface IStateProps {
   sortBy: string;
   statusFilterItems: FilterItem[];
   stores: Store[];
+  totalResults: number;
 }
 interface IDispatchProps {
   setBrandFilters: (filterItems: FilterItem[]) => void;
   setCategoryFilters: (filterItems: FilterItem[]) => void;
   setSortBy: (sortBy: string) => void;
   setStatusFilters: (filterItems: FilterItem[]) => void;
-  setStores: (stores: Store[]) => void;
   getStores: (
     skip: number,
     take: number,
@@ -30,14 +30,22 @@ interface IDispatchProps {
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IStoreOverviewComponentProps, IAppState> = state => {
-  const { brandFilterItems, categoryFilterItems, sortBy, statusFilterItems, stores } = state.storeOverview;
+  const {
+    brandFilterItems,
+    categoryFilterItems,
+    sortBy,
+    statusFilterItems,
+    stores,
+    totalResults
+  } = state.storeOverview;
 
   return {
     brandFilterItems,
     categoryFilterItems,
     sortBy,
     statusFilterItems,
-    stores
+    stores,
+    totalResults
   };
 };
 
@@ -46,7 +54,6 @@ const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IStoreOverviewCompo
   setCategoryFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setCategoryFilters({ filterItems })),
   setSortBy: (sortBy: string) => dispatch(storeOverviewActions.setSortBy({ sortBy })),
   setStatusFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setStatusFilters({ filterItems })),
-  setStores: (stores: Store[]) => dispatch(storeOverviewActions.setStores({ stores })),
   getStores: (
     skip: number,
     take: number,

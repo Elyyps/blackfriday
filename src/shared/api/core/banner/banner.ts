@@ -1,6 +1,6 @@
 import { ImageType, BannerVariant } from "@app/core/banner";
 
-export class BannerComponent {
+export class Banner {
   public buttonLink: string;
   public buttonTitle: string;
   public image?: ImageType;
@@ -10,4 +10,5 @@ export class BannerComponent {
   public text: any;
   public title: string;
   public moreInfoLink: string;
+  public showAlternativeBanner: boolean;
 }

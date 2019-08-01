@@ -3,6 +3,7 @@ import { Action } from "redux";
 import * as ActionType from "./store-overview.types";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { Store } from "@app/api/core/store/store";
+import { number } from "prop-types";
 
 export interface IStoreOverviewState {
   brandFilterItems: FilterItem[];
@@ -10,6 +11,7 @@ export interface IStoreOverviewState {
   sortBy: string;
   statusFilterItems: FilterItem[];
   stores: Store[];
+  totalResults: number;
 }
 
 const INITIAL_STATE: IStoreOverviewState = {
@@ -17,7 +19,8 @@ const INITIAL_STATE: IStoreOverviewState = {
   categoryFilterItems: [],
   sortBy: "",
   statusFilterItems: [],
-  stores: []
+  stores: [],
+  totalResults: 0
 };
 
 export const storeOverviewReducer = (
@@ -54,14 +57,14 @@ export const storeOverviewReducer = (
       };
     }
     case REDUX.STORE_OVERVIEW.SET_STORES: {
-      const { stores } = <ActionType.IStores>action;
+      const { storesResult } = <ActionType.IStores>action;
 
-      return { ...state, stores };
+      return { ...state, stores: [...storesResult.stores], totalResults: storesResult.totalResults };
     }
     case REDUX.STORE_OVERVIEW.UPDATE_STORES: {
-      const { stores } = <ActionType.IStores>action;
+      const { storesResult } = <ActionType.IStores>action;
 
-      return { ...state, stores: [...state.stores, ...stores] };
+      return { ...state, stores: [...state.stores, ...storesResult.stores], totalResults: storesResult.totalResults };
     }
     default: {
       return state;

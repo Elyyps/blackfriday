@@ -16,9 +16,9 @@ const getStores = (
     const result = StoreApi.getStores(skip, take, storeStatusFilter, categoryFilters, brandFilters, sortBy);
 
     if (skip === 0) {
-      dispatch(storeOverviewActions.setStores({ stores: result }));
+      dispatch(storeOverviewActions.setStores({ storesResult: result }));
     } else {
-      dispatch(storeOverviewActions.updateStores({ stores: result }));
+      dispatch(storeOverviewActions.updateStores({ storesResult: result }));
     }
   } catch (error) {
     // tslint:disable-next-line: no-unused-expression no-unsafe-any

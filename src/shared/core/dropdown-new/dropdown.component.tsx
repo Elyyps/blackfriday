@@ -9,30 +9,23 @@ export interface IDropdownComponentProps {
   children: any;
   hasSelectedItems?: boolean;
   title: string;
-  hasClosed?: () => void;
+  isOpen?: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const zIndexWhenOpen = 1021;
   const buttonHeight = 38;
 
   useOutsideClick(wrapperRef, () => {
-    if (isOpen) {
-      close();
+    if (props.isOpen) {
+      props.setIsOpen(false);
     }
   });
 
-  const close = () => {
-    setIsOpen(false);
-    if (props.hasClosed) {
-      props.hasClosed();
-    }
-  };
-
   const getVariant = () => {
-    if (isOpen) {
+    if (props.isOpen) {
       return "primary-inverted";
     }
     if (props.hasSelectedItems) {
@@ -43,32 +36,32 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
   };
 
   const onButtonClick = () => {
-    if (isOpen) {
-      close();
+    if (props.isOpen) {
+      props.setIsOpen(false);
     } else {
-      setIsOpen(true);
+      props.setIsOpen(true);
     }
   };
 
   return (
-    <div className={`${styles["dropdown"]} ${!!isOpen && styles["dropdown--open"]}`} ref={wrapperRef}>
+    <div className={`${styles["dropdown"]} ${!!props.isOpen && styles["dropdown--open"]}`} ref={wrapperRef}>
       <div
-        className={`${styles["dropdown-child"]} ${!!props.hasSelectedItems &&
-          !isOpen &&
-          styles["dropdown-child--has-selected"]}`}
+        className={`${styles["dropdown-child"]} 
+        ${!!props.hasSelectedItems && !props.isOpen && styles["dropdown-child--has-selected"]}
+          ${!!props.isOpen && styles["dropdown-child--open"]}`}
       >
         <ClickableComponent
           onClick={() => onButtonClick()}
           title={props.title}
           variant={getVariant()}
           icon={ChevronDown}
-          zIndex={isOpen ? zIndexWhenOpen : undefined}
+          zIndex={props.isOpen ? zIndexWhenOpen : undefined}
           size={buttonHeight}
           fullWidth
           iconFillColor="#ffffff"
         />
       </div>
-      <div className={`${styles["content"]} ${!!isOpen && styles["content--open"]} `}>{props.children}</div>
+      <div className={`${styles["content"]} ${!!props.isOpen && styles["content--open"]} `}>{props.children}</div>
     </div>
   );
 };

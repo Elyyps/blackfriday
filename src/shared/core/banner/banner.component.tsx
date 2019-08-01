@@ -21,7 +21,7 @@ export interface IBannerComponentProps {
   text: any;
   title: string;
   variant?: BannerVariant;
-  alternate?: boolean;
+  showAlternativeBanner?: boolean;
   moreInfoLink: string;
 }
 
@@ -37,7 +37,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
     buttonTitle,
     logo,
     moreInfoLink,
-    alternate
+    showAlternativeBanner
   } = props;
 
   const classModify = `banner--${variant || "default"}`;
@@ -46,7 +46,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
     <div className={`${styles["container"]}`}>
       <div className={styles[classModify]}>
         <div className={styles["holder"]}>
-          {alternate ? (
+          {showAlternativeBanner ? (
             <React.Fragment>
               {renderImage(imageLink, image)}
               {renderBody(label, logo, text, title, buttonLink, buttonTitle, moreInfoLink)}
