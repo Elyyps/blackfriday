@@ -2,7 +2,7 @@
 
 exports[`[BodyText] should render component without crashing 1`] = `
 <div
-  className=" body-text body-text--center body-text--full"
+  className="uk-container body-text body-text--center body-text--full"
 >
   <HtmlRenderComponent
     html=" <h2>
