@@ -43,10 +43,9 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
   };
 
   return (
-    <div className={styles["dropdown"]} ref={wrapperRef}>
+    <div className={`${styles["dropdown"]} ${!!isOpen && styles["dropdown--open"]}`} ref={wrapperRef}>
       <div
-        className={`${styles["dropdown-child"]} ${!!isOpen &&
-          styles["dropdown-child--open"]} ${!!props.hasSelectedItems &&
+        className={`${styles["dropdown-child"]} ${!!props.hasSelectedItems &&
           !isOpen &&
           styles["dropdown-child--has-selected"]}`}
       >

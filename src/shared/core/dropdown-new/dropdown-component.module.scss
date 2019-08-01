@@ -1,5 +1,14 @@
 .dropdown {
   overflow: hidden;
+  &--open {
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.18);
+    button:hover {
+      background: white;
+    }
+    svg {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .dropdown-child {
@@ -17,15 +26,7 @@
   :focus {
     outline: none;
   }
-  &--open {
-    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.18);
-    button:hover {
-      background: white;
-    }
-    svg {
-      transform: rotate(180deg);
-    }
-  }
+
   &--has-selected {
     svg {
       stroke: white;

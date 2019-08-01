@@ -1,13 +1,17 @@
 import { BannerComponent } from "./banner";
 import CoolBlue from "@assets/cool-blue.svg";
-import Oasis from "@assets/oasis.jpg";
 
 export const generateDummyBannerComponentData = (): BannerComponent => ({
   title: "Black Friday bij Coolblue",
   buttonTitle: "Meer deals",
-  buttonLink: "#",
-  image: { src: Oasis, alt: "alt text oasis" },
+  buttonLink: "/deals-overview",
+  image: {
+    src: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+    alt: "alt text oasis"
+  },
+  imageLink: "https://coolblue.nl",
   label: "22 t/m 26 nov.",
   logo: { src: CoolBlue, alt: "alt text CoolBlue" },
-  text: "Een selectie van bizarre aanbiedingen. Meer info"
+  text: "Een selectie van bizarre aanbiedingen.",
+  moreInfoLink: "https://coolblue.nl"
 });

@@ -1,6 +1,7 @@
 import { StoreStatus, Store } from "./store";
 import { generateDemoStoreDummyData } from "./generate-dummy-data";
 import { FilterItem } from "../filter/filter-item";
+import { shuffle } from "@app/util/array";
 
 export const getStoresApi = (
   skip: number,
@@ -34,6 +35,42 @@ export const getStoresApi = (
     result = result.filter(store => {
       return store.availableBrands.some(r => selectedBrandFilters.includes(r));
     });
+  }
+
+  switch (sortBy) {
+    case "Relevantie":
+      // Keep default sorting
+      break;
+    case "Nieuwste":
+      result.reverse();
+      break;
+    case "Populair":
+      result = shuffle(result);
+      break;
+    case "Winkels A - Z":
+      result = result.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (b.name < a.name) {
+          return 1;
+        }
+        return 0;
+      });
+      break;
+    case "Winkels Z - A":
+      result = result.sort((a, b) => {
+        if (a.name > b.name) {
+          return -1;
+        }
+        if (b.name > a.name) {
+          return 1;
+        }
+        return 0;
+      });
+      break;
+    default:
+      break;
   }
 
   return result;

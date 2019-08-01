@@ -1,6 +1,7 @@
 import { StoreStatus, Store } from "./store";
 
 export const generateSingleStoreDummyData = (): Store => ({
+  id: "0",
   status: StoreStatus.NowValid,
   categories: ["Audio", "Games"],
   availableBrands: ["Apple", "Phillips", "Nintendo"],
@@ -13,6 +14,7 @@ export const generateSingleStoreDummyData = (): Store => ({
 
 export const generateDemoStoreDummyData = (): Store[] => [
   {
+    id: "0",
     status: StoreStatus.NowValid,
     categories: ["Audio", "Games", "Elektronisch"],
     availableBrands: ["Apple", "Phillips", "Nintendo", "Microsoft", "Phillips", "Nintendo", "Sony", "Vodafone"],
@@ -23,6 +25,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "1",
     status: StoreStatus.AlmostOver,
     categories: ["Mode", "Huishouden"],
     availableBrands: ["Apple", "Phillips", "Nintendo", "Adidas", "Jack & Jones", "Happy Socks"],
@@ -33,6 +36,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 30
   },
   {
+    id: "2",
     status: StoreStatus.NowValid,
     categories: ["Elektronisch"],
     availableBrands: ["Vodafone"],
@@ -43,6 +47,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "3",
     status: StoreStatus.NowValid,
     categories: ["Mode", "Huishouden"],
     availableBrands: ["Jack & Jones", "Adidas", "Converse", "Phillips", "Sony"],
@@ -53,6 +58,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "4",
     status: StoreStatus.NowValid,
     categories: ["Elektronisch"],
     availableBrands: ["Sony", "Samsung", "Apple"],
@@ -63,6 +69,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "5",
     status: StoreStatus.NowValid,
     categories: ["Audio", "Elektronisch", "Huishouden"],
     availableBrands: ["Apple", "Phillips", "Nintendo", "Sony", "Microsoft"],
@@ -73,6 +80,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 100
   },
   {
+    id: "6",
     status: StoreStatus.NowValid,
     categories: ["Audio", "Games", "Elektronisch"],
     availableBrands: ["Apple", "Phillips", "Nintendo", "Sony", "Vodafone", "Microsoft", "Samsung"],
@@ -83,6 +91,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "7",
     status: StoreStatus.AlmostOver,
     categories: ["Audio", "Elektronisch"],
     availableBrands: ["Phillips", "Samsung"],
@@ -93,6 +102,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 20
   },
   {
+    id: "23",
     status: StoreStatus.NowValid,
     categories: ["Mode", "Sport"],
     availableBrands: ["Nike"],
@@ -103,6 +113,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 90
   },
   {
+    id: "8",
     status: StoreStatus.Unknown,
     categories: ["Mode", "Sport"],
     availableBrands: ["Nike", "Adidas", "JBL"],
@@ -113,6 +124,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 0
   },
   {
+    id: "9",
     status: StoreStatus.Expired,
     categories: ["Elektronisch"],
     availableBrands: ["Apple", "Sony"],
@@ -123,6 +135,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 0
   },
   {
+    id: "10",
     status: StoreStatus.NowValid,
     categories: ["Elektronisch", "Sport"],
     availableBrands: ["Apple", "Phillips", "Nintendo", "Sony", "Microsoft", "Guess"],
@@ -133,6 +146,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "11",
     status: StoreStatus.StartsSoon,
     categories: ["Mode"],
     availableBrands: ["Jack & Jones", "Adidas", "JBL", "Converse", "Happy Socks"],
@@ -144,6 +158,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     startsInDays: 5
   },
   {
+    id: "12",
     status: StoreStatus.Unknown,
     categories: ["Mode", "Sport"],
     availableBrands: ["Adidas"],
@@ -154,6 +169,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 0
   },
   {
+    id: "13",
     status: StoreStatus.NowValid,
     categories: ["Mode", "Sport"],
     availableBrands: ["Adidas", "Jack & Jones", "Only"],
@@ -164,6 +180,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "14",
     status: StoreStatus.NowValid,
     categories: ["Audio", "Games", "Elektronisch"],
     availableBrands: ["Apple", "Phillips", "Nintendo", "Microsoft", "HP", "Sony"],
@@ -174,6 +191,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "15",
     status: StoreStatus.StartsSoon,
     categories: ["Elektronisch"],
     availableBrands: ["Apple"],
@@ -185,6 +203,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     startsInDays: 3
   },
   {
+    id: "16",
     status: StoreStatus.NowValid,
     categories: ["Audio", "Games", "Elektronisch", "Mode", "Huishouden"],
     availableBrands: [
@@ -211,6 +230,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "17",
     status: StoreStatus.StartsSoon,
     categories: ["Elektronisch"],
     availableBrands: ["Apple", "Sony", "Phillips"],
@@ -222,6 +242,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     startsInDays: 5
   },
   {
+    id: "18",
     status: StoreStatus.NowValid,
     categories: ["Audio", "Games"],
     availableBrands: ["Sony", "JBL", "Phillips"],
@@ -232,6 +253,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "19",
     status: StoreStatus.NowValid,
     categories: ["Elektronisch", "Games", "Huishouden"],
     availableBrands: ["Apple"],
@@ -242,6 +264,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "20",
     status: StoreStatus.NowValid,
     categories: ["Mode"],
     availableBrands: ["Jack & Jones", "Adidas", "Only", "Happy Socks", "Only"],
@@ -252,6 +275,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
+    id: "21",
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Sony", "Phillips"],
@@ -262,16 +286,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     timeLeftPercentage: 80
   },
   {
-    status: StoreStatus.AlmostOver,
-    categories: ["Elektronisch"],
-    availableBrands: ["Sony", "Vodafone", "Apple"],
-    name: "Ben",
-    moreInfoLink: "https://www.ben.nl/",
-    description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/ben.png",
-    timeLeftPercentage: 20
-  },
-  {
+    id: "22",
     status: StoreStatus.AlmostOver,
     categories: ["Elektronisch"],
     availableBrands: ["Sony", "Vodafone", "Apple"],

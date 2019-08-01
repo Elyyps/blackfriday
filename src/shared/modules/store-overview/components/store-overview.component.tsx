@@ -5,10 +5,15 @@ import { StoreOverviewContainerProps } from "../containers/store-overview.contai
 
 import styles from "./store-overview-component.module.scss";
 import { ShopCardComponent } from "@app/core/shop-card";
+import { BannerComponent } from "@app/core/banner";
+import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
 }
+
+const TAKE = 25;
+const SHOW_AD_EVERY = 10;
 
 const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
   useEffect(() => {
@@ -30,8 +35,20 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     }
   };
 
+  let currentIndexBeforeAd: number = 0;
+  let showAlternativeBanner: boolean = false;
+  const showAd = () => {
+    if (currentIndexBeforeAd === SHOW_AD_EVERY - 1) {
+      currentIndexBeforeAd = 0;
+      showAlternativeBanner = !showAlternativeBanner;
+      return true;
+    }
+    currentIndexBeforeAd++;
+    return false;
+  };
+
   useEffect(() => {
-    props.getStores(0, 50, props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems, props.sortBy);
+    props.getStores(0, TAKE, props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems, props.sortBy);
   }, [props.brandFilterItems, props.categoryFilterItems, props.statusFilterItems, props.sortBy]);
 
   return (
@@ -41,12 +58,20 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
         <div className={styles["store-overview"]}>
           {props.stores && (
             <div className={styles["stores-overview__body__list"]}>
-              {props.stores.map(store => {
+              {props.stores.map((store, index) => {
                 return (
-                  <div className={styles[`stores-overview__body__cards`]}>
-                    <ShopCardComponent store={store} />
-                    <br />
-                  </div>
+                  <React.Fragment key={store.id}>
+                    <div className={styles[`stores-overview__body__cards`]}>
+                      <ShopCardComponent store={store} />
+                      <br />
+                    </div>
+                    {showAd() && (
+                      <div style={{ width: "100%" }}>
+                        <BannerComponent {...generateDummyBannerComponentData()} alternate={showAlternativeBanner} />
+                        <br />
+                      </div>
+                    )}
+                  </React.Fragment>
                 );
               })}
             </div>

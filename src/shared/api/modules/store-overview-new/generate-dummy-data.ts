@@ -1,6 +1,5 @@
 import { StoreOverviewModule } from "./store-overview.module";
 import { FilterItem } from "@app/api/core/filter/filter-item";
-import { generateDemoStoreDummyData } from "@app/api/core/store/generate-dummy-data";
 
 export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   brandFilterItems: generateBrandFilterItems(),

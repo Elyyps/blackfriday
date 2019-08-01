@@ -25,6 +25,10 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.setBrandFilters([...items]);
   };
 
+  const setSort = (sortByString: string) => {
+    props.setSortBy(sortByString);
+  };
+
   const getTotalNumberOfFilters = (): number =>
     props.statusFilterItems.filter(item => item.isSelected).length +
     props.categoryFilterItems.filter(item => item.isSelected).length +
@@ -89,10 +93,8 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
           <span role={"button"} className={styles["filter__sort-change"]}>
             {/* {orderBy} */}
             <SelectComponent
-              options={["Relevatie", "Nieuwste", "Prijs"]}
-              onSelect={() => {
-                // todo, implement filter properly
-              }}
+              options={["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
+              onSelect={setSort}
             />
           </span>
         </div>

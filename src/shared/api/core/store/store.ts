@@ -1,4 +1,5 @@
 export class Store {
+  public id: string;
   public status: StoreStatus;
   public categories: string[];
   public availableBrands: string[];
