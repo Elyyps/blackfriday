@@ -9,4 +9,5 @@ export class StoreOverviewModule extends WordPressPostModule {
   public statusFilterItems: FilterItem[];
 
   public stores: Store[];
+  public totalAmountOfStores: number;
 }

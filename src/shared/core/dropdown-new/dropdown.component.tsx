@@ -42,6 +42,14 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
     return "secondary";
   };
 
+  const onButtonClick = () => {
+    if (isOpen) {
+      close();
+    } else {
+      setIsOpen(true);
+    }
+  };
+
   return (
     <div className={`${styles["dropdown"]} ${!!isOpen && styles["dropdown--open"]}`} ref={wrapperRef}>
       <div
@@ -50,13 +58,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           styles["dropdown-child--has-selected"]}`}
       >
         <ClickableComponent
-          onClick={() => {
-            if (isOpen) {
-              close();
-            } else {
-              setIsOpen(true);
-            }
-          }}
+          onClick={() => onButtonClick()}
           title={props.title}
           variant={getVariant()}
           icon={ChevronDown}

@@ -31,11 +31,17 @@ const setStores = (payload: ActionType.IStores) => ({
   ...payload
 });
 
+const updateStores = (payload: ActionType.IStores) => ({
+  type: REDUX.STORE_OVERVIEW.UPDATE_STORES,
+  ...payload
+});
+
 export const storeOverviewActions = {
   setBrandFilters,
   setCategoryFilters,
   setSortBy,
   setStatusFilters,
   clearAllFilters,
-  setStores
+  setStores,
+  updateStores
 };

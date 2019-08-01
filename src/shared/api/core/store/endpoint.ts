@@ -3,7 +3,9 @@ import { generateDemoStoreDummyData } from "./generate-dummy-data";
 import { FilterItem } from "../filter/filter-item";
 import { shuffle } from "@app/util/array";
 
-export const getStoresApi = (
+const initialStoresResult = [...generateDemoStoreDummyData()];
+
+const getStores = (
   skip: number,
   take: number,
   storeStatusFilters: FilterItem[],
@@ -15,23 +17,23 @@ export const getStoresApi = (
   const selectedCategoryFilters = getSelectedFilters(categoryFilters);
   const selectedBrandFilters = getSelectedFilters(brandFilters);
 
-  let result = [...generateDemoStoreDummyData()];
+  let result = [...initialStoresResult];
 
   result = result.splice(skip, take);
 
-  if (selectedStoreStatus) {
+  if (selectedStoreStatus !== undefined) {
     result = result.filter(store => {
       return store.status === selectedStoreStatus;
     });
   }
 
-  if (selectedCategoryFilters) {
+  if (selectedCategoryFilters !== undefined) {
     result = result.filter(store => {
       return store.categories.some(r => selectedCategoryFilters.includes(r));
     });
   }
 
-  if (selectedBrandFilters) {
+  if (selectedBrandFilters !== undefined) {
     result = result.filter(store => {
       return store.availableBrands.some(r => selectedBrandFilters.includes(r));
     });
@@ -80,18 +82,7 @@ const getSelectedStoreStatus = (filterItems: FilterItem[]): StoreStatus | undefi
   const selectedItem = filterItems.find(item => item.isSelected);
 
   if (selectedItem) {
-    switch (selectedItem.displayName) {
-      case "Bijna afgelopen":
-        return StoreStatus.AlmostOver;
-      case "Nu geldig":
-        return StoreStatus.NowValid;
-      case "Start binnenkort":
-        return StoreStatus.StartsSoon;
-      case "Verlopen":
-        return StoreStatus.Expired;
-      case "Onbekend":
-        return StoreStatus.Unknown;
-    }
+    return convertToStatus(selectedItem.displayName);
   }
 
   return undefined;
@@ -105,4 +96,51 @@ const getSelectedFilters = (filterItems: FilterItem[]): string[] | undefined => 
   }
 
   return undefined;
+};
+
+const convertToStatus = (value: string): StoreStatus => {
+  switch (value) {
+    case "Bijna afgelopen":
+      return StoreStatus.AlmostOver;
+    case "Nu geldig":
+      return StoreStatus.NowValid;
+    case "Start binnenkort":
+      return StoreStatus.StartsSoon;
+    case "Verlopen":
+      return StoreStatus.Expired;
+    case "Onbekend":
+      return StoreStatus.Unknown;
+    default:
+      return StoreStatus.Unknown;
+  }
+};
+
+const getAmountForStatus = (status: string): number => {
+  const storeStatus = convertToStatus(status);
+
+  const amount = initialStoresResult.filter(store => {
+    return store.status === storeStatus;
+  }).length;
+
+  return amount;
+};
+
+const getAmountForCategory = (category: string): number => {
+  return initialStoresResult.filter(store => {
+    return store.categories.indexOf(category) > -1;
+  }).length;
+};
+
+const getAmountForBrand = (brand: string): number => {
+  return initialStoresResult.filter(store => {
+    return store.availableBrands.indexOf(brand) > -1;
+  }).length;
+};
+
+export const StoreApi = {
+  getStores,
+  getAmountForStatus,
+  initialStoresResult,
+  getAmountForCategory,
+  getAmountForBrand
 };

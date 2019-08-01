@@ -58,6 +58,11 @@ export const storeOverviewReducer = (
 
       return { ...state, stores };
     }
+    case REDUX.STORE_OVERVIEW.UPDATE_STORES: {
+      const { stores } = <ActionType.IStores>action;
+
+      return { ...state, stores: [...state.stores, ...stores] };
+    }
     default: {
       return state;
     }

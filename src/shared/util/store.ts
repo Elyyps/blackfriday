@@ -5,11 +5,11 @@ export const getStoreStatusText = (status: StoreStatus) => {
     case StoreStatus.AlmostOver:
       return "Bijna afgelopen";
     case StoreStatus.Expired:
-      return "Nu geldig";
-    case StoreStatus.NowValid:
-      return "Start binnenkort";
-    case StoreStatus.StartsSoon:
       return "Verlopen";
+    case StoreStatus.NowValid:
+      return "Nu geldig";
+    case StoreStatus.StartsSoon:
+      return "Start binnenkort";
     case StoreStatus.Unknown:
       return "Onbekend";
     default:

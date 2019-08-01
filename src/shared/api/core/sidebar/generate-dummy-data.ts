@@ -15,7 +15,8 @@ export const generateSidebarData = (): Sidebar => {
       image: { src: Oasis, alt: "alt text oasis" },
       label: "22 t/m 26 nov.",
       logo: { src: CoolBlue, alt: "alt text CoolBlue" },
-      text: "Een selectie van bizarre aanbiedingen. Meer info"
+      text: "Een selectie van bizarre aanbiedingen. Meer info",
+      moreInfoLink: "https://coolblue.com"
     },
     featuredItemsGroups: [
       {
