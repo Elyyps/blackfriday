@@ -16,7 +16,7 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       discountText: "Bespaar 40%",
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2q1D2t2D003Z1X023z18/Image%202019-07-01%20at%204.45.18%20PM.png?X-CloudApp-Visitor-Id=3342233&v=d96f45c6",
-      button: { title: "Naar deals", url: "/" }
+      button: { title: "Naar deals", url: "/deals-overview" }
     },
     {
       title: "Hoofdkussen Actie kussenset",
@@ -27,7 +27,7 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       discountText: "Bespaar 40%",
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/42013C072O2711070D0a/Image%202019-07-01%20at%204.46.51%20PM.png?X-CloudApp-Visitor-Id=3342233&v=c0749925",
-      button: { title: "Naar deals", url: "/" }
+      button: { title: "Naar deals", url: "/deals-overview" }
     },
     {
       title: "Lattenbodem FLEXUS 2600 VL",
@@ -37,7 +37,7 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       discountText: "Bespaar 40%",
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/193s25422A3q0v2F1f35/Image%202019-07-01%20at%204.47.42%20PM.png?X-CloudApp-Visitor-Id=3342233&v=b6e3280e",
-      button: { title: "Naar deals", url: "/" }
+      button: { title: "Naar deals", url: "/deals-overview" }
     },
     {
       title: "Dyson apparaten met korting",
@@ -47,7 +47,7 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       discountText: "Bespaar 40%",
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-      button: { title: "Naar deals", url: "/" }
+      button: { title: "Naar deals", url: "/deals-overview" }
     },
     {
       title: "Dyson apparaten met korting #2",
@@ -57,7 +57,7 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       discountText: "Bespaar 40%",
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-      button: { title: "Naar deals", url: "/" }
+      button: { title: "Naar deals", url: "/deals-overview" }
     }
   ],
   shops: [
@@ -66,10 +66,10 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
 
-      button: { title: "Naar deals", url: "/" },
+      button: { title: "Naar deals", url: "/deals-overview" },
       timeLeftBar: { value: 0.3, text: "BIJNA AFGELOPEN!" },
       content: "Een selectie van bizarre vele aanbiedingen",
-      seeMore: { title: "Meer Info", url: "/" },
+      seeMore: { title: "Meer Info", url: "/stores-single" },
       category: "fdsfds",
       brand: "coolblue"
     },
@@ -78,10 +78,10 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
 
-      button: { title: "Naar deals", url: "/" },
+      button: { title: "Naar deals", url: "/deals-overview" },
       timeLeftBar: { value: 0.1, text: "BIJNA AFGELOPEN!" },
       content: "Een selectie van bizarre vele aanbiedingen",
-      seeMore: { title: "Meer Info", url: "/" },
+      seeMore: { title: "Meer Info", url: "/stores-single" },
       category: "fdsfds",
       brand: "coolblue"
     },
@@ -90,10 +90,10 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       picture:
         "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
 
-      button: { title: "Meer info", url: "/" },
+      button: { title: "Naar deals", url: "/deals-overview" },
       timeLeftBar: { value: 0.8, text: "nu geldig" },
       content: "Een selectie van bizarre vele aanbiedingen",
-      seeMore: { title: "Meer Info", url: "/" },
+      seeMore: { title: "Meer Info", url: "/stores-single" },
       category: "fdsfds",
       brand: "coolblue"
     }

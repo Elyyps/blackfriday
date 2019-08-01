@@ -7,11 +7,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Bekbeddiscounter.nl",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0.8, text: "Nu geldig" },
@@ -23,11 +23,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Swiss Sense",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0, text: "ACTIE START OVER 5 DAGEN!" },
@@ -38,11 +38,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 1, text: "Nu geldig" },
@@ -53,11 +53,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0.2, text: "Nu geldig" },
@@ -68,11 +68,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0.2, text: "Nu geldig" },
@@ -83,11 +83,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0.2, text: "Nu geldig" },
@@ -98,11 +98,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0.2, text: "Nu geldig" },
@@ -113,11 +113,11 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
       title: "Beter Bed",
       content: "Een seletie van bizarre vele aanbiedingen.",
       button: {
-        url: "/",
+        url: "/deals-overview",
         title: "Naar deals"
       },
       seeMore: {
-        url: "/",
+        url: "/stores-single",
         title: "Meer info"
       },
       timeLeftBar: { value: 0.2, text: "Nu geldig" },

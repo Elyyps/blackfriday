@@ -139,7 +139,9 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                   </div>
                   <div className={`${styles["labels"]} uk-visible@s`}>
                     {keywords.map((item, key) => (
-                      <KeywordTagComponent key={key}>{item}</KeywordTagComponent>
+                      <KeywordTagComponent style={{ marginLeft: key === 0 ? "0px" : "4px" }} key={key}>
+                        {item}
+                      </KeywordTagComponent>
                     ))}
                   </div>
                 </div>

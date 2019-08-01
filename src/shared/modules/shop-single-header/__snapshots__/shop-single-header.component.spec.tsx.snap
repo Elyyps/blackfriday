@@ -218,7 +218,7 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
                 >
                   <a
                     className="actions__item__first"
-                    href="/"
+                    href="/stores-single"
                     role="button"
                   >
                     <h5
@@ -284,16 +284,31 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
               >
                 <KeywordTagComponent
                   key="0"
+                  style={
+                    Object {
+                      "marginLeft": "0px",
+                    }
+                  }
                 >
                   Wonen & slapen
                 </KeywordTagComponent>
                 <KeywordTagComponent
                   key="1"
+                  style={
+                    Object {
+                      "marginLeft": "4px",
+                    }
+                  }
                 >
                   Swiss sense
                 </KeywordTagComponent>
                 <KeywordTagComponent
                   key="2"
+                  style={
+                    Object {
+                      "marginLeft": "4px",
+                    }
+                  }
                 >
                   hastens
                 </KeywordTagComponent>

@@ -5,7 +5,7 @@ exports[`[Sidebar] should render component without crashing 1`] = `
   className="sidebar"
 >
   <BannerComponent
-    buttonLink="#"
+    buttonLink="/deals-overview"
     buttonTitle="Meer deals"
     image={
       Object {
@@ -31,28 +31,28 @@ exports[`[Sidebar] should render component without crashing 1`] = `
           "image": "imac.png",
           "link": Object {
             "title": "Apple iPhones",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
         Object {
           "image": "iphone.png",
           "link": Object {
             "title": "Apple MacBooks",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
         Object {
           "image": "loader.png",
           "link": Object {
             "title": "Apple iMacs",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
         Object {
           "icon": "party.svg",
           "link": Object {
             "title": "Naar alle deals!",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
       ]
@@ -67,28 +67,28 @@ exports[`[Sidebar] should render component without crashing 1`] = `
           "image": "cool-blue.svg",
           "link": Object {
             "title": "Coolblue",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
         Object {
           "image": "cool-blue.svg",
           "link": Object {
             "title": "Alternate",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
         Object {
           "image": "cool-blue.svg",
           "link": Object {
             "title": "Beddenreus",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
         Object {
           "icon": "party.svg",
           "link": Object {
             "title": "Naar alle winkels!",
-            "url": "/",
+            "url": "/stores-single",
           },
         },
       ]

@@ -57,7 +57,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                 link={
                   Object {
                     "title": "Productdeals",
-                    "url": "./",
+                    "url": "/deals-overview",
                   }
                 }
               />
@@ -67,7 +67,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                 link={
                   Object {
                     "title": "Deelnemende winkels",
-                    "url": "./",
+                    "url": "/stores-overview",
                   }
                 }
               />
@@ -155,7 +155,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                       "default": "chevron-right.svg",
                     }
                   }
-                  to="./"
+                  to="/stores-single"
                   variant="quaternary"
                 >
                   Lees meer
@@ -320,7 +320,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                       "default": "chevron-right.svg",
                     }
                   }
-                  to="./"
+                  to="/stores-single"
                   variant="quaternary"
                 >
                   Lees meer
@@ -364,7 +364,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Apple Airpods",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -378,7 +378,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Apple iPhones",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -392,7 +392,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Apple MacBooks",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -406,7 +406,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Apple iMacs",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -433,7 +433,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Coolblue",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -447,7 +447,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Alternate",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -461,7 +461,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "Beddenreus",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />
@@ -475,7 +475,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                   link={
                     Object {
                       "title": "De Bijenkorf",
-                      "url": "/",
+                      "url": "/stores-single",
                     }
                   }
                 />

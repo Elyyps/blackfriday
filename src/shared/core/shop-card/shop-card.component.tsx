@@ -3,9 +3,9 @@ import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { ImageComponent } from "@app/prep/modules-prep/core";
 import { LinkComponent } from "../link";
-import { Button } from "../button";
 import ShopIcon from "@assets/icons/link.svg";
 import { ShadowCardComponent } from "../shadow-card";
+import { ClickableComponent } from "../clickable";
 
 export interface IShopCardComponentProps {
   buttonLink: string;
@@ -21,7 +21,7 @@ export interface IShopCardComponentProps {
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const { title, seeMoreLink, variant, subtitle, seeMoreText, content, image, range, buttonText } = props;
+  const { title, seeMoreLink, variant, subtitle, buttonLink, seeMoreText, content, image, range, buttonText } = props;
   const getStatusBarColor = () => {
     const rangeNumber = range;
     const limit = 0.5;
@@ -51,7 +51,13 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
           </div>
         </div>
         <div className={styles["shop-card__action"]}>
-          <Button title={buttonText} iconPosition="right" icon={ShopIcon} />
+          <ClickableComponent
+            iconStyle="filled"
+            href={buttonLink}
+            title={buttonText}
+            iconPosition="right"
+            icon={ShopIcon}
+          />
         </div>
       </div>
     </ShadowCardComponent>
