@@ -44,7 +44,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
             <ImageComponent src={image} />
           </div>
           <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>{subtitle}</div>
-          <TimeLeftBarComponent variant="responsive" color={getStatusBarColor()} range={range} />
+          <TimeLeftBarComponent color={getStatusBarColor()} range={range} />
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{title}</div>
             {content} {seeMoreText && seeMoreLink && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}

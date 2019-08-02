@@ -13,9 +13,10 @@ import { Button } from "@app/core";
 import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
+import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
+import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-data";
 import { LinkComponent } from "@app/core/link";
 import { BodyTextComponent } from "@app/core/bodytext";
-import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IShopSingleHeaderComponentProps {

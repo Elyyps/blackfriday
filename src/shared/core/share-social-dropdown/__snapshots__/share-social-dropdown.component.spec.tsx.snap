@@ -5,6 +5,7 @@ exports[`[ShareSocialDropdown] should render component without crashing 1`] = `
   className="share-social-dropdown"
 >
   <DropdownComponent
+    iconPosition="left"
     title="Share"
   >
     <div

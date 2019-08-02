@@ -21,7 +21,6 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       <TimeLeftBarComponent
         color="none"
         range={0}
-        variant="responsive"
       />
       <div
         className="shop-card__content"
