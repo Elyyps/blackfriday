@@ -24,8 +24,7 @@
   position: relative;
   @media (max-width: 768px) {
     min-height: 168px;
-    height: 168px;
-    max-height: 168px;
+
   }
 
   &__body {
@@ -59,7 +58,7 @@
     @media (max-width: 768px) {
       order: 2;
       width: 90px;
-      height: auto;
+      height: 90px;
       flex: 0 0 90px;
       margin-bottom: 0;
     }

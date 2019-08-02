@@ -6,7 +6,7 @@ import { shallowWithIntl } from "enzyme-react-intl";
 describe("[MobileFilter]", () => {
   it("should render component without crashing", () => {
     const renderedComponent = shallowWithIntl(
-      <MobileFilterComponent totalStores={0} onClear={jest.fn}  filterItems={mobileFilterDummyData} />
+      <MobileFilterComponent totalStores={0} onClear={jest.fn} onFinish={jest.fn} filterItems={mobileFilterDummyData} />
     );
     expect(renderedComponent).toMatchSnapshot();
   });
