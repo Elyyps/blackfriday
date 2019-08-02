@@ -19,7 +19,7 @@ export interface IMobileFilterComponentProps {
   totalStores: number;
 }
 
-interface IMobileFilterSelectedItems {
+export interface IMobileFilterSelectedItems {
   selectedItems: string[];
   title: string;
 }
@@ -36,6 +36,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       selectedItems: item.selectedItems
     }));
     props.onFinish(selectedItems);
+    setIsFilterOpened(false);
   };
 
   const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
