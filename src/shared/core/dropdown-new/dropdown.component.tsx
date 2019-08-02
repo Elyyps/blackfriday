@@ -2,11 +2,13 @@ import React, { useState, useRef } from "react";
 
 import styles from "./dropdown-component.module.scss";
 import { ClickableComponent } from "../clickable";
-import ChevronDown from "@assets/icons/chevron-down.svg";
 import useOutsideClick from "@app/util/outside-click";
 
 export interface IDropdownComponentProps {
+  animated?: boolean;
   children: any;
+  icon?: string;
+  iconPosition?: "right" | "left";
   title: string;
 }
 
@@ -29,10 +31,12 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           }}
           title={props.title}
           variant={isOpen ? "primary-inverted" : "secondary"}
-          icon={ChevronDown}
+          icon={props.icon ? props.icon : "ChevronDown"}
           zIndex={isOpen ? zIndexWhenOpen : undefined}
           size={buttonHeight}
           fullWidth
+          iconPosition={props.iconPosition ? props.iconPosition : "left"}
+          animated={props.animated}
         />
       </div>
       <div className={`${styles["content"]} ${!!isOpen && styles["content--open"]} `}>{props.children}</div>

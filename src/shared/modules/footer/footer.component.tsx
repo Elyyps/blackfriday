@@ -63,7 +63,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                     <ul className={styles["footer__column-nav"]}>
                       {item.links.map((link, i) => (
                         <li key={i}>
-                          <LinkComponent to={link.url}>{link.title}</LinkComponent>
+                          <a href={link.url}>{link.title}</a>
                         </li>
                       ))}
                     </ul>

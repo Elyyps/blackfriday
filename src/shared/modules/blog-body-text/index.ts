@@ -1,1 +1,1 @@
-export * from './blog-body-text.component'
+export * from "./blog-body-text.component";

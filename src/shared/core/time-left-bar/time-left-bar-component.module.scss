@@ -14,7 +14,7 @@
 .time-left-bar {
   color: $gray-lighter;
   margin-bottom: 8px;
-  @media (max-width: 699px) {
+  @media (max-width: 720px) {
     order: 3;
     width: 100%;
     clear: both;

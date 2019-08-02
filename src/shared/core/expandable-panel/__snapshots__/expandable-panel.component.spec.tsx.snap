@@ -12,26 +12,14 @@ exports[`[ExpandablePanelComponent] should render component without crashing 1`]
       <ul
         className="expandable-panel__list"
       >
-        <li>
-          <div
-            aria-label="expandButton"
-            className="expandable-panel__title"
-            onClick={[Function]}
-            role="button"
-          >
-            <div
-              className="expandable-panel__icon"
-            >
-              <IconComponent
-                fillColor="#fff"
-                icon="chevron-down.svg"
-                size="20px"
-              />
-            </div>
-            <span>
-              Title
-            </span>
-          </div>
+        <li
+          aria-label="expandButton"
+          onClick={[Function]}
+          role="button"
+        >
+          <span>
+            Title
+          </span>
           <div
             className="expandable-panel__content expandable-panel__hidden"
           />

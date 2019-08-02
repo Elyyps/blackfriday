@@ -48,6 +48,7 @@ exports[`[DiscountCard] should render component without crashing 1`] = `
   >
     <button
       className="discount-card__coupon"
+      onClick={[Function]}
     >
       COUPON
     </button>

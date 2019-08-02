@@ -6,7 +6,7 @@ import { BodyTextModule } from "../body-text/body-text";
 import { IShareSocialComponent } from "@app/api/core/share-social";
 
 export class ShopSingleHeaderModule extends WordPressPostModule {
-  public backLink: Link;
+  public backLink: Link[];
   public bodyTextModule: BodyTextModule;
   public checkList: string[];
   public CheckListTitle: string;

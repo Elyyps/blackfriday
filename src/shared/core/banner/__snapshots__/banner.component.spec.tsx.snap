@@ -2,7 +2,7 @@
 
 exports[`[Banner] should render component without crashing 1`] = `
 <div
-  className="uk-container container"
+  className="uk-container"
 >
   <div
     className="banner--default"
