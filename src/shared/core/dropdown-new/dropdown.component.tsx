@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 
 import styles from "./dropdown-component.module.scss";
 import { ClickableComponent } from "../clickable";
@@ -8,9 +8,9 @@ import useOutsideClick from "@app/util/outside-click";
 export interface IDropdownComponentProps {
   children: any;
   hasSelectedItems?: boolean;
-  title: string;
   isOpen?: boolean;
   setIsOpen: (isOpen: boolean) => void;
+  title: string;
 }
 
 const DropdownComponent = (props: IDropdownComponentProps) => {
@@ -51,7 +51,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           ${!!props.isOpen && styles["dropdown-child--open"]}`}
       >
         <ClickableComponent
-          onClick={() => onButtonClick()}
+          onClick={onButtonClick}
           title={props.title}
           variant={getVariant()}
           icon={ChevronDown}

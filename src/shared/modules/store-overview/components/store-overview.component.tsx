@@ -13,8 +13,9 @@ import { Store } from "@app/api/core/store/store";
 import { BannerComponent } from "@app/core/banner";
 import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 import { Banner } from "@app/api/core/banner/banner";
-import { ViewType, IScreenSize } from "@app/stores/settings";
+import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
+/* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
@@ -144,18 +145,18 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
 
   switch (viewType) {
     case ViewType.DesktopFull:
-      showAdEvery = 5 * SHOW_AD_EVERY_LINES;
+      showAdEvery = SHOW_AD_EVERY_LINES * 5;
       break;
     case ViewType.DesktopLarge:
-      showAdEvery = 4 * SHOW_AD_EVERY_LINES;
+      showAdEvery = SHOW_AD_EVERY_LINES * 4;
       break;
     case ViewType.Desktop:
-      showAdEvery = 3 * SHOW_AD_EVERY_LINES;
+      showAdEvery = SHOW_AD_EVERY_LINES * 3;
       break;
     case ViewType.Mobile:
     case ViewType.MobileBig:
     case ViewType.Tablet:
-      showAdEvery = 1 * SHOW_AD_EVERY_LINES;
+      showAdEvery = SHOW_AD_EVERY_LINES * 1;
       break;
     default:
   }

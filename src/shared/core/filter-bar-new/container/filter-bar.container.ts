@@ -8,10 +8,10 @@ import { IScreenSize } from "@app/stores/settings";
 interface IStateProps {
   brandFilterItems: FilterItem[];
   categoryFilterItems: FilterItem[];
+  screenSize: IScreenSize | undefined;
   sortBy: string;
   statusFilterItems: FilterItem[];
   totalResults: number;
-  screenSize: IScreenSize | undefined;
 }
 interface IDispatchProps {
   clearFilters: () => void;

@@ -5,7 +5,7 @@ import { ImageComponent } from "@app/prep/modules-prep/core";
 import { LinkComponent } from "../link";
 import ShopIcon from "@assets/icons/link.svg";
 import { ShadowCardComponent } from "../shadow-card";
-import { Store, StoreStatus } from "@app/api/core/store/store";
+import { Store } from "@app/api/core/store/store";
 import { getStoreStatusText } from "@app/util/store";
 import { ClickableComponent } from "../clickable";
 
@@ -15,16 +15,7 @@ export interface IShopCardComponentProps {
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const {
-    availableBrands,
-    categories,
-    description,
-    logo,
-    moreInfoLink,
-    name,
-    status,
-    timeLeftPercentage
-  } = props.store;
+  const { description, logo, moreInfoLink, name, status, timeLeftPercentage } = props.store;
 
   const getStatusBarColor = () => {
     const rangeNumber = timeLeftPercentage;
@@ -57,7 +48,13 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
           </div>
         </div>
         <div className={styles["shop-card__action"]}>
-          <ClickableComponent iconStyle="filled" title="Naar deals" icon={ShopIcon} iconPosition="right" href="./store-single" />
+          <ClickableComponent
+            iconStyle="filled"
+            title="Naar deals"
+            icon={ShopIcon}
+            iconPosition="right"
+            href="./store-single"
+          />
         </div>
       </div>
     </ShadowCardComponent>

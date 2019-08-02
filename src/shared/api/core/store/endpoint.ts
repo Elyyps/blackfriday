@@ -25,21 +25,15 @@ const getStores = (
   let result = [...initialStoresResult];
 
   if (selectedStoreStatus !== undefined) {
-    result = result.filter(store => {
-      return store.status === selectedStoreStatus;
-    });
+    result = result.filter(store => store.status === selectedStoreStatus);
   }
 
   if (selectedCategoryFilters !== undefined) {
-    result = result.filter(store => {
-      return store.categories.some(r => selectedCategoryFilters.includes(r));
-    });
+    result = result.filter(store => store.categories.some(r => selectedCategoryFilters.includes(r)));
   }
 
   if (selectedBrandFilters !== undefined) {
-    result = result.filter(store => {
-      return store.availableBrands.some(r => selectedBrandFilters.includes(r));
-    });
+    result = result.filter(store => store.availableBrands.some(r => selectedBrandFilters.includes(r)));
   }
 
   const totalResults = result.length;
@@ -64,6 +58,7 @@ const getStores = (
         if (b.name < a.name) {
           return 1;
         }
+
         return 0;
       });
       break;
@@ -75,10 +70,13 @@ const getStores = (
         if (b.name > a.name) {
           return 1;
         }
+
         return 0;
       });
       break;
     default:
+      /* tslint:disable:switch-final-break  */
+      // keep default sorting
       break;
   }
 
@@ -128,24 +126,16 @@ const convertToStatus = (value: string): StoreStatus => {
 const getAmountForStatus = (status: string): number => {
   const storeStatus = convertToStatus(status);
 
-  const amount = initialStoresResult.filter(store => {
-    return store.status === storeStatus;
-  }).length;
+  const amount = initialStoresResult.filter(store => store.status === storeStatus).length;
 
   return amount;
 };
 
-const getAmountForCategory = (category: string): number => {
-  return initialStoresResult.filter(store => {
-    return store.categories.indexOf(category) > -1;
-  }).length;
-};
+const getAmountForCategory = (category: string): number =>
+  initialStoresResult.filter(store => store.categories.indexOf(category) > -1).length;
 
-const getAmountForBrand = (brand: string): number => {
-  return initialStoresResult.filter(store => {
-    return store.availableBrands.indexOf(brand) > -1;
-  }).length;
-};
+const getAmountForBrand = (brand: string): number =>
+  initialStoresResult.filter(store => store.availableBrands.indexOf(brand) > -1).length;
 
 export const StoreApi = {
   getStores,

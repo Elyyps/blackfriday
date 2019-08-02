@@ -1,10 +1,8 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 
-import styles from "./filter-bar-component.module.scss";
 import { MobileFilterComponent, IMobileFilterSelectedItems } from "../mobile-filter";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { IMobileFilterItem } from "../mobile-filter/mobile-filter-item";
-import { useState, useEffect } from "react";
 
 export interface IStoresMobileFilterBarComponentProps {
   brandFilterItems: FilterItem[];
@@ -21,6 +19,7 @@ export interface IStoresMobileFilterBarComponentProps {
   statusFilterItems: FilterItem[];
 }
 
+const totalStores = 10; // TODO: calculate filter totals!
 const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentProps) => {
   const [mobileFilters, setMobileFilters] = useState<IMobileFilterItem[]>([]);
 
@@ -108,7 +107,7 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
   return (
     <MobileFilterComponent
       onFinish={handleFinishSearch}
-      totalStores={10}
+      totalStores={totalStores}
       onClear={clearAllFilters}
       filterItems={mobileFilters}
     />

@@ -1,10 +1,9 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 import styles from "./checkbox-dropdown-component.module.scss";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { DropdownComponent } from "../dropdown-new/dropdown.component";
 import { CheckboxCount } from "../checkbox-count/checkbox-count.component";
-import { useState } from "react";
 
 export interface ICheckboxDropdownProps {
   items: FilterItem[];
@@ -17,11 +16,7 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
 
   const onChange = (id: string) => {
     const result = props.items.map(item => {
-      if (item.id === id) {
-        item.isSelected = !item.isSelected;
-      } else {
-        item.isSelected = false;
-      }
+      item.isSelected = item.id === id;
 
       return item;
     });

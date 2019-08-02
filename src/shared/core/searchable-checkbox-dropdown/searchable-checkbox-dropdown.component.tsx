@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./searchable-checkbox-dropdown-component.module.scss";
 import { FilterItem } from "@app/api/core/filter/filter-item";
@@ -7,7 +7,6 @@ import { ClickableComponent } from "../clickable";
 import Search from "@assets/icons/search.svg";
 import { CheckboxCount } from "../checkbox-count/checkbox-count.component";
 import { Input } from "@app/core/input/input.component";
-import { useState, useEffect } from "react";
 
 export interface ISearchableCheckboxDropdownProps {
   deleteFilterLabel: string;
@@ -26,9 +25,7 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
   useEffect(() => {
     let result = [...props.items];
     if (search) {
-      result = result.filter(item => {
-        return item.displayName.toLowerCase().includes(search);
-      });
+      result = result.filter(item => item.displayName.toLowerCase().includes(search));
     }
 
     setInternalItems(result);
@@ -49,9 +46,7 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
       return item;
     });
 
-    result = result.filter(item => {
-      return item.displayName.toLowerCase().includes(search);
-    });
+    result = result.filter(item => item.displayName.toLowerCase().includes(search));
 
     setInternalItems([...result]);
   };
@@ -138,7 +133,7 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
                 <ClickableComponent
                   title={`Toon ${getTotalCount()} ${props.showFilterName}`}
                   variant="primary-brand"
-                  onClick={() => persistFilters()}
+                  onClick={persistFilters}
                 />
               </li>
             </ul>

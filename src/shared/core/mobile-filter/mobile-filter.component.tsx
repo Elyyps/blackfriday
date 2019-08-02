@@ -27,7 +27,7 @@ export interface IMobileFilterSelectedItems {
 const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
-  const { filterItems, onClear, totalStores } = props;
+  const { filterItems, onClear } = props;
   const [isFilterOpened, setIsFilterOpened] = useState<boolean>(false);
 
   const onFinishHandler = () => {

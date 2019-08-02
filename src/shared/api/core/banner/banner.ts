@@ -1,4 +1,4 @@
-import { ImageType, BannerVariant } from "@app/core/banner";
+import { ImageType } from "@app/core/banner";
 
 export class Banner {
   public buttonLink: string;

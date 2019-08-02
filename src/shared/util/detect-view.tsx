@@ -50,6 +50,7 @@ export const getViewType = (width: number): IScreenSize => {
       viewType: ViewType.DesktopFull
     };
   }
+
   return {
     breakpointPixels: breakPointDesktopFull,
     viewType: ViewType.DesktopFull

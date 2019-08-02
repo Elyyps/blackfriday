@@ -3,7 +3,6 @@ import { Action } from "redux";
 import * as ActionType from "./store-overview.types";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { Store } from "@app/api/core/store/store";
-import { number } from "prop-types";
 
 export interface IStoreOverviewState {
   brandFilterItems: FilterItem[];

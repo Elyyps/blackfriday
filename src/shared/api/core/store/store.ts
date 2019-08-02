@@ -1,14 +1,14 @@
 export class Store {
-  public id: string;
-  public status: StoreStatus;
-  public categories: string[];
   public availableBrands: string[];
-  public name: string;
-  public moreInfoLink: string;
+  public categories: string[];
   public description: string;
+  public id: string;
   public logo: string;
-  public timeLeftPercentage: number;
+  public moreInfoLink: string;
+  public name: string;
   public startsInDays?: number;
+  public status: StoreStatus;
+  public timeLeftPercentage: number;
 }
 
 export enum StoreStatus {

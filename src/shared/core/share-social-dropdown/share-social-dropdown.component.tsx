@@ -1,11 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import styles from "./share-social-dropdown-component.module.scss";
 import { Button } from "../button";
 import { DropdownComponent } from "../dropdown-new/dropdown.component";
 import { ShareSocialComponent } from "../share-social/share-social.component";
 import { IShareSocialComponent } from "@app/api/core/share-social";
 import { shareSocialNative } from "@app/util/share-social";
-import { useState } from "react";
 
 export interface IShareSocialDropdownComponentProps {
   buttonTitle: string;

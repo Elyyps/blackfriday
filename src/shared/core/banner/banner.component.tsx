@@ -65,7 +65,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
 
 const renderImage = (imageLink?: string, image?: ImageType) => (
   <div className={styles["image"]}>
-    <a href={imageLink} target="_blank">
+    <a href={imageLink} target="_blank" role="button">
       <ImageComponent
         alt={image && image.alt}
         src={image && image.src}
