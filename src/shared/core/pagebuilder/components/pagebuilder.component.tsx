@@ -48,7 +48,7 @@ export class PagebuilderComponent extends React.Component<
       <React.Fragment>
         {!!this.props.currentPage ? (
           <React.Fragment>
-            <HelmetComponent {...this.props.currentPage.metaData} />
+            {/* <HelmetComponent {...this.props.currentPage.metaData} /> */}
             {this.props.currentPage.wordPressPostModules.map((wordPressModule, index) => (
               <ModuleComponent wordPressModule={wordPressModule} isMobile={this.isMobile} key={index} />
             ))}

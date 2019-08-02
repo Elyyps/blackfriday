@@ -27,7 +27,7 @@ export interface IOverviewItem {
 }
 
 const TAKE = 25;
-const SHOW_AD_EVERY_LINES = 2;
+const SHOW_AD_EVERY_LINES = 4;
 
 const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -87,19 +87,22 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
 
                 return (
                   <React.Fragment key={store.id}>
-                    <div className={styles[`stores-overview__body__cards`]}>
+                    <div className={`${styles[`stores-overview__body__cards`]} `}>
                       <ShopCardComponent store={store} />
-                      <br />
                     </div>
-                    {!!advert && (
-                      <div style={{ width: "100%" }}>
+
+                    {advert && (
+                      <div className={`${styles[`stores-overview__body__banner`]} `}>
                         <BannerComponent {...advert} />
-                        <br />
                       </div>
                     )}
                   </React.Fragment>
                 );
               })}
+              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
               <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
             </div>
           ) : (
@@ -156,7 +159,7 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
     case ViewType.Mobile:
     case ViewType.MobileBig:
     case ViewType.Tablet:
-      showAdEvery = SHOW_AD_EVERY_LINES * 1;
+      showAdEvery = SHOW_AD_EVERY_LINES * 2;
       break;
     default:
   }

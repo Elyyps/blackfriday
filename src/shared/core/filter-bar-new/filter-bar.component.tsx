@@ -50,10 +50,10 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
   };
 
   return (
-    <div className="uk-container">
+    <div className={styles["filter-bar"]}>
       {props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (
-        <div className={styles["filter-bar"]}>
-          <div className={styles["filter-bar__filter-list"]}>
+        <div className={`${styles["filter-bar__filter-container"]} ${"uk-container"}`}>
+          <div className={`${styles["filter-bar__filter-list"]}  `}>
             <div className={`${styles["filter-label"]}`}>
               Filters
               <span>
@@ -84,26 +84,30 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
               />
             </div>
             {getTotalNumberOfFilters() > 0 && (
-              <div style={{ marginLeft: "20px" }}>
+              <div className={styles["filter-bar__clear-filter"]}>
                 <span role="link" onClick={() => props.clearFilters()} style={{ color: "red", cursor: "pointer" }}>
-                  Verwijder alle filters
+                  Verwijder alle filters({getTotalNumberOfFilters()})
                 </span>
               </div>
             )}
           </div>
 
           <div className={styles["filter-bar__sort"]}>
-            <div className={styles["filter__sort-item"]}>
+            <div className={styles["filter__sort-filter"]}>
               <span className={styles["amount-of-shops"]}>
                 <IconComponent icon={StoreIcon} size={"20px"} />
               </span>
               {props.totalResults} winkels
             </div>
             <div className={styles["filter__sort-item"]}>
-              Sorteer op:
-              <span role={"button"} className={styles["filter__sort-change"]}>
-                <SelectComponent options={sortByOptions} onSelect={setSort} />
-              </span>
+              <span className={styles["filter__sort-text"]}> Sorteer op: </span>
+
+              {/* className={styles["filter__sort-change"]} */}
+              {/* {orderBy} */}
+              <SelectComponent
+                options={["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
+                onSelect={setSort}
+              />
             </div>
           </div>
         </div>
