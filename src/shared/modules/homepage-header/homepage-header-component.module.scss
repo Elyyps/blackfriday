@@ -32,9 +32,9 @@
     &-next,
     &-prev {
       left: auto;
-      bottom: 72px;
+      bottom: 13%;
       top: auto;
-      transform: translateY(0);
+
       > div {
         margin: 0 auto;
       }
@@ -45,6 +45,12 @@
       }
     }
     &-prev {
+      transition: transform 150ms ease-in-out;
+      &:hover {
+        svg {
+          transform: translateX(-4px);
+        }
+      }
       right: 130px !important;
       @media (max-width: $breakpoint-small-max) {
         right: auto !important;
@@ -53,6 +59,12 @@
       }
     }
     &-next {
+      transition: transform 150ms ease-in-out;
+      &:hover {
+        svg {
+          transform: translateX(4px);
+        }
+      }
       right: 72px !important;
       @media (max-width: $breakpoint-small-max) {
         right: 16px !important;
@@ -211,17 +223,12 @@
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       position: relative;
-      cursor: pointer;
       transition: transform 0.2s;
       @media (max-width: $breakpoint-small-max) {
         padding: 0 16px 12px 16px !important;
         align-items: center;
       }
-      &:hover {
-        svg {
-          transform: scale(1.2);
-        }
-      }
+
       &:after {
         content: "";
         position: absolute;
@@ -238,13 +245,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: absolute;
+      z-index: 99;
+      top: 50%;
+      height: auto !important;
+      left: 50%;
+      margin-top: -40px;
+      margin-left: -40px;
+      transition: transform 0.2s;
+      background: black;
+      border-radius: 50%;
+      cursor: pointer;
 
-      svg {
-        transition: transform 0.2s;
-        background: black;
-        border-radius: 50%;
+      &:hover {
+        transform: scale(1.2);
       }
     }
+
     &__slide-container {
       position: relative;
     }

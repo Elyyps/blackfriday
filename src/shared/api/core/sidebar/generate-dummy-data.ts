@@ -16,7 +16,8 @@ export const generateSidebarData = (): Sidebar => {
       label: "22 t/m 26 nov.",
       logo: { src: CoolBlue, alt: "alt text CoolBlue" },
       text: "Een selectie van bizarre aanbiedingen. Meer info",
-      moreInfoLink: "https://coolblue.com"
+      moreInfoLink: "https://coolblue.com",
+      showAlternativeBanner: false
     },
     featuredItemsGroups: [
       {

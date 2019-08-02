@@ -21,7 +21,7 @@ const BasicArrow = (props: IBasicArrowProps) => {
         style={{ display: "block" }}
         onClick={onClick}
       >
-        <IconComponent icon={getArrow(props.prev)} size={"12px"} />
+        <IconComponent icon={getArrow(props.prev)} size={"7px"} />
       </button>
     );
   } else {

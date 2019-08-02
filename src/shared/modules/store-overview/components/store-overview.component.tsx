@@ -14,6 +14,7 @@ import { BannerComponent } from "@app/core/banner";
 import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 import { Banner } from "@app/api/core/banner/banner";
 import { ViewType, IScreenSize } from "@app/stores/settings";
+import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
@@ -62,14 +63,23 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       }, 2000);
     }
   };
+  const connectClass = "uk-switcher-list";
+  const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
   return (
     <div>
-      <FilterBarContainer />
-
+      <div className="deals-overview__tab">
+        <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
+          <TabComponent attrAction={"link"}>Winkels</TabComponent>
+          <TabComponent attrAction={"link"}>Productdeals</TabComponent>
+        </TabContainerComponent>
+      </div>
+      <div className={styles["filter-mobile-bar"]}>
+        <FilterBarContainer />
+      </div>
       <div className={styles["store-overview"]}>
         <div className="uk-container">
-          {props.stores && (
+          {props.stores && props.stores.length > 0 ? (
             <div className={styles["stores-overview__body__list"]}>
               {overviewItems.map(overviewItem => {
                 const { store, advert } = overviewItem;
@@ -92,8 +102,11 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
               <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
               <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
               <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-
-              <BottomScrollListener onBottom={bottomPageCallback} offset={150} />
+              <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
+            </div>
+          ) : (
+            <div>
+              <h1>Geen resultaten gevonden</h1>
             </div>
           )}
 

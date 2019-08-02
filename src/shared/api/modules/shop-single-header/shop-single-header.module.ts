@@ -17,6 +17,7 @@ export class ShopSingleHeaderModule extends WordPressPostModule {
   public discountTitle: string;
   public favoriteButton: Link;
   public keywords: string[];
+  public links: Link[];
   public picture: string;
   public rating: RatingModule;
   public shareSocial: IShareSocialComponent;

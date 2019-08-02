@@ -107,6 +107,9 @@
         }
       }
       &-label {
+        @media (max-width: 800px) {
+          display: none;
+        }
         padding-right: 12px;
         font-size: 14px;
         font-weight: 600;
