@@ -81,27 +81,10 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     }
   };
 
-  const filterItems: IMobileFilterItem[] = [
-    {
-      hasSearchBar: false,
-      title: "Sorteren",
-      selectedItems: [],
-      isSingleSelection: true,
-      items: ["Alphabetically", "Order"]
-    },
-    { hasSearchBar: true, title: "Status", selectedItems: [], items: ["Nu geldig", "Bijna verlopen", "Lorem Ipsum"] },
-    {
-      hasSearchBar: true,
-      title: "Categorie",
-      selectedItems: [],
-      items: ["Eletronics", "Fitness", "Music", "House and garden"]
-    },
-    { hasSearchBar: true, title: "Merk", selectedItems: [], items: ["Nike", "Adidas", "Reebok", "New Balance"] }
-  ];
-
   return (
     <div>
-      <MobileFilterComponent totalStores={10} onClear={() => {}} filterItems={filterItems} />
+      <FilterBarContainer />
+     
       <div className={styles["store-overview"]}>
         <div className="uk-container">
           {props.stores && (

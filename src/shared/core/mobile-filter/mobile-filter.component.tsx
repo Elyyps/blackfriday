@@ -39,6 +39,16 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
 
+  React.useEffect(() => {
+    if (isFilterOpened) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflowY = "scroll";
+    } else {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
+  }, [isFilterOpened]);
+
   return !isFilterOpened ? (
     <div
       role="button"
@@ -70,6 +80,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       ) : (
         <div className={styles["mobile-filter__header"]}>
           <span
+            style={{ cursor: "pointer" }}
             role="button"
             className={styles["mobile-filter__header__nav-button"]}
             onClick={() => {

@@ -10,6 +10,7 @@ import { SelectComponent } from "../select";
 import { FilterBarContainerProps } from "./container";
 import { IScreenSize, ViewType } from "@app/stores/settings";
 import { MobileFilterComponent, mobileFilterDummyData } from "../mobile-filter";
+import { IMobileFilterItem } from "../mobile-filter/mobile-filter-item";
 
 export interface IFilterBarProps {}
 
@@ -36,6 +37,24 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.brandFilterItems.filter(item => item.isSelected).length;
 
   console.log(props.screenSize);
+
+  const filterItems: IMobileFilterItem[] = [
+    {
+      hasSearchBar: false,
+      title: "Sorteren",
+      selectedItems: [],
+      isSingleSelection: true,
+      items: ["Alphabetically", "Order"]
+    },
+    { hasSearchBar: true, title: "Status", selectedItems: [], items: ["Nu geldig", "Bijna verlopen", "Lorem Ipsum"] },
+    {
+      hasSearchBar: true,
+      title: "Categorie",
+      selectedItems: [],
+      items: ["Eletronics", "Fitness", "Music", "House and garden"]
+    },
+    { hasSearchBar: true, title: "Merk", selectedItems: [], items: ["Nike", "Adidas", "Reebok", "New Balance"] }
+  ];
 
   return (
     <div className="uk-container">
@@ -100,12 +119,7 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
           </div>
         </div>
       ) : (
-        <MobileFilterComponent
-          totalStores={0}
-          onClear={() => {}}
-          onClose={() => {}}
-          filterItems={mobileFilterDummyData}
-        />
+        <MobileFilterComponent totalStores={10} onClear={() => {}} filterItems={filterItems} />
       )}
     </div>
   );
