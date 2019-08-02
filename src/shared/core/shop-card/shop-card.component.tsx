@@ -3,7 +3,6 @@ import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { ImageComponent } from "@app/prep/modules-prep/core";
 import { LinkComponent } from "../link";
-import { Button } from "../button";
 import ShopIcon from "@assets/icons/link.svg";
 import { ShadowCardComponent } from "../shadow-card";
 import { Store, StoreStatus } from "@app/api/core/store/store";

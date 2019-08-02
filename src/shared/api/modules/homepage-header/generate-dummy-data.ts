@@ -23,11 +23,11 @@ export const generateHomePageHeader = (): HomepageHeader => ({
   arrowPanelslinks: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      link: { title: "Productdeals", url: "./" }
+      link: { title: "Productdeals", url: "/deals-overview" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      link: { title: "Deelnemende winkels", url: "./" }
+      link: { title: "Deelnemende winkels", url: "/stores-overview" }
     }
   ],
   label: "Black Friday 2019: NOG 10 dagen!",
@@ -35,7 +35,7 @@ export const generateHomePageHeader = (): HomepageHeader => ({
     {
       link: {
         title: "Lees meer",
-        url: "./"
+        url: "/stores-single"
       },
       title: "Handige Black Friday Tips",
       image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
@@ -43,7 +43,7 @@ export const generateHomePageHeader = (): HomepageHeader => ({
     {
       link: {
         title: "Lees meer",
-        url: "./"
+        url: "/stores-single"
       },
       title: "Handige Black Friday Tips",
       image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/video-thumbnail.jpg",
@@ -52,7 +52,7 @@ export const generateHomePageHeader = (): HomepageHeader => ({
     {
       link: {
         title: "Lees meer",
-        url: "./"
+        url: "/stores-single"
       },
       title: "Handige Black Friday Tips",
       image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
@@ -61,37 +61,37 @@ export const generateHomePageHeader = (): HomepageHeader => ({
   popularProducts: [
     {
       image: iears,
-      link: { url: "/", title: "Apple Airpods" }
+      link: { url: "/stores-single", title: "Apple Airpods" }
     },
     {
       image: imac,
-      link: { url: "/", title: "Apple iPhones" }
+      link: { url: "/stores-single", title: "Apple iPhones" }
     },
     {
       image: iphone,
-      link: { url: "/", title: "Apple MacBooks" }
+      link: { url: "/stores-single", title: "Apple MacBooks" }
     },
     {
       image: loader,
-      link: { url: "/", title: "Apple iMacs" }
+      link: { url: "/stores-single", title: "Apple iMacs" }
     }
   ],
   popularStores: [
     {
       image: CoolBlue,
-      link: { url: "/", title: "Coolblue" }
+      link: { url: "/stores-single", title: "Coolblue" }
     },
     {
       image: CoolBlue,
-      link: { url: "/", title: "Alternate" }
+      link: { url: "/stores-single", title: "Alternate" }
     },
     {
       image: CoolBlue,
-      link: { url: "/", title: "Beddenreus" }
+      link: { url: "/stores-single", title: "Beddenreus" }
     },
     {
       image: CoolBlue,
-      link: { url: "/", title: "De Bijenkorf" }
+      link: { url: "/stores-single", title: "De Bijenkorf" }
     }
   ],
   bottomMargin: "0px",

@@ -14,15 +14,15 @@ export type ImageType = {
 export interface IBannerComponentProps {
   buttonLink: string;
   buttonTitle: string;
-  imageLink?: string;
   image?: ImageType;
+  imageLink?: string;
   label: string;
   logo: ImageType;
+  moreInfoLink: string;
+  showAlternativeBanner?: boolean;
   text: any;
   title: string;
   variant?: BannerVariant;
-  showAlternativeBanner?: boolean;
-  moreInfoLink: string;
 }
 
 const BannerComponent = (props: IBannerComponentProps) => {
@@ -63,8 +63,8 @@ const BannerComponent = (props: IBannerComponentProps) => {
   );
 };
 
-const renderImage = (imageLink?: string, image?: ImageType) => {
-  return (
+const renderImage = (imageLink?: string, image?: ImageType) =>
+  (
     <div className={styles["image"]}>
       <a href={imageLink} target="_blank">
         <ImageComponent
@@ -76,7 +76,6 @@ const renderImage = (imageLink?: string, image?: ImageType) => {
       </a>
     </div>
   );
-};
 
 const renderBody = (
   label: string,
@@ -86,8 +85,8 @@ const renderBody = (
   buttonLink: string,
   buttonTitle: string,
   moreInfoLink: string
-) => {
-  return (
+) =>
+  (
     <div className={styles["body"]}>
       <div className={styles["content"]}>
         <div className={styles["label"]}>{label}</div>
@@ -117,6 +116,5 @@ const renderBody = (
       </div>
     </div>
   );
-};
 
 export { BannerComponent };

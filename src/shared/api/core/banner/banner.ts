@@ -7,8 +7,8 @@ export class Banner {
   public imageLink?: string;
   public label: string;
   public logo: ImageType;
-  public text: any;
-  public title: string;
   public moreInfoLink: string;
   public showAlternativeBanner: boolean;
+  public text: any;
+  public title: string;
 }
