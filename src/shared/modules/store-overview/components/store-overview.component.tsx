@@ -13,6 +13,7 @@ import { Store } from "@app/api/core/store/store";
 import { BannerComponent } from "@app/core/banner";
 import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 import { Banner } from "@app/api/core/banner/banner";
+import { ViewType, IScreenSize } from "@app/stores/settings";
 
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
@@ -24,7 +25,7 @@ export interface IOverviewItem {
 }
 
 const TAKE = 25;
-const SHOW_AD_EVERY = 10;
+const SHOW_AD_EVERY_LINES = 4;
 
 const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -39,27 +40,10 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   }, [props.brandFilterItems, props.categoryFilterItems, props.statusFilterItems, props.sortBy]);
 
   useEffect(() => {
-    const overviewItemsResult: IOverviewItem[] = [];
-    let storeIndex = 1;
-    let showAlternativeBanner = false;
-    props.stores.forEach(store => {
-      if (storeIndex === SHOW_AD_EVERY) {
-        overviewItemsResult.push({
-          advert: { ...generateDummyBannerComponentData(), showAlternativeBanner },
-          store
-        });
-        storeIndex = 1;
-        showAlternativeBanner = !showAlternativeBanner;
-      } else {
-        overviewItemsResult.push({
-          advert: undefined,
-          store
-        });
-        storeIndex += 1;
-      }
-    });
+    const viewType = props.screenSize ? props.screenSize.viewType : ViewType.Desktop;
+    const overviewItemsResult = getOverviewItems(viewType, props.stores);
     setOverviewItems(overviewItemsResult);
-  }, [props.stores]);
+  }, [props.stores, props.screenSize]);
 
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
@@ -96,12 +80,11 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
                       <ShopCardComponent store={store} />
                     </div>
 
-                    {/* {advert && (
-                      <div style={{ width: "100%" }}>
+                    {advert && (
+                      <div className={`${styles[`stores-overview__body__banner`]} `}>
                         <BannerComponent {...advert} />
-                        <br />
                       </div>
-                    )} */}
+                    )}
                   </React.Fragment>
                 );
               })}
@@ -143,6 +126,50 @@ const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewCon
   if (!props.sortBy) {
     props.setSortBy(props.storeOverviewModule.sortBy);
   }
+};
+
+const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] => {
+  const overviewItemsResult: IOverviewItem[] = [];
+  let showAdEvery = 0;
+
+  switch (viewType) {
+    case ViewType.DesktopFull:
+      showAdEvery = 5 * SHOW_AD_EVERY_LINES;
+      break;
+    case ViewType.DesktopLarge:
+      showAdEvery = 4 * SHOW_AD_EVERY_LINES;
+      break;
+    case ViewType.Desktop:
+      showAdEvery = 3 * SHOW_AD_EVERY_LINES;
+      break;
+    case ViewType.Mobile:
+    case ViewType.MobileBig:
+    case ViewType.Tablet:
+      showAdEvery = 1 * SHOW_AD_EVERY_LINES * 2;
+      break;
+    default:
+  }
+
+  let storeIndex = 1;
+  let showAlternativeBanner = false;
+  stores.forEach(store => {
+    if (storeIndex === showAdEvery) {
+      overviewItemsResult.push({
+        advert: { ...generateDummyBannerComponentData(), showAlternativeBanner },
+        store
+      });
+      storeIndex = 1;
+      showAlternativeBanner = !showAlternativeBanner;
+    } else {
+      overviewItemsResult.push({
+        advert: undefined,
+        store
+      });
+      storeIndex += 1;
+    }
+  });
+
+  return overviewItemsResult;
 };
 
 export { StoreOverview };
