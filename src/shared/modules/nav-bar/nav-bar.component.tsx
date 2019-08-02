@@ -1,15 +1,14 @@
 import * as React from "react";
 import styles from "./nav-bar-component.module.scss";
-import { ImageComponent } from "@app/prep/modules-prep/core";
+import { ImageComponent, ModalNavBar } from "@app/core";
 
 import { SEARCH_ICON, MENU_ICON } from "@app/constants/icons";
-import { ModalNavBar } from "@app/prep/modules-prep/core/modal-navbar";
-import { HamburgerMenuComponent } from "@app/prep/modules-prep/hamburger-menu";
+
 import { LinkComponent } from "@app/core/link";
 import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
 import { NavbarSearchContainer } from "./navbar-search/container/navbar-search.container";
 import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
-
+import { NavbarMenuItemComponent } from "../navbar-menu-item";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -36,7 +35,8 @@ const NavBarComponent = (props: INavBarComponentProps) => (
           </ul>
 
           <ModalNavBar
-            className={`modal-search ${styles["nav-bar__search-button"]}`}
+            className={`${styles["nav-bar__search-button"]}`}
+            variant={"search"}
             close={"Sluiten"}
             icon={SEARCH_ICON}
             iconSize="14px"
@@ -49,13 +49,14 @@ const NavBarComponent = (props: INavBarComponentProps) => (
           </ModalNavBar>
 
           <ModalNavBar
-            className={`modal-menu ${styles["nav-bar__toggle"]}`}
+            className={`${styles["nav-bar__toggle"]}`}
+            variant={"menu"}
             title={"Menu"}
             close={"Sluiten"}
             icon={MENU_ICON}
             iconSize="17px"
           >
-            <HamburgerMenuComponent />
+            <NavbarMenuItemComponent items={props.navBarModule.navbarMenuItem} />
           </ModalNavBar>
         </div>
       </div>

@@ -23,7 +23,7 @@ const DealCardComponent = (props: IDealCardComponentProps) => {
   const { image, subtitle, title, sale, newPrice, oldPrice, buttonLink, buttonText, label, variant } = props;
 
   return (
-    <ShadowCardComponent fullWidth>
+    <ShadowCardComponent fullWidth borderRadius={["2px"]} backgroundColor={"#fff"}>
       <div className={`${styles["deal-card"]} ${styles[`deal-card--${variant || "default"}`]}`}>
         {label && (
           <div className={styles["deal-card__label"]}>

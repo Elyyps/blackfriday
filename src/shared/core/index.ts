@@ -6,3 +6,4 @@ export * from "./label";
 export * from "./arrow-panel";
 export * from "./resource-text";
 export * from "./text-field";
+export * from "./modal-navbar";
