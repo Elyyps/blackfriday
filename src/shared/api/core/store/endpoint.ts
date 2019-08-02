@@ -3,6 +3,11 @@ import { generateDemoStoreDummyData } from "./generate-dummy-data";
 import { FilterItem } from "../filter/filter-item";
 import { shuffle } from "@app/util/array";
 
+export interface IStoreResult {
+  stores: Store[];
+  totalResults: number;
+}
+
 const initialStoresResult = [...generateDemoStoreDummyData()];
 
 const getStores = (
@@ -12,14 +17,12 @@ const getStores = (
   categoryFilters: FilterItem[],
   brandFilters: FilterItem[],
   sortBy?: string
-): Store[] => {
+): IStoreResult => {
   const selectedStoreStatus: StoreStatus | undefined = getSelectedStoreStatus(storeStatusFilters);
   const selectedCategoryFilters = getSelectedFilters(categoryFilters);
   const selectedBrandFilters = getSelectedFilters(brandFilters);
 
   let result = [...initialStoresResult];
-
-  result = result.splice(skip, take);
 
   if (selectedStoreStatus !== undefined) {
     result = result.filter(store => {
@@ -38,6 +41,10 @@ const getStores = (
       return store.availableBrands.some(r => selectedBrandFilters.includes(r));
     });
   }
+
+  const totalResults = result.length;
+
+  result = result.splice(skip, take);
 
   switch (sortBy) {
     case "Relevantie":
@@ -75,7 +82,10 @@ const getStores = (
       break;
   }
 
-  return result;
+  return {
+    stores: result,
+    totalResults
+  };
 };
 
 const getSelectedStoreStatus = (filterItems: FilterItem[]): StoreStatus | undefined => {

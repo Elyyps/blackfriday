@@ -5,7 +5,7 @@ import { StoreOverviewContainer } from "@app/modules/store-overview/containers/s
 export interface IPlaygroundTomComponentProps {}
 
 const PlaygroundTomComponent = (props: IPlaygroundTomComponentProps) => (
-  <div className={"uk-container"}>
+  <div style={{ width: "80%", margin: "auto" }}>
     <StoreOverviewContainer storeOverviewModule={generateStoreOverviewModule()} />
   </div>
 );

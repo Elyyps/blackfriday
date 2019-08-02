@@ -10,9 +10,7 @@ import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/sear
 import { SelectComponent } from "../select";
 import { FilterBarContainerProps } from "./container";
 
-export interface IFilterBarProps {
-  totalAmountOfStores?: number;
-}
+export interface IFilterBarProps {}
 
 const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
   const onStatusFilterItemsChanged = (items: FilterItem[]) => {
@@ -88,7 +86,7 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
           <span className={styles["amount-of-shops"]}>
             <IconComponent icon={StoreIcon} size={"20px"} />
           </span>
-          {props.totalAmountOfStores} winkels
+          {props.totalResults} winkels
         </div>
         <div className={styles["filter__sort-item"]}>
           Sorteer op:

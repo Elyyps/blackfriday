@@ -4,6 +4,7 @@ import styles from "./checkbox-dropdown-component.module.scss";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { DropdownComponent } from "../dropdown-new/dropdown.component";
 import { CheckboxCount } from "../checkbox-count/checkbox-count.component";
+import { useState } from "react";
 
 export interface ICheckboxDropdownProps {
   items: FilterItem[];
@@ -12,6 +13,8 @@ export interface ICheckboxDropdownProps {
 }
 
 const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const onChange = (id: string) => {
     const result = props.items.map(item => {
       if (item.id === id) {
@@ -29,7 +32,7 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
   const hasSelectedItems = props.items.filter(item => item.isSelected).length > 0;
 
   return (
-    <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems}>
+    <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems} isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className={styles["content"]}>
         {props.items.map((item, key) => (
           <CheckboxCount key={key} item={item} onChecked={onChange} />

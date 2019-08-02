@@ -17,17 +17,16 @@
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
-      i {
-        flex: 1 1 200px;
-        margin: 4px;
-      }
     }
     &__cards {
-      flex: 0 1 200px;
-      margin: 4px;
       @media (max-width: 720px) {
-        flex: 0 1 100%;
+        flex: 1 1 100%;
       }
     }
   }
+}
+.ciao {
+  flex: 1 1 350px;
+  height: auto;
+  margin: 4px;
 }
