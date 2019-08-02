@@ -41,13 +41,13 @@ const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps)
       title = shareSocial.whatsapp.title;
       url = shareSocial.whatsapp.url;
     }
-    shareSocialNative(title, content);
+    shareSocialNative(title, content, url);
   };
 
   return (
     <div className={styles["share-social-dropdown"]}>
       {isNativeSharingCompatible ? (
-        <Button variant="secondary" onClick={onClickHandler} title={buttonTitle} />
+        <Button variant="secondary" onClick={onClickHandler} title={`${buttonTitle} - native`} />
       ) : (
         <DropdownComponent title={buttonTitle} isOpen={isOpen} setIsOpen={setIsOpen}>
           <div className={styles["share-social-dropdown__content"]}>

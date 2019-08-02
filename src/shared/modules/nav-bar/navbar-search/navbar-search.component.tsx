@@ -14,8 +14,8 @@ export interface INavbarSearchComponentProps {
   deals?: DealCardModule[];
   dealsTitle: string;
   getCardsFiltered?: (text: string) => void;
-  stores?: Store[];
   shopsTitle: string;
+  stores?: Store[];
 }
 
 const CardMoreDeals = (
@@ -23,7 +23,7 @@ const CardMoreDeals = (
     title="Wij hebben meer deals in ons overzicht"
     icon={StoreIcon}
     buttonText="Alle deals"
-    buttonLink="#"
+    buttonLink="/deals-overview"
     variant={"responsive"}
   />
 );
@@ -33,7 +33,7 @@ const CardMoreShops = (
     title="Wij hebben meer winkels in ons overzicht"
     icon={StoreIcon}
     buttonText="Alle winkels"
-    buttonLink="#"
+    buttonLink="/stores-overview"
     variant={"responsive"}
   />
 );

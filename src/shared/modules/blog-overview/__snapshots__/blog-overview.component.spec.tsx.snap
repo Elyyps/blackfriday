@@ -26,7 +26,7 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
                   "link": Object {
                     "title": "Lees meer",
-                    "url": "",
+                    "url": "/blog-single",
                   },
                   "title": "Vijf voorspellingen van Black Friday Nederland",
                 }
@@ -43,7 +43,7 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
                   "link": Object {
                     "title": "Lees meer",
-                    "url": "",
+                    "url": "/blog-single",
                   },
                   "title": "Top Black Friday deals van vorig jaar",
                 }
@@ -60,7 +60,7 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
                   "link": Object {
                     "title": "Lees meer",
-                    "url": "",
+                    "url": "/blog-single",
                   },
                   "title": "Mis geen enkele Black Friday deal!",
                 }
@@ -77,7 +77,7 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
                   "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
                   "link": Object {
                     "title": "Lees meer",
-                    "url": "",
+                    "url": "/blog-single",
                   },
                   "title": "Wacht met shoppen tot Black Friday!",
                 }

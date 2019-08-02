@@ -58,7 +58,7 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
         />
       </div>
       <div className="form-bottom uk-margin-small-top">
-        <ClickableComponent buttonType="submit" title={"Verzenden"} icon={Paper} />
+        <ClickableComponent iconStyle="filled" buttonType="submit" title={"Verzenden"} icon={Paper} />
       </div>
     </Form>
   );

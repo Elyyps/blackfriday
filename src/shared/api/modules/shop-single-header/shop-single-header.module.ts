@@ -3,6 +3,7 @@ import { RatingModule } from "@app/api/core/rating";
 import { TimeLeftBar } from "@app/api/core/time-left-bar";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 import { BodyTextModule } from "../body-text/body-text";
+import { IShareSocialComponent } from "@app/api/core/share-social";
 
 export class ShopSingleHeaderModule extends WordPressPostModule {
   public backLink: Link;
@@ -18,6 +19,7 @@ export class ShopSingleHeaderModule extends WordPressPostModule {
   public keywords: string[];
   public picture: string;
   public rating: RatingModule;
+  public shareSocial: IShareSocialComponent;
   public smallBackLink: Link;
   public storeLink: Link;
   public timeLeftBar: TimeLeftBar;

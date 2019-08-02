@@ -22,7 +22,7 @@
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box;
   position: relative;
-  @media (max-width: 720px) {
+  @media (max-width: 768px) {
     min-height: 168px;
     height: 168px;
     max-height: 168px;
@@ -30,7 +30,7 @@
 
   &__body {
     flex: 1 1 auto;
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -45,17 +45,18 @@
   }
 
   &__image {
-    padding-bottom: 16px;
+    padding-bottom: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     object-fit: contain;
     width: auto;
     margin: auto;
-    padding-top: 16px;
+    padding-top: 24px;
     height: 90px;
+    box-sizing: border-box;
 
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       order: 2;
       width: 90px;
       height: auto;
@@ -78,7 +79,7 @@
     max-height: 100px;
     min-height: 100px;
     overflow: hidden;
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       order: 1;
       flex: 1 1 60%;
       margin-top: 16px;
@@ -98,7 +99,7 @@
     > * {
       width: 100%;
     }
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       width: 50%;
       margin-left: auto;
     }
@@ -107,7 +108,7 @@
   &__status {
     color: $gray-lighter;
     margin-bottom: 8px;
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       order: 3;
       width: 100%;
       clear: both;
@@ -119,7 +120,7 @@
       text-transform: uppercase;
       font-size: 11px;
       font-weight: bold;
-      @media (max-width: 720px) {
+      @media (max-width: 768px) {
         position: absolute;
         width: 50%;
         bottom: 28px;

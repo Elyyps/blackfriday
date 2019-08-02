@@ -4,6 +4,7 @@ import { FilterItemRow } from "@app/core/filter-item-row";
 import { IconComponent } from "../icon";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import ChevronLeft from "@assets/icons/chevron-left.svg";
+import FilterIcon from "@assets/icons/filter.svg";
 import Cross from "@assets/icons/cross.svg";
 import { Button } from "../button";
 import { GenericPageFilterComponent } from "./pages/generic-page-filter";
@@ -14,7 +15,6 @@ import { injectIntl, InjectedIntlProps } from "react-intl";
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
   onClear: () => void;
-  onClose: () => void;
   totalStores: number;
 }
 
@@ -22,6 +22,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
   const { filterItems, onClear, totalStores } = props;
+  const [isFilterOpened, setIsFilterOpened] = useState<boolean>(false);
 
   const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
     if (currentFilterItems && currentFilterItem) {
@@ -38,7 +39,28 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
 
-  return (
+  React.useEffect(() => {
+    if (isFilterOpened) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflowY = "scroll";
+    } else {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
+  }, [isFilterOpened]);
+
+  return !isFilterOpened ? (
+    <div
+      role="button"
+      onClick={() => {
+        setIsFilterOpened(true);
+      }}
+      className={styles["filter-bar"]}
+    >
+      Filter
+      <IconComponent icon={FilterIcon} size={"15px"} />
+    </div>
+  ) : (
     <div className={styles["mobile-filter"]}>
       {currentFilterItem ? (
         <div className={styles["mobile-filter__header"]}>
@@ -58,10 +80,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       ) : (
         <div className={styles["mobile-filter__header"]}>
           <span
+            style={{ cursor: "pointer" }}
             role="button"
             className={styles["mobile-filter__header__nav-button"]}
             onClick={() => {
-              setCurrentFilterItem(undefined);
+              setIsFilterOpened(false);
             }}
           >
             <IconComponent strokeColor="#fff" icon={Cross} size={"12px"} />
@@ -117,7 +140,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       )}
       <div className={styles["mobile-filter__footer"]}>
         <Button
-          variant="secondary-inverted"
+          variant="primary-brand"
           fullWidth
           title={props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores })}
         />
