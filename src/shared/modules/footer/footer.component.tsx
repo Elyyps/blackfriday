@@ -143,8 +143,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                       <div className={styles["footer__column-title__icon"]}>
                         <IconComponent
                           icon={
-                            openedPanel === `${props.footerModule.middleFooter.socialMedia.id}` ? ArrowUp : ArrowDown
-                          }
+                            openedPanel === `${props.footerModule.middleFooter.socialMedia.id}` ? ArrowUp : ArrowDown}
                           size="10px"
                         />
                       </div>
