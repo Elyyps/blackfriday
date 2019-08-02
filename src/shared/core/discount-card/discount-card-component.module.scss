@@ -12,9 +12,9 @@
   box-sizing: border-box;
   height: 100%;
   padding-bottom: 56px;
-  
+  position: relative;
   @media (max-width: $breakpoint-xsmall-max) {
-      padding-bottom: 24px;
+    padding-bottom: 24px;
   }
   &__body {
     flex: 1 1 auto;
@@ -48,11 +48,9 @@
     color: #00a82f;
     width: 100%;
     margin-bottom: 8px;
-    &:hover{
+    &:hover {
       background-color: #caf7d6;
-
     }
-
   }
   &__label {
     font-family: Assistant;
@@ -61,7 +59,6 @@
     margin-bottom: 2px;
     text-transform: uppercase;
     color: #00a82f;
-
   }
   &__title {
     font-family: $global-font-family-secondary;
@@ -97,7 +94,7 @@
     text-align: center;
     @media (max-width: $breakpoint-xsmall-max) {
       text-align: left;
-          margin-bottom: 16px;
+      margin-bottom: 16px;
     }
 
     a {

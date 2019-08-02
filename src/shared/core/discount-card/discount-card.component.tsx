@@ -3,6 +3,9 @@ import styles from "./discount-card-component.module.scss";
 import { ImageComponent, Button } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
+import { Badge } from "../badge";
+import HEART_FILLED from "@assets/icons/heart-filled.svg";
+import HEART_EMPTY from "@assets/icons/heart-empty.svg";
 
 interface IDiscountCardComponentProps {
   buttonLink: string;
@@ -18,6 +21,7 @@ interface IDiscountCardComponentProps {
 const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
   const { title, status, content, image, range, buttonText, buttonLink, coupon } = props;
 
+  const [isLiked, setIsLiked] = React.useState<boolean>(false);
   const statusBar = (rangeNumber: any) => {
     const limit = 0.5;
     if (rangeNumber > limit) {
@@ -35,6 +39,13 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
 
   return (
     <div className={styles["discount-card"]}>
+      <Badge
+        icon={isLiked ? HEART_FILLED : HEART_EMPTY}
+        position={"left"}
+        onClick={() => {
+          setIsLiked(!isLiked);
+        }}
+      />
       <div className={styles["discount-card__body"]}>
         <div className={styles["discount-card__image"]}>
           <ImageComponent src={image} />
