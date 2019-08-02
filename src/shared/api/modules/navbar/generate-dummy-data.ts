@@ -17,11 +17,15 @@ export const generateDummyNavbarData = (): INavBarModule => ({
   id: "1",
   name: "NavBarModule",
   navbarMenuItem: [
+    { url: "./blog-overview", text: "BlackFriday 2019" } as MenuItemLink,
+    { url: "./blog-overview", text: "Cyber Monday" } as MenuItemLink,
+    { url: "./blog-overview", text: "Partner worden?" } as MenuItemLink,
+    { url: "./blog-overview", text: "Blog" } as MenuItemLink,
     {
-      text: "Apple",
+      text: "BlackFriday Apple",
       links: [
         {
-          title: "MAC",
+          title: "Apple iMac (2019)",
           url: "./"
         },
         {
@@ -29,48 +33,44 @@ export const generateDummyNavbarData = (): INavBarModule => ({
           url: "./"
         },
         {
-          title: "iPhoneX",
+          title: "Apple Magic Mouse 2",
           url: "./"
         },
         {
-          title: "iPhoneX",
+          title: "Apple Ipad Air(2019)",
           url: "./"
         },
         {
-          title: "iPhoneX",
+          title: "Apple MacBook Air 13,3''",
           url: "./"
         }
       ]
     } as MenuItemExpandable,
-    { url: "./", text: "Samsung" } as MenuItemLink,
+
     {
-      text: "Apple",
+      text: "BlackFriday Microsoft",
       links: [
         {
-          title: "MAC",
-          url: "./"
+          title: "Microsoft Surface Book 2",
+          url: "./productline-overview"
         },
         {
-          title: "iPhoneX",
-          url: "./"
+          title: "Microsoft Arc Touch Mouse",
+          url: "./productline-overview"
         },
         {
-          title: "iPhoneX",
-          url: "./"
+          title: "Xbox One X 1TB ",
+          url: "./productline-overview"
         },
         {
-          title: "iPhoneX",
-          url: "./"
+          title: "Microsoft Xbox One Draadloze Controller Wit",
+          url: "./productline-overview"
         },
         {
-          title: "iPhoneX",
-          url: "./"
+          title: "Microsoft Xbox One Play & Charge Kit",
+          url: "./productline-overview"
         }
       ]
-    } as MenuItemExpandable,
-    { url: "./", text: "BlackFriday 2019" } as MenuItemLink,
-    { url: "./", text: "BlackFriday 2019" } as MenuItemLink,
-    { url: "./", text: "BlackFriday 2019" } as MenuItemLink,
-    { url: "./", text: "BlackFriday 2019" } as MenuItemLink
+    } as MenuItemExpandable
   ]
 });
