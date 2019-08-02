@@ -12,7 +12,6 @@
   box-sizing: border-box;
   height: 100%;
   padding-bottom: 56px;
-  position: relative;
   @media (max-width: $breakpoint-xsmall-max) {
     padding-bottom: 24px;
   }
@@ -51,6 +50,43 @@
     &:hover {
       background-color: #caf7d6;
     }
+<<<<<<< HEAD
+=======
+  }
+  &__tooltip {
+    opacity: 1;
+    padding: 10px;
+    width: 40% !important;
+    position: absolute;
+    top: -47px;
+    right: 25%;
+    background-color: rgba(31, 31, 31, 0.7);
+    z-index: 930;
+    overflow: visible;
+    color: white;
+
+    &__container {
+      height: 15px;
+      margin: auto;
+    }
+    &__arrow {
+      position: absolute;
+      left: 45%;
+      bottom: -5px;
+      width: 0;
+      height: 0;
+      border-top: 5px solid rgba(31, 31, 31, 0.8);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    &__message {
+      display: inline-block;
+      font-size: 15px;
+      padding: 0 4px;
+      line-height: 20px;
+      color: #e3e3e3;
+    }
+>>>>>>> develop
   }
   &__label {
     font-family: Assistant;
@@ -105,6 +141,8 @@
 
   &__action {
     flex: 0 0 auto;
+    cursor: pointer;
+    position: relative;
     > * {
       width: 100%;
     }

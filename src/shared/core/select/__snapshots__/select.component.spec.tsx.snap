@@ -11,18 +11,21 @@ exports[`[Select] should render component without crashing 1`] = `
   >
     <option
       aria-selected={true}
+      key="0"
       value="newest"
     >
       newest
     </option>
     <option
       aria-selected={true}
+      key="1"
       value="price"
     >
       price
     </option>
     <option
       aria-selected={true}
+      key="2"
       value="relevance"
     >
       relevance

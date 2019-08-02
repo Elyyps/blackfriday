@@ -7,7 +7,8 @@ export enum ViewType {
   MobileBig,
   Tablet,
   Desktop,
-  DesktopLarge
+  DesktopLarge,
+  DesktopFull
 }
 
 export interface IScreenSize {

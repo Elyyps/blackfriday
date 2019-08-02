@@ -28,7 +28,7 @@
       background-position: 50% 0;
       background-size: 2000px auto;
       opacity: 0.5;
-      background: "@assets/pattern.svg";
+      background: url("https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/pattern.svg");
     }
 
     &__breadcrumbs {
@@ -72,7 +72,7 @@
         text-decoration: none;
         color: $global-inverse-color;
       }
-      .icon-svg {
+      svg {
         margin-right: 10px;
         path {
           stroke: currentColor;
@@ -107,8 +107,7 @@
     }
   }
   &::after {
-    background: "@assets/pattern.svg";
-
+    background: url("https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/pattern.svg");
     background-position: 50% 0;
     background-size: 2000px auto;
     opacity: 0.5;

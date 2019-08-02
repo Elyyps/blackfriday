@@ -20,6 +20,8 @@ interface IDiscountCardComponentProps {
 
 const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
   const { title, status, content, image, range, buttonText, buttonLink, coupon } = props;
+  const [messageDisplayed, setMessageDisplayed] = React.useState<boolean>(false);
+  const ClipLoaderTimer = 1000;
 
   const [isLiked, setIsLiked] = React.useState<boolean>(false);
   const statusBar = (rangeNumber: any) => {
@@ -35,6 +37,12 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
     if (rangeNumber <= limit) {
       return "orange";
     }
+  };
+  const displayMessage = () => {
+    setMessageDisplayed(true);
+    setTimeout(() => {
+      setMessageDisplayed(false);
+    }, ClipLoaderTimer);
   };
 
   return (
@@ -60,7 +68,18 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
         </div>
       </div>
       <div className={styles["discount-card__action"]}>
-        <button className={styles["discount-card__coupon"]}>{coupon}</button>
+        {messageDisplayed && (
+          <div className={styles["discount-card__tooltip"]} aria-hidden="true" data-placement="top">
+            <div className={styles["discount-card__tooltip__container"]}>
+              <div className={styles["discount-card__tooltip__message"]}>Coupon code copied</div>
+            </div>
+            <div className={styles["discount-card__tooltip__arrow"]} />
+          </div>
+        )}
+
+        <button onClick={displayMessage} className={styles["discount-card__coupon"]}>
+          {coupon}
+        </button>
         <Button title={buttonText} href={buttonLink} variant={"primary"} icon={IconDefault} />
       </div>
     </div>

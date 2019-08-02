@@ -19,8 +19,8 @@ const SelectComponent = (props: ISelectComponentProps) => {
   return (
     <div className={styles["select"]}>
       <select className={styles["select-title"]} onChange={handelChange} onSelect={() => props.onSelect}>
-        {props.options.map(value => (
-          <option aria-selected value={value}>
+        {props.options.map((value, index) => (
+          <option aria-selected value={value} key={index}>
             {value}
           </option>
         ))}
