@@ -60,7 +60,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           props.sortBy
         );
         setIsLoading(false);
-      }, 2000);
+      }, 1000);
     }
   };
   const connectClass = "uk-switcher-list";
