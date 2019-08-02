@@ -6,6 +6,7 @@ import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
 import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
 import { IconComponent } from "@app/core";
 import ClockIcon from "@assets/icons/clock.svg";
+import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-data";
 
 export interface IBlogBodyTextComponentProps {
   blogBodyTextModule: BlogBodyTextModule;
@@ -23,10 +24,7 @@ const BlogBodyTextComponent = (props: IBlogBodyTextComponentProps) => {
           </div>
           <BodyTextComponent bodyTextModule={bodyText} />
           <div className={styles["blog-body-text__content__footer"]}>
-            <ShareSocialDropdownComponent
-              buttonTitle="Delen"
-              shareSocial={{ facebook: { url: "test", title: "title" } }}
-            />
+            <ShareSocialDropdownComponent buttonTitle="Delen" shareSocial={socialMediaButtons} />
           </div>
         </div>
         <div className={styles["blog-body-text__sidebar"]}>
