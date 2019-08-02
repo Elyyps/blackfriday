@@ -52,4 +52,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run start-server`
 
 Starts a server that hosts the application using the build folder in the root. Make sure to run 'npm run build' to get the latest
-version before serving it.
+version before serving it..

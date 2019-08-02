@@ -35,9 +35,11 @@ exports[`[ShopCard] should render component without crashing 1`] = `
     <div
       className="shop-card__action"
     >
-      <Button
+      <ClickableComponent
+        href=""
         icon="link.svg"
         iconPosition="right"
+        iconStyle="filled"
       />
     </div>
   </div>

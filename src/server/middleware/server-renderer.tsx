@@ -27,7 +27,11 @@ const serverRenderer: any = () => (req: express.Request & { store: any }, res: e
       renderToString(
         <Html
           css={[res.locals.assetPath("bundle.css"), res.locals.assetPath("vendor.css")]}
-          scripts={[res.locals.assetPath("bundle.js"), res.locals.assetPath("vendor.js")]}
+          scripts={[
+            res.locals.assetPath("bundle.js"),
+            res.locals.assetPath("vendor.js"),
+            res.locals.assetPath("usersnap.js")
+          ]}
           state={state}
         >
           {content}

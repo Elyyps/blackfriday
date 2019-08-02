@@ -4,7 +4,6 @@ import styles from "./shop-single-header-component.module.scss";
 import IconDefault from "@assets/icons/link.svg";
 import CheckIcon from "@assets/icons/check.svg";
 import HeartIcon from "@assets/icons/heart-filled.svg";
-import ShareIcon from "@assets/icons/share.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { DiscountCardComponent } from "@app/core/discount-card";
 import { NewsletterComponent } from "@app/core/newsletter";
@@ -15,17 +14,20 @@ import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
 import { LinkComponent } from "@app/core/link";
+import { BodyTextComponent } from "@app/core/bodytext";
+import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
 }
 
-const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
+const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) => {
   const {
     links,
     checkList,
     CheckListTitle,
-    content,
+    bodyTextModule,
     couponCode,
     discountButton,
     discountPicture,
@@ -38,7 +40,8 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
     smallBackLink,
     storeLink,
     timeLeftBar,
-    title
+    title,
+    shareSocial
   } = props.shopSingleHeaderModule;
 
   return (
@@ -90,7 +93,9 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                       {rating.text}
                     </div>
                   </div>
-                  <div dangerouslySetInnerHTML={{ __html: content }} className={styles["content__body"]} />
+                  <div className={styles["content__body"]}>
+                    <BodyTextComponent style={{ margin: 0, padding: 0 }} bodyTextModule={bodyTextModule} />
+                  </div>
                   {checkList && (
                     <div className="uk-visible@s">
                       <h4>{CheckListTitle}</h4>
@@ -135,13 +140,18 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                             variant={"secondary"}
                           />
                         </div>
-                        <Button icon={ShareIcon} iconPosition="left" title={"Delen"} variant={"secondary"} />
+                        <ShareSocialDropdownComponent
+                          buttonTitle={props.intl.formatMessage({ id: "social-media-share" })}
+                          shareSocial={shareSocial}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className={`${styles["labels"]} uk-visible@s`}>
                     {keywords.map((item, key) => (
-                      <KeywordTagComponent key={key}>{item}</KeywordTagComponent>
+                      <KeywordTagComponent style={{ marginLeft: key == 0 ? "0" : "4px" }} key={key}>
+                        {item}
+                      </KeywordTagComponent>
                     ))}
                   </div>
                 </div>
@@ -157,4 +167,5 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
   );
 };
 
+const ShopSingleHeaderComponent = injectIntl(component);
 export { ShopSingleHeaderComponent };

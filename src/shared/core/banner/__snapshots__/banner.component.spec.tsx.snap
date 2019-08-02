@@ -14,7 +14,7 @@ exports[`[Banner] should render component without crashing 1`] = `
         className="image"
       >
         <Link
-          to="#"
+          to="/deals-overview"
         >
           <ImageComponent
             alt="alt text oasis"
@@ -45,10 +45,10 @@ exports[`[Banner] should render component without crashing 1`] = `
         <div
           className="footer"
         >
-          <Button
+          <ClickableComponent
+            href="/deals-overview"
             icon="link.svg"
             iconStyle="filled"
-            onClick="#"
             title="Meer deals"
             variant="primary-default"
           />

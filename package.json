@@ -13,7 +13,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "test:update": "yarn-or-npm test --updateSnapshot",
     "test:staged": "cross-env CI=true yarn-or-npm test --all",
-    "start-server": "http-server-spa /build/client/static index.html 3002",
+    "start-server": "cross-env NODE_ENV=production node scripts/start-server.js",
     "analyze": "source-map-explorer 'build/client/static/*.js'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -24,6 +24,7 @@
     "commitlint": "8.0.0",
     "compression-webpack-plugin": "3.0.0",
     "connected-react-router": "6.4.0",
+    "copy-webpack-plugin": "^5.0.4",
     "cors": "2.8.5",
     "dotenv": "8.0.0",
     "enzyme-react-intl": "^2.0.4",

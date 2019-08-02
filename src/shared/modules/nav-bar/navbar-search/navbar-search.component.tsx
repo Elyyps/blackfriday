@@ -23,7 +23,7 @@ const CardMoreDeals = (
     title="Wij hebben meer deals in ons overzicht"
     icon={Store}
     buttonText="Alle deals"
-    buttonLink="#"
+    buttonLink="/deals-overview"
     variant={"responsive"}
   />
 );
@@ -33,7 +33,7 @@ const CardMoreShops = (
     title="Wij hebben meer winkels in ons overzicht"
     icon={Store}
     buttonText="Alle winkels"
-    buttonLink="#"
+    buttonLink="/stores-overview"
     variant={"responsive"}
   />
 );
@@ -103,6 +103,8 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
                         content={item.content}
                         range={item.timeLeftBar.value}
                         subtitle={item.timeLeftBar.text}
+                        seeMoreLink={item.seeMore.url}
+                        seeMoreText={item.seeMore.title}
                         image={item.picture}
                         buttonLink={item.button.url}
                         buttonText={item.button.title}

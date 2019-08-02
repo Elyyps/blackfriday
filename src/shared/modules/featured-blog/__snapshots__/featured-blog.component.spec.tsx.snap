@@ -20,7 +20,7 @@ exports[`[FeaturedBlog] should render component without crashing 1`] = `
         key="0"
       >
         <LinkComponent
-          to=""
+          to="/blog-single"
         >
           <div
             className="featured-blog__card-image"
@@ -41,7 +41,7 @@ exports[`[FeaturedBlog] should render component without crashing 1`] = `
         key="1"
       >
         <LinkComponent
-          to=""
+          to="/blog-single"
         >
           <div
             className="featured-blog__card-image"

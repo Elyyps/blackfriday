@@ -1,114 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[ShopSingleHeader] should render component without crashing 1`] = `
-<div
-  className="container"
->
-  <div
-    className="product-detail"
-  >
-    <div
-      className="uk-grid uk-grid-small"
-    >
-      <div
-        className="uk-width-1-3@s"
-      >
-        <div
-          className="card-wrap"
-        >
-          <DiscountCardComponent
-            buttonLink="/"
-            buttonText="Naar deals"
-            content="Gebruik deze kortingscode:"
-            coupon="black15"
-            image="cool-blue.svg"
-            range={0.8}
-            status="NU geldig"
-            title="15% korting op het hele assortiment"
-          />
-          <div
-            className="uk-visible@s"
-          >
-            <NewsletterComponent
-              newsletterModule={
-                Object {
-                  "bottomMargin": "0px",
-                  "id": "1",
-                  "modalTitle": "Inschrijven nieuwsbrief",
-                  "name": "NewsletterModule",
-                  "text": "Op de hoogte blijven? Meld je dan aan!",
-                  "topMargin": "0px",
-                }
-              }
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        className="uk-width-2-3@s"
-      >
-        <div
-          className="product-detail__body"
-        >
-          <div
-            className="product-detail__header"
-          >
-            <img
-              alt="image"
-              src="oasis.jpg"
-            />
-          </div>
-          <div
-            className="product-detail__content"
-          >
-            <div
-              className="product-detail__content__subtitle"
-            >
-              <a
-                className="uk-visible@s"
-                href="/"
-              >
-                Home  - Alle winkels
-              </a>
-              <BackLinkComponent
-                className="uk-hidden@s"
-                href="/"
-              >
-                Alle winkels
-              </BackLinkComponent>
-            </div>
-            <div
-              className="content"
-            >
-              <div
-                className="content__head"
-              >
-                <h1
-                  style={
-                    Object {
-                      "margin": "0",
+<component
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  shopSingleHeaderModule={
+    Object {
+      "CheckListTitle": "De voordelen van shoppen bij Beddenreus tijdens Black Friday.",
+      "backLink": Object {
+        "title": "Home  - Alle winkels",
+        "url": "/",
+      },
+      "bodyTextModule": Object {
+        "bottomMargin": "",
+        "containerAlignment": "left",
+        "containerSize": "full",
+        "html": " <div>
+    <p>
+      Sed ipsum metus, sodales sit amet vulputate a, lobortis mollis odio. Orci varius natoque penatibus et magnis dis
+      parturient montes, nascetur ridiculus mus. Vivamus sed velit in ligula finibus viverra. Donec eleifend commodo
+      ipsum nec commodo. Cras vehicula lectus et felis suscipit, vel commodo metus sagittis. Vestibulum quam elit,
+      dignissim sit amet risus in, luctus accumsan lectus. Sed rutrum metus ut massa tempus, eget blandit lacus
+      molestie. Pellentesque sit amet aliquam lacus. Etiam ultrices velit eu neque pharetra, vitae scelerisque sapien
+      fermentum. Morbi egestas bibendum est. Donec at felis hendrerit, iaculis lorem vel, porta enim. Quisque suscipit
+      condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
+      tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
+    </p>
+     <h1>
+      <strong>Black Friday Beddenreus</strong>
+    </h1>
+     <p>
+      Noteer vrijdag 29 november alvast in uw agenda, want dan start Black Friday 2019. Vanaf dat moment kunt u mooie
+      deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen
+      geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
+      uw wensen bij elkaar te shoppen.
+    </p>
+  </div>",
+<<<<<<< HEAD
+                      "id": "",
+                      "name": "shopSingleBodyText",
+                      "topMargin": "",
                     }
                   }
-                >
-                  15% korting op het hele assortiment
-                </h1>
-                <div
-                  className="content__head__stars uk-visible@s"
-                >
-                  <StarsRatingComponent
-                    rating={5}
-                  />
-                  Beoordeel deze deal
-                </div>
+                />
               </div>
-              <div
-                className="content__body"
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "Vier Black Friday bij Beddenreus en ontvang 15% korting op alles!Black Friday bij Beddenreus wil je niet missen! Je geniet van maar liefst 15% korting op alles. Extra interessant: Black Friday duurt bij Beddenreus niet één dag maar ruim een week. Dé week om eens goed na te denken over een nieuwe boxspring, matras of dekbedovertrek! Want 15% korting dat is héél veel! Hét ideale moment dus om jouw favoriete boxspring, matras of winterdekbed te kopen. Online én in de winkel. Meer info",
-                  }
-                }
-              />
               <div
                 className="uk-visible@s"
               >
@@ -189,7 +149,7 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
                 >
                   <a
                     className="actions__item__first"
-                    href="/"
+                    href="/stores-single"
                     role="button"
                   >
                     <h5
@@ -255,16 +215,31 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
               >
                 <KeywordTagComponent
                   key="0"
+                  style={
+                    Object {
+                      "marginLeft": "0px",
+                    }
+                  }
                 >
                   Wonen & slapen
                 </KeywordTagComponent>
                 <KeywordTagComponent
                   key="1"
+                  style={
+                    Object {
+                      "marginLeft": "4px",
+                    }
+                  }
                 >
                   Swiss sense
                 </KeywordTagComponent>
                 <KeywordTagComponent
                   key="2"
+                  style={
+                    Object {
+                      "marginLeft": "4px",
+                    }
+                  }
                 >
                   hastens
                 </KeywordTagComponent>
@@ -292,4 +267,64 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
     </div>
   </div>
 </div>
+=======
+        "id": "",
+        "name": "shopSingleBodyText",
+        "topMargin": "",
+      },
+      "bottomMargin": "0px",
+      "checkList": Array [
+        "Profiteer van 15% op korting op alles",
+        "Online én in de winkels",
+        "De hele week aanbiedingen van 16-11 t/m 26-11",
+        "Ruimere openingstijden",
+      ],
+      "couponCode": "black15",
+      "discountButton": Object {
+        "title": "Naar deals",
+        "url": "/",
+      },
+      "discountPicture": "cool-blue.svg",
+      "discountSubtitle": "Gebruik deze kortingscode:",
+      "discountTitle": "15% korting op het hele assortiment",
+      "favoriteButton": Object {
+        "title": "Winkel opslaan als favoriet",
+        "url": "/",
+      },
+      "id": "1",
+      "keywords": Array [
+        "Wonen & slapen",
+        "Swiss sense",
+        "hastens",
+      ],
+      "name": "ShopSingleHeaderModule",
+      "picture": "oasis.jpg",
+      "rating": Object {
+        "text": "Beoordeel deze deal",
+        "value": 5,
+      },
+      "shareSocial": Object {
+        "facebook": Object {
+          "title": "Facebook sharing",
+          "url": "http://viper.blackfridaynederland.nl/shop-single",
+        },
+      },
+      "smallBackLink": Object {
+        "title": "Alle winkels",
+        "url": "/",
+      },
+      "storeLink": Object {
+        "title": "Beddenreus",
+        "url": "/",
+      },
+      "timeLeftBar": Object {
+        "text": "NU geldig",
+        "value": 0.8,
+      },
+      "title": "15% korting op het hele assortiment",
+      "topMargin": "0px",
+    }
+  }
+/>
+>>>>>>> develop
 `;
