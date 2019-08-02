@@ -29,7 +29,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
   const classModify = `banner--${variant || "default"}`;
 
   return (
-    <div className={`uk-container ${styles["container"]}`}>
+    <div className={"uk-container"}>
       <div className={styles[classModify]}>
         <div className={styles["holder"]}>
           <div className={styles["image"]}>
