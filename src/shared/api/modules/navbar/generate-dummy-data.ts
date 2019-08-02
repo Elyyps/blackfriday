@@ -26,23 +26,23 @@ export const generateDummyNavbarData = (): INavBarModule => ({
       links: [
         {
           title: "Apple iMac (2019)",
-          url: "./"
+          url: "./productline-overview"
         },
         {
           title: "iPhoneX",
-          url: "./"
+          url: "./productline-overview"
         },
         {
           title: "Apple Magic Mouse 2",
-          url: "./"
+          url: "./productline-overview"
         },
         {
           title: "Apple Ipad Air(2019)",
-          url: "./"
+          url: "./productline-overview"
         },
         {
           title: "Apple MacBook Air 13,3''",
-          url: "./"
+          url: "./productline-overview"
         }
       ]
     } as MenuItemExpandable,

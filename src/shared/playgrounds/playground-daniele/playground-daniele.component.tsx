@@ -15,7 +15,7 @@ export interface IPlaygroundDanieleComponentProps {}
 
 const PlaygroundDanieleComponent = (props: IPlaygroundDanieleComponentProps) => (
   <div>
-    <HeaderInfoComponent title={"MIMMO DELLE PIETRE"} />
+    <HeaderInfoComponent title={"Blackfriday"} />
   </div>
 );
 
