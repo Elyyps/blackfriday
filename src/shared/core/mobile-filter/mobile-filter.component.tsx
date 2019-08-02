@@ -15,7 +15,13 @@ import { injectIntl, InjectedIntlProps } from "react-intl";
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
   onClear: () => void;
+  onFinish: (selectedItems: IMobileFilterSelectedItems[]) => void;
   totalStores: number;
+}
+
+interface IMobileFilterSelectedItems {
+  selectedItems: string[];
+  title: string;
 }
 
 const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
@@ -23,6 +29,14 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
   const { filterItems, onClear, totalStores } = props;
   const [isFilterOpened, setIsFilterOpened] = useState<boolean>(false);
+
+  const onFinishHandler = () => {
+    const selectedItems: IMobileFilterSelectedItems[] = filterItems.map(item => ({
+      title: item.title,
+      selectedItems: item.selectedItems
+    }));
+    props.onFinish(selectedItems);
+  };
 
   const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
     if (currentFilterItems && currentFilterItem) {
@@ -149,6 +163,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
         <Button
           variant="primary-brand"
           fullWidth
+          onClick={onFinishHandler}
           title={props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores })}
         />
       </div>
