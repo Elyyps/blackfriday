@@ -39,7 +39,6 @@ const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps)
       title = shareSocial.whatsapp.title;
       url = shareSocial.whatsapp.url;
     }
-    if (!url) url = window.location.href;
     shareSocialNative(title, content, url);
   };
 

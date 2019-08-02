@@ -26,9 +26,10 @@ const TabComponent = (props: ITabComponentProps) => {
     <React.Fragment>
       <div className={`${styles["tab"]}`}>
         <ul className={styles["uk-tab__list"]}>
-          {props.tabs.map(tab => (
+          {props.tabs.map((tab, key) => (
             <li
               role="button"
+              key={key}
               className={selectedTab === tab.index ? styles["tab__selected"] : ""}
               onClick={() => setSelectedTab(tab.index)}
             >

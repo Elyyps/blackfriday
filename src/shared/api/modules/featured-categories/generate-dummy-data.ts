@@ -11,30 +11,30 @@ export const generateDummyFeaturedCategoriesData = (): FeaturedCategoriesModule 
   categoryItems: [
     {
       image: iears,
-      link: { url: "/", title: "Apple Airpods" }
+      link: { url: "/stores-single", title: "Apple Airpods" }
     },
     {
       image: imac,
-      link: { url: "/", title: "Apple iPhones" }
+      link: { url: "/stores-single", title: "Apple iPhones" }
     },
     {
       image: iphone,
-      link: { url: "/", title: "Apple MacBooks" }
+      link: { url: "/stores-single", title: "Apple MacBooks" }
     },
     {
       image: loader,
-      link: { url: "/", title: "Apple iMacs" }
+      link: { url: "/stores-single", title: "Apple iMacs" }
     },
     {
       image: macbook,
-      link: { url: "/", title: "Categorie item met een lange naam" }
+      link: { url: "/stores-single", title: "Categorie item met een lange naam" }
     },
     {
       image: mouse,
-      link: { url: "/", title: "Categorie item met een nog langere naam" }
+      link: { url: "/stores-single", title: "Categorie item met een nog langere naam" }
     },
     {
-      link: { url: "/", title: "Categorie item zonder afbeelding" }
+      link: { url: "/stores-single", title: "Categorie item zonder afbeelding" }
     }
   ],
   bottomPadding: { desktopPadding: 72, mobilePadding: 48 },

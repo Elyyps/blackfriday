@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BlogBodyText] should render component without crashing 1`] = `
+<div
+  className="uk-container blog-body-text"
+>
+  <div
+    className="blog-body-text__container"
+  >
+    <div
+      className="blog-body-text__content"
+    >
+      <div
+        className="blog-body-text__content__header"
+      >
+        <IconComponent
+          icon="clock.svg"
+          size="14"
+        />
+         
+        2 minuten leestijd
+      </div>
+      <BodyTextComponent
+        bodyTextModule={
+          Object {
+            "bottomMargin": "",
+            "bottomPadding": Object {
+              "desktopPadding": 72,
+              "mobilePadding": 32,
+            },
+            "containerAlignment": "center",
+            "containerSize": "full",
+            "html": "<h1>This is a title</h1><br/><p>This is a paragraph</p>",
+            "id": "1",
+            "name": "BlogBodyText",
+            "topMargin": "",
+            "topPadding": Object {
+              "desktopPadding": 72,
+              "mobilePadding": 32,
+            },
+          }
+        }
+      />
+      <div
+        className="blog-body-text__content__footer"
+      >
+        <ShareSocialDropdownComponent
+          buttonTitle="Delen"
+          shareSocial={
+            Object {
+              "facebook": Object {
+                "title": "title",
+                "url": "test",
+              },
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="blog-body-text__sidebar"
+    >
+      <SidebarComponent
+        banner={
+          Object {
+            "buttonLink": "/deals-overview",
+            "buttonTitle": "Meer deals",
+            "image": Object {
+              "alt": "alt text oasis",
+              "src": "oasis.jpg",
+            },
+            "label": "22 t/m 26 nov.",
+            "logo": Object {
+              "alt": "alt text CoolBlue",
+              "src": "cool-blue.svg",
+            },
+            "text": "Een selectie van bizarre aanbiedingen. Meer info",
+            "title": "Black Friday bij Coolblue",
+          }
+        }
+        featuredItemsGroups={
+          Array [
+            Object {
+              "featuredItems": Array [
+                Object {
+                  "image": "imac.png",
+                  "link": Object {
+                    "title": "Apple iPhones",
+                    "url": "/stores-single",
+                  },
+                },
+                Object {
+                  "image": "iphone.png",
+                  "link": Object {
+                    "title": "Apple MacBooks",
+                    "url": "/stores-single",
+                  },
+                },
+                Object {
+                  "image": "loader.png",
+                  "link": Object {
+                    "title": "Apple iMacs",
+                    "url": "/stores-single",
+                  },
+                },
+                Object {
+                  "icon": "party.svg",
+                  "link": Object {
+                    "title": "Naar alle deals!",
+                    "url": "/stores-single",
+                  },
+                },
+              ],
+              "title": "Een greep uit onze deals",
+            },
+            Object {
+              "featuredItems": Array [
+                Object {
+                  "image": "cool-blue.svg",
+                  "link": Object {
+                    "title": "Coolblue",
+                    "url": "/stores-single",
+                  },
+                },
+                Object {
+                  "image": "cool-blue.svg",
+                  "link": Object {
+                    "title": "Alternate",
+                    "url": "/stores-single",
+                  },
+                },
+                Object {
+                  "image": "cool-blue.svg",
+                  "link": Object {
+                    "title": "Beddenreus",
+                    "url": "/stores-single",
+                  },
+                },
+                Object {
+                  "icon": "party.svg",
+                  "link": Object {
+                    "title": "Naar alle winkels!",
+                    "url": "/stores-single",
+                  },
+                },
+              ],
+              "title": "Black Friday Winkels",
+            },
+          ]
+        }
+      />
+    </div>
+  </div>
+</div>
+`;

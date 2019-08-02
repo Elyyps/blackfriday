@@ -7,10 +7,17 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 const CompressionPlugin = require("compression-webpack-plugin");
 const paths = require("../paths");
 const { clientOnly } = require("../../scripts/utils");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const env = require("../env")();
 
 const shared = [];
+
+if (process.env.NODE_ENV === "production") {
+  shared.push(
+    new CopyPlugin([{ from: paths.src + "/scripts/usersnap.js", to: paths.clientBuild + "/static/usersnap.js" }])
+  );
+}
 
 const client = [
   new CompressionPlugin({

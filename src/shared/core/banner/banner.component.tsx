@@ -1,8 +1,9 @@
 import * as React from "react";
 import styles from "./banner-component.module.scss";
-import { Button, ImageComponent } from "@app/core/";
+import { ImageComponent } from "@app/core/";
 import { Link } from "react-router-dom";
 import IconDefault from "@assets/icons/link.svg";
+import { ClickableComponent } from "../clickable";
 
 export type BannerVariant = "default" | "small";
 
@@ -12,7 +13,7 @@ export type ImageType = {
 };
 
 export interface IBannerComponentProps {
-  buttonLink?: any;
+  buttonLink: string;
   buttonTitle?: string;
   image?: ImageType;
   label?: string;
@@ -28,7 +29,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
   const classModify = `banner--${variant || "default"}`;
 
   return (
-    <div className={`uk-container ${styles["container"]}`}>
+    <div className={"uk-container"}>
       <div className={styles[classModify]}>
         <div className={styles["holder"]}>
           <div className={styles["image"]}>
@@ -49,9 +50,9 @@ const BannerComponent = (props: IBannerComponentProps) => {
             </div>
             <div className={styles["footer"]}>
               {buttonTitle && (
-                <Button
+                <ClickableComponent
+                  href={buttonLink}
                   title={buttonTitle}
-                  onClick={buttonLink}
                   variant={"primary-default"}
                   iconStyle={"filled"}
                   icon={IconDefault}
