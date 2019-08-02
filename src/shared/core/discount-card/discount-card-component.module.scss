@@ -11,6 +11,7 @@
   width: 100%;
   box-sizing: border-box;
   height: 100%;
+  position:relative;
   padding-bottom: 56px;
   @media (max-width: $breakpoint-xsmall-max) {
     padding-bottom: 24px;
@@ -50,8 +51,6 @@
     &:hover {
       background-color: #caf7d6;
     }
-<<<<<<< HEAD
-=======
   }
   &__tooltip {
     opacity: 1;
@@ -86,7 +85,6 @@
       line-height: 20px;
       color: #e3e3e3;
     }
->>>>>>> develop
   }
   &__label {
     font-family: Assistant;
