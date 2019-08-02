@@ -86,7 +86,7 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
             {getTotalNumberOfFilters() > 0 && (
               <div className={styles["filter-bar__clear-filter"]}>
                 <span role="link" onClick={() => props.clearFilters()} style={{ color: "red", cursor: "pointer" }}>
-                  Verwijder alle filters({getTotalNumberOfFilters()})
+                  Verwijder alle filters ({getTotalNumberOfFilters()})
                 </span>
               </div>
             )}
