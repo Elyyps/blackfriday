@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import styles from "./filter-bar-component.module.scss";
-import { MobileFilterComponent } from "../mobile-filter";
+import { MobileFilterComponent, IMobileFilterSelectedItems } from "../mobile-filter";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { IMobileFilterItem } from "../mobile-filter/mobile-filter-item";
 import { useState, useEffect } from "react";
@@ -56,7 +56,16 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
     props.onFiltersChanged(clearedBrandFilters, clearedCategoryFilters, clearedStatusFilters, "Relevantie");
   };
 
-  return <MobileFilterComponent totalStores={10} onClear={() => clearAllFilters()} filterItems={mobileFilters} />;
+  return (
+    <MobileFilterComponent
+      totalStores={10}
+      onClear={() => clearAllFilters()}
+      filterItems={mobileFilters}
+      onFinish={(selectedItems: IMobileFilterSelectedItems[]) => {
+        console.log(selectedItems);
+      }}
+    />
+  );
 };
 
 const getMobileFilterItems = (

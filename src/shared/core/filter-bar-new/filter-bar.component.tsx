@@ -51,6 +51,8 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.setSortBy(sortBy);
   };
 
+  console.log(props.screenSize);
+
   return (
     <div className="uk-container">
       {props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (

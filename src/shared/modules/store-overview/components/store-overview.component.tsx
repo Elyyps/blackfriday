@@ -76,7 +76,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       <FilterBarContainer />
       <div className={styles["store-overview"]}>
         <div className="uk-container">
-          {props.stores && (
+          {props.stores && props.stores.length > 0 ? (
             <div className={styles["stores-overview__body__list"]}>
               {overviewItems.map(overviewItem => {
                 const { store, advert } = overviewItem;
@@ -96,7 +96,11 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
                   </React.Fragment>
                 );
               })}
-              <BottomScrollListener onBottom={bottomPageCallback} offset={150} />
+              <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
+            </div>
+          ) : (
+            <div>
+              <h1>Geen resultaten gevonden</h1>
             </div>
           )}
 

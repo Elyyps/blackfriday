@@ -19,7 +19,7 @@ export interface IMobileFilterComponentProps {
   totalStores: number;
 }
 
-interface IMobileFilterSelectedItems {
+export interface IMobileFilterSelectedItems {
   selectedItems: string[];
   title: string;
 }
