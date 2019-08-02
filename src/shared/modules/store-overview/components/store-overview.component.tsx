@@ -79,37 +79,37 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     }
   };
 
-  console.log(overviewItems);
-
   return (
     <div>
       <FilterBarContainer />
       <div className={styles["store-overview"]}>
-        {props.stores && (
-          <div className={styles["stores-overview__body__list"]}>
-            {overviewItems.map(overviewItem => {
-              const { store, advert } = overviewItem;
-              return (
-                <React.Fragment key={store.id}>
-                  <div className={styles[`stores-overview__body__cards`]}>
-                    <ShopCardComponent store={store} />
-                    <br />
-                  </div>
-                  {!!advert && (
-                    <div style={{ width: "100%" }}>
-                      <BannerComponent {...advert} />
+        <div className="uk-container">
+          {props.stores && (
+            <div className={styles["stores-overview__body__list"]}>
+              {overviewItems.map(overviewItem => {
+                const { store, advert } = overviewItem;
+                return (
+                  <React.Fragment key={store.id}>
+                    <div className={styles[`stores-overview__body__cards`]}>
+                      <ShopCardComponent store={store} />
                       <br />
                     </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-            <BottomScrollListener onBottom={bottomPageCallback} offset={150} />
-          </div>
-        )}
+                    {!!advert && (
+                      <div style={{ width: "100%" }}>
+                        <BannerComponent {...advert} />
+                        <br />
+                      </div>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+              <BottomScrollListener onBottom={bottomPageCallback} offset={150} />
+            </div>
+          )}
 
-        <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-          <ClipLoader css={spinnerOverride} sizeUnit={"px"} size={ClipLoaderSize} color={"red"} loading={isLoading} />
+          <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
+            <ClipLoader css={spinnerOverride} sizeUnit={"px"} size={ClipLoaderSize} color={"red"} loading={isLoading} />
+          </div>
         </div>
       </div>
     </div>

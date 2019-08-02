@@ -43,6 +43,8 @@ import { generateBodytextDummyData } from "@app/api/core/bodytext";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { BlogBodyTextComponent } from "@app/modules/blog-body-text";
 import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
+import { StoreOverviewContainer } from "@app/modules/store-overview/containers/store-overview.container";
+import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -68,8 +70,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <NotYetImplementedComponent notYetImplemented={wordPressModule as NotYetImplemented} />;
     case "ShopSingleHeaderModule":
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
-    case "StoresOverviewModule":
-      return <div>store overview</div>;
+    case "StoreOverviewModule":
+      return <StoreOverviewContainer storeOverviewModule={wordPressModule as StoreOverviewModule} />;
     case "BlogSingleHeaderModule":
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":
