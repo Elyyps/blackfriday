@@ -57,7 +57,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
           </div>
         </div>
         <div className={styles["shop-card__action"]}>
-          <ClickableComponent title="Naar deals" icon={ShopIcon} iconPosition="right" href="./store-single" />
+          <ClickableComponent iconStyle="filled" title="Naar deals" icon={ShopIcon} iconPosition="right" href="./store-single" />
         </div>
       </div>
     </ShadowCardComponent>
