@@ -111,7 +111,6 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           <a
             role="button"
             onClick={() => {
-              setIsFilterOpened(false);
               onClear();
             }}
             className={styles["mobile-filter__header__clear"]}
