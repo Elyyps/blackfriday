@@ -8,7 +8,7 @@ import { LinkComponent } from "@app/core/link";
 import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
 import { NavbarSearchContainer } from "./navbar-search/container/navbar-search.container";
 import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
-import { HamburgerMenuComponent } from "../hamburger-menu";
+import { NavbarMenuItemComponent } from "../navbar-menu-item";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -56,7 +56,7 @@ const NavBarComponent = (props: INavBarComponentProps) => (
             icon={MENU_ICON}
             iconSize="17px"
           >
-            <HamburgerMenuComponent items={props.navBarModule.hamburgerMenu} />
+            <NavbarMenuItemComponent items={props.navBarModule.navbarMenuItem} />
           </ModalNavBar>
         </div>
       </div>

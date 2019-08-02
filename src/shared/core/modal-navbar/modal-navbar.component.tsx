@@ -3,6 +3,7 @@ import * as React from "react";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { CLOSE_ICON } from "@app/constants/icons";
 import styles from "./modal-navbar-component.module.scss";
+import ReactDOM from "react-dom";
 
 interface IModalNavBarProps {
   children?: any;
@@ -62,34 +63,39 @@ const ModalNavBar = (props: IModalNavBarProps) => {
         <IconComponent icon={props.icon} size={props.iconSize} />
         {props.title}
       </button>
-
-      <div
-        role={"role"}
-        className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
-        onClick={(e): any => {
-          onClickAway(e);
-        }}
-      >
-        <div
-          className={`${styles["modal-navbar__holder"]} ${styles[`modal-navbar__holder__${props.variant}`]}`}
-          ref={modalRef}
-        >
+      {isOpen &&
+        ReactDOM.createPortal(
           <div
-            className={`${styles["modal-navbar__container"]} ${styles[`modal-navbar__container__${props.variant}`]}`}
+            role={"role"}
+            className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
+            onClick={(e): any => {
+              onClickAway(e);
+            }}
           >
             <div
-              role="button"
-              aria-label="closeButton"
-              className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
-              onClick={toggleOpened}
+              className={`${styles["modal-navbar__holder"]} ${styles[`modal-navbar__holder__${props.variant}`]}`}
+              ref={modalRef}
             >
-              <IconComponent icon={CLOSE_ICON} size="12px" />
-              <span className="uk-visible@m">{props.close}</span>
+              <div
+                className={`${styles["modal-navbar__container"]} ${
+                  styles[`modal-navbar__container__${props.variant}`]
+                }`}
+              >
+                <div
+                  role="button"
+                  aria-label="closeButton"
+                  className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
+                  onClick={toggleOpened}
+                >
+                  <IconComponent icon={CLOSE_ICON} size="12px" />
+                  <span className="uk-visible@m">{props.close}</span>
+                </div>
+                {props.children}
+              </div>
             </div>
-            {props.children}
-          </div>
-        </div>
-      </div>
+          </div>,
+          document.body
+        )}
     </div>
   );
 };

@@ -81,10 +81,11 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                       <div className={styles["homepage-header__slider-item-video"]}>
                         <ModalComponent
                           isTriggerOnClick
-                          variant={"big"}
+                          variant={"full-screen"}
+                          modalBackground={"transparent"}
                           trigger={<IconComponent icon={PLAY_BUTTON} size={"80px"} />}
                         >
-                          <ReactPlayer url={slide.video} height={"500px"} width={"100%"} playing controls />
+                          <ReactPlayer url={slide.video} height={"100%"} width={"100%"} playing controls />
                         </ModalComponent>
                       </div>
                     )}

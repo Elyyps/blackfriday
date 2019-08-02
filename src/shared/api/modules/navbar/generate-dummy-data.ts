@@ -16,7 +16,7 @@ export const generateDummyNavbarData = (): INavBarModule => ({
   topMargin: "0px",
   id: "1",
   name: "NavBarModule",
-  hamburgerMenu: [
+  navbarMenuItem: [
     {
       text: "Apple",
       links: [

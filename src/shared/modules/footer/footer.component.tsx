@@ -9,7 +9,8 @@ import { StarsRatingComponent } from "@app/core/stars-rating";
 import { ExpandablePanelComponent } from "@app/core/expandable-panel";
 import { ModalComponent } from "@app/core/modal";
 import { NewsletterFormComponent } from "@app/core/newsletter";
-
+import ArrowUp from "@assets/icons/chevron-up.svg";
+import ArrowDown from "@assets/icons/chevron-down.svg";
 export interface IFooterComponentProps {
   footerModule: Footer;
 }
@@ -25,10 +26,6 @@ const FooterComponent = (props: IFooterComponentProps) => {
       setOpenedPanel(key);
     }
   };
-
-  const mainContent = () => (
-    <div className={styles["footer__column-title"]}>{props.footerModule.middleFooter.socialMedia.title}</div>
-  );
 
   const onSubmit = () => {
     // Submit logic newsletter  here
@@ -78,7 +75,18 @@ const FooterComponent = (props: IFooterComponentProps) => {
                     identifier={item.id}
                     opened={openedPanel === item.id}
                     key={index}
-                    mainContent={<div className={styles["footer__column-title"]}>{item.title}</div>}
+                    mainContent={
+                      <div
+                        className={`${styles["footer__column-title"]} ${
+                          openedPanel === `${item.id}` ? styles["footer__column-title__clicked"] : ""
+                        }`}
+                      >
+                        {item.title}
+                        <div className={styles["footer__column-title__icon"]}>
+                          <IconComponent icon={openedPanel === `${item.id}` ? ArrowUp : ArrowDown} size="10px" />
+                        </div>
+                      </div>
+                    }
                   >
                     <div>
                       <ul className={styles["footer__column-nav"]}>
@@ -123,7 +131,25 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   callback={panelClicked}
                   identifier={props.footerModule.middleFooter.socialMedia.id}
                   opened={openedPanel === props.footerModule.middleFooter.socialMedia.id}
-                  mainContent={mainContent()}
+                  mainContent={
+                    <div
+                      className={`${styles["footer__column-title"]} ${
+                        openedPanel === `${props.footerModule.middleFooter.socialMedia.id}`
+                          ? styles["footer__column-title__clicked"]
+                          : ""
+                      }`}
+                    >
+                      {props.footerModule.middleFooter.socialMedia.title}
+                      <div className={styles["footer__column-title__icon"]}>
+                        <IconComponent
+                          icon={
+                            openedPanel === `${props.footerModule.middleFooter.socialMedia.id}` ? ArrowUp : ArrowDown
+                          }
+                          size="10px"
+                        />
+                      </div>
+                    </div>
+                  }
                 >
                   <div className={styles["footer__social"]}>
                     {props.footerModule.middleFooter.socialMedia.socialItem.map((item, index) => (
