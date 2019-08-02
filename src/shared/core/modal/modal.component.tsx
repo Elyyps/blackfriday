@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { ModalDialogComponent } from "./modal-dialog.component";
 
-export type ModalVariant = "small" | "big";
+export type ModalVariant = "small" | "big" | "full-screen";
 export type Role = "dialog" | "alertdialog";
 export interface IModalComponentProps {
   ariaLabel?: string;

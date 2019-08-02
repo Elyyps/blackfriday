@@ -43,7 +43,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
   const classModify = `banner--${variant || "default"}`;
 
   return (
-    <div className={`${styles["container"]}`}>
+    <div className={"uk-container"}>
       <div className={styles[classModify]}>
         <div className={styles["holder"]}>
           {showAlternativeBanner ? (
@@ -63,19 +63,18 @@ const BannerComponent = (props: IBannerComponentProps) => {
   );
 };
 
-const renderImage = (imageLink?: string, image?: ImageType) =>
-  (
-    <div className={styles["image"]}>
-      <a href={imageLink} target="_blank">
-        <ImageComponent
-          alt={image && image.alt}
-          src={image && image.src}
-          errorImage={IconDefault}
-          errorMessage="Custom error message"
-        />
-      </a>
-    </div>
-  );
+const renderImage = (imageLink?: string, image?: ImageType) => (
+  <div className={styles["image"]}>
+    <a href={imageLink} target="_blank">
+      <ImageComponent
+        alt={image && image.alt}
+        src={image && image.src}
+        errorImage={IconDefault}
+        errorMessage="Custom error message"
+      />
+    </a>
+  </div>
+);
 
 const renderBody = (
   label: string,
@@ -85,36 +84,35 @@ const renderBody = (
   buttonLink: string,
   buttonTitle: string,
   moreInfoLink: string
-) =>
-  (
-    <div className={styles["body"]}>
-      <div className={styles["content"]}>
-        <div className={styles["label"]}>{label}</div>
-        <h2 className={styles["title"]}>{title}</h2>
-        <span>{text}</span>
-        <span className={styles["more-info"]}>
-          <a href={moreInfoLink} target="_blank">
-            Meer info
-          </a>
-        </span>
-      </div>
-      <div className={styles["footer"]}>
-        {buttonTitle && (
-          <ClickableComponent
-            title={buttonTitle}
-            variant={"primary-default"}
-            iconStyle={"filled"}
-            icon={IconDefault}
-            href={buttonLink}
-          />
-        )}
-        {logo && (
-          <div className={styles["logo"]}>
-            <ImageComponent src={logo.src} alt={logo.alt} />
-          </div>
-        )}
-      </div>
+) => (
+  <div className={styles["body"]}>
+    <div className={styles["content"]}>
+      <div className={styles["label"]}>{label}</div>
+      <h2 className={styles["title"]}>{title}</h2>
+      <span>{text}</span>
+      <span className={styles["more-info"]}>
+        <a href={moreInfoLink} target="_blank">
+          Meer info
+        </a>
+      </span>
     </div>
-  );
+    <div className={styles["footer"]}>
+      {buttonTitle && (
+        <ClickableComponent
+          title={buttonTitle}
+          variant={"primary-default"}
+          iconStyle={"filled"}
+          icon={IconDefault}
+          href={buttonLink}
+        />
+      )}
+      {logo && (
+        <div className={styles["logo"]}>
+          <ImageComponent src={logo.src} alt={logo.alt} />
+        </div>
+      )}
+    </div>
+  </div>
+);
 
 export { BannerComponent };

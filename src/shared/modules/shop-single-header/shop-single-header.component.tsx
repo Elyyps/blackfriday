@@ -13,6 +13,7 @@ import { Button } from "@app/core";
 import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
+import { LinkComponent } from "@app/core/link";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
 import { injectIntl, InjectedIntlProps } from "react-intl";
@@ -23,7 +24,7 @@ export interface IShopSingleHeaderComponentProps {
 
 const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) => {
   const {
-    backLink,
+    links,
     checkList,
     CheckListTitle,
     bodyTextModule,
@@ -73,18 +74,22 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
               </div>
               <div className={styles["product-detail__content"]}>
                 <div className={styles["product-detail__content__subtitle"]}>
-                  <a className="uk-visible@s" href={backLink.url}>
-                    {backLink.title}
-                  </a>
-                  <BackLinkComponent href={smallBackLink.url} className="uk-hidden@s">
-                    {smallBackLink.title}
-                  </BackLinkComponent>
+                  {links.map((link, index) => {
+                    return (
+                      <React.Fragment>
+                        <LinkComponent key={index} to={link.url}>
+                          {link.title}
+                        </LinkComponent>{" "}
+                        {index < links.length - 1 ? " - " : ""}
+                      </React.Fragment>
+                    );
+                  })}
                 </div>
                 <div className={styles["content"]}>
                   <div className={styles["content__head"]}>
                     <h1 style={{ margin: "0" }}>{title}</h1>
                     <div className={`${styles["content__head__stars"]} uk-visible@s`}>
-                      <StarsRatingComponent rating={rating.value} />
+                      <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                       {rating.text}
                     </div>
                   </div>
@@ -113,7 +118,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                         <IconComponent icon={IconDefault} size="14px" />
                       </a>
                       <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
-                        <StarsRatingComponent rating={rating.value} />
+                        <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                         {rating.text}
                       </div>
                     </div>

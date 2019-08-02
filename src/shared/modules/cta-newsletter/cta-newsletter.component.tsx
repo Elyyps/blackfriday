@@ -18,22 +18,24 @@ const CtaNewsletterComponent = (props: ICtaNewsletterComponentProps) => (
   <div className={styles["cta-small-newsletter"]}>
     <div className="uk-container">
       <ShadowCardComponent borderRadius={["2px"]}>
-        <div className={styles["cta-small-newsletter__wrapper"]}>
-          {props.ctaNewsLetterModule.icon && (
-            <div className={styles["icon"]}>
-              <IconComponent icon={props.ctaNewsLetterModule.icon} size="32px" />
-            </div>
-          )}
-          <div className={styles["cta-small-newsletter__title"]}>{props.ctaNewsLetterModule.text}</div>
-          {props.ctaNewsLetterModule.buttonTitle && (
-            <ModalComponent
-              title={props.ctaNewsLetterModule.modalTitle}
-              trigger={<ClickableComponent title={props.ctaNewsLetterModule.buttonTitle} variant="primary-brand" />}
-              variant={"small"}
-            >
-              <NewsletterFormComponent onSubmit={onSubmit} />
-            </ModalComponent>
-          )}
+        <div className={styles["cta-small-newsletter__center"]}>
+          <div className={styles["cta-small-newsletter__wrapper"]}>
+            {props.ctaNewsLetterModule.icon && (
+              <div className={styles["icon"]}>
+                <IconComponent icon={props.ctaNewsLetterModule.icon} size="32px" />
+              </div>
+            )}
+            <div className={styles["cta-small-newsletter__title"]}>{props.ctaNewsLetterModule.text}</div>
+            {props.ctaNewsLetterModule.buttonTitle && (
+              <ModalComponent
+                title={props.ctaNewsLetterModule.modalTitle}
+                trigger={<ClickableComponent title={props.ctaNewsLetterModule.buttonTitle} variant="primary-brand" />}
+                variant={"small"}
+              >
+                <NewsletterFormComponent onSubmit={onSubmit} />
+              </ModalComponent>
+            )}
+          </div>
         </div>
       </ShadowCardComponent>
     </div>

@@ -1,17 +1,17 @@
 .cta-small-newsletter {
-  width: 100%;
-  &__wrapper {
-    background: $global-background;
-    border-radius: $global-border-radius;
+  &__center {
     padding: 24px;
+    background: $global-background;
+  }
+  &__wrapper {
+    border-radius: $global-border-radius;
     text-align: center;
     display: inline-block;
-
+    width: 100%;
     @media (min-width: $breakpoint-small) {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
     }
   }
   &__title {
