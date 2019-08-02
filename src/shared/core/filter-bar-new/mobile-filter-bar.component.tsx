@@ -37,8 +37,54 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
   }, [props.brandFilterItems, props.categoryFilterItems, props.sortBy, props.sortByOptions, props.statusFilterItems]);
 
   const handleFinishSearch = (selectedItems: IMobileFilterSelectedItems[]) => {
-    // implement search here
+    const brandFilters = props.brandFilterItems.map((filter: FilterItem) => {
+      const result = { ...filter, isSelected: false };
+
+      return result;
+    });
+    const categoryFilters = props.categoryFilterItems.map((filter: FilterItem) => {
+      const result = { ...filter, isSelected: false };
+
+      return result;
+    });
+    const statusFilters = props.statusFilterItems.map((filter: FilterItem) => {
+      const result = { ...filter, isSelected: false };
+
+      return result;
+    });
+
+    let sortBy = "";
+
+    selectedItems.map(item => {
+      if (item.title === "Merk") {
+        brandFilters.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            filter.isSelected = true;
+          }
+        });
+      }
+      if (item.title === "Categorieen") {
+        categoryFilters.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            filter.isSelected = true;
+          }
+        });
+      }
+      if (item.title === "Status") {
+        statusFilters.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            filter.isSelected = true;
+          }
+        });
+      }
+      if (item.title === "Sorteren") {
+        sortBy = item.selectedItems.length > 0 ? item.selectedItems[0] : "Relevatie";
+      }
+    });
+
+    props.onFiltersChanged(brandFilters, categoryFilters, statusFilters, sortBy);
   };
+
   const clearAllFilters = () => {
     const clearedBrandFilters = props.brandFilterItems.map((filter: FilterItem) => {
       const result = { ...filter, isSelected: false };

@@ -113,6 +113,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
             role="button"
             onClick={() => {
               onClear();
+              setIsFilterOpened(false);
             }}
             className={styles["mobile-filter__header__clear"]}
           >
@@ -164,7 +165,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           variant="primary-brand"
           fullWidth
           onClick={onFinishHandler}
-          title={props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores })}
+          title={props.intl.formatMessage({ id: "mobile-filter-button" })}
         />
       </div>
     </div>
