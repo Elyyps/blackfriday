@@ -13,14 +13,16 @@ import { Store } from "@app/api/core/store/store";
 import { BannerComponent } from "@app/core/banner";
 import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 import { Banner } from "@app/api/core/banner/banner";
+import { MobileFilterComponent } from "@app/core/mobile-filter";
+import { IMobileFilterItem } from "@app/core/mobile-filter/mobile-filter-item";
 
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
 }
 
 export interface IOverviewItem {
-  store: Store;
   advert: Banner | undefined;
+  store: Store;
 }
 
 const TAKE = 25;
@@ -55,7 +57,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           advert: undefined,
           store
         });
-        storeIndex++;
+        storeIndex += 1;
       }
     });
     setOverviewItems(overviewItemsResult);
@@ -79,15 +81,34 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     }
   };
 
+  const filterItems: IMobileFilterItem[] = [
+    {
+      hasSearchBar: false,
+      title: "Sorteren",
+      selectedItems: [],
+      isSingleSelection: true,
+      items: ["Alphabetically", "Order"]
+    },
+    { hasSearchBar: true, title: "Status", selectedItems: [], items: ["Nu geldig", "Bijna verlopen", "Lorem Ipsum"] },
+    {
+      hasSearchBar: true,
+      title: "Categorie",
+      selectedItems: [],
+      items: ["Eletronics", "Fitness", "Music", "House and garden"]
+    },
+    { hasSearchBar: true, title: "Merk", selectedItems: [], items: ["Nike", "Adidas", "Reebok", "New Balance"] }
+  ];
+
   return (
     <div>
-      <FilterBarContainer />
+      <MobileFilterComponent totalStores={10} onClear={() => {}} filterItems={filterItems} />
       <div className={styles["store-overview"]}>
         <div className="uk-container">
           {props.stores && (
             <div className={styles["stores-overview__body__list"]}>
               {overviewItems.map(overviewItem => {
                 const { store, advert } = overviewItem;
+
                 return (
                   <React.Fragment key={store.id}>
                     <div className={styles[`stores-overview__body__cards`]}>
