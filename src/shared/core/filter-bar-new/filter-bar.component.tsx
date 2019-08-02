@@ -11,6 +11,7 @@ import { FilterBarContainerProps } from "./container";
 import { IScreenSize, ViewType } from "@app/stores/settings";
 import { MobileFilterComponent, mobileFilterDummyData } from "../mobile-filter";
 import { IMobileFilterItem } from "../mobile-filter/mobile-filter-item";
+import { StoresMobileFilterBarComponent } from "./mobile-filter-bar.component";
 
 export interface IFilterBarProps {}
 
@@ -31,30 +32,24 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.setSortBy(sortByString);
   };
 
+  const sortByOptions = ["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"];
+
   const getTotalNumberOfFilters = (): number =>
     props.statusFilterItems.filter(item => item.isSelected).length +
     props.categoryFilterItems.filter(item => item.isSelected).length +
     props.brandFilterItems.filter(item => item.isSelected).length;
 
-  console.log(props.screenSize);
-
-  const filterItems: IMobileFilterItem[] = [
-    {
-      hasSearchBar: false,
-      title: "Sorteren",
-      selectedItems: [],
-      isSingleSelection: true,
-      items: ["Alphabetically", "Order"]
-    },
-    { hasSearchBar: true, title: "Status", selectedItems: [], items: ["Nu geldig", "Bijna verlopen", "Lorem Ipsum"] },
-    {
-      hasSearchBar: true,
-      title: "Categorie",
-      selectedItems: [],
-      items: ["Eletronics", "Fitness", "Music", "House and garden"]
-    },
-    { hasSearchBar: true, title: "Merk", selectedItems: [], items: ["Nike", "Adidas", "Reebok", "New Balance"] }
-  ];
+  const mobileFiltersChanged = (
+    brandFilterItems: FilterItem[],
+    categoryFilterItems: FilterItem[],
+    statusFilterItem: FilterItem[],
+    sortBy: string
+  ) => {
+    props.setBrandFilters([...brandFilterItems]);
+    props.setCategoryFilters([...categoryFilterItems]);
+    props.setStatusFilters([...statusFilterItem]);
+    props.setSortBy(sortBy);
+  };
 
   return (
     <div className="uk-container">
@@ -110,16 +105,20 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
               Sorteer op:
               <span role={"button"} className={styles["filter__sort-change"]}>
                 {/* {orderBy} */}
-                <SelectComponent
-                  options={["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
-                  onSelect={setSort}
-                />
+                <SelectComponent options={sortByOptions} onSelect={setSort} />
               </span>
             </div>
           </div>
         </div>
       ) : (
-        <MobileFilterComponent totalStores={10} onClear={() => {}} filterItems={filterItems} />
+        <StoresMobileFilterBarComponent
+          brandFilterItems={props.brandFilterItems}
+          categoryFilterItems={props.categoryFilterItems}
+          sortBy={props.sortBy}
+          sortByOptions={sortByOptions}
+          statusFilterItems={props.statusFilterItems}
+          onFiltersChanged={mobileFiltersChanged}
+        />
       )}
     </div>
   );
