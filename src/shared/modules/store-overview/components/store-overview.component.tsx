@@ -14,6 +14,7 @@ import { BannerComponent } from "@app/core/banner";
 import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 import { Banner } from "@app/api/core/banner/banner";
 import { ViewType, IScreenSize } from "@app/stores/settings";
+import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 
 export interface IStoreOverviewComponentProps {
   storeOverviewModule: StoreOverviewModule;
@@ -62,11 +63,17 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       }, 2000);
     }
   };
-
+  const connectClass = "uk-switcher-list";
+  const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
   return (
     <div>
+      <div className="deals-overview__tab">
+        <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
+          <TabComponent attrAction={"link"}>Winkels</TabComponent>
+          <TabComponent attrAction={"link"}>Productdeals</TabComponent>
+        </TabContainerComponent>
+      </div>
       <FilterBarContainer />
-     
       <div className={styles["store-overview"]}>
         <div className="uk-container">
           {props.stores && (

@@ -37,7 +37,7 @@ const ModuleComponent = (props: IModuleComponentProps) => {
         marginBottom: props.wordPressModule.bottomMargin,
         position: "relative",
         zIndex:
-          props.wordPressModule.name === "NavBarModule" || props.wordPressModule.name === "gallerySlider"
+          props.wordPressModule.name === "NavBarModule22" || props.wordPressModule.name === "gallerySlider"
             ? Z_INDEX_MAX
             : props.wordPressModule.name === "RecipeDetailModule"
             ? Z_INDEX_MAX - 1

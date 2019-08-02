@@ -94,7 +94,14 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
             <span>{props.intl.formatMessage({ id: "mobile-filter-title" })}</span>
             <IconComponent icon={HandPointing} size={"16px"} />
           </div>
-          <a role="button" onClick={onClear} className={styles["mobile-filter__header__clear"]}>
+          <a
+            role="button"
+            onClick={() => {
+              setIsFilterOpened(false);
+              onClear();
+            }}
+            className={styles["mobile-filter__header__clear"]}
+          >
             {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
           </a>
         </div>
