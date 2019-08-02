@@ -3,7 +3,12 @@
   background-color: #f7f7f7;
   min-height: 500px;
 }
+.filter-mobile-bar{
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
 
+}
 .stores-overview {
   background-color: var(--tint-grey-97);
   &__header {

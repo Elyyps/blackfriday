@@ -51,78 +51,72 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.setSortBy(sortBy);
   };
 
-  console.log(props.screenSize);
-
-  return (
-    <div className="uk-container">
-      {props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (
-        <div className={styles["filter-bar"]}>
-          <div className={styles["filter-bar__filter-list"]}>
-            <div className={`${styles["filter-label"]}`}>
-              Filters
-              <span>
-                <IconComponent icon={HandPointing} size={"20px"} />
-              </span>
-            </div>
-            <div>
-              <CheckboxDropdown title="Status" items={props.statusFilterItems} onChange={onStatusFilterItemsChanged} />
-            </div>
-            <div>
-              <SearchableCheckboxDropdown
-                searchPlaceholder="Merk zoeken"
-                deleteFilterLabel="Verwijder merk filters"
-                title="Categorieen"
-                showFilterName="winkels"
-                items={props.categoryFilterItems}
-                onChange={onCategoryFilterItemsChanged}
-              />
-            </div>
-            <div>
-              <SearchableCheckboxDropdown
-                searchPlaceholder="Merk zoeken"
-                deleteFilterLabel="Verwijder merk filters"
-                title="Merk"
-                showFilterName="merken"
-                items={props.brandFilterItems}
-                onChange={onBrandFilterItemsChanged}
-              />
-            </div>
-            {getTotalNumberOfFilters() > 0 && (
-              <div style={{ marginLeft: "20px" }}>
-                <span role="link" onClick={() => props.clearFilters()} style={{ color: "red", cursor: "pointer" }}>
-                  Verwijder alle filters
-                </span>
-              </div>
-            )}
-          </div>
-
-          <div className={styles["filter-bar__sort"]}>
-            <div className={styles["filter__sort-item"]}>
-              <span className={styles["amount-of-shops"]}>
-                <IconComponent icon={StoreIcon} size={"20px"} />
-              </span>
-              {props.totalResults} winkels
-            </div>
-            <div className={styles["filter__sort-item"]}>
-              Sorteer op:
-              <span role={"button"} className={styles["filter__sort-change"]}>
-                {/* {orderBy} */}
-                <SelectComponent options={sortByOptions} onSelect={setSort} />
-              </span>
-            </div>
-          </div>
+  return props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (
+    <div className={styles["filter-bar"]}>
+      <div className={styles["filter-bar__filter-list"]}>
+        <div className={`${styles["filter-label"]}`}>
+          Filters
+          <span>
+            <IconComponent icon={HandPointing} size={"20px"} />
+          </span>
         </div>
-      ) : (
-        <StoresMobileFilterBarComponent
-          brandFilterItems={props.brandFilterItems}
-          categoryFilterItems={props.categoryFilterItems}
-          sortBy={props.sortBy}
-          sortByOptions={sortByOptions}
-          statusFilterItems={props.statusFilterItems}
-          onFiltersChanged={mobileFiltersChanged}
-        />
-      )}
+        <div>
+          <CheckboxDropdown title="Status" items={props.statusFilterItems} onChange={onStatusFilterItemsChanged} />
+        </div>
+        <div>
+          <SearchableCheckboxDropdown
+            searchPlaceholder="Merk zoeken"
+            deleteFilterLabel="Verwijder merk filters"
+            title="Categorieen"
+            showFilterName="winkels"
+            items={props.categoryFilterItems}
+            onChange={onCategoryFilterItemsChanged}
+          />
+        </div>
+        <div>
+          <SearchableCheckboxDropdown
+            searchPlaceholder="Merk zoeken"
+            deleteFilterLabel="Verwijder merk filters"
+            title="Merk"
+            showFilterName="merken"
+            items={props.brandFilterItems}
+            onChange={onBrandFilterItemsChanged}
+          />
+        </div>
+        {getTotalNumberOfFilters() > 0 && (
+          <div style={{ marginLeft: "20px" }}>
+            <span role="link" onClick={() => props.clearFilters()} style={{ color: "red", cursor: "pointer" }}>
+              Verwijder alle filters
+            </span>
+          </div>
+        )}
+      </div>
+
+      <div className={styles["filter-bar__sort"]}>
+        <div className={styles["filter__sort-item"]}>
+          <span className={styles["amount-of-shops"]}>
+            <IconComponent icon={StoreIcon} size={"20px"} />
+          </span>
+          {props.totalResults} winkels
+        </div>
+        <div className={styles["filter__sort-item"]}>
+          Sorteer op:
+          <span role={"button"} className={styles["filter__sort-change"]}>
+            {/* {orderBy} */}
+            <SelectComponent options={sortByOptions} onSelect={setSort} />
+          </span>
+        </div>
+      </div>
     </div>
+  ) : (
+    <StoresMobileFilterBarComponent
+      brandFilterItems={props.brandFilterItems}
+      categoryFilterItems={props.categoryFilterItems}
+      sortBy={props.sortBy}
+      sortByOptions={sortByOptions}
+      statusFilterItems={props.statusFilterItems}
+      onFiltersChanged={mobileFiltersChanged}
+    />
   );
 };
 

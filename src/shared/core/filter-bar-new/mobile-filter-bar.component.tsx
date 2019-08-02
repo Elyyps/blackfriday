@@ -9,9 +9,6 @@ import { useState, useEffect } from "react";
 export interface IStoresMobileFilterBarComponentProps {
   brandFilterItems: FilterItem[];
   categoryFilterItems: FilterItem[];
-  sortBy: string;
-  sortByOptions: string[];
-  statusFilterItems: FilterItem[];
 
   onFiltersChanged: (
     brandFilterItems: FilterItem[],
@@ -19,6 +16,9 @@ export interface IStoresMobileFilterBarComponentProps {
     statusFilterItem: FilterItem[],
     sortBy: string
   ) => void;
+  sortBy: string;
+  sortByOptions: string[];
+  statusFilterItems: FilterItem[];
 }
 
 const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentProps) => {
@@ -36,6 +36,9 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
     );
   }, [props.brandFilterItems, props.categoryFilterItems, props.sortBy, props.sortByOptions, props.statusFilterItems]);
 
+  const handleFinishSearch = (selectedItems: IMobileFilterSelectedItems[]) => {
+    // implement search here
+  };
   const clearAllFilters = () => {
     const clearedBrandFilters = props.brandFilterItems.map((filter: FilterItem) => {
       const result = { ...filter, isSelected: false };
@@ -58,12 +61,10 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
 
   return (
     <MobileFilterComponent
+      onFinish={handleFinishSearch}
       totalStores={10}
-      onClear={() => clearAllFilters()}
+      onClear={clearAllFilters}
       filterItems={mobileFilters}
-      onFinish={(selectedItems: IMobileFilterSelectedItems[]) => {
-        console.log(selectedItems);
-      }}
     />
   );
 };
@@ -74,48 +75,40 @@ const getMobileFilterItems = (
   selectedSortBy: string,
   sortByOptions: string[],
   statusFilterItems: FilterItem[]
-): IMobileFilterItem[] => {
-  return [
-    {
-      hasSearchBar: false,
-      title: "Sorteren",
-      selectedItems: [selectedSortBy],
-      isSingleSelection: true,
-      items: sortByOptions
-    },
-    {
-      hasSearchBar: true,
-      title: "Status",
-      selectedItems: [...getSelectedFilterItems(statusFilterItems)],
-      items: [...getFilterItems(statusFilterItems)]
-    },
-    {
-      hasSearchBar: true,
-      title: "Categorieen",
-      selectedItems: [...getSelectedFilterItems(categoryFilterItems)],
-      items: [...getFilterItems(categoryFilterItems)]
-    },
-    {
-      hasSearchBar: true,
-      title: "Merk",
-      selectedItems: [...getSelectedFilterItems(brandfilterItems)],
-      items: [...getFilterItems(brandfilterItems)]
-    }
-  ];
-};
+): IMobileFilterItem[] => [
+  {
+    hasSearchBar: false,
+    title: "Sorteren",
+    selectedItems: [selectedSortBy],
+    isSingleSelection: true,
+    items: sortByOptions
+  },
+  {
+    hasSearchBar: true,
+    title: "Status",
+    selectedItems: [...getSelectedFilterItems(statusFilterItems)],
+    items: [...getFilterItems(statusFilterItems)]
+  },
+  {
+    hasSearchBar: true,
+    title: "Categorieen",
+    selectedItems: [...getSelectedFilterItems(categoryFilterItems)],
+    items: [...getFilterItems(categoryFilterItems)]
+  },
+  {
+    hasSearchBar: true,
+    title: "Merk",
+    selectedItems: [...getSelectedFilterItems(brandfilterItems)],
+    items: [...getFilterItems(brandfilterItems)]
+  }
+];
 
-const getFilterItems = (items: FilterItem[]): string[] => {
-  return items.map(item => {
-    return item.displayName;
-  });
-};
+const getFilterItems = (items: FilterItem[]): string[] => items.map(item => item.displayName);
 
 const getSelectedFilterItems = (items: FilterItem[]): string[] => {
   const selectedItems = items.filter(item => item.isSelected);
 
-  return selectedItems.map(item => {
-    return item.displayName;
-  });
+  return selectedItems.map(item => item.displayName);
 };
 
 export { StoresMobileFilterBarComponent };

@@ -36,6 +36,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       selectedItems: item.selectedItems
     }));
     props.onFinish(selectedItems);
+    setIsFilterOpened(false);
   };
 
   const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
@@ -111,7 +112,6 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           <a
             role="button"
             onClick={() => {
-              setIsFilterOpened(false);
               onClear();
             }}
             className={styles["mobile-filter__header__clear"]}

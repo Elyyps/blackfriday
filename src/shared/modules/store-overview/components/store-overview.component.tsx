@@ -65,6 +65,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   };
   const connectClass = "uk-switcher-list";
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
+
   return (
     <div>
       <div className="deals-overview__tab">
@@ -73,7 +74,9 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           <TabComponent attrAction={"link"}>Productdeals</TabComponent>
         </TabContainerComponent>
       </div>
-      <FilterBarContainer />
+      <div className={styles["filter-mobile-bar"]}>
+        <FilterBarContainer />
+      </div>
       <div className={styles["store-overview"]}>
         <div className="uk-container">
           {props.stores && props.stores.length > 0 ? (
@@ -105,7 +108,13 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           )}
 
           <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-            <ClipLoader css={spinnerOverride} sizeUnit={"px"} size={ClipLoaderSize} color={"red"} loading={isLoading} />
+            <ClipLoader
+              css={spinnerOverride}
+              sizeUnit={"px"}
+              size={ClipLoaderSize}
+              color={"red"}
+              loading={isLoading}
+            />
           </div>
         </div>
       </div>
@@ -137,7 +146,7 @@ const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewCon
 
 const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] => {
   const overviewItemsResult: IOverviewItem[] = [];
-  let showAdEvery: number = 0;
+  let showAdEvery = 0;
 
   switch (viewType) {
     case ViewType.DesktopFull:
@@ -155,7 +164,6 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
       showAdEvery = 1 * SHOW_AD_EVERY_LINES;
       break;
     default:
-      break;
   }
 
   let storeIndex = 1;
@@ -173,7 +181,7 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
         advert: undefined,
         store
       });
-      storeIndex++;
+      storeIndex += 1;
     }
   });
 

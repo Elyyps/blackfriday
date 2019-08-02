@@ -10,5 +10,5 @@ storiesOf("MobileFilter", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
-    <MobileFilterComponent totalStores={0} onClear={jest.fn} filterItems={mobileFilterDummyData} onFinish={jest.fn} />
+    <MobileFilterComponent totalStores={0} onClear={jest.fn} onFinish={jest.fn} filterItems={mobileFilterDummyData} />
   ));
