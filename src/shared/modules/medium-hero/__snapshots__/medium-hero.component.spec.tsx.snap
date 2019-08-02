@@ -48,7 +48,7 @@ exports[`[MediumHero] should render component without crashing 1`] = `
       >
         <img
           alt="temp alt"
-          src="oasis.jpg"
+          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/store-banner.png"
         />
       </div>
       <div

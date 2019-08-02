@@ -193,9 +193,17 @@ exports[`[Footer] should render component without crashing 1`] = `
               key="0"
               mainContent={
                 <div
-                  className="footer__column-title"
+                  className="footer__column-title "
                 >
                   Wat is er nu trending
+                  <div
+                    className="footer__column-title__icon"
+                  >
+                    <IconComponent
+                      icon="chevron-down.svg"
+                      size="10px"
+                    />
+                  </div>
                 </div>
               }
               opened={false}
@@ -365,9 +373,17 @@ exports[`[Footer] should render component without crashing 1`] = `
               key="1"
               mainContent={
                 <div
-                  className="footer__column-title"
+                  className="footer__column-title "
                 >
                   Meer Black Friday
+                  <div
+                    className="footer__column-title__icon"
+                  >
+                    <IconComponent
+                      icon="chevron-down.svg"
+                      size="10px"
+                    />
+                  </div>
                 </div>
               }
               opened={false}
@@ -458,10 +474,11 @@ exports[`[Footer] should render component without crashing 1`] = `
             <div
               className="footer__column-collapse-body"
             >
-              <ul
+              <div
                 className="footer__social"
               >
-                <li
+                <div
+                  className="footer__social-items"
                   key="0"
                 >
                   <a
@@ -488,8 +505,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                       4.240 mensen vinden ons leuk
                     </div>
                   </a>
-                </li>
-                <li
+                </div>
+                <div
+                  className="footer__social-items"
                   key="1"
                 >
                   <a
@@ -516,8 +534,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                       Volg ons voor leuke acties
                     </div>
                   </a>
-                </li>
-                <li
+                </div>
+                <div
+                  className="footer__social-items"
                   key="2"
                 >
                   <a
@@ -544,8 +563,8 @@ exports[`[Footer] should render component without crashing 1`] = `
                       Heeft u een vraag? Stel hem gerust!
                     </div>
                   </a>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -556,9 +575,17 @@ exports[`[Footer] should render component without crashing 1`] = `
               identifier="SOCIAL_BLOCK"
               mainContent={
                 <div
-                  className="footer__column-title"
+                  className="footer__column-title "
                 >
                   Eenvoudig met ons in contact
+                  <div
+                    className="footer__column-title__icon"
+                  >
+                    <IconComponent
+                      icon="chevron-down.svg"
+                      size="10px"
+                    />
+                  </div>
                 </div>
               }
               opened={false}
@@ -566,12 +593,14 @@ exports[`[Footer] should render component without crashing 1`] = `
               <div
                 className="footer__social"
               >
-                <li
+                <div
+                  className="footer__social-items"
                   key="0"
                 >
-                  <Link
+                  <a
                     className="footer__social-link"
-                    to="https://www.facebook.com/BlackFridayNederland/"
+                    href="https://www.facebook.com/BlackFridayNederland/"
+                    target="_blank"
                   >
                     <div
                       className="footer__social-icon"
@@ -591,14 +620,16 @@ exports[`[Footer] should render component without crashing 1`] = `
                       </div>
                       4.240 mensen vinden ons leuk
                     </div>
-                  </Link>
-                </li>
-                <li
+                  </a>
+                </div>
+                <div
+                  className="footer__social-items"
                   key="1"
                 >
-                  <Link
+                  <a
                     className="footer__social-link"
-                    to="https://www.instagram.com/blackfridaynl/"
+                    href="https://www.instagram.com/blackfridaynl/"
+                    target="_blank"
                   >
                     <div
                       className="footer__social-icon"
@@ -618,14 +649,16 @@ exports[`[Footer] should render component without crashing 1`] = `
                       </div>
                       Volg ons voor leuke acties
                     </div>
-                  </Link>
-                </li>
-                <li
+                  </a>
+                </div>
+                <div
+                  className="footer__social-items"
                   key="2"
                 >
-                  <Link
+                  <a
                     className="footer__social-link"
-                    to="mailto:info@blackfridaynederland.nl"
+                    href="mailto:info@blackfridaynederland.nl"
+                    target="_blank"
                   >
                     <div
                       className="footer__social-icon"
@@ -645,8 +678,8 @@ exports[`[Footer] should render component without crashing 1`] = `
                       </div>
                       Heeft u een vraag? Stel hem gerust!
                     </div>
-                  </Link>
-                </li>
+                  </a>
+                </div>
               </div>
             </ExpandablePanelComponent>
           </div>

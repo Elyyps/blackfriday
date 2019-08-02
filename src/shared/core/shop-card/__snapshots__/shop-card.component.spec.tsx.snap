@@ -13,14 +13,18 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       <div
         className="shop-card__image"
       >
-        <ImageComponent />
+        <ImageComponent
+          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png"
+        />
       </div>
       <div
-        className="shop-card__status-title none"
-      />
+        className="shop-card__status-title green"
+      >
+        Nu geldig
+      </div>
       <TimeLeftBarComponent
-        color="none"
-        range={0}
+        color="green"
+        range={80}
         variant="responsive"
       />
       <div
@@ -28,18 +32,27 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       >
         <div
           className="shop-card__title"
-        />
+        >
+          Coolblue
+        </div>
+        Een selectie van bizar vele aanbieden
          
+        <LinkComponent
+          to="https://www.coolblue.nl/"
+        >
+          Meer info
+        </LinkComponent>
       </div>
     </div>
     <div
       className="shop-card__action"
     >
       <ClickableComponent
-        href=""
+        href="./store-single"
         icon="link.svg"
         iconPosition="right"
         iconStyle="filled"
+        title="Naar deals"
       />
     </div>
   </div>

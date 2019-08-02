@@ -44,7 +44,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.vodafone.nl/",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
-    timeLeftPercentage: 80
+    timeLeftPercentage: 70
   },
   {
     id: "3",
@@ -55,7 +55,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.wehkamp.nl/",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/wehkamp.png",
-    timeLeftPercentage: 80
+    timeLeftPercentage: 60
   },
   {
     id: "4",
@@ -66,7 +66,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.ziggo.nl/",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/ziggo.png",
-    timeLeftPercentage: 80
+    timeLeftPercentage: 75
   },
   {
     id: "5",
@@ -88,7 +88,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://bol.com",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
-    timeLeftPercentage: 80
+    timeLeftPercentage: 40
   },
   {
     id: "7",
@@ -110,7 +110,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.nike.com/nl",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/nike.png",
-    timeLeftPercentage: 90
+    timeLeftPercentage: 85
   },
   {
     id: "8",
@@ -177,7 +177,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.aktiesport.nl/",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/actiesport.png",
-    timeLeftPercentage: 80
+    timeLeftPercentage: 20
   },
   {
     id: "14",

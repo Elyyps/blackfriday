@@ -4,7 +4,6 @@ import { PagebuilderContainerProps } from "../index";
 
 import { EmptyPageComponent } from "@app/core/empty-page";
 import { ModuleComponent } from "./module.component";
-import { HelmetComponent } from "./helmet.component";
 import { getViewType } from "@app/util/detect-view";
 import { ViewType } from "@app/stores/settings";
 

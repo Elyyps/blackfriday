@@ -5,6 +5,8 @@ exports[`[ShareSocialDropdown] should render component without crashing 1`] = `
   className="share-social-dropdown"
 >
   <DropdownComponent
+    isOpen={false}
+    setIsOpen={[Function]}
     title="Share"
   >
     <div

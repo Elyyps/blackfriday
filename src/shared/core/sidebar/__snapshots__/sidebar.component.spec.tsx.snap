@@ -20,6 +20,8 @@ exports[`[Sidebar] should render component without crashing 1`] = `
         "src": "cool-blue.svg",
       }
     }
+    moreInfoLink="https://coolblue.com"
+    showAlternativeBanner={false}
     text="Een selectie van bizarre aanbiedingen. Meer info"
     title="Black Friday bij Coolblue"
     variant="small"
