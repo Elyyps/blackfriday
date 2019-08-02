@@ -13,20 +13,20 @@
   &__body {
     color: red;
     &__list {
+      margin-left: -7px;
+      margin-right: -7px;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
-      justify-content: space-between;
     }
     &__cards {
+      flex: 1 0 220px;
+      height: 288px;
+      margin: 7px;
+
       @media (max-width: 720px) {
         flex: 1 1 100%;
       }
     }
   }
-}
-.ciao {
-  flex: 1 1 350px;
-  height: auto;
-  margin: 4px;
 }

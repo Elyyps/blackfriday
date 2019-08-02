@@ -22,6 +22,7 @@ import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header
 import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
 import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
+import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
 
 export const pageList: PageModel[] = [
   {
@@ -55,7 +56,7 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateNotYetImplemented("store overview"),
+      generateStoreOverviewModule(),
       generateCtaNewsLetterModule(),
       generateDummyFooterData()
     ]

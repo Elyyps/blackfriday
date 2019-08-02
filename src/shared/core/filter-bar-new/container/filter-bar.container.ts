@@ -3,6 +3,7 @@ import { IFilterBarProps, FilterBar } from "@app/core/filter-bar-new";
 import { IAppState } from "@app/stores";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { storeOverviewActions } from "@app/stores/store-overview";
+import { IScreenSize } from "@app/stores/settings";
 
 interface IStateProps {
   brandFilterItems: FilterItem[];
@@ -10,6 +11,7 @@ interface IStateProps {
   sortBy: string;
   statusFilterItems: FilterItem[];
   totalResults: number;
+  screenSize: IScreenSize | undefined;
 }
 interface IDispatchProps {
   clearFilters: () => void;
@@ -21,13 +23,15 @@ interface IDispatchProps {
 
 const mapStateToProps: MapStateToProps<IStateProps, IFilterBarProps, IAppState> = state => {
   const { brandFilterItems, categoryFilterItems, sortBy, statusFilterItems, totalResults } = state.storeOverview;
+  const { screenSize } = state.settings;
 
   return {
     brandFilterItems,
     categoryFilterItems,
     sortBy,
     statusFilterItems,
-    totalResults
+    totalResults,
+    screenSize
   };
 };
 
