@@ -1,4 +1,4 @@
-import { GroupLinks } from "./group-links";
+import { GroupLinks } from "../../../core/group-links";
 import { Newsletter } from "@app/api/core/newsletter";
 import { SocialBlock } from "./social-block";
 import { GoogleReviews } from "@app/api/core/google-reviews";

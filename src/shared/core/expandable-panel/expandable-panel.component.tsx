@@ -1,10 +1,6 @@
 import * as React from "react";
 import style from "./expandable-panel-component.module.scss";
 import classNames from "classnames";
-import { IconComponent } from "../icon";
-
-import ArrowUp from "@assets/icons/chevron-up.svg";
-import ArrowDown from "@assets/icons/chevron-down.svg";
 
 interface IExpandablePanelComponentProps {
   callback?: (identifier?: string) => void;
@@ -32,19 +28,8 @@ const ExpandablePanelComponent = (props: IExpandablePanelComponentProps) => {
           )}
         >
           <ul className={style["expandable-panel__list"]}>
-            <li>
-              <div
-                role="button"
-                aria-label="expandButton"
-                onClick={invokeCallback}
-                className={`${style["expandable-panel__title"]}`}
-              >
-                <div className={style["expandable-panel__icon"]}>
-                  <IconComponent icon={props.opened ? ArrowUp : ArrowDown} size="20px" fillColor={"#fff"} />
-                </div>
-
-                {props.mainContent}
-              </div>
+            <li role="button" aria-label="expandButton" onClick={invokeCallback}>
+              {props.mainContent}
               <div
                 className={classNames(
                   `${style["expandable-panel__content"]}`,

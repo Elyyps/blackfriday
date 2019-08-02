@@ -1,8 +1,10 @@
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
+import { generateBodytextDummyData } from "@app/api/core/bodytext";
+import { BodyTextComponent } from "./bodytext.component";
 
 storiesOf("Bodytext", module)
   .addDecorator(withA11y)
-  .addDecorator(withProvider);
-// .add("Basic implementation", () => <BodytextComponent> {generateBodytextDummyData()}</BodytextComponent>);
+  .addDecorator(withProvider)
+  .add("Basic implementation", () => <BodyTextComponent bodyTextModule={generateBodytextDummyData()} />);

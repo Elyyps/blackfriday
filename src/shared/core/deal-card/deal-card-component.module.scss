@@ -1,8 +1,6 @@
 .deal-card {
   display: flex;
   flex-direction: column;
-  border-radius: $global-border-radius;
-  background: $global-background;
   color: $gray-lighter;
   font-size: 12px;
   font-weight: 600;
@@ -40,9 +38,9 @@
       margin-right: 5px;
       fill: $global-inverse-color;
     }
-     @media (max-width: 699px) {
-       right: 8px;
-       left: auto;
+    @media (max-width: 699px) {
+      right: 8px;
+      left: auto;
     }
   }
   &__body {
@@ -179,7 +177,6 @@
           width: 50%;
         }
       }
-      
     }
   }
 }

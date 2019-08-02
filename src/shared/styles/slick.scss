@@ -152,9 +152,9 @@
   cursor: pointer;
   opacity: 1;
   transition: opacity 0.3s;
-  border: 1px solid $brand-primary;
+  border: 2px solid $brand-primary;
   &.slick-disabled {
-    opacity: 0;
+    display: none !important;
   }
   @media (max-width: $breakpoint-small-max) {
     width: 37px;

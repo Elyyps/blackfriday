@@ -28,7 +28,10 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
       }
     };
   }, []);
-  const modalSize = props.variant === "small" ? "600px" : props.variant === "big" ? "50%" : "600px";
+  const modalSize =
+    props.variant === "small" ? "600px" : props.variant === "big" ? "50%" : "full-screen" ? "80%" : "600px";
+  const maxHeight = props.variant === "full-screen" ? { maxHeight: "initial" } : "";
+  const padding = props.variant === "full-screen" ? { padding: "0" } : "";
   if (typeof document !== "undefined") {
     return ReactDOM.createPortal(
       <FocusLock>
@@ -44,7 +47,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
         >
           <div
             className={styles["c-modal"]}
-            style={{ background: props.background, width: modalSize }}
+            style={{ background: props.background, width: modalSize, ...maxHeight }}
             ref={props.modalRef}
           >
             <button className={styles["c-modal__close"]} aria-labelledby="close-modal" onClick={props.onClose}>
@@ -52,7 +55,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
                 <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
               </svg>
             </button>
-            <div className={styles["c-modal__body"]}>
+            <div className={styles["c-modal__body"]} style={{ ...padding }}>
               {props.title && <h2>{props.title}</h2>}
               {props.children ? props.children : ""}
             </div>

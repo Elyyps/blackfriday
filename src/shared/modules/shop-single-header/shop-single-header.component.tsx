@@ -4,7 +4,6 @@ import styles from "./shop-single-header-component.module.scss";
 import IconDefault from "@assets/icons/link.svg";
 import CheckIcon from "@assets/icons/check.svg";
 import HeartIcon from "@assets/icons/heart-filled.svg";
-import ShareIcon from "@assets/icons/share.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { DiscountCardComponent } from "@app/core/discount-card";
 import { NewsletterComponent } from "@app/core/newsletter";
@@ -14,17 +13,21 @@ import { Button } from "@app/core";
 import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
+import { LinkComponent } from "@app/core/link";
+import { BodyTextComponent } from "@app/core/bodytext";
+import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
 }
 
-const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
+const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) => {
   const {
-    backLink,
+    links,
     checkList,
     CheckListTitle,
-    content,
+    bodyTextModule,
     couponCode,
     discountButton,
     discountPicture,
@@ -37,7 +40,8 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
     smallBackLink,
     storeLink,
     timeLeftBar,
-    title
+    title,
+    shareSocial
   } = props.shopSingleHeaderModule;
 
   return (
@@ -70,24 +74,28 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
               </div>
               <div className={styles["product-detail__content"]}>
                 <div className={styles["product-detail__content__subtitle"]}>
-                  {backLink.map(link => (
-                    <a className="uk-visible@s" href={link.url}>
-                      {link.title}
-                    </a>
-                  ))}
-                  <BackLinkComponent href={smallBackLink.url} className="uk-hidden@s" strokeColor={"#999999"}>
-                    {smallBackLink.title}
-                  </BackLinkComponent>
+                  {links.map((link, index) => {
+                    return (
+                      <React.Fragment>
+                        <LinkComponent key={index} to={link.url}>
+                          {link.title}
+                        </LinkComponent>{" "}
+                        {index < links.length - 1 ? " - " : ""}
+                      </React.Fragment>
+                    );
+                  })}
                 </div>
                 <div className={styles["content"]}>
                   <div className={styles["content__head"]}>
                     <h1 style={{ margin: "0" }}>{title}</h1>
                     <div className={`${styles["content__head__stars"]} uk-visible@s`}>
-                      <StarsRatingComponent rating={rating.value} />
+                      <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                       {rating.text}
                     </div>
                   </div>
-                  <div dangerouslySetInnerHTML={{ __html: content }} className={styles["content__body"]} />
+                  <div className={styles["content__body"]}>
+                    <BodyTextComponent style={{ margin: 0, padding: 0 }} bodyTextModule={bodyTextModule} />
+                  </div>
                   {checkList && (
                     <div className="uk-visible@s">
                       <h4>{CheckListTitle}</h4>
@@ -110,20 +118,20 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                         <IconComponent icon={IconDefault} size="14px" />
                       </a>
                       <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
-                        <StarsRatingComponent rating={rating.value} />
+                        <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                         {rating.text}
                       </div>
                     </div>
                     <div className={styles["actions__item"]}>
                       <div className={styles["actions__item-wrap"]}>
-                        {/* <div className="uk-hidden@s">
+                        <div className="uk-hidden@s">
                           <Button
                             icon={HeartIcon}
                             iconPosition="left"
                             title={smallBackLink.title}
                             variant={"secondary"}
                           />
-                        </div> 
+                        </div>
                         <div className="uk-visible@s">
                           <Button
                             icon={HeartIcon}
@@ -131,14 +139,19 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
                             title={favoriteButton.title}
                             variant={"secondary"}
                           />
-                        </div>*/}
-                        <Button fullWidth icon={ShareIcon} iconPosition="left" title={"Delen"} variant={"secondary"} />
+                        </div>
+                        <ShareSocialDropdownComponent
+                          buttonTitle={props.intl.formatMessage({ id: "social-media-share" })}
+                          shareSocial={shareSocial}
+                        />
                       </div>
                     </div>
                   </div>
                   <div className={`${styles["labels"]} uk-visible@s`}>
                     {keywords.map((item, key) => (
-                      <KeywordTagComponent key={key}>{item}</KeywordTagComponent>
+                      <KeywordTagComponent style={{ marginLeft: key == 0 ? "0" : "4px" }} key={key}>
+                        {item}
+                      </KeywordTagComponent>
                     ))}
                   </div>
                 </div>
@@ -154,4 +167,5 @@ const ShopSingleHeaderComponent = (props: IShopSingleHeaderComponentProps) => {
   );
 };
 
+const ShopSingleHeaderComponent = injectIntl(component);
 export { ShopSingleHeaderComponent };

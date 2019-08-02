@@ -27,13 +27,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",
@@ -44,13 +44,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "ACTIE START OVER 5 DAGEN!",
@@ -61,13 +61,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",
@@ -78,13 +78,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",
@@ -95,13 +95,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",
@@ -112,13 +112,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",
@@ -129,13 +129,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",
@@ -146,13 +146,13 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           Object {
             "button": Object {
               "title": "Naar deals",
-              "url": "/",
+              "url": "/deals-overview",
             },
             "content": "Een seletie van bizarre vele aanbiedingen.",
             "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
             "seeMore": Object {
               "title": "Meer info",
-              "url": "/",
+              "url": "/stores-single",
             },
             "timeLeftBar": Object {
               "text": "Nu geldig",

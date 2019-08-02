@@ -4,8 +4,13 @@ exports[`[BlogPost] should render component without crashing 1`] = `
 <div
   className="blog-post"
 >
+<<<<<<< HEAD
   <div
     className="blog-post__image"
+=======
+  <LinkComponent
+    to="/blog-single"
+>>>>>>> 3ca24cd64072baff81606583c7e2713c88671167
   >
     <ImageComponent
       src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
