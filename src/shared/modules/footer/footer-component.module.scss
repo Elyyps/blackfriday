@@ -155,6 +155,11 @@
       padding-left: 16px;
       margin-bottom: 8px;
     }
+    li:hover {
+      a {
+        color: white;
+      }
+    }
   }
 
   &__bottom {
@@ -206,7 +211,7 @@
       text-decoration: none;
       color: $gray-dark;
       &:hover {
-        color: $global-link-color;
+        color: #999;
       }
     }
   }

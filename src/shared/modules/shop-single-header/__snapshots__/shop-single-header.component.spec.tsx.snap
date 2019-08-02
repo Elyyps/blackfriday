@@ -32,10 +32,12 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
   shopSingleHeaderModule={
     Object {
       "CheckListTitle": "De voordelen van shoppen bij Beddenreus tijdens Black Friday.",
-      "backLink": Object {
-        "title": "Alle winkels",
-        "url": "/",
-      },
+      "backLink": Array [
+        Object {
+          "title": "Alle winkels",
+          "url": "/",
+        },
+      ],
       "bodyTextModule": Object {
         "bottomMargin": "",
         "containerAlignment": "left",

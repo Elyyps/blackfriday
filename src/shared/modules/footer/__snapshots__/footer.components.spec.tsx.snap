@@ -121,65 +121,65 @@ exports[`[Footer] should render component without crashing 1`] = `
                 <li
                   key="0"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday 2019
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="1"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Apple
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="2"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Deals
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="3"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Elektronica
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="4"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Gaming
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="5"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Winkels
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="6"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Cyber Monday 2019
-                  </LinkComponent>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -301,65 +301,65 @@ exports[`[Footer] should render component without crashing 1`] = `
                 <li
                   key="0"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Airpods Black Friday
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="1"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Kleding
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="2"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Jumbo
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="3"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Rituals
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="4"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday G-star
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="5"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Center Parcs
-                  </LinkComponent>
+                  </a>
                 </li>
                 <li
                   key="6"
                 >
-                  <LinkComponent
-                    to="/"
+                  <a
+                    href="/"
                   >
                     Black Friday Computer
-                  </LinkComponent>
+                  </a>
                 </li>
               </ul>
             </div>

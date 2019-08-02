@@ -1,1 +1,1 @@
-export * from './html-render.component'
+export * from "./html-render.component";

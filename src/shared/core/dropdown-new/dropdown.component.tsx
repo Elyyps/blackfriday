@@ -2,12 +2,15 @@ import React, { useRef } from "react";
 
 import styles from "./dropdown-component.module.scss";
 import { ClickableComponent } from "../clickable";
-import ChevronDown from "@assets/icons/chevron-down.svg";
 import useOutsideClick from "@app/util/outside-click";
+import ChevronDown from "@assets/icons/chevron-down.svg";
 
 export interface IDropdownComponentProps {
+  animated?: boolean;
   children: any;
   hasSelectedItems?: boolean;
+  icon?: string;
+  iconPosition?: "right" | "left";
   isOpen?: boolean;
   setIsOpen: (isOpen: boolean) => void;
   title: string;
@@ -54,11 +57,12 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           onClick={onButtonClick}
           title={props.title}
           variant={getVariant()}
-          icon={ChevronDown}
           zIndex={props.isOpen ? zIndexWhenOpen : undefined}
           size={buttonHeight}
           fullWidth
           iconFillColor="#ffffff"
+          icon={props.icon ? props.icon : ChevronDown}
+          iconPosition={props.iconPosition ? props.iconPosition : "left"}
         />
       </div>
       <div className={`${styles["content"]} ${!!props.isOpen && styles["content--open"]} `}>{props.children}</div>

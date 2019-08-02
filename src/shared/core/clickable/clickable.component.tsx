@@ -81,7 +81,6 @@ const ClickableComponent = (props: IClickableComponentProps) => {
     props.iconPosition,
     props.title
   ]);
-
   const { buttonType, animated, onClick, href, variant, title, disabled, iconStyle, target, zIndex } = props;
 
   const classModify = variant || "primary-default";

@@ -5,9 +5,9 @@ export const generateBlogSingleHeaderDummyData = (): BlogSingleHeaderModule => (
   title: "Black Friday 2019 blog",
   image: Oasis,
   links: [{ title: "Home", url: "" }, { title: "Alle blogs", url: "" }],
-  button: { title: "", url: "" },
+  button: { title: "Alle blogs", url: "" },
   name: "BlogSingleHeaderModule",
-  bottomMargin: "0px",
+  bottomMargin: "10px",
   id: "0",
-  topMargin: ""
+  topMargin: "10px"
 });
