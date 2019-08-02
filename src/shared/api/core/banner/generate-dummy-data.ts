@@ -5,7 +5,7 @@ import Oasis from "@assets/oasis.jpg";
 export const generateDummyBannerComponentData = (): BannerComponent => ({
   title: "Black Friday bij Coolblue",
   buttonTitle: "Meer deals",
-  buttonLink: "#",
+  buttonLink: "/deals-overview",
   image: { src: Oasis, alt: "alt text oasis" },
   label: "22 t/m 26 nov.",
   logo: { src: CoolBlue, alt: "alt text CoolBlue" },

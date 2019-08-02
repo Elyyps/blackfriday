@@ -5,7 +5,7 @@ exports[`[BlogPost] should render component without crashing 1`] = `
   className="blog-post"
 >
   <LinkComponent
-    to=""
+    to="/blog-single"
   >
     <div
       className="blog-post__image"

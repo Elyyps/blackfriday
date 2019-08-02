@@ -11,7 +11,7 @@ export const generateSidebarData = (): Sidebar => {
     banner: {
       title: "Black Friday bij Coolblue",
       buttonTitle: "Meer deals",
-      buttonLink: "#",
+      buttonLink: "/deals-overview",
       image: { src: Oasis, alt: "alt text oasis" },
       label: "22 t/m 26 nov.",
       logo: { src: CoolBlue, alt: "alt text CoolBlue" },
@@ -23,19 +23,19 @@ export const generateSidebarData = (): Sidebar => {
         featuredItems: [
           {
             image: imac,
-            link: { url: "/", title: "Apple iPhones" }
+            link: { url: "/stores-single", title: "Apple iPhones" }
           },
           {
             image: iphone,
-            link: { url: "/", title: "Apple MacBooks" }
+            link: { url: "/stores-single", title: "Apple MacBooks" }
           },
           {
             image: loader,
-            link: { url: "/", title: "Apple iMacs" }
+            link: { url: "/stores-single", title: "Apple iMacs" }
           },
           {
             icon: party,
-            link: { url: "/", title: "Naar alle deals!" }
+            link: { url: "/stores-single", title: "Naar alle deals!" }
           }
         ]
       },
@@ -44,19 +44,19 @@ export const generateSidebarData = (): Sidebar => {
         featuredItems: [
           {
             image: CoolBlue,
-            link: { url: "/", title: "Coolblue" }
+            link: { url: "/stores-single", title: "Coolblue" }
           },
           {
             image: CoolBlue,
-            link: { url: "/", title: "Alternate" }
+            link: { url: "/stores-single", title: "Alternate" }
           },
           {
             image: CoolBlue,
-            link: { url: "/", title: "Beddenreus" }
+            link: { url: "/stores-single", title: "Beddenreus" }
           },
           {
             icon: party,
-            link: { url: "/", title: "Naar alle winkels!" }
+            link: { url: "/stores-single", title: "Naar alle winkels!" }
           }
         ]
       }

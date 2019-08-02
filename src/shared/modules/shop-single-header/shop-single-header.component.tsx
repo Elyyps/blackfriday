@@ -4,7 +4,6 @@ import styles from "./shop-single-header-component.module.scss";
 import IconDefault from "@assets/icons/link.svg";
 import CheckIcon from "@assets/icons/check.svg";
 import HeartIcon from "@assets/icons/heart-filled.svg";
-import ShareIcon from "@assets/icons/share.svg";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { DiscountCardComponent } from "@app/core/discount-card";
 import { NewsletterComponent } from "@app/core/newsletter";

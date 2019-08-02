@@ -3,8 +3,8 @@ import styles from "./deal-card-component.module.scss";
 import { ImageComponent, IconComponent } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
 import IconHot from "@assets/icons/hot.svg";
-import { Button } from "../button";
 import { ShadowCardComponent } from "../shadow-card";
+import { ClickableComponent } from "../clickable";
 
 interface IDealCardComponentProps {
   buttonLink?: string;
@@ -20,7 +20,7 @@ interface IDealCardComponentProps {
 }
 
 const DealCardComponent = (props: IDealCardComponentProps) => {
-  const { image, subtitle, title, sale, newPrice, oldPrice, buttonText, label, variant } = props;
+  const { image, subtitle, title, sale, newPrice, oldPrice, buttonLink, buttonText, label, variant } = props;
 
   return (
     <ShadowCardComponent fullWidth>
@@ -48,7 +48,14 @@ const DealCardComponent = (props: IDealCardComponentProps) => {
               <div className={styles["deal-card__price-new"]}>{newPrice}</div>
             </div>
           </div>
-          <Button title={buttonText} fullWidth variant={"primary-default"} icon={IconDefault} />
+          <ClickableComponent
+            title={buttonText}
+            href={buttonLink}
+            iconStyle="filled"
+            fullWidth
+            variant={"primary-default"}
+            icon={IconDefault}
+          />
         </div>
       </div>
     </ShadowCardComponent>

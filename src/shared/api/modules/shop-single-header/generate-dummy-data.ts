@@ -28,7 +28,7 @@ export const generatedummyShopSingleHeaderData = (): ShopSingleHeaderModule => (
   ],
   storeLink: {
     title: "Beddenreus",
-    url: "/"
+    url: "/stores-single"
   },
   keywords: ["Wonen & slapen", "Swiss sense", "hastens"],
 

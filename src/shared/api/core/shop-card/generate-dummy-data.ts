@@ -44,7 +44,7 @@ export const generateData = (): ShopCard[] => {
       const timebar = Math.random();
 
       data.push({
-        button: { title: "Naar deals", url: "" },
+        button: { title: "Naar deals", url: "/deals-overview" },
         content: "content",
         picture: `https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/${i}.png`,
         seeMore: { title: "Meer info", url: "" },
@@ -77,7 +77,7 @@ export const generateDemoDummyData = (): ShopCard[] => {
       const brands = Math.floor(Math.random() * (fiveConst - 0)) + 0;
 
       data.push({
-        button: { title: "Naar deals", url: "" },
+        button: { title: "Naar deals", url: "/deals-overview" },
         content: content[brands],
         picture: `https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/shopCards/${image}.png`,
         seeMore: { title: "Meer info", url: "" },
