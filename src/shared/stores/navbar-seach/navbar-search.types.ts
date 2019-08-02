@@ -1,5 +1,5 @@
 import { DealCardModule } from "@app/api/core/deal-card";
-import { ShopCardModule } from "@app/api/core/shop-card";
+import { Store } from "@app/api/core/store/store";
 
 interface IAction {
   type?: string;
@@ -7,7 +7,7 @@ interface IAction {
 
 export interface INavbarSearchCards extends IAction {
   deals: DealCardModule[];
-  shops: ShopCardModule[];
+  stores: Store[];
 }
 
 export interface INavbarSearchText extends IAction {

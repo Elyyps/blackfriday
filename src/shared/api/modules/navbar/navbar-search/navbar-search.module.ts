@@ -1,7 +1,7 @@
 import { DealCardModule } from "@app/api/core/deal-card";
-import { ShopCard } from "@app/api/core/shop-card/shop-card";
+import { Store } from "@app/api/core/store/store";
 
 export class NavbarSearchModule {
   public deals: DealCardModule[];
-  public shops: ShopCard[];
+  public stores: Store[];
 }

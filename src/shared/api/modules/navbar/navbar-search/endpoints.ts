@@ -6,8 +6,8 @@ const LIMIT = 5;
 export const getFilteredNavbarSearchDummyData = (text: string) => {
   const data = dummyNavbarSearchData;
   const textUpperCase = text.toUpperCase();
-  const foundShops = data.shops.filter(
-    shop => shop.content.toUpperCase().includes(textUpperCase) || shop.title.toUpperCase().includes(textUpperCase)
+  const foundShops = data.stores.filter(
+    store => store.description.toUpperCase().includes(textUpperCase) || store.name.toUpperCase().includes(textUpperCase)
   );
   const foundDeals = data.deals.filter(
     deal =>

@@ -4,7 +4,6 @@ import { PagebuilderContainerProps } from "../index";
 
 import { EmptyPageComponent } from "@app/core/empty-page";
 import { ModuleComponent } from "./module.component";
-import { HelmetComponent } from "./helmet.component";
 import { getViewType } from "@app/util/detect-view";
 import { ViewType } from "@app/stores/settings";
 
@@ -48,7 +47,7 @@ export class PagebuilderComponent extends React.Component<
       <React.Fragment>
         {!!this.props.currentPage ? (
           <React.Fragment>
-            <HelmetComponent {...this.props.currentPage.metaData} />
+            {/* <HelmetComponent {...this.props.currentPage.metaData} /> */}
             {this.props.currentPage.wordPressPostModules.map((wordPressModule, index) => (
               <ModuleComponent wordPressModule={wordPressModule} isMobile={this.isMobile} key={index} />
             ))}

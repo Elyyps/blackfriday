@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import styles from "./share-social-dropdown-component.module.scss";
 import { Button } from "../button";
 import { DropdownComponent } from "../dropdown-new/dropdown.component";
@@ -15,6 +15,8 @@ export interface IShareSocialDropdownComponentProps {
 
 const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps) => {
   const [isNativeSharingCompatible, setIsNativeSharingCompatible] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+
   const { shareSocial, buttonTitle, icon } = props;
   React.useEffect(() => {
     const navigatorInstance: any = navigator;
@@ -47,7 +49,14 @@ const ShareSocialDropdownComponent = (props: IShareSocialDropdownComponentProps)
       {isNativeSharingCompatible ? (
         <Button icon={icon} variant="secondary" onClick={onClickHandler} title={buttonTitle} />
       ) : (
-        <DropdownComponent iconPosition={"left"} icon={icon && icon} title={buttonTitle} animated={props.animatedIcon}>
+        <DropdownComponent
+          iconPosition="right"
+          icon={icon && icon}
+          title={buttonTitle}
+          animated={props.animatedIcon}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        >
           <div className={styles["share-social-dropdown__content"]}>
             <ShareSocialComponent {...shareSocial} />
           </div>

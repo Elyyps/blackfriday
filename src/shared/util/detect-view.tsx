@@ -5,6 +5,7 @@ export const breakPointMobileBig = 640;
 export const breakPointTablet = 769;
 export const breakPointDesktop = 960;
 export const breakPointDesktopLarge = 1200;
+export const breakPointDesktopFull = 1920;
 
 export const isMobileView = (width: number): boolean => (width < breakPointMobile ? true : false);
 export const isMobileBigView = (width: number): boolean => (width < breakPointMobileBig ? true : false);
@@ -19,27 +20,39 @@ export const getViewType = (width: number): IScreenSize => {
       viewType: ViewType.Mobile
     };
   }
-  if (width > breakPointMobile && width < breakPointMobileBig) {
+  if (width >= breakPointMobile && width < breakPointMobileBig) {
     return {
       breakpointPixels: breakPointMobileBig,
       viewType: ViewType.MobileBig
     };
   }
-  if (width > breakPointMobileBig && width < breakPointTablet) {
+  if (width >= breakPointMobileBig && width < breakPointTablet) {
     return {
       breakpointPixels: breakPointTablet,
       viewType: ViewType.Tablet
     };
   }
-  if (width > breakPointTablet && width < breakPointDesktop) {
+  if (width >= breakPointTablet && width < breakPointDesktop) {
     return {
       breakpointPixels: breakPointDesktop,
       viewType: ViewType.Desktop
     };
   }
+  if (width >= breakPointDesktop && width < breakPointDesktopLarge) {
+    return {
+      breakpointPixels: breakPointDesktopLarge,
+      viewType: ViewType.DesktopLarge
+    };
+  }
+  if (width >= breakPointDesktopLarge) {
+    return {
+      breakpointPixels: breakPointDesktopFull,
+      viewType: ViewType.DesktopFull
+    };
+  }
 
   return {
-    breakpointPixels: breakPointDesktopLarge,
-    viewType: ViewType.DesktopLarge
+    breakpointPixels: breakPointDesktopFull,
+    viewType: ViewType.DesktopFull
   };
 };

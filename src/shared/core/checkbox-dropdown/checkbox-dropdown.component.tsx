@@ -1,46 +1,40 @@
-import * as React from "react";
+import React, { useState } from "react";
 
 import styles from "./checkbox-dropdown-component.module.scss";
 import { FilterItem } from "@app/api/core/filter/filter-item";
-import { CheckboxComponent } from "../checkbox";
 import { DropdownComponent } from "../dropdown-new/dropdown.component";
+import { CheckboxCount } from "../checkbox-count/checkbox-count.component";
 
-export interface ICheckboxDropDownProps {
+export interface ICheckboxDropdownProps {
   items: FilterItem[];
-  onChange?: (items: FilterItem[]) => void;
+  onChange: (items: FilterItem[]) => void;
   title: string;
 }
 
-const CheckboxDropDown = (props: ICheckboxDropDownProps) => {
-  const onChecked = (value: any) => {
+const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const onChange = (id: string) => {
     const result = props.items.map(item => {
-      if (item.displayName === value) {
-        item.isSelected = !item.isSelected;
-      }
+      item.isSelected = item.id === id;
 
       return item;
     });
-    if (props.onChange) {
-      props.onChange(result);
-    }
+
+    props.onChange([...result]);
   };
 
+  const hasSelectedItems = props.items.filter(item => item.isSelected).length > 0;
+
   return (
-    <div>
-      <DropdownComponent title={props.title}>
-        <React.Fragment>
-          {props.items.map((item, key) => (
-            <div role="button" onClick={() => onChecked(item.displayName)} className={styles["filter-bar"]}>
-              <CheckboxComponent isChecked={item.isSelected} onClick={onChecked}>
-                {item.displayName}
-              </CheckboxComponent>
-              <span className={styles["counter"]}>{item.totalAmount}</span>
-            </div>
-          ))}
-        </React.Fragment>
-      </DropdownComponent>
-    </div>
+    <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems} isOpen={isOpen} setIsOpen={setIsOpen}>
+      <div className={styles["content"]}>
+        {props.items.map((item, key) => (
+          <CheckboxCount key={key} item={item} onChecked={onChange} />
+        ))}
+      </div>
+    </DropdownComponent>
   );
 };
 
-export { CheckboxDropDown };
+export { CheckboxDropdown };

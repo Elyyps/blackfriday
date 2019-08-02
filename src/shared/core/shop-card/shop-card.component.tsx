@@ -5,26 +5,21 @@ import { ImageComponent } from "@app/prep/modules-prep/core";
 import { LinkComponent } from "../link";
 import ShopIcon from "@assets/icons/link.svg";
 import { ShadowCardComponent } from "../shadow-card";
+import { Store } from "@app/api/core/store/store";
+import { getStoreStatusText } from "@app/util/store";
 import { ClickableComponent } from "../clickable";
 
 export interface IShopCardComponentProps {
-  buttonLink: string;
-  buttonText?: string;
-  content?: string;
-  image?: string;
-  range: number;
-  seeMoreLink?: string;
-  seeMoreText?: string;
-  subtitle: string;
-  title: string;
+  store: Store;
   variant?: string;
 }
 
 const ShopCardComponent = (props: IShopCardComponentProps) => {
-  const { title, seeMoreLink, variant, subtitle, buttonLink, seeMoreText, content, image, range, buttonText } = props;
+  const { description, logo, moreInfoLink, name, status, timeLeftPercentage } = props.store;
+
   const getStatusBarColor = () => {
-    const rangeNumber = range;
-    const limit = 0.5;
+    const rangeNumber = timeLeftPercentage;
+    const limit = 50;
     if (rangeNumber === 0 || typeof rangeNumber === "undefined") {
       return "none";
     }
@@ -38,25 +33,27 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
 
   return (
     <ShadowCardComponent>
-      <div className={`${styles["shop-card"]} ${styles[`shop-card--${variant || "default"}`]}`}>
+      <div className={`${styles["shop-card"]} ${styles[`shop-card--${props.variant || "default"}`]}`}>
         <div className={styles["shop-card__body"]}>
           <div className={styles["shop-card__image"]}>
-            <ImageComponent src={image} />
+            <ImageComponent src={logo} />
           </div>
-          <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>{subtitle}</div>
-          <TimeLeftBarComponent color={getStatusBarColor()} range={range} />
+          <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>
+            {getStoreStatusText(status)}
+          </div>
+          <TimeLeftBarComponent variant="responsive" color={getStatusBarColor()} range={timeLeftPercentage} />
           <div className={styles["shop-card__content"]}>
-            <div className={styles["shop-card__title"]}>{title}</div>
-            {content} {seeMoreText && seeMoreLink && <LinkComponent to={seeMoreLink}>{seeMoreText}</LinkComponent>}
+            <div className={styles["shop-card__title"]}>{name}</div>
+            {description} {moreInfoLink && moreInfoLink && <LinkComponent to={moreInfoLink}>Meer info</LinkComponent>}
           </div>
         </div>
         <div className={styles["shop-card__action"]}>
           <ClickableComponent
             iconStyle="filled"
-            href={buttonLink}
-            title={buttonText}
-            iconPosition="right"
+            title="Naar deals"
             icon={ShopIcon}
+            iconPosition="right"
+            href="./store-single"
           />
         </div>
       </div>

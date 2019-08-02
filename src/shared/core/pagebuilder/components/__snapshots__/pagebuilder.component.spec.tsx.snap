@@ -2,11 +2,6 @@
 
 exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`] = `
 <Fragment>
-  <HelmetComponent
-    content=""
-    description=""
-    title=""
-  />
   <ModuleComponent
     isMobile={false}
     key="0"
@@ -23,142 +18,164 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           },
           "title": "Wij hebben meer winkels in ons overzicht",
         },
-        "shops": Array [
+        "stores": Array [
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 0.8,
-            },
-            "title": "Bekbeddiscounter.nl",
+            "availableBrands": Array [
+              "Apple",
+              "Phillips",
+              "Nintendo",
+              "Microsoft",
+              "Phillips",
+              "Nintendo",
+              "Sony",
+              "Vodafone",
+            ],
+            "categories": Array [
+              "Audio",
+              "Games",
+              "Elektronisch",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "0",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
+            "moreInfoLink": "https://www.coolblue.nl/",
+            "name": "Coolblue",
+            "status": 1,
+            "timeLeftPercentage": 80,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "ACTIE START OVER 5 DAGEN!",
-              "value": 0,
-            },
-            "title": "Swiss Sense",
+            "availableBrands": Array [
+              "Apple",
+              "Phillips",
+              "Nintendo",
+              "Adidas",
+              "Jack & Jones",
+              "Happy Socks",
+            ],
+            "categories": Array [
+              "Mode",
+              "Huishouden",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "1",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/de+bijenkorf.png",
+            "moreInfoLink": "https://www.debijenkorf.nl/",
+            "name": "De Bijenkorf",
+            "status": 0,
+            "timeLeftPercentage": 30,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 1,
-            },
-            "title": "Beter Bed",
+            "availableBrands": Array [
+              "Vodafone",
+            ],
+            "categories": Array [
+              "Elektronisch",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "2",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
+            "moreInfoLink": "https://www.vodafone.nl/",
+            "name": "Vodafone",
+            "status": 1,
+            "timeLeftPercentage": 70,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 0.2,
-            },
-            "title": "Beter Bed",
+            "availableBrands": Array [
+              "Jack & Jones",
+              "Adidas",
+              "Converse",
+              "Phillips",
+              "Sony",
+            ],
+            "categories": Array [
+              "Mode",
+              "Huishouden",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "3",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/wehkamp.png",
+            "moreInfoLink": "https://www.wehkamp.nl/",
+            "name": "Wehkamp",
+            "status": 1,
+            "timeLeftPercentage": 60,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 0.2,
-            },
-            "title": "Beter Bed",
+            "availableBrands": Array [
+              "Sony",
+              "Samsung",
+              "Apple",
+            ],
+            "categories": Array [
+              "Elektronisch",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "4",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/ziggo.png",
+            "moreInfoLink": "https://www.ziggo.nl/",
+            "name": "Ziggo",
+            "status": 1,
+            "timeLeftPercentage": 75,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 0.2,
-            },
-            "title": "Beter Bed",
+            "availableBrands": Array [
+              "Apple",
+              "Phillips",
+              "Nintendo",
+              "Sony",
+              "Microsoft",
+            ],
+            "categories": Array [
+              "Audio",
+              "Elektronisch",
+              "Huishouden",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "5",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bcc.png",
+            "moreInfoLink": "https://www.bcc.nl/",
+            "name": "BCC",
+            "status": 1,
+            "timeLeftPercentage": 100,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 0.2,
-            },
-            "title": "Beter Bed",
+            "availableBrands": Array [
+              "Apple",
+              "Phillips",
+              "Nintendo",
+              "Sony",
+              "Vodafone",
+              "Microsoft",
+              "Samsung",
+            ],
+            "categories": Array [
+              "Audio",
+              "Games",
+              "Elektronisch",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "6",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
+            "moreInfoLink": "https://bol.com",
+            "name": "Bol.com",
+            "status": 1,
+            "timeLeftPercentage": 40,
           },
           Object {
-            "button": Object {
-              "title": "Naar deals",
-              "url": "/deals-overview",
-            },
-            "content": "Een seletie van bizarre vele aanbiedingen.",
-            "picture": "https://d2ddoduugvun08.cloudfront.net/items/2c3217062N3d2L320w0U/Image%202019-06-27%20at%203.17.28%20PM.png?X-CloudApp-Visitor-Id=3342233&v=03808fb0",
-            "seeMore": Object {
-              "title": "Meer info",
-              "url": "/stores-single",
-            },
-            "timeLeftBar": Object {
-              "text": "Nu geldig",
-              "value": 0.2,
-            },
-            "title": "Beter Bed",
+            "availableBrands": Array [
+              "Phillips",
+              "Samsung",
+            ],
+            "categories": Array [
+              "Audio",
+              "Elektronisch",
+            ],
+            "description": "Een selectie van bizar vele aanbieden",
+            "id": "7",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/dyson.png",
+            "moreInfoLink": "https://www.dyson.nl/",
+            "name": "Dyson",
+            "status": 0,
+            "timeLeftPercentage": 20,
           },
         ],
         "title": "Vergelijkbare winkels",
@@ -169,12 +186,4 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
 </Fragment>
 `;
 
-exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `
-<Fragment>
-  <HelmetComponent
-    content=""
-    description=""
-    title=""
-  />
-</Fragment>
-`;
+exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `<Fragment />`;

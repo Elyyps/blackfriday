@@ -31,6 +31,8 @@ const FooterComponent = (props: IFooterComponentProps) => {
     // Submit logic newsletter  here
   };
 
+  const footerPanelIcon = openedPanel === `${props.footerModule.middleFooter.socialMedia.id}` ? ArrowUp : ArrowDown;
+
   return (
     <div className={styles["footer"]}>
       <div className={styles["footer__top"]}>
@@ -141,11 +143,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                     >
                       {props.footerModule.middleFooter.socialMedia.title}
                       <div className={styles["footer__column-title__icon"]}>
-                        <IconComponent
-                          icon={
-                            openedPanel === `${props.footerModule.middleFooter.socialMedia.id}` ? ArrowUp : ArrowDown}
-                          size="10px"
-                        />
+                        <IconComponent icon={footerPanelIcon} size="10px" />
                       </div>
                     </div>
                   }

@@ -3,14 +3,14 @@ import { connect, MapStateToProps, MapDispatchToProps } from "react-redux";
 import { IAppState } from "@app/stores";
 import { INavbarSearchComponentProps, NavbarSearchComponent } from "../navbar-search.component";
 import { DealCardModule } from "@app/api/core/deal-card";
-import { ShopCardModule } from "@app/api/core/shop-card";
 import { navbarSearchThunks } from "@app/middleware/thunk/navbar-search.thunk";
+import { Store } from "@app/api/core/store/store";
 
 interface IStateProps {
   currentFilter: string;
   deals?: DealCardModule[];
   dealsTitle: string;
-  shops?: ShopCardModule[];
+  shops?: Store[];
   shopsTitle: string;
 }
 interface IDispatchProps {
@@ -18,9 +18,9 @@ interface IDispatchProps {
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, INavbarSearchComponentProps, IAppState> = state => {
-  const { shops, deals, currentFilter } = state.navbarSearch;
+  const { stores, deals, currentFilter } = state.navbarSearch;
 
-  return { shops, deals, currentFilter, shopsTitle: "", dealsTitle: "" };
+  return { stores, deals, currentFilter, shopsTitle: "", dealsTitle: "" };
 };
 
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, INavbarSearchComponentProps> = dispatch => ({
