@@ -35,8 +35,6 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.categoryFilterItems.filter(item => item.isSelected).length +
     props.brandFilterItems.filter(item => item.isSelected).length;
 
-  console.log(props.screenSize);
-
   return (
     <div className="uk-container">
       {props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (
