@@ -1,7 +1,7 @@
 import { FeaturedSidebarItems } from "./featured-sidebar-items";
-import { BannerComponent } from "../banner/banner";
+import { Banner } from "../banner/banner";
 
 export class Sidebar {
-  public banner?: BannerComponent;
+  public banner?: Banner;
   public featuredItemsGroups: FeaturedSidebarItems[];
 }

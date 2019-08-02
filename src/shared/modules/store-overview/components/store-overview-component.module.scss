@@ -1,0 +1,43 @@
+.store-overview {
+  padding: 24px 0;
+  background-color: #f7f7f7;
+  min-height: 500px;
+}
+.filter-mobile-bar {
+  background-color: white;
+  padding-top: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+.stores-overview {
+  background-color: var(--tint-grey-97);
+  &__header {
+    padding-bottom: 16px;
+    background-color: var(--tint-white);
+  }
+  &__body {
+    color: red;
+    &__banner {
+      margin: 10px 5px 10px 5px;
+    }
+    &__list {
+      margin: 0 -5px 0 -5px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    &__cards {
+      flex: 1 1 19%;
+      margin: 5px;
+      @media (max-width: 1200px) {
+        flex: 1 1 23%;
+      }
+      @media (max-width: 960px) {
+        flex: 1 1 31%;
+      }
+
+      @media (max-width: 769px) {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}

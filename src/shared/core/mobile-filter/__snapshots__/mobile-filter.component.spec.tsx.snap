@@ -81,7 +81,7 @@ exports[`[MobileFilter] should render component without crashing 1`] = `
     }
   }
   onClear={[Function]}
-  onClose={[Function]}
+  onFinish={[Function]}
   totalStores={0}
 />
 `;

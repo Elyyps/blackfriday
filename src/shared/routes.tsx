@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Route } from "react-router-dom";
 import { PlaygroundAhmedComponent } from "./playgrounds/playground-ahmed/playground-ahmed.component";
-import { PlaygroundPedroComponent } from "./playgrounds/playground-pedro/playground-pedro.component";
 import { PlaygroundDanieleComponent } from "./playgrounds/playground-daniele/playground-daniele.component";
 import { PlaygroundMartijnComponent } from "./playgrounds/playground-martijn/playground-martijn.component";
 import { PagebuilderContainer } from "./core/pagebuilder";
@@ -18,7 +17,6 @@ const Routes: React.FunctionComponent = () => (
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-single" component={PagebuilderContainer} />
     <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
-    <Route exact path="/playground-pedro" component={PlaygroundPedroComponent} />
     <Route exact path="/playground-daniele" component={PlaygroundDanieleComponent} />
     <Route exact path="/playground-martijn" component={PlaygroundMartijnComponent} />
     <Route exact path="/playground-tom" component={PlaygroundTomComponent} />

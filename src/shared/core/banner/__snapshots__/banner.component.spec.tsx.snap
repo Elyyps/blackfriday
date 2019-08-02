@@ -11,20 +11,6 @@ exports[`[Banner] should render component without crashing 1`] = `
       className="holder"
     >
       <div
-        className="image"
-      >
-        <Link
-          to="/deals-overview"
-        >
-          <ImageComponent
-            alt="alt text oasis"
-            errorImage="link.svg"
-            errorMessage="Custom error message"
-            src="oasis.jpg"
-          />
-        </Link>
-      </div>
-      <div
         className="body"
       >
         <div
@@ -40,7 +26,19 @@ exports[`[Banner] should render component without crashing 1`] = `
           >
             Black Friday bij Coolblue
           </h2>
-          Een selectie van bizarre aanbiedingen. Meer info
+          <span>
+            Een selectie van bizarre aanbiedingen.
+          </span>
+          <span
+            className="more-info"
+          >
+            <a
+              href="https://coolblue.nl"
+              target="_blank"
+            >
+              Meer info
+            </a>
+          </span>
         </div>
         <div
           className="footer"
@@ -61,6 +59,22 @@ exports[`[Banner] should render component without crashing 1`] = `
             />
           </div>
         </div>
+      </div>
+      <div
+        className="image"
+      >
+        <a
+          href="https://coolblue.nl"
+          role="button"
+          target="_blank"
+        >
+          <ImageComponent
+            alt="alt text oasis"
+            errorImage="link.svg"
+            errorMessage="Custom error message"
+            src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png"
+          />
+        </a>
       </div>
     </div>
   </div>

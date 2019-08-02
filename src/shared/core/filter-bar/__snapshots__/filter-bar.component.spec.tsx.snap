@@ -84,12 +84,12 @@ exports[`[FilterBar] should render component without crashing 1`] = `
             className="filter-bar-li"
             key="0"
           >
-            <CheckboxComponent
+            <ForwardRef
               isChecked={false}
               onClick={[Function]}
             >
               Actie nog onbekend
-            </CheckboxComponent>
+            </ForwardRef>
             (
             12
             )
@@ -98,12 +98,12 @@ exports[`[FilterBar] should render component without crashing 1`] = `
             className="filter-bar-li"
             key="1"
           >
-            <CheckboxComponent
+            <ForwardRef
               isChecked={false}
               onClick={[Function]}
             >
               Actie start over 5 dagen!
-            </CheckboxComponent>
+            </ForwardRef>
             (
             12
             )
@@ -112,12 +112,12 @@ exports[`[FilterBar] should render component without crashing 1`] = `
             className="filter-bar-li"
             key="2"
           >
-            <CheckboxComponent
+            <ForwardRef
               isChecked={false}
               onClick={[Function]}
             >
               Nu geldig
-            </CheckboxComponent>
+            </ForwardRef>
             (
             3
             )
@@ -126,12 +126,12 @@ exports[`[FilterBar] should render component without crashing 1`] = `
             className="filter-bar-li"
             key="3"
           >
-            <CheckboxComponent
+            <ForwardRef
               isChecked={false}
               onClick={[Function]}
             >
               Bijna Verlopen!
-            </CheckboxComponent>
+            </ForwardRef>
             (
             3
             )
@@ -140,12 +140,12 @@ exports[`[FilterBar] should render component without crashing 1`] = `
             className="filter-bar-li"
             key="4"
           >
-            <CheckboxComponent
+            <ForwardRef
               isChecked={false}
               onClick={[Function]}
             >
               Actie verlopen
-            </CheckboxComponent>
+            </ForwardRef>
             (
             3
             )

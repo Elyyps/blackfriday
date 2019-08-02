@@ -25,6 +25,7 @@ export interface IClickableComponentProps {
   fullWidth?: boolean;
   href?: string;
   icon?: string;
+  iconFillColor?: string;
   iconPosition?: "right" | "left";
   iconStyle?: IconStyle;
   onClick?: () => void;
@@ -35,7 +36,12 @@ export interface IClickableComponentProps {
   zIndex?: number;
 }
 
-const renderIconMargin = (margin = "right", title: string | undefined, icon: string | undefined) => {
+const renderIconMargin = (
+  margin = "right",
+  title: string | undefined,
+  icon: string | undefined,
+  iconFillColor: string | undefined
+) => {
   let style;
   if (title) {
     style = styles[`icon-${margin}`];
@@ -43,19 +49,24 @@ const renderIconMargin = (margin = "right", title: string | undefined, icon: str
 
   return (
     <span className={style}>
-      <IconComponent icon={icon} size="14px" />
+      <IconComponent icon={icon} size="14px" fillColor={iconFillColor} />
     </span>
   );
 };
 
-const renderIconText = (icon: string | undefined, iconPosition: string | undefined, title: string | undefined) => {
+const renderIconText = (
+  icon: string | undefined,
+  iconPosition: string | undefined,
+  title: string | undefined,
+  iconFillColor: string | undefined
+) => {
   const showTextOnTheLeft = (icon && iconPosition === "right") || (icon && !iconPosition);
   const showTextOnTheRight = icon && iconPosition === "left";
 
   return (
     <span className={styles["icon-svg"]}>
       {showTextOnTheLeft && title}
-      {icon ? renderIconMargin(iconPosition, title, icon) : title}
+      {icon ? renderIconMargin(iconPosition, title, icon, iconFillColor) : title}
       {showTextOnTheRight && title}
     </span>
   );
@@ -63,9 +74,9 @@ const renderIconText = (icon: string | undefined, iconPosition: string | undefin
 
 const ClickableComponent = (props: IClickableComponentProps) => {
   const [iconText, setIconText] = React.useState<JSX.Element>(
-    renderIconText(props.icon, props.iconPosition, props.title)
+    renderIconText(props.icon, props.iconPosition, props.title, props.iconFillColor)
   );
-  useEffect(() => setIconText(renderIconText(props.icon, props.iconPosition, props.title)), [
+  useEffect(() => setIconText(renderIconText(props.icon, props.iconPosition, props.title, props.iconFillColor)), [
     props.icon,
     props.iconPosition,
     props.title

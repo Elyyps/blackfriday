@@ -23,7 +23,6 @@ import { MediumHeroComponent } from "@app/modules/medium-hero";
 import { MediumHeroModule } from "@app/api/modules/medium-hero/medium-hero";
 import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
-import { StoresOverviewContainer } from "@app/modules/stores-overview/container/stores-overview.container";
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
 import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
@@ -44,6 +43,8 @@ import { generateBodytextDummyData } from "@app/api/core/bodytext";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { BlogBodyTextComponent } from "@app/modules/blog-body-text";
 import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
+import { StoreOverviewContainer } from "@app/modules/store-overview/containers/store-overview.container";
+import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -69,8 +70,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <NotYetImplementedComponent notYetImplemented={wordPressModule as NotYetImplemented} />;
     case "ShopSingleHeaderModule":
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
-    case "StoresOverviewModule":
-      return <StoresOverviewContainer />;
+    case "StoreOverviewModule":
+      return <StoreOverviewContainer storeOverviewModule={wordPressModule as StoreOverviewModule} />;
     case "BlogSingleHeaderModule":
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":

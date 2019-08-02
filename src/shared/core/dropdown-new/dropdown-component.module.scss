@@ -1,5 +1,8 @@
 .dropdown {
   overflow: hidden;
+  &--open {
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.18);
+  }
 }
 
 .dropdown-child {
@@ -10,12 +13,20 @@
   color: $gray-dark;
   svg {
     transition: all 200ms;
+    // stroke: white !important;
+    stroke: black;
+    fill: none;
   }
   :focus {
     outline: none;
   }
+
+  &--has-selected {
+    svg {
+      stroke: white;
+    }
+  }
   &--open {
-    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.18);
     button:hover {
       background: white;
     }
@@ -31,7 +42,6 @@
   background-color: white;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
   position: absolute;
-  width: 200px;
   padding-top: 10px;
   padding-bottom: 0px;
   padding-left: 10px;

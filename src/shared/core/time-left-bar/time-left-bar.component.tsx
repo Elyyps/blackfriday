@@ -10,7 +10,7 @@ export interface ITimeLeftBarComponentProps {
 const TimeLeftBarComponent = (props: ITimeLeftBarComponentProps) => {
   const { range, color } = props;
   const statusBarFilled = {
-    width: `calc( ${range} * 100%)`,
+    width: `calc( ${range}%)`,
     backgroundColor: color
   };
 
