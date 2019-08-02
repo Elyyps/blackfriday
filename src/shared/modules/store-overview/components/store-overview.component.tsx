@@ -60,7 +60,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           props.sortBy
         );
         setIsLoading(false);
-      }, 2000);
+      }, 1000);
     }
   };
   const connectClass = "uk-switcher-list";
@@ -108,13 +108,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           )}
 
           <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-            <ClipLoader
-              css={spinnerOverride}
-              sizeUnit={"px"}
-              size={ClipLoaderSize}
-              color={"red"}
-              loading={isLoading}
-            />
+            <ClipLoader css={spinnerOverride} sizeUnit={"px"} size={ClipLoaderSize} color={"red"} loading={isLoading} />
           </div>
         </div>
       </div>

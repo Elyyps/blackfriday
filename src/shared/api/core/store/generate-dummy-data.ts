@@ -303,10 +303,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Bax music",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Bax Music.png",
     timeLeftPercentage: 90
   },
   {
@@ -314,10 +314,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Berden",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Berden.png",
     timeLeftPercentage: 90
   },
   {
@@ -325,10 +325,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Bestseller",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Bestseller.png",
     timeLeftPercentage: 90
   },
   {
@@ -336,10 +336,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Beter Bed",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Beterbed.png",
     timeLeftPercentage: 90
   },
   {
@@ -347,10 +347,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Bever",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Bever.png",
     timeLeftPercentage: 90
   },
   {
@@ -358,21 +358,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Blokker",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
-    timeLeftPercentage: 90
-  },
-  {
-    id: "55",
-    status: StoreStatus.NowValid,
-    categories: ["Huishouden"],
-    availableBrands: ["Phillips"],
-    name: "Dummy Store",
-    moreInfoLink: "https://www.coolblue.nl/",
-    description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Blokker.png",
     timeLeftPercentage: 90
   },
   {
@@ -380,10 +369,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Body & Fit",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Body & Fit.png",
     timeLeftPercentage: 90
   },
   {
@@ -391,10 +380,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "C&A",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/C&A.png",
     timeLeftPercentage: 90
   },
   {
@@ -402,10 +391,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Calvin Klein",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Calvin Klein.png",
     timeLeftPercentage: 90
   },
   {
@@ -413,10 +402,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Cameranu",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Cameranu.png",
     timeLeftPercentage: 90
   },
   {
@@ -424,21 +413,21 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Centerparcs",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Centerparcs.png",
     timeLeftPercentage: 90
   },
   {
     id: "34",
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
-    availableBrands: [""],
-    name: "Dummy Store",
+    availableBrands: ["Phillips"],
+    name: "Converse",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Converse.png",
     timeLeftPercentage: 90
   },
   {
@@ -446,21 +435,21 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Coolcat",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Coolcat.png",
     timeLeftPercentage: 90
   },
   {
     id: "36",
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
-    availableBrands: [""],
-    name: "Dummy Store",
+    availableBrands: ["Phillips"],
+    name: "Decathlon",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Decathlon.png",
     timeLeftPercentage: 90
   },
   {
@@ -468,10 +457,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Douglas",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Douglas.png",
     timeLeftPercentage: 90
   },
   {
@@ -479,10 +468,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Expert",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Expert.png",
     timeLeftPercentage: 90
   },
   {
@@ -490,10 +479,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Flinders",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Flinders.png",
     timeLeftPercentage: 90
   },
   {
@@ -501,10 +490,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Fonq",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Fonq.png",
     timeLeftPercentage: 90
   },
   {
@@ -512,10 +501,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "G-star raw",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/G-star Raw.png",
     timeLeftPercentage: 90
   },
   {
@@ -523,10 +512,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Gall & Gall",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Gall & gall.png",
     timeLeftPercentage: 90
   },
   {
@@ -534,10 +523,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "Gamma",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Gamma.png",
     timeLeftPercentage: 90
   },
   {
@@ -545,10 +534,10 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "GUESS",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Guess.png",
     timeLeftPercentage: 90
   },
   {
@@ -556,10 +545,406 @@ export const generateDemoStoreDummyData = (): Store[] => [
     status: StoreStatus.NowValid,
     categories: ["Huishouden"],
     availableBrands: ["Phillips"],
-    name: "Dummy Store",
+    name: "H&M",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/placeholder.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/H&M.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "46",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "HP",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Hp.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "47",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Hunkemöller",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Hunkemoller.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "48",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Ici Paris XL",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Ici Paris XL.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "49",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Jack & Jones",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Jack & Jones.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "50",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "JBL",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/JBL.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "51",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "JD sports",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/JD.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "52",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Jysk",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Jysk.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "53",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "KPN",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/KPN.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "54",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Kruidvat",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Kruidvat.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "55",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Lucardi",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Lucardi.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "56",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "MediaMarkt",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/MediaMarkt.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "57",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Megekko",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Megekko.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "58",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Miss Etam",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Miss Etam.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "59",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "O’neill",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/O'neill.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "60",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Only",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Only.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "61",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Otto",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Otto .png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "62",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Pandora",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Pandora.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "63",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Paradigit",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Paradigit.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "64",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "PlatteTV",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/PlatteTV.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "65",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Plutosport",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/PlutoSport.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "66",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Praxis",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Praxis.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "67",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Prenatal",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Prenatal.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "68",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "puma",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Puma.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "69",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Reebok",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Reebok.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "70",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "River island",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/River Island.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "71",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Sissy boy",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Sissy Boy.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "72",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Samsung",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Samsung.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "73",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Score",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Score.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "74",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Siebel juweliers",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Siebel Juweliers.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "75",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Steps",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Steps.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "76",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Superdry",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Superdry.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "77",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Telfort",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Telfort.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "78",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Tommy Hilfiger",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Tommy Hilfiger.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "79",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Vero Moda",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Vero Moda.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "80",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Vtwonen",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vtwonen.png",
+    timeLeftPercentage: 90
+  },
+  {
+    id: "81",
+    status: StoreStatus.NowValid,
+    categories: ["Huishouden"],
+    availableBrands: ["Phillips"],
+    name: "Woon express",
+    moreInfoLink: "https://www.coolblue.nl/",
+    description: "Een selectie van bizar vele aanbieden",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Woon Express.png",
     timeLeftPercentage: 90
   }
 ];
