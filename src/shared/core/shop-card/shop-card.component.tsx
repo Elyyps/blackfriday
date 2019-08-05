@@ -53,7 +53,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
             title="Naar deals"
             icon={ShopIcon}
             iconPosition="right"
-            href="./store-single"
+            href="/stores-single"
           />
         </div>
       </div>

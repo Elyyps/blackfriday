@@ -48,7 +48,7 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       className="shop-card__action"
     >
       <ClickableComponent
-        href="./store-single"
+        href="/stores-single"
         icon="link.svg"
         iconPosition="right"
         iconStyle="filled"
