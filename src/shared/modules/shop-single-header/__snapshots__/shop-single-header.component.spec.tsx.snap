@@ -34,7 +34,7 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
       "CheckListTitle": "De voordelen van shoppen bij Beddenreus tijdens Black Friday.",
       "backLink": Array [
         Object {
-          "title": "Alle winkels",
+          "title": "Back",
           "url": "/",
         },
       ],
@@ -103,15 +103,40 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
         },
       ],
       "name": "ShopSingleHeaderModule",
-      "picture": "oasis.jpg",
+      "picture": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/stores-single.png",
       "rating": Object {
         "text": "Beoordeel deze deal",
         "value": 5,
       },
       "shareSocial": Object {
+        "email": Object {
+          "nameSocialShare": "Email",
+          "subject": "BlackFriday",
+          "title": "Email",
+          "url": "https://www.webbio.nl",
+        },
         "facebook": Object {
-          "title": "Facebook sharing",
-          "url": "http://viper.blackfridaynederland.nl/shop-single",
+          "nameSocialShare": "Facebook",
+          "title": "BlackFriday",
+          "url": "https://www.webbio.nl",
+        },
+        "twitter": Object {
+          "hashtags": Array [
+            "BlackFriday",
+            "Netherlands",
+            "Sale",
+            "Shops",
+          ],
+          "nameSocialShare": "Twitter",
+          "title": "BlackFriday",
+          "url": "https://www.webbio.nl",
+          "via": "BlackFriday",
+        },
+        "whatsapp": Object {
+          "nameSocialShare": "WhatsApp",
+          "separator": " - ",
+          "title": "BlackFriday",
+          "url": "https://www.webbio.nl",
         },
       },
       "smallBackLink": Object {
