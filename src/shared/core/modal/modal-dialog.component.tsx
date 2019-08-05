@@ -45,16 +45,26 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
             props.onClickAway(e);
           }}
         >
-          <div
-            className={styles["c-modal"]}
-            style={{ background: props.background, width: modalSize, ...maxHeight }}
-            ref={props.modalRef}
-          >
+          {props.variant === "full-screen" && (
             <button className={styles["c-modal__close"]} aria-labelledby="close-modal" onClick={props.onClose}>
               <svg id="close-modal" className={styles["c-modal__close-icon"]} viewBox="0 0 40 40">
                 <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
               </svg>
             </button>
+          )}
+          <div
+            className={styles["c-modal"]}
+            style={{ background: props.background, width: modalSize, ...maxHeight }}
+            ref={props.modalRef}
+          >
+            {props.variant !== "full-screen" && (
+              <button className={styles["c-modal__close"]} aria-labelledby="close-modal" onClick={props.onClose}>
+                <svg id="close-modal" className={styles["c-modal__close-icon"]} viewBox="0 0 40 40">
+                  <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                </svg>
+              </button>
+            )}
+
             <div className={styles["c-modal__body"]} style={{ ...padding }}>
               {props.title && <h2>{props.title}</h2>}
               {props.children ? props.children : ""}

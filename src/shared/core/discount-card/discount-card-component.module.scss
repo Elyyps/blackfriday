@@ -11,8 +11,8 @@
   width: 100%;
   box-sizing: border-box;
   height: 100%;
+  position:relative;
   padding-bottom: 56px;
-
   @media (max-width: $breakpoint-xsmall-max) {
     padding-bottom: 24px;
   }
