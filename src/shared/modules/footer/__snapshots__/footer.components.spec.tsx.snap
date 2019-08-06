@@ -58,7 +58,7 @@ exports[`[Footer] should render component without crashing 1`] = `
         <div
           className="footer__top-right uk-visible@m"
         >
-          <USP
+          <Connect(USP)
             uspModule={
               Object {
                 "uniqueSellingPoints": Array [

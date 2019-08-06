@@ -10,6 +10,7 @@ import {
   generateHomepageBodytextDummyData
 } from "../modules/body-text/generate-dummy-data";
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
+import { HeaderInfoDummy } from "../modules/header-info/generate-dummy-data";
 import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
@@ -105,7 +106,7 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateMediumHeroDummyData(),
+      HeaderInfoDummy,
       generateDummyFeaturedCategoriesData(),
       generateDummyFeaturedDealsData(),
       generateDummyBannerModule(),
@@ -139,6 +140,24 @@ export const pageList: PageModel[] = [
       title: "Homepage",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
+    },
+    wordPressPostModules: [
+      generateDummyNavbarData(),
+      generateBlogSingleHeaderData(),
+      generateBlogBodyTextData(),
+      generateDummyFeaturedDealsData(),
+      generateFeaturedBlogData(),
+      generateCtaNewsLetterModule(),
+      generateDummyFooterData()
+    ]
+  } as PageModel,
+  {
+    id: uuid(),
+    route: "/black-friday-2019",
+    metaData: {
+      title: "Black Friday 2019",
+      content: "Black Friday 2019 informative page",
+      description: "Black Friday 2019 informative page"
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
