@@ -16,6 +16,7 @@ export interface IBannerComponentProps {
   buttonTitle: string;
   image?: ImageType;
   imageLink?: string;
+  isButtonFullWidth?: boolean;
   label: string;
   logo: ImageType;
   moreInfoLink: string;
@@ -37,7 +38,8 @@ const BannerComponent = (props: IBannerComponentProps) => {
     buttonTitle,
     logo,
     moreInfoLink,
-    showAlternativeBanner
+    showAlternativeBanner,
+    isButtonFullWidth
   } = props;
 
   const classModify = `banner--${variant || "default"}`;
@@ -49,11 +51,11 @@ const BannerComponent = (props: IBannerComponentProps) => {
           {showAlternativeBanner ? (
             <React.Fragment>
               {renderImage(imageLink, image)}
-              {renderBody(label, logo, text, title, buttonLink, buttonTitle, moreInfoLink)}
+              {renderBody(label, logo, text, title, buttonLink, buttonTitle, moreInfoLink, isButtonFullWidth)}
             </React.Fragment>
           ) : (
             <React.Fragment>
-              {renderBody(label, logo, text, title, buttonLink, buttonTitle, moreInfoLink)}
+              {renderBody(label, logo, text, title, buttonLink, buttonTitle, moreInfoLink, isButtonFullWidth)}
               {renderImage(imageLink, image)}
             </React.Fragment>
           )}
@@ -83,7 +85,8 @@ const renderBody = (
   title: string,
   buttonLink: string,
   buttonTitle: string,
-  moreInfoLink: string
+  moreInfoLink: string,
+  isButtonFullWidth?: boolean
 ) => (
   <div className={styles["body"]}>
     <div className={styles["content"]}>
@@ -104,6 +107,7 @@ const renderBody = (
           iconStyle={"filled"}
           icon={IconDefault}
           href={buttonLink}
+          fullWidth={isButtonFullWidth}
         />
       )}
       {logo && (
