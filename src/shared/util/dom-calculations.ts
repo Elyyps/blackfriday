@@ -18,8 +18,18 @@ const getTextWidth = (text: string, fontSize: string, fontFace: string) => {
 export const getLabelWidth = (placeholder: string) => getTextWidth(placeholder, "12", "Assistant, sans-serif");
 
 export const getOffset = (element: any) => {
-  var rect = element.getBoundingClientRect(),
+  const rect = element.getBoundingClientRect(),
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   return rect.top + scrollTop;
+};
+
+export const getTop = (element: any) => {
+  if (element && element.getBoundingClientRect) {
+    const rect = element.getBoundingClientRect();
+
+    return rect.top;
+  }
+
+  return 0;
 };

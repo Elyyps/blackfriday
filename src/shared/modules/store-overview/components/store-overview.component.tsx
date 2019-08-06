@@ -33,6 +33,7 @@ const TAKE = 25;
 const SHOW_AD_EVERY_LINES = 4;
 
 const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
+  const topDivRef = useRef<any>(null);
   const mainDivRef = useRef<any>(null);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -87,9 +88,17 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   const connectClass = "uk-switcher-list";
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
+  const filtersChanged = () => {
+    if (mainDivRef && mainDivRef.current) {
+      const top = getOffset(mainDivRef.current);
+      window.scroll(top, top);
+      setPositionPercentage(0);
+    }
+  };
+
   return (
     <div>
-      <div className="deals-overview__tab">
+      <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
           <TabComponent attrAction={"link"}>Winkels</TabComponent>
           <TabComponent attrAction={"link"}>Productdeals</TabComponent>
@@ -102,7 +111,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
             {({ style, isSticky }) => (
               <div style={style} className={styles["filter-mobile-bar"]}>
                 {isSticky && <PageProgressBarComponent value={positionPercentage} />}
-                <FilterBarContainer />
+                <FilterBarContainer filtersChanged={filtersChanged} />
               </div>
             )}
           </Sticky>
