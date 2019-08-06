@@ -14,7 +14,7 @@ exports[`[FeaturedBlogItems] should render component without crashing 1`] = `
         className="featured-blog-items__card-image"
       >
         <ImageComponent
-          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png"
+          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png"
         />
       </div>
       <h3

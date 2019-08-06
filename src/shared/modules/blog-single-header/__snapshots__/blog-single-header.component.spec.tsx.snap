@@ -44,7 +44,7 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
         Alle blogs
       </Link>
       <h1>
-        Black Friday 2019 blog
+        Vijf voorspellingen van Black Friday Nederland
       </h1>
     </div>
   </div>
@@ -52,35 +52,13 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
     className="uk-container"
   >
     <div
-      className="blog-single-header__items"
-    >
-      <FeaturedBlogItemsComponent
-        item={
-          Object {
-            "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-            "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
-            "link": Object {
-              "title": "Lees meer",
-              "url": "/blog-single",
-            },
-            "title": "De beste Moederdag cadeau deals",
-          }
+      className="blog-single-header__image"
+      style={
+        Object {
+          "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png)",
         }
-      />
-      <FeaturedBlogItemsComponent
-        item={
-          Object {
-            "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-            "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/1.png",
-            "link": Object {
-              "title": "Lees meer",
-              "url": "/blog-single",
-            },
-            "title": "Black Friday wordt Black Week – deals beginnen eerder",
-          }
-        }
-      />
-    </div>
+      }
+    />
   </div>
 </div>
 `;

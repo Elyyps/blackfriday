@@ -14,7 +14,7 @@ import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dum
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
-import { generateBlogSingleHeaderData } from "../modules/blog-single-header/endpoint";
+import { generateBlogSingleHeaderData, generateBlogOverviewHeaderData } from "../modules/blog-single-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
@@ -125,7 +125,7 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateBlogSingleHeaderData(),
+      generateBlogOverviewHeaderData(),
       generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),

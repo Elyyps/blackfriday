@@ -16,13 +16,14 @@ exports[`[FeaturedBlog] should render component without crashing 1`] = `
       className="featured-blog__body"
     >
       <div
+        className="featured-blog__card"
         key="0"
       >
         <FeaturedBlogItemsComponent
           item={
             Object {
               "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-              "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+              "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png",
               "link": Object {
                 "title": "Lees meer",
                 "url": "/blog-single",
@@ -33,6 +34,7 @@ exports[`[FeaturedBlog] should render component without crashing 1`] = `
         />
       </div>
       <div
+        className="featured-blog__card"
         key="1"
       >
         <FeaturedBlogItemsComponent
