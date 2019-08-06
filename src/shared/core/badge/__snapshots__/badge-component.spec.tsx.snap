@@ -10,9 +10,5 @@ exports[`[Badge] should render component without crashing 1`] = `
       size="18px"
     />
   </button>
-  <div
-    className="badge__dropdown"
-    data-uk-dropdown="mode: click"
-  />
 </div>
 `;

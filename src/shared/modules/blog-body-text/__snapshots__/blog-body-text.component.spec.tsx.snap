@@ -48,9 +48,34 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
           buttonTitle="Delen"
           shareSocial={
             Object {
+              "email": Object {
+                "nameSocialShare": "Email",
+                "subject": "BlackFriday",
+                "title": "Email",
+                "url": "https://www.webbio.nl",
+              },
               "facebook": Object {
-                "title": "title",
-                "url": "test",
+                "nameSocialShare": "Facebook",
+                "title": "BlackFriday",
+                "url": "https://www.webbio.nl",
+              },
+              "twitter": Object {
+                "hashtags": Array [
+                  "BlackFriday",
+                  "Netherlands",
+                  "Sale",
+                  "Shops",
+                ],
+                "nameSocialShare": "Twitter",
+                "title": "BlackFriday",
+                "url": "https://www.webbio.nl",
+                "via": "BlackFriday",
+              },
+              "whatsapp": Object {
+                "nameSocialShare": "WhatsApp",
+                "separator": " - ",
+                "title": "BlackFriday",
+                "url": "https://www.webbio.nl",
               },
             }
           }
