@@ -5,8 +5,11 @@
 }
 .filter-mobile-bar {
   background-color: white;
-  padding-top: 16px;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  > * {
+    padding: 24px;
+  }
 }
 .stores-overview {
   background-color: var(--tint-grey-97);
