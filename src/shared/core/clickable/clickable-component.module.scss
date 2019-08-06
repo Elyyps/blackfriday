@@ -63,9 +63,8 @@ a.button--primary-default,
   cursor: pointer;
   color: $global-inverse-color;
   background-color: $brand-secondary;
-  @media (max-width: $breakpoint-xsmall-max) {
-    width: 100%;
-  }
+
+  width: 100%;
 
   &--animated {
     svg {

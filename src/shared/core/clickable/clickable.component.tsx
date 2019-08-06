@@ -14,7 +14,8 @@ export type ButtonVariant =
   | "tertiary-inverted"
   | "link-primary"
   | "link-secondary"
-  | "link-tertiary";
+  | "link-tertiary"
+  | "link-quaternary";
 
 export type IconStyle = "outline" | "filled" | "outline-fill";
 
