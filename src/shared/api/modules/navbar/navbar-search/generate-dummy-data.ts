@@ -6,7 +6,7 @@ export const dummyNavbarSearchInitialData: NavbarSearchModuleInitial = {
   titleDeals: "Gevonden deals",
   titleShops: "Gevonden winkels"
 };
-
+const LIMIT = 5;
 export const dummyNavbarSearchData: NavbarSearchModule = {
   deals: [
     {
@@ -61,5 +61,5 @@ export const dummyNavbarSearchData: NavbarSearchModule = {
       button: { title: "Naar deals", url: "/deals-overview" }
     }
   ],
-  stores: generateDemoStoreDummyData()
+  stores: generateDemoStoreDummyData().slice(0, LIMIT)
 };

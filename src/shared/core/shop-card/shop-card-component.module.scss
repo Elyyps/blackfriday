@@ -13,7 +13,7 @@
   min-width: 215px;
   background-color: white;
   text-align: left;
-  padding: 0 16px;
+  padding: 16px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,6 @@
   position: relative;
   @media (max-width: 768px) {
     min-height: 168px;
-
   }
 
   &__body {
@@ -43,24 +42,36 @@
     margin: 0 0 6px;
   }
 
+  &__bar {
+    @media (max-width: 767px) {
+      position: absolute;
+      bottom: 58px;
+      left: 16px;
+      right: 16px;
+      box-sizing: border-box;
+      bottom: 50px;
+    }
+  }
   &__image {
     padding-bottom: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     object-fit: contain;
-    width: auto;
-    margin: auto;
-    padding-top: 24px;
-    height: 90px;
+    max-height: 90px;
+    max-width: 90px;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
-
+    margin: auto;
     @media (max-width: 768px) {
       order: 2;
-      width: 90px;
-      height: 90px;
+      max-width: 90px;
+      max-height: 90px;
+      width: 100%;
+      height: 100%;
       flex: 0 0 90px;
-      margin-bottom: 0;
+      margin: 0;
     }
     img,
     svg {
@@ -81,7 +92,6 @@
     @media (max-width: 768px) {
       order: 1;
       flex: 1 1 60%;
-      margin-top: 16px;
       margin-bottom: 0;
       max-height: 70px;
       min-height: 70px;
@@ -94,13 +104,17 @@
 
   &__action {
     flex: 0 0 auto;
-    margin-bottom: 16px;
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
     > * {
       width: 100%;
     }
     @media (max-width: 768px) {
-      width: 50%;
-      margin-left: auto;
+      position: absolute;
+      right: 16px;
+      left: 50%;
     }
   }
 
@@ -121,7 +135,7 @@
       font-weight: bold;
       @media (max-width: 768px) {
         position: absolute;
-        width: 50%;
+
         bottom: 28px;
         left: 16px;
       }
@@ -156,21 +170,36 @@
   }
 
   &--responsive {
-    max-height: 166px;
-    min-height: 166px;
+    max-height: 182px;
+    min-height: 182px;
     padding: 16px;
+    display: block;
     .shop-card {
       &__body {
         display: flex;
         flex-wrap: wrap;
-      }
 
+        @media (max-width: $breakpoint-small-max) {
+          height: 120px;
+        }
+      }
+      &__bar {
+        position: absolute;
+        bottom: 52px;
+        left: 16px;
+        right: 16px;
+      }
       &__image {
         order: 2;
-        width: 90px;
-        height: auto;
-        flex: 0 0 90px;
-        margin-bottom: 0;
+        max-height: 90px;
+        max-width: 90px;
+        width: 100%;
+        height: 100%;
+        flex: 0 0 40%;
+        margin: auto;
+        @media (max-width: $breakpoint-small-max) {
+          margin: 0px;
+        }
       }
 
       &__content {
@@ -182,20 +211,23 @@
       &__action {
         width: 50%;
         margin-left: auto;
+        @media (max-width: 1238px) {
+          > * {
+            padding: 8px 8px;
+          }
+        }
       }
 
       &__status {
         order: 3;
         width: 100%;
         clear: both;
-        margin-top: 16px;
         margin-bottom: 16px;
         position: relative;
         &-title {
           position: absolute;
           left: 16px;
-          bottom: 35px;
-          width: 50%;
+          bottom: 28px;
         }
       }
     }

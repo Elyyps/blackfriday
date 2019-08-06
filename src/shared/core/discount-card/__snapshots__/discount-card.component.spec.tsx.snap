@@ -4,11 +4,6 @@ exports[`[DiscountCard] should render component without crashing 1`] = `
 <div
   className="discount-card"
 >
-  <Badge
-    icon="heart-empty.svg"
-    onClick={[Function]}
-    position="left"
-  />
   <div
     className="discount-card__body"
   >

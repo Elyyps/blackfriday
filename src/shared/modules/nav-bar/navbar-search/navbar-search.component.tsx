@@ -9,7 +9,9 @@ import { DealCardModule } from "@app/api/core/deal-card";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { Store } from "@app/api/core/store/store";
 
+const LIMIT_EMPTY = 3;
 export interface INavbarSearchComponentProps {
+  cleanFilter?: () => void;
   currentFilter: string;
   deals?: DealCardModule[];
   dealsTitle: string;
@@ -59,12 +61,14 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
             <div className="uk-container">
               {props.deals && props.deals.length > 0 && (
                 <div>
-                  <h2>Gevonden deals</h2>
-                  <div
-                    className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${
-                      styles["navbar-search__results-posts"]
-                    }`}
+                  <h2
+                    style={{
+                      marginLeft: 8
+                    }}
                   >
+                    Gevonden deals
+                  </h2>
+                  <div className={`${styles["navbar-search__results-posts"]}`}>
                     {props.deals &&
                       props.deals.map((item, key) => (
                         <div key={key}>
@@ -82,19 +86,22 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
                         </div>
                       ))}
                     {props.deals && props.deals.length > 0 && <div>{CardMoreDeals}</div>}
+                    {props.deals && props.deals.length > 0 && props.deals.length < LIMIT_EMPTY && <div />}
                   </div>
                 </div>
               )}
               {props.stores && props.stores.length > 0 && (
-                <h2 style={{ marginTop: props.deals && props.deals.length > 0 ? "32px" : "0", marginBottom: "16px" }}>
+                <h2
+                  style={{
+                    marginTop: props.deals && props.deals.length > 0 ? "32px" : "0",
+                    marginBottom: "16px",
+                    marginLeft: 8
+                  }}
+                >
                   Gevonden winkels
                 </h2>
               )}
-              <div
-                className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${
-                  styles["navbar-search__results-posts"]
-                }`}
-              >
+              <div className={`${styles["navbar-search__results-posts"]}`}>
                 {props.stores &&
                   props.stores.map((store, key) => (
                     <div key={key}>
@@ -110,7 +117,9 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
               props.deals &&
               props.deals.length === 0 &&
               props.currentFilter && (
-                <div className={styles["navbar-search__no-found"]}>No results found for your search</div>
+                <div style={{ marginLeft: 16 }} className={styles["navbar-search__not-found"]}>
+                  No results found for your search
+                </div>
               )}
           </div>
         )}

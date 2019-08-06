@@ -15,6 +15,7 @@ import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-
 import { Banner } from "@app/api/core/banner/banner";
 import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
+import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -31,6 +32,7 @@ const SHOW_AD_EVERY_LINES = 4;
 
 const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [progressPage, setProgressPage] = useState<number>(1);
   const [overviewItems, setOverviewItems] = useState<IOverviewItem[]>([]);
 
   useEffect(() => {
@@ -50,6 +52,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
       setIsLoading(true);
+      setProgressPage(progressPage + 1);
       // Use timer for dummy purposes when loading data
       setTimeout(() => {
         props.getStores(
@@ -69,6 +72,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
 
   return (
     <div>
+      <PageProgressBarComponent value={100 / (progressPage * TAKE)} />
       <div className="deals-overview__tab">
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
           <TabComponent attrAction={"link"}>Winkels</TabComponent>

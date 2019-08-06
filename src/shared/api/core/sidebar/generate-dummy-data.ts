@@ -58,7 +58,7 @@ export const generateSidebarData = (): Sidebar => {
           },
           {
             icon: party,
-            link: { url: "/stores-single", title: "Naar alle winkels!" }
+            link: { url: "/stores-overview", title: "Naar alle winkels!" }
           }
         ]
       }

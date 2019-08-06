@@ -42,12 +42,12 @@ export const generatedummyShopSingleHeaderData = (): ShopSingleHeaderModule => (
     url: "/"
   },
   discountTitle: "15% korting op het hele assortiment",
-  links: [{ title: "Home", url: "/" }, { title: "Alle winkels", url: "/" }],
+  links: [{ title: "Home", url: "/" }, { title: "Alle winkels", url: "/stores-overview" }],
   smallBackLink: { title: "Alle winkels", url: "/" },
   discountSubtitle: "Gebruik deze kortingscode:",
   couponCode: "black15",
   timeLeftBar: {
-    value: 0.8,
+    value: 80,
     text: "NU geldig"
   },
   bottomMargin: "0px",

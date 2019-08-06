@@ -1,6 +1,7 @@
 .see-more-card {
-  max-height: 288px;
-  min-height: 288px;
+  min-height: 168px;
+  height: 168px;
+  max-height: 168px;
   min-width: 215px;
   width: 100%;
   background-color: white;
@@ -14,14 +15,10 @@
   webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
-  @media (max-width: 699px) {
-    min-height: 168px;
-    height: 168px;
-    max-height: 168px;
-  }
 
   &__icon {
     margin-bottom: 8px;
+    margin-left: 8px;
   }
   &__title {
     font-size: 16px;
@@ -30,17 +27,11 @@
   }
   &__content {
     align-items: center;
-    @media (max-width: 699px) {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
   }
 
   &--responsive {
-    max-height: 166px;
-    min-height: 166px;
+    max-height: 182px;
+    min-height: 182px;
     padding: 16px;
     width: 100%;
     justify-content: flex-start;
@@ -55,6 +46,9 @@
       }
       &__content {
         display: flex;
+        @media (max-width: $breakpoint-small-max) {
+          justify-content: space-between;
+        }
       }
       &__image {
         order: 2;

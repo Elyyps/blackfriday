@@ -167,7 +167,7 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
                   "icon": "party.svg",
                   "link": Object {
                     "title": "Naar alle winkels!",
-                    "url": "/stores-single",
+                    "url": "/stores-overview",
                   },
                 },
               ],

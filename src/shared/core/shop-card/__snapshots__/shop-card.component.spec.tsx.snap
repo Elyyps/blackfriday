@@ -2,6 +2,7 @@
 
 exports[`[ShopCard] should render component without crashing 1`] = `
 <ShadowCardComponent
+  fullWidth={true}
   shadowSize="small"
 >
   <div
@@ -22,11 +23,15 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       >
         Nu geldig
       </div>
-      <TimeLeftBarComponent
-        color="green"
-        range={80}
-        variant="responsive"
-      />
+      <div
+        className="shop-card__bar"
+      >
+        <TimeLeftBarComponent
+          color="green"
+          range={80}
+          variant="responsive"
+        />
+      </div>
       <div
         className="shop-card__content"
       >
@@ -48,7 +53,8 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       className="shop-card__action"
     >
       <ClickableComponent
-        href="./store-single"
+        dynamicSize={true}
+        href="/stores-single"
         icon="link.svg"
         iconPosition="right"
         iconStyle="filled"
