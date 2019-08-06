@@ -22,6 +22,7 @@ export interface IClickableComponentProps {
   animated?: boolean;
   buttonType?: string;
   disabled?: boolean;
+  dynamicSize?: boolean;
   fullWidth?: boolean;
   href?: string;
   icon?: string;
@@ -95,6 +96,9 @@ const ClickableComponent = (props: IClickableComponentProps) => {
     animatedIcon,
     {
       "button--fullWidth": props.fullWidth
+    },
+    {
+      "button__dynamic-size": props.dynamicSize
     }
   );
   const buttonStyle = {
