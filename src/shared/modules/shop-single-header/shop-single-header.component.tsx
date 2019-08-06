@@ -18,6 +18,7 @@ import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-da
 import { LinkComponent } from "@app/core/link";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { ClickableComponent } from "@app/core/clickable";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
@@ -114,10 +115,8 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                 <div className={styles["product-detail__footer"]}>
                   <div className={styles["actions"]} data-uk-margin>
                     <div className={styles["actions__item"]}>
-                      <a className={styles["actions__item__first"]} role="button" href={storeLink.url}>
-                        <h5 style={{ marginBottom: "0" }}>{storeLink.title}</h5>
-                        <IconComponent icon={IconDefault} size="14px" />
-                      </a>
+                      <ClickableComponent variant="link-primary" href={storeLink.url} title={storeLink.title} iconStyle="filled" icon={IconDefault} />
+                   
                       <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
                         <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                         {rating.text}
@@ -130,14 +129,6 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                             icon={HeartIcon}
                             iconPosition="left"
                             title={smallBackLink.title}
-                            variant={"secondary"}
-                          />
-                        </div>
-                        <div className="uk-visible@s">
-                          <Button
-                            icon={HeartIcon}
-                            iconPosition="left"
-                            title={favoriteButton.title}
                             variant={"secondary"}
                           />
                         </div>
