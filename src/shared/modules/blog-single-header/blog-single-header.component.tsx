@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./blog-single-header-component.module.scss";
-import { ImageComponent } from "../../core/image";
 import { IconComponent } from "../../core/icon";
 import { Link } from "react-router-dom";
 import IconBack from "@assets/icons/chevron-left.svg";
@@ -41,13 +40,16 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (
       {props.blogSingleHeader.items ? (
         <div className={styles["blog-single-header__items"]}>
           {props.blogSingleHeader.items.map(item => (
-            <FeaturedBlogItemsComponent item={item} />
+            <div className={styles["blog-single-header__items-card"]}>
+              <FeaturedBlogItemsComponent item={item} />
+            </div>
           ))}
         </div>
       ) : (
-        <div className={styles["blog-single-header__image"]}>
-          <ImageComponent src={props.blogSingleHeader.image} />
-        </div>
+        <div
+          style={{ backgroundImage: `url(${props.blogSingleHeader.image})` }}
+          className={styles["blog-single-header__image"]}
+        />
       )}
     </div>
   </div>
