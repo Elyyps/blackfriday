@@ -46,10 +46,26 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           item.selectedItems = items;
         }
       });
+
       setCurrentFilterItems(currentFilterItems);
     }
   };
 
+  const onClearHandler = () => {
+    if (currentFilterItem) {
+      const newItem: IMobileFilterItem = {
+        title: currentFilterItem.title,
+        items: currentFilterItem.items,
+        selectedItems: [],
+        searchBarPlaceholder: currentFilterItem.searchBarPlaceholder,
+        hasSearchBar: currentFilterItem.hasSearchBar
+      };
+      setCurrentFilterItem(newItem);
+      setSelectedItems(currentFilterItem, []);
+    } else {
+      onClear();
+    }
+  };
   React.useEffect(() => {
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
@@ -91,6 +107,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           <span className={styles["mobile-filter__header__title"]}>
             <span>{currentFilterItem.title}</span>
           </span>
+          {!currentFilterItem.isSingleSelection && (
+            <a role="button" onClick={onClearHandler} className={styles["mobile-filter__header__clear"]}>
+              {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
+            </a>
+          )}
         </div>
       ) : (
         <div className={styles["mobile-filter__header"]}>
@@ -112,7 +133,6 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
             role="button"
             onClick={() => {
               onClear();
-              setIsFilterOpened(false);
             }}
             className={styles["mobile-filter__header__clear"]}
           >
