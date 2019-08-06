@@ -11,7 +11,7 @@ export const generateDummyFeaturedCategoriesData = (): FeaturedCategoriesModule 
   categoryItems: [
     {
       image: iears,
-      link: { url: "/stores-single", title: "Apple Airpods" }
+      link: { url: "/stores-single", title: "Apple Airpods fdsafdsf dsafkl;;ajfkld ;s" }
     },
     {
       image: imac,

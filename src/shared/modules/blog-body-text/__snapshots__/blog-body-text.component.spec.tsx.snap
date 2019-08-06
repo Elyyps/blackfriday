@@ -92,16 +92,17 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
             "buttonTitle": "Meer deals",
             "image": Object {
               "alt": "alt text oasis",
-              "src": "oasis.jpg",
+              "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
             },
+            "imageLink": "https://coolblue.nl",
             "label": "22 t/m 26 nov.",
             "logo": Object {
               "alt": "alt text CoolBlue",
               "src": "cool-blue.svg",
             },
-            "moreInfoLink": "https://coolblue.com",
+            "moreInfoLink": "https://coolblue.nl",
             "showAlternativeBanner": false,
-            "text": "Een selectie van bizarre aanbiedingen. Meer info",
+            "text": "Een selectie van bizarre aanbiedingen.",
             "title": "Black Friday bij Coolblue",
           }
         }

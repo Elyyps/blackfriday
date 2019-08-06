@@ -20,5 +20,5 @@ export const generateBlogSingleHeaderDummyData = (): BlogSingleHeaderModule => (
   name: "BlogSingleHeaderModule",
   bottomMargin: "10px",
   id: "0",
-  topMargin: "10px"
+  topMargin: "0px"
 });

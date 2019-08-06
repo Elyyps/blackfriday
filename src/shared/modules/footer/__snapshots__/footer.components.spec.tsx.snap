@@ -58,7 +58,7 @@ exports[`[Footer] should render component without crashing 1`] = `
         <div
           className="footer__top-right uk-visible@m"
         >
-          <USP
+          <Connect(USP)
             uspModule={
               Object {
                 "uniqueSellingPoints": Array [
@@ -766,7 +766,7 @@ exports[`[Footer] should render component without crashing 1`] = `
           >
             <ImageComponent
               alt="image"
-              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
+              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg"
             />
           </Link>
           © 2019 · Black Friday Expert is een initiatief van Maddox Media B.V

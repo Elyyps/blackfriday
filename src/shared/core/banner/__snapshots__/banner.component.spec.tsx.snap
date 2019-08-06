@@ -8,8 +8,24 @@ exports[`[Banner] should render component without crashing 1`] = `
     className="banner--default"
   >
     <div
-      className="holder"
+      className="holder false"
     >
+      <div
+        className="image"
+      >
+        <a
+          href="https://coolblue.nl"
+          role="button"
+          target="_blank"
+        >
+          <ImageComponent
+            alt="alt text oasis"
+            errorImage="link.svg"
+            errorMessage="Custom error message"
+            src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png"
+          />
+        </a>
+      </div>
       <div
         className="body"
       >
@@ -59,22 +75,6 @@ exports[`[Banner] should render component without crashing 1`] = `
             />
           </div>
         </div>
-      </div>
-      <div
-        className="image"
-      >
-        <a
-          href="https://coolblue.nl"
-          role="button"
-          target="_blank"
-        >
-          <ImageComponent
-            alt="alt text oasis"
-            errorImage="link.svg"
-            errorMessage="Custom error message"
-            src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png"
-          />
-        </a>
       </div>
     </div>
   </div>
