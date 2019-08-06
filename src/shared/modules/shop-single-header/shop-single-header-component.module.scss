@@ -101,6 +101,7 @@
   &__header {
     height: 216px;
     overflow: hidden;
+    border-radius: 2px;
     img {
       object-fit: cover;
       width: 100%;
@@ -109,6 +110,7 @@
   }
   &__body {
     background-color: $global-inverse-color;
+    border-radius: 2px;
   }
   &__content {
     padding: 16px 32px 32px;
@@ -267,6 +269,7 @@
       align-items: center;
       > * {
         margin: 0 4px;
+        border-radius: 2px;
       }
       &:first-child {
         margin-left: 0px;

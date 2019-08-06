@@ -25,7 +25,8 @@ const SelectComponent = (props: ISelectComponentProps) => {
           </option>
         ))}
       </select>
-      <span className={` ${styles["select-icon"]} `}>
+
+      <span className={`${styles["select-icon"]} `}>
         <IconComponent icon={props.icon || ArrowLongDown} size={props.iconSize || "12px"} />
       </span>
     </div>
