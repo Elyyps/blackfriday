@@ -64,8 +64,9 @@ a.button--primary-default,
   color: $global-inverse-color;
   background-color: $brand-secondary;
 
-  width: 100%;
-
+  @media (max-width: $breakpoint-small-max) {
+    width: 100%;
+  }
   &--animated {
     svg {
       transition: transform 150ms ease-in-out;

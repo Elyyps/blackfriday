@@ -25,6 +25,10 @@
     img {
       height: 45px;
       max-height: 45px;
+      @media (max-width: $breakpoint-small-max) {
+        height: 40px;
+        max-height: 40px;
+      }
     }
     @media (max-width: $breakpoint-small-max) {
       width: 150px;
