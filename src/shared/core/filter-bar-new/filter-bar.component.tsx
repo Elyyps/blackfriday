@@ -11,19 +11,30 @@ import { FilterBarContainerProps } from "./container";
 import { ViewType } from "@app/stores/settings";
 import { StoresMobileFilterBarComponent } from "./mobile-filter-bar.component";
 
-export interface IFilterBarProps {}
+export interface IFilterBarProps {
+  filtersChanged: () => void;
+}
 
 const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
   const onStatusFilterItemsChanged = (items: FilterItem[]) => {
-    props.setStatusFilters([...items]);
+    if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.statusFilterItems)) {
+      props.setStatusFilters([...items]);
+      props.filtersChanged();
+    }
   };
 
   const onCategoryFilterItemsChanged = (items: FilterItem[]) => {
-    props.setCategoryFilters([...items]);
+    if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.categoryFilterItems)) {
+      props.setCategoryFilters([...items]);
+      props.filtersChanged();
+    }
   };
 
   const onBrandFilterItemsChanged = (items: FilterItem[]) => {
-    props.setBrandFilters([...items]);
+    if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.brandFilterItems)) {
+      props.setBrandFilters([...items]);
+      props.filtersChanged();
+    }
   };
 
   const setSort = (sortByString: string) => {
@@ -49,6 +60,8 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     props.setSortBy(sortBy);
   };
 
+  const getNumberOfSelectedfilters = (filterItems: FilterItem[]) => filterItems.filter(item => item.isSelected).length;
+
   return (
     <div className={styles["filter-bar"]}>
       {props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (
@@ -61,7 +74,11 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
               </span>
             </div>
             <div>
-              <CheckboxDropdown title="Status" items={props.statusFilterItems} onChange={onStatusFilterItemsChanged} />
+              <CheckboxDropdown
+                title="Status"
+                onChange={onStatusFilterItemsChanged}
+                items={[...props.statusFilterItems.map(item => ({ ...item }))]}
+              />
             </div>
             <div>
               <SearchableCheckboxDropdown
@@ -69,7 +86,7 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
                 deleteFilterLabel="Verwijder merk filters"
                 title="Categorieen"
                 showFilterName="winkels"
-                items={props.categoryFilterItems}
+                items={[...props.categoryFilterItems.map(item => ({ ...item }))]}
                 onChange={onCategoryFilterItemsChanged}
               />
             </div>
@@ -79,13 +96,20 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
                 deleteFilterLabel="Verwijder merk filters"
                 title="Merk"
                 showFilterName="merken"
-                items={props.brandFilterItems}
+                items={[...props.brandFilterItems.map(item => ({ ...item }))]}
                 onChange={onBrandFilterItemsChanged}
               />
             </div>
             {getTotalNumberOfFilters() > 0 && (
               <div className={styles["filter-bar__clear-filter"]}>
-                <span role="link" onClick={() => props.clearFilters()} style={{ color: "red", cursor: "pointer" }}>
+                <span
+                  role="link"
+                  onClick={() => {
+                    props.clearFilters();
+                    props.filtersChanged();
+                  }}
+                  style={{ color: "red", cursor: "pointer" }}
+                >
                   Verwijder alle filters ({getTotalNumberOfFilters()})
                 </span>
               </div>

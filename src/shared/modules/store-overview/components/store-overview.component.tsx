@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import BottomScrollListener from "react-bottom-scroll-listener";
 
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
@@ -16,6 +16,8 @@ import { Banner } from "@app/api/core/banner/banner";
 import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
+import { StickyContainer, Sticky } from "react-sticky";
+import { getOffset, useScrollPosition } from "@app/util";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -31,20 +33,38 @@ const TAKE = 25;
 const SHOW_AD_EVERY_LINES = 4;
 
 const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
+  const topDivRef = useRef<any>(null);
+  const mainDivRef = useRef<any>(null);
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [progressPage, setProgressPage] = useState<number>(1);
   const [overviewItems, setOverviewItems] = useState<IOverviewItem[]>([]);
+  const [positionPercentage, setPositionPercentage] = useState<number>(0);
+
+  const viewType = props.screenSize ? props.screenSize.viewType : ViewType.Desktop;
 
   useEffect(() => {
     setInitialValues(props);
   }, []);
+
+  const scrollPos = useScrollPosition();
+  useEffect(() => {
+    const position = getOffset(mainDivRef.current);
+    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+    const actualScrollPosition = currentScrollPosition - position;
+
+    if (actualScrollPosition > 0) {
+      const totalHeight = getTotalHeight(viewType, props.totalResults);
+      const percentage = (actualScrollPosition * 100) / totalHeight;
+      setPositionPercentage(percentage);
+    }
+  }, [scrollPos]);
 
   useEffect(() => {
     props.getStores(0, TAKE, props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems, props.sortBy);
   }, [props.brandFilterItems, props.categoryFilterItems, props.statusFilterItems, props.sortBy]);
 
   useEffect(() => {
-    const viewType = props.screenSize ? props.screenSize.viewType : ViewType.Desktop;
     const overviewItemsResult = getOverviewItems(viewType, props.stores);
     setOverviewItems(overviewItemsResult);
   }, [props.stores, props.screenSize]);
@@ -64,62 +84,89 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           props.sortBy
         );
         setIsLoading(false);
-      }, 1000);
+      }, 800);
     }
   };
   const connectClass = "uk-switcher-list";
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
+  const filtersChanged = () => {
+    if (mainDivRef && mainDivRef.current) {
+      const top = getOffset(mainDivRef.current);
+      window.scroll(top, top);
+      setPositionPercentage(0);
+    }
+  };
+
   return (
     <div>
-      <PageProgressBarComponent value={100 / (progressPage * TAKE)} />
-      <div className="deals-overview__tab">
+      <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
           <TabComponent attrAction={"link"}>Winkels</TabComponent>
           <TabComponent attrAction={"link"}>Productdeals</TabComponent>
         </TabContainerComponent>
       </div>
-      <div className={styles["filter-mobile-bar"]}>
-        <FilterBarContainer />
-      </div>
-      <div className={styles["store-overview"]}>
-        <div className="uk-container">
-          {props.stores && props.stores.length > 0 ? (
-            <div className={styles["stores-overview__body__list"]}>
-              {overviewItems.map(overviewItem => {
-                const { store, advert } = overviewItem;
 
-                return (
-                  <React.Fragment key={store.id}>
-                    <div className={`${styles[`stores-overview__body__cards`]} `}>
-                      <ShopCardComponent store={store} />
-                    </div>
+      <StickyContainer>
+        <div ref={mainDivRef}>
+          <Sticky>
+            {({ style, isSticky }) => (
+              <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
+                {isSticky && <PageProgressBarComponent value={positionPercentage} />}
+                <FilterBarContainer filtersChanged={filtersChanged} />
+              </div>
+            )}
+          </Sticky>
+        </div>
 
-                    {advert && (
-                      <div className={`${styles[`stores-overview__body__banner`]} `}>
-                        <BannerComponent {...advert} />
+        <div className={styles["store-overview"]}>
+          <div className="uk-container">
+            <div className={styles["no-black-friday"]}>
+              <h2>Geen Black Friday, wel veel voordeel!</h2>
+            </div>
+            {props.stores && props.stores.length > 0 ? (
+              <div className={styles["stores-overview__body__list"]}>
+                {overviewItems.map(overviewItem => {
+                  const { store, advert } = overviewItem;
+
+                  return (
+                    <React.Fragment key={store.id}>
+                      <div className={`${styles[`stores-overview__body__cards`]} `}>
+                        <ShopCardComponent store={store} />
                       </div>
-                    )}
-                  </React.Fragment>
-                );
-              })}
-              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-              <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-              <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
-            </div>
-          ) : (
-            <div>
-              <h1>Geen resultaten gevonden</h1>
-            </div>
-          )}
 
-          <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-            <ClipLoader css={spinnerOverride} sizeUnit={"px"} size={ClipLoaderSize} color={"red"} loading={isLoading} />
+                      {advert && (
+                        <div className={`${styles[`stores-overview__body__banner`]} `}>
+                          <BannerComponent {...advert} />
+                        </div>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+                <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+                <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+                <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+                <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
+                <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
+              </div>
+            ) : (
+              <div>
+                <h1>Geen resultaten gevonden</h1>
+              </div>
+            )}
+
+            <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
+              <ClipLoader
+                css={spinnerOverride}
+                sizeUnit={"px"}
+                size={ClipLoaderSize}
+                color={"red"}
+                loading={isLoading}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </StickyContainer>
     </div>
   );
 };
@@ -144,6 +191,45 @@ const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewCon
   if (!props.sortBy) {
     props.setSortBy(props.storeOverviewModule.sortBy);
   }
+};
+
+const getTotalHeight = (viewType: ViewType, totalStores: number) => {
+  const lineHeight = getLineHeight(viewType);
+  const storesPerLine = getAmountOfItemsPerLine(viewType);
+  const totalNumberOfLines = getTotalNumberOfLines(storesPerLine, totalStores);
+
+  return lineHeight * totalNumberOfLines;
+};
+
+const getLineHeight = (viewType: ViewType): number => {
+  switch (viewType) {
+    case ViewType.Tablet:
+    case ViewType.Mobile:
+    case ViewType.MobileBig:
+      return 168;
+    default:
+      return 288;
+  }
+};
+
+const getAmountOfItemsPerLine = (viewType: ViewType): number => {
+  switch (viewType) {
+    case ViewType.DesktopFull:
+      return 5;
+    case ViewType.DesktopLarge:
+      return 4;
+    case ViewType.Desktop:
+      return 3;
+    default:
+      return 1;
+  }
+};
+
+const getTotalNumberOfLines = (storesPerLine: number, totalStores: number) => {
+  let result = totalStores / storesPerLine;
+  result = Math.ceil(result);
+
+  return result;
 };
 
 const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] => {

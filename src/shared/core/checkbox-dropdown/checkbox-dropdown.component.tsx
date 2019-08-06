@@ -24,6 +24,7 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
     });
 
     props.onChange([...result]);
+    setIsOpen(false);
   };
 
   const hasSelectedItems = props.items.filter(item => item.isSelected).length > 0;

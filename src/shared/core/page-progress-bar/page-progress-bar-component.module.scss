@@ -1,14 +1,10 @@
-.page-progress-bar{
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0; 
-  z-index: 100;
+.page-progress-bar {
+  position: relative;
   height: 3px;
-  background-color: #e0e0e0;
+  background-color: $tint-gray;
   box-sizing: border-box;
-  &__progress{
-    background-color: #e10a14;
+  &__progress {
+    background-color: $brand-primary;
     height: 100%;
     border-radius: 2px;
   }

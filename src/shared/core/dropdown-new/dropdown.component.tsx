@@ -62,7 +62,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           fullWidth
           iconFillColor="#ffffff"
           icon={props.icon ? props.icon : ChevronDown}
-          iconPosition={props.iconPosition ? props.iconPosition : "left"}
+          iconPosition="right"
         />
       </div>
       <div className={`${styles["content"]} ${!!props.isOpen && styles["content--open"]} `}>{props.children}</div>
