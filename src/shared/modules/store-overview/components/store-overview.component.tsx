@@ -109,7 +109,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
         <div ref={mainDivRef}>
           <Sticky>
             {({ style, isSticky }) => (
-              <div style={style} className={styles["filter-mobile-bar"]}>
+              <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
                 {isSticky && <PageProgressBarComponent value={positionPercentage} />}
                 <FilterBarContainer filtersChanged={filtersChanged} />
               </div>
