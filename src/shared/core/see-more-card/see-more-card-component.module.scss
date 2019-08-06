@@ -1,7 +1,8 @@
 .see-more-card {
-  min-height: 168px;
-  height: 168px;
-  max-height: 168px;
+  min-height: 288px;
+  height: 288px;
+  max-height: 288px;
+
   min-width: 215px;
   width: 100%;
   background-color: white;
@@ -18,7 +19,6 @@
 
   &__icon {
     margin-bottom: 8px;
-    margin-left: 8px;
   }
   &__title {
     font-size: 16px;
@@ -54,8 +54,12 @@
         order: 2;
         width: 90px;
         height: auto;
+
         flex: 0 0 90px;
         margin: 0 0 0 10px;
+      }
+      &__icon {
+        margin-left: 8px;
       }
 
       &__price {
