@@ -18,14 +18,14 @@ exports[`[MediumHero] should render component without crashing 1`] = `
                 "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
                 "link": Object {
                   "title": "Overzicht van álle black friday winkels",
-                  "url": "./",
+                  "url": "./stores-overview",
                 },
               },
               Object {
                 "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
                 "link": Object {
                   "title": "Altijd up-to-date van de laatste deals",
-                  "url": "./",
+                  "url": "./deals-overview",
                 },
               },
               Object {

@@ -17,7 +17,7 @@ exports[`[StarsRating] should render component without crashing 1`] = `
   >
     <Link
       className="usp__link"
-      to="./"
+      to="./stores-overview"
     >
       <IconComponent
         fillColor="#777"
@@ -47,7 +47,7 @@ exports[`[StarsRating] should render component without crashing 1`] = `
   >
     <Link
       className="usp__link"
-      to="./"
+      to="./deals-overview"
     >
       <IconComponent
         fillColor="#777"

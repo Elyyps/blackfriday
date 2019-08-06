@@ -95,7 +95,6 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       ) : (
         <div className={styles["mobile-filter__header"]}>
           <span
-            style={{ cursor: "pointer" }}
             role="button"
             className={styles["mobile-filter__header__nav-button"]}
             onClick={() => {
