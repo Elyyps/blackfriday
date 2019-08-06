@@ -1,6 +1,6 @@
 .navbar-search {
   position: relative;
-  padding: 23px 0;
+  padding: 22px 0;
   @media (max-width: $breakpoint-small-max) {
     padding: 12px 0;
   }
@@ -11,6 +11,9 @@
     }
   }
 
+  &__not-found{
+    margin-left: 16px;
+  }
   &__icon {
     position: absolute;
     top: 50%;
@@ -43,15 +46,33 @@
     border-radius: 0 0 2px 2px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
     background: $tint-gray-light;
-    padding: 24px;
+    padding: 22px 0;
     overflow: auto;
     max-height: 80vh;
   }
   &__results-posts {
     margin-bottom: -16px;
+    display: flex;
+    flex-wrap: wrap;
+
     > div {
+      flex: 1 1 30%;
       display: flex;
-      margin-bottom: 16px;
+      padding: 8px;
+    }
+    @media (max-width: 1047px) {
+      > div {
+        flex: 1 1 46%;
+        display: flex;
+        padding: 8px;
+      }
+    }
+    @media (max-width: 768px) {
+      > div {
+        flex: 1 1 100%;
+        display: flex;
+        padding: 8px;
+      }
     }
   }
 }
