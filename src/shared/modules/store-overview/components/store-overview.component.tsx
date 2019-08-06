@@ -80,6 +80,9 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       </div>
       <div className={styles["store-overview"]}>
         <div className="uk-container">
+          <div className={styles["no-black-friday"]}>
+            <h2>Geen Black Friday, wel veel voordeel!</h2>
+          </div>
           {props.stores && props.stores.length > 0 ? (
             <div className={styles["stores-overview__body__list"]}>
               {overviewItems.map(overviewItem => {
