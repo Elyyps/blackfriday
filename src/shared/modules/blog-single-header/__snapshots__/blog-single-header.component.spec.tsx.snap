@@ -52,10 +52,33 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
     className="uk-container"
   >
     <div
-      className="blog-single-header__image"
+      className="blog-single-header__items"
     >
-      <ImageComponent
-        src="oasis.jpg"
+      <FeaturedBlogItemsComponent
+        item={
+          Object {
+            "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+            "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+            "link": Object {
+              "title": "Lees meer",
+              "url": "/blog-single",
+            },
+            "title": "De beste Moederdag cadeau deals",
+          }
+        }
+      />
+      <FeaturedBlogItemsComponent
+        item={
+          Object {
+            "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+            "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/1.png",
+            "link": Object {
+              "title": "Lees meer",
+              "url": "/blog-single",
+            },
+            "title": "Black Friday wordt Black Week – deals beginnen eerder",
+          }
+        }
       />
     </div>
   </div>

@@ -1,8 +1,7 @@
 import * as React from "react";
 import styles from "./featured-blog-component.module.scss";
-import { ImageComponent } from "@app/core";
-import { LinkComponent } from "@app/core/link";
 import { FeaturedBlogModule } from "@app/api/modules/featured-blog/featured-blog";
+import { FeaturedBlogItemsComponent } from "@app/core/featured-blog-items";
 
 export interface IFeaturedBlogComponentProps {
   featuredBlog: FeaturedBlogModule;
@@ -15,13 +14,8 @@ const FeaturedBlogComponent = (props: IFeaturedBlogComponentProps) => (
       <div className={styles["featured-blog__body"]}>
         {props.featuredBlog.items &&
           props.featuredBlog.items.map((item, key) => (
-            <div key={key} className={styles["featured-blog__card"]}>
-              <LinkComponent to={item.link.url}>
-                <div className={styles["featured-blog__card-image"]}>
-                  <ImageComponent src={item.image} />
-                </div>
-                <h3 className={styles["featured-blog__card-title"]}>{item.title}</h3>
-              </LinkComponent>
+            <div key={key}>
+              <FeaturedBlogItemsComponent item={item} />
             </div>
           ))}
       </div>

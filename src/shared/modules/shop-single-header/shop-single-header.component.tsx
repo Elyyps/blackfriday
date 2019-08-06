@@ -115,8 +115,14 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                 <div className={styles["product-detail__footer"]}>
                   <div className={styles["actions"]} data-uk-margin>
                     <div className={styles["actions__item"]}>
-                      <ClickableComponent variant="link-primary" href={storeLink.url} title={storeLink.title} iconStyle="filled" icon={IconDefault} />
-                   
+                      <ClickableComponent
+                        variant="link-primary"
+                        href={storeLink.url}
+                        title={storeLink.title}
+                        iconStyle="filled"
+                        icon={IconDefault}
+                      />
+
                       <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
                         <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                         {rating.text}

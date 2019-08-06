@@ -125,7 +125,7 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateMediumHeroDummyData(),
+      generateBlogSingleHeaderData(),
       generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
