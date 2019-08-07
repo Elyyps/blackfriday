@@ -21,13 +21,19 @@
     align-items: center;
     text-decoration: none;
     color: $global-inverse-color;
-    font-size: 16px;
+    a {
+      font-family: $global-font-family-secondary;
+      font-size: 14px;
+      font-weight: 600;
+    }
     &:hover {
       color: $global-link-color;
     }
   }
   &__clicked {
-    color: $brand-primary;
+    a {
+      color: $brand-primary;
+    }
     .navbar-menu-item__expandable__icon {
       path {
         stroke: $brand-primary;

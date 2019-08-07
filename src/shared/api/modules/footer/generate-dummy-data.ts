@@ -24,7 +24,7 @@ export const generateBottomFooter = (): BottomFooter => ({
       url: "/"
     }
   ],
-  logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
+  logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg"
 });
 
 export const generateMiddleFooter = (): MiddleFooter => ({

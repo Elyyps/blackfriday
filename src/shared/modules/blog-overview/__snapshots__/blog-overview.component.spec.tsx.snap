@@ -22,8 +22,8 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
             <BlogPostComponent
               posts={
                 Object {
-                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "content": "Vorige week spraken we over de beste topdeals van vorig jaar. Maar wat kunnen we dit jaar verwachten met Black Friday 2018... ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png",
                   "link": Object {
                     "title": "Lees meer",
                     "url": "/blog-single",
@@ -40,7 +40,7 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
               posts={
                 Object {
                   "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/4.png",
                   "link": Object {
                     "title": "Lees meer",
                     "url": "/blog-single",
@@ -56,13 +56,13 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
             <BlogPostComponent
               posts={
                 Object {
-                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "content": "Nog even aftellen en Black Friday 2018 gaat beginnen. Zit jij er al helemaal klaar voor? Om er zeker van te zijn dat je geen enkele deal mist...",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/3.png",
                   "link": Object {
                     "title": "Lees meer",
                     "url": "/blog-single",
                   },
-                  "title": "Mis geen enkele Black Friday deal!",
+                  "title": "Top Black Friday deals van vorig jaar",
                 }
               }
             />
@@ -73,13 +73,30 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
             <BlogPostComponent
               posts={
                 Object {
-                  "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png",
+                  "content": "Maximaal profiteren van Black Friday 2018?! Hier vind je 5 goede redenen om nog even te wachten met geld uitgeven tot het Black Friday is... ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/6.png",
                   "link": Object {
                     "title": "Lees meer",
                     "url": "/blog-single",
                   },
-                  "title": "Wacht met shoppen tot Black Friday!",
+                  "title": "Mis geen enkele Black Friday deal!",
+                }
+              }
+            />
+          </div>
+          <div
+            key="4"
+          >
+            <BlogPostComponent
+              posts={
+                Object {
+                  "content": "Zoveel mogelijk profiteren van Black Friday in 2018?! Hier vindt u 5 goede redenen om nog even te wachten met geld uitgeven tot het Black Friday is. De laatste maanden van het jaar vo.. ",
+                  "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/5.jpg",
+                  "link": Object {
+                    "title": "Lees meer",
+                    "url": "/blog-single",
+                  },
+                  "title": "5 redenen om te wachten met shoppen tot Black Friday",
                 }
               }
             />
@@ -90,13 +107,73 @@ exports[`[BlogOverview] should render component without crashing 1`] = `
         className="blog-overview__sidebar"
       >
         <SidebarComponent
-          banner=""
-          items={
+          featuredItemsGroups={
             Array [
               Object {
-                "icon": "",
-                "text": "",
-                "url": "",
+                "featuredItems": Array [
+                  Object {
+                    "image": "imac.png",
+                    "link": Object {
+                      "title": "Apple iPhones",
+                      "url": "/stores-single",
+                    },
+                  },
+                  Object {
+                    "image": "iphone.png",
+                    "link": Object {
+                      "title": "Apple MacBooks",
+                      "url": "/stores-single",
+                    },
+                  },
+                  Object {
+                    "image": "loader.png",
+                    "link": Object {
+                      "title": "Apple iMacs",
+                      "url": "/stores-single",
+                    },
+                  },
+                  Object {
+                    "icon": "party.svg",
+                    "link": Object {
+                      "title": "Naar alle deals!",
+                      "url": "/stores-single",
+                    },
+                  },
+                ],
+                "title": "Een greep uit onze deals",
+              },
+              Object {
+                "featuredItems": Array [
+                  Object {
+                    "image": "cool-blue.svg",
+                    "link": Object {
+                      "title": "Coolblue",
+                      "url": "/stores-single",
+                    },
+                  },
+                  Object {
+                    "image": "cool-blue.svg",
+                    "link": Object {
+                      "title": "Alternate",
+                      "url": "/stores-single",
+                    },
+                  },
+                  Object {
+                    "image": "cool-blue.svg",
+                    "link": Object {
+                      "title": "Beddenreus",
+                      "url": "/stores-single",
+                    },
+                  },
+                  Object {
+                    "icon": "party.svg",
+                    "link": Object {
+                      "title": "Naar alle winkels!",
+                      "url": "/stores-overview",
+                    },
+                  },
+                ],
+                "title": "Black Friday Winkels",
               },
             ]
           }

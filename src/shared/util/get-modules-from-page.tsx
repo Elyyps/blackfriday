@@ -45,6 +45,8 @@ import { BlogBodyTextComponent } from "@app/modules/blog-body-text";
 import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
 import { StoreOverviewContainer } from "@app/modules/store-overview/containers/store-overview.container";
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
+import { HeaderInfoComponent } from "@app/modules/header-info";
+import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -87,6 +89,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
     case "FeaturedCategoriesModule":
       return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
+    case "HeaderInfo":
+      return <HeaderInfoComponent headerInfo={wordPressModule as HeaderInfo} />;
 
     default:
   }

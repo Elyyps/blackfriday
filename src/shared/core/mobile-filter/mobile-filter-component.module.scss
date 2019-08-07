@@ -85,8 +85,9 @@
       text-decoration: underline !important;
     }
     &__nav-button {
+      padding: 8px;
       position: absolute;
-      left: 16px;
+      left: 12px;
       cursor: pointer;
       svg {
         margin: 0;

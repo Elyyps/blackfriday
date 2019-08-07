@@ -14,13 +14,12 @@
 .time-left-bar {
   color: $gray-lighter;
   margin-bottom: 8px;
-  @media (max-width: 768px) {
-    order: 3;
-    width: 100%;
-    clear: both;
-    margin-top: 2px;
-    position: relative;
-  }
+  order: 3;
+  width: 100%;
+  clear: both;
+  margin-top: 2px;
+  position: relative;
+
   &-control {
     position: relative;
     height: 3px;
@@ -38,6 +37,11 @@
 }
 
 .responsive {
+  order: 3;
+  width: 100%;
+  clear: both;
+  margin-top: 2px;
+  position: relative;
   &__status {
     order: 3;
     width: 100%;

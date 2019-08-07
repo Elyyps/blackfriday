@@ -11,6 +11,7 @@
     "no-reference": false,
     "no-implicit-dependencies": false,
     "no-empty": true,
+    "cyclomatic-complexity": [true, 22],
     "no-submodule-imports": false,
     "no-object-literal-type-assertion": false,
     "no-empty-interface": false,

@@ -19,43 +19,37 @@ exports[`[FeaturedBlog] should render component without crashing 1`] = `
         className="featured-blog__card"
         key="0"
       >
-        <LinkComponent
-          to="/blog-single"
-        >
-          <div
-            className="featured-blog__card-image"
-          >
-            <ImageComponent
-              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
-            />
-          </div>
-          <h3
-            className="featured-blog__card-title"
-          >
-            Vijf voorspellingen van Black Friday Nederland
-          </h3>
-        </LinkComponent>
+        <FeaturedBlogItemsComponent
+          item={
+            Object {
+              "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+              "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png",
+              "link": Object {
+                "title": "Lees meer",
+                "url": "/blog-single",
+              },
+              "title": "De beste Moederdag cadeau deals",
+            }
+          }
+        />
       </div>
       <div
         className="featured-blog__card"
         key="1"
       >
-        <LinkComponent
-          to="/blog-single"
-        >
-          <div
-            className="featured-blog__card-image"
-          >
-            <ImageComponent
-              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
-            />
-          </div>
-          <h3
-            className="featured-blog__card-title"
-          >
-            Top Black Friday deals van vorig jaar
-          </h3>
-        </LinkComponent>
+        <FeaturedBlogItemsComponent
+          item={
+            Object {
+              "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+              "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/1.png",
+              "link": Object {
+                "title": "Lees meer",
+                "url": "/blog-single",
+              },
+              "title": "Black Friday wordt Black Week – deals beginnen eerder",
+            }
+          }
+        />
       </div>
     </div>
   </div>

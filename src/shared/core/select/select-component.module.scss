@@ -4,6 +4,7 @@
   flex-direction: row;
   align-content: center;
   align-items: center;
+  position: relative;
   select {
     border: 0 !important; /*Removes border*/
     -webkit-appearance: none; /*Removes default chrome and safari style*/
@@ -17,5 +18,8 @@
   }
   &-icon {
     margin-top: 3px;
+    position: absolute;
+    top: 4px;
+    right: -5px;
   }
 }

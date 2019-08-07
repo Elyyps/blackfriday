@@ -37,6 +37,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   const mainDivRef = useRef<any>(null);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [progressPage, setProgressPage] = useState<number>(1);
   const [overviewItems, setOverviewItems] = useState<IOverviewItem[]>([]);
   const [positionPercentage, setPositionPercentage] = useState<number>(0);
 
@@ -71,6 +72,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
       setIsLoading(true);
+      setProgressPage(progressPage + 1);
       // Use timer for dummy purposes when loading data
       setTimeout(() => {
         props.getStores(

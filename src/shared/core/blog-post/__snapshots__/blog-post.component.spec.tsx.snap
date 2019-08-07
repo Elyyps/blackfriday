@@ -8,7 +8,7 @@ exports[`[BlogPost] should render component without crashing 1`] = `
     className="blog-post__image"
   >
     <ImageComponent
-      src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+      src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/4.png"
     />
   </div>
   <div
@@ -24,9 +24,11 @@ exports[`[BlogPost] should render component without crashing 1`] = `
       </div>
     </LinkComponent>
     <div
-      className="uk-visible@m"
+      className="blog-post__content"
     >
-      Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... 
+      <span>
+        Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... 
+      </span>
       <LinkComponent
         to="/blog-single"
       >

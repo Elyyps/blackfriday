@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import styles from "./footer-component.module.scss";
-import { ImageComponent, Button, IconComponent, USP } from "@app/core/";
+import { ImageComponent, Button, IconComponent, USPContainer } from "@app/core/";
 
 import { Footer } from "@app/api/modules/footer/models/footer.module";
 import { LinkComponent } from "@app/core/link";
@@ -49,7 +49,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
               </ul>
             </div>
             <div className={`${styles["footer__top-right"]} uk-visible@m`}>
-              <USP uspModule={props.footerModule.topFooter.usp} />
+              <USPContainer uspModule={props.footerModule.topFooter.usp} />
             </div>
           </div>
         </div>

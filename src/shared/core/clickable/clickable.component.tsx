@@ -14,7 +14,8 @@ export type ButtonVariant =
   | "tertiary-inverted"
   | "link-primary"
   | "link-secondary"
-  | "link-tertiary";
+  | "link-tertiary"
+  | "link-quaternary";
 
 export type IconStyle = "outline" | "filled" | "outline-fill";
 
@@ -22,6 +23,7 @@ export interface IClickableComponentProps {
   animated?: boolean;
   buttonType?: string;
   disabled?: boolean;
+  dynamicSize?: boolean;
   fullWidth?: boolean;
   href?: string;
   icon?: string;
@@ -95,6 +97,9 @@ const ClickableComponent = (props: IClickableComponentProps) => {
     animatedIcon,
     {
       "button--fullWidth": props.fullWidth
+    },
+    {
+      "button__dynamic-size": props.dynamicSize
     }
   );
   const buttonStyle = {

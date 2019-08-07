@@ -74,10 +74,12 @@
       }
     }
     &:hover {
-      color: $brand-primary-darker;
+      opacity: 0.9;
+      color: #fff;
       svg {
         * {
-          stroke: $brand-primary-darker;
+          opacity: 0.9;
+          stroke: #fff;
         }
       }
     }

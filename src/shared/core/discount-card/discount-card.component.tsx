@@ -3,9 +3,6 @@ import styles from "./discount-card-component.module.scss";
 import { ImageComponent, Button } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
-import { Badge } from "../badge";
-import HEART_FILLED from "@assets/icons/heart-filled.svg";
-import HEART_EMPTY from "@assets/icons/heart-empty.svg";
 
 interface IDiscountCardComponentProps {
   buttonLink: string;
@@ -21,9 +18,11 @@ interface IDiscountCardComponentProps {
 const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
   const { title, status, content, image, range, buttonText, buttonLink, coupon } = props;
   const [messageDisplayed, setMessageDisplayed] = React.useState<boolean>(false);
-  const ClipLoaderTimer = 1000;
+  const [couponCopied, setCouponCopied] = React.useState<boolean>(false);
 
-  const [isLiked, setIsLiked] = React.useState<boolean>(false);
+  const ClipLoaderTimer = 1500;
+
+  const [] = React.useState<boolean>(false);
   const statusBar = (rangeNumber: any) => {
     const limit = 0.5;
     if (rangeNumber > limit) {
@@ -39,21 +38,18 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
     }
   };
   const displayMessage = () => {
-    setMessageDisplayed(true);
-    setTimeout(() => {
-      setMessageDisplayed(false);
-    }, ClipLoaderTimer);
+    if (!couponCopied) {
+      setMessageDisplayed(true);
+      setCouponCopied(true);
+
+      setTimeout(() => {
+        setMessageDisplayed(false);
+      }, ClipLoaderTimer);
+    }
   };
 
   return (
     <div className={styles["discount-card"]}>
-      <Badge
-        icon={isLiked ? HEART_FILLED : HEART_EMPTY}
-        position={"left"}
-        onClick={() => {
-          setIsLiked(!isLiked);
-        }}
-      />
       <div className={styles["discount-card__body"]}>
         <div className={styles["discount-card__image"]}>
           <ImageComponent src={image} />
@@ -68,18 +64,19 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
         </div>
       </div>
       <div className={styles["discount-card__action"]}>
+        <button
+          onClick={displayMessage}
+          className={styles["discount-card__coupon"]}
+          style={couponCopied ? { backgroundColor: "#caf7d6" } : { backgroundColor: "white" }}
+        >
+          {coupon}
+        </button>
         {messageDisplayed && (
-          <div className={styles["discount-card__tooltip"]} aria-hidden="true" data-placement="top">
-            <div className={styles["discount-card__tooltip__container"]}>
-              <div className={styles["discount-card__tooltip__message"]}>Coupon code copied</div>
-            </div>
+          <div className={styles["discount-card__tooltip"]} aria-hidden="true">
+            <div className={styles["discount-card__tooltip__message"]}>Yeah, Gekopieerd!</div>
             <div className={styles["discount-card__tooltip__arrow"]} />
           </div>
         )}
-
-        <button onClick={displayMessage} className={styles["discount-card__coupon"]}>
-          {coupon}
-        </button>
         <Button title={buttonText} href={buttonLink} variant={"primary"} icon={IconDefault} />
       </div>
     </div>

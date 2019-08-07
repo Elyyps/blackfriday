@@ -44,7 +44,7 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
         Alle blogs
       </Link>
       <h1>
-        Black Friday 2019 blog
+        Vijf voorspellingen van Black Friday Nederland
       </h1>
     </div>
   </div>
@@ -53,11 +53,12 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
   >
     <div
       className="blog-single-header__image"
-    >
-      <ImageComponent
-        src="oasis.jpg"
-      />
-    </div>
+      style={
+        Object {
+          "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png)",
+        }
+      }
+    />
   </div>
 </div>
 `;

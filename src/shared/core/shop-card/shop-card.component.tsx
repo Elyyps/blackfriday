@@ -32,7 +32,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
   };
 
   return (
-    <ShadowCardComponent>
+    <ShadowCardComponent fullWidth>
       <div className={`${styles["shop-card"]} ${styles[`shop-card--${props.variant || "default"}`]}`}>
         <div className={styles["shop-card__body"]}>
           <div className={styles["shop-card__image"]}>
@@ -41,7 +41,10 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
           <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>
             {getStoreStatusText(status)}
           </div>
-          <TimeLeftBarComponent variant="responsive" color={getStatusBarColor()} range={timeLeftPercentage} />
+          <div className={styles["shop-card__bar"]}>
+            <TimeLeftBarComponent variant="responsive" color={getStatusBarColor()} range={timeLeftPercentage} />
+          </div>
+
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{name}</div>
             {description} {moreInfoLink && moreInfoLink && <LinkComponent to={moreInfoLink}>Meer info</LinkComponent>}
@@ -50,6 +53,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
         <div className={styles["shop-card__action"]}>
           <ClickableComponent
             iconStyle="filled"
+            dynamicSize={true}
             title="Naar deals"
             icon={ShopIcon}
             iconPosition="right"
