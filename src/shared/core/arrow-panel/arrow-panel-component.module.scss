@@ -11,14 +11,17 @@
   overflow: hidden;
   -webkit-transition: all 0.05s;
   transition: all 0.05s;
-  transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0) scale(1);
+  -ms-transform: perspective(1px) translateZ(0) scale(1);
+  -webkit-transform: perspective(1px) translateZ(0) scale(1);
   -webkit-font-smoothing: subpixel-antialiased;
 
   &:hover {
     text-decoration: none;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
-    transform: scale(0.99);
-
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+    transform: perspective(1px) translateZ(0) scale(1.02);
+    -ms-transform: perspective(1px) translateZ(0) scale(1.02);
+    -webkit-transform: perspective(1px) translateZ(0) scale(1.02);
     .title {
       color: $brand-primary;
     }
@@ -28,6 +31,11 @@
         stroke: $brand-primary;
       }
     }
+  }
+  &:active {
+    text-decoration: none;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08);
+    transform: scale(1);
   }
   @media (max-width: $breakpoint-small-max) {
     padding-top: 8px;

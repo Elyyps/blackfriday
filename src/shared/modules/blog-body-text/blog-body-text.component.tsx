@@ -19,9 +19,11 @@ const BlogBodyTextComponent = (props: IBlogBodyTextComponentProps) => {
     <div className={`uk-container ${styles["blog-body-text"]}`}>
       <div className={`${styles["blog-body-text__container"]}`}>
         <div className={styles["blog-body-text__content"]}>
-          <div className={styles["blog-body-text__content__header"]}>
-            <IconComponent icon={ClockIcon} size="14" /> {dateTime}
-          </div>
+          {dateTime && (
+            <div className={styles["blog-body-text__content__header"]}>
+              <IconComponent icon={ClockIcon} size="14" /> {dateTime}
+            </div>
+          )}
           <BodyTextComponent bodyTextModule={bodyText} />
           <div className={styles["blog-body-text__content__footer"]}>
             <ShareSocialDropdownComponent buttonTitle="Delen" shareSocial={socialMediaButtons} />

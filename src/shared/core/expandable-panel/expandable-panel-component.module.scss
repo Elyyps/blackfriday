@@ -1,8 +1,8 @@
-ul,
-p {
-  margin: 0 auto;
-}
 .expandable-panel {
+  ul,
+  p {
+    margin: 0 auto;
+  }
   cursor: pointer;
 
   &__list {
