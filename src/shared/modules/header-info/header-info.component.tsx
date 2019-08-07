@@ -8,12 +8,15 @@ import { generateShareSocialModule } from "@app/api/core/share-social/endpoints"
 import { Badge } from "@app/core/badge";
 
 import ShareSVG from "@assets/icons/share.svg";
+
+import { LinkComponent } from "@app/core/link";
+
 export interface IHeaderInfoComponentProps {
   headerInfo: HeaderInfo;
 }
 
 const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => (
-  <div className={styles["header-info"]}>
+  <div className={styles["header-info"]} style={{ background: props.headerInfo.bgcolor }}>
     {props.headerInfo.image && (
       <div className={styles["header-info__image"]}>
         <ImageComponent src={props.headerInfo.image} />
@@ -28,10 +31,9 @@ const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => (
             </div>
           )}
           <div className={styles["header-info__content"]}>
-            <h1 className={styles["header-info__title"]}>
-              <strong>{props.headerInfo.title}</strong>
-            </h1>
-            {props.headerInfo.content}
+            <h1 className={styles["header-info__title"]}>{props.headerInfo.title}</h1>
+            {`${props.headerInfo.content} `}
+            <LinkComponent to={props.headerInfo.url}>Meer info</LinkComponent>
           </div>
           <div className={styles["header-info__share-dropdown"]}>
             <DropdownComponent title="Status" icon={ShareSVG}>

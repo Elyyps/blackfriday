@@ -6,4 +6,5 @@ export class HeaderInfo extends WordPressPostModule {
   public icon: string;
   public image: string;
   public title: string;
+  public url: string;
 }
