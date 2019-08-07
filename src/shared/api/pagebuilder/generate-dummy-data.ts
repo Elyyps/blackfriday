@@ -15,12 +15,16 @@ import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dum
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
-import { generateBlogSingleHeaderData, generateBlogOverviewHeaderData } from "../modules/blog-single-header/endpoint";
+import {
+  generateBlogSingleHeaderData,
+  generateBlogOverviewHeaderData,
+  generateBF2019HeaderData
+} from "../modules/blog-single-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
-import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
+import { generateBlogBodyTextData, generateBlackFriday2019TextData } from "../core/blog-bodytext/endpoint";
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
 import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
@@ -161,8 +165,8 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateBlogSingleHeaderData(),
-      generateBlogBodyTextData(),
+      generateBF2019HeaderData(),
+      generateBlackFriday2019TextData(),
       generateDummyFeaturedDealsData(),
       generateFeaturedBlogData(),
       generateCtaNewsLetterModule(),

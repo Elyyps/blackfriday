@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import IconBack from "@assets/icons/chevron-left.svg";
 import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
 import { FeaturedBlogItemsComponent } from "@app/core/featured-blog-items";
+import { ImageComponent } from "@app/core/image";
 
 export interface IBlogSingleHeaderComponentProps {
   blogSingleHeader: BlogSingleHeaderModule;
@@ -46,10 +47,9 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (
           ))}
         </div>
       ) : (
-        <div
-          style={{ backgroundImage: `url(${props.blogSingleHeader.image})` }}
-          className={styles["blog-single-header__image"]}
-        />
+        <div className={styles["blog-single-header__image"]}>
+          <ImageComponent src={props.blogSingleHeader.image} />
+        </div>
       )}
     </div>
   </div>
