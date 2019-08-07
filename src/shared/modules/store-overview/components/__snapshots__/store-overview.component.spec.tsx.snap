@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[StoreOverview] should render without crashing 1`] = `
+<div>
+  <div
+    className="deals-overview__tab"
+  >
+    <TabContainerComponent
+      attribute={
+        Object {
+          "data-uk-switcher": "connect: .uk-switcher-list",
+        }
+      }
+      classTabList="uk-tab__list"
+    >
+      <TabComponent
+        attrAction="link"
+      >
+        Winkels
+      </TabComponent>
+      <TabComponent
+        attrAction="link"
+      >
+        Productdeals
+      </TabComponent>
+    </TabContainerComponent>
+  </div>
+  <Container>
+    <div>
+      <Sticky
+        bottomOffset={0}
+        disableCompensation={false}
+        disableHardwareAcceleration={false}
+        relative={false}
+        topOffset={0}
+      >
+        <Component />
+      </Sticky>
+    </div>
+    <div
+      className="store-overview"
+    >
+      <div
+        className="uk-container"
+      >
+        <div
+          className="no-black-friday"
+        >
+          <h2>
+            Geen Black Friday, wel veel voordeel!
+          </h2>
+        </div>
+        <div>
+          <CtaSmallComponent
+            buttonTitle="Verwijder alle filters"
+            icon="sign.svg"
+            onClick={[Function]}
+            text="Er zijn geen resultaten gevonden met de huidige filters"
+          />
+        </div>
+        <div
+          style={
+            Object {
+              "margin": "auto",
+              "paddingTop": "30px",
+              "width": "50px",
+            }
+          }
+        >
+          <onlyUpdateForKeys(Loader)
+            color="red"
+            css={
+              Object {
+                "map": undefined,
+                "name": "3u6ywd",
+                "next": undefined,
+                "styles": "
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+",
+              }
+            }
+            loading={false}
+            size={30}
+            sizeUnit="px"
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>
+`;

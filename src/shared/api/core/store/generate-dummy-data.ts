@@ -22,7 +22,8 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
-    timeLeftPercentage: 80
+    timeLeftPercentage: 80,
+    label: "Hot"
   },
   {
     id: "1",
@@ -33,7 +34,8 @@ export const generateDemoStoreDummyData = (): Store[] => [
     moreInfoLink: "https://www.debijenkorf.nl/",
     description: "Een selectie van bizar vele aanbieden",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/de+bijenkorf.png",
-    timeLeftPercentage: 30
+    timeLeftPercentage: 30,
+    label: "Hot"
   },
   {
     id: "2",

@@ -1,6 +1,7 @@
 import { StoreOverviewModule } from "./store-overview.module";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { StoreApi } from "@app/api/core/store/endpoint";
+import IconDefault from "@assets/icons/sign.svg";
 
 export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   brandFilterItems: generateBrandFilterItems(),
@@ -12,7 +13,8 @@ export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   id: "1",
   name: "StoreOverviewModule",
   stores: [],
-  totalAmountOfStores: StoreApi.initialStoresResult.length
+  totalAmountOfStores: StoreApi.initialStoresResult.length,
+  emptyStateIcon: IconDefault
 });
 
 const generateStatusFilterItems = (): FilterItem[] => [
