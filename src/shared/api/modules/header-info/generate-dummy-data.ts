@@ -5,10 +5,11 @@ export const HeaderInfoDummy: HeaderInfo = {
   title: "Black Friday 2019 bij Apple",
   image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/apple-iphones-header.jpg",
   icon: Store,
-  bgcolor: "#f7f7f7",
-  content: "Vier Black Friday bij Apple en ontvang 15% korting op alles! Meer info",
+  bgcolor: "#f7f7f7 ",
+  content: "Vier Black Friday bij Apple en ontvang 15% korting op alles!",
   bottomMargin: "0px",
   topMargin: "0px",
+  url: "./",
   id: "1",
   name: "HeaderInfo"
 };

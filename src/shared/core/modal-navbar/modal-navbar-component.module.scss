@@ -63,10 +63,19 @@
   &__holder {
     background: $gray-dark;
     &__menu {
-      height: 100%;
-      @media (min-width: $breakpoint-medium) {
-        max-width: 400px;
-        margin-left: auto;
+      &__close {
+        width: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        transition: 0.25s all ease-in-out;
+        height: 100%;
+      }
+      &__open {
+        width: 400px;
+
+        transition: 0.25s width ease-in-out;
       }
     }
   }

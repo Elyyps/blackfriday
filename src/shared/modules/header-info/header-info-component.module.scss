@@ -91,6 +91,9 @@
   }
   &__title {
     margin-bottom: 10px;
+    font-family: $global-font-family-secondary;
+    font-size: 32px;
+    color: $gray-dark;
   }
   &__content {
     flex: 1 1 auto;
