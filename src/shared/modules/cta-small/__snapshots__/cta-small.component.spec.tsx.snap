@@ -7,11 +7,10 @@ exports[`[CtaSmallModuleComponent] should render component without crashing 1`] 
       "backgroundColour": "#f7f7f7",
     }
   }
-  bottomMargin="0"
   bottomPadding={
     Object {
-      "desktopPadding": 72,
-      "mobilePadding": 48,
+      "desktopSpacing": 72,
+      "mobileSpacing": 48,
     }
   }
   buttonLink="/deals-overview"
@@ -20,6 +19,5 @@ exports[`[CtaSmallModuleComponent] should render component without crashing 1`] 
   id="1"
   name="CtaSmallModule"
   text="Niet helemaal wat je zoekt? Geeft niks want we hebben meer!"
-  topMargin="0"
 />
 `;

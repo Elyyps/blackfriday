@@ -7,8 +7,6 @@ export const generateStoreOverviewModule = (): StoreOverviewModule => ({
   categoryFilterItems: generateCategoryFilterItems(),
   sortBy: "Relevantie",
   statusFilterItems: generateStatusFilterItems(),
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "StoreOverviewModule",
   stores: [],

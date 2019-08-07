@@ -5,8 +5,8 @@ import { generateSidebarData } from "@app/api/core/sidebar/generate-dummy-data";
 export const generateBlogOverviewDummyData = (): BlogOverviewModule => ({
   sidebar: generateSidebarData(),
   posts: generateBlogPostData(),
-  bottomMargin: "40px",
-  topMargin: "40px",
+  bottomMargin: { mobileSpacing: 24, desktopSpacing: 40 },
+  topMargin: { mobileSpacing: 24, desktopSpacing: 40 },
   id: "1",
   name: "BlogOverviewModule"
 });

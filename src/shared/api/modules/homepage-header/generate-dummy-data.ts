@@ -94,8 +94,6 @@ export const generateHomePageHeader = (): HomepageHeader => ({
       link: { url: "/stores-single", title: "De Bijenkorf" }
     }
   ],
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "HomepageHeader"
 });

@@ -1,8 +1,6 @@
 import { BodyTextModule } from "./body-text";
 
 export const generateDummyFullBodyTextModule = (html: string): BodyTextModule => ({
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   containerAlignment: "center",
   containerSize: "full",
@@ -40,10 +38,8 @@ export const generateHomepageBodytextDummyData = () => ({
   containerSize: "full",
   id: "0",
   name: "BodyTextModule",
-  topMargin: "0",
-  bottomMargin: "0",
-  topPadding: { mobilePadding: 48, desktopPadding: 72 },
-  bottomPadding: { mobilePadding: 48, desktopPadding: 72 },
+  topPadding: { mobileSpacing: 48, desktopSpacing: 72 },
+  bottomPadding: { mobileSpacing: 48, desktopSpacing: 72 },
   style: { color: "#777" },
   background: { backgroundColour: "rgb(247, 247, 247)" }
 });
@@ -76,9 +72,7 @@ export const generateProductLineDummyData = (): BodyTextModule => ({
   containerSize: "full",
   id: "0",
   name: "BodyTextModule",
-  topMargin: "0",
-  bottomMargin: "0",
-  bottomPadding: { mobilePadding: 32, desktopPadding: 72 },
+  bottomPadding: { mobileSpacing: 32, desktopSpacing: 72 },
   style: { color: "#777" },
   background: { backgroundColour: "rgb(247, 247, 247)" },
   html: `<div>

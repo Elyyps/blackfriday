@@ -3,6 +3,11 @@
 exports[`[Footer] should render component without crashing 1`] = `
 <div
   className="header-info"
+  style={
+    Object {
+      "background": "#f7f7f7 ",
+    }
+  }
 >
   <div
     className="header-info__image"
@@ -33,11 +38,14 @@ exports[`[Footer] should render component without crashing 1`] = `
           <h1
             className="header-info__title"
           >
-            <strong>
-              Black Friday 2019 bij Apple
-            </strong>
+            Black Friday 2019 bij Apple
           </h1>
-          Vier Black Friday bij Apple en ontvang 15% korting op alles! Meer info
+          Vier Black Friday bij Apple en ontvang 15% korting op alles! 
+          <LinkComponent
+            to="./"
+          >
+            Meer info
+          </LinkComponent>
         </div>
         <div
           className="header-info__share-dropdown"
