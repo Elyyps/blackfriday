@@ -63,39 +63,38 @@ const ModalNavBar = (props: IModalNavBarProps) => {
         <IconComponent icon={props.icon} size={props.iconSize} />
         {props.title}
       </button>
-      {isOpen &&
-        ReactDOM.createPortal(
+      {ReactDOM.createPortal(
+        <div
+          role={"role"}
+          className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
+          onClick={(e): any => {
+            onClickAway(e);
+          }}
+        >
           <div
-            role={"role"}
-            className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
-            onClick={(e): any => {
-              onClickAway(e);
-            }}
+            className={`${styles["modal-navbar__holder"]} ${styles[`modal-navbar__holder__${props.variant}__close`]} ${
+              isOpen ? styles[`modal-navbar__holder__${props.variant}__open`] : ""
+            } `}
+            ref={modalRef}
           >
             <div
-              className={`${styles["modal-navbar__holder"]} ${styles[`modal-navbar__holder__${props.variant}`]}`}
-              ref={modalRef}
+              className={`${styles["modal-navbar__container"]} ${styles[`modal-navbar__container__${props.variant}`]}`}
             >
               <div
-                className={`${styles["modal-navbar__container"]} ${
-                  styles[`modal-navbar__container__${props.variant}`]
-                }`}
+                role="button"
+                aria-label="closeButton"
+                className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
+                onClick={toggleOpened}
               >
-                <div
-                  role="button"
-                  aria-label="closeButton"
-                  className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
-                  onClick={toggleOpened}
-                >
-                  <IconComponent icon={CLOSE_ICON} size="12px" />
-                  <span className="uk-visible@m">{props.close}</span>
-                </div>
-                {props.children}
+                <IconComponent icon={CLOSE_ICON} size="12px" />
+                <span className="uk-visible@m">{props.close}</span>
               </div>
+              {props.children}
             </div>
-          </div>,
-          document.body
-        )}
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };
