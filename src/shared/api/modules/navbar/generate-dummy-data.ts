@@ -8,7 +8,7 @@ export const generateDummyNavbarData = (): INavBarModule => ({
   links: [
     { title: "Winkels", url: "/stores-overview" },
     { title: "Productdeals", url: "/deals-overview" },
-    { title: "Black Friday", url: "/" }
+    { title: "Black Friday", url: "/black-friday-2019" }
   ],
   closeText: "Sluiten",
   logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg",

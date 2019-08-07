@@ -53,12 +53,11 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
   >
     <div
       className="blog-single-header__image"
-      style={
-        Object {
-          "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png)",
-        }
-      }
-    />
+    >
+      <ImageComponent
+        src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png"
+      />
+    </div>
   </div>
 </div>
 `;
