@@ -11,7 +11,7 @@ export const generateDummyNavbarData = (): INavBarModule => ({
     { title: "Black Friday", url: "/" }
   ],
   closeText: "Sluiten",
-  logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg",
+  logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg",
   bottomMargin: "0px",
   topMargin: "0px",
   id: "1",

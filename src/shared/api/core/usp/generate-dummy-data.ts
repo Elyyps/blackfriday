@@ -5,14 +5,14 @@ export const uniqueSellingPoints: UspModule = {
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/shop.svg",
       link: {
-        url: "./",
+        url: "./stores-overview",
         title: "Overzicht van álle black friday winkels"
       }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/clock.svg",
       link: {
-        url: "./",
+        url: "./deals-overview",
         title: "Altijd up-to-date van de laatste deals"
       }
     },

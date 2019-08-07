@@ -133,7 +133,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                 className="homepage-header__slider-item"
                 style={
                   Object {
-                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png)",
+                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/%3AblackFriday%3AbackFridayAd.jpg)",
                   }
                 }
               />
@@ -326,7 +326,7 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
                 className="homepage-header__slider-item"
                 style={
                   Object {
-                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png)",
+                    "backgroundImage": "url(https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/%3AblackFriday%3AbackFridayAd.jpg)",
                   }
                 }
               />

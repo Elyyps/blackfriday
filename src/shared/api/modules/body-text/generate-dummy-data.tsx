@@ -27,7 +27,8 @@ export const generateHomepageBodytextDummyData = () => ({
       Black Friday kortingscodes.Een volledig overzicht van alle Black Friday deelnemers en de geldende aanbiedingen mét
       kortingscodes vindt u hier!
     </p>
-    <h2> Black Friday 2019 </h2>
+    <br/>
+    <h2 style="color:#777"> Black Friday 2019 </h2>
     <p>
       Noteer vrijdag 29 november alvast in uw agenda, want dan start Black Friday 2019. Vanaf dat moment kunt u mooie
       deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen

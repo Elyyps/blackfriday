@@ -30,6 +30,9 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
     initializeItems();
     setCurrentFilter("");
   }, []);
+  React.useEffect(() => {
+    initializeItems();
+  }, [props.filterItem]);
   const setNewCheckedItems = () => {
     const newCheckedItems = items.filter(item => item.checked).map(item => item.title);
 

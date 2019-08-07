@@ -99,7 +99,7 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
         },
         Object {
           "title": "Alle winkels",
-          "url": "/",
+          "url": "/stores-overview",
         },
       ],
       "name": "ShopSingleHeaderModule",
@@ -149,7 +149,7 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
       },
       "timeLeftBar": Object {
         "text": "NU geldig",
-        "value": 0.8,
+        "value": 80,
       },
       "title": "15% korting op het hele assortiment",
       "topMargin": "0px",

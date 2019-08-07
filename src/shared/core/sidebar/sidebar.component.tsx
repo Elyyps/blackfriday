@@ -10,7 +10,7 @@ export interface ISidebarComponentProps {
 
 const SidebarComponent = (props: ISidebarComponentProps) => (
   <div className={styles["sidebar"]}>
-    {props.banner && <BannerComponent {...props.banner} variant="small" />}
+    {props.banner && <BannerComponent isButtonFullWidth {...props.banner} variant="small" />}
 
     {props.featuredItemsGroups &&
       props.featuredItemsGroups.map((itemGroup, key) => (

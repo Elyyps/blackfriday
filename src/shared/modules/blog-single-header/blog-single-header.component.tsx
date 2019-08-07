@@ -1,10 +1,10 @@
 import * as React from "react";
 import styles from "./blog-single-header-component.module.scss";
-import { ImageComponent } from "../../core/image";
 import { IconComponent } from "../../core/icon";
 import { Link } from "react-router-dom";
 import IconBack from "@assets/icons/chevron-left.svg";
 import { BlogSingleHeaderModule } from "@app/api/modules/blog-single-header/blog-single-header";
+import { FeaturedBlogItemsComponent } from "@app/core/featured-blog-items";
 
 export interface IBlogSingleHeaderComponentProps {
   blogSingleHeader: BlogSingleHeaderModule;
@@ -37,9 +37,20 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (
       </div>
     </div>
     <div className="uk-container">
-      <div className={styles["blog-single-header__image"]}>
-        <ImageComponent src={props.blogSingleHeader.image} />
-      </div>
+      {props.blogSingleHeader.items ? (
+        <div className={styles["blog-single-header__items"]}>
+          {props.blogSingleHeader.items.map(item => (
+            <div className={styles["blog-single-header__items-card"]}>
+              <FeaturedBlogItemsComponent item={item} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div
+          style={{ backgroundImage: `url(${props.blogSingleHeader.image})` }}
+          className={styles["blog-single-header__image"]}
+        />
+      )}
     </div>
   </div>
 );

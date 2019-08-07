@@ -3,22 +3,12 @@ import party from "@assets/icons/party.svg";
 import imac from "@assets/dummy-images/product-thumbnails/imac.png";
 import iphone from "@assets/dummy-images/product-thumbnails/iphone.png";
 import loader from "@assets/dummy-images/product-thumbnails/loader.png";
-import Oasis from "@assets/oasis.jpg";
 import CoolBlue from "@assets/cool-blue.svg";
+import { generateDummyBannerComponentData } from "../banner/generate-dummy-data";
 
 export const generateSidebarData = (): Sidebar => {
   const data: Sidebar = {
-    banner: {
-      title: "Black Friday bij Coolblue",
-      buttonTitle: "Meer deals",
-      buttonLink: "/deals-overview",
-      image: { src: Oasis, alt: "alt text oasis" },
-      label: "22 t/m 26 nov.",
-      logo: { src: CoolBlue, alt: "alt text CoolBlue" },
-      text: "Een selectie van bizarre aanbiedingen. Meer info",
-      moreInfoLink: "https://coolblue.com",
-      showAlternativeBanner: false
-    },
+    banner: { ...generateDummyBannerComponentData() },
     featuredItemsGroups: [
       {
         title: "Een greep uit onze deals",
@@ -58,7 +48,7 @@ export const generateSidebarData = (): Sidebar => {
           },
           {
             icon: party,
-            link: { url: "/stores-single", title: "Naar alle winkels!" }
+            link: { url: "/stores-overview", title: "Naar alle winkels!" }
           }
         ]
       }

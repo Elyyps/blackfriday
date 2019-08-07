@@ -7,6 +7,7 @@
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
   position: relative;
+  padding: 0 12px;
   z-index: 200;
 }
 .no-black-friday {
@@ -42,7 +43,7 @@
         flex: 1 1 31%;
       }
 
-      @media (max-width: 769px) {
+      @media (max-width: 768px) {
         flex: 1 1 100%;
       }
     }

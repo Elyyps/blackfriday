@@ -20,8 +20,8 @@ const BlogPostComponent = (props: IBlogPostComponentProps) => (
         <div className={styles["blog-post__title"]}>{props.posts.title}</div>
       </LinkComponent>
 
-      <div className="uk-visible@m">
-        {props.posts.content}
+      <div className={styles["blog-post__content"]}>
+        <span>{props.posts.content}</span>
         <LinkComponent to={props.posts.link.url}>
           <span className={styles["blog-post__link"]}>{props.posts.link.title}</span>
         </LinkComponent>
