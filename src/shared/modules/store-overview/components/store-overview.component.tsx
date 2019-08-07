@@ -84,7 +84,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
           props.sortBy
         );
         setIsLoading(false);
-      }, 800);
+      }, 500);
     }
   };
   const connectClass = "uk-switcher-list";
