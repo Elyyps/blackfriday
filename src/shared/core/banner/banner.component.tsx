@@ -82,7 +82,7 @@ const component = (props: IBannerComponentProps & InjectedIntlProps) => {
               )}
               {logo && (
                 <div className={styles["logo"]}>
-                  <ImageComponent src={logo.src} alt={logo.alt} />
+                  <ImageComponent src={logo.src} alt={logo.alt} isBlocking />
                 </div>
               )}
             </div>
