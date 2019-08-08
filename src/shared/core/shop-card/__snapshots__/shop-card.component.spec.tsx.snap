@@ -15,6 +15,7 @@ exports[`[ShopCard] should render component without crashing 1`] = `
         className="shop-card__image"
       >
         <ImageComponent
+          alt="Shop logo"
           src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png"
         />
       </div>

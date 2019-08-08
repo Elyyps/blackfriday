@@ -30,12 +30,7 @@ const CheckboxCount = (props: ICheckboxCountProps) => {
   };
 
   return (
-    <div
-      role="button"
-      id="outsideDiv"
-      onClick={e => onCheckedOutside(e, props.item.id)}
-      className={styles["filter-bar"]}
-    >
+    <div role="button" onClick={e => onCheckedOutside(e, props.item.id)} className={styles["filter-bar"]}>
       <CheckboxComponent onClick={() => onChecked(props.item.id)} isChecked={props.item.isSelected} ref={checkboxRef}>
         {props.item.displayName}
       </CheckboxComponent>

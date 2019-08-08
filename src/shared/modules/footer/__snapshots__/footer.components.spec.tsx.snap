@@ -122,6 +122,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="0"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday 2019"
                     href="/"
                   >
                     Black Friday 2019
@@ -131,6 +132,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="1"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Apple"
                     href="/"
                   >
                     Black Friday Apple
@@ -140,6 +142,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="2"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Deals"
                     href="/"
                   >
                     Black Friday Deals
@@ -149,6 +152,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="3"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Elektronica"
                     href="/"
                   >
                     Black Friday Elektronica
@@ -158,6 +162,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="4"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Gaming"
                     href="/"
                   >
                     Black Friday Gaming
@@ -167,6 +172,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="5"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Winkels"
                     href="/"
                   >
                     Black Friday Winkels
@@ -176,6 +182,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="6"
                 >
                   <a
+                    aria-label="Footbar link to Cyber Monday 2019"
                     href="/"
                   >
                     Cyber Monday 2019
@@ -302,6 +309,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="0"
                 >
                   <a
+                    aria-label="Footbar link to Airpods Black Friday"
                     href="/"
                   >
                     Airpods Black Friday
@@ -311,6 +319,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="1"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Kleding"
                     href="/"
                   >
                     Black Friday Kleding
@@ -320,6 +329,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="2"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Jumbo"
                     href="/"
                   >
                     Black Friday Jumbo
@@ -329,6 +339,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="3"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Rituals"
                     href="/"
                   >
                     Black Friday Rituals
@@ -338,6 +349,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="4"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday G-star"
                     href="/"
                   >
                     Black Friday G-star
@@ -347,6 +359,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="5"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Center Parcs"
                     href="/"
                   >
                     Black Friday Center Parcs
@@ -356,6 +369,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="6"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Computer"
                     href="/"
                   >
                     Black Friday Computer
@@ -482,6 +496,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="0"
                 >
                   <a
+                    aria-label="Logo link"
                     className="footer__social-link"
                     href="https://www.facebook.com/BlackFridayNederland/"
                     target="_blank"
@@ -511,6 +526,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="1"
                 >
                   <a
+                    aria-label="Logo link"
                     className="footer__social-link"
                     href="https://www.instagram.com/blackfridaynl/"
                     target="_blank"
@@ -540,6 +556,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="2"
                 >
                   <a
+                    aria-label="Logo link"
                     className="footer__social-link"
                     href="mailto:info@blackfridaynederland.nl"
                     target="_blank"
@@ -761,6 +778,7 @@ exports[`[Footer] should render component without crashing 1`] = `
           className="footer__logo-box"
         >
           <Link
+            aria-label="Logo link"
             className="uk-visible@m footer__logo"
             to="./"
           >

@@ -51,6 +51,7 @@ const StarsRatingComponent = (props: IStarsRatingComponentProps) => {
       {showRating && <span className={styles["stars-rating__label"]}>{rating}</span>}
       {stars.map((star, i) => (
         <span
+          aria-label="Star voting"
           onMouseOver={() => setCurrentHoverStar(i)}
           key={i}
           role="button"

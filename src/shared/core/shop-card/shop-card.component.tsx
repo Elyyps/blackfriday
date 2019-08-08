@@ -44,7 +44,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
         )}
         <div className={styles["shop-card__body"]}>
           <div className={styles["shop-card__image"]}>
-            <ImageComponent src={logo} />
+            <ImageComponent alt="Shop logo" src={logo} />
           </div>
           <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>
             {getStoreStatusText(status)}
