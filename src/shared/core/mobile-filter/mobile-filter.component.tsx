@@ -112,7 +112,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       }}
       className={styles["filter-bar"]}
     >
-      Filter
+      {props.intl.formatMessage({ id: "filter-bar-label" })}
       <IconComponent icon={FilterIcon} size={"15px"} />
     </div>
   ) : (

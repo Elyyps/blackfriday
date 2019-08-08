@@ -6,6 +6,7 @@ import { Checkbox } from "@app/api/core/checkbox";
 import { Button } from "../button";
 import Search from "@assets/icons/search.svg";
 import { Input } from "@app/prep/modules-prep/core";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface ISearchFilterControlComponentProps {
   applyFilter: () => void;
@@ -17,7 +18,7 @@ export interface ISearchFilterControlComponentProps {
   placeholder?: string;
 }
 
-const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps) => {
+const component = (props: ISearchFilterControlComponentProps & InjectedIntlProps) => {
   const [checkboxList, setCheckboxList] = useState<Checkbox[]>([]);
 
   const searchFilter = (value: string) => {
@@ -108,16 +109,20 @@ const SearchFilterControlComponent = (props: ISearchFilterControlComponentProps)
         <ul className={style["filter-control-bottom__action"]}>
           <li>
             <Link to="#" onClick={clearFilters}>
-              Verwijder merk filters ({props.numberOfFilters})
+              {props.intl.formatMessage({ id: "filter-control-clear" })} ({props.numberOfFilters})
             </Link>
           </li>
           <li>
-            <Button title={"Toon 123 Winkels"} variant={"primary-brand"} onClick={applyFilter} />
+            <Button
+              title={props.intl.formatMessage({ id: "filter-control-button" })}
+              variant={"primary-brand"}
+              onClick={applyFilter}
+            />
           </li>
         </ul>
       </div>
     </div>
   );
 };
-
+const SearchFilterControlComponent = injectIntl(component);
 export { SearchFilterControlComponent };

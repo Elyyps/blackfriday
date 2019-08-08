@@ -7,6 +7,7 @@ import { FeaturedCategoriesModule } from "@app/api/modules/featured-categories/f
 import { ClickableComponent } from "@app/core/clickable";
 import ChevronDown from "@assets/icons/chevron-down.svg";
 import { breakPointMobileBig } from "@app/util/detect-view";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IFeaturedCategoriesProps {
   featuredCategoriesModule: FeaturedCategoriesModule;
@@ -14,7 +15,7 @@ export interface IFeaturedCategoriesProps {
 
 const ITEMS_TO_SHOW_ON_MOBILE = 4;
 
-const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategoriesContainerProps) => {
+const component = (props: IFeaturedCategoriesProps & FeaturedCategoriesContainerProps & InjectedIntlProps) => {
   const [itemsToShow, setItemsToShow] = useState(ITEMS_TO_SHOW_ON_MOBILE);
   const { categoryItems } = props.featuredCategoriesModule;
 
@@ -56,7 +57,11 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
                   ? setItemsToShow(ITEMS_TO_SHOW_ON_MOBILE)
                   : setItemsToShow(categoryItems.length)
               }
-              title={itemsToShow > ITEMS_TO_SHOW_ON_MOBILE ? "Toon minder" : "Toon meer"}
+              title={
+                itemsToShow > ITEMS_TO_SHOW_ON_MOBILE
+                  ? props.intl.formatMessage({ id: "featured-categories-clickable-title-mobile" })
+                  : props.intl.formatMessage({ id: "featured-categories-clickable-title" })
+              }
               variant="link-primary"
               iconPosition="right"
               icon={ChevronDown}
@@ -68,5 +73,5 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
     </div>
   );
 };
-
+const FeaturedCategories = injectIntl(component);
 export { FeaturedCategories };

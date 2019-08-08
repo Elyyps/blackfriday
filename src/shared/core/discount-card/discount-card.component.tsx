@@ -3,6 +3,7 @@ import styles from "./discount-card-component.module.scss";
 import { ImageComponent, Button } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 interface IDiscountCardComponentProps {
   buttonLink: string;
@@ -15,7 +16,7 @@ interface IDiscountCardComponentProps {
   title: string;
 }
 
-const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
+const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
   const { title, status, content, image, range, buttonText, buttonLink, coupon } = props;
   const [messageDisplayed, setMessageDisplayed] = React.useState<boolean>(false);
   const [couponCopied, setCouponCopied] = React.useState<boolean>(false);
@@ -73,7 +74,9 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
         </button>
         {messageDisplayed && (
           <div className={styles["discount-card__tooltip"]} aria-hidden="true">
-            <div className={styles["discount-card__tooltip__message"]}>Yeah, Gekopieerd!</div>
+            <div className={styles["discount-card__tooltip__message"]}>
+              {props.intl.formatMessage({ id: "discount-code" })}
+            </div>
             <div className={styles["discount-card__tooltip__arrow"]} />
           </div>
         )}
@@ -82,4 +85,5 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
     </div>
   );
 };
+const DiscountCardComponent = injectIntl(component);
 export { DiscountCardComponent };

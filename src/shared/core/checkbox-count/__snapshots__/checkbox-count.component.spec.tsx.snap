@@ -3,7 +3,6 @@
 exports[`[CheckboxCount] should render non selected without crashing 1`] = `
 <div
   className="filter-bar"
-  id="outsideDiv"
   onClick={[Function]}
   role="button"
 >
@@ -22,7 +21,6 @@ exports[`[CheckboxCount] should render non selected without crashing 1`] = `
 exports[`[CheckboxCount] should render selected without crashing 1`] = `
 <div
   className="filter-bar"
-  id="outsideDiv"
   onClick={[Function]}
   role="button"
 >
