@@ -2,6 +2,11 @@
 
 exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`] = `
 <Fragment>
+  <HelmetComponent
+    content=""
+    description=""
+    title=""
+  />
   <ModuleComponent
     key="0"
     wordPressModule={
@@ -185,4 +190,12 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
 </Fragment>
 `;
 
-exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `<Fragment />`;
+exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `
+<Fragment>
+  <HelmetComponent
+    content=""
+    description=""
+    title=""
+  />
+</Fragment>
+`;
