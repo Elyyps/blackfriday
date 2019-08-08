@@ -1,93 +1,229 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[StoreOverview] should render without crashing 1`] = `
-<div>
-  <div
-    className="deals-overview__tab"
-  >
-    <TabContainerComponent
-      attribute={
+<component
+  brandFilterItems={Array []}
+  categoryFilterItems={Array []}
+  clearAllFilters={[MockFunction]}
+  getStores={[MockFunction]}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  screenSize={
+    Object {
+      "breakpointPixels": 0,
+      "viewType": 3,
+    }
+  }
+  setBrandFilters={[MockFunction]}
+  setCategoryFilters={[MockFunction]}
+  setSortBy={[MockFunction]}
+  setStatusFilters={[MockFunction]}
+  sortBy=""
+  statusFilterItems={Array []}
+  storeOverviewModule={
+    Object {
+      "brandFilterItems": Array [
         Object {
-          "data-uk-switcher": "connect: .uk-switcher-list",
-        }
-      }
-      classTabList="uk-tab__list"
-    >
-      <TabComponent
-        attrAction="link"
-      >
-        Winkels
-      </TabComponent>
-      <TabComponent
-        attrAction="link"
-      >
-        Productdeals
-      </TabComponent>
-    </TabContainerComponent>
-  </div>
-  <Container>
-    <div>
-      <Sticky
-        bottomOffset={0}
-        disableCompensation={false}
-        disableHardwareAcceleration={false}
-        relative={false}
-        topOffset={0}
-      >
-        <Component />
-      </Sticky>
-    </div>
-    <div
-      className="store-overview"
-    >
-      <div
-        className="uk-container"
-      >
-        <div
-          className="no-black-friday"
-        >
-          <h2>
-            Geen Black Friday, wel veel voordeel!
-          </h2>
-        </div>
-        <div>
-          <CtaSmallComponent
-            buttonTitle="Verwijder alle filters"
-            icon="sign.svg"
-            onClick={[Function]}
-            text="Er zijn geen resultaten gevonden met de huidige filters"
-          />
-        </div>
-        <div
-          style={
-            Object {
-              "margin": "auto",
-              "paddingTop": "30px",
-              "width": "50px",
-            }
-          }
-        >
-          <onlyUpdateForKeys(Loader)
-            color="red"
-            css={
-              Object {
-                "map": undefined,
-                "name": "3u6ywd",
-                "next": undefined,
-                "styles": "
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-",
-              }
-            }
-            loading={false}
-            size={30}
-            sizeUnit="px"
-          />
-        </div>
-      </div>
-    </div>
-  </Container>
-</div>
+          "displayName": "Apple",
+          "id": "1",
+          "isSelected": false,
+          "totalAmount": 13,
+        },
+        Object {
+          "displayName": "Jack & Jones",
+          "id": "2",
+          "isSelected": false,
+          "totalAmount": 6,
+        },
+        Object {
+          "displayName": "Adidas",
+          "id": "3",
+          "isSelected": false,
+          "totalAmount": 8,
+        },
+        Object {
+          "displayName": "JBL",
+          "id": "4",
+          "isSelected": false,
+          "totalAmount": 4,
+        },
+        Object {
+          "displayName": "Converse",
+          "id": "5",
+          "isSelected": false,
+          "totalAmount": 3,
+        },
+        Object {
+          "displayName": "Microsoft",
+          "id": "6",
+          "isSelected": false,
+          "totalAmount": 6,
+        },
+        Object {
+          "displayName": "Guess",
+          "id": "7",
+          "isSelected": false,
+          "totalAmount": 2,
+        },
+        Object {
+          "displayName": "Only",
+          "id": "8",
+          "isSelected": false,
+          "totalAmount": 3,
+        },
+        Object {
+          "displayName": "Happy Socks",
+          "id": "9",
+          "isSelected": false,
+          "totalAmount": 4,
+        },
+        Object {
+          "displayName": "Phillips",
+          "id": "10",
+          "isSelected": false,
+          "totalAmount": 71,
+        },
+        Object {
+          "displayName": "HP",
+          "id": "11",
+          "isSelected": false,
+          "totalAmount": 2,
+        },
+        Object {
+          "displayName": "Nintendo",
+          "id": "12",
+          "isSelected": false,
+          "totalAmount": 7,
+        },
+        Object {
+          "displayName": "Samsung",
+          "id": "13",
+          "isSelected": false,
+          "totalAmount": 4,
+        },
+        Object {
+          "displayName": "Sony",
+          "id": "14",
+          "isSelected": false,
+          "totalAmount": 13,
+        },
+        Object {
+          "displayName": "Vodafone",
+          "id": "15",
+          "isSelected": false,
+          "totalAmount": 5,
+        },
+        Object {
+          "displayName": "Nike",
+          "id": "16",
+          "isSelected": false,
+          "totalAmount": 2,
+        },
+      ],
+      "categoryFilterItems": Array [
+        Object {
+          "displayName": "Audio",
+          "id": "1",
+          "isSelected": false,
+          "totalAmount": 7,
+        },
+        Object {
+          "displayName": "Sport",
+          "id": "2",
+          "isSelected": false,
+          "totalAmount": 5,
+        },
+        Object {
+          "displayName": "Games",
+          "id": "3",
+          "isSelected": false,
+          "totalAmount": 6,
+        },
+        Object {
+          "displayName": "Elektronisch",
+          "id": "4",
+          "isSelected": false,
+          "totalAmount": 14,
+        },
+        Object {
+          "displayName": "Mode",
+          "id": "5",
+          "isSelected": false,
+          "totalAmount": 9,
+        },
+        Object {
+          "displayName": "Huishouden",
+          "id": "6",
+          "isSelected": false,
+          "totalAmount": 65,
+        },
+      ],
+      "emptyStateIcon": "sign.svg",
+      "id": "1",
+      "name": "StoreOverviewModule",
+      "sortBy": "Relevantie",
+      "statusFilterItems": Array [
+        Object {
+          "displayName": "Bijna afgelopen",
+          "id": "1",
+          "isSelected": false,
+          "totalAmount": 3,
+        },
+        Object {
+          "displayName": "Nu geldig",
+          "id": "2",
+          "isSelected": false,
+          "totalAmount": 74,
+        },
+        Object {
+          "displayName": "Start binnenkort",
+          "id": "3",
+          "isSelected": false,
+          "totalAmount": 3,
+        },
+        Object {
+          "displayName": "Verlopen",
+          "id": "4",
+          "isSelected": false,
+          "totalAmount": 1,
+        },
+        Object {
+          "displayName": "Onbekend",
+          "id": "5",
+          "isSelected": false,
+          "totalAmount": 2,
+        },
+      ],
+      "stores": Array [],
+      "totalAmountOfStores": 83,
+    }
+  }
+  stores={Array []}
+  totalResults={100}
+/>
 `;

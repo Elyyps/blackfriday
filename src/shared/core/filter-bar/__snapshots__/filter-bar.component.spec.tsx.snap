@@ -29,7 +29,7 @@ exports[`[FilterBar] should render without crashing 1`] = `
         />
       </div>
       <div>
-        <SearchableCheckboxDropdown
+        <InjectIntl(component)
           deleteFilterLabel="Verwijder merk filters"
           items={Array []}
           onChange={[Function]}
@@ -39,7 +39,7 @@ exports[`[FilterBar] should render without crashing 1`] = `
         />
       </div>
       <div>
-        <SearchableCheckboxDropdown
+        <InjectIntl(component)
           deleteFilterLabel="Verwijder merk filters"
           items={Array []}
           onChange={[Function]}

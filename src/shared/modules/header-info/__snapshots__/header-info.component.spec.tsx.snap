@@ -1,152 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Footer] should render component without crashing 1`] = `
-<div
-  className="header-info"
-  style={
+<component
+  headerInfo={
     Object {
-      "background": "#f7f7f7 ",
+      "bgcolor": "#f7f7f7 ",
+      "content": "Vier Black Friday bij Apple en ontvang 15% korting op alles!",
+      "icon": "store.svg",
+      "id": "1",
+      "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/apple-iphones-header.jpg",
+      "name": "HeaderInfo",
+      "title": "Black Friday 2019 bij Apple",
+      "url": "./",
     }
   }
->
-  <div
-    className="header-info__image"
-  >
-    <ImageComponent
-      alt="logo"
-      src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/apple-iphones-header.jpg"
-    />
-  </div>
-  <div
-    className="uk-container"
-  >
-    <div
-      className="header-info__body"
-    >
-      <div
-        className="header-info__body__content"
-      >
-        <div
-          className="header-info__icon"
-        >
-          <ImageComponent
-            alt="icon"
-            src="store.svg"
-          />
-        </div>
-        <div
-          className="header-info__content"
-        >
-          <h1
-            className="header-info__title"
-          >
-            Black Friday 2019 bij Apple
-          </h1>
-          Vier Black Friday bij Apple en ontvang 15% korting op alles! 
-          <LinkComponent
-            to="./"
-          >
-            Meer info
-          </LinkComponent>
-        </div>
-        <div
-          className="header-info__share-dropdown"
-        >
-          <DropdownComponent
-            icon="share.svg"
-            title="Status"
-          >
-            <ShareSocialComponent
-              email={
-                Object {
-                  "nameSocialShare": "Email",
-                  "subject": "BlackFriday",
-                  "title": "Email",
-                  "url": "https://www.webbio.nl",
-                }
-              }
-              facebook={
-                Object {
-                  "nameSocialShare": "Facebook",
-                  "title": "BlackFriday",
-                  "url": "https://www.webbio.nl",
-                }
-              }
-              twitter={
-                Object {
-                  "hashtags": Array [
-                    "BlackFriday",
-                    "Netherlands",
-                    "Sale",
-                    "Shops",
-                  ],
-                  "nameSocialShare": "Twitter",
-                  "title": "BlackFriday",
-                  "url": "https://www.webbio.nl",
-                  "via": "BlackFriday",
-                }
-              }
-              whatsapp={
-                Object {
-                  "nameSocialShare": "WhatsApp",
-                  "separator": " - ",
-                  "title": "BlackFriday",
-                  "url": "https://www.webbio.nl",
-                }
-              }
-            />
-          </DropdownComponent>
-        </div>
-      </div>
-      <div
-        className="header-info__share-badge"
-      >
-        <Badge
-          icon="share.svg"
-          position="right"
-        >
-          <ShareSocialComponent
-            email={
-              Object {
-                "nameSocialShare": "Email",
-                "subject": "BlackFriday",
-                "title": "Email",
-                "url": "https://www.webbio.nl",
-              }
-            }
-            facebook={
-              Object {
-                "nameSocialShare": "Facebook",
-                "title": "BlackFriday",
-                "url": "https://www.webbio.nl",
-              }
-            }
-            twitter={
-              Object {
-                "hashtags": Array [
-                  "BlackFriday",
-                  "Netherlands",
-                  "Sale",
-                  "Shops",
-                ],
-                "nameSocialShare": "Twitter",
-                "title": "BlackFriday",
-                "url": "https://www.webbio.nl",
-                "via": "BlackFriday",
-              }
-            }
-            whatsapp={
-              Object {
-                "nameSocialShare": "WhatsApp",
-                "separator": " - ",
-                "title": "BlackFriday",
-                "url": "https://www.webbio.nl",
-              }
-            }
-          />
-        </Badge>
-      </div>
-    </div>
-  </div>
-</div>
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+/>
 `;

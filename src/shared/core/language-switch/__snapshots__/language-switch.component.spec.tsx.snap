@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[LanguageSwitch] should render component without crashing 1`] = `
+<a
+  aria-label="languageSwitchButton"
+  className="language-switch"
+  onClick={[Function]}
+  role="button"
+>
+  <img
+    alt="image"
+    src={
+      Object {
+        "ReactComponent": [Function],
+        "__esModule": true,
+        "default": "language.svg",
+      }
+    }
+  />
+  <span>
+    <ResourceTextComponent
+      resourceKey="language-switch_en"
+    />
+  </span>
+</a>
+`;

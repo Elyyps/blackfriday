@@ -9,6 +9,7 @@ import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
 import { NavbarSearchContainer } from "./navbar-search/container/navbar-search.container";
 import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
 import { NavbarMenuItemComponent } from "../navbar-menu-item";
+import { LanguageSwitchContainer } from "@app/core/language-switch/language-switch.container";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -32,8 +33,10 @@ const NavBarComponent = (props: INavBarComponentProps) => (
                 <LinkComponent to={link.url}>{link.title}</LinkComponent>
               </li>
             ))}
+            <li>
+              <LanguageSwitchContainer />
+            </li>
           </ul>
-
           <ModalNavBar
             className={`${styles["nav-bar__search-button"]}`}
             variant={"search"}
