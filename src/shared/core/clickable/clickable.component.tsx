@@ -23,6 +23,7 @@ export interface IClickableComponentProps {
   animated?: boolean;
   buttonType?: string;
   disabled?: boolean;
+  disableSelect?: boolean;
   dynamicSize?: boolean;
   fullWidth?: boolean;
   href?: string;
@@ -83,11 +84,24 @@ const ClickableComponent = (props: IClickableComponentProps) => {
     props.iconPosition,
     props.title
   ]);
-  const { buttonType, animated, onClick, href, variant, title, disabled, iconStyle, target, zIndex } = props;
+  const {
+    buttonType,
+    disableSelect,
+    animated,
+    onClick,
+    href,
+    variant,
+    title,
+    disabled,
+    iconStyle,
+    target,
+    zIndex
+  } = props;
 
   const classModify = variant || "primary-default";
   const buttonFAB = !title ? styles["button--FAB"] : "";
   const animatedIcon = animated ? styles[`button--animated`] : "";
+  const noSelect = disableSelect ? styles[`no-select`] : "";
   const iconOutline = iconStyle ? styles[`button--${classModify}--icon-${iconStyle}`] : "";
   const buttonClassName = classNames(
     styles["button"],
@@ -95,6 +109,7 @@ const ClickableComponent = (props: IClickableComponentProps) => {
     buttonFAB,
     iconOutline,
     animatedIcon,
+    noSelect,
     {
       "button--fullWidth": props.fullWidth
     },

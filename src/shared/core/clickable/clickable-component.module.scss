@@ -204,3 +204,8 @@ a.button--primary-default,
   padding: 8px 16px !important;
   background-color: red !important;
 }
+
+.no-select {
+  outline-color: transparent;
+  outline-style: none;
+}

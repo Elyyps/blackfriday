@@ -65,7 +65,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                     <ul className={styles["footer__column-nav"]}>
                       {item.links.map((link, i) => (
                         <li key={i}>
-                          <a aria-label={`Footbar link to ${link.title}`} href={link.url}>
+                          <a rel="noopener" aria-label={`Footbar link to ${link.title}`} href={link.url}>
                             {link.title}
                           </a>
                         </li>
@@ -120,6 +120,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                           href={item.link}
                           className={styles["footer__social-link"]}
                           target="_blank"
+                          rel="noopener"
                         >
                           <div className={styles["footer__social-icon"]}>
                             <IconComponent icon={item.image} size="15px" />
@@ -158,7 +159,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   <div className={styles["footer__social"]}>
                     {props.footerModule.middleFooter.socialMedia.socialItem.map((item, index) => (
                       <div className={styles["footer__social-items"]} key={index}>
-                        <a href={item.link} className={styles["footer__social-link"]} target="_blank">
+                        <a rel="noopener" href={item.link} className={styles["footer__social-link"]} target="_blank">
                           <div className={styles["footer__social-icon"]}>
                             <IconComponent icon={item.image} size="15px" />
                           </div>
