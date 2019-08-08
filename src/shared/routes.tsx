@@ -22,7 +22,6 @@ const Routes: React.FunctionComponent = () => (
     <Route exact path="/playground-martijn" component={PlaygroundMartijnComponent} />
     <Route exact path="/playground-tom" component={PlaygroundTomComponent} />
     <Route exact path="/ukraineoverview" component={WinkleoverviewComponent} />
-    <Route component={PlaygroundTomComponent} />
   </React.Fragment>
 );
 

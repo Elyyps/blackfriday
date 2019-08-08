@@ -26,7 +26,7 @@ const iconStyleClassName = (props: IIconComponentProps) => {
 const IconComponent: React.FunctionComponent<IIconComponentProps> = props => (
   <ReactSVG
     src={props.icon}
-    fallback={() => <span />}
+    fallback={() => <span>Error!</span>}
     loading={() => <span />}
     renumerateIRIElements={true}
     wrapper="span"
