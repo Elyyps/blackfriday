@@ -17,8 +17,9 @@ import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
-import { getOffset, useScrollPosition } from "@app/util";
+import { getOffset, useScrollPosition, usePrevious } from "@app/util";
 import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
+import { FilterItem } from "@app/api/core/filter/filter-item";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -60,7 +61,22 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   }, [scrollPos]);
 
   useEffect(() => {
-    props.getStores(0, TAKE, props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems, props.sortBy);
+    if (
+      filtersAreDifferent() ||
+      allFiltersAndStoresAreEmpty(
+        [props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems],
+        props.stores
+      )
+    ) {
+      props.getStores(
+        0,
+        TAKE,
+        props.statusFilterItems,
+        props.categoryFilterItems,
+        props.brandFilterItems,
+        props.sortBy
+      );
+    }
   }, [props.brandFilterItems, props.categoryFilterItems, props.statusFilterItems, props.sortBy]);
 
   useEffect(() => {
@@ -104,6 +120,20 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
       window.scroll(top, top);
       setPositionPercentage(0);
     }
+  };
+
+  const prevStatusFilterItems = usePrevious(props.statusFilterItems);
+  const prevCategoryFilterItems = usePrevious(props.categoryFilterItems);
+  const prevBrandFilterItems = usePrevious(props.brandFilterItems);
+  const filtersAreDifferent = (): boolean => {
+    const statusFiltersAreDifferent = singleFiltersAreDifferent(prevStatusFilterItems || [], props.statusFilterItems);
+    const categoryFiltersAreDifferent = singleFiltersAreDifferent(
+      prevCategoryFilterItems || [],
+      props.categoryFilterItems
+    );
+    const brandFiltersAreDifferent = singleFiltersAreDifferent(prevBrandFilterItems || [], props.brandFilterItems);
+
+    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent;
   };
 
   return (
@@ -292,6 +322,36 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
   });
 
   return overviewItemsResult;
+};
+
+const allFiltersAndStoresAreEmpty = (allFilterItems: FilterItem[][], stores: Store[]) => {
+  const totalSelecteditems = allFilterItems.reduce(
+    (count, filterItems) => count + filterItems.filter(item => item.isSelected).length,
+    0
+  );
+
+  if (totalSelecteditems > 0) {
+    return false;
+  }
+
+  if (stores.length === 0) {
+    return true;
+  }
+
+  return false;
+};
+
+const singleFiltersAreDifferent = (oldFilters: FilterItem[], newFilters: FilterItem[]) => {
+  for (let i = 0; i < newFilters.length; i += 1) {
+    if (!oldFilters[i]) {
+      return false;
+    }
+    if (oldFilters[i].isSelected !== newFilters[i].isSelected) {
+      return true;
+    }
+  }
+
+  return false;
 };
 
 export { StoreOverview };

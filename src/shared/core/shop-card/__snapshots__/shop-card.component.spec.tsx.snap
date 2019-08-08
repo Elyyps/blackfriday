@@ -16,6 +16,7 @@ exports[`[ShopCard] should render component without crashing 1`] = `
       >
         <ImageComponent
           alt="Shop logo"
+          isBlocking={true}
           src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png"
         />
       </div>

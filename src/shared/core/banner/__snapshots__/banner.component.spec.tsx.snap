@@ -23,6 +23,7 @@ exports[`[Banner] should render component without crashing 1`] = `
             alt="alt text oasis"
             errorImage="link.svg"
             errorMessage="Custom error message"
+            isBlocking={true}
             src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png"
           />
         </a>

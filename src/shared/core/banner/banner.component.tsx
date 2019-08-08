@@ -54,6 +54,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
                 src={image && image.src}
                 errorImage={IconDefault}
                 errorMessage="Custom error message"
+                isBlocking
               />
             </a>
           </div>

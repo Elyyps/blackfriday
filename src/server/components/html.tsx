@@ -18,8 +18,7 @@ const HTML = ({ children, css = [], scripts = [], state = "{}" }: Props) => {
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {head.base.toComponent()}
-        {/* {head.title.toComponent()} */}
-        <title>Black Friday België</title>
+        {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {head.script.toComponent()}

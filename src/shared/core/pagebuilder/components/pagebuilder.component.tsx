@@ -32,6 +32,7 @@ export class PagebuilderComponent extends React.Component<
     }
 
     if (typeof window === "object") {
+      window.scroll(0, 0);
       window.addEventListener("resize", this.handleResize.bind(this));
       this.setScreenSize();
     }
