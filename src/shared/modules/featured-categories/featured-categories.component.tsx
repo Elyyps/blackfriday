@@ -56,6 +56,7 @@ const FeaturedCategories = (props: IFeaturedCategoriesProps & FeaturedCategories
                   ? setItemsToShow(ITEMS_TO_SHOW_ON_MOBILE)
                   : setItemsToShow(categoryItems.length)
               }
+              disableSelect
               title={itemsToShow > ITEMS_TO_SHOW_ON_MOBILE ? "Toon minder" : "Toon meer"}
               variant="link-primary"
               iconPosition="right"

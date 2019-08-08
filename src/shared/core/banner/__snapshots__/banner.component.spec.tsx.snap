@@ -16,6 +16,7 @@ exports[`[Banner] should render component without crashing 1`] = `
         <a
           aria-label="Open link"
           href="https://coolblue.nl"
+          rel="noopener"
           role="button"
           target="_blank"
         >
@@ -51,6 +52,7 @@ exports[`[Banner] should render component without crashing 1`] = `
           >
             <a
               href="https://coolblue.nl"
+              rel="noopener"
               target="_blank"
             >
               Meer info

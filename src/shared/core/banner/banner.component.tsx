@@ -48,7 +48,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
       <div className={styles[classModify]}>
         <div className={`${styles["holder"]} ${showAlternativeBanner && styles["row-reverse"]}`}>
           <div className={styles["image"]}>
-            <a aria-label="Open link" href={imageLink} target="_blank" role="button">
+            <a rel="noopener" aria-label="Open link" href={imageLink} target="_blank" role="button">
               <ImageComponent
                 alt={image && image.alt}
                 src={image && image.src}
@@ -63,7 +63,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
               <h2 className={styles["title"]}>{title}</h2>
               <span>{text}</span>
               <span className={styles["more-info"]}>
-                <a href={moreInfoLink} target="_blank">
+                <a rel="noopener" href={moreInfoLink} target="_blank">
                   Meer info
                 </a>
               </span>
