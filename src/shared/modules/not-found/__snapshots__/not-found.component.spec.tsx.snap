@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[NotFound] should render component without crashing 1`] = `
+<div
+  className="uk-container"
+>
+  <div
+    className="not-found"
+  >
+    <h1>
+      404
+    </h1>
+    <span
+      className="not-found-title"
+    >
+      Page not found !
+    </span>
+    <p>
+      There may be a error , make sure to bla bla bla bla
+    </p>
+    <Button
+      fullWidth={true}
+      icon={
+        Object {
+          "ReactComponent": [Function],
+          "__esModule": true,
+          "default": "chevron-right.svg",
+        }
+      }
+      title="Go back to the website"
+      variant="primary-brand"
+    />
+  </div>
+</div>
+`;

@@ -28,6 +28,7 @@ import { generateBlogBodyTextData, generateBlackFriday2019TextData } from "../co
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
 import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
+import { generateNotFoundModuleDummyData } from "../modules/not-found/endpoints";
 
 export const pageList: PageModel[] = [
   {
@@ -172,5 +173,15 @@ export const pageList: PageModel[] = [
       generateCtaNewsLetterModule(),
       generateDummyFooterData()
     ]
+  } as PageModel,
+  {
+    id: uuid(),
+    route: "/not-found",
+    metaData: {
+      title: "Black Friday 2019",
+      content: "Black Friday 2019 informative page",
+      description: "Black Friday 2019 informative page"
+    },
+    wordPressPostModules: [generateDummyNavbarData(), generateNotFoundModuleDummyData(), generateDummyFooterData()]
   } as PageModel
 ];
