@@ -57,9 +57,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{name}</div>
             {description}
-            {moreInfoLink && moreInfoLink && (
-              <LinkComponent to={moreInfoLink}> {props.intl.formatMessage({ id: "see-more" })}</LinkComponent>
-            )}
+            <LinkComponent to="/stores-single"> {props.intl.formatMessage({ id: "see-more" })}</LinkComponent>
           </div>
         </div>
         <div className={styles["shop-card__action"]}>
@@ -69,7 +67,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
             title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
             icon={ShopIcon}
             iconPosition="right"
-            href="/stores-single"
+            href={moreInfoLink}
           />
         </div>
       </div>
