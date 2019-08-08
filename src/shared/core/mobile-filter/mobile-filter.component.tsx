@@ -78,7 +78,31 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       document.documentElement.style.overflow = "auto";
       document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    };
   }, [isFilterOpened]);
+
+  const onWindowResize = () => {
+    const w = window;
+    const d = document;
+    const documentElement = d.documentElement;
+    const body = d.getElementsByTagName("body")[0];
+    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    const mobileBreakpoint = 769;
+    if (width >= mobileBreakpoint) {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", onWindowResize);
+
+    return () => window.removeEventListener("resize", onWindowResize);
+  }, []);
 
   return !isFilterOpened ? (
     <div
@@ -88,7 +112,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       }}
       className={styles["filter-bar"]}
     >
-      Filter
+      {props.intl.formatMessage({ id: "filter-bar-label" })}
       <IconComponent icon={FilterIcon} size={"15px"} />
     </div>
   ) : (

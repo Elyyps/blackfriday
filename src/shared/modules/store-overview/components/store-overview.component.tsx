@@ -18,6 +18,7 @@ import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
 import { getOffset, useScrollPosition, usePrevious } from "@app/util";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 /* tslint:disable:no-magic-numbers */
@@ -34,7 +35,7 @@ export interface IOverviewItem {
 const TAKE = 25;
 const SHOW_AD_EVERY_LINES = 4;
 
-const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
+const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps & InjectedIntlProps) => {
   const topDivRef = useRef<any>(null);
   const mainDivRef = useRef<any>(null);
 
@@ -140,8 +141,8 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
     <div>
       <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
-          <TabComponent attrAction={"link"}>Winkels</TabComponent>
-          <TabComponent attrAction={"link"}>Productdeals</TabComponent>
+          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
+          <TabComponent attrAction={"link"}> {props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
         </TabContainerComponent>
       </div>
 
@@ -160,7 +161,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
         <div className={styles["store-overview"]}>
           <div className="uk-container">
             <div className={styles["no-black-friday"]}>
-              <h2>Geen Black Friday, wel veel voordeel!</h2>
+              <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
             </div>
             {props.stores && props.stores.length > 0 ? (
               <div className={styles["stores-overview__body__list"]}>
@@ -323,6 +324,7 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
 
   return overviewItemsResult;
 };
+const StoreOverview = injectIntl(component);
 
 const allFiltersAndStoresAreEmpty = (allFilterItems: FilterItem[][], stores: Store[]) => {
   const totalSelecteditems = allFilterItems.reduce(

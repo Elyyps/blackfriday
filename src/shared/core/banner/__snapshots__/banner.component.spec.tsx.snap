@@ -1,84 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[Banner] should render component without crashing 1`] = `
-<div
-  className="uk-container"
->
-  <div
-    className="banner--default"
-  >
-    <div
-      className="holder false"
-    >
-      <div
-        className="image"
-      >
-        <a
-          aria-label="Open link"
-          href="https://coolblue.nl"
-          role="button"
-          target="_blank"
-        >
-          <ImageComponent
-            alt="alt text oasis"
-            errorImage="link.svg"
-            errorMessage="Custom error message"
-            isBlocking={true}
-            src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png"
-          />
-        </a>
-      </div>
-      <div
-        className="body"
-      >
-        <div
-          className="content"
-        >
-          <div
-            className="label"
-          >
-            22 t/m 26 nov.
-          </div>
-          <h2
-            className="title"
-          >
-            Black Friday bij Coolblue
-          </h2>
-          <span>
-            Een selectie van bizarre aanbiedingen.
-          </span>
-          <span
-            className="more-info"
-          >
-            <a
-              href="https://coolblue.nl"
-              target="_blank"
-            >
-              Meer info
-            </a>
-          </span>
-        </div>
-        <div
-          className="footer"
-        >
-          <ClickableComponent
-            href="/deals-overview"
-            icon="link.svg"
-            iconStyle="filled"
-            title="Meer deals"
-            variant="primary-default"
-          />
-          <div
-            className="logo"
-          >
-            <ImageComponent
-              alt="alt text CoolBlue"
-              src="cool-blue.svg"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<component
+  buttonLink="/deals-overview"
+  buttonTitle="Meer deals"
+  image={
+    Object {
+      "alt": "alt text oasis",
+      "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+    }
+  }
+  imageLink="https://coolblue.nl"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  label="22 t/m 26 nov."
+  logo={
+    Object {
+      "alt": "alt text CoolBlue",
+      "src": "cool-blue.svg",
+    }
+  }
+  moreInfoLink="https://coolblue.nl"
+  showAlternativeBanner={false}
+  text="Een selectie van bizarre aanbiedingen."
+  title="Black Friday bij Coolblue"
+/>
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallowWithIntl } from "enzyme-react-intl";
 
 import { StoreOverview, getTotalHeight } from "@app/modules/store-overview/components/store-overview.component";
 import { generateStoreOverviewModule } from "@app/api/modules/store-overview/generate-dummy-data";
@@ -7,7 +7,7 @@ import { ViewType } from "@app/stores/settings";
 /* tslint:disable */
 describe("[StoreOverview]", () => {
   it("should render without crashing", () => {
-    const renderedComponent = shallow(
+    const renderedComponent = shallowWithIntl(
       <StoreOverview
         brandFilterItems={[]}
         categoryFilterItems={[]}

@@ -7,6 +7,7 @@ import { ClickableComponent } from "../clickable";
 import Search from "@assets/icons/search.svg";
 import { CheckboxCount } from "../checkbox-count/checkbox-count.component";
 import { Input } from "@app/core/input/input.component";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface ISearchableCheckboxDropdownProps {
   deleteFilterLabel: string;
@@ -17,7 +18,7 @@ export interface ISearchableCheckboxDropdownProps {
   title: string;
 }
 
-const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => {
+const component = (props: ISearchableCheckboxDropdownProps & InjectedIntlProps) => {
   const [search, setSearch] = useState<string>("");
   const [internalItems, setInternalItems] = useState<FilterItem[]>(props.items);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -113,7 +114,7 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
               {internalItems.length > 0 ? (
                 internalItems.map((item, key) => <CheckboxCount key={key} item={item} onChecked={onChange} />)
               ) : (
-                <div>Geen resultaten</div>
+                <div>{props.intl.formatMessage({ id: "dropdown-no-result" })}</div>
               )}
             </div>
           </div>
@@ -131,7 +132,9 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
 
               <li>
                 <ClickableComponent
-                  title={`Toon ${getTotalCount()} ${props.showFilterName}`}
+                  title={`${props.intl.formatMessage({ id: "dropdown-button" })} ${getTotalCount()} ${
+                    props.showFilterName
+                  }`}
                   variant="primary-brand"
                   onClick={persistFilters}
                 />
@@ -143,5 +146,5 @@ const SearchableCheckboxDropdown = (props: ISearchableCheckboxDropdownProps) => 
     </div>
   );
 };
-
+const SearchableCheckboxDropdown = injectIntl(component);
 export { SearchableCheckboxDropdown };
