@@ -15,7 +15,9 @@ export const generateDummyNavbarData = (): INavBarModule => ({
   id: "1",
   name: "NavBarModule",
   navbarMenuItem: [
-    { url: "./blog-overview", text: "BlackFriday 2019" } as MenuItemLink,
+    { url: "./stores-overview", text: "Winkels" } as MenuItemLink,
+    { url: "./deals-overview", text: "Productdeals" } as MenuItemLink,
+    { url: "./black-friday-2019", text: "BlackFriday 2019" } as MenuItemLink,
     { url: "./blog-overview", text: "Cyber Monday" } as MenuItemLink,
     { url: "./blog-overview", text: "Partner worden?" } as MenuItemLink,
     { url: "./blog-overview", text: "Blog" } as MenuItemLink,
