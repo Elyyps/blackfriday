@@ -8,9 +8,8 @@ export const generateBlogOverviewHeaderDummyData = (): BlogSingleHeaderModule =>
   links: [{ title: "Home", url: "" }, { title: "Alle blogs", url: "" }],
   button: { title: "Alle blogs", url: "" },
   name: "BlogSingleHeaderModule",
-  bottomMargin: "48px",
-  id: "0",
-  topMargin: "0"
+  bottomMargin: { mobileSpacing: 24, desktopSpacing: 48 },
+  id: "0"
 });
 
 export const generateBlogSingleHeaderDummyData = (): BlogSingleHeaderModule => ({
@@ -19,9 +18,8 @@ export const generateBlogSingleHeaderDummyData = (): BlogSingleHeaderModule => (
   links: [{ title: "Home", url: "" }, { title: "Alle blogs", url: "" }],
   button: { title: "Alle blogs", url: "" },
   name: "BlogSingleHeaderModule",
-  bottomMargin: "48px",
-  id: "0",
-  topMargin: "0px"
+  bottomMargin: { mobileSpacing: 24, desktopSpacing: 48 },
+  id: "0"
 });
 
 export const generateBF2019HeaderDummyData = (): BlogSingleHeaderModule => ({
@@ -30,7 +28,6 @@ export const generateBF2019HeaderDummyData = (): BlogSingleHeaderModule => ({
   links: [{ title: "Home", url: "" }],
   button: { title: "Alle blogs", url: "" },
   name: "BlogSingleHeaderModule",
-  bottomMargin: "48px",
-  id: "0",
-  topMargin: "0px"
+  bottomMargin: { mobileSpacing: 24, desktopSpacing: 48 },
+  id: "0"
 });

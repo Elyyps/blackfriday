@@ -6,8 +6,8 @@ export class NotYetImplemented extends WordPressPostModule {
 
 export const generateNotYetImplemented = (moduleName: string): NotYetImplemented => ({
   id: "1",
-  bottomMargin: "40px",
-  topMargin: "40px",
+  bottomMargin: { mobileSpacing: 24, desktopSpacing: 48 },
+  topMargin: { mobileSpacing: 24, desktopSpacing: 48 },
   name: "notYetImplemented",
   moduleName
 });

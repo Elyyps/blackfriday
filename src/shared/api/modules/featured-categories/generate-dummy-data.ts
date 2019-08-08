@@ -37,11 +37,9 @@ export const generateDummyFeaturedCategoriesData = (): FeaturedCategoriesModule 
       link: { url: "/stores-single", title: "Categorie item zonder afbeelding" }
     }
   ],
-  bottomPadding: { desktopPadding: 72, mobilePadding: 48 },
-  topPadding: { desktopPadding: 72, mobilePadding: 48 },
+  bottomPadding: { desktopSpacing: 72, mobileSpacing: 48 },
+  topPadding: { desktopSpacing: 72, mobileSpacing: 48 },
   background: { backgroundColour: "#f7f7f7" },
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "FeaturedCategoriesModule"
 });
