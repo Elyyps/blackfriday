@@ -21,14 +21,14 @@ const ExpandablePanelComponent = (props: IExpandablePanelComponentProps) => {
     <React.Fragment>
       <div className={style["expandable-panel"]}>
         <div
-          role="listitem"
+          role="list"
           className={classNames(
             `${style["expandable-panel__block"]}`,
             props.opened && `${style["expandable-panel__block__open"]}`
           )}
         >
           <ul className={style["expandable-panel__list"]}>
-            <li role="button" aria-label="expandButton" onClick={invokeCallback}>
+            <li role="listitem" aria-label="expanded panel" onClick={invokeCallback}>
               {props.mainContent}
               <div
                 className={classNames(

@@ -5,6 +5,7 @@ exports[`[Select] should render component without crashing 1`] = `
   className="select"
 >
   <select
+    aria-label="Select"
     className="select-title"
     onChange={[Function]}
     onSelect={[Function]}

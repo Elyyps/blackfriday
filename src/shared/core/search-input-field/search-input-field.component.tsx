@@ -15,6 +15,7 @@ const SearchInputFieldComponent = ({ value, placeholder, onChange }: ISearchInpu
       <IconComponent size="14px" icon={SearchIcon} fillColor="#777" />
     </div>
     <input
+      aria-label="Search input"
       value={value}
       placeholder={placeholder}
       onChange={event => {

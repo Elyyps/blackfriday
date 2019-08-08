@@ -8,6 +8,7 @@ exports[`[Footer] should render component without crashing 1`] = `
     className="header-info__image"
   >
     <ImageComponent
+      alt="logo"
       src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/apple-iphones-header.jpg"
     />
   </div>
@@ -24,6 +25,7 @@ exports[`[Footer] should render component without crashing 1`] = `
           className="header-info__icon"
         >
           <ImageComponent
+            alt="icon"
             src="store.svg"
           />
         </div>

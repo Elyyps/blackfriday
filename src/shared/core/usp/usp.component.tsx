@@ -42,7 +42,7 @@ const USP = (props: IUSPProps & USPContainerProps) => {
   };
 
   return (
-    <div id="uspHolder" className={styles["usp"]}>
+    <div className={styles["usp"]}>
       {uniqueSellingPoints.map((item, index) => {
         let itemVisibility = 1;
         if (isTablet) {

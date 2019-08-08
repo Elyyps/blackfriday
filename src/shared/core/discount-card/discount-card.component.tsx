@@ -52,7 +52,7 @@ const DiscountCardComponent = (props: IDiscountCardComponentProps) => {
     <div className={styles["discount-card"]}>
       <div className={styles["discount-card__body"]}>
         <div className={styles["discount-card__image"]}>
-          <ImageComponent src={image} />
+          <ImageComponent alt="Logo" src={image} />
         </div>
         <div style={{ color: statusBar(range) }} className={styles["discount-card__label"]}>
           {status}

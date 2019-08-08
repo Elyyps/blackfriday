@@ -14,6 +14,7 @@ exports[`[SearchInputField] should render component without crashing 1`] = `
     />
   </div>
   <input
+    aria-label="Search input"
     onChange={[Function]}
   />
   <div

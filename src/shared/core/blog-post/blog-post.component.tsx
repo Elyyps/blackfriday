@@ -12,7 +12,7 @@ const BlogPostComponent = (props: IBlogPostComponentProps) => (
   <div className={styles["blog-post"]}>
     {props.posts.image && (
       <div className={styles["blog-post__image"]}>
-        <ImageComponent src={props.posts.image} />
+        <ImageComponent alt="Blog image" src={props.posts.image} />
       </div>
     )}
     <div className={styles["blog-post__body"]}>
