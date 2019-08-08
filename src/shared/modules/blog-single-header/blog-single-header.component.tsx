@@ -40,8 +40,8 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => (
     <div className="uk-container">
       {props.blogSingleHeader.items ? (
         <div className={styles["blog-single-header__items"]}>
-          {props.blogSingleHeader.items.map(item => (
-            <div className={styles["blog-single-header__items-card"]}>
+          {props.blogSingleHeader.items.map((item, key) => (
+            <div key={key} className={styles["blog-single-header__items-card"]}>
               <FeaturedBlogItemsComponent item={item} />
             </div>
           ))}
