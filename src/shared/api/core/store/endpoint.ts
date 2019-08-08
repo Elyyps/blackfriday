@@ -2,7 +2,7 @@ import { StoreStatus, Store } from "./store";
 import { generateDemoStoreDummyData } from "./generate-dummy-data";
 import { FilterItem } from "../filter/filter-item";
 import { shuffle } from "@app/util/array";
-
+/* tslint:disable */
 export interface IStoreResult {
   stores: Store[];
   totalResults: number;
@@ -18,22 +18,40 @@ const getStores = (
   brandFilters: FilterItem[],
   sortBy?: string
 ): IStoreResult => {
-  const selectedStoreStatus: StoreStatus | undefined = getSelectedStoreStatus(storeStatusFilters);
+  const selectedStoreStatuses: StoreStatus[] = getSelectedStoreStatus(storeStatusFilters);
   const selectedCategoryFilters = getSelectedFilters(categoryFilters);
   const selectedBrandFilters = getSelectedFilters(brandFilters);
 
   let result = [...initialStoresResult];
 
-  if (selectedStoreStatus !== undefined) {
-    result = result.filter(store => store.status === selectedStoreStatus);
+  if (selectedStoreStatuses.length > 0) {
+    result = result.filter(store => {
+      if (selectedStoreStatuses.indexOf(store.status) > -1) {
+        return true;
+      }
+
+      return false;
+    });
   }
 
   if (selectedCategoryFilters !== undefined) {
-    result = result.filter(store => store.categories.some(r => selectedCategoryFilters.includes(r)));
+    result = result.filter(store => {
+      const items = store.categories.filter(category => {
+        return selectedCategoryFilters.includes(category);
+      });
+
+      return items.length > 0;
+    });
   }
 
   if (selectedBrandFilters !== undefined) {
-    result = result.filter(store => store.availableBrands.some(r => selectedBrandFilters.includes(r)));
+    result = result.filter(store => {
+      const items = store.availableBrands.filter(category => {
+        return selectedBrandFilters.includes(category);
+      });
+
+      return items.length > 0;
+    });
   }
 
   const totalResults = result.length;
@@ -86,14 +104,16 @@ const getStores = (
   };
 };
 
-const getSelectedStoreStatus = (filterItems: FilterItem[]): StoreStatus | undefined => {
-  const selectedItem = filterItems.find(item => item.isSelected);
+const getSelectedStoreStatus = (filterItems: FilterItem[]): StoreStatus[] => {
+  const result: StoreStatus[] = [];
 
-  if (selectedItem) {
-    return convertToStatus(selectedItem.displayName);
-  }
+  filterItems.map(item => {
+    if (item.isSelected) {
+      result.push(convertToStatus(item.displayName));
+    }
+  });
 
-  return undefined;
+  return result;
 };
 
 const getSelectedFilters = (filterItems: FilterItem[]): string[] | undefined => {

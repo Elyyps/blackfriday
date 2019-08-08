@@ -1,5 +1,5 @@
 import { connect, MapStateToProps, MapDispatchToProps } from "react-redux";
-import { IFilterBarProps, FilterBar } from "@app/core/filter-bar-new";
+import { IFilterBarProps, FilterBar } from "@app/core/filter-bar";
 import { IAppState } from "@app/stores";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { storeOverviewActions } from "@app/stores/store-overview";

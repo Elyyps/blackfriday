@@ -14,8 +14,12 @@ export const moduleFetcher: any = () => async (
     if (req.url.indexOf("favicon") > 0) {
       return next();
     }
+    const pageUrl = req.url;
+    const currentPage = pageList.find(pageItem => pageItem.route === pageUrl);
 
-    // res.locals.store.dispatch(pageActions.setPages({ pages: pageList }));
+    const empty: any = {};
+
+    res.locals.store.dispatch(pageActions.setCurrentPage({ page: currentPage || empty }));
   } catch (error) {
     // new FatalError(error.name, error.message, error.stack);
   }

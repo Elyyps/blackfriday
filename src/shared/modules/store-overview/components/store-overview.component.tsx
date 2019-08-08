@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import BottomScrollListener from "react-bottom-scroll-listener";
 
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
-import { FilterBarContainer } from "@app/core/filter-bar-new";
+import { FilterBarContainer } from "@app/core/filter-bar";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
@@ -19,6 +19,7 @@ import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
 import { getOffset, useScrollPosition } from "@app/util";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -50,9 +51,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
 
   const scrollPos = useScrollPosition();
   useEffect(() => {
-    const position = getOffset(mainDivRef.current);
-    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-    const actualScrollPosition = currentScrollPosition - position;
+    const actualScrollPosition = getActualScrollPosition();
 
     if (actualScrollPosition > 0) {
       const totalHeight = getTotalHeight(viewType, props.totalResults);
@@ -69,6 +68,14 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     const overviewItemsResult = getOverviewItems(viewType, props.stores);
     setOverviewItems(overviewItemsResult);
   }, [props.stores, props.screenSize]);
+
+  const getActualScrollPosition = () => {
+    const position = getOffset(mainDivRef.current);
+    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+    const actualScrollPosition = currentScrollPosition - position;
+
+    return actualScrollPosition;
+  };
 
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
@@ -92,7 +99,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
   const filtersChanged = () => {
-    if (mainDivRef && mainDivRef.current) {
+    const actualScrollPosition = getActualScrollPosition();
+    if (mainDivRef && mainDivRef.current && actualScrollPosition > 0) {
       const top = getOffset(mainDivRef.current);
       window.scroll(top, top);
       setPositionPercentage(0);
@@ -137,8 +145,10 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                       </div>
 
                       {advert && (
-                        <div className={`${styles[`stores-overview__body__banner`]} `}>
-                          <BannerComponent {...advert} />
+                        <div>
+                          <div className={`${styles[`stores-overview__body__banner`]} `}>
+                            <BannerComponent {...advert} />
+                          </div>
                         </div>
                       )}
                     </React.Fragment>
@@ -152,7 +162,12 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
               </div>
             ) : (
               <div>
-                <h1>{props.intl.formatMessage({ id: "store-overview-no-result" })}</h1>
+                <CtaSmallComponent
+                  buttonTitle="Verwijder alle filters"
+                  onClick={() => props.clearAllFilters()}
+                  text="Er zijn geen resultaten gevonden met de huidige filters"
+                  icon={props.storeOverviewModule.emptyStateIcon}
+                />
               </div>
             )}
 
@@ -194,7 +209,7 @@ const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewCon
   }
 };
 
-const getTotalHeight = (viewType: ViewType, totalStores: number) => {
+export const getTotalHeight = (viewType: ViewType, totalStores: number) => {
   const lineHeight = getLineHeight(viewType);
   const storesPerLine = getAmountOfItemsPerLine(viewType);
   const totalNumberOfLines = getTotalNumberOfLines(storesPerLine, totalStores);
@@ -267,7 +282,10 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
       showAlternativeBanner = !showAlternativeBanner;
     } else {
       overviewItemsResult.push({
-        advert: undefined,
+        advert:
+          stores.length < showAdEvery && storeIndex === stores.length
+            ? { ...generateDummyBannerComponentData(), showAlternativeBanner }
+            : undefined,
         store
       });
       storeIndex += 1;

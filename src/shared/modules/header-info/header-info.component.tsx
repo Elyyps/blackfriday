@@ -20,7 +20,7 @@ const component = (props: IHeaderInfoComponentProps & InjectedIntlProps) => (
   <div className={styles["header-info"]} style={{ background: props.headerInfo.bgcolor }}>
     {props.headerInfo.image && (
       <div className={styles["header-info__image"]}>
-        <ImageComponent src={props.headerInfo.image} />
+        <ImageComponent alt="logo" src={props.headerInfo.image} />
       </div>
     )}
     <div className="uk-container">
@@ -28,7 +28,7 @@ const component = (props: IHeaderInfoComponentProps & InjectedIntlProps) => (
         <div className={styles["header-info__body__content"]}>
           {props.headerInfo.icon && (
             <div className={styles["header-info__icon"]}>
-              <ImageComponent src={props.headerInfo.icon} />
+              <ImageComponent alt="icon" src={props.headerInfo.icon} />
             </div>
           )}
           <div className={styles["header-info__content"]}>

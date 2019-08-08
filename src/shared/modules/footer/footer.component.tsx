@@ -65,7 +65,9 @@ const FooterComponent = (props: IFooterComponentProps) => {
                     <ul className={styles["footer__column-nav"]}>
                       {item.links.map((link, i) => (
                         <li key={i}>
-                          <a href={link.url}>{link.title}</a>
+                          <a aria-label={`Footbar link to ${link.title}`} href={link.url}>
+                            {link.title}
+                          </a>
                         </li>
                       ))}
                     </ul>
@@ -113,7 +115,12 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   <div className={styles["footer__social"]}>
                     {props.footerModule.middleFooter.socialMedia.socialItem.map((item, index) => (
                       <div className={styles["footer__social-items"]} key={index}>
-                        <a href={item.link} className={styles["footer__social-link"]} target="_blank">
+                        <a
+                          aria-label="Logo link"
+                          href={item.link}
+                          className={styles["footer__social-link"]}
+                          target="_blank"
+                        >
                           <div className={styles["footer__social-icon"]}>
                             <IconComponent icon={item.image} size="15px" />
                           </div>
@@ -212,7 +219,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
         <div className="uk-container">
           <div className={styles["footer__bottom-holder"]}>
             <div className={styles["footer__logo-box"]}>
-              <Link to="./" className={`uk-visible@m ${styles["footer__logo"]}`}>
+              <Link aria-label="Logo link" to="./" className={`uk-visible@m ${styles["footer__logo"]}`}>
                 <ImageComponent src={props.footerModule.bottomFooter.logo} alt="image" />
               </Link>
               {props.footerModule.bottomFooter.copyright}

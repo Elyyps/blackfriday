@@ -3,25 +3,28 @@ import * as React from "react";
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
-import { FilterBar } from "./filter-bar.component";
+import { StoreOverview } from "./store-overview.component";
 import { ViewType } from "@app/stores/settings";
+import { generateStoreOverviewModule } from "@app/api/modules/store-overview/generate-dummy-data";
 /* tslint:disable */
-storiesOf("Filter bar", module)
+storiesOf("Store overview", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
-    <FilterBar
-      filtersChanged={() => {}}
+    <StoreOverview
       brandFilterItems={[]}
       categoryFilterItems={[]}
       screenSize={{ breakpointPixels: 0, viewType: ViewType.Desktop }}
       sortBy=""
       statusFilterItems={[]}
+      stores={[]}
       totalResults={100}
-      clearFilters={() => {}}
+      storeOverviewModule={generateStoreOverviewModule()}
+      getStores={() => {}}
       setBrandFilters={() => {}}
       setCategoryFilters={() => {}}
       setSortBy={() => {}}
       setStatusFilters={() => {}}
+      clearAllFilters={() => {}}
     />
   ));

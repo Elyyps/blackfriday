@@ -23,10 +23,9 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
       <BodyTextComponent
         bodyTextModule={
           Object {
-            "bottomMargin": "",
             "bottomPadding": Object {
-              "desktopPadding": 72,
-              "mobilePadding": 32,
+              "desktopSpacing": 72,
+              "mobileSpacing": 32,
             },
             "containerAlignment": "center",
             "containerSize": "full",
@@ -79,10 +78,9 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
       </p>",
             "id": "1",
             "name": "BlogBodyText",
-            "topMargin": "",
             "topPadding": Object {
-              "desktopPadding": 72,
-              "mobilePadding": 32,
+              "desktopSpacing": 72,
+              "mobileSpacing": 32,
             },
           }
         }

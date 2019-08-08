@@ -5,14 +5,12 @@ exports[`[Footer] should render component without crashing 1`] = `
   headerInfo={
     Object {
       "bgcolor": "#f7f7f7 ",
-      "bottomMargin": "0px",
       "content": "Vier Black Friday bij Apple en ontvang 15% korting op alles!",
       "icon": "store.svg",
       "id": "1",
       "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/apple-iphones-header.jpg",
       "name": "HeaderInfo",
       "title": "Black Friday 2019 bij Apple",
-      "topMargin": "0px",
       "url": "./",
     }
   }

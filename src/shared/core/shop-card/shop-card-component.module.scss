@@ -26,6 +26,26 @@
     min-height: 168px;
   }
 
+  &__label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: $brand-primary;
+    color: $global-inverse-color;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 1.44;
+    font-weight: bold;
+    display: flex;
+    border-radius: $global-border-radius;
+    overflow: hidden;
+    padding: 4px 8px;
+    align-items: center;
+    span:first-child {
+      margin-right: 5px;
+    }
+  }
+
   &__body {
     flex: 1 1 auto;
     @media (max-width: 768px) {

@@ -9,8 +9,6 @@ export const generateMediumHeroDummyData = (): MediumHeroModule => ({
   },
   image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/store-banner.jpg",
   usps: uniqueSellingPoints,
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "MediumHeroModule"
 });

@@ -30,11 +30,11 @@ const ModalComponent = (props: IModalComponentProps) => {
   return (
     <React.Fragment>
       {props.isTriggerOnClick ? (
-        <div role={"botton"} onClick={() => setModal(true)}>
+        <div role={"button"} onClick={() => setModal(true)}>
           {props.trigger}
         </div>
       ) : (
-        <div role={"botton"} onMouseDown={() => setModal(true)}>
+        <div role={"button"} onMouseDown={() => setModal(true)}>
           {props.trigger}
         </div>
       )}

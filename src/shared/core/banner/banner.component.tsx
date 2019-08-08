@@ -49,7 +49,7 @@ const component = (props: IBannerComponentProps & InjectedIntlProps) => {
       <div className={styles[classModify]}>
         <div className={`${styles["holder"]} ${showAlternativeBanner && styles["row-reverse"]}`}>
           <div className={styles["image"]}>
-            <a href={imageLink} target="_blank" role="button">
+            <a aria-label="Open link" href={imageLink} target="_blank" role="button">
               <ImageComponent
                 alt={image && image.alt}
                 src={image && image.src}
