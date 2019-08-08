@@ -162,7 +162,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
         orientation="bottom-left"
         title="Categories"
       >
-        <SearchFilterControlComponent
+        <InjectIntl(component)
           applyFilter={[MockFunction]}
           checkbox={
             Array [
@@ -210,7 +210,7 @@ exports[`[FilterBar] should render component without crashing 1`] = `
         orientation="bottom-left"
         title="Brands"
       >
-        <SearchFilterControlComponent
+        <InjectIntl(component)
           applyFilter={[MockFunction]}
           checkbox={
             Array [

@@ -2,7 +2,7 @@
 
 exports[`[BannerModule] should render component without crashing 1`] = `
 <Fragment>
-  <BannerComponent
+  <InjectIntl(component)
     buttonLink="/deals-overview"
     buttonTitle="Meer deals"
     image={

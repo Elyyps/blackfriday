@@ -81,7 +81,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                       <React.Fragment>
                         <LinkComponent key={index} to={link.url}>
                           {link.title}
-                        </LinkComponent>{" "}
+                        </LinkComponent>
                         {index < links.length - 1 ? " - " : ""}
                       </React.Fragment>
                     );
