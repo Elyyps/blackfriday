@@ -62,6 +62,7 @@ const component = (props: IFeaturedCategoriesProps & FeaturedCategoriesContainer
                   ? props.intl.formatMessage({ id: "featured-categories-clickable-title-mobile" })
                   : props.intl.formatMessage({ id: "featured-categories-clickable-title" })
               }
+              disableSelect
               variant="link-primary"
               iconPosition="right"
               icon={ChevronDown}
