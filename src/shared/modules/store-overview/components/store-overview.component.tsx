@@ -193,9 +193,9 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             ) : (
               <div>
                 <CtaSmallComponent
-                  buttonTitle="Verwijder alle filters"
+                  buttonTitle={props.intl.formatMessage({ id: "filter-bar-clear-filters" })}
                   onClick={() => props.clearAllFilters()}
-                  text="Er zijn geen resultaten gevonden met de huidige filters"
+                  text={props.intl.formatMessage({ id: "store-overview-no-results-with-filters" })}
                   icon={props.storeOverviewModule.emptyStateIcon}
                 />
               </div>
