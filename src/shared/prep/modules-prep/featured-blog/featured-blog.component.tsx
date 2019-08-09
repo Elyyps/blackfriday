@@ -26,7 +26,7 @@ const FeaturedBlogComponent = (props: IFeaturedBlogComponentProps) => {
                   <div className="featured-blog__card-image">
                     <ImageComponent src={item.image} />
                   </div>
-                  <h3 className="featured-blog__card-title">{item.title}</h3>
+                  <h2 className="featured-blog__card-title">{item.title}</h2>
                 </Link>
               </div>
             ))}
