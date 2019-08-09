@@ -72,7 +72,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
           <div className={"uk-width-2-3@s"}>
             <div className={styles["product-detail__body"]}>
               <div className={styles["product-detail__header"]}>
-                <img src={picture} alt="image" />
+                <img src={picture} alt="product detail logo" />
               </div>
               <div className={styles["product-detail__content"]}>
                 <div className={styles["product-detail__content__subtitle"]}>

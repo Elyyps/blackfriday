@@ -10,9 +10,11 @@ export const generateDummyFullBodyTextModule = (html: string): BodyTextModule =>
 
 export const generateHomepageBodytextDummyData = () => ({
   html: `<div>
+  <div>
     <h1>
       <strong>Black Friday België</strong>
     </h1>
+    </div>
     <p>
       Black Friday is sterk in opkomst in België en dat is goed nieuws voor de koopjesjagers en retailers! Black Friday
       vindt elke vierde vrijdag van november plaats, de dag na het Amerikaanse Thanksgiving.Op die dag doet iedereen
