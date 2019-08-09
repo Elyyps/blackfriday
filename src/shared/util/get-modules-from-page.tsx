@@ -47,6 +47,8 @@ import { StoreOverviewContainer } from "@app/modules/store-overview/containers/s
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 import { HeaderInfoComponent } from "@app/modules/header-info";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
+import { HomePageHeaderContainer } from "@app/modules/homepage-header/containers/homepage-header-container";
+import { NavBarContainer } from "@app/modules/nav-bar/cointeners/nav-bar-containers";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -61,11 +63,11 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "FooterModule":
       return <FooterComponent footerModule={wordPressModule as FooterModule} />;
     case "HomepageHeader":
-      return <HomePageHeaderComponent homePageModule={wordPressModule as HomepageHeader} />;
+      return <HomePageHeaderContainer homePageModule={wordPressModule as HomepageHeader} />;
     case "MediumHeroModule":
       return <MediumHeroComponent mediumHeroModule={wordPressModule as MediumHeroModule} />;
     case "NavBarModule":
-      return <NavBarComponent navBarModule={wordPressModule as INavBarModule} />;
+      return <NavBarContainer navBarModule={wordPressModule as INavBarModule} />;
     case "NewsletterModule":
       return <NewsletterComponent newsletterModule={wordPressModule as NewsletterModule} />;
     case "notYetImplemented":

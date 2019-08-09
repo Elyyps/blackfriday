@@ -9,7 +9,7 @@ import bodyParser from "body-parser";
 import paths from "../../config/paths";
 import errorHandler from "./middleware/error-handler";
 import serverRenderer from "./middleware/server-renderer";
-import { moduleFetcher, setIsMobile } from "./middleware/initial-store-handler";
+import { moduleFetcher, setIsMobile, setBlackFridayDate } from "./middleware/initial-store-handler";
 import { addStore } from "./middleware/store-handler";
 
 require("dotenv").config();
@@ -45,6 +45,11 @@ app.use(moduleFetcher());
 
 // Set mobile state in redux state for initial margin purposes
 app.use(setIsMobile());
+
+// Set current year in redux state
+app.use(setBlackFridayDate());
+
+// Set count down in redux state
 
 // Render the HTML and sent it to the server.
 app.use(serverRenderer());

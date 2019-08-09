@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { HomePageHeaderComponent } from "../homepage-header";
+import { HomePageHeaderComponent } from "..";
 
 import { getHeaderpageHeader } from "@app/api/modules/homepage-header/endpoints";
 describe("[homepageHeader]", () => {

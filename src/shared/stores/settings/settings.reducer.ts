@@ -17,11 +17,13 @@ export interface IScreenSize {
 }
 
 export interface ISettingsState {
+  blackFridayDate: ActionType.IBlackFridayDate | undefined;
   screenSize: IScreenSize | undefined;
 }
 
 const INITIAL_STATE: ISettingsState = {
-  screenSize: undefined
+  screenSize: undefined,
+  blackFridayDate: undefined
 };
 
 export const settingsReducer = (state: ISettingsState = INITIAL_STATE, action: Action): ISettingsState => {
@@ -31,6 +33,12 @@ export const settingsReducer = (state: ISettingsState = INITIAL_STATE, action: A
 
       return { ...state, screenSize };
     }
+    case REDUX.SETTINGS.SET_BLACK_FRIDAY_DATE: {
+      const blackFridayDate = <ActionType.IBlackFridayDate>action;
+
+      return { ...state, blackFridayDate };
+    }
+
     default: {
       return state;
     }

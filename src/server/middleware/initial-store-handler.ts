@@ -56,3 +56,32 @@ export const setIsMobile: any = () => async (
 
   return next();
 };
+const BLACK_FRIDAY_DAY = 8;
+const BLACK_FRIDAY_MONTH = 8;
+export const setBlackFridayDate: any = () => async (
+  req: express.Request & { store: any },
+  res: express.Response,
+  next: express.NextFunction
+) => {
+  const year = getBlackFridayYear();
+  res.locals.store.dispatch(
+    settingsActions.setBlackFridayDate({ day: BLACK_FRIDAY_DAY, month: BLACK_FRIDAY_MONTH - 1, year })
+  );
+  next();
+};
+
+const getBlackFridayYear = (): number => {
+  let nextBlackFridayYear;
+  const dateBlackFridayCurrentYear = new Date(new Date().getFullYear(), BLACK_FRIDAY_MONTH - 1, BLACK_FRIDAY_DAY);
+  dateBlackFridayCurrentYear.setHours(0, 0, 0, 0);
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+
+  if (currentDate <= dateBlackFridayCurrentYear) {
+    nextBlackFridayYear = dateBlackFridayCurrentYear.getFullYear();
+  } else {
+    nextBlackFridayYear = dateBlackFridayCurrentYear.getFullYear() + 1;
+  }
+
+  return nextBlackFridayYear;
+};

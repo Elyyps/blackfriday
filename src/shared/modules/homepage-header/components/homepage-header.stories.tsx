@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
-import { HomePageHeaderComponent } from "../homepage-header";
+import { HomePageHeaderComponent } from "..";
 
 import { getHeaderpageHeader } from "@app/api/modules/homepage-header/endpoints";
 
