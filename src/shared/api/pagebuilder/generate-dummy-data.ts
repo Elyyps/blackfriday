@@ -15,11 +15,8 @@ import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dum
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
-import {
-  generateBlogSingleHeaderData,
-  generateBlogOverviewHeaderData,
-  generateBF2019HeaderData
-} from "../modules/blog-single-header/endpoint";
+import { generateBlogSingleHeaderData, generateBF2019HeaderData } from "../modules/blog-single-header/endpoint";
+import { generateBlogOverviewHeaderData } from "../modules/blog-overview-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";

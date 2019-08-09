@@ -1,18 +1,37 @@
+.header-content {
+  display: flex;
+  flex-direction: column;
+}
+
 h1 {
   font-weight: bold;
   color: currentColor;
+  margin-bottom: 0px;
   &.subtitle {
     font-weight: normal;
-    margin-top: -16px;
   }
 }
 
 .text {
-  color: currentColor;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 8px;
 }
 
 @media (max-width: $breakpoint-xsmall-max) {
-  .header-content {
-    text-align: left;
+  .left {
+    &.header-content {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  .center {
+    &.header-content {
+      text-align: center;
+    }
+  }
+
+  h1.subtitle {
+    margin-top: 8px;
   }
 }
