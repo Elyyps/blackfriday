@@ -1,8 +1,7 @@
 import * as React from "react";
 import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
-import { ImageComponent } from "@app/prep/modules-prep/core";
-import { LinkComponent } from "../link";
+import { ImageComponent } from "@app/core";
 import ShopIcon from "@assets/icons/link.svg";
 import { ShadowCardComponent } from "../shadow-card";
 import { Store } from "@app/api/core/store/store";
@@ -19,6 +18,7 @@ export interface IShopCardComponentProps {
 
 const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
   const { description, logo, moreInfoLink, name, status, timeLeftPercentage, label } = props.store;
+  const shopCardVariant = props.variant || "default";
 
   const getStatusBarColor = () => {
     const rangeNumber = timeLeftPercentage;
@@ -36,7 +36,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
 
   return (
     <ShadowCardComponent fullWidth>
-      <div className={`${styles["shop-card"]} ${styles[`shop-card--${props.variant || "default"}`]}`}>
+      <div className={`${styles["shop-card"]} ${styles[`shop-card--${shopCardVariant}`]}`}>
         {label && (
           <div className={styles["shop-card__label"]}>
             <IconComponent icon={IconHot} fillColor="white" size={"12px"} />
@@ -56,8 +56,12 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
 
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{name}</div>
-            {description}
-            <LinkComponent to="/stores-single"> {props.intl.formatMessage({ id: "see-more" })}</LinkComponent>
+            <span className={styles["shop-card__description"]}>{description}</span>
+            <ClickableComponent
+              href="/stores-single"
+              title={props.intl.formatMessage({ id: "see-more" })}
+              variant="link-primary"
+            />
           </div>
         </div>
         <div className={styles["shop-card__action"]}>

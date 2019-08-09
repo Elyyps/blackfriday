@@ -1,4 +1,5 @@
-.shop-card {
+.shop-card,
+.shop-card--default {
   display: flex;
   flex-direction: column;
   border-radius: $global-border-radius;
@@ -44,6 +45,11 @@
     span:first-child {
       margin-right: 5px;
     }
+
+    @media (max-width: 768px) {
+      right: 8px;
+      left: auto;
+    }
   }
 
   &__body {
@@ -51,6 +57,7 @@
     @media (max-width: 768px) {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: row-reverse;
     }
   }
 
@@ -63,42 +70,43 @@
   }
 
   &__bar {
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       position: absolute;
       bottom: 58px;
       left: 16px;
       right: 16px;
       box-sizing: border-box;
-      bottom: 50px;
     }
   }
   &__image {
-    padding-bottom: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     object-fit: contain;
-    min-height: 90px;
-    max-height: 90px;
-    max-width: 90px;
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 90px;
     box-sizing: border-box;
     margin: auto;
-    padding: 0 12px 12px 12px;
-    @media (max-width: 768px) {
-      order: 2;
-      max-width: 90px;
-      max-height: 90px;
-      width: 100%;
-      height: 100%;
-      flex: 0 0 90px;
-      margin: 0;
-    }
     img,
     svg {
       margin: 0 auto;
-      max-height: 100%;
+      max-height: 60%;
+      max-width: 60%;
+    }
+    @media (max-width: 768px) {
+      width: 72px;
+      height: 56px;
+      margin: 0;
+      img,
+      svg {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 310px) {
+      width: 56px;
+      height: 48px;
+      margin: 0;
     }
   }
 
@@ -118,25 +126,32 @@
       max-height: 70px;
       min-height: 70px;
     }
+
     a {
-      color: $gray;
       text-decoration: none;
+      width: auto;
+      font-size: 14px;
+      font-weight: 600;
     }
   }
 
+  &__description {
+    margin-right: 4px;
+  }
+
   &__action {
-    flex: 0 0 auto;
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    > * {
-      width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    a,
+    button {
+      width: auto;
     }
-    @media (max-width: 768px) {
-      position: absolute;
-      right: 16px;
-      left: 50%;
+
+    @media (min-width: 768px) {
+      a,
+      button {
+        width: 100%;
+      }
     }
   }
 

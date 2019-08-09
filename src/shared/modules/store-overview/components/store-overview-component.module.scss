@@ -11,7 +11,7 @@
 }
 .no-black-friday {
   margin: auto;
-  margin-top: 30px;
+  margin-top: 32px;
   margin-bottom: 40px;
   width: 429px;
 }
@@ -24,26 +24,27 @@
   &__body {
     color: red;
     &__banner {
-      margin: 10px 5px 10px 5px;
+      margin: 10px 8px 10px 8px;
     }
     &__list {
-      margin: 0 -5px 0 -5px;
+      margin: 0 -8px 0 -8px;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
     }
     &__cards {
-      flex: 1 1 19%;
-      margin: 5px;
+      box-sizing: border-box;
+      width: 20%;
+      padding: 8px;
       @media (max-width: 1200px) {
-        flex: 1 1 23%;
+        width: 25%;
       }
-      @media (max-width: 960px) {
-        flex: 1 1 31%;
+      @media (max-width: 959px) {
+        width: 33.3333%;
       }
 
       @media (max-width: 768px) {
-        flex: 1 1 100%;
+        width: 100%;
       }
     }
   }
