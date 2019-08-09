@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BlogSingleHeader] should render component without crashing 1`] = `
+<div
+  className="blog-single-header"
+>
+  <div
+    className="breadcrumbs"
+  >
+    <div
+      className="uk-container"
+    >
+      <HeaderContentComponent
+        breadcrumbProps={
+          Object {
+            "backButton": Object {
+              "title": "Terug",
+              "url": "/#",
+            },
+            "links": Array [
+              Object {
+                "title": "Home",
+                "url": "/",
+              },
+              Object {
+                "title": "Alle blogs",
+                "url": "#",
+              },
+            ],
+            "variant": "light",
+          }
+        }
+        title="Black Friday 2019 blog"
+      />
+    </div>
+  </div>
+  <div
+    className="uk-container"
+  >
+    <div
+      className="blog-items"
+    >
+      <div
+        className="blog-item"
+        key="0"
+      >
+        <FeaturedBlogItemsComponent
+          item={
+            Object {
+              "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+              "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png",
+              "link": Object {
+                "title": "Lees meer",
+                "url": "/blog-single",
+              },
+              "title": "De beste Moederdag cadeau deals",
+            }
+          }
+        />
+      </div>
+      <div
+        className="blog-item"
+        key="1"
+      >
+        <FeaturedBlogItemsComponent
+          item={
+            Object {
+              "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+              "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/1.png",
+              "link": Object {
+                "title": "Lees meer",
+                "url": "/blog-single",
+              },
+              "title": "Black Friday wordt Black Week – deals beginnen eerder",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

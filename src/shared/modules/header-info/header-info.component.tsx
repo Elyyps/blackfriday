@@ -10,6 +10,7 @@ import { Badge } from "@app/core/badge";
 import ShareSVG from "@assets/icons/share.svg";
 
 import { LinkComponent } from "@app/core/link";
+import { BreadcrumbComponent } from "@app/core/breadcrumb";
 
 export interface IHeaderInfoComponentProps {
   headerInfo: HeaderInfo;
@@ -31,6 +32,15 @@ const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => (
             </div>
           )}
           <div className={styles["header-info__content"]}>
+            {props.headerInfo.breadcrumbProps && (
+              <div className={styles["breadcrumbs"]}>
+                <BreadcrumbComponent
+                  links={props.headerInfo.breadcrumbProps.links}
+                  backButton={props.headerInfo.breadcrumbProps.backButton}
+                  variant={props.headerInfo.breadcrumbProps.variant}
+                />
+              </div>
+            )}
             <h1 className={styles["header-info__title"]}>{props.headerInfo.title}</h1>
             {`${props.headerInfo.content} `}
             <LinkComponent to={props.headerInfo.url}>Meer info</LinkComponent>

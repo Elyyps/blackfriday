@@ -35,6 +35,31 @@ exports[`[Footer] should render component without crashing 1`] = `
         <div
           className="header-info__content"
         >
+          <div
+            className="breadcrumbs"
+          >
+            <BreadcrumbComponent
+              backButton={
+                Object {
+                  "title": "Terug",
+                  "url": "/#",
+                }
+              }
+              links={
+                Array [
+                  Object {
+                    "title": "Home",
+                    "url": "/",
+                  },
+                  Object {
+                    "title": "Alle winkels",
+                    "url": "/stores-overview",
+                  },
+                ]
+              }
+              variant="dark"
+            />
+          </div>
           <h1
             className="header-info__title"
           >

@@ -46,7 +46,7 @@ exports[`[MediumHero] should render component without crashing 1`] = `
       <div
         className="image"
       >
-        <img
+        <ImageComponent
           alt="temp alt"
           src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/store-banner.jpg"
         />
@@ -55,6 +55,7 @@ exports[`[MediumHero] should render component without crashing 1`] = `
         className="content"
       >
         <HeaderContentComponent
+          headerMobilePosition="center"
           subtitle="Deelnemende winkels van 2019"
           title="Black Friday Winkels"
         />
