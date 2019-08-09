@@ -24,7 +24,7 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
         <div className="uk-width-1-2@s">
           <TextFieldComponent
             label="Naam"
-            placeholder="placeholder"
+            placeholder=""
             value={props.values.name}
             onChange={props.handleChange}
             onBlur={props.handleBlur}
@@ -36,7 +36,7 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
         <div className="uk-width-1-2@s">
           <TextFieldComponent
             label="E-mailadres"
-            placeholder="placeholder"
+            placeholder=""
             value={props.values.emailAddress}
             onChange={props.handleChange}
             onBlur={props.handleBlur}
@@ -49,7 +49,7 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
       <div className={`${styles["newsletter-forms__text-field"]} "uk-margin-small-top"`}>
         <TextFieldComponent
           label="Bericht"
-          placeholder="placeholder"
+          placeholder=""
           value={props.values.message}
           onChange={props.handleChange}
           onBlur={props.handleBlur}
