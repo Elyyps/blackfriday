@@ -15,8 +15,7 @@ const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => 
       }}
       style={props.currentLocale === LOCALES.NL ? { color: "#e10a14" } : { color: "white" }}
     >
-      {props.intl.formatMessage({ id: "menu-language-switch_nl" })}
-    </span>
+Nederlands    </span>
     <div>/</div>
     <span
       role="button"
@@ -25,8 +24,7 @@ const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => 
       }}
       style={props.currentLocale === LOCALES.FR ? { color: "#e10a14" } : { color: "white" }}
     >
-      {props.intl.formatMessage({ id: "menu-language-switch_fr" })}
-    </span>
+Français    </span>
   </div>
 );
 const LanguageSwitchComponent = injectIntl(component);
