@@ -19,6 +19,8 @@ import { LinkComponent } from "@app/core/link";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { ClickableComponent } from "@app/core/clickable";
+import { BreadcrumbComponent } from "@app/core/breadcrumb";
+import { ShadowCardComponent } from "@app/core/shadow-card";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
@@ -26,7 +28,7 @@ export interface IShopSingleHeaderComponentProps {
 
 const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) => {
   const {
-    links,
+    breadcrumbProps,
     checkList,
     CheckListTitle,
     bodyTextModule,
@@ -70,94 +72,89 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
             </div>
           </div>
           <div className={"uk-width-2-3@s"}>
-            <div className={styles["product-detail__body"]}>
-              <div className={styles["product-detail__header"]}>
-                <img src={picture} alt="product detail logo" />
-              </div>
-              <div className={styles["product-detail__content"]}>
-                <div className={styles["product-detail__content__subtitle"]}>
-                  {links.map((link, index) => {
-                    return (
-                      <React.Fragment>
-                        <LinkComponent key={index} to={link.url}>
-                          {link.title}
-                        </LinkComponent>
-                        {index < links.length - 1 ? " - " : ""}
-                      </React.Fragment>
-                    );
-                  })}
+            <ShadowCardComponent>
+              <div className={styles["product-detail__body"]}>
+                <div className={styles["product-detail__header"]}>
+                  <img src={picture} alt="image" />
                 </div>
-                <div className={styles["content"]}>
-                  <div className={styles["content__head"]}>
-                    <h1 style={{ margin: "0" }}>{title}</h1>
-                    <div className={`${styles["content__head__stars"]} uk-visible@s`}>
-                      <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
-                      {rating.text}
-                    </div>
-                  </div>
-                  <div className={styles["content__body"]}>
-                    <BodyTextComponent style={{ margin: 0, padding: 0 }} bodyTextModule={bodyTextModule} />
-                  </div>
-                  {checkList && (
-                    <div className="uk-visible@s">
-                      <h4>{CheckListTitle}</h4>
-                      <div className={styles["product-detail__list"]}>
-                        {checkList.map((item, key) => (
-                          <div key={key} className={styles["product-detail__list__item"]}>
-                            <IconComponent size={"16px"} icon={CheckIcon} />
-                            <div className={styles["product-detail__list__item__text"]}>{item}</div>
-                          </div>
-                        ))}
-                      </div>
+                <div className={styles["product-detail__content"]}>
+                  {breadcrumbProps && (
+                    <div className={styles["product-detail__content__subtitle"]}>
+                      <BreadcrumbComponent links={breadcrumbProps.links} backButton={breadcrumbProps.backButton} />
                     </div>
                   )}
-                </div>
-                <div className={styles["product-detail__footer"]}>
-                  <div className={styles["actions"]} data-uk-margin>
-                    <div className={styles["actions__item"]}>
-                      <ClickableComponent
-                        variant="link-primary"
-                        href={storeLink.url}
-                        title={storeLink.title}
-                        iconStyle="filled"
-                        icon={IconDefault}
-                      />
-
-                      <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
+                  <div className={styles["content"]}>
+                    <div className={styles["content__head"]}>
+                      <h1 style={{ margin: "0" }}>{title}</h1>
+                      <div className={`${styles["content__head__stars"]} uk-visible@s`}>
                         <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
-                        {rating.text}
+                        <span>{rating.text}</span>
                       </div>
                     </div>
-                    <div className={styles["actions__item"]}>
-                      <div className={styles["actions__item-wrap"]}>
-                        <div className="uk-hidden@s">
-                          <Button
-                            icon={HeartIcon}
-                            iconPosition="left"
-                            title={smallBackLink.title}
-                            variant={"secondary"}
+                    <div className={styles["content__body"]}>
+                      <BodyTextComponent style={{ margin: 0, padding: 0 }} bodyTextModule={bodyTextModule} />
+                    </div>
+                    {checkList && (
+                      <div className="uk-visible@s">
+                        <h4>{CheckListTitle}</h4>
+                        <div className={styles["product-detail__list"]}>
+                          {checkList.map((item, key) => (
+                            <div key={key} className={styles["product-detail__list__item"]}>
+                              <IconComponent size={"16px"} icon={CheckIcon} />
+                              <div className={styles["product-detail__list__item__text"]}>{item}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className={styles["product-detail__footer"]}>
+                    <div className={styles["actions"]} data-uk-margin>
+                      <div className={styles["actions__item"]}>
+                        <ClickableComponent
+                          variant="link-primary"
+                          href={storeLink.url}
+                          title={storeLink.title}
+                          iconStyle="filled"
+                          icon={IconDefault}
+                        />
+
+                        <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
+                          <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
+                          {rating.text}
+                        </div>
+                      </div>
+                      <div className={styles["actions__item"]}>
+                        <div className={styles["actions__item-wrap"]}>
+                          <div className="uk-hidden@s">
+                            <Button
+                              icon={HeartIcon}
+                              iconPosition="left"
+                              title={smallBackLink.title}
+                              variant={"secondary"}
+                            />
+                          </div>
+                          <ShareSocialDropdownComponent
+                            buttonTitle={props.intl.formatMessage({ id: "social-media-share" })}
+                            shareSocial={shareSocial}
                           />
                         </div>
-                        <ShareSocialDropdownComponent
-                          buttonTitle={props.intl.formatMessage({ id: "social-media-share" })}
-                          shareSocial={shareSocial}
-                        />
                       </div>
                     </div>
+                    <div className={`${styles["labels"]} uk-visible@s`}>
+                      {keywords.map((item, key) => (
+                        <KeywordTagComponent style={{ marginLeft: key == 0 ? "0" : "4px" }} key={key}>
+                          {item}
+                        </KeywordTagComponent>
+                      ))}
+                    </div>
                   </div>
-                  <div className={`${styles["labels"]} uk-visible@s`}>
-                    {keywords.map((item, key) => (
-                      <KeywordTagComponent style={{ marginLeft: key == 0 ? "0" : "4px" }} key={key}>
-                        {item}
-                      </KeywordTagComponent>
-                    ))}
+                  <div className="uk-hidden@s">
+                    <NewsletterComponent newsletterModule={generateDummyNewsletterModule()} />
                   </div>
-                </div>
-                <div className="uk-hidden@s">
-                  <NewsletterComponent newsletterModule={generateDummyNewsletterModule()} />
                 </div>
               </div>
-            </div>
+            </ShadowCardComponent>
           </div>
         </div>
       </div>

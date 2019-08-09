@@ -18,6 +18,7 @@ const SmallHeaderComponent = (props: ISmallHeaderComponentProps) => {
             subtitle={headerContent.subtitle}
             text={headerContent.text}
             breadcrumbProps={headerContent.breadcrumbProps}
+            headerMobilePosition="left"
           />
         )}
       </div>

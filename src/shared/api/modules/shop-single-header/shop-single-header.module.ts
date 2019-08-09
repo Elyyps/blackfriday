@@ -4,10 +4,12 @@ import { TimeLeftBar } from "@app/api/core/time-left-bar";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 import { BodyTextModule } from "../body-text/body-text";
 import { IShareSocialComponent } from "@app/api/core/share-social";
+import { IBreadcrumbComponentProps } from "@app/core/breadcrumb";
 
 export class ShopSingleHeaderModule extends WordPressPostModule {
   public backLink: Link[];
   public bodyTextModule: BodyTextModule;
+  public breadcrumbProps?: IBreadcrumbComponentProps;
   public checkList: string[];
   public CheckListTitle: string;
   public couponCode: string;
@@ -17,7 +19,6 @@ export class ShopSingleHeaderModule extends WordPressPostModule {
   public discountTitle: string;
   public favoriteButton: Link;
   public keywords: string[];
-  public links: Link[];
   public picture: string;
   public rating: RatingModule;
   public shareSocial: IShareSocialComponent;

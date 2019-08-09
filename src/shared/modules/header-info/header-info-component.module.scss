@@ -99,3 +99,8 @@
     flex: 1 1 auto;
   }
 }
+
+.breadcrumbs {
+  display: flex;
+  align-items: flex-start;
+}

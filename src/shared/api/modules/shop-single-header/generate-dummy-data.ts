@@ -40,7 +40,11 @@ export const generatedummyShopSingleHeaderData = (): ShopSingleHeaderModule => (
     url: "/"
   },
   discountTitle: "15% korting op het hele assortiment",
-  links: [{ title: "Home", url: "/" }, { title: "Alle winkels", url: "/stores-overview" }],
+  breadcrumbProps: {
+    links: [{ title: "Home", url: "/" }, { title: "Alle winkels", url: "/stores-overview" }],
+    backButton: { title: "Terug", url: "/#" },
+    variant: "dark"
+  },
   smallBackLink: { title: "Alle winkels", url: "/" },
   discountSubtitle: "Gebruik deze kortingscode:",
   couponCode: "black15",
