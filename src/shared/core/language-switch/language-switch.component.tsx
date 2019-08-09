@@ -6,43 +6,28 @@ import { InjectedIntlProps, injectIntl } from "react-intl";
 
 export interface ILanguageSwitchComponentProps {}
 
-const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => {
-  const [language, setLanguage] = React.useState<string>(props.currentLocale);
-
-  const switchLanguage = (prop: ILanguageSwitchContainerProps) => {
-    if (language !== prop.currentLocale) {
-      const newLocale = props.currentLocale === LOCALES.NL ? LOCALES.FR : LOCALES.NL;
-      prop.onLanguageSwitch(newLocale);
-    }
-  };
-
-  React.useEffect(() => {
-    switchLanguage(props);
-  }, [language]);
-
-  return (
-    <div className={styles["menu-language-switch"]}>
-      <span
-        role="button"
-        onClick={() => {
-          setLanguage(LOCALES.NL);
-        }}
-        style={language === LOCALES.NL ? { color: "global-link-color" } : {}}
-      >
-        {props.intl.formatMessage({ id: "menu-language-switch_nl" })}
-      </span>
-      <div>/</div>
-      <span
-        role="button"
-        onClick={() => {
-          setLanguage(LOCALES.FR);
-        }}
-        style={language === LOCALES.FR ? { color: "global-link-color" } : {}}
-      >
-        {props.intl.formatMessage({ id: "menu-language-switch_fr" })}
-      </span>
-    </div>
-  );
-};
+const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => (
+  <div className={styles["menu-language-switch"]}>
+    <span
+      role="button"
+      onClick={() => {
+        props.onLanguageSwitch(LOCALES.NL);
+      }}
+      style={props.currentLocale === LOCALES.NL ? { color: "red" } : { color: "white" }}
+    >
+      {props.intl.formatMessage({ id: "menu-language-switch_nl" })}
+    </span>
+    <div>/</div>
+    <span
+      role="button"
+      onClick={() => {
+        props.onLanguageSwitch(LOCALES.FR);
+      }}
+      style={props.currentLocale === LOCALES.FR ? { color: "red" } : { color: "white" }}
+    >
+      {props.intl.formatMessage({ id: "menu-language-switch_fr" })}
+    </span>
+  </div>
+);
 const LanguageSwitchComponent = injectIntl(component);
 export { LanguageSwitchComponent };
