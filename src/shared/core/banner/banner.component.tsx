@@ -3,6 +3,7 @@ import styles from "./banner-component.module.scss";
 import { ImageComponent } from "@app/core/";
 import IconDefault from "@assets/icons/link.svg";
 import { ClickableComponent } from "../clickable";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export type BannerVariant = "default" | "small";
 
@@ -26,7 +27,7 @@ export interface IBannerComponentProps {
   variant?: BannerVariant;
 }
 
-const BannerComponent = (props: IBannerComponentProps) => {
+const component = (props: IBannerComponentProps & InjectedIntlProps) => {
   const {
     variant,
     buttonLink,
@@ -48,12 +49,13 @@ const BannerComponent = (props: IBannerComponentProps) => {
       <div className={styles[classModify]}>
         <div className={`${styles["holder"]} ${showAlternativeBanner && styles["row-reverse"]}`}>
           <div className={styles["image"]}>
-            <a href={imageLink} target="_blank" role="button">
+            <a rel="noopener" aria-label="Open link" href={imageLink} target="_blank" role="button">
               <ImageComponent
                 alt={image && image.alt}
                 src={image && image.src}
                 errorImage={IconDefault}
                 errorMessage="Custom error message"
+                isBlocking
               />
             </a>
           </div>
@@ -63,8 +65,8 @@ const BannerComponent = (props: IBannerComponentProps) => {
               <h2 className={styles["title"]}>{title}</h2>
               <span>{text}</span>
               <span className={styles["more-info"]}>
-                <a href={moreInfoLink} target="_blank">
-                  Meer info
+                <a rel="noopener" href={moreInfoLink} target="_blank">
+                  {props.intl.formatMessage({ id: "see-more" })}
                 </a>
               </span>
             </div>
@@ -80,7 +82,7 @@ const BannerComponent = (props: IBannerComponentProps) => {
               )}
               {logo && (
                 <div className={styles["logo"]}>
-                  <ImageComponent src={logo.src} alt={logo.alt} />
+                  <ImageComponent src={logo.src} alt={logo.alt} isBlocking />
                 </div>
               )}
             </div>
@@ -90,5 +92,5 @@ const BannerComponent = (props: IBannerComponentProps) => {
     </div>
   );
 };
-
+const BannerComponent = injectIntl(component);
 export { BannerComponent };

@@ -52,6 +52,7 @@ const Input = (props: IInputProps) => {
         <input
           onChange={handelChange}
           type="text"
+          aria-label="Input"
           placeholder={placeholder}
           className={inputClassName}
           name={name}

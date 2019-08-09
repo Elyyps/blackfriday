@@ -31,7 +31,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/",
     metaData: {
-      title: "Homepage",
+      title: "Black Friday",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -51,7 +51,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/stores-overview",
     metaData: {
-      title: "Homepage",
+      title: "Winkel overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -67,7 +67,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/stores-single",
     metaData: {
-      title: "Homepage",
+      title: "Winkel pagina",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -85,7 +85,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/deals-overview",
     metaData: {
-      title: "Homepage",
+      title: "Deals overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -101,7 +101,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/productline-overview",
     metaData: {
-      title: "Homepage",
+      title: "Productlijn overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -121,7 +121,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/blog-overview",
     metaData: {
-      title: "Homepage",
+      title: "Blog overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -138,7 +138,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/blog-single",
     metaData: {
-      title: "Homepage",
+      title: "Blog pagina",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },

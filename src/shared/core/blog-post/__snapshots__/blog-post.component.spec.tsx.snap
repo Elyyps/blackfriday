@@ -8,6 +8,7 @@ exports[`[BlogPost] should render component without crashing 1`] = `
     className="blog-post__image"
   >
     <ImageComponent
+      alt="Blog image"
       src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/4.png"
     />
   </div>

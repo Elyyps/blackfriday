@@ -16,8 +16,8 @@ const ArrowPanel = ({ link: { title, url }, icon, image }: IArrowPanelProps) => 
     <div className={styles["content"]}>
       {(image || icon) && (
         <div className={styles["image-container"]}>
-          {image && <ImageComponent className={styles["image"]} src={image} />}
-          {icon && <ImageComponent className={styles["image-icon"]} src={icon} />}
+          {image && <ImageComponent alt="Arrow" className={styles["image"]} src={image} />}
+          {icon && <ImageComponent alt="Arrow" className={styles["image-icon"]} src={icon} />}
         </div>
       )}
       <div className={styles["title"]}>{title}</div>

@@ -29,6 +29,7 @@ const Input = (props: IInputProps) => {
         className={styles["textbox-component"]}
         name={name}
         value={value}
+        aria-label="Input"
       />
       {!!icon && (
         <div className={styles["input-icon"]}>

@@ -1,11 +1,11 @@
 import React from "react";
-import { shallow } from "enzyme";
 import { DiscountCardComponent } from "./discount-card.component";
 import CoolBlue from "@assets/cool-blue.svg";
+import { shallowWithIntl } from "enzyme-react-intl";
 
 describe("[DiscountCard]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(
+    const renderedComponent = shallowWithIntl(
       <DiscountCardComponent
         content="Content"
         range={1}

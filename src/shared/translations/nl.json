@@ -38,5 +38,21 @@
   "not-found-text": "Aenean id lorem eleifend, malesuada arcu afringilla mauris. Pellentesque dolor lacus, luctus.",
   "mobile-filter-title": "Filter",
   "mobile-filter-clear-filter": "Wis alle filters",
-  "mobile-filter-button": "Toon winkels"
+  "mobile-filter-button": "Toon winkels",
+  "tab-winkels": "Winkels",
+  "tab-productdeals": "Productdeals",
+  "store-overview-message": "Geen Black Friday, wel veel voordeel!",
+  "store-overview-no-result": "Geen resultaten gevonden",
+  "filter-bar-label": "Filters",
+  "filter-bar-clear-filters": "Verwijder alle filters",
+  "filter-bar-sort-by": "Sorteer op",
+  "see-more": "Meer info",
+  "discount-code": "Yeah, Gekopieerd!",
+  "filter-control-clear": "Verwijder merk filters",
+  "filter-control-button": "Toosn 12s3 Winkels",
+  "dropdown-no-result": "Geen resultaten",
+  "dropdown-button": "Toon",
+  "shop-card-clickable-title": "Naar deals",
+  "featured-categories-clickable-title-mobile": "Toon minder",
+  "featured-categories-clickable-title": "Toon meer"
 }

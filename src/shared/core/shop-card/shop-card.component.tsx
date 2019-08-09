@@ -8,6 +8,7 @@ import { ShadowCardComponent } from "../shadow-card";
 import { Store } from "@app/api/core/store/store";
 import { getStoreStatusText } from "@app/util/store";
 import { ClickableComponent } from "../clickable";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 import { IconComponent } from "../icon";
 import IconHot from "@assets/icons/hot.svg";
 
@@ -16,7 +17,7 @@ export interface IShopCardComponentProps {
   variant?: string;
 }
 
-const ShopCardComponent = (props: IShopCardComponentProps) => {
+const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
   const { description, logo, moreInfoLink, name, status, timeLeftPercentage, label } = props.store;
 
   const getStatusBarColor = () => {
@@ -44,7 +45,7 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
         )}
         <div className={styles["shop-card__body"]}>
           <div className={styles["shop-card__image"]}>
-            <ImageComponent src={logo} />
+            <ImageComponent alt="Shop logo" src={logo} isBlocking />
           </div>
           <div className={`${styles["shop-card__status-title"]} ${styles[getStatusBarColor()]}`}>
             {getStoreStatusText(status)}
@@ -55,22 +56,23 @@ const ShopCardComponent = (props: IShopCardComponentProps) => {
 
           <div className={styles["shop-card__content"]}>
             <div className={styles["shop-card__title"]}>{name}</div>
-            {description} {moreInfoLink && moreInfoLink && <LinkComponent to={moreInfoLink}>Meer info</LinkComponent>}
+            {description}
+            <LinkComponent to="/stores-single"> {props.intl.formatMessage({ id: "see-more" })}</LinkComponent>
           </div>
         </div>
         <div className={styles["shop-card__action"]}>
           <ClickableComponent
             iconStyle="filled"
             dynamicSize={true}
-            title="Naar deals"
+            title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
             icon={ShopIcon}
             iconPosition="right"
-            href="/stores-single"
+            href={moreInfoLink}
           />
         </div>
       </div>
     </ShadowCardComponent>
   );
 };
-
+const ShopCardComponent = injectIntl(component);
 export { ShopCardComponent };

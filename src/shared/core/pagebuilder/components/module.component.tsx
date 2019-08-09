@@ -54,10 +54,12 @@ const ModuleComponent = (props: IModuleComponentProps) => {
 
   return (
     <div
+      key={props.wordPressModule.name}
       style={{
         marginTop: marginContainerModule.marginTop,
         marginBottom: marginContainerModule.marginBottom,
         position: "relative",
+
         zIndex:
           props.wordPressModule.name === "NavBarModule22" || props.wordPressModule.name === "gallerySlider"
             ? Z_INDEX_MAX
