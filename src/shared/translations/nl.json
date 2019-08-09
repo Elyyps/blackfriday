@@ -54,5 +54,8 @@
   "dropdown-button": "Toon",
   "shop-card-clickable-title": "Naar deals",
   "featured-categories-clickable-title-mobile": "Toon minder",
-  "featured-categories-clickable-title": "Toon meer"
+  "featured-categories-clickable-title": "Toon meer",
+  "menu-language-switch_fr": "Frans",
+  "menu-language-switch_nl": "Nederlands",
+  "store-overview-no-results-with-filters": "Er zijn geen resultaten gevonden met de huidige filters"
 }

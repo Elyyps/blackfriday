@@ -5,6 +5,7 @@ import * as ActionType from "./locales.types";
 
 const nlTranslations = require("@app/translations/nl.json");
 const enTranslations = require("@app/translations/en.json");
+const frTranslations = require("@app/translations/fr.json");
 
 export interface ILocalesState {
   locale: string;
@@ -27,6 +28,9 @@ export const localesReducer = (state: ILocalesState = INITIAL_STATE, action: Act
           break;
         case LOCALES.EN:
           messages = enTranslations;
+          break;
+        case LOCALES.FR:
+          messages = frTranslations;
           break;
         default:
           messages = nlTranslations;

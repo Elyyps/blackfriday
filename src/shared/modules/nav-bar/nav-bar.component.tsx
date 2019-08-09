@@ -33,9 +33,6 @@ const NavBarComponent = (props: INavBarComponentProps) => (
                 <LinkComponent to={link.url}>{link.title}</LinkComponent>
               </li>
             ))}
-            <li>
-              <LanguageSwitchContainer />
-            </li>
           </ul>
           <ModalNavBar
             className={`${styles["nav-bar__search-button"]}`}

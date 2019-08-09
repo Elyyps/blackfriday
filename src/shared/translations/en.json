@@ -30,5 +30,6 @@
   "filter-control-button": "Show 123 stores",
   "dropdown-no-result": "No results",
   "dropdown-button": "Show",
-  "shop-card-clickable-title": "To deals"
+  "shop-card-clickable-title": "To deals",
+  "store-overview-no-results-with-filters": "No results were found with the current filters"
 }

@@ -1,33 +1,46 @@
 import * as React from "react";
 import styles from "./language-switch-component.module.scss";
-import { ResourceTextComponent } from "../resource-text";
 import { ILanguageSwitchContainerProps } from "./language-switch.container";
 import { LOCALES } from "@app/constants";
+import { InjectedIntlProps, injectIntl } from "react-intl";
 
 export interface ILanguageSwitchComponentProps {}
-const switchLanguage = (props: ILanguageSwitchContainerProps) => {
-  const newLocale = props.currentLocale === LOCALES.NL ? LOCALES.EN : LOCALES.NL;
 
-  props.onLanguageSwitch(newLocale);
+const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => {
+  const [language, setLanguage] = React.useState<string>(props.currentLocale);
+
+  const switchLanguage = (props: ILanguageSwitchContainerProps) => {
+    if (language !== props.currentLocale) {
+      const newLocale = props.currentLocale === LOCALES.NL ? LOCALES.FR : LOCALES.NL;
+      props.onLanguageSwitch(newLocale);
+    }
+  };
+
+  React.useEffect(() => {
+    switchLanguage(props);
+  }, [language]);
+
+  return (
+    <div className={styles["menu-language-switch"]}>
+      <span
+        onClick={() => {
+          setLanguage(LOCALES.NL);
+        }}
+        style={language === LOCALES.NL ? { color: "global-link-color" } : {}}
+      >
+        {props.intl.formatMessage({ id: "menu-language-switch_nl" })}
+      </span>
+      <div>/</div>
+      <span
+        onClick={() => {
+          setLanguage(LOCALES.FR);
+        }}
+        style={language === LOCALES.FR ? { color: "global-link-color" } : {}}
+      >
+        {props.intl.formatMessage({ id: "menu-language-switch_fr" })}
+      </span>
+    </div>
+  );
 };
-const LanguageSwitchComponent = (props: ILanguageSwitchContainerProps) => (
-  <a
-    role="button"
-    aria-label="languageSwitchButton"
-    onClick={() => {
-      switchLanguage(props);
-    }}
-    className={styles["language-switch"]}
-  >
-    <img src={require("@assets/language.svg")} alt="image" />
-    <span>
-      {props.currentLocale === LOCALES.NL ? (
-        <ResourceTextComponent resourceKey="language-switch_en" />
-      ) : (
-        <ResourceTextComponent resourceKey="language-switch_nl" />
-      )}
-    </span>
-  </a>
-);
-
+const LanguageSwitchComponent = injectIntl(component);
 export { LanguageSwitchComponent };
