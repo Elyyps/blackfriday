@@ -78,10 +78,8 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                 <div className={styles["product-detail__content__subtitle"]}>
                   {links.map((link, index) => {
                     return (
-                      <React.Fragment>
-                        <LinkComponent key={index} to={link.url}>
-                          {link.title}
-                        </LinkComponent>{" "}
+                      <React.Fragment key={index}>
+                        <LinkComponent to={link.url}>{link.title}</LinkComponent>
                         {index < links.length - 1 ? " - " : ""}
                       </React.Fragment>
                     );
