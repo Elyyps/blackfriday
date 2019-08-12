@@ -97,7 +97,6 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     if (props.stores.length < props.totalResults && !isLoading) {
       setIsLoading(true);
       setProgressPage(progressPage + 1);
-      // Use timer for dummy purposes when loading data
       setTimeout(() => {
         props.getStores(
           props.stores.length,
@@ -141,8 +140,12 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     <div>
       <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
-          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
-          <TabComponent attrAction={"link"}> {props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
+          <TabComponent attrAction={"link"}>
+            {props.intl ? props.intl.formatMessage({ id: "tab-winkels" }) : "Winkels"}
+          </TabComponent>
+          <TabComponent attrAction={"link"}>
+            {props.intl ? props.intl.formatMessage({ id: "tab-productdeals" }) : "Productdeals"}
+          </TabComponent>
         </TabContainerComponent>
       </div>
 
@@ -161,7 +164,11 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
         <div className={styles["store-overview"]}>
           <div className="uk-container">
             <div className={styles["no-black-friday"]}>
-              <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
+              <h2>
+                {props.intl
+                  ? props.intl.formatMessage({ id: "store-overview-message" })
+                  : "Geen Black Friday, wel veel voordeel!"}
+              </h2>
             </div>
             {props.stores && props.stores.length > 0 ? (
               <div className={styles["stores-overview__body__list"]}>
@@ -193,9 +200,15 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             ) : (
               <div>
                 <CtaSmallComponent
-                  buttonTitle={props.intl.formatMessage({ id: "filter-bar-clear-filters" })}
+                  buttonTitle={
+                    props.intl ? props.intl.formatMessage({ id: "filter-bar-clear-filters" }) : "Verwijder alle filters"
+                  }
                   onClick={() => props.clearAllFilters()}
-                  text={props.intl.formatMessage({ id: "store-overview-no-results-with-filters" })}
+                  text={
+                    props.intl
+                      ? props.intl.formatMessage({ id: "store-overview-no-results-with-filters" })
+                      : "Er zijn geen resultaten gevonden met de huidige filters"
+                  }
                   icon={props.storeOverviewModule.emptyStateIcon}
                 />
               </div>
