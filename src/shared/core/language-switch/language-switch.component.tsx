@@ -13,7 +13,7 @@ const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => 
       onClick={() => {
         props.onLanguageSwitch(LOCALES.NL);
       }}
-      style={props.currentLocale === LOCALES.NL ? { color: "#e10a14" } : { color: "white" }}
+      style={props.currentLocale === LOCALES.NL ? { color: "#e10a14" } : { color: "#ffffff" }}
     >
       Nederlands
     </span>
@@ -23,7 +23,7 @@ const component = (props: ILanguageSwitchContainerProps & InjectedIntlProps) => 
       onClick={() => {
         props.onLanguageSwitch(LOCALES.FR);
       }}
-      style={props.currentLocale === LOCALES.FR ? { color: "#e10a14" } : { color: "white" }}
+      style={props.currentLocale === LOCALES.FR ? { color: "#e10a14" } : { color: "#ffffff" }}
     >
       Français
     </span>
