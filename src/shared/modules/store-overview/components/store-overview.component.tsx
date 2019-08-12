@@ -201,8 +201,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
               <div>
                 <CtaSmallComponent
                   buttonTitle={
-                    props.intl ? props.intl.formatMessage({ id: "filter-bar-clear-filters" }) : "Verwijder alle filters"
-                  }
+                    props.intl ? props.intl.formatMessage({ id: "filter-bar-clear-filters" }) : "Verwijder alle filters"}
                   onClick={() => props.clearAllFilters()}
                   text={
                     props.intl
