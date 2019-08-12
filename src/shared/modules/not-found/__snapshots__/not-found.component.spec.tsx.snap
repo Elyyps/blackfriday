@@ -2,33 +2,26 @@
 
 exports[`[NotFound] should render component without crashing 1`] = `
 <div
-  className="uk-container"
+  className="not-found"
 >
   <div
-    className="not-found"
+    className="not-found-container"
   >
-    <h1>
-      404
-    </h1>
+    <IconComponent
+      icon="road-sign-right.svg"
+      size="45px"
+    />
     <span
       className="not-found-title"
     >
-      Page not found !
+      Oeps!
     </span>
     <p>
-      There may be a error , make sure to bla bla bla bla
+      We hebben de pagina niet gevonden. Zullen we je de weg wijzen?
     </p>
     <Button
-      fullWidth={true}
-      icon={
-        Object {
-          "ReactComponent": [Function],
-          "__esModule": true,
-          "default": "chevron-right.svg",
-        }
-      }
-      title="Go back to the website"
-      variant="primary-brand"
+      title="Black Friday homepage"
+      variant="secondary"
     />
   </div>
 </div>
