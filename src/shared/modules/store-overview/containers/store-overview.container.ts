@@ -17,6 +17,7 @@ interface IStateProps {
   totalResults: number;
 }
 interface IDispatchProps {
+  clearAllFilters: () => void;
   getStores: (
     skip: number,
     take: number,
@@ -66,7 +67,8 @@ const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IStoreOverviewCompo
   setBrandFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setBrandFilters({ filterItems })),
   setCategoryFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setCategoryFilters({ filterItems })),
   setSortBy: (sortBy: string) => dispatch(storeOverviewActions.setSortBy({ sortBy })),
-  setStatusFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setStatusFilters({ filterItems }))
+  setStatusFilters: (filterItems: FilterItem[]) => dispatch(storeOverviewActions.setStatusFilters({ filterItems })),
+  clearAllFilters: () => dispatch(storeOverviewActions.clearAllFilters())
 });
 
 export type StoreOverviewContainerProps = IStateProps & IDispatchProps;

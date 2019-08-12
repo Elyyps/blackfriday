@@ -101,6 +101,7 @@
   &__header {
     height: 216px;
     overflow: hidden;
+    border-radius: 2px 2px 0px 0px;
     img {
       object-fit: cover;
       width: 100%;
@@ -109,20 +110,14 @@
   }
   &__body {
     background-color: $global-inverse-color;
+    border-radius: 2px;
   }
   &__content {
     padding: 16px 32px 32px;
     &__subtitle {
-      font-family: Assistant;
-      font-size: 12px;
-      font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      letter-spacing: normal;
-      > * {
-        color: #999999;
-      }
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: -8px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
       padding: 16px;
@@ -171,7 +166,7 @@
     .content {
       &__head {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         margin-bottom: 24px;
         justify-content: space-between;
         &__stars {
@@ -185,6 +180,8 @@
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          text-align: right;
+          white-space: nowrap;
         }
       }
       &__body {
@@ -267,6 +264,7 @@
       align-items: center;
       > * {
         margin: 0 4px;
+        border-radius: 2px;
       }
       &:first-child {
         margin-left: 0px;

@@ -2,26 +2,26 @@ import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { withA11y } from "@storybook/addon-a11y";
-import { generateFilterBarData } from "@app/api/core/filter-bar/endpoint";
-import { FilterBarComponent } from "./filter-bar.component";
-
-const notes = require("./filter-bar.md");
-
-storiesOf("FilterBar", module)
+import { withProvider } from "@app/util";
+import { FilterBar } from "./filter-bar.component";
+import { ViewType } from "@app/stores/settings";
+/* tslint:disable */
+storiesOf("Filter bar", module)
   .addDecorator(withA11y)
-  .add(
-    "Basic implementation",
-    () => (
-      <FilterBarComponent
-        applyFilter={() => ""}
-        filterBar={generateFilterBarData()}
-        onBrandChanged={() => ""}
-        onStatusChanged={() => ""}
-        onOrderByChanged={() => ""}
-        onCategoryChanged={() => ""}
-      />
-    ),
-    {
-      notes
-    }
-  );
+  .addDecorator(withProvider)
+  .add("Basic implementation", () => (
+    <FilterBar
+      filtersChanged={() => {}}
+      brandFilterItems={[]}
+      categoryFilterItems={[]}
+      screenSize={{ breakpointPixels: 0, viewType: ViewType.Desktop }}
+      sortBy=""
+      statusFilterItems={[]}
+      totalResults={100}
+      clearFilters={() => {}}
+      setBrandFilters={() => {}}
+      setCategoryFilters={() => {}}
+      setSortBy={() => {}}
+      setStatusFilters={() => {}}
+    />
+  ));

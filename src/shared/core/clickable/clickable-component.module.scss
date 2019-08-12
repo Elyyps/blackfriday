@@ -63,10 +63,10 @@ a.button--primary-default,
   cursor: pointer;
   color: $global-inverse-color;
   background-color: $brand-secondary;
-  @media (max-width: $breakpoint-xsmall-max) {
+
+  @media (max-width: $breakpoint-small-max) {
     width: 100%;
   }
-
   &--animated {
     svg {
       transition: transform 150ms ease-in-out;
@@ -203,4 +203,9 @@ a.button--primary-default,
 .button__dynamic-size {
   padding: 8px 16px !important;
   background-color: red !important;
+}
+
+.no-select {
+  outline-color: transparent;
+  outline-style: none;
 }

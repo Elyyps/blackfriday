@@ -5,7 +5,7 @@ import { PagebuilderContainerProps } from "../index";
 import { EmptyPageComponent } from "@app/core/empty-page";
 import { ModuleComponent } from "./module.component";
 import { getViewType } from "@app/util/detect-view";
-import { ViewType } from "@app/stores/settings";
+import { HelmetComponent } from "./helmet.component";
 
 export interface IPagebuilderComponentProps {}
 
@@ -18,11 +18,13 @@ export class PagebuilderComponent extends React.Component<
   IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps,
   IState
 > {
-  private isMobile =
-    this.props.screenSize &&
-    (this.props.screenSize.viewType === ViewType.Mobile || this.props.screenSize.viewType === ViewType.Tablet)
-      ? true
-      : false;
+  // Not using this right now, now we're passing the screensize to the module, you can calculate everything in there
+  // import { ViewType } from "@app/stores/settings";
+  // private isMobile =
+  //   this.props.screenSize &&
+  //   (this.props.screenSize.viewType === ViewType.Mobile || this.props.screenSize.viewType === ViewType.Tablet)
+  //     ? true
+  //     : false;
 
   public constructor(props: IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps) {
     super(props);
@@ -31,6 +33,7 @@ export class PagebuilderComponent extends React.Component<
     }
 
     if (typeof window === "object") {
+      window.scroll(0, 0);
       window.addEventListener("resize", this.handleResize.bind(this));
       this.setScreenSize();
     }
@@ -47,9 +50,9 @@ export class PagebuilderComponent extends React.Component<
       <React.Fragment>
         {!!this.props.currentPage ? (
           <React.Fragment>
-            {/* <HelmetComponent {...this.props.currentPage.metaData} /> */}
+            <HelmetComponent {...this.props.currentPage.metaData} />
             {this.props.currentPage.wordPressPostModules.map((wordPressModule, index) => (
-              <ModuleComponent wordPressModule={wordPressModule} isMobile={this.isMobile} key={index} />
+              <ModuleComponent wordPressModule={wordPressModule} screenSize={this.props.screenSize} key={index} />
             ))}
           </React.Fragment>
         ) : (

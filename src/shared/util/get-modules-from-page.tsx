@@ -29,6 +29,8 @@ import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/
 import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
 import { BlogOverviewComponent } from "@app/modules/blog-overview";
 import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
+import { BlogOverviewHeaderComponent } from "@app/modules/blog-overview-header";
+import { BlogOverviewHeaderModule } from "@app/api/modules/blog-overview-header/blog-overview-header";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import {
@@ -45,6 +47,8 @@ import { BlogBodyTextComponent } from "@app/modules/blog-body-text";
 import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
 import { StoreOverviewContainer } from "@app/modules/store-overview/containers/store-overview.container";
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
+import { HeaderInfoComponent } from "@app/modules/header-info";
+import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -76,6 +80,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":
       return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
+    case "BlogOverviewHeaderModule":
+      return <BlogOverviewHeaderComponent blogOverviewHeader={wordPressModule as BlogOverviewHeaderModule} />;
     case "BlogBodyTextModule":
       return <BlogBodyTextComponent blogBodyTextModule={wordPressModule as BlogBodyTextModule} />;
     case "FeaturedBlogModule":
@@ -87,6 +93,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
     case "FeaturedCategoriesModule":
       return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
+    case "HeaderInfo":
+      return <HeaderInfoComponent headerInfo={wordPressModule as HeaderInfo} />;
 
     default:
   }

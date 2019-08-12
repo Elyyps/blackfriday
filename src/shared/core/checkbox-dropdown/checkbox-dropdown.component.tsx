@@ -11,6 +11,8 @@ export interface ICheckboxDropdownProps {
   title: string;
 }
 
+const ID_INCREMENT = 10;
+
 const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -24,6 +26,7 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
     });
 
     props.onChange([...result]);
+    setIsOpen(false);
   };
 
   const hasSelectedItems = props.items.filter(item => item.isSelected).length > 0;
@@ -32,7 +35,7 @@ const CheckboxDropdown = (props: ICheckboxDropdownProps) => {
     <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems} isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className={styles["content"]}>
         {props.items.map((item, key) => (
-          <CheckboxCount key={key} item={item} onChecked={onChange} />
+          <CheckboxCount key={key + ID_INCREMENT} item={item} onChecked={onChange} />
         ))}
       </div>
     </DropdownComponent>

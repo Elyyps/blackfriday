@@ -1,4 +1,4 @@
-export class Padding {
-  public desktopPadding: number;
-  public mobilePadding: number;
+export class Spacing {
+  public desktopSpacing: number;
+  public mobileSpacing: number;
 }

@@ -43,11 +43,15 @@ const ModalNavBar = (props: IModalNavBarProps) => {
 
   React.useEffect(() => {
     if (isOpen) {
-      document.documentElement.style.overflow = "hidden";
+      if (typeof document !== "undefined") {
+        document.documentElement.style.overflow = "hidden";
+      }
     }
 
     return () => {
-      document.documentElement.style.overflow = "auto";
+      if (typeof document !== "undefined") {
+        document.documentElement.style.overflow = "auto";
+      }
     };
   }, [isOpen]);
 
@@ -63,7 +67,7 @@ const ModalNavBar = (props: IModalNavBarProps) => {
         <IconComponent icon={props.icon} size={props.iconSize} />
         {props.title}
       </button>
-      {isOpen &&
+      {typeof document !== "undefined" &&
         ReactDOM.createPortal(
           <div
             role={"role"}
@@ -73,7 +77,9 @@ const ModalNavBar = (props: IModalNavBarProps) => {
             }}
           >
             <div
-              className={`${styles["modal-navbar__holder"]} ${styles[`modal-navbar__holder__${props.variant}`]}`}
+              className={`${styles["modal-navbar__holder"]} ${
+                styles[`modal-navbar__holder__${props.variant}__close`]
+              } ${isOpen ? styles[`modal-navbar__holder__${props.variant}__open`] : ""} `}
               ref={modalRef}
             >
               <div

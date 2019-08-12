@@ -22,6 +22,14 @@
   &__logo {
     margin-right: 28px;
     width: 180px;
+    img {
+      height: 45px;
+      max-height: 45px;
+      @media (max-width: $breakpoint-small-max) {
+        height: 40px;
+        max-height: 40px;
+      }
+    }
     @media (max-width: $breakpoint-small-max) {
       width: 150px;
     }
@@ -47,6 +55,12 @@
       border: 14px solid transparent;
       border-right-color: rgba($brand-primary, 0.15);
     }
+    @media (max-width: 1000px) {
+      display: none;
+    }
+    @media (max-width: 959px) {
+      display: inline-flex;
+    }
   }
   &__navigation {
     padding: 0;
@@ -59,8 +73,16 @@
     a {
       text-decoration: none;
       color: $global-color;
+      font-family: $global-font-family-secondary;
+      font-size: 14px;
+      font-weight: 600;
       &:hover {
         color: $global-link-color;
+      }
+    }
+    @media (max-width: 1080px) {
+      > li {
+        margin-right: 15px;
       }
     }
   }

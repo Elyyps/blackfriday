@@ -1,208 +1,152 @@
 import React from "react";
 import styles from "./filter-bar-component.module.scss";
-import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
-import { SearchFilterControlComponent } from "@app/core/search-filter-control/search-filter-control.component";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
-import Filter from "@assets/icons/filter.svg";
-import { FilterBar } from "@app/api/core/filter-bar/filter-bar";
-import Cross from "@assets/icons/cross.svg";
-import ChevronLeft from "@assets/icons/chevron-left.svg";
-import { CheckboxComponent } from "../checkbox/checkbox.component";
-import { Checkbox } from "@app/api/core/checkbox";
 import { IconComponent } from "@app/prep/modules-prep/core";
+import { CheckboxDropdown } from "../checkbox-dropdown/checkbox-dropdown.component";
+import { FilterItem } from "@app/api/core/filter/filter-item";
+import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/searchable-checkbox-dropdown.component";
 import { SelectComponent } from "../select";
+import { FilterBarContainerProps } from "./container";
+import { ViewType } from "@app/stores/settings";
+import { StoresMobileFilterBarComponent } from "./mobile-filter-bar.component";
 
-export interface IFilterBarComponentProps {
-  applyFilter: () => void;
-  filterBar: FilterBar;
-  onBrandChanged: (value: string[]) => void;
-  onCategoryChanged: (value: string[]) => void;
-  onOrderByChanged: (value: string) => void;
-  onStatusChanged: (value: string[]) => void;
+export interface IFilterBarProps {
+  filtersChanged: () => void;
 }
 
-const FilterBarComponent = (props: IFilterBarComponentProps) => {
-  const [prevIcon, setPrevIcon] = React.useState(false);
-  const [filterContent, setFilterContent] = React.useState(false);
-  const [checkedStatusFilters, setCheckedStatusFilters] = React.useState<number>(0);
-  const [checkedCategoryFilters, setCheckedCategoryFilters] = React.useState<number>(0);
-  const [checkedBrandFilters, setCheckedBrandFilters] = React.useState<number>(0);
-  const [numberOfShopsFromCategory, setNumberOfShopsFromCategory] = React.useState<number>(0);
-  const [numberOfShopsFromStatus, setNumberOfShopsFromStatus] = React.useState<number>(0);
-  const [numberOfShopsFromBrands, setNumberOfShopsFromBrands] = React.useState<number>(0);
-
-  const handleClickLAbel = () => {
-    setFilterContent(!filterContent);
-  };
-  const handleClick = () => {
-    setPrevIcon(!prevIcon);
+const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
+  const onStatusFilterItemsChanged = (items: FilterItem[]) => {
+    if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.statusFilterItems)) {
+      props.setStatusFilters([...items]);
+      props.filtersChanged();
+    }
   };
 
-  const onStatusSelected = (id: string) => {
-    const newSelectedStatus = props.filterBar.status.map(option => {
-      if (option.text.toUpperCase() === id.toUpperCase()) {
-        option.isChecked = !option.isChecked;
-      }
-
-      return option;
-    });
-
-    applyStatusFilter(newSelectedStatus);
-  };
-  const applyStatusFilter = (checkbox: Checkbox[]) => {
-    const list: string[] = [];
-    let total = 0;
-    checkbox.forEach(option => {
-      if (option.isChecked === true) {
-        list.push(option.text.toUpperCase());
-        total += option.label ? option.label : 0;
-      }
-    });
-    setNumberOfShopsFromStatus(total);
-    setCheckedStatusFilters(list.length);
-    props.onStatusChanged(list);
+  const onCategoryFilterItemsChanged = (items: FilterItem[]) => {
+    if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.categoryFilterItems)) {
+      props.setCategoryFilters([...items]);
+      props.filtersChanged();
+    }
   };
 
-  const clearFilters = () => {
-    props.filterBar.categories.map(option => {
-      option.isChecked = false;
-    });
-    props.filterBar.brands.map(option => {
-      option.isChecked = false;
-    });
-    props.filterBar.status.map(option => {
-      option.isChecked = false;
-    });
-    props.onBrandChanged([]);
-    props.onCategoryChanged([]);
-    props.onStatusChanged([]);
-
-    setCheckedBrandFilters(0);
-    setCheckedStatusFilters(0);
-    setCheckedCategoryFilters(0);
-
-    setNumberOfShopsFromCategory(0);
-    setNumberOfShopsFromBrands(0);
-    setNumberOfShopsFromStatus(0);
+  const onBrandFilterItemsChanged = (items: FilterItem[]) => {
+    if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.brandFilterItems)) {
+      props.setBrandFilters([...items]);
+      props.filtersChanged();
+    }
   };
+
+  const setSort = (sortByString: string) => {
+    props.setSortBy(sortByString);
+  };
+
+  const sortByOptions = ["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"];
+
+  const getTotalNumberOfFilters = (): number =>
+    props.statusFilterItems.filter(item => item.isSelected).length +
+    props.categoryFilterItems.filter(item => item.isSelected).length +
+    props.brandFilterItems.filter(item => item.isSelected).length;
+
+  const mobileFiltersChanged = (
+    brandFilterItems: FilterItem[],
+    categoryFilterItems: FilterItem[],
+    statusFilterItem: FilterItem[],
+    sortBy: string
+  ) => {
+    props.setBrandFilters([...brandFilterItems]);
+    props.setCategoryFilters([...categoryFilterItems]);
+    props.setStatusFilters([...statusFilterItem]);
+    props.setSortBy(sortBy);
+  };
+
+  const getNumberOfSelectedfilters = (filterItems: FilterItem[]) => filterItems.filter(item => item.isSelected).length;
 
   return (
     <div className={styles["filter-bar"]}>
-      <div className={styles["filter-bar__filter-list"]}>
-        <div className={` ${styles["filter-label"]}  ${"uk-visible@m"} `}>
-          Filters
-          <span>
-            <IconComponent icon={HandPointing} size={"20px"} />
-          </span>
-        </div>
-        <div
-          role="button"
-          className={` ${styles["filter-label"]} ${styles["filter-label--mobile"]}  uk-hidden@m`}
-          onClick={handleClickLAbel}
-        >
-          Filters
-          <span>
-            <IconComponent icon={Filter} size={"16px"} />
-          </span>
-        </div>
-        <div className={` ${styles["filter-content"]} ${styles[filterContent ? "filter-content-isActive" : ""]}  `}>
-          <div className={` ${styles["filter-content-label"]}  uk-hidden@m`}>
-            {prevIcon ? (
-              <span role="button" className={styles["arrow-control"]} onClick={handleClick}>
-                <IconComponent color={"#fff"} icon={ChevronLeft} size={"7px"} />
-              </span>
-            ) : (
-              <span role="button" className={styles["button-control"]} onClick={handleClickLAbel}>
-                <IconComponent color={"#fff"} icon={Cross} size={"12px"} />
-              </span>
-            )}
-            <div>
+      {props.screenSize && props.screenSize.viewType > ViewType.Tablet ? (
+        <div className={`${styles["filter-bar__filter-container"]} ${"uk-container"}`}>
+          <div className={`${styles["filter-bar__filter-list"]}  `}>
+            <div className={`${styles["filter-label"]}`}>
               Filters
-              <span className={styles["filter-content-label-icon"]}>
-                <IconComponent icon={HandPointing} size={"16px"} />
+              <span>
+                <IconComponent icon={HandPointing} size={"20px"} />
               </span>
             </div>
-            <a role="button" className={styles["filter-content-clear"]} onClick={clearFilters}>
-              Wis alle filters
-            </a>
+            <div>
+              <CheckboxDropdown
+                title="Status"
+                onChange={onStatusFilterItemsChanged}
+                items={[...props.statusFilterItems.map(item => ({ ...item }))]}
+              />
+            </div>
+            <div>
+              <SearchableCheckboxDropdown
+                searchPlaceholder="Merk zoeken"
+                deleteFilterLabel="Verwijder merk filters"
+                title="Categorieen"
+                showFilterName="winkels"
+                items={[...props.categoryFilterItems.map(item => ({ ...item }))]}
+                onChange={onCategoryFilterItemsChanged}
+              />
+            </div>
+            <div>
+              <SearchableCheckboxDropdown
+                searchPlaceholder="Merk zoeken"
+                deleteFilterLabel="Verwijder merk filters"
+                title="Merk"
+                showFilterName="merken"
+                items={[...props.brandFilterItems.map(item => ({ ...item }))]}
+                onChange={onBrandFilterItemsChanged}
+              />
+            </div>
+            {getTotalNumberOfFilters() > 0 && (
+              <div className={styles["filter-bar__clear-filter"]}>
+                <span
+                  role="link"
+                  onClick={() => {
+                    props.clearFilters();
+                    props.filtersChanged();
+                  }}
+                  style={{ color: "red", cursor: "pointer" }}
+                >
+                  Verwijder alle filters ({getTotalNumberOfFilters()})
+                </span>
+              </div>
+            )}
+          </div>
+
+          <div className={styles["filter-bar__sort"]}>
+            <div className={styles["filter__sort-filter"]}>
+              <span className={styles["amount-of-shops"]}>
+                <IconComponent icon={StoreIcon} size={"20px"} />
+              </span>
+              {props.totalResults} winkels
+            </div>
+            <div className={styles["filter__sort-item"]}>
+              <span className={styles["filter__sort-text"]}> Sorteer op: </span>
+
+              {/* className={styles["filter__sort-change"]} */}
+              {/* {orderBy} */}
+              <SelectComponent
+                options={["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
+                onSelect={setSort}
+              />
+            </div>
           </div>
         </div>
-        <div className="uk-visible@m">
-          <DropdownComponent
-            title={props.filterBar.statusFilterTitle}
-            buttonVariant="primary-brand"
-            orientation="bottom-right"
-            buttonColor="outline"
-          >
-            <ul className={styles["filter-bar-ul"]}>
-              {props.filterBar.status.map((checkbox, key) => (
-                <li key={key} className={styles["filter-bar-li"]}>
-                  <CheckboxComponent isChecked={checkbox.isChecked} onClick={() => onStatusSelected(checkbox.text)}>
-                    {checkbox.text}
-                  </CheckboxComponent>
-                  ({checkbox.label})
-                </li>
-              ))}
-            </ul>
-          </DropdownComponent>
-        </div>
-        <div className="uk-visible@m">
-          <DropdownComponent
-            title={props.filterBar.categoryFilterTitle}
-            buttonVariant="secondary"
-            orientation="bottom-left"
-            buttonColor="outline"
-          >
-            <SearchFilterControlComponent
-              placeholder={props.filterBar.categoryFilterPlaceholder}
-              checkbox={props.filterBar.categories}
-              onSelect={props.onCategoryChanged}
-              applyFilter={props.applyFilter}
-              getCheckedFilters={setCheckedCategoryFilters}
-              numberOfFilters={checkedCategoryFilters}
-              getTotalShops={setNumberOfShopsFromCategory}
-            />
-          </DropdownComponent>
-        </div>
-        <div className="uk-visible@m">
-          <DropdownComponent
-            title={props.filterBar.brandFilterTitle}
-            buttonVariant="secondary"
-            orientation="bottom-left"
-            buttonColor="outline"
-          >
-            <SearchFilterControlComponent
-              placeholder={props.filterBar.brandFilterPlaceholder}
-              checkbox={props.filterBar.brands}
-              onSelect={props.onBrandChanged}
-              applyFilter={props.applyFilter}
-              getCheckedFilters={setCheckedBrandFilters}
-              numberOfFilters={checkedBrandFilters}
-              getTotalShops={setNumberOfShopsFromBrands}
-            />
-          </DropdownComponent>
-        </div>
-        <div className="uk-visible@m" style={{ marginLeft: "20px" }}>
-          <span role="link" onClick={clearFilters} style={{ color: "red", cursor: "pointer" }}>
-            Verwijder merk filters ({checkedBrandFilters + checkedCategoryFilters + checkedStatusFilters})
-          </span>
-        </div>
-      </div>
-      <div className={styles["filter-bar__sort"]}>
-        <div className={styles["filter__sort-counter"]}>
-          <span>
-            <IconComponent icon={StoreIcon} size={"20px"} />
-          </span>
-          {numberOfShopsFromBrands + numberOfShopsFromCategory + numberOfShopsFromStatus} winkels
-        </div>
-        <div className={styles["filter__sort-item"]}>
-          {props.filterBar.sortByFilterTitle} :
-          <SelectComponent options={props.filterBar.sortBy} onSelect={props.onOrderByChanged} />
-        </div>
-      </div>
+      ) : (
+        <StoresMobileFilterBarComponent
+          brandFilterItems={props.brandFilterItems}
+          categoryFilterItems={props.categoryFilterItems}
+          sortBy={props.sortBy}
+          sortByOptions={sortByOptions}
+          statusFilterItems={props.statusFilterItems}
+          onFiltersChanged={mobileFiltersChanged}
+        />
+      )}
     </div>
   );
 };
 
-export { FilterBarComponent };
+export { FilterBar };

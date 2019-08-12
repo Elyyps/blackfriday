@@ -1,66 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[ShopCard] should render component without crashing 1`] = `
-<ShadowCardComponent
-  fullWidth={true}
-  shadowSize="small"
->
-  <div
-    className="shop-card shop-card--default"
-  >
-    <div
-      className="shop-card__body"
-    >
-      <div
-        className="shop-card__image"
-      >
-        <ImageComponent
-          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png"
-        />
-      </div>
-      <div
-        className="shop-card__status-title green"
-      >
-        Nu geldig
-      </div>
-      <div
-        className="shop-card__bar"
-      >
-        <TimeLeftBarComponent
-          color="green"
-          range={80}
-          variant="responsive"
-        />
-      </div>
-      <div
-        className="shop-card__content"
-      >
-        <div
-          className="shop-card__title"
-        >
-          Coolblue
-        </div>
-        Een selectie van bizar vele aanbieden
-         
-        <LinkComponent
-          to="https://www.coolblue.nl/"
-        >
-          Meer info
-        </LinkComponent>
-      </div>
-    </div>
-    <div
-      className="shop-card__action"
-    >
-      <ClickableComponent
-        dynamicSize={true}
-        href="/stores-single"
-        icon="link.svg"
-        iconPosition="right"
-        iconStyle="filled"
-        title="Naar deals"
-      />
-    </div>
-  </div>
-</ShadowCardComponent>
+<component
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  store={
+    Object {
+      "availableBrands": Array [
+        "Apple",
+        "Phillips",
+        "Nintendo",
+      ],
+      "categories": Array [
+        "Audio",
+        "Games",
+      ],
+      "description": "Een selectie van bizar vele aanbieden",
+      "id": "0",
+      "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
+      "moreInfoLink": "https://www.coolblue.nl/",
+      "name": "Coolblue",
+      "status": 1,
+      "timeLeftPercentage": 80,
+    }
+  }
+/>
 `;

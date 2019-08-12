@@ -5,7 +5,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production node scripts/build.js",
     "build:with-stats": "cross-env NODE_ENV=production webpack --config config/webpack.config.js/client.prod.js --json > build/client/static/bundle-stats.json",
-    "depgraph": "depcruise -c .dependency-cruiser.js --exclude '^node_modules' --output-type dot src | dot -T svg > dependency-graph.svg",
+    "depgraph": "depcruise -c .dependency-cruiser.js --exclude 'node_modules' --output-type dot src | dot -T svg > dependency-graph.svg",
     "lint": "tslint --config tslint.json --project tsconfig.json 'src/shared/**/*.{ts,tsx}'",
     "tsc": "tsc",
     "start": "cross-env NODE_ENV=development node scripts/start.js",
@@ -19,6 +19,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@types/react-sticky": "^6.0.3",
     "body-parser": "1.19.0",
     "classnames": "2.2.6",
     "commitlint": "8.0.0",
@@ -61,6 +62,7 @@
     "react-share": "3.0.0",
     "react-slick": "0.23.2",
     "react-spinners": "0.5.8",
+    "react-sticky": "6.0.3",
     "react-svg": "10.0.4",
     "redux": "3.7.2",
     "redux-localstorage": "1.0.0-rc5",

@@ -38,7 +38,7 @@ export const generateHomePageHeader = (): HomepageHeader => ({
         url: "/stores-single"
       },
       title: "Handige Black Friday Tips",
-      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/%3AblackFriday%3AbackFridayAd.jpg"
     },
     {
       link: {
@@ -55,7 +55,7 @@ export const generateHomePageHeader = (): HomepageHeader => ({
         url: "/stores-single"
       },
       title: "Handige Black Friday Tips",
-      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/backFridayAd.png"
+      image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/%3AblackFriday%3AbackFridayAd.jpg"
     }
   ],
   popularProducts: [
@@ -94,8 +94,6 @@ export const generateHomePageHeader = (): HomepageHeader => ({
       link: { url: "/stores-single", title: "De Bijenkorf" }
     }
   ],
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "HomepageHeader"
 });

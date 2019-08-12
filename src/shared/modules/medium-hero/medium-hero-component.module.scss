@@ -13,6 +13,7 @@
   height: 260px;
   overflow: hidden;
   position: relative;
+  border-radius: 2px;
   @media (max-width: $breakpoint-small-max) {
     height: 200px;
   }
@@ -43,18 +44,19 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  @media (max-width: $breakpoint-xsmall-max) {
-    align-items: flex-start;
-  }
   @media (max-width: 360px) {
     margin-top: 16px;
     margin-bottom: 16px;
   }
   h1 {
     color: $global-inverse-color;
+    text-align: center;
   }
   span:nth-child(n + 3) {
     color: $global-inverse-color;
+  }
+  h1:last-child {
+    margin-bottom: 0;
   }
 }
 

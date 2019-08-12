@@ -10,7 +10,7 @@ exports[`[MediumHero] should render component without crashing 1`] = `
     <div
       className="top"
     >
-      <USP
+      <Connect(USP)
         uspModule={
           Object {
             "uniqueSellingPoints": Array [
@@ -46,35 +46,17 @@ exports[`[MediumHero] should render component without crashing 1`] = `
       <div
         className="image"
       >
-        <img
+        <ImageComponent
           alt="temp alt"
-          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/store-banner.png"
+          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/store-banner.jpg"
         />
       </div>
       <div
         className="content"
       >
         <HeaderContentComponent
-          breadcrumbProps={
-            Object {
-              "backButton": Object {
-                "title": "Terug",
-                "url": "/#",
-              },
-              "links": Array [
-                Object {
-                  "title": "Home",
-                  "url": "/#",
-                },
-                Object {
-                  "title": "Blog",
-                  "url": "/#",
-                },
-              ],
-            }
-          }
+          headerMobilePosition="center"
           subtitle="Deelnemende winkels van 2019"
-          text="Bodytext voor extra informatie wanneer nodig"
           title="Black Friday Winkels"
         />
       </div>

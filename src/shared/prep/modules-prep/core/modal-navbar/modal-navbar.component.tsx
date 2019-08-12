@@ -21,15 +21,18 @@ const ModalNavBar = (props: IModalNavBarProps) => {
   const styleOpened = isOpen ? "opened" : "closed";
 
   React.useEffect(() => {
-    if (isOpen) {
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflowY = "scroll";
-    }
-
-    return () => {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    };
+    // if (isOpen) {
+    //   if (typeof document !== "undefined") {
+    //     document.documentElement.style.overflow = "hidden";
+    //     document.body.style.overflowY = "scroll";
+    //   }
+    // }
+    // return () => {
+    //   if (typeof document !== "undefined") {
+    //     document.documentElement.style.overflow = "auto";
+    //     document.body.style.overflow = "auto";
+    //   }
+    // };
   }, [isOpen]);
 
   return (
@@ -48,12 +51,7 @@ const ModalNavBar = (props: IModalNavBarProps) => {
       <div className={`modal-navbar ${styleOpened}`}>
         <div className="modal-navbar__holder">
           <div className="modal-navbar__container">
-            <div
-              role="button"
-              aria-label="closeButton"
-              className="modal-navbar__close"
-              onClick={toggleOpened}
-            >
+            <div role="button" aria-label="closeButton" className="modal-navbar__close" onClick={toggleOpened}>
               <IconComponent icon={CLOSE_ICON} size="12px" />
               <span className="uk-visible@m">{props.close}</span>
             </div>

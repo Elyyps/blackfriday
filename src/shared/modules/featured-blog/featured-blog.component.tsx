@@ -14,7 +14,7 @@ const FeaturedBlogComponent = (props: IFeaturedBlogComponentProps) => (
       <div className={styles["featured-blog__body"]}>
         {props.featuredBlog.items &&
           props.featuredBlog.items.map((item, key) => (
-            <div key={key}>
+            <div key={key} className={styles["featured-blog__card"]}>
               <FeaturedBlogItemsComponent item={item} />
             </div>
           ))}

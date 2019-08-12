@@ -46,10 +46,26 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           item.selectedItems = items;
         }
       });
+
       setCurrentFilterItems(currentFilterItems);
     }
   };
 
+  const onClearHandler = () => {
+    if (currentFilterItem) {
+      const newItem: IMobileFilterItem = {
+        title: currentFilterItem.title,
+        items: currentFilterItem.items,
+        selectedItems: [],
+        searchBarPlaceholder: currentFilterItem.searchBarPlaceholder,
+        hasSearchBar: currentFilterItem.hasSearchBar
+      };
+      setCurrentFilterItem(newItem);
+      setSelectedItems(currentFilterItem, []);
+    } else {
+      onClear();
+    }
+  };
   React.useEffect(() => {
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
@@ -62,7 +78,31 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       document.documentElement.style.overflow = "auto";
       document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    };
   }, [isFilterOpened]);
+
+  const onWindowResize = () => {
+    const w = window;
+    const d = document;
+    const documentElement = d.documentElement;
+    const body = d.getElementsByTagName("body")[0];
+    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    const mobileBreakpoint = 769;
+    if (width >= mobileBreakpoint) {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", onWindowResize);
+
+    return () => window.removeEventListener("resize", onWindowResize);
+  }, []);
 
   return !isFilterOpened ? (
     <div
@@ -72,7 +112,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
       }}
       className={styles["filter-bar"]}
     >
-      Filter
+      {props.intl.formatMessage({ id: "filter-bar-label" })}
       <IconComponent icon={FilterIcon} size={"15px"} />
     </div>
   ) : (
@@ -91,6 +131,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
           <span className={styles["mobile-filter__header__title"]}>
             <span>{currentFilterItem.title}</span>
           </span>
+          {!currentFilterItem.isSingleSelection && (
+            <a role="button" onClick={onClearHandler} className={styles["mobile-filter__header__clear"]}>
+              {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
+            </a>
+          )}
         </div>
       ) : (
         <div className={styles["mobile-filter__header"]}>
@@ -112,7 +157,6 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
             role="button"
             onClick={() => {
               onClear();
-              setIsFilterOpened(false);
             }}
             className={styles["mobile-filter__header__clear"]}
           >

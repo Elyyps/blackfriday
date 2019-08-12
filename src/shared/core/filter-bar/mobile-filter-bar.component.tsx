@@ -124,6 +124,7 @@ const getMobileFilterItems = (
   {
     hasSearchBar: false,
     title: "Sorteren",
+    searchBarPlaceholder: "Sorteren zoeken",
     selectedItems: [selectedSortBy],
     isSingleSelection: true,
     items: sortByOptions
@@ -131,18 +132,21 @@ const getMobileFilterItems = (
   {
     hasSearchBar: true,
     title: "Status",
+    searchBarPlaceholder: "Status zoeken",
     selectedItems: [...getSelectedFilterItems(statusFilterItems)],
     items: [...getFilterItems(statusFilterItems)]
   },
   {
     hasSearchBar: true,
     title: "Categorieen",
+    searchBarPlaceholder: "Categorieen zoeken",
     selectedItems: [...getSelectedFilterItems(categoryFilterItems)],
     items: [...getFilterItems(categoryFilterItems)]
   },
   {
     hasSearchBar: true,
     title: "Merk",
+    searchBarPlaceholder: "Merk zoeken",
     selectedItems: [...getSelectedFilterItems(brandfilterItems)],
     items: [...getFilterItems(brandfilterItems)]
   }

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[CheckboxCount] should render non selected without crashing 1`] = `
+<div
+  className="filter-bar"
+  onClick={[Function]}
+  role="button"
+>
+  <ForwardRef
+    isChecked={false}
+    onClick={[Function]}
+  />
+  <span
+    className="counter"
+  >
+    22
+  </span>
+</div>
+`;
+
+exports[`[CheckboxCount] should render selected without crashing 1`] = `
+<div
+  className="filter-bar"
+  onClick={[Function]}
+  role="button"
+>
+  <ForwardRef
+    isChecked={true}
+    onClick={[Function]}
+  />
+  <span
+    className="counter"
+  >
+    22
+  </span>
+</div>
+`;

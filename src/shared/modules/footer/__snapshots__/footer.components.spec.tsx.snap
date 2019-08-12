@@ -58,7 +58,7 @@ exports[`[Footer] should render component without crashing 1`] = `
         <div
           className="footer__top-right uk-visible@m"
         >
-          <USP
+          <Connect(USP)
             uspModule={
               Object {
                 "uniqueSellingPoints": Array [
@@ -122,7 +122,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="0"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday 2019"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday 2019
                   </a>
@@ -131,7 +133,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="1"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Apple"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Apple
                   </a>
@@ -140,7 +144,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="2"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Deals"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Deals
                   </a>
@@ -149,7 +155,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="3"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Elektronica"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Elektronica
                   </a>
@@ -158,7 +166,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="4"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Gaming"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Gaming
                   </a>
@@ -167,7 +177,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="5"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Winkels"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Winkels
                   </a>
@@ -176,7 +188,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="6"
                 >
                   <a
+                    aria-label="Footbar link to Cyber Monday 2019"
                     href="/"
+                    rel="noopener"
                   >
                     Cyber Monday 2019
                   </a>
@@ -302,7 +316,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="0"
                 >
                   <a
+                    aria-label="Footbar link to Airpods Black Friday"
                     href="/"
+                    rel="noopener"
                   >
                     Airpods Black Friday
                   </a>
@@ -311,7 +327,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="1"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Kleding"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Kleding
                   </a>
@@ -320,7 +338,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="2"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Jumbo"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Jumbo
                   </a>
@@ -329,7 +349,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="3"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Rituals"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Rituals
                   </a>
@@ -338,7 +360,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="4"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday G-star"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday G-star
                   </a>
@@ -347,7 +371,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="5"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Center Parcs"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Center Parcs
                   </a>
@@ -356,7 +382,9 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="6"
                 >
                   <a
+                    aria-label="Footbar link to Black Friday Computer"
                     href="/"
+                    rel="noopener"
                   >
                     Black Friday Computer
                   </a>
@@ -482,8 +510,10 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="0"
                 >
                   <a
+                    aria-label="Logo link"
                     className="footer__social-link"
                     href="https://www.facebook.com/BlackFridayNederland/"
+                    rel="noopener"
                     target="_blank"
                   >
                     <div
@@ -511,8 +541,10 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="1"
                 >
                   <a
+                    aria-label="Logo link"
                     className="footer__social-link"
                     href="https://www.instagram.com/blackfridaynl/"
+                    rel="noopener"
                     target="_blank"
                   >
                     <div
@@ -540,8 +572,10 @@ exports[`[Footer] should render component without crashing 1`] = `
                   key="2"
                 >
                   <a
+                    aria-label="Logo link"
                     className="footer__social-link"
                     href="mailto:info@blackfridaynederland.nl"
+                    rel="noopener"
                     target="_blank"
                   >
                     <div
@@ -600,6 +634,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   <a
                     className="footer__social-link"
                     href="https://www.facebook.com/BlackFridayNederland/"
+                    rel="noopener"
                     target="_blank"
                   >
                     <div
@@ -629,6 +664,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   <a
                     className="footer__social-link"
                     href="https://www.instagram.com/blackfridaynl/"
+                    rel="noopener"
                     target="_blank"
                   >
                     <div
@@ -658,6 +694,7 @@ exports[`[Footer] should render component without crashing 1`] = `
                   <a
                     className="footer__social-link"
                     href="mailto:info@blackfridaynederland.nl"
+                    rel="noopener"
                     target="_blank"
                   >
                     <div
@@ -761,12 +798,13 @@ exports[`[Footer] should render component without crashing 1`] = `
           className="footer__logo-box"
         >
           <Link
+            aria-label="Logo link"
             className="uk-visible@m footer__logo"
             to="./"
           >
             <ImageComponent
               alt="image"
-              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert-brand.svg"
+              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg"
             />
           </Link>
           © 2019 · Black Friday Expert is een initiatief van Maddox Media B.V

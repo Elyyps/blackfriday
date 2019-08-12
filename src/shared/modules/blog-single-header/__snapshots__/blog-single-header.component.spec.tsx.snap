@@ -5,80 +5,44 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
   className="blog-single-header"
 >
   <div
-    className="blog-single-header-basic"
+    className="header-content"
   >
     <div
       className="uk-container"
     >
-      <ul
-        className=" uk-visible@s blog-single-header-basic__breadcrumbs"
-      >
-        <li
-          key="0"
-        >
-          <Link
-            to=""
-          >
-            Home
-          </Link>
-        </li>
-        <li
-          key="1"
-        >
-          <Link
-            to=""
-          >
-            Alle blogs
-          </Link>
-        </li>
-      </ul>
-      <Link
-        className="uk-hidden@s blog-single-header-basic__back"
-        to=""
-      >
-        <IconComponent
-          icon="chevron-left.svg"
-          size="15px"
-          strokeColor="#999"
-        />
-        Alle blogs
-      </Link>
-      <h1>
-        Black Friday 2019 blog
-      </h1>
+      <HeaderContentComponent
+        breadcrumbProps={
+          Object {
+            "backButton": Object {
+              "title": "Terug",
+              "url": "/#",
+            },
+            "links": Array [
+              Object {
+                "title": "Home",
+                "url": "/",
+              },
+              Object {
+                "title": "Alle blogs",
+                "url": "#",
+              },
+            ],
+            "variant": "light",
+          }
+        }
+        headerMobilePosition="left"
+        title="Vijf voorspellingen van Black Friday Nederland"
+      />
     </div>
   </div>
   <div
     className="uk-container"
   >
     <div
-      className="blog-single-header__items"
+      className="image"
     >
-      <FeaturedBlogItemsComponent
-        item={
-          Object {
-            "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-            "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
-            "link": Object {
-              "title": "Lees meer",
-              "url": "/blog-single",
-            },
-            "title": "De beste Moederdag cadeau deals",
-          }
-        }
-      />
-      <FeaturedBlogItemsComponent
-        item={
-          Object {
-            "content": "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
-            "image": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/1.png",
-            "link": Object {
-              "title": "Lees meer",
-              "url": "/blog-single",
-            },
-            "title": "Black Friday wordt Black Week – deals beginnen eerder",
-          }
-        }
+      <ImageComponent
+        src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png"
       />
     </div>
   </div>

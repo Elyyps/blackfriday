@@ -1,11 +1,8 @@
 import { WordPressPostModule } from "@app/api/modules/wordpress-module/wordpress-module";
-import { Link } from "@app/api/core/link";
-import { BlogPost } from "@app/api/core/blog-post/blog-post";
+import { IBreadcrumbComponentProps } from "@app/core/breadcrumb";
 
 export class BlogSingleHeaderModule extends WordPressPostModule {
-  public button: Link;
+  public breadcrumbProps: IBreadcrumbComponentProps;
   public image: string;
-  public items?: BlogPost[];
-  public links: Link[];
   public title: string;
 }

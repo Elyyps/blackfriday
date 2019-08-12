@@ -41,7 +41,7 @@ const NavbarMenuItemComponent = (props: INavbarMenuItemComponentProps) => {
                     openedPanel === `${index}` ? styles["navbar-menu-item__clicked"] : ""
                   }`}
                 >
-                  {(item as MenuItemExpandable).text}
+                  <a>{(item as MenuItemExpandable).text}</a>
                   <div className={styles["navbar-menu-item__expandable__icon"]}>
                     <IconComponent icon={openedPanel === `${index}` ? ArrowUp : ArrowDown} size="10px" />
                   </div>

@@ -2,12 +2,15 @@
 
 exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`] = `
 <Fragment>
+  <HelmetComponent
+    content=""
+    description=""
+    title=""
+  />
   <ModuleComponent
-    isMobile={false}
     key="0"
     wordPressModule={
       Object {
-        "bottomMargin": "0px",
         "id": "1",
         "name": "FeaturedStoresModule",
         "seeMoreCard": Object {
@@ -37,6 +40,7 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             ],
             "description": "Een selectie van bizar vele aanbieden",
             "id": "0",
+            "label": "Hot",
             "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
             "moreInfoLink": "https://www.coolblue.nl/",
             "name": "Coolblue",
@@ -58,6 +62,7 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             ],
             "description": "Een selectie van bizar vele aanbieden",
             "id": "1",
+            "label": "Hot",
             "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/de+bijenkorf.png",
             "moreInfoLink": "https://www.debijenkorf.nl/",
             "name": "De Bijenkorf",
@@ -179,11 +184,18 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
           },
         ],
         "title": "Vergelijkbare winkels",
-        "topMargin": "0px",
       }
     }
   />
 </Fragment>
 `;
 
-exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `<Fragment />`;
+exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `
+<Fragment>
+  <HelmetComponent
+    content=""
+    description=""
+    title=""
+  />
+</Fragment>
+`;

@@ -43,7 +43,7 @@ export const generateDummyBlogPost = (): BlogPost[] => [
 ];
 export const generate2DummyBlogPosts = (): BlogPost[] => [
   {
-    image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+    image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png",
     title: "De beste Moederdag cadeau deals",
     content:
       "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
