@@ -5,3 +5,4 @@ export * from "./validate-email";
 export * from "./dom-calculations";
 export * from "./scroll-position";
 export * from "./use-previous";
+export * from "./log-analytics-event";

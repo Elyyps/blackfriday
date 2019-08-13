@@ -33,7 +33,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <LabelComponent text={"Black Friday 2019: NOG 10 dagen!"} />
                 <div className={styles["homepage-header__title"]}>
                   <h1>
-                    <strong>{props.homePageModule.title}</strong>
+                    <strong>[PEDRO CANT FIND THIS]</strong>
                   </h1>
                 </div>
                 <ul className={`uk-list-check ${styles["homepage-header__list"]}`}>
