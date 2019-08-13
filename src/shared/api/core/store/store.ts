@@ -3,6 +3,7 @@ export class Store {
   public categories: string[];
   public description: string;
   public id: string;
+  public label?: string;
   public logo: string;
   public moreInfoLink: string;
   public name: string;

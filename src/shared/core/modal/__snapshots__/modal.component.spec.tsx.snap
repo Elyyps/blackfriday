@@ -4,7 +4,7 @@ exports[`[Modal] should render component without crashing 1`] = `
 <Fragment>
   <div
     onMouseDown={[Function]}
-    role="botton"
+    role="button"
   >
     <Button
       title="test"

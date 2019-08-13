@@ -43,11 +43,15 @@ const ModalNavBar = (props: IModalNavBarProps) => {
 
   React.useEffect(() => {
     if (isOpen) {
-      document.documentElement.style.overflow = "hidden";
+      if (typeof document !== "undefined") {
+        document.documentElement.style.overflow = "hidden";
+      }
     }
 
     return () => {
-      document.documentElement.style.overflow = "auto";
+      if (typeof document !== "undefined") {
+        document.documentElement.style.overflow = "auto";
+      }
     };
   }, [isOpen]);
 
@@ -63,38 +67,41 @@ const ModalNavBar = (props: IModalNavBarProps) => {
         <IconComponent icon={props.icon} size={props.iconSize} />
         {props.title}
       </button>
-      {ReactDOM.createPortal(
-        <div
-          role={"role"}
-          className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
-          onClick={(e): any => {
-            onClickAway(e);
-          }}
-        >
+      {typeof document !== "undefined" &&
+        ReactDOM.createPortal(
           <div
-            className={`${styles["modal-navbar__holder"]} ${styles[`modal-navbar__holder__${props.variant}__close`]} ${
-              isOpen ? styles[`modal-navbar__holder__${props.variant}__open`] : ""
-            } `}
-            ref={modalRef}
+            role={"role"}
+            className={`${styles["modal-navbar"]} ${styles[styleOpened]}`}
+            onClick={(e): any => {
+              onClickAway(e);
+            }}
           >
             <div
-              className={`${styles["modal-navbar__container"]} ${styles[`modal-navbar__container__${props.variant}`]}`}
+              className={`${styles["modal-navbar__holder"]} ${
+                styles[`modal-navbar__holder__${props.variant}__close`]
+              } ${isOpen ? styles[`modal-navbar__holder__${props.variant}__open`] : ""} `}
+              ref={modalRef}
             >
               <div
-                role="button"
-                aria-label="closeButton"
-                className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
-                onClick={toggleOpened}
+                className={`${styles["modal-navbar__container"]} ${
+                  styles[`modal-navbar__container__${props.variant}`]
+                }`}
               >
-                <IconComponent icon={CLOSE_ICON} size="12px" />
-                <span className="uk-visible@m">{props.close}</span>
+                <div
+                  role="button"
+                  aria-label="closeButton"
+                  className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
+                  onClick={toggleOpened}
+                >
+                  <IconComponent icon={CLOSE_ICON} size="12px" />
+                  <span className="uk-visible@m">{props.close}</span>
+                </div>
+                {props.children}
               </div>
-              {props.children}
             </div>
-          </div>
-        </div>,
-        document.body
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 };

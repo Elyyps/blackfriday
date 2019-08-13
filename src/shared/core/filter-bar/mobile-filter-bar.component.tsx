@@ -30,8 +30,7 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
         props.categoryFilterItems,
         props.sortBy,
         props.sortByOptions,
-        props.statusFilterItems,
-        
+        props.statusFilterItems
       )
     );
   }, [props.brandFilterItems, props.categoryFilterItems, props.sortBy, props.sortByOptions, props.statusFilterItems]);

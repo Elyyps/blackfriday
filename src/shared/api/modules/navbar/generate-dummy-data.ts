@@ -8,16 +8,16 @@ export const generateDummyNavbarData = (): INavBarModule => ({
   links: [
     { title: "Winkels", url: "/stores-overview" },
     { title: "Productdeals", url: "/deals-overview" },
-    { title: "Black Friday", url: "/" }
+    { title: "Black Friday", url: "/black-friday-2019" }
   ],
   closeText: "Sluiten",
   logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg",
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "NavBarModule",
   navbarMenuItem: [
-    { url: "./blog-overview", text: "BlackFriday 2019" } as MenuItemLink,
+    { url: "./stores-overview", text: "Winkels" } as MenuItemLink,
+    { url: "./deals-overview", text: "Productdeals" } as MenuItemLink,
+    { url: "./black-friday-2019", text: "BlackFriday 2019" } as MenuItemLink,
     { url: "./blog-overview", text: "Cyber Monday" } as MenuItemLink,
     { url: "./blog-overview", text: "Partner worden?" } as MenuItemLink,
     { url: "./blog-overview", text: "Blog" } as MenuItemLink,

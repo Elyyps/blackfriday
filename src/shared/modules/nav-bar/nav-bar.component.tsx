@@ -12,6 +12,7 @@ import { NavbarMenuItemComponent } from "../navbar-menu-item";
 import { NavBarContainerProps } from "./cointeners/nav-bar-containers";
 import { IBlackFridayDate } from "@app/stores/settings";
 import { CountDownContainer } from "@app/core/count-down/containers/count-down-conainers";
+import { LanguageSwitchContainer } from "@app/core/language-switch/language-switch.container";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -37,8 +38,10 @@ const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) =>
                 <LinkComponent to={link.url}>{link.title}</LinkComponent>
               </li>
             ))}
+            <li>
+              <LanguageSwitchContainer />
+            </li>
           </ul>
-
           <ModalNavBar
             className={`${styles["nav-bar__search-button"]}`}
             variant={"search"}

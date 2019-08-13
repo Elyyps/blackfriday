@@ -1,20 +1,28 @@
 import React from "react";
-import { FilterBarComponent } from "./filter-bar.component";
-import { generateFilterBarData } from "@app/api/core/filter-bar/endpoint";
 import { shallow } from "enzyme";
 
+import { FilterBar } from "@app/core/filter-bar/filter-bar.component";
+import { ViewType } from "@app/stores/settings";
+/* tslint:disable */
 describe("[FilterBar]", () => {
-  it("should render component without crashing", () => {
+  it("should render without crashing", () => {
     const renderedComponent = shallow(
-      <FilterBarComponent
-        applyFilter={jest.fn()}
-        filterBar={generateFilterBarData()}
-        onBrandChanged={jest.fn()}
-        onStatusChanged={jest.fn()}
-        onOrderByChanged={jest.fn()}
-        onCategoryChanged={jest.fn()}
+      <FilterBar
+        filtersChanged={jest.fn()}
+        brandFilterItems={[]}
+        categoryFilterItems={[]}
+        screenSize={{ breakpointPixels: 0, viewType: ViewType.Desktop }}
+        sortBy=""
+        statusFilterItems={[]}
+        totalResults={100}
+        clearFilters={jest.fn()}
+        setBrandFilters={jest.fn()}
+        setCategoryFilters={jest.fn()}
+        setSortBy={jest.fn()}
+        setStatusFilters={jest.fn()}
       />
     );
+
     expect(renderedComponent).toMatchSnapshot();
   });
 });

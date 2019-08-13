@@ -6,15 +6,19 @@ export interface IHelmetComponentProps {
   description: string;
   title: string;
 }
+type IState = {};
 
-const HelmetComponent = (props: IHelmetComponentProps) => (
-  <div>
-    <Helmet>
-      <meta charSet="utf-8" name={props.title} content={props.content} />
-      <meta name="Description" content={props.description} />
-      <title>{props.title}</title>
-    </Helmet>
-  </div>
-);
-
-export { HelmetComponent };
+// This is a class component because helmet shits the bed when using Hooks
+export class HelmetComponent extends React.Component<IHelmetComponentProps, IState> {
+  public render() {
+    return (
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" name={this.props.title} content={this.props.content} />
+          <meta name="Description" content={this.props.description} />
+          <title>{this.props.title}</title>
+        </Helmet>
+      </div>
+    );
+  }
+}

@@ -7,8 +7,11 @@ export const HeaderInfoDummy: HeaderInfo = {
   icon: Store,
   bgcolor: "#f7f7f7 ",
   content: "Vier Black Friday bij Apple en ontvang 15% korting op alles!",
-  bottomMargin: "0px",
-  topMargin: "0px",
+  breadcrumbProps: {
+    links: [{ title: "Home", url: "/" }, { title: "Alle winkels", url: "/stores-overview" }],
+    backButton: { title: "Terug", url: "/#" },
+    variant: "dark"
+  },
   url: "./",
   id: "1",
   name: "HeaderInfo"

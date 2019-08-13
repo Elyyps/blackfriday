@@ -157,8 +157,6 @@ export const generateDummyFooterData = (): Footer => ({
   bottomFooter: generateBottomFooter(),
   middleFooter: generateMiddleFooter(),
   topFooter: generateTopFooter(),
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "FooterModule"
 });

@@ -3,6 +3,7 @@ import styles from "./medium-hero-component.module.scss";
 import { HeaderContentComponent } from "@app/core/header-content";
 import { MediumHeroModule } from "@app/api/modules/medium-hero/medium-hero";
 import { USPContainer } from "@app/core/usp/container";
+import { ImageComponent } from "@app/core";
 
 export interface IMediumHeroComponentProps {
   mediumHeroModule: MediumHeroModule;
@@ -19,7 +20,7 @@ const MediumHeroComponent = (props: IMediumHeroComponentProps) => {
         </div>
         <div className={styles["holder"]}>
           <div className={styles["image"]}>
-            <img src={image} alt="temp alt" />
+            <ImageComponent src={image} alt="temp alt" />
           </div>
           {headerContent && (
             <div className={styles["content"]}>
@@ -28,6 +29,7 @@ const MediumHeroComponent = (props: IMediumHeroComponentProps) => {
                 subtitle={headerContent.subtitle}
                 text={headerContent.text}
                 breadcrumbProps={headerContent.breadcrumbProps}
+                headerMobilePosition="center"
               />
             </div>
           )}

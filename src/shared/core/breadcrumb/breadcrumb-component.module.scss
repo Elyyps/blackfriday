@@ -1,17 +1,80 @@
-.breadcrumb {
+.breadcrumbs {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+
   display: flex;
   justify-content: center;
   margin-bottom: 8px;
+
+  &__light {
+    color: rgba(255, 255, 255, 0.5);
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: $global-inverse-color;
+        span {
+          stroke: $global-inverse-color !important;
+        }
+      }
+    }
+    span {
+      stroke: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    li {
+      &:nth-child(n):last-child {
+        span {
+          color: rgba(255, 255, 255, 0.3);
+        }
+      }
+
+      &:not(:last-child) {
+        &::after {
+          color: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
+
+  &__dark {
+    color: $gray-light;
+    a {
+      color: $gray-light !important;
+      &:hover {
+        color: $brand-primary !important;
+        span {
+          stroke: $brand-primary !important;
+        }
+      }
+    }
+    span {
+      stroke: $gray-light !important;
+    }
+
+    li {
+      &:nth-child(n):last-child {
+        span {
+          color: lighten($gray-light, 10%);
+        }
+      }
+
+      &:not(:last-child) {
+        &::after {
+          color: lighten($gray-light, 10%);
+        }
+      }
+    }
+  }
+
   li {
-    margin: 0 5px;
+    margin: 0;
     display: inline-flex;
     align-items: center;
+
     &:not(:last-child) {
       &::after {
         margin-left: 8px;
+        margin-right: 8px;
         display: block;
         content: "\2014";
       }
@@ -23,17 +86,9 @@
   }
 
   a {
-    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    span {
-      stroke: rgba(255, 255, 255, 0.5) !important;
-    }
     &:hover {
       text-decoration: none;
-      color: $global-inverse-color;
-      span {
-        stroke: $global-inverse-color !important;
-      }
     }
   }
 }

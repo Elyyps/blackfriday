@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import BottomScrollListener from "react-bottom-scroll-listener";
 
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
-import { FilterBarContainer } from "@app/core/filter-bar-new";
+import { FilterBarContainer } from "@app/core/filter-bar";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
@@ -17,7 +17,10 @@ import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
-import { getOffset, useScrollPosition } from "@app/util";
+import { getOffset, useScrollPosition, usePrevious } from "@app/util";
+import { injectIntl, InjectedIntlProps } from "react-intl";
+import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
+import { FilterItem } from "@app/api/core/filter/filter-item";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -32,7 +35,7 @@ export interface IOverviewItem {
 const TAKE = 25;
 const SHOW_AD_EVERY_LINES = 4;
 
-const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
+const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps & InjectedIntlProps) => {
   const topDivRef = useRef<any>(null);
   const mainDivRef = useRef<any>(null);
 
@@ -49,9 +52,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
 
   const scrollPos = useScrollPosition();
   useEffect(() => {
-    const position = getOffset(mainDivRef.current);
-    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-    const actualScrollPosition = currentScrollPosition - position;
+    const actualScrollPosition = getActualScrollPosition();
 
     if (actualScrollPosition > 0) {
       const totalHeight = getTotalHeight(viewType, props.totalResults);
@@ -61,13 +62,36 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   }, [scrollPos]);
 
   useEffect(() => {
-    props.getStores(0, TAKE, props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems, props.sortBy);
+    if (
+      filtersAreDifferent() ||
+      allFiltersAndStoresAreEmpty(
+        [props.statusFilterItems, props.categoryFilterItems, props.brandFilterItems],
+        props.stores
+      )
+    ) {
+      props.getStores(
+        0,
+        TAKE,
+        props.statusFilterItems,
+        props.categoryFilterItems,
+        props.brandFilterItems,
+        props.sortBy
+      );
+    }
   }, [props.brandFilterItems, props.categoryFilterItems, props.statusFilterItems, props.sortBy]);
 
   useEffect(() => {
     const overviewItemsResult = getOverviewItems(viewType, props.stores);
     setOverviewItems(overviewItemsResult);
   }, [props.stores, props.screenSize]);
+
+  const getActualScrollPosition = () => {
+    const position = getOffset(mainDivRef.current);
+    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+    const actualScrollPosition = currentScrollPosition - position;
+
+    return actualScrollPosition;
+  };
 
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
@@ -91,19 +115,34 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
   const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
   const filtersChanged = () => {
-    if (mainDivRef && mainDivRef.current) {
+    const actualScrollPosition = getActualScrollPosition();
+    if (mainDivRef && mainDivRef.current && actualScrollPosition > 0) {
       const top = getOffset(mainDivRef.current);
       window.scroll(top, top);
       setPositionPercentage(0);
     }
   };
 
+  const prevStatusFilterItems = usePrevious(props.statusFilterItems);
+  const prevCategoryFilterItems = usePrevious(props.categoryFilterItems);
+  const prevBrandFilterItems = usePrevious(props.brandFilterItems);
+  const filtersAreDifferent = (): boolean => {
+    const statusFiltersAreDifferent = singleFiltersAreDifferent(prevStatusFilterItems || [], props.statusFilterItems);
+    const categoryFiltersAreDifferent = singleFiltersAreDifferent(
+      prevCategoryFilterItems || [],
+      props.categoryFilterItems
+    );
+    const brandFiltersAreDifferent = singleFiltersAreDifferent(prevBrandFilterItems || [], props.brandFilterItems);
+
+    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent;
+  };
+
   return (
     <div>
       <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
-          <TabComponent attrAction={"link"}>Winkels</TabComponent>
-          <TabComponent attrAction={"link"}>Productdeals</TabComponent>
+          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
+          <TabComponent attrAction={"link"}> {props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
         </TabContainerComponent>
       </div>
 
@@ -122,7 +161,7 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
         <div className={styles["store-overview"]}>
           <div className="uk-container">
             <div className={styles["no-black-friday"]}>
-              <h2>Geen Black Friday, wel veel voordeel!</h2>
+              <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
             </div>
             {props.stores && props.stores.length > 0 ? (
               <div className={styles["stores-overview__body__list"]}>
@@ -136,8 +175,10 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
                       </div>
 
                       {advert && (
-                        <div className={`${styles[`stores-overview__body__banner`]} `}>
-                          <BannerComponent {...advert} />
+                        <div>
+                          <div className={`${styles[`stores-overview__body__banner`]} `}>
+                            <BannerComponent {...advert} />
+                          </div>
                         </div>
                       )}
                     </React.Fragment>
@@ -151,7 +192,12 @@ const StoreOverview = (props: IStoreOverviewComponentProps & StoreOverviewContai
               </div>
             ) : (
               <div>
-                <h1>Geen resultaten gevonden</h1>
+                <CtaSmallComponent
+                  buttonTitle="Verwijder alle filters"
+                  onClick={() => props.clearAllFilters()}
+                  text="Er zijn geen resultaten gevonden met de huidige filters"
+                  icon={props.storeOverviewModule.emptyStateIcon}
+                />
               </div>
             )}
 
@@ -193,7 +239,7 @@ const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewCon
   }
 };
 
-const getTotalHeight = (viewType: ViewType, totalStores: number) => {
+export const getTotalHeight = (viewType: ViewType, totalStores: number) => {
   const lineHeight = getLineHeight(viewType);
   const storesPerLine = getAmountOfItemsPerLine(viewType);
   const totalNumberOfLines = getTotalNumberOfLines(storesPerLine, totalStores);
@@ -266,7 +312,10 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
       showAlternativeBanner = !showAlternativeBanner;
     } else {
       overviewItemsResult.push({
-        advert: undefined,
+        advert:
+          stores.length < showAdEvery && storeIndex === stores.length
+            ? { ...generateDummyBannerComponentData(), showAlternativeBanner }
+            : undefined,
         store
       });
       storeIndex += 1;
@@ -274,6 +323,37 @@ const getOverviewItems = (viewType: ViewType, stores: Store[]): IOverviewItem[] 
   });
 
   return overviewItemsResult;
+};
+const StoreOverview = injectIntl(component);
+
+const allFiltersAndStoresAreEmpty = (allFilterItems: FilterItem[][], stores: Store[]) => {
+  const totalSelecteditems = allFilterItems.reduce(
+    (count, filterItems) => count + filterItems.filter(item => item.isSelected).length,
+    0
+  );
+
+  if (totalSelecteditems > 0) {
+    return false;
+  }
+
+  if (stores.length === 0) {
+    return true;
+  }
+
+  return false;
+};
+
+const singleFiltersAreDifferent = (oldFilters: FilterItem[], newFilters: FilterItem[]) => {
+  for (let i = 0; i < newFilters.length; i += 1) {
+    if (!oldFilters[i]) {
+      return false;
+    }
+    if (oldFilters[i].isSelected !== newFilters[i].isSelected) {
+      return true;
+    }
+  }
+
+  return false;
 };
 
 export { StoreOverview };

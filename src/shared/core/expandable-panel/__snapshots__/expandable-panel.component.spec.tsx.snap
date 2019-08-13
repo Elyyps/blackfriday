@@ -7,15 +7,15 @@ exports[`[ExpandablePanelComponent] should render component without crashing 1`]
   >
     <div
       className="expandable-panel__block"
-      role="listitem"
+      role="list"
     >
       <ul
         className="expandable-panel__list"
       >
         <li
-          aria-label="expandButton"
+          aria-label="expanded panel"
           onClick={[Function]}
-          role="button"
+          role="listitem"
         >
           <span>
             Title

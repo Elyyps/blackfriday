@@ -62,8 +62,6 @@ export const generateBodytextDummyData = (): BodyTextModule => ({
       <li>Third</li>
       <li>Fourth</li>
     </ol>`,
-  topMargin: "0",
   id: "",
-  name: "BodyTextModule",
-  bottomMargin: ""
+  name: "BodyTextModule"
 });

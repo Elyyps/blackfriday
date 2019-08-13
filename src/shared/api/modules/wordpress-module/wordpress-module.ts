@@ -1,28 +1,28 @@
 import { Background } from "@app/api/core/background";
 import { Curve } from "@app/api/core/curve";
-import { Padding } from "@app/api/core/padding";
+import { Spacing } from "@app/api/core/padding";
 
 export class WordPressPostModule {
   public background?: Background;
-  public bottomMargin: string;
-  public bottomPadding?: Padding;
+  public bottomMargin?: Spacing;
+  public bottomPadding?: Spacing;
   public curve?: Curve;
   public id: string;
   public name: string;
-  public topMargin: string;
-  public topPadding?: Padding;
+  public topMargin?: Spacing;
+  public topPadding?: Spacing;
 }
 
-export const paddingMobile = {
-  mobilePaddingLarge: 48,
-  mobilePaddingMedium: 32,
-  mobilePaddingSmall: 24,
-  mobilePaddingXLarge: 64
+export const mobileSpacing = {
+  mobileSpacingLarge: 48,
+  mobileSpacingMedium: 32,
+  mobileSpacingSmall: 24,
+  mobileSpacingXLarge: 64
 };
 
-export const paddingDesktop = {
-  desktopPaddingLarge: 120,
-  desktopPaddingMedium: 96,
-  desktopPaddingSmall: 72,
-  desktopPaddingXLarge: 144
+export const desktopSpacing = {
+  desktopSpacingLarge: 120,
+  desktopSpacingMedium: 96,
+  desktopSpacingSmall: 72,
+  desktopSpacingXLarge: 144
 };

@@ -10,8 +10,6 @@ export const dummyFeaturedShopsData = (): FeaturedStoresModule => ({
     title: "Wij hebben meer winkels in ons overzicht",
     link: { url: "/", title: "Alle winkels" }
   },
-  bottomMargin: "0px",
-  topMargin: "0px",
   id: "1",
   name: "FeaturedStoresModule"
 });

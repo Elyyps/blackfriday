@@ -39,7 +39,6 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
         },
       ],
       "bodyTextModule": Object {
-        "bottomMargin": "",
         "containerAlignment": "left",
         "containerSize": "full",
         "html": " <div>
@@ -65,9 +64,24 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
   </div>",
         "id": "",
         "name": "shopSingleBodyText",
-        "topMargin": "",
       },
-      "bottomMargin": "0px",
+      "breadcrumbProps": Object {
+        "backButton": Object {
+          "title": "Terug",
+          "url": "/#",
+        },
+        "links": Array [
+          Object {
+            "title": "Home",
+            "url": "/",
+          },
+          Object {
+            "title": "Alle winkels",
+            "url": "/stores-overview",
+          },
+        ],
+        "variant": "dark",
+      },
       "checkList": Array [
         "Profiteer van 15% op korting op alles",
         "Online én in de winkels",
@@ -91,16 +105,6 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
         "Wonen & slapen",
         "Swiss sense",
         "hastens",
-      ],
-      "links": Array [
-        Object {
-          "title": "Home",
-          "url": "/",
-        },
-        Object {
-          "title": "Alle winkels",
-          "url": "/stores-overview",
-        },
       ],
       "name": "ShopSingleHeaderModule",
       "picture": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/stores-single.png",
@@ -152,7 +156,6 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
         "value": 80,
       },
       "title": "15% korting op het hele assortiment",
-      "topMargin": "0px",
     }
   }
 />

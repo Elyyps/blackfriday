@@ -10,16 +10,18 @@ import { Badge } from "@app/core/badge";
 import ShareSVG from "@assets/icons/share.svg";
 
 import { LinkComponent } from "@app/core/link";
+import { BreadcrumbComponent } from "@app/core/breadcrumb";
+import { InjectedIntlProps, injectIntl } from "react-intl";
 
 export interface IHeaderInfoComponentProps {
   headerInfo: HeaderInfo;
 }
 
-const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => (
+const component = (props: IHeaderInfoComponentProps & InjectedIntlProps) => (
   <div className={styles["header-info"]} style={{ background: props.headerInfo.bgcolor }}>
     {props.headerInfo.image && (
       <div className={styles["header-info__image"]}>
-        <ImageComponent src={props.headerInfo.image} />
+        <ImageComponent alt="logo" src={props.headerInfo.image} />
       </div>
     )}
     <div className="uk-container">
@@ -27,13 +29,22 @@ const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => (
         <div className={styles["header-info__body__content"]}>
           {props.headerInfo.icon && (
             <div className={styles["header-info__icon"]}>
-              <ImageComponent src={props.headerInfo.icon} />
+              <ImageComponent alt="icon" src={props.headerInfo.icon} />
             </div>
           )}
           <div className={styles["header-info__content"]}>
+            {props.headerInfo.breadcrumbProps && (
+              <div className={styles["breadcrumbs"]}>
+                <BreadcrumbComponent
+                  links={props.headerInfo.breadcrumbProps.links}
+                  backButton={props.headerInfo.breadcrumbProps.backButton}
+                  variant={props.headerInfo.breadcrumbProps.variant}
+                />
+              </div>
+            )}
             <h1 className={styles["header-info__title"]}>{props.headerInfo.title}</h1>
             {`${props.headerInfo.content} `}
-            <LinkComponent to={props.headerInfo.url}>Meer info</LinkComponent>
+            <LinkComponent to={props.headerInfo.url}>{props.intl.formatMessage({ id: "see-more" })}</LinkComponent>
           </div>
           <div className={styles["header-info__share-dropdown"]}>
             <DropdownComponent title="Status" icon={ShareSVG}>
@@ -50,5 +61,5 @@ const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => (
     </div>
   </div>
 );
-
+const HeaderInfoComponent = injectIntl(component);
 export { HeaderInfoComponent };

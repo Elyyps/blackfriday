@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[CheckboxDropdown] should render without crashing 1`] = `
+<DropdownComponent
+  hasSelectedItems={false}
+  isOpen={false}
+  setIsOpen={[Function]}
+  title=""
+>
+  <div
+    className="content"
+  />
+</DropdownComponent>
+`;

@@ -15,12 +15,13 @@ import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dum
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
-import { generateBlogSingleHeaderData, generateBlogOverviewHeaderData } from "../modules/blog-single-header/endpoint";
+import { generateBlogSingleHeaderData, generateBF2019HeaderData } from "../modules/blog-single-header/endpoint";
+import { generateBlogOverviewHeaderData } from "../modules/blog-overview-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
-import { generateBlogBodyTextData } from "../core/blog-bodytext/endpoint";
+import { generateBlogBodyTextData, generateBlackFriday2019TextData } from "../core/blog-bodytext/endpoint";
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
 import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
@@ -30,7 +31,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/",
     metaData: {
-      title: "Homepage",
+      title: "Black Friday",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -50,7 +51,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/stores-overview",
     metaData: {
-      title: "Homepage",
+      title: "Winkel overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -66,7 +67,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/stores-single",
     metaData: {
-      title: "Homepage",
+      title: "Winkel pagina",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -84,7 +85,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/deals-overview",
     metaData: {
-      title: "Homepage",
+      title: "Deals overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -100,7 +101,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/productline-overview",
     metaData: {
-      title: "Homepage",
+      title: "Productlijn overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -120,7 +121,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/blog-overview",
     metaData: {
-      title: "Homepage",
+      title: "Blog overzicht",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -137,7 +138,7 @@ export const pageList: PageModel[] = [
     id: uuid(),
     route: "/blog-single",
     metaData: {
-      title: "Homepage",
+      title: "Blog pagina",
       content: "The landing page of the webpage",
       description: "The landing page of the webpage"
     },
@@ -161,8 +162,8 @@ export const pageList: PageModel[] = [
     },
     wordPressPostModules: [
       generateDummyNavbarData(),
-      generateBlogSingleHeaderData(),
-      generateBlogBodyTextData(),
+      generateBF2019HeaderData(),
+      generateBlackFriday2019TextData(),
       generateDummyFeaturedDealsData(),
       generateFeaturedBlogData(),
       generateCtaNewsLetterModule(),

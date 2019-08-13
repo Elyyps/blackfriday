@@ -29,6 +29,8 @@ import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/
 import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
 import { BlogOverviewComponent } from "@app/modules/blog-overview";
 import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
+import { BlogOverviewHeaderComponent } from "@app/modules/blog-overview-header";
+import { BlogOverviewHeaderModule } from "@app/api/modules/blog-overview-header/blog-overview-header";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import {
@@ -80,6 +82,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":
       return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
+    case "BlogOverviewHeaderModule":
+      return <BlogOverviewHeaderComponent blogOverviewHeader={wordPressModule as BlogOverviewHeaderModule} />;
     case "BlogBodyTextModule":
       return <BlogBodyTextComponent blogBodyTextModule={wordPressModule as BlogBodyTextModule} />;
     case "FeaturedBlogModule":
