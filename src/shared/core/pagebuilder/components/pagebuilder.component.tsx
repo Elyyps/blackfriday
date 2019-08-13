@@ -1,6 +1,7 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
+import TagManager from "react-gtm-module";
 
 import { PagebuilderContainerProps } from "../index";
 import { EmptyPageComponent } from "@app/core/empty-page";
@@ -21,17 +22,22 @@ export class PagebuilderComponent extends React.Component<
 > {
   public constructor(props: IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps) {
     super(props);
-    ReactGA.initialize("UA-145384203-1");
+
+    const tagManagerArgs = {
+      gtmId: "GTM-MDXLS3M",
+      auth: "QLhJ-9IEHYtgJSvEkPfoIg",
+      preview: "env-2"
+    };
 
     if (props.location) {
       props.getPage(props.location.pathname);
-      ReactGA.pageview(props.location.pathname);
     }
 
     if (typeof window === "object") {
       window.scroll(0, 0);
       window.addEventListener("resize", this.handleResize.bind(this));
       this.setScreenSize();
+      TagManager.initialize(tagManagerArgs);
     }
   }
 
