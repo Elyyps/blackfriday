@@ -4,6 +4,7 @@ import { settingsActions, ViewType } from "@app/stores/settings";
 import { pageActions } from "@app/stores";
 import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
 import { breakPointMobile, breakPointTablet, breakPointDesktop } from "@app/util/detect-view";
+import { BLACK_FRIDAY_DAY, BLACK_FRIDAY_MONTH } from "@app/constants/blackfriday-date";
 
 export const moduleFetcher: any = () => async (
   req: express.Request & { store: any },
@@ -56,8 +57,7 @@ export const setIsMobile: any = () => async (
 
   return next();
 };
-const BLACK_FRIDAY_DAY = 8;
-const BLACK_FRIDAY_MONTH = 8;
+
 export const setBlackFridayDate: any = () => async (
   req: express.Request & { store: any },
   res: express.Response,

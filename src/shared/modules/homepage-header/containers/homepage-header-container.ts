@@ -1,4 +1,3 @@
-import * as React from "react";
 import { connect, MapStateToProps } from "react-redux";
 
 import { IAppState } from "@app/stores";

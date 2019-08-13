@@ -8,9 +8,23 @@ import { LabelComponent } from "./label.component";
 storiesOf("Label Component", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => <LabelComponent text={"Black Friday 2019: NOG 10 dagen!"} />)
-  .add("Basic implementation", () => <LabelComponent isLeftPointy text={"Black Friday 2019: NOG 10 dagen!"} />)
-  .add("Basic implementation", () => <LabelComponent isRightPointy text={"Black Friday 2019: NOG 10 dagen!"} />)
   .add("Basic implementation", () => (
-    <LabelComponent isRightPointy isLeftPointy text={"Black Friday 2019: NOG 10 dagen!"} />
+    <LabelComponent>
+      <span>"Black Friday 2019: NOG 10 dagen!"</span>
+    </LabelComponent>
+  ))
+  .add("Basic implementation", () => (
+    <LabelComponent isLeftPointy>
+      <span>"Black Friday 2019: NOG 10 dagen!"</span>
+    </LabelComponent>
+  ))
+  .add("Basic implementation", () => (
+    <LabelComponent isRightPointy>
+      <span>"Black Friday 2019: NOG 10 dagen!"</span>
+    </LabelComponent>
+  ))
+  .add("Basic implementation", () => (
+    <LabelComponent isRightPointy isLeftPointy>
+      <span>"Black Friday 2019: NOG 10 dagen!"</span>
+    </LabelComponent>
   ));

@@ -10,7 +10,7 @@ import { ModalComponent } from "@app/core/modal";
 import ReactPlayer from "react-player";
 import { HomePageHeaderContainerProps } from "../containers/homepage-header-container";
 import { IBlackFridayDate } from "@app/stores/settings";
-import { CountDownComponent } from "@app/core/count-down";
+
 import { CountDownContainer } from "@app/core/count-down/containers/count-down-conainers";
 
 export interface IHomePageHeaderComponentProps {
@@ -74,7 +74,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
                   </div>
                   <div className={styles["homepage-header-info__item"]}>
                     <h3>
-                      <CountDownContainer />
+                      <CountDownContainer isFullVersion={true} />
                     </h3>
                   </div>
                 </div>
