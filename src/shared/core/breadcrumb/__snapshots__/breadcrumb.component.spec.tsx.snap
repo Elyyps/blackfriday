@@ -2,7 +2,7 @@
 
 exports[`[Breadcrumb] should render component without crashing 1`] = `
 <div
-  className="breadcrumb"
+  className="breadcrumbs breadcrumbs__light"
 >
   <ul
     className="uk-visible@s"
@@ -19,11 +19,9 @@ exports[`[Breadcrumb] should render component without crashing 1`] = `
     <li
       key="1"
     >
-      <Link
-        to="/#"
-      >
+      <span>
         Blog
-      </Link>
+      </span>
     </li>
   </ul>
   <Link

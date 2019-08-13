@@ -2,7 +2,7 @@
 
 exports[`[HeaderContent] should render component without crashing 1`] = `
 <div
-  className="header-content"
+  className="header-content center"
 >
   <BreadcrumbComponent
     backButton={

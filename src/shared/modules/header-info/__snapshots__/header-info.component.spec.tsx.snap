@@ -5,6 +5,23 @@ exports[`[Footer] should render component without crashing 1`] = `
   headerInfo={
     Object {
       "bgcolor": "#f7f7f7 ",
+      "breadcrumbProps": Object {
+        "backButton": Object {
+          "title": "Terug",
+          "url": "/#",
+        },
+        "links": Array [
+          Object {
+            "title": "Home",
+            "url": "/",
+          },
+          Object {
+            "title": "Alle winkels",
+            "url": "/stores-overview",
+          },
+        ],
+        "variant": "dark",
+      },
       "content": "Vier Black Friday bij Apple en ontvang 15% korting op alles!",
       "icon": "store.svg",
       "id": "1",

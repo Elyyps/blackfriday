@@ -25,9 +25,13 @@
     border-radius: $global-border-radius;
     overflow: hidden;
     position: relative;
+    @media (max-width: $breakpoint-medium-max) {
+      height: 180px;
+    }
     @media (max-width: $breakpoint-xsmall-max) {
       height: 120px;
     }
+
     &:after {
       position: absolute;
       left: 0;
