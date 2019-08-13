@@ -19,7 +19,11 @@ exports[`[NotFound] should render component without crashing 1`] = `
     <p>
       We hebben de pagina niet gevonden. Zullen we je de weg wijzen?
     </p>
-    <Button
+    <ClickableComponent
+      animated={false}
+      dynamicSize={false}
+      fullWidth={false}
+      href="./"
       title="Black Friday homepage"
       variant="secondary"
     />

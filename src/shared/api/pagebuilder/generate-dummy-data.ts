@@ -182,6 +182,6 @@ export const pageList: PageModel[] = [
       content: "Black Friday 2019 informative page",
       description: "Black Friday 2019 informative page"
     },
-    wordPressPostModules: [generateDummyNavbarData(), generateNotFoundModuleDummyData(), generateDummyFooterData()]
+    wordPressPostModules: [generateDummyNavbarData(), generateNotFoundModuleDummyData()]
   } as PageModel
 ];
