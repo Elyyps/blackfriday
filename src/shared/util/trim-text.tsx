@@ -1,17 +1,23 @@
 export const trimText = (text: string, maxCharacters: number, truncateString = "...") => {
-  let trimmedSentence = "";
+  const trimmedText = text.trim();
 
-  const wordArray = text.split(" ");
+  if (trimmedText.length > maxCharacters) {
+    let trimmedSentence = "";
 
-  for (let index = 0; index < wordArray.length; index += 1) {
-    const word = wordArray[index];
+    const wordArray = trimmedText.split(" ");
 
-    const newSentence = `${trimmedSentence} ${word}`;
+    for (let index = 0; index < wordArray.length; index += 1) {
+      const word = wordArray[index];
 
-    if (newSentence.length + truncateString.length < maxCharacters) {
-      trimmedSentence = newSentence;
-    } else {
-      return trimmedSentence.concat(truncateString);
+      const newSentence = `${trimmedSentence} ${word}`;
+
+      if (newSentence.length + truncateString.length < maxCharacters) {
+        trimmedSentence = newSentence;
+      } else {
+        return trimmedSentence.concat(truncateString);
+      }
     }
   }
+
+  return trimmedText;
 };

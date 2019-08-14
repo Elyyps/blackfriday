@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { ImageComponent } from "@app/core";
@@ -31,9 +31,14 @@ const charactersSmall = 46;
 
 const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
   const { description, logo, moreInfoLink, name, status, timeLeftPercentage, label } = props.store;
+
+  const [trimmedDescription, setTrimmedDescription] = useState<string>(description);
   const shopCardVariantClass = props.variant ? styles[`${props.variant}`] : "";
   const MAX_CHARACTERS = props.variant !== "responsive" ? charactersBig : charactersSmall;
-  const trimmedDescription = checkTextLength(description, MAX_CHARACTERS);
+
+  useEffect(() => {
+    setTrimmedDescription(checkTextLength(description, MAX_CHARACTERS));
+  }, []);
 
   return (
     <div className={`${styles["shop-card"]} ${shopCardVariantClass}`}>

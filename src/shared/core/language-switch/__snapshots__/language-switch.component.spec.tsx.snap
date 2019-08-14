@@ -8,7 +8,7 @@ exports[`[LanguageSwitch] should render component without crashing 1`] = `
   role="button"
 >
   <img
-    alt="image"
+    alt="language switch"
     src={
       Object {
         "ReactComponent": [Function],
