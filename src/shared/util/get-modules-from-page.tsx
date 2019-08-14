@@ -49,6 +49,8 @@ import { StoreOverviewContainer } from "@app/modules/store-overview/containers/s
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 import { HeaderInfoComponent } from "@app/modules/header-info";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
+import { NotFoundComponent } from "@app/modules/not-found";
+import { NotFoundModule } from "@app/api/modules/not-found/not-found";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -95,7 +97,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
     case "HeaderInfo":
       return <HeaderInfoComponent headerInfo={wordPressModule as HeaderInfo} />;
-
+    case "NotFoundModule":
+      return <NotFoundComponent notFoundModule={wordPressModule as NotFoundModule} />;
     default:
   }
 };
