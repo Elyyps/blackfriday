@@ -24,7 +24,7 @@ const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) =>
         <div>
           <div className={styles["nav-bar__logo"]}>
             <LinkComponent to="./">
-              <ImageComponent src={props.navBarModule.logo} alt="image" isBlocking={true} />
+              <ImageComponent src={props.navBarModule.logo} alt="blackfriday logo" isBlocking={true} />
             </LinkComponent>
           </div>
           <div className={`uk-visible@s ${styles["nav-bar__label"]}`}>

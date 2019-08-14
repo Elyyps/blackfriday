@@ -72,7 +72,7 @@ const ProductDetailComponent = ({
                   </div>
                 </div>
                 <div className="content__body">{content}</div>
-                {list ? <h3>{list.list_title}</h3> : ""}
+                {list ? <h2>{list.list_title}</h2> : ""}
                 <ul className={"uk-list-check radtin__list"}>
                   {list.items.map((item: string, key: number) => (
                     <li key={key}>{item}</li>
