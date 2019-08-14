@@ -1,17 +1,18 @@
 .not-found {
   background-color: $gray-dark;
-  z-index: 0;
-  height: 91vh;
+  margin-bottom: -82.44px;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   &-container {
-    margin-top: -40px;
-    align-items: center;
     flex-direction: column;
     color: white;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -132px;
   }
   &:after {
     content: "";
