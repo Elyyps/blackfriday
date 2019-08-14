@@ -97,7 +97,6 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     if (props.stores.length < props.totalResults && !isLoading) {
       setIsLoading(true);
       setProgressPage(progressPage + 1);
-      // Use timer for dummy purposes when loading data
       setTimeout(() => {
         props.getStores(
           props.stores.length,
@@ -142,7 +141,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
       <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
           <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
-          <TabComponent attrAction={"link"}> {props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
+          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
         </TabContainerComponent>
       </div>
 
@@ -194,9 +193,9 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             ) : (
               <div>
                 <CtaSmallComponent
-                  buttonTitle="Verwijder alle filters"
+                  buttonTitle={props.intl.formatMessage({ id: "filter-bar-clear-filters" })}
                   onClick={() => props.clearAllFilters()}
-                  text="Er zijn geen resultaten gevonden met de huidige filters"
+                  text={props.intl.formatMessage({ id: "store-overview-no-results-with-filters" })}
                   icon={props.storeOverviewModule.emptyStateIcon}
                 />
               </div>
