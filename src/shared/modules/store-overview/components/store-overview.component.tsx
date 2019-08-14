@@ -50,16 +50,16 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     setInitialValues(props);
   }, []);
 
-  const scrollPos = useScrollPosition();
-  useEffect(() => {
-    const actualScrollPosition = getActualScrollPosition();
+  // const scrollPos = useScrollPosition();
+  // useEffect(() => {
+  //   const actualScrollPosition = getActualScrollPosition();
 
-    if (actualScrollPosition > 0) {
-      const totalHeight = getTotalHeight(viewType, props.totalResults);
-      const percentage = (actualScrollPosition * 100) / totalHeight;
-      setPositionPercentage(percentage);
-    }
-  }, [scrollPos]);
+  //   if (actualScrollPosition > 0) {
+  //     const totalHeight = getTotalHeight(viewType, props.totalResults);
+  //     const percentage = (actualScrollPosition * 100) / totalHeight;
+  //     setPositionPercentage(percentage);
+  //   }
+  // }, [scrollPos]);
 
   useEffect(() => {
     if (
@@ -175,10 +175,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                       </div>
 
                       {advert && (
-                        <div>
-                          <div className={`${styles[`stores-overview__body__banner`]} `}>
-                            <BannerComponent {...advert} />
-                          </div>
+                        <div className={`${styles[`stores-overview__body__banner`]} `}>
+                          <BannerComponent {...advert} />
                         </div>
                       )}
                     </React.Fragment>

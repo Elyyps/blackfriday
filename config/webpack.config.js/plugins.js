@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
     new CopyPlugin([{ from: paths.src + "/scripts/usersnap.js", to: paths.clientBuild + "/static/usersnap.js" }])
   );
 }
-
+shared.push(new CopyPlugin([{ from: paths.src + "/scripts/fonts.js", to: paths.clientBuild + "/static/fonts.js" }]));
 const client = [
   new CompressionPlugin({
     test: /\.js(\?.*)?$/i

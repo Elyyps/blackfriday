@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    @media (max-width: 359px) {
+    @media (max-width: $breakpoint-xsmall-max) {
       flex-direction: column;
     }
 
