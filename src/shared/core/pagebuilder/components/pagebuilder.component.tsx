@@ -1,7 +1,9 @@
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import { PagebuilderContainerProps } from "../index";
+// import ReactGA from "react-ga";
+import TagManager from "react-gtm-module";
 
+import { PagebuilderContainerProps } from "../index";
 import { EmptyPageComponent } from "@app/core/empty-page";
 import { ModuleComponent } from "./module.component";
 import { getViewType } from "@app/util/detect-view";
@@ -18,16 +20,15 @@ export class PagebuilderComponent extends React.Component<
   IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps,
   IState
 > {
-  // Not using this right now, now we're passing the screensize to the module, you can calculate everything in there
-  // import { ViewType } from "@app/stores/settings";
-  // private isMobile =
-  //   this.props.screenSize &&
-  //   (this.props.screenSize.viewType === ViewType.Mobile || this.props.screenSize.viewType === ViewType.Tablet)
-  //     ? true
-  //     : false;
-
   public constructor(props: IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps) {
     super(props);
+
+    const tagManagerArgs = {
+      gtmId: "GTM-MDXLS3M",
+      auth: "QLhJ-9IEHYtgJSvEkPfoIg",
+      preview: "env-2"
+    };
+
     if (props.location) {
       props.getPage(props.location.pathname);
     }
@@ -36,6 +37,7 @@ export class PagebuilderComponent extends React.Component<
       window.scroll(0, 0);
       window.addEventListener("resize", this.handleResize.bind(this));
       this.setScreenSize();
+      TagManager.initialize(tagManagerArgs);
     }
   }
 

@@ -221,7 +221,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
           <div className={styles["footer__bottom-holder"]}>
             <div className={styles["footer__logo-box"]}>
               <Link aria-label="Logo link" to="./" className={`uk-visible@m ${styles["footer__logo"]}`}>
-                <ImageComponent src={props.footerModule.bottomFooter.logo} alt="image" />
+                <ImageComponent src={props.footerModule.bottomFooter.logo} />
               </Link>
               {props.footerModule.bottomFooter.copyright}
             </div>

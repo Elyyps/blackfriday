@@ -9,7 +9,7 @@ interface ISidebarBoxProps {
 
 const SidebarBoxComponent = (props: ISidebarBoxProps) => (
   <div className="sidebar-box">
-    <h3 className="sidebar-box__title">{props.title}</h3>
+    <h2 className="sidebar-box__title">{props.title}</h2>
     {props.items && (
       <ul className="sidebar-box__list">
         {props.items.map((link, key) => (
