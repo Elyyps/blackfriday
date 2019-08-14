@@ -1,3 +1,3 @@
-import { genreateNotFoundModuleData } from "./genererate-dummy-data";
+import { generateNotFoundModuleData } from "./generate-dummy-data";
 
-export const generateNotFoundModuleDummyData = genreateNotFoundModuleData;
+export const generateNotFoundModuleDummyData = generateNotFoundModuleData;

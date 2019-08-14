@@ -18,9 +18,6 @@ const NotFoundComponent = (props: INotFoundComponentProps) => (
         title={props.notFoundModule.button.title}
         variant={"secondary"}
         href={props.notFoundModule.button.url}
-        fullWidth={false}
-        dynamicSize={false}
-        animated={false}
       />
     </div>
   </div>
