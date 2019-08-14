@@ -19,7 +19,7 @@ const LanguageSwitchComponent = (props: ILanguageSwitchContainerProps) => (
     }}
     className={styles["language-switch"]}
   >
-    <img src={require("@assets/language.svg")} alt="image" />
+    <img src={require("@assets/language.svg")} alt="language switch" />
     <span>
       {props.currentLocale === LOCALES.NL ? (
         <ResourceTextComponent resourceKey="language-switch_en" />

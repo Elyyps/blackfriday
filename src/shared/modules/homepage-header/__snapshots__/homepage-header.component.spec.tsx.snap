@@ -87,9 +87,9 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <div
                 className="homepage-header-info__item"
               >
-                <h3>
+                <h2>
                   29 November 2019
-                </h3>
+                </h2>
               </div>
             </div>
             <div
@@ -103,9 +103,9 @@ exports[`[homepageHeader] should render component without crashing 1`] = `
               <div
                 className="homepage-header-info__item"
               >
-                <h3>
+                <h2>
                   6 maanden & 2 dagen 
-                </h3>
+                </h2>
               </div>
             </div>
           </div>

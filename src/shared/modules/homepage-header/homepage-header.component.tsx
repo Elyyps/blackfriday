@@ -56,7 +56,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-info__col"]}>
                   <div className={styles["homepage-header-info__label"]}>{props.homePageModule.startingDateText}</div>
                   <div className={styles["homepage-header-info__item"]}>
-                    <h3>{props.homePageModule.startingDate}</h3>
+                    <h2>{props.homePageModule.startingDate}</h2>
                   </div>
                 </div>
                 <div className={styles["homepage-header-info__col"]}>
@@ -64,7 +64,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                     {props.homePageModule.durationBlackFridayText}
                   </div>
                   <div className={styles["homepage-header-info__item"]}>
-                    <h3>{props.homePageModule.durationBlackFriday}</h3>
+                    <h2>{props.homePageModule.durationBlackFriday}</h2>
                   </div>
                 </div>
               </div>
