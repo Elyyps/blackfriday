@@ -18,7 +18,9 @@ exports[`[SeeMoreCard] should render component without crashing 1`] = `
     <div
       className="see-more-card__title"
     >
-      Wij hebben meer winkels in ons overzicht
+      <h4>
+        Wij hebben meer winkels in ons overzicht
+      </h4>
     </div>
   </div>
   <LinkComponent

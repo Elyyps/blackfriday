@@ -157,7 +157,7 @@
       align-items: center;
       font-size: 15px;
       color: $gray-light;
-      padding-left: 15px;
+      padding-left: 24px;
     }
     &-filter {
       display: flex;
@@ -178,8 +178,8 @@
 }
 
 .amount-of-shops {
-  margin-right: 16px;
+  margin-right: 12px;
   @media (max-width: 1000px) {
-    margin-right: 7px;
+    margin-right: 12px;
   }
 }

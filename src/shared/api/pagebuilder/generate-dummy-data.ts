@@ -15,11 +15,8 @@ import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dum
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
-import {
-  generateBlogSingleHeaderData,
-  generateBlogOverviewHeaderData,
-  generateBF2019HeaderData
-} from "../modules/blog-single-header/endpoint";
+import { generateBlogSingleHeaderData, generateBF2019HeaderData } from "../modules/blog-single-header/endpoint";
+import { generateBlogOverviewHeaderData } from "../modules/blog-overview-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
@@ -28,6 +25,7 @@ import { generateBlogBodyTextData, generateBlackFriday2019TextData } from "../co
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
 import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
+import { generateNotFoundModuleDummyData } from "../modules/not-found/endpoints";
 
 export const pageList: PageModel[] = [
   {
@@ -172,5 +170,15 @@ export const pageList: PageModel[] = [
       generateCtaNewsLetterModule(),
       generateDummyFooterData()
     ]
+  } as PageModel,
+  {
+    id: uuid(),
+    route: "/not-found",
+    metaData: {
+      title: "Black Friday 2019",
+      content: "Black Friday 2019 informative page",
+      description: "Black Friday 2019 informative page"
+    },
+    wordPressPostModules: [generateDummyNavbarData(), generateNotFoundModuleDummyData()]
   } as PageModel
 ];

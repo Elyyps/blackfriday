@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./see-more-card-component.module.scss";
-import { IconComponent } from "@app/prep/modules-prep/core";
+import { IconComponent } from "@app/core";
 import { LinkComponent } from "../link";
 import { getArrow } from "@app/constants/icons";
 
@@ -21,7 +21,9 @@ const SeeMoreCardComponent = (props: ISeeMoreCardComponentProps) => {
         <div className={styles["see-more-card__icon"]}>
           <IconComponent size="24px" icon={icon} />
         </div>
-        <div className={styles["see-more-card__title"]}>{title}</div>
+        <div className={styles["see-more-card__title"]}>
+          <h4>{title}</h4>
+        </div>
       </div>
       <LinkComponent to={buttonLink} icon={getArrow(false)} animated variant="tertiary">
         {buttonText}

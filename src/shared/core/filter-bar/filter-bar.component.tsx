@@ -69,70 +69,52 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
         <div className={`${styles["filter-bar__filter-container"]} ${"uk-container"}`}>
           <div className={`${styles["filter-bar__filter-list"]}  `}>
             <div className={`${styles["filter-label"]}`}>
-              {props.intl ? props.intl.formatMessage({ id: "filter-bar-label" }) : "Filters"}
+              {props.intl.formatMessage({ id: "filter-bar-label" })}
               <span>
                 <IconComponent icon={HandPointing} size={"20px"} />
               </span>
             </div>
             <div>
               <CheckboxDropdown
-                title={props.intl ? props.intl.formatMessage({ id: "filter-bar-status-filter-title" }) : "Status"}
+                title={props.intl.formatMessage({ id: "filter-bar-status-filter-title" })}
                 onChange={onStatusFilterItemsChanged}
                 items={[...props.statusFilterItems.map(item => ({ ...item }))]}
               />
             </div>
             <div>
               <SearchableCheckboxDropdown
-                searchPlaceholder={
-                  props.intl
-                    ? props.intl.formatMessage(
-                        { id: "filter-bar-search-placeholder" },
-                        {
-                          title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
-                        }
-                      )
-                    : "Winkels zoeken"
-                }
-                deleteFilterLabel={
-                  props.intl
-                    ? props.intl.formatMessage(
-                        { id: "filter-control-clear" },
-                        {
-                          title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
-                        }
-                      )
-                    : "Verwijder winkels filters"
-                }
-                title={props.intl ? props.intl.formatMessage({ id: "filter-bar-stores-filter-title" }) : "Winkels"}
-                showFilterName={
-                  props.intl ? props.intl.formatMessage({ id: "filter-bar-stores-filter-title" }) : "Winkels"
-                }
+                searchPlaceholder={props.intl.formatMessage(
+                  { id: "filter-bar-search-placeholder" },
+                  {
+                    title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
+                  }
+                )}
+                deleteFilterLabel={props.intl.formatMessage(
+                  { id: "filter-control-clear" },
+                  {
+                    title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
+                  }
+                )}
+                title={props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })}
+                showFilterName={props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })}
                 items={[...props.categoryFilterItems.map(item => ({ ...item }))]}
                 onChange={onCategoryFilterItemsChanged}
               />
             </div>
             <div>
               <SearchableCheckboxDropdown
-                searchPlaceholder={
-                  props.intl
-                    ? props.intl.formatMessage(
-                        { id: "filter-bar-search-placeholder" },
-                        {
-                          title: props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })
-                        }
-                      )
-                    : "Merk zoeken"
-                }
-                deleteFilterLabel={
-                  props.intl
-                    ? props.intl.formatMessage(
-                        { id: "filter-control-clear" },
-                        { title: props.intl.formatMessage({ id: "filter-bar-brand-filter-title" }) }
-                      )
-                    : "Verwijder merk filters"
-                }
-                title={props.intl ? props.intl.formatMessage({ id: "filter-bar-brand-filter-title" }) : "Merk"}
-                showFilterName={props.intl ? props.intl.formatMessage({ id: "filter-bar-brand-filter-title" }) : "Merk"}
+                searchPlaceholder={props.intl.formatMessage(
+                  { id: "filter-bar-search-placeholder" },
+                  {
+                    title: props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })
+                  }
+                )}
+                deleteFilterLabel={props.intl.formatMessage(
+                  { id: "filter-control-clear" },
+                  { title: props.intl.formatMessage({ id: "filter-bar-brand-filter-title" }) }
+                )}
+                title={props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })}
+                showFilterName={props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })}
                 items={[...props.brandFilterItems.map(item => ({ ...item }))]}
                 onChange={onBrandFilterItemsChanged}
               />
@@ -147,8 +129,7 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
                   }}
                   style={{ color: "red", cursor: "pointer" }}
                 >
-                  {props.intl ? props.intl.formatMessage({ id: "filter-bar-clear-filters" }) : "Verwijder alle filters"}
-                  ({getTotalNumberOfFilters()})
+                  {props.intl.formatMessage({ id: "filter-bar-clear-filters" })}({getTotalNumberOfFilters()})
                 </span>
               </div>
             )}
@@ -159,11 +140,11 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
               <span className={styles["amount-of-shops"]}>
                 <IconComponent icon={StoreIcon} size={"20px"} />
               </span>
-              {props.totalResults} {props.intl ? props.intl.formatMessage({ id: "tab-winkels" }) : "Winkels"}
+              {props.totalResults} {props.intl.formatMessage({ id: "tab-winkels" })}
             </div>
             <div className={styles["filter__sort-item"]}>
               <span className={styles["filter__sort-text"]}>
-                {props.intl ? props.intl.formatMessage({ id: "filter-bar-sort-by" }) : "Sorteer op"}:
+                {props.intl.formatMessage({ id: "filter-bar-sort-by" })}:
               </span>
 
               {/* className={styles["filter__sort-change"]} */}

@@ -90,13 +90,13 @@ const HeroComponent = (props: IHeroComponentProps) => {
                   <div className={styles["hero-info__col"]}>
                     <div className={styles["hero-info__label"]}>Wanneer is Black Friday</div>
                     <div className={styles["hero-info__item"]}>
-                      <h3>29 November 2019</h3>
+                      <h2>29 November 2019</h2>
                     </div>
                   </div>
                   <div className={styles["hero-info__col"]}>
                     <div className={styles["hero-info__label"]}>Hoe lang nog?</div>
                     <div className={styles["hero-info__item"]}>
-                      <h3>6 maanden & 2 dagen</h3>
+                      <h2>6 maanden & 2 dagen</h2>
                     </div>
                   </div>
                 </div>

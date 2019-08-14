@@ -18,11 +18,11 @@ exports[`[FeaturedBlogItems] should render component without crashing 1`] = `
           src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png"
         />
       </div>
-      <h3
+      <h2
         className="featured-blog-items__card-title"
       >
         De beste Moederdag cadeau deals
-      </h3>
+      </h2>
     </LinkComponent>
   </div>
 </div>

@@ -26,6 +26,7 @@ exports[`[SmallHeader] should render component without crashing 1`] = `
           ],
         }
       }
+      headerMobilePosition="left"
       subtitle="Deelnemende winkels van 2019"
       text="Bodytext voor extra informatie wanneer nodig"
       title="Black Friday Winkels"

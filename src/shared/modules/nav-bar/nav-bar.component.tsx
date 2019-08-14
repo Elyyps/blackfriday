@@ -9,21 +9,26 @@ import { INavBarModule } from "@app/api/modules/navbar/navbar.module";
 import { NavbarSearchContainer } from "./navbar-search/container/navbar-search.container";
 import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-search/endpoints";
 import { NavbarMenuItemComponent } from "../navbar-menu-item";
+import { NavBarContainerProps } from "./cointeners/nav-bar-containers";
+import { IBlackFridayDate } from "@app/stores/settings";
+import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
 
-const NavBarComponent = (props: INavBarComponentProps) => (
+const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) => (
   <div className={styles["nav-bar"]}>
     <div className="uk-container">
       <div className={styles["nav-bar__holder"]}>
         <div>
           <div className={styles["nav-bar__logo"]}>
             <LinkComponent to="./">
-              <ImageComponent src={props.navBarModule.logo} alt="image" isBlocking={true} />
+              <ImageComponent src={props.navBarModule.logo} alt="blackfriday logo" isBlocking={true} />
             </LinkComponent>
           </div>
-          <div className={`uk-visible@s ${styles["nav-bar__label"]}`}>{props.navBarModule.label}</div>
+          <div className={`uk-visible@s ${styles["nav-bar__label"]}`}>
+            {`Black Friday ${(props.blackFridayDate as IBlackFridayDate).year}:`} <CountDownContainer />
+          </div>
         </div>
         <div>
           <ul className={`uk-visible@m ${styles["nav-bar__navigation"]}`}>

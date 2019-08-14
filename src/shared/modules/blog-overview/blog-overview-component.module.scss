@@ -10,7 +10,6 @@
     margin-bottom: 20px;
   }
   &__sidebar {
-    margin: 0 -16px;
     @media (min-width: $breakpoint-small) {
       width: 40%;
       flex-shrink: 0;

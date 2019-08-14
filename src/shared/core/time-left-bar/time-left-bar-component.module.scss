@@ -1,12 +1,12 @@
 .green {
   color: $brand-secondary;
-  .time-left-bar-control-filled {
+  .control-filled {
     background: $brand-secondary;
   }
 }
 .orange {
   color: #ff9d0a;
-  .time-left-bar-control-filled {
+  .control-filled {
     background: #ff9d0a;
   }
 }
@@ -19,21 +19,22 @@
   clear: both;
   margin-top: 2px;
   position: relative;
+}
 
-  &-control {
-    position: relative;
-    height: 3px;
-    background: $tint-gray-light;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  &-control-filled {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 3px;
-    background: $tint-gray-light;
-  }
+.control {
+  position: relative;
+  height: 3px;
+  background: $tint-gray-light;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.control-filled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: $tint-gray-light;
 }
 
 .responsive {

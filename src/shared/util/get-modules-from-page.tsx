@@ -29,6 +29,8 @@ import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/
 import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
 import { BlogOverviewComponent } from "@app/modules/blog-overview";
 import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
+import { BlogOverviewHeaderComponent } from "@app/modules/blog-overview-header";
+import { BlogOverviewHeaderModule } from "@app/api/modules/blog-overview-header/blog-overview-header";
 import { generateDummyFeaturedCategoriesData } from "@app/api/modules/featured-categories/generate-dummy-data";
 import { BodyTextModule } from "@app/api/modules/body-text/body-text";
 import {
@@ -47,6 +49,10 @@ import { StoreOverviewContainer } from "@app/modules/store-overview/containers/s
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 import { HeaderInfoComponent } from "@app/modules/header-info";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
+import { HomePageHeaderContainer } from "@app/modules/homepage-header/containers/homepage-header-container";
+import { NavBarContainer } from "@app/modules/nav-bar/cointeners/nav-bar-containers";
+import { NotFoundComponent } from "@app/modules/not-found";
+import { NotFoundModule } from "@app/api/modules/not-found/not-found";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -61,11 +67,11 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "FooterModule":
       return <FooterComponent footerModule={wordPressModule as FooterModule} />;
     case "HomepageHeader":
-      return <HomePageHeaderComponent homePageModule={wordPressModule as HomepageHeader} />;
+      return <HomePageHeaderContainer homePageModule={wordPressModule as HomepageHeader} />;
     case "MediumHeroModule":
       return <MediumHeroComponent mediumHeroModule={wordPressModule as MediumHeroModule} />;
     case "NavBarModule":
-      return <NavBarComponent navBarModule={wordPressModule as INavBarModule} />;
+      return <NavBarContainer navBarModule={wordPressModule as INavBarModule} />;
     case "NewsletterModule":
       return <NewsletterComponent newsletterModule={wordPressModule as NewsletterModule} />;
     case "notYetImplemented":
@@ -78,6 +84,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":
       return <BlogOverviewComponent blog={wordPressModule as BlogOverviewModule} />;
+    case "BlogOverviewHeaderModule":
+      return <BlogOverviewHeaderComponent blogOverviewHeader={wordPressModule as BlogOverviewHeaderModule} />;
     case "BlogBodyTextModule":
       return <BlogBodyTextComponent blogBodyTextModule={wordPressModule as BlogBodyTextModule} />;
     case "FeaturedBlogModule":
@@ -91,7 +99,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
     case "HeaderInfo":
       return <HeaderInfoComponent headerInfo={wordPressModule as HeaderInfo} />;
-
+    case "NotFoundModule":
+      return <NotFoundComponent notFoundModule={wordPressModule as NotFoundModule} />;
     default:
   }
 };

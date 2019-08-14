@@ -7,6 +7,12 @@ const setScreenSize = (payload: ActionType.IMobileSetting) => ({
   ...payload
 });
 
+const setBlackFridayDate = (payload: ActionType.IBlackFridayDate) => ({
+  type: REDUX.SETTINGS.SET_BLACK_FRIDAY_DATE,
+  ...payload
+});
+
 export const settingsActions = {
-  setScreenSize
+  setScreenSize,
+  setBlackFridayDate
 };
