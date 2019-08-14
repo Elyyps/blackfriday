@@ -1,292 +1,247 @@
-.shop-card,
-.shop-card--default {
-  display: flex;
-  flex-direction: column;
-  border-radius: $global-border-radius;
-  background: $global-background;
-  color: $gray-lighter;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 16px;
-  width: 100%;
-  max-height: 288px;
-  min-height: 288px;
-  min-width: 215px;
-  background-color: white;
-  text-align: left;
-  padding: 16px;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box;
+.shop-card {
   position: relative;
-  @media (max-width: 768px) {
-    min-height: 168px;
-  }
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 16px;
+  background: $global-inverse-color;
+  position: relative;
+  width: 100%;
+  min-height: 288px;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+}
 
-  .label {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: $brand-primary;
-    color: $global-inverse-color;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 1.44;
-    font-weight: bold;
-    display: flex;
-    border-radius: $global-border-radius;
-    overflow: hidden;
-    padding: 4px 8px;
-    align-items: center;
-    span:first-child {
-      margin-right: 5px;
-    }
-
-    @media (max-width: 768px) {
-      right: 8px;
-      left: auto;
-    }
-  }
-
-  .body {
-    flex: 1 1 auto;
-    @media (max-width: 768px) {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row-reverse;
-    }
-  }
-
-  .title {
-    font-family: $global-font-family-secondary;
-    font-size: 16px;
-    font-weight: bold;
-    color: $gray-dark;
-    margin: 0 0 6px;
-  }
-
-  .bar {
-    @media (max-width: 768px) {
-      position: absolute;
-      bottom: 58px;
-      left: 16px;
-      right: 16px;
-      box-sizing: border-box;
-    }
-  }
-  .image {
-    &,
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      object-fit: contain;
-      width: 200px;
-      height: 90px;
-      box-sizing: border-box;
-      margin: auto;
-    }
-    img,
-    svg {
-      margin: 0 auto;
-      max-height: 60%;
-      max-width: 60%;
-    }
-    @media (max-width: 768px) {
-      &,
-      a {
-        width: 72px;
-        height: 56px;
-        margin: 0;
-      }
-      img,
-      svg {
-        margin-right: 0;
-        max-height: 100%;
-        max-width: 100%;
-      }
-    }
-    @media (max-width: 310px) {
-      &,
-      a {
-        width: 56px;
-        height: 48px;
-        margin: 0;
-      }
-    }
-  }
-
-  .content {
-    font-family: Assistant;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    max-height: 100px;
-    min-height: 100px;
-    overflow: hidden;
-    @media (max-width: 768px) {
-      flex: 1 1 60%;
-      margin-bottom: 0;
-      max-height: 70px;
-      min-height: 70px;
-    }
-
-    a {
-      text-decoration: none;
-      width: auto;
-      font-size: 14px;
-      font-weight: 600;
-    }
-  }
-
-  .description {
+.label {
+  position: absolute;
+  z-index: 10;
+  left: 8px;
+  top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $brand-primary;
+  border-radius: 2px;
+  color: $global-inverse-color;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  line-height: 11px;
+  span:first-child {
     margin-right: 4px;
   }
+}
 
-  .action {
+.image {
+  width: 100%;
+  height: 90px;
+  order: 1;
+
+  a {
     display: flex;
-    justify-content: flex-end;
-    a,
-    button {
-      width: auto;
-    }
-
-    @media (min-width: 768px) {
-      a,
-      button {
-        width: 100%;
-      }
-    }
-  }
-
-  .status-title {
-    color: $gray-lighter;
-    margin-bottom: 8px;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      clear: both;
-      margin-top: 16px;
-      margin-bottom: 16px;
-      position: relative;
-    }
-
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: bold;
-    @media (max-width: 768px) {
-      position: absolute;
-
-      bottom: 10px;
-      left: 16px;
-    }
-    color: #777777;
-    &.green {
-      color: $brand-secondary;
-      .shop-card__status-bar-filled {
-        background: $brand-secondary;
-      }
-    }
-    &.orange {
-      color: #ff9d0a;
-      .shop-card__status-bar-filled {
-        background: #ff9d0a;
-      }
-    }
-
-    &-bar {
-      position: relative;
-      height: 3px;
-      background: $tint-gray-light;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    &-bar-filled {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 3px;
-      background: $tint-gray-light;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    img {
+      max-width: 60%;
+      max-height: 60%;
     }
   }
 }
 
-.shop-card--responsive {
-  max-height: 182px;
-  min-height: 182px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+.status {
+  width: 100%;
+  order: 2;
+  &-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $gray-light;
+    &.green {
+      color: $brand-secondary;
+    }
+    &.orange {
+      color: #ff9d0a;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  order: 3;
+  &-title h4 {
+    margin-bottom: 4px;
+  }
+  &-description {
+    color: $gray-light;
+    margin-right: 4px;
+    font-size: 14px;
+    width: 100%;
+    line-height: 18px;
+  }
+  &-link {
+    a {
+      font-size: 14px;
+      @media (max-width: 959px) {
+        width: auto;
+      }
+    }
+  }
+}
+
+.action {
+  order: 4;
+  margin-top: auto;
+  &,
+  a {
+    width: 100%;
+  }
+}
+
+@mixin responsive-card-768 {
+  &,
+  .shop-card {
+    min-height: 156px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   .label {
-    right: 8px;
     left: auto;
+    right: 8px;
   }
 
-  .body {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
+  .content {
+    margin-right: 16px;
+    order: 1;
+    flex: 1 1 60%;
+  }
 
-    @media (max-width: $breakpoint-small-max) {
-      height: 120px;
+  .image {
+    order: 2;
+    flex: 1 1 30%;
+    height: 72px;
+    a {
+      justify-content: flex-end;
     }
   }
-  .bar {
-    position: absolute;
-    bottom: 52px;
-    left: 16px;
-    right: 16px;
+
+  .status {
+    order: 3;
+    flex: 1 1 30%;
+    margin-top: auto;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    &-bar {
+      display: none;
+    }
+  }
+
+  .action {
+    order: 4;
+    flex: 1 1 10%;
+    justify-content: flex-end;
+  }
+}
+
+@mixin responsive-card-640 {
+  .content {
+    flex: 1 1 80%;
   }
   .image {
-    &,
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      object-fit: contain;
-      width: 72px;
-      height: 56px;
-      margin: 0;
-      box-sizing: border-box;
-    }
-    img,
-    svg {
-      margin-right: 0;
-      max-height: 100%;
+    flex: 1 1 10%;
+    height: 72px;
+    a img {
+      width: auto;
       max-width: 100%;
+      max-height: 60%;
     }
-    @media (max-width: $breakpoint-small-max) {
-      margin: 0px;
+  }
+}
+
+@mixin responsive-card-460 {
+  .image {
+    flex: 1 1 20%;
+  }
+  .content {
+    flex: 1 1 70%;
+  }
+  .action {
+    order: 4;
+    flex: 1 1 52%;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  .status {
+    flex: 1 1 38%;
+  }
+}
+
+@media (max-width: 768px) {
+  @include responsive-card-768();
+}
+
+@media (max-width: 640px) {
+  @include responsive-card-640();
+}
+
+@media (max-width: 460px) {
+  @include responsive-card-460();
+}
+
+.responsive {
+  @include responsive-card-768();
+  .action {
+    flex: 1 1 40%;
+  }
+
+  @media (max-width: 768px) {
+    .status {
+      flex: 1 1 30%;
+    }
+    .action {
+      flex: 1 1 10%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    @include responsive-card-640();
+    .status {
+      flex: 1 1 30%;
+    }
+    .action {
+      flex: 1 1 40%;
+    }
+  }
+
+  @media (max-width: 460px) {
+    @include responsive-card-460();
+    .status {
+      flex: 1 1 10%;
+    }
+    .action {
+      flex: 1 1 50%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .action {
+      flex: 1 1 60%;
     }
   }
 
   .content {
-    flex: 1 1 60%;
-    margin-bottom: 0;
+    flex: 1 1 70%;
   }
-
-  .action {
-    width: 50%;
-    margin-left: auto;
-    @media (max-width: 1238px) {
-      > * {
-        padding: 8px 8px;
-      }
+  .image {
+    flex: 1 1 20%;
+    height: 72px;
+    a img {
+      width: auto;
+      max-width: 100%;
+      max-height: 60%;
     }
-  }
-
-  .status-title {
-    width: auto;
-    clear: both;
-    position: absolute;
-    left: 16px;
-    bottom: 18px;
   }
 }

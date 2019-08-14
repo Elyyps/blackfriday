@@ -208,7 +208,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                 sizeUnit={"px"}
                 size={ClipLoaderSize}
                 color={"#e10a14"}
-                loading={true}
+                loading={isLoading}
               />
             </div>
           </div>
