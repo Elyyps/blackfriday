@@ -4,7 +4,7 @@ import { PageProgressBarComponent } from "./page-progress-bar.component";
 
 describe("[PageProgressBar]", () => {
   it("should render component without crashing", () => {
-    const renderedComponent = shallow(<PageProgressBarComponent value={0} />);
+    const renderedComponent = shallow(<PageProgressBarComponent totalHeight={0} mainDivRef={jest.fn()} />);
     expect(renderedComponent).toMatchSnapshot();
   });
 });

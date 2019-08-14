@@ -17,7 +17,7 @@ import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
-import { getOffset, useScrollPosition, usePrevious } from "@app/util";
+import { getOffset, usePrevious } from "@app/util";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
@@ -42,7 +42,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [progressPage, setProgressPage] = useState<number>(1);
   const [overviewItems, setOverviewItems] = useState<IOverviewItem[]>([]);
-  const [positionPercentage, setPositionPercentage] = useState<number>(0);
+  const [totalHeight, setTotalHeight] = useState<number>(0);
 
   const viewType = props.screenSize ? props.screenSize.viewType : ViewType.Desktop;
 
@@ -50,16 +50,12 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     setInitialValues(props);
   }, []);
 
-  const scrollPos = useScrollPosition();
   useEffect(() => {
-    const actualScrollPosition = getActualScrollPosition();
-
-    if (actualScrollPosition > 0) {
-      const totalHeight = getTotalHeight(viewType, props.totalResults);
-      const percentage = (actualScrollPosition * 100) / totalHeight;
-      setPositionPercentage(percentage);
+    const height = getTotalHeight(viewType, props.totalResults);
+    if (height > 0) {
+      setTotalHeight(height);
     }
-  }, [scrollPos]);
+  }, [props.screenSize, props.totalResults]);
 
   useEffect(() => {
     if (
@@ -84,14 +80,6 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     const overviewItemsResult = getOverviewItems(viewType, props.stores);
     setOverviewItems(overviewItemsResult);
   }, [props.stores, props.screenSize]);
-
-  const getActualScrollPosition = () => {
-    const position = getOffset(mainDivRef.current);
-    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-    const actualScrollPosition = currentScrollPosition - position;
-
-    return actualScrollPosition;
-  };
 
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
@@ -118,8 +106,15 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     if (mainDivRef && mainDivRef.current && actualScrollPosition > 0) {
       const top = getOffset(mainDivRef.current);
       window.scroll(top, top);
-      setPositionPercentage(0);
     }
+  };
+
+  const getActualScrollPosition = () => {
+    const position = getOffset(mainDivRef.current);
+    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+    const actualScrollPosition = currentScrollPosition - position;
+
+    return actualScrollPosition;
   };
 
   const prevStatusFilterItems = usePrevious(props.statusFilterItems);
@@ -151,7 +146,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             {({ style, isSticky }) => (
               <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
                 <FilterBarContainer filtersChanged={filtersChanged} />
-                {isSticky && <PageProgressBarComponent value={positionPercentage} />}
+                {isSticky && <PageProgressBarComponent totalHeight={totalHeight} mainDivRef={mainDivRef} />}
               </div>
             )}
           </Sticky>
