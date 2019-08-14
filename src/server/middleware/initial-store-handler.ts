@@ -5,6 +5,7 @@ import { pageActions } from "@app/stores";
 import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
 import { breakPointMobile, breakPointTablet, breakPointDesktop } from "@app/util/detect-view";
 import { BLACK_FRIDAY_DAY, BLACK_FRIDAY_MONTH } from "@app/constants/blackfriday-date";
+import { getBlackFridayYear } from "@app/util";
 
 export const moduleFetcher: any = () => async (
   req: express.Request & { store: any },
@@ -72,20 +73,4 @@ export const setBlackFridayDate: any = () => async (
     settingsActions.setBlackFridayDate({ day: BLACK_FRIDAY_DAY, month: BLACK_FRIDAY_MONTH - 1, year })
   );
   next();
-};
-
-const getBlackFridayYear = (): number => {
-  let nextBlackFridayYear;
-  const dateBlackFridayCurrentYear = new Date(new Date().getFullYear(), BLACK_FRIDAY_MONTH - 1, BLACK_FRIDAY_DAY);
-  dateBlackFridayCurrentYear.setHours(0, 0, 0, 0);
-  const currentDate = new Date();
-  currentDate.setHours(0, 0, 0, 0);
-
-  if (currentDate <= dateBlackFridayCurrentYear) {
-    nextBlackFridayYear = dateBlackFridayCurrentYear.getFullYear();
-  } else {
-    nextBlackFridayYear = dateBlackFridayCurrentYear.getFullYear() + 1;
-  }
-
-  return nextBlackFridayYear;
 };
