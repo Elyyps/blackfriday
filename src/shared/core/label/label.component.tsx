@@ -2,9 +2,9 @@ import * as React from "react";
 import styles from "./label-component.module.scss";
 
 export interface ILabelComponentComponentProps {
+  children: JSX.Element;
   isLeftPointy?: boolean;
   isRightPointy?: boolean;
-  text: string;
 }
 
 const LabelComponent = (props: ILabelComponentComponentProps) => (
@@ -13,7 +13,7 @@ const LabelComponent = (props: ILabelComponentComponentProps) => (
       props.isRightPointy ? styles["label__right-pointy"] : ""
     }`}
   >
-    {props.text}
+    {props.children}
   </div>
 );
 
