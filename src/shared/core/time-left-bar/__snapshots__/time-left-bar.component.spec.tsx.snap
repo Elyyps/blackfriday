@@ -5,13 +5,12 @@ exports[`[TimeLeftBar] should render component without crashing 1`] = `
   className="time-left-bar"
 >
   <div
-    className="time-left-bar-control"
+    className="control none"
   >
     <div
-      className="time-left-bar-control-filled"
+      className="control-filled"
       style={
         Object {
-          "backgroundColor": "none",
           "width": "calc( 1%)",
         }
       }

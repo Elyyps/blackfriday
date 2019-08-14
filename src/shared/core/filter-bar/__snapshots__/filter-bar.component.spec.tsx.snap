@@ -69,11 +69,6 @@ exports[`[FilterBar] should render without crashing 1`] = `
       <div
         className="filter__sort-item"
       >
-        <span
-          className="filter__sort-text"
-        >
-           Sorteer op: 
-        </span>
         <SelectComponent
           onSelect={[Function]}
           options={
