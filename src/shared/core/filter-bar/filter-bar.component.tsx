@@ -124,8 +124,6 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
               {props.totalResults} winkels
             </div>
             <div className={styles["filter__sort-item"]}>
-              <span className={styles["filter__sort-text"]}> Sorteer op: </span>
-
               {/* className={styles["filter__sort-change"]} */}
               {/* {orderBy} */}
               <SelectComponent
