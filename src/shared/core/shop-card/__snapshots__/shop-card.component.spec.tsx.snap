@@ -40,7 +40,7 @@ exports[`[ShopCard] should render component without crashing 1`] = `
         "Audio",
         "Games",
       ],
-      "description": "Een selectie van bizar vele aanbieden",
+      "description": "Een selectie van bizar veel aanbiedingen.",
       "id": "0",
       "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
       "moreInfoLink": "https://www.coolblue.nl/",

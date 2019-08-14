@@ -135,13 +135,13 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
             "buttonLink": "/deals-overview",
             "buttonTitle": "Meer deals",
             "image": Object {
-              "alt": "alt text oasis",
+              "alt": "Ad picture",
               "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
             },
             "imageLink": "https://coolblue.nl",
             "label": "22 t/m 26 nov.",
             "logo": Object {
-              "alt": "alt text CoolBlue",
+              "alt": "CoolBlue logo",
               "src": "cool-blue.svg",
             },
             "moreInfoLink": "https://coolblue.nl",

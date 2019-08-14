@@ -803,7 +803,6 @@ exports[`[Footer] should render component without crashing 1`] = `
             to="./"
           >
             <ImageComponent
-              alt="image"
               src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg"
             />
           </Link>
