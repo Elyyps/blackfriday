@@ -58,12 +58,6 @@
       border: 14px solid transparent;
       border-right-color: rgba($brand-primary, 0.15);
     }
-    @media (max-width: 1000px) {
-      display: none;
-    }
-    @media (max-width: 959px) {
-      display: inline-flex;
-    }
   }
   &__navigation {
     padding: 0;
@@ -81,11 +75,6 @@
       font-weight: 600;
       &:hover {
         color: $global-link-color;
-      }
-    }
-    @media (max-width: 1080px) {
-      > li {
-        margin-right: 15px;
       }
     }
   }

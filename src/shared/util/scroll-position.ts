@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { debounce } from "./debounce";
 
-export const useScrollPosition = (): number => {
+export const useScrollPosition = (delay: number): number => {
   if (typeof window === "undefined") return 0;
 
   // Store the state
@@ -8,6 +9,10 @@ export const useScrollPosition = (): number => {
 
   // On Scroll
   const onScroll = () => {
+    debounce(setScroll, delay);
+  };
+
+  const setScroll = () => {
     setScrollPos(window.pageYOffset);
   };
 

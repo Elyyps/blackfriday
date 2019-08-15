@@ -49,8 +49,6 @@ app.use(setIsMobile());
 // Set current year in redux state
 app.use(setBlackFridayDate());
 
-// Set count down in redux state
-
 // Render the HTML and sent it to the server.
 app.use(serverRenderer());
 

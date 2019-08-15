@@ -51,6 +51,8 @@ import { HeaderInfoComponent } from "@app/modules/header-info";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
 import { HomePageHeaderContainer } from "@app/modules/homepage-header/containers/homepage-header-container";
 import { NavBarContainer } from "@app/modules/nav-bar/cointeners/nav-bar-containers";
+import { NotFoundComponent } from "@app/modules/not-found";
+import { NotFoundModule } from "@app/api/modules/not-found/not-found";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -97,7 +99,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
     case "HeaderInfo":
       return <HeaderInfoComponent headerInfo={wordPressModule as HeaderInfo} />;
-
+    case "NotFoundModule":
+      return <NotFoundComponent notFoundModule={wordPressModule as NotFoundModule} />;
     default:
   }
 };

@@ -7,23 +7,24 @@
   width: 100%;
   background-color: white;
   text-align: left;
-  padding: 0 16px;
+  padding: 32px;
   color: black;
   display: flex;
   flex-direction: column;
   height: 88px;
   justify-content: center;
-  webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
 
   &__icon {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
   &__title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 8px 0;
+    h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
   }
   &__content {
     align-items: center;

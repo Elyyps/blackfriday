@@ -1,12 +1,11 @@
 import React from "react";
-import { shallow } from "enzyme";
-
 import { FilterBar } from "@app/core/filter-bar/filter-bar.component";
 import { ViewType } from "@app/stores/settings";
+import { shallowWithIntl } from "enzyme-react-intl";
 /* tslint:disable */
 describe("[FilterBar]", () => {
   it("should render without crashing", () => {
-    const renderedComponent = shallow(
+    const renderedComponent = shallowWithIntl(
       <FilterBar
         filtersChanged={jest.fn()}
         brandFilterItems={[]}

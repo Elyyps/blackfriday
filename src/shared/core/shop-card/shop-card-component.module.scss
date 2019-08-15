@@ -1,75 +1,92 @@
 .shop-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: $global-border-radius;
-  background: $global-background;
-  color: $gray-lighter;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 16px;
-  width: 100%;
-  max-height: 288px;
-  min-height: 288px;
-  min-width: 215px;
-  background-color: white;
-  text-align: left;
-  padding: 16px;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box;
   position: relative;
-  @media (max-width: 768px) {
-    min-height: 168px;
-  }
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 16px;
+  background: $global-inverse-color;
+  position: relative;
+  width: 100%;
+  min-height: 288px;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+}
 
-  &__label {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: $brand-primary;
-    color: $global-inverse-color;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 1.44;
-    font-weight: bold;
+.label {
+  position: absolute;
+  z-index: 10;
+  left: 8px;
+  top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $brand-primary;
+  border-radius: 2px;
+  color: $global-inverse-color;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  line-height: 11px;
+  span:first-child {
+    margin-right: 4px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 90px;
+  order: 1;
+
+  a {
     display: flex;
-    border-radius: $global-border-radius;
-    overflow: hidden;
-    padding: 4px 8px;
     align-items: center;
-    span:first-child {
-      margin-right: 5px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    img {
+      max-width: 60%;
+      max-height: 60%;
     }
   }
+}
 
-  &__body {
-    flex: 1 1 auto;
-    @media (max-width: 768px) {
-      display: flex;
-      flex-wrap: wrap;
+.status {
+  width: 100%;
+  order: 2;
+  &-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $gray-light;
+    &.green {
+      color: $brand-secondary;
+    }
+    &.orange {
+      color: #ff9d0a;
     }
   }
+}
 
-  &__title {
-    font-family: $global-font-family-secondary;
-    font-size: 16px;
-    font-weight: bold;
-    color: $gray-dark;
-    margin: 0 0 6px;
+.content {
+  width: 100%;
+  order: 3;
+  &-title h4 {
+    margin-bottom: 4px;
   }
-
-  &__bar {
-    @media (max-width: 767px) {
-      position: absolute;
-      bottom: 58px;
-      left: 16px;
-      right: 16px;
-      box-sizing: border-box;
-      bottom: 50px;
+  &-description {
+    color: $gray-light;
+    margin-right: 4px;
+    font-size: 14px;
+    width: 100%;
+    line-height: 18px;
+  }
+  &-link {
+    a {
+      font-size: 14px;
+      @media (max-width: 959px) {
+        width: auto;
+      }
     }
   }
   &__image {
@@ -102,157 +119,158 @@
       width: 100%;
     }
   }
+}
+.action {
+  order: 4;
+  margin-top: auto;
+  &,
+  a {
+    width: 100%;
+  }
+}
 
-  &__content {
-    font-family: Assistant;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: normal;
-    max-height: 100px;
-    min-height: 100px;
-    overflow: hidden;
-    @media (max-width: 768px) {
-      order: 1;
-      flex: 1 1 60%;
-      margin-bottom: 0;
-      max-height: 70px;
-      min-height: 70px;
-    }
+@mixin responsive-card-768 {
+  &,
+  .shop-card {
+    min-height: 156px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .label {
+    left: auto;
+    right: 8px;
+  }
+
+  .content {
+    margin-right: 16px;
+    order: 1;
+    flex: 1 1 60%;
+  }
+
+  .image {
+    order: 2;
+    flex: 1 1 30%;
+    height: 72px;
     a {
-      color: $gray;
-      text-decoration: none;
+      justify-content: flex-end;
     }
   }
 
-  &__action {
-    flex: 0 0 auto;
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    > * {
-      width: 100%;
-    }
-    @media (max-width: 768px) {
-      position: absolute;
-      right: 16px;
-      left: 50%;
-    }
-  }
-
-  &__status {
-    color: $gray-lighter;
-    margin-bottom: 8px;
-    @media (max-width: 768px) {
-      order: 3;
-      width: 100%;
-      clear: both;
-      margin-top: 16px;
-      margin-bottom: 16px;
-      position: relative;
-    }
-    &-title {
-      text-transform: uppercase;
-      font-size: 11px;
-      font-weight: bold;
-      @media (max-width: 768px) {
-        position: absolute;
-
-        bottom: 28px;
-        left: 16px;
-      }
-      color: #777777;
-      &.green {
-        color: $brand-secondary;
-        .shop-card__status-bar-filled {
-          background: $brand-secondary;
-        }
-      }
-      &.orange {
-        color: #ff9d0a;
-        .shop-card__status-bar-filled {
-          background: #ff9d0a;
-        }
-      }
-    }
+  .status {
+    order: 3;
+    flex: 1 1 30%;
+    margin-top: auto;
+    margin-right: 16px;
+    margin-bottom: 10px;
     &-bar {
-      position: relative;
-      height: 3px;
-      background: $tint-gray-light;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-    &-bar-filled {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 3px;
-      background: $tint-gray-light;
+      display: none;
     }
   }
 
-  &--responsive {
-    max-height: 182px;
-    min-height: 182px;
-    padding: 16px;
-    display: block;
-    .shop-card {
-      &__body {
-        display: flex;
-        flex-wrap: wrap;
+  .action {
+    order: 4;
+    flex: 1 1 10%;
+    justify-content: flex-end;
+  }
+}
 
-        @media (max-width: $breakpoint-small-max) {
-          height: 120px;
-        }
-      }
-      &__bar {
-        position: absolute;
-        bottom: 52px;
-        left: 16px;
-        right: 16px;
-      }
-      &__image {
-        order: 2;
-        max-height: 90px;
-        max-width: 90px;
-        width: 100%;
-        height: 100%;
-        flex: 0 0 40%;
-        margin: auto;
-        @media (max-width: $breakpoint-small-max) {
-          margin: 0px;
-        }
-      }
+@mixin responsive-card-640 {
+  .content {
+    flex: 1 1 80%;
+  }
+  .image {
+    flex: 1 1 10%;
+    height: 72px;
+    a img {
+      width: auto;
+      max-width: 100%;
+      max-height: 60%;
+    }
+  }
+}
 
-      &__content {
-        order: 1;
-        flex: 1 1 60%;
-        margin-bottom: 0;
-      }
+@mixin responsive-card-460 {
+  .image {
+    flex: 1 1 20%;
+  }
+  .content {
+    flex: 1 1 70%;
+  }
+  .action {
+    order: 4;
+    flex: 1 1 52%;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  .status {
+    flex: 1 1 38%;
+  }
+}
 
-      &__action {
-        width: 50%;
-        margin-left: auto;
-        @media (max-width: 1238px) {
-          > * {
-            padding: 8px 8px;
-          }
-        }
-      }
+@media (max-width: 768px) {
+  @include responsive-card-768();
+}
 
-      &__status {
-        order: 3;
-        width: 100%;
-        clear: both;
-        margin-bottom: 16px;
-        position: relative;
-        &-title {
-          position: absolute;
-          left: 16px;
-          bottom: 28px;
-        }
-      }
+@media (max-width: 640px) {
+  @include responsive-card-640();
+}
+
+@media (max-width: 460px) {
+  @include responsive-card-460();
+}
+
+.responsive {
+  @include responsive-card-768();
+  .action {
+    flex: 1 1 40%;
+  }
+
+  @media (max-width: 768px) {
+    .status {
+      flex: 1 1 30%;
+    }
+    .action {
+      flex: 1 1 10%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    @include responsive-card-640();
+    .status {
+      flex: 1 1 30%;
+    }
+    .action {
+      flex: 1 1 40%;
+    }
+  }
+
+  @media (max-width: 460px) {
+    @include responsive-card-460();
+    .status {
+      flex: 1 1 10%;
+    }
+    .action {
+      flex: 1 1 50%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .action {
+      flex: 1 1 60%;
+    }
+  }
+
+  .content {
+    flex: 1 1 70%;
+  }
+  .image {
+    flex: 1 1 20%;
+    height: 72px;
+    a img {
+      width: auto;
+      max-width: 100%;
+      max-height: 60%;
     }
   }
 }

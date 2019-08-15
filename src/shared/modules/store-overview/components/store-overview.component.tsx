@@ -4,7 +4,7 @@ import BottomScrollListener from "react-bottom-scroll-listener";
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 import { FilterBarContainer } from "@app/core/filter-bar";
 import { ShopCardComponent } from "@app/core/shop-card";
-import { ClipLoader } from "react-spinners";
+import { SyncLoader } from "react-spinners";
 import { css } from "@emotion/core";
 
 import { StoreOverviewContainerProps } from "../containers/store-overview.container";
@@ -17,7 +17,7 @@ import { ViewType } from "@app/stores/settings";
 import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
-import { getOffset, useScrollPosition, usePrevious } from "@app/util";
+import { getOffset, usePrevious } from "@app/util";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
@@ -42,7 +42,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [progressPage, setProgressPage] = useState<number>(1);
   const [overviewItems, setOverviewItems] = useState<IOverviewItem[]>([]);
-  const [positionPercentage, setPositionPercentage] = useState<number>(0);
+  const [totalHeight, setTotalHeight] = useState<number>(0);
 
   const viewType = props.screenSize ? props.screenSize.viewType : ViewType.Desktop;
 
@@ -50,16 +50,12 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     setInitialValues(props);
   }, []);
 
-  // const scrollPos = useScrollPosition();
-  // useEffect(() => {
-  //   const actualScrollPosition = getActualScrollPosition();
-
-  //   if (actualScrollPosition > 0) {
-  //     const totalHeight = getTotalHeight(viewType, props.totalResults);
-  //     const percentage = (actualScrollPosition * 100) / totalHeight;
-  //     setPositionPercentage(percentage);
-  //   }
-  // }, [scrollPos]);
+  useEffect(() => {
+    const height = getTotalHeight(viewType, props.totalResults);
+    if (height > 0) {
+      setTotalHeight(height);
+    }
+  }, [props.screenSize, props.totalResults]);
 
   useEffect(() => {
     if (
@@ -85,19 +81,10 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     setOverviewItems(overviewItemsResult);
   }, [props.stores, props.screenSize]);
 
-  const getActualScrollPosition = () => {
-    const position = getOffset(mainDivRef.current);
-    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-    const actualScrollPosition = currentScrollPosition - position;
-
-    return actualScrollPosition;
-  };
-
   const bottomPageCallback = async () => {
     if (props.stores.length < props.totalResults && !isLoading) {
       setIsLoading(true);
       setProgressPage(progressPage + 1);
-      // Use timer for dummy purposes when loading data
       setTimeout(() => {
         props.getStores(
           props.stores.length,
@@ -119,8 +106,15 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     if (mainDivRef && mainDivRef.current && actualScrollPosition > 0) {
       const top = getOffset(mainDivRef.current);
       window.scroll(top, top);
-      setPositionPercentage(0);
     }
+  };
+
+  const getActualScrollPosition = () => {
+    const position = getOffset(mainDivRef.current);
+    const currentScrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+    const actualScrollPosition = currentScrollPosition - position;
+
+    return actualScrollPosition;
   };
 
   const prevStatusFilterItems = usePrevious(props.statusFilterItems);
@@ -142,7 +136,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
       <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
           <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
-          <TabComponent attrAction={"link"}> {props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
+          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
         </TabContainerComponent>
       </div>
 
@@ -151,8 +145,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
           <Sticky>
             {({ style, isSticky }) => (
               <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
-                {isSticky && <PageProgressBarComponent value={positionPercentage} />}
                 <FilterBarContainer filtersChanged={filtersChanged} />
+                {isSticky && <PageProgressBarComponent totalHeight={totalHeight} mainDivRef={mainDivRef} />}
               </div>
             )}
           </Sticky>
@@ -163,6 +157,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             <div className={styles["no-black-friday"]}>
               <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
             </div>
+
             {props.stores && props.stores.length > 0 ? (
               <div className={styles["stores-overview__body__list"]}>
                 {overviewItems.map(overviewItem => {
@@ -191,20 +186,20 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             ) : (
               <div>
                 <CtaSmallComponent
-                  buttonTitle="Verwijder alle filters"
+                  buttonTitle={props.intl.formatMessage({ id: "filter-bar-clear-filters" })}
                   onClick={() => props.clearAllFilters()}
-                  text="Er zijn geen resultaten gevonden met de huidige filters"
+                  text={props.intl.formatMessage({ id: "store-overview-no-results-with-filters" })}
                   icon={props.storeOverviewModule.emptyStateIcon}
                 />
               </div>
             )}
 
-            <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-              <ClipLoader
+            <div className={styles["loading-spinner"]}>
+              <SyncLoader
                 css={spinnerOverride}
                 sizeUnit={"px"}
                 size={ClipLoaderSize}
-                color={"red"}
+                color={"#e10a14"}
                 loading={isLoading}
               />
             </div>
@@ -220,7 +215,7 @@ const spinnerOverride = css`
   margin: 0 auto;
   border-color: red;
 `;
-const ClipLoaderSize = 30;
+const ClipLoaderSize = 6;
 
 const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
   if (props.brandFilterItems.length === 0) {

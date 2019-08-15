@@ -11,7 +11,7 @@ import ReactPlayer from "react-player";
 import { HomePageHeaderContainerProps } from "../containers/homepage-header-container";
 import { IBlackFridayDate } from "@app/stores/settings";
 
-import { CountDownContainer } from "@app/core/count-down/containers/count-down-conainers";
+import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 
 export interface IHomePageHeaderComponentProps {
   customNextArrow?: JSX.Element | undefined;

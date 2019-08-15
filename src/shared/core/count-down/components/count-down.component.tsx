@@ -1,7 +1,8 @@
 import * as React from "react";
 
-import { CountDownContainerProps } from "../containers/count-down-conainers";
+import { CountDownContainerProps } from "../containers/count-down-containers";
 import { IBlackFridayDate } from "@app/stores/settings";
+import { InjectedIntlProps, injectIntl } from "react-intl";
 
 export interface ICountDownComponentProps {
   isFullVersion?: boolean;
@@ -11,7 +12,7 @@ const SECONDS = 60;
 const MINUTE = 60;
 const HOURS = 24;
 const MONTHS = 24;
-const CountDownComponent = (props: ICountDownComponentProps & CountDownContainerProps) => {
+const component = (props: ICountDownComponentProps & CountDownContainerProps & InjectedIntlProps) => {
   const [date, setDate] = React.useState("");
   let timerID: any;
   const currentDay = new Date();
@@ -39,7 +40,7 @@ const CountDownComponent = (props: ICountDownComponentProps & CountDownContainer
 
     if (distance < 0) {
       clearInterval(timerID);
-      setDate("BLACK FRIDAY");
+      setDate(props.intl.formatMessage({ id: "count-down-blackfriday" }));
     }
   };
 
@@ -72,5 +73,5 @@ const CountDownComponent = (props: ICountDownComponentProps & CountDownContainer
 
   return <React.Fragment>{date}</React.Fragment>;
 };
-
+const CountDownComponent = injectIntl(component);
 export { CountDownComponent };

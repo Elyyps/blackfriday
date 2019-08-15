@@ -11,8 +11,7 @@ import { getInitialNavbarSearchDummyData } from "@app/api/modules/navbar/navbar-
 import { NavbarMenuItemComponent } from "../navbar-menu-item";
 import { NavBarContainerProps } from "./cointeners/nav-bar-containers";
 import { IBlackFridayDate } from "@app/stores/settings";
-import { CountDownContainer } from "@app/core/count-down/containers/count-down-conainers";
-import { LanguageSwitchContainer } from "@app/core/language-switch/language-switch.container";
+import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -24,7 +23,7 @@ const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) =>
         <div>
           <div className={styles["nav-bar__logo"]}>
             <LinkComponent to="./">
-              <ImageComponent src={props.navBarModule.logo} alt="image" isBlocking={true} />
+              <ImageComponent src={props.navBarModule.logo} alt="blackfriday logo" isBlocking={true} />
             </LinkComponent>
           </div>
           <div className={`uk-visible@s ${styles["nav-bar__label"]}`}>
@@ -38,9 +37,6 @@ const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) =>
                 <LinkComponent to={link.url}>{link.title}</LinkComponent>
               </li>
             ))}
-            <li>
-              <LanguageSwitchContainer />
-            </li>
           </ul>
           <ModalNavBar
             className={`${styles["nav-bar__search-button"]}`}

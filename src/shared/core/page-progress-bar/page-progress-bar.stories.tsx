@@ -10,6 +10,6 @@ storiesOf("PageProgressBar", module)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
     <div>
-      <PageProgressBarComponent value={0} />
+      <PageProgressBarComponent totalHeight={0} mainDivRef={{}} />
     </div>
   ));
