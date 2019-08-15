@@ -1,30 +1,24 @@
 import * as React from "react";
 import styles from "./deal-card-component.module.scss";
 import { ImageComponent, IconComponent } from "@app/prep/modules-prep/core";
-import IconDefault from "@assets/icons/link.svg";
+import LinkIcon from "@assets/icons/link.svg";
 import IconHot from "@assets/icons/hot.svg";
 import { ShadowCardComponent } from "../shadow-card";
-import { ClickableComponent } from "../clickable";
+import { ClickableComponent } from "@app/core/clickable";
+import { injectIntl, InjectedIntlProps } from "react-intl";
+import { Deal } from "@app/api/core/deal/deal";
 
 interface IDealCardComponentProps {
-  buttonLink?: string;
-  buttonText: string;
-  image?: string;
-  label?: string;
-  newPrice?: string;
-  oldPrice?: string;
-  sale?: string;
-  subtitle?: string;
-  title?: string;
+  deal: Deal;
   variant?: string;
 }
 
-const DealCardComponent = (props: IDealCardComponentProps) => {
-  const { image, subtitle, title, sale, newPrice, oldPrice, buttonLink, buttonText, label, variant } = props;
+const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
+  const { image, stores, name, sale, newPrice, oldPrice, moreInfoLink, label } = props.deal;
 
   return (
     <ShadowCardComponent fullWidth borderRadius={["2px"]} backgroundColor={"#fff"}>
-      <div className={`${styles["deal-card"]} ${styles[`deal-card--${variant || "default"}`]}`}>
+      <div className={`${styles["deal-card"]} ${styles[`deal-card--${props.variant || "default"}`]}`}>
         {label && (
           <div className={styles["deal-card__label"]}>
             <IconComponent icon={IconHot} size={"10px"} />
@@ -36,8 +30,8 @@ const DealCardComponent = (props: IDealCardComponentProps) => {
             <ImageComponent src={image} />
           </div>
           <div className={styles["deal-card__content"]}>
-            <div className={styles["deal-card__subtitle"]}>{subtitle}</div>
-            <div className={styles["deal-card__title"]}>{title}</div>
+            <div className={styles["deal-card__subtitle"]}>{stores.map(store => store)}</div>
+            <div className={styles["deal-card__title"]}>{name}</div>
           </div>
         </div>
         <div className={styles["deal-card__action"]}>
@@ -49,16 +43,18 @@ const DealCardComponent = (props: IDealCardComponentProps) => {
             </div>
           </div>
           <ClickableComponent
-            title={buttonText}
-            href={buttonLink}
+            title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
+            href={moreInfoLink}
             iconStyle="filled"
-            fullWidth
             variant={"primary-default"}
-            icon={IconDefault}
+            icon={LinkIcon}
+            iconPosition="right"
           />
         </div>
       </div>
     </ShadowCardComponent>
   );
 };
+
+const DealCardComponent = injectIntl(component);
 export { DealCardComponent };

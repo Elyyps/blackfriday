@@ -11,8 +11,8 @@ export const getFilteredNavbarSearchDummyData = (text: string) => {
   );
   const foundDeals = data.deals.filter(
     deal =>
-      (deal.subtitle || "").toUpperCase().includes(textUpperCase) ||
-      (deal.title || "").toUpperCase().includes(textUpperCase)
+      (deal.stores[0] || "").toUpperCase().includes(textUpperCase) ||
+      (deal.name || "").toUpperCase().includes(textUpperCase)
   );
 
   return {

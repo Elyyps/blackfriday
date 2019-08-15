@@ -2,12 +2,12 @@ import { Action } from "redux";
 
 import { REDUX } from "@app/constants";
 import * as ActionType from "./navbar-search.types";
-import { DealCardModule } from "@app/api/core/deal-card";
+import { Deal } from "@app/api/core/deal/deal";
 import { Store } from "@app/api/core/store/store";
 
 export interface INavbarSearchState {
   currentFilter: string;
-  deals: DealCardModule[];
+  deals: Deal[];
   stores: Store[];
 }
 

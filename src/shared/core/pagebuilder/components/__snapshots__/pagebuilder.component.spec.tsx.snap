@@ -76,7 +76,7 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             "categories": Array [
               "Elektronisch",
             ],
-            "description": "Een selectie van bizar veel aanbiedingen. Een selectie van bizar veel aanbiedingen. Een selectie van bizar veel aanbiedingen.",
+            "description": "Een selectie van bizar veel aanbiedingen. Nam non iaculis sem, vitae porttitor odio. Donec porta aliquam rutrum. Duis rhoncus nunc at interdum dictum.",
             "id": "2",
             "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
             "moreInfoLink": "https://www.vodafone.nl/",

@@ -47,6 +47,8 @@ import { BlogBodyTextComponent } from "@app/modules/blog-body-text";
 import { BlogBodyTextModule } from "@app/api/core/blog-bodytext/blog-bodytext";
 import { StoreOverviewContainer } from "@app/modules/store-overview/containers/store-overview.container";
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
+import { DealOverviewContainer } from "@app/modules/deal-overview/containers/deal-overview.container";
+import { DealOverviewModule } from "@app/api/modules/deal-overview/deal-overview.module";
 import { HeaderInfoComponent } from "@app/modules/header-info";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
 import { HomePageHeaderContainer } from "@app/modules/homepage-header/containers/homepage-header-container";
@@ -80,6 +82,8 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoreOverviewModule":
       return <StoreOverviewContainer storeOverviewModule={wordPressModule as StoreOverviewModule} />;
+    case "DealOverviewModule":
+      return <DealOverviewContainer dealOverviewModule={wordPressModule as DealOverviewModule} />;
     case "BlogSingleHeaderModule":
       return <BlogSingleHeaderComponent blogSingleHeader={wordPressModule as BlogSingleHeaderModule} />;
     case "BlogOverviewModule":

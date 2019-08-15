@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { ImageComponent } from "@app/core";
-import ShopIcon from "@assets/icons/link.svg";
+import LinkIcon from "@assets/icons/link.svg";
 import { Store } from "@app/api/core/store/store";
 import { getStoreStatusText } from "@app/util/store";
 import { ClickableComponent } from "../clickable";
@@ -26,15 +26,15 @@ const checkTextLength = (text: string, maxCharacters: number) => {
   return text;
 };
 
-const charactersBig = 80;
-const charactersSmall = 46;
+const CHARACTERS_LONG = 72;
+const CHARACTERS_SHORT = 46;
 
 const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
   const { description, logo, moreInfoLink, name, status, timeLeftPercentage, label } = props.store;
 
   const [trimmedDescription, setTrimmedDescription] = useState<string>(description);
   const shopCardVariantClass = props.variant ? styles[`${props.variant}`] : "";
-  const MAX_CHARACTERS = props.variant !== "responsive" ? charactersBig : charactersSmall;
+  const MAX_CHARACTERS = props.variant !== "responsive" ? CHARACTERS_LONG : CHARACTERS_SHORT;
 
   useEffect(() => {
     setTrimmedDescription(checkTextLength(description, MAX_CHARACTERS));
@@ -84,7 +84,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
           iconStyle="filled"
           dynamicSize={true}
           title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
-          icon={ShopIcon}
+          icon={LinkIcon}
           iconPosition="right"
           href={moreInfoLink}
         />
