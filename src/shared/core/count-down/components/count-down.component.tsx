@@ -11,7 +11,7 @@ const MILLISECONDS = 1000;
 const SECONDS = 60;
 const MINUTE = 60;
 const HOURS = 24;
-const MONTHS = 24;
+const MONTHS = 12;
 const component = (props: ICountDownComponentProps & CountDownContainerProps & InjectedIntlProps) => {
   const [date, setDate] = React.useState("");
   let timerID: any;
@@ -28,7 +28,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     currentDay.getMonth();
 
   const tick = () => {
-    const now = currentDay.getTime();
+    const now = new Date().getTime();
     const distance = countDownDate - now;
     const hours = Math.floor(
       (distance % (MILLISECONDS * SECONDS * MINUTE * HOURS)) / (MILLISECONDS * SECONDS * MINUTE)
@@ -65,7 +65,6 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     } else {
       timerID = setInterval(tick, MILLISECONDS);
     }
-
     return () => {
       clearInterval(timerID);
     };
