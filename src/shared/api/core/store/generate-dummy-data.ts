@@ -309,7 +309,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Bax music",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Bax Music.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Bax%20Music.png",
     timeLeftPercentage: 90
   },
   {
@@ -375,7 +375,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Body & Fit",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Body & Fit.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Body%20&%20Fit.png",
     timeLeftPercentage: 90
   },
   {
@@ -397,7 +397,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Calvin Klein",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Calvin Klein.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Calvin%20Klein.png",
     timeLeftPercentage: 90
   },
   {
@@ -507,7 +507,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "G-star raw",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/G-star Raw.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/G-star%20Raw.png",
     timeLeftPercentage: 90
   },
   {
@@ -518,7 +518,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Gall & Gall",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Gall & gall.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Gall%20&%20gall.png",
     timeLeftPercentage: 90
   },
   {
@@ -584,7 +584,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Ici Paris XL",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Ici Paris XL.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Ici%20Paris%20XL.png",
     timeLeftPercentage: 90
   },
   {
@@ -595,7 +595,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Jack & Jones",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Jack & Jones.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Jack%20&%20Jones.png",
     timeLeftPercentage: 90
   },
   {
@@ -694,7 +694,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Miss Etam",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Miss Etam.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Miss%20Etam.png",
     timeLeftPercentage: 90
   },
   {
@@ -727,7 +727,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Otto",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Otto .png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Otto%20.png",
     timeLeftPercentage: 90
   },
   {
@@ -826,7 +826,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "River island",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/River Island.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/River%20Island.png",
     timeLeftPercentage: 90
   },
   {
@@ -837,7 +837,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Sissy boy",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Sissy Boy.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Sissy%20Boy.png",
     timeLeftPercentage: 90
   },
   {
@@ -870,7 +870,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Siebel juweliers",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Siebel Juweliers.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Siebel%20Juweliers.png",
     timeLeftPercentage: 90
   },
   {
@@ -914,7 +914,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Tommy Hilfiger",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Tommy Hilfiger.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Tommy%20Hilfiger.png",
     timeLeftPercentage: 90
   },
   {
@@ -925,7 +925,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Vero Moda",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Vero Moda.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Vero%20Moda.png",
     timeLeftPercentage: 90
   },
   {
@@ -947,7 +947,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Woon express",
     moreInfoLink: "https://www.coolblue.nl/",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Woon Express.png",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/Woon%20Express.png",
     timeLeftPercentage: 90
   }
 ];
