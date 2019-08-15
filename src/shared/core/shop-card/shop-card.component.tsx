@@ -50,9 +50,10 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
       )}
       <div className={styles["image"]}>
         <Link to="/stores-single">
-          <ImageComponent alt="Shop logo" src={logo} isBlocking />
+          <div style={{ backgroundImage: `url(${logo})` }} />
         </Link>
       </div>
+
       <div className={`${styles["status"]}`}>
         <div className={`${styles["status-title"]} ${styles[getStatusBarColor(timeLeftPercentage)]}`}>
           {getStoreStatusText(status)}
