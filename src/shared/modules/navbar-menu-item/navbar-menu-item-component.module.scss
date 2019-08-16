@@ -50,27 +50,6 @@
     height: 15%;
     display: flex;
     flex-direction: row;
-    &-option {
-      span {
-        cursor: pointer;
-        font-family: $global-font-family-secondary;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        color: $global-inverse-color;
-        &:hover {
-          color: $global-link-color;
-        }
-      }
-      &:not(:last-child) {
-        &::after {
-          margin-left: 8px;
-          margin-right: 8px;
-          content: "/";
-          color: $global-inverse-color;
-        }
-      }
-    }
   }
   &__expandable {
     &-title {
