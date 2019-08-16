@@ -15,7 +15,7 @@ export type ButtonVariant =
 export type IconStyle = "outline" | "filled" | "outline-fill";
 
 export interface IButtonProps {
-  buttonType?: string;
+  buttonType?: "submit" | "reset" | "button";
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: string;
