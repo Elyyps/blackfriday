@@ -4,6 +4,8 @@ exports[`[LabelComponent] should render component without crashing 1`] = `
 <div
   className="label  "
 >
-  Black Friday 2019: NOG 10 dagen!
+  <span>
+    "Black Friday 2019: NOG 10 dagen!"
+  </span>
 </div>
 `;

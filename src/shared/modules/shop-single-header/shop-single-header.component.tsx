@@ -80,11 +80,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                 <div className={styles["product-detail__content"]}>
                   {breadcrumbProps && (
                     <div className={styles["product-detail__content__subtitle"]}>
-                      <BreadcrumbComponent
-                        links={breadcrumbProps.links}
-                        backButton={breadcrumbProps.backButton}
-                        variant={breadcrumbProps.variant}
-                      />
+                      <BreadcrumbComponent links={breadcrumbProps.links} backButton={breadcrumbProps.backButton} />
                     </div>
                   )}
                   <div className={styles["content"]}>

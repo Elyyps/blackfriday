@@ -117,6 +117,12 @@
 .footer {
   flex: 0 0 auto;
   position: relative;
+  a,
+  button {
+    @media (min-width: $breakpoint-small) {
+      width: auto;
+    }
+  }
 }
 
 .more-info {

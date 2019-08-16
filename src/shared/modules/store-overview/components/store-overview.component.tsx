@@ -4,7 +4,7 @@ import BottomScrollListener from "react-bottom-scroll-listener";
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 import { FilterBarContainer } from "@app/core/filter-bar";
 import { ShopCardComponent } from "@app/core/shop-card";
-import { ClipLoader } from "react-spinners";
+import { SyncLoader } from "react-spinners";
 import { css } from "@emotion/core";
 
 import { StoreOverviewContainerProps } from "../containers/store-overview.container";
@@ -97,7 +97,6 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
     if (props.stores.length < props.totalResults && !isLoading) {
       setIsLoading(true);
       setProgressPage(progressPage + 1);
-      // Use timer for dummy purposes when loading data
       setTimeout(() => {
         props.getStores(
           props.stores.length,
@@ -142,7 +141,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
       <div className="deals-overview__tab" ref={topDivRef}>
         <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
           <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
-          <TabComponent attrAction={"link"}> {props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
+          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
         </TabContainerComponent>
       </div>
 
@@ -151,8 +150,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
           <Sticky>
             {({ style, isSticky }) => (
               <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
-                {isSticky && <PageProgressBarComponent value={positionPercentage} />}
                 <FilterBarContainer filtersChanged={filtersChanged} />
+                {isSticky && <PageProgressBarComponent value={positionPercentage} />}
               </div>
             )}
           </Sticky>
@@ -163,6 +162,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             <div className={styles["no-black-friday"]}>
               <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
             </div>
+
             {props.stores && props.stores.length > 0 ? (
               <div className={styles["stores-overview__body__list"]}>
                 {overviewItems.map(overviewItem => {
@@ -193,20 +193,20 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             ) : (
               <div>
                 <CtaSmallComponent
-                  buttonTitle="Verwijder alle filters"
+                  buttonTitle={props.intl.formatMessage({ id: "filter-bar-clear-filters" })}
                   onClick={() => props.clearAllFilters()}
-                  text="Er zijn geen resultaten gevonden met de huidige filters"
+                  text={props.intl.formatMessage({ id: "store-overview-no-results-with-filters" })}
                   icon={props.storeOverviewModule.emptyStateIcon}
                 />
               </div>
             )}
 
-            <div style={{ width: "50px", margin: "auto", paddingTop: "30px" }}>
-              <ClipLoader
+            <div className={styles["loading-spinner"]}>
+              <SyncLoader
                 css={spinnerOverride}
                 sizeUnit={"px"}
                 size={ClipLoaderSize}
-                color={"red"}
+                color={"#e10a14"}
                 loading={isLoading}
               />
             </div>
@@ -222,7 +222,7 @@ const spinnerOverride = css`
   margin: 0 auto;
   border-color: red;
 `;
-const ClipLoaderSize = 30;
+const ClipLoaderSize = 6;
 
 const setInitialValues = (props: IStoreOverviewComponentProps & StoreOverviewContainerProps) => {
   if (props.brandFilterItems.length === 0) {

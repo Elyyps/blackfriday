@@ -10,6 +10,7 @@ import { MenuItem } from "@app/api/core/menu-item/menu-item";
 import ArrowUp from "@assets/icons/chevron-up.svg";
 import ArrowDown from "@assets/icons/chevron-down.svg";
 import { IconComponent } from "@app/core";
+import { LanguageSwitchContainer } from "@app/core/language-switch/language-switch.container";
 export interface INavbarMenuItemComponentProps {
   items: MenuItem[];
 }
@@ -17,6 +18,7 @@ const CLOSE_PANEL = "close";
 
 const NavbarMenuItemComponent = (props: INavbarMenuItemComponentProps) => {
   const [openedPanel, setOpenedPanel] = React.useState<string | undefined>(undefined);
+
   const panelClicked = (key?: string) => {
     if (openedPanel === key) {
       setOpenedPanel(CLOSE_PANEL);
@@ -62,6 +64,10 @@ const NavbarMenuItemComponent = (props: INavbarMenuItemComponentProps) => {
             </div>
           )
         )}
+      </div>
+
+      <div className={styles["navbar-menu-item__language"]}>
+        <LanguageSwitchContainer />
       </div>
     </div>
   );

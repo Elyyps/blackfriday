@@ -11,7 +11,8 @@ interface ITextFieldProps {
   maxCharacters?: number;
   onBlur?<T = string | any>(fieldOrEvent: T): T extends string ? ((e: any) => void) : void;
   onChange?(e: React.ChangeEvent<any>): void;
-  placeholder: string;
+  placeholder?: string;
+  label: string;
   type?: "text" | "email" | "password";
   variant?: "primary" | "secondary";
   value?: any;
@@ -23,18 +24,6 @@ const TextFieldComponent = (props: ITextFieldProps) => {
   const [isFocused, setIsFocused] = React.useState(false);
   const [isHovered, setIsHovered] = React.useState(false);
   const [labelWidth, setLabelWidth] = React.useState(0);
-
-  let hasLoaded: boolean = false;
-  React.useEffect(() => {
-    if (!hasLoaded) {
-      hasLoaded = true;
-      setLabelWidth(getLabelWidth(props.placeholder));
-    }
-  }, []);
-
-  const styleNotchFocused = {
-    width: labelWidth.toString().concat("px")
-  };
 
   const onBlur = (e: any) => {
     setIsFocused(false);
@@ -53,6 +42,7 @@ ${props.variant === "secondary" && isFocused && !props.errorMessage && style["se
     ${isHovered && style["hovered"]}
     `}
     >
+      <div className={style["form-field__label"]}>{props.label}</div>
       <div className={style["form-field__control"]}>
         {!props.isTextArea ? (
           <input
@@ -64,6 +54,7 @@ ${props.variant === "secondary" && isFocused && !props.errorMessage && style["se
             autoFocus={props.autoFocus}
             value={props.value}
             id={props.id}
+            placeholder={props.placeholder}
             type={props.type}
             className={style["form-field__input"]}
           />
@@ -74,6 +65,7 @@ ${props.variant === "secondary" && isFocused && !props.errorMessage && style["se
             onChange={props.onChange}
             onFocus={() => setIsFocused(true)}
             onBlur={onBlur}
+            placeholder={props.placeholder}
             autoFocus={props.autoFocus}
             value={props.value}
             id={props.id}
@@ -81,14 +73,8 @@ ${props.variant === "secondary" && isFocused && !props.errorMessage && style["se
             style={{ resize: "vertical", height: props.height ? props.height.toString().concat("px") : "100px" }}
           />
         )}
-        <div className={`${style["form-field__notch"]} ${style["form-field__notch__unfocused"]}`}>
-          <div />
-          <div style={styleNotchFocused} className={style["form-field__notch-float"]}>
-            <label>{props.placeholder}</label>
-          </div>
-          <div />
-        </div>
       </div>
+
       <div className={style["form-field__extra"]}>
         {props.maxCharacters && !props.errorMessage && !props.helperText && <div />}
         {!props.errorMessage && props.helperText && (

@@ -4,6 +4,7 @@ import { ImageComponent } from "@app/core/";
 import IconDefault from "@assets/icons/link.svg";
 import { ClickableComponent } from "../clickable";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { logEvent } from "@app/util";
 
 export type BannerVariant = "default" | "small";
 
@@ -56,6 +57,9 @@ const component = (props: IBannerComponentProps & InjectedIntlProps) => {
                 errorImage={IconDefault}
                 errorMessage="Custom error message"
                 isBlocking
+                onClick={() => {
+                  logEvent("Banner", "Banner was clicked");
+                }}
               />
             </a>
           </div>

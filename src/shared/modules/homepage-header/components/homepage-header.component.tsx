@@ -8,6 +8,10 @@ import { LinkComponent } from "@app/core/link";
 import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header.module";
 import { ModalComponent } from "@app/core/modal";
 import ReactPlayer from "react-player";
+import { HomePageHeaderContainerProps } from "../containers/homepage-header-container";
+import { IBlackFridayDate } from "@app/stores/settings";
+
+import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 
 export interface IHomePageHeaderComponentProps {
   customNextArrow?: JSX.Element | undefined;
@@ -15,7 +19,7 @@ export interface IHomePageHeaderComponentProps {
   homePageModule: HomepageHeader;
 }
 
-const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
+const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePageHeaderContainerProps) => {
   const settings: Settings = getHomePageHeaderSetting(
     1,
     props.customNextArrow,
@@ -30,7 +34,12 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
           <div className="uk-grid uk-child-width-1-2@m">
             <div>
               <div className={styles["homepage-header-wrap"]}>
-                <LabelComponent text={"Black Friday 2019: NOG 10 dagen!"} />
+                <LabelComponent>
+                  <React.Fragment>
+                    {`Black Friday ${(props.blackFridayDate as IBlackFridayDate).year}: `}
+                    <CountDownContainer />
+                  </React.Fragment>
+                </LabelComponent>
                 <div className={styles["homepage-header__title"]}>
                   <h1>
                     <strong>{props.homePageModule.title}</strong>
@@ -56,7 +65,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                 <div className={styles["homepage-header-info__col"]}>
                   <div className={styles["homepage-header-info__label"]}>{props.homePageModule.startingDateText}</div>
                   <div className={styles["homepage-header-info__item"]}>
-                    <h3>{props.homePageModule.startingDate}</h3>
+                    <h3>{`29 November ${(props.blackFridayDate as IBlackFridayDate).year}`}</h3>
                   </div>
                 </div>
                 <div className={styles["homepage-header-info__col"]}>
@@ -64,7 +73,9 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps) => {
                     {props.homePageModule.durationBlackFridayText}
                   </div>
                   <div className={styles["homepage-header-info__item"]}>
-                    <h3>{props.homePageModule.durationBlackFriday}</h3>
+                    <h3>
+                      <CountDownContainer isFullVersion={true} />
+                    </h3>
                   </div>
                 </div>
               </div>

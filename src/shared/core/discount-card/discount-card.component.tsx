@@ -4,6 +4,7 @@ import { ImageComponent, Button } from "@app/prep/modules-prep/core";
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { getStatusBarColor } from "@app/util/get-status-bar-color";
 
 interface IDiscountCardComponentProps {
   buttonLink: string;
@@ -24,20 +25,7 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
   const ClipLoaderTimer = 1500;
 
   const [] = React.useState<boolean>(false);
-  const statusBar = (rangeNumber: any) => {
-    const limit = 0.5;
-    if (rangeNumber > limit) {
-      return "#00a82f";
-    }
 
-    if (rangeNumber === "0") {
-      return "none";
-    }
-
-    if (rangeNumber <= limit) {
-      return "orange";
-    }
-  };
   const displayMessage = () => {
     if (!couponCopied) {
       setMessageDisplayed(true);
@@ -55,10 +43,10 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
         <div className={styles["discount-card__image"]}>
           <ImageComponent alt="Logo" src={image} />
         </div>
-        <div style={{ color: statusBar(range) }} className={styles["discount-card__label"]}>
+        <div style={{ color: getStatusBarColor(range) }} className={styles["discount-card__label"]}>
           {status}
         </div>
-        <TimeLeftBarComponent color={statusBar(range)} range={range} />
+        <TimeLeftBarComponent color={getStatusBarColor(range)} range={range} />
         <div className={styles["discount-card__content"]}>
           <div className={styles["discount-card__title"]}>{title}</div>
           <div className={`${styles["discount-card__subtitle"]}  uk-visible@s`}>{content}</div>

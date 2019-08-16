@@ -24,13 +24,19 @@ const component = (props: ISearchableCheckboxDropdownProps & InjectedIntlProps) 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
+    if (internalItems.length === 0) {
+      setInternalItems([...props.items]);
+    }
+  }, [props.items]);
+
+  useEffect(() => {
     let result = [...props.items];
     if (search) {
       result = result.filter(item => item.displayName.toLowerCase().includes(search));
     }
 
     setInternalItems(result);
-  }, [props.items, search]);
+  }, [search]);
 
   useEffect(() => {
     if (!isOpen) {

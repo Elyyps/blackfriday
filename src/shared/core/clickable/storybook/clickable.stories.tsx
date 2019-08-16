@@ -53,7 +53,7 @@ const renderButtonVariations = (
       backgroundColor: `${bgColor}`
     }}
   >
-    <h3 style={{ color: `${textColor}` }}>{buttonVariant}</h3>
+    <h2 style={{ color: `${textColor}` }}>{buttonVariant}</h2>
     <ClickableComponent title="test" icon={IconDefault} iconStyle="outline" variant={buttonVariant} />
     <br />
     <ClickableComponent

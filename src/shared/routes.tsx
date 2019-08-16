@@ -13,6 +13,8 @@ const Routes: React.FunctionComponent = () => (
     <Route exact path="/stores-overview" component={PagebuilderContainer} />
     <Route exact path="/stores-single" component={PagebuilderContainer} />
     <Route exact path="/deals-overview" component={PagebuilderContainer} />
+    <Route exact path="/not-found" component={PagebuilderContainer} />
+
     <Route exact path="/productline-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-overview" component={PagebuilderContainer} />
     <Route exact path="/blog-single" component={PagebuilderContainer} />

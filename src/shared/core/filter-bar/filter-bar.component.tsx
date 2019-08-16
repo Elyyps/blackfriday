@@ -10,12 +10,13 @@ import { SelectComponent } from "../select";
 import { FilterBarContainerProps } from "./container";
 import { ViewType } from "@app/stores/settings";
 import { StoresMobileFilterBarComponent } from "./mobile-filter-bar.component";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 export interface IFilterBarProps {
   filtersChanged: () => void;
 }
 
-const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
+const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIntlProps) => {
   const onStatusFilterItemsChanged = (items: FilterItem[]) => {
     if (getNumberOfSelectedfilters(items) !== getNumberOfSelectedfilters(props.statusFilterItems)) {
       props.setStatusFilters([...items]);
@@ -68,34 +69,52 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
         <div className={`${styles["filter-bar__filter-container"]} ${"uk-container"}`}>
           <div className={`${styles["filter-bar__filter-list"]}  `}>
             <div className={`${styles["filter-label"]}`}>
-              Filters
+              {props.intl.formatMessage({ id: "filter-bar-label" })}
               <span>
                 <IconComponent icon={HandPointing} size={"20px"} />
               </span>
             </div>
             <div>
               <CheckboxDropdown
-                title="Status"
+                title={props.intl.formatMessage({ id: "filter-bar-status-filter-title" })}
                 onChange={onStatusFilterItemsChanged}
                 items={[...props.statusFilterItems.map(item => ({ ...item }))]}
               />
             </div>
             <div>
               <SearchableCheckboxDropdown
-                searchPlaceholder="Merk zoeken"
-                deleteFilterLabel="Verwijder merk filters"
-                title="Categorieen"
-                showFilterName="winkels"
+                searchPlaceholder={props.intl.formatMessage(
+                  { id: "filter-bar-search-placeholder" },
+                  {
+                    title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
+                  }
+                )}
+                deleteFilterLabel={props.intl.formatMessage(
+                  { id: "filter-control-clear" },
+                  {
+                    title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
+                  }
+                )}
+                title={props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })}
+                showFilterName={props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })}
                 items={[...props.categoryFilterItems.map(item => ({ ...item }))]}
                 onChange={onCategoryFilterItemsChanged}
               />
             </div>
             <div>
               <SearchableCheckboxDropdown
-                searchPlaceholder="Merk zoeken"
-                deleteFilterLabel="Verwijder merk filters"
-                title="Merk"
-                showFilterName="merken"
+                searchPlaceholder={props.intl.formatMessage(
+                  { id: "filter-bar-search-placeholder" },
+                  {
+                    title: props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })
+                  }
+                )}
+                deleteFilterLabel={props.intl.formatMessage(
+                  { id: "filter-control-clear" },
+                  { title: props.intl.formatMessage({ id: "filter-bar-brand-filter-title" }) }
+                )}
+                title={props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })}
+                showFilterName={props.intl.formatMessage({ id: "filter-bar-brand-filter-title" })}
                 items={[...props.brandFilterItems.map(item => ({ ...item }))]}
                 onChange={onBrandFilterItemsChanged}
               />
@@ -110,7 +129,7 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
                   }}
                   style={{ color: "red", cursor: "pointer" }}
                 >
-                  Verwijder alle filters ({getTotalNumberOfFilters()})
+                  {props.intl.formatMessage({ id: "filter-bar-clear-filters" })}({getTotalNumberOfFilters()})
                 </span>
               </div>
             )}
@@ -121,10 +140,12 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
               <span className={styles["amount-of-shops"]}>
                 <IconComponent icon={StoreIcon} size={"20px"} />
               </span>
-              {props.totalResults} winkels
+              {props.totalResults} {props.intl.formatMessage({ id: "tab-winkels" })}
             </div>
             <div className={styles["filter__sort-item"]}>
-              <span className={styles["filter__sort-text"]}> Sorteer op: </span>
+              <span className={styles["filter__sort-text"]}>
+                {props.intl.formatMessage({ id: "filter-bar-sort-by" })}:
+              </span>
 
               {/* className={styles["filter__sort-change"]} */}
               {/* {orderBy} */}
@@ -148,5 +169,5 @@ const FilterBar = (props: IFilterBarProps & FilterBarContainerProps) => {
     </div>
   );
 };
-
+const FilterBar = injectIntl(component);
 export { FilterBar };

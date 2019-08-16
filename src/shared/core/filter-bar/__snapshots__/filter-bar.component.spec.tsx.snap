@@ -1,93 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[FilterBar] should render without crashing 1`] = `
-<div
-  className="filter-bar"
->
-  <div
-    className="filter-bar__filter-container uk-container"
-  >
-    <div
-      className="filter-bar__filter-list  "
-    >
-      <div
-        className="filter-label"
-      >
-        Filters
-        <span>
-          <IconComponent
-            icon="hand-pointing.svg"
-            size="20px"
-          />
-        </span>
-      </div>
-      <div>
-        <CheckboxDropdown
-          items={Array []}
-          onChange={[Function]}
-          title="Status"
-        />
-      </div>
-      <div>
-        <InjectIntl(component)
-          deleteFilterLabel="Verwijder merk filters"
-          items={Array []}
-          onChange={[Function]}
-          searchPlaceholder="Merk zoeken"
-          showFilterName="winkels"
-          title="Categorieen"
-        />
-      </div>
-      <div>
-        <InjectIntl(component)
-          deleteFilterLabel="Verwijder merk filters"
-          items={Array []}
-          onChange={[Function]}
-          searchPlaceholder="Merk zoeken"
-          showFilterName="merken"
-          title="Merk"
-        />
-      </div>
-    </div>
-    <div
-      className="filter-bar__sort"
-    >
-      <div
-        className="filter__sort-filter"
-      >
-        <span
-          className="amount-of-shops"
-        >
-          <IconComponent
-            icon="store.svg"
-            size="20px"
-          />
-        </span>
-        100
-         winkels
-      </div>
-      <div
-        className="filter__sort-item"
-      >
-        <span
-          className="filter__sort-text"
-        >
-           Sorteer op: 
-        </span>
-        <SelectComponent
-          onSelect={[Function]}
-          options={
-            Array [
-              "Relevatie",
-              "Nieuwste",
-              "Populair",
-              "Winkels A - Z",
-              "Winkels Z - A",
-            ]
-          }
-        />
-      </div>
-    </div>
-  </div>
-</div>
+<component
+  brandFilterItems={Array []}
+  categoryFilterItems={Array []}
+  clearFilters={[MockFunction]}
+  filtersChanged={[MockFunction]}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  screenSize={
+    Object {
+      "breakpointPixels": 0,
+      "viewType": 3,
+    }
+  }
+  setBrandFilters={[MockFunction]}
+  setCategoryFilters={[MockFunction]}
+  setSortBy={[MockFunction]}
+  setStatusFilters={[MockFunction]}
+  sortBy=""
+  statusFilterItems={Array []}
+  totalResults={100}
+/>
 `;

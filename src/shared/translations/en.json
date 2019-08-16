@@ -1,14 +1,4 @@
 {
-  "homepage_tasteAndFeel": "Taste and feel that it's great",
-  "homepage_weLoveFood": "We love real food, which is good for yourself and the world around you. Together. That's positive eating!",
-  "navBar_aboutUs": "About us",
-  "navBar_news": "News",
-  "navBar_faq": "FAQ",
-  "navBar_business": "Business",
-  "navBar_contact": "Contact",
-  "navBar_products": "Products",
-  "navBar_recipes": "Recipes",
-  "navBar_salepoints": "Sale points",
   "language-switch_en": "en",
   "language-switch_nl": "nl",
   "subscribe-privacy": "Dit móeten we mededelen: wanneer je op verzenden klikt, ga je akkoord met ons",
@@ -26,9 +16,15 @@
   "filter-bar-sort-by": "Sort By",
   "see-more": "More info",
   "discount-code": "Yeah, Copied!",
-  "filter-control-clear": "Remove brand filters",
+  "filter-control-clear": "Remove {title}'s filters",
   "filter-control-button": "Show 123 stores",
   "dropdown-no-result": "No results",
   "dropdown-button": "Show",
-  "shop-card-clickable-title": "To deals"
+  "shop-card-clickable-title": "To deals",
+  "store-overview-no-results-with-filters": "No results were found with the current filters",
+  "filter-bar-search-placeholder": "{title} search",
+  "filter-bar-brand-filter-title": "Brand",
+  "filter-bar-status-filter-title": "Status",
+  "filter-bar-stores-filter-title": "Stores",
+  "count-down-blackfriday": "BLACK FRIDAY"
 }
