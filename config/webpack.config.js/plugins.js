@@ -19,9 +19,7 @@ if (process.env.NODE_ENV === "production") {
   );
 }
 
-shared.push(
-  new CopyPlugin([{ from: paths.src + "/assets/robots.txt", to: paths.clientBuild + "/static/robots.txt" }])
-);
+shared.push(new CopyPlugin([{ from: paths.robots, to: paths.clientBuild + "/robots.txt" }]));
 
 const client = [
   new CompressionPlugin({
