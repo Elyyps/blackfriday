@@ -111,15 +111,15 @@
           display: none;
         }
         padding-right: 12px;
+        > span {
+          margin-left: 8px;
+        }
         font-size: 14px;
         font-weight: 600;
         display: flex;
         align-items: center;
         font-family: $global-font-family-secondary;
         color: $gray-dark;
-        > span {
-          margin-left: 8px;
-        }
         &--mobile {
           background-color: $tint-gray-light;
           justify-content: space-between;

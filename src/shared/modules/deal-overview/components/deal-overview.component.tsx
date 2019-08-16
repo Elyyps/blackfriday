@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import BottomScrollListener from "react-bottom-scroll-listener";
 
 import { DealOverviewModule } from "@app/api/modules/deal-overview/deal-overview.module";
-import { FilterBarContainer } from "@app/core/filter-bar";
+import { FilterBarDealsContainer } from "@app/core/filter-bar-deals";
 import { DealCardComponent } from "@app/core/deal-card";
 import { SyncLoader } from "react-spinners";
 import { css } from "@emotion/core";
@@ -111,18 +111,18 @@ const component = (props: IDealOverviewComponentProps & DealOverviewContainerPro
     return actualScrollPosition;
   };
 
-  const prevStatusFilterItems = usePrevious(props.storeFilterItems);
+  const prevStoreFilterItems = usePrevious(props.storeFilterItems);
   const prevCategoryFilterItems = usePrevious(props.categoryFilterItems);
   const prevBrandFilterItems = usePrevious(props.brandFilterItems);
   const filtersAreDifferent = (): boolean => {
-    const statusFiltersAreDifferent = singleFiltersAreDifferent(prevStatusFilterItems || [], props.storeFilterItems);
+    const storeFiltersAreDifferent = singleFiltersAreDifferent(prevStoreFilterItems || [], props.storeFilterItems);
     const categoryFiltersAreDifferent = singleFiltersAreDifferent(
       prevCategoryFilterItems || [],
       props.categoryFilterItems
     );
     const brandFiltersAreDifferent = singleFiltersAreDifferent(prevBrandFilterItems || [], props.brandFilterItems);
 
-    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent;
+    return storeFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent;
   };
 
   return (
@@ -139,7 +139,7 @@ const component = (props: IDealOverviewComponentProps & DealOverviewContainerPro
           <Sticky>
             {({ style, isSticky }) => (
               <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
-                <FilterBarContainer filtersChanged={filtersChanged} />
+                <FilterBarDealsContainer filtersChanged={filtersChanged} />
                 {isSticky && <PageProgressBarComponent totalHeight={totalHeight} mainDivRef={mainDivRef} />}
               </div>
             )}

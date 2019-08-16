@@ -52,5 +52,8 @@
   "filter-bar-sortBy-popular-option": "Populair",
   "filter-bar-sortBy-AZ-option": "Winkels A - Z",
   "filter-bar-sortBy-ZA-option": "Winkels Z - A",
-  "count-down-blackfriday": "BLACK FRIDAY"
+  "count-down-blackfriday": "BLACK FRIDAY",
+  "deals-filter-bar-stores-filter-title": "Winkel",
+  "deals-filter-bar-brands-filter-title": "Merk",
+  "deals-filter-bar-category-filter-title": "Categorie"
 }
