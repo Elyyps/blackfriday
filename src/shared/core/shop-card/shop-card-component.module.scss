@@ -43,12 +43,10 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    > div {
-      width: 70%;
-      height: 70%;
-      background-size: contain;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
+    img {
+      -ms-flex: 1;
+      max-width: 60%;
+      max-height: 60%;
     }
   }
 }
@@ -85,40 +83,10 @@
   }
   &-link {
     a {
-      font-size: 14px;
+      font-size: 14px !important;
       @media (max-width: 959px) {
-        width: auto;
+        width: auto !important;
       }
-    }
-  }
-  &__image {
-    padding-bottom: 24px;
-    display: flex;
-    align-items: center;
-
-    object-fit: contain;
-    min-height: 90px;
-    max-height: 90px;
-    max-width: 90px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    margin: auto;
-    padding: 0 12px 12px 12px;
-    @media (max-width: 768px) {
-      order: 2;
-      max-width: 90px;
-      max-height: 90px;
-      width: 100%;
-      height: 100%;
-      flex: 0 0 90px;
-      margin: 0;
-    }
-    img,
-    svg {
-      margin: 0 auto;
-      max-height: 100%;
-      width: 100%;
     }
   }
 }

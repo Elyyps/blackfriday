@@ -65,6 +65,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     } else {
       timerID = setInterval(tick, MILLISECONDS);
     }
+
     return () => {
       clearInterval(timerID);
     };

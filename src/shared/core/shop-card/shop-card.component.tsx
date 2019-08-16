@@ -50,7 +50,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
       )}
       <div className={styles["image"]}>
         <Link to="/stores-single">
-          <div style={{ backgroundImage: `url(${logo})` }} />
+          <ImageComponent alt="Shop logo" src={logo} isBlocking />
         </Link>
       </div>
 
