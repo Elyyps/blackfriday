@@ -31,6 +31,7 @@ const serverRenderer: any = () => (req: express.Request & { store: any }, res: e
             res.locals.assetPath("bundle.js"),
             res.locals.assetPath("vendor.js"),
             res.locals.assetPath("usersnap.js"),
+            res.locals.assetPath("object-fit.js"),
             "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",
             res.locals.assetPath("fonts.js")
           ]}
