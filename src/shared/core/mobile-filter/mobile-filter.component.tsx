@@ -71,17 +71,10 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
   }, [filterItems]);
 
   React.useEffect(() => {
-    if (isFilterOpened) {
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflowY = "scroll";
-    } else {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = isFilterOpened ? "hidden" : "unset";
 
     return () => {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "unset";
     };
   }, [isFilterOpened]);
 

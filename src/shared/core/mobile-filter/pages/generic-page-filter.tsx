@@ -80,13 +80,15 @@ const GenericPageFilterComponent = (props: IGenericPageFilterComponentProps) => 
           key={key}
           className={styles["mobile-filter-pages__list__item"]}
         >
-          <CheckboxComponent
-            onClick={() => {
-              handleCheckboxClick(item.title);
-            }}
-            isChecked={item.checked}
-          >
-            {item.title}
+          <CheckboxComponent isChecked={item.checked}>
+            <span
+              onClick={() => {
+                handleCheckboxClick(item.title);
+              }}
+              role="button"
+            >
+              {item.title}
+            </span>
           </CheckboxComponent>
         </div>
       ))}

@@ -49,7 +49,13 @@ const SingleFilterComponent = (props: ISingleFilterComponentProps) => {
           className={styles["mobile-filter-pages__list__item"]}
         >
           {item === selectedItem && (
-            <div className={styles["mobile-filter-pages__list__item__check"]}>
+            <div
+              role="button"
+              onClick={() => {
+                setCheckedItem(item);
+              }}
+              className={styles["mobile-filter-pages__list__item__check"]}
+            >
               <IconComponent strokeColor="red" icon={CheckIcon} size={"12px"} />
             </div>
           )}
