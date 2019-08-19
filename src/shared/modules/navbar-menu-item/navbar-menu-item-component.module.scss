@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
+  @media (max-width: $breakpoint-small) {
+    margin-left: 20px;
+  }
   &__navigation {
     z-index: 0;
     height: 85%;
@@ -70,6 +73,7 @@
     }
     &__icon {
       margin-left: 15px;
+
       path {
         stroke: #fff;
       }
