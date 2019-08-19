@@ -52,6 +52,7 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
           onChange={event => {
             if (props.getCardsFiltered) props.getCardsFiltered(event.currentTarget.value);
           }}
+          autoFocus
           type="text"
           placeholder="Zoek deals en winkels"
           className={styles["navbar-search__input"]}
