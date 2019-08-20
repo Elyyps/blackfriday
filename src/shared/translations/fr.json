@@ -21,5 +21,10 @@
   "filter-bar-brand-filter-title": "Marques",
   "filter-bar-status-filter-title": "Status",
   "filter-bar-stores-filter-title": "Magasins",
-  "filter-control-clear": "Retirer les filtres de {title} "
+  "filter-control-clear": "Retirer les filtres de {title} ",
+  "count-down-blackfriday": "BLACK FRIDAY",
+  "day": "jour",
+  "days": "jours",
+  "month": "mois",
+  "months": "mois"
 }

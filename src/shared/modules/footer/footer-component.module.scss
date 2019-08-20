@@ -56,13 +56,14 @@
     @media (min-width: $breakpoint-small) {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
     @media (min-width: $breakpoint-medium) {
       flex-wrap: nowrap;
     }
     > div {
       @media (min-width: $breakpoint-small) {
-        flex: 1 1 50%;
+        flex: 1 1 45%;
         width: 50%;
         padding-right: 32px;
         padding-bottom: 16px;

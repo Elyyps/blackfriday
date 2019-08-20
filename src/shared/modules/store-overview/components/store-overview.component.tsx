@@ -172,10 +172,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                       </div>
 
                       {advert && (
-                        <div>
-                          <div className={`${styles[`stores-overview__body__banner`]} `}>
-                            <BannerComponent {...advert} />
-                          </div>
+                        <div className={`${styles[`stores-overview__body__banner`]} `}>
+                          <BannerComponent {...advert} />
                         </div>
                       )}
                     </React.Fragment>
