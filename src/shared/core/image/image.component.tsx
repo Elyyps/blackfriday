@@ -10,11 +10,13 @@ export interface IImageComponentProps
   errorImage?: string;
   errorMessage?: string | true;
   isBlocking?: boolean;
+  height?: string;
+  width?: string;
 }
 const ImageComponent = (
   props: IImageComponentProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 ) => {
-  const { errorImage, errorMessage, isBlocking, ...other } = props;
+  const { errorImage, errorMessage, isBlocking, height, width, ...other } = props;
   if (isBlocking) {
     return <img {...other} />;
   }
@@ -38,12 +40,12 @@ const ImageComponent = (
           fallback={() => <span>Error!</span>}
           loading={() => <span />}
           renumerateIRIElements={true}
-          wrapper="span"
           src={other.src}
           style={{
-            height: "100%",
-            width: "100%"
+            height: height,
+            width: width
           }}
+          className={styles["svg-class"]}
         />
       ) : (
         <img {...other} />

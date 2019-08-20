@@ -18,7 +18,10 @@ const ModuleComponent = (props: IModuleComponentProps) => {
   const component = getComponent(props.wordPressModule);
 
   React.useEffect(() => {
-    objectFitImages();
+    // https://github.com/fregante/object-fit-images && https://github.com/ronik-design/postcss-object-fit-images
+    // In case the used brosware does not support object-fit the object-fit-images polyfill will assign to the tag <img />
+    // the css property background-image as well as background-size: cover/contain etc.. in this way they brosware will always render the picture well
+    objectFitImages(); // activation call object-fit-images polyfill
   }, []);
   const isMobile =
     props.screenSize &&

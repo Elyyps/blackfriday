@@ -15,6 +15,8 @@ module.exports = {
       basePath: "./assets"
     }),
     require("postcss-normalize")(),
+    // https://github.com/fregante/object-fit-images && https://github.com/ronik-design/postcss-object-fit-images
+    // PostCSS plugin that updates the standard object-fit tag to work with the object-fit-images polyfill for browsers that do not natively support object-fit.
     require("postcss-object-fit-images")
   ],
   sourceMap: true
