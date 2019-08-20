@@ -123,8 +123,8 @@ const cssModuleLoaderServer = {
   use: getStyleLoaders({
     exportOnlyLocals: true,
     importLoaders: 1,
-    modules: true
-    // getLocalIdent: getCSSModuleLocalIdent
+    modules: true,
+    getLocalIdent: getCSSModuleLocalIdent
   })
 };
 
@@ -144,8 +144,8 @@ const scssModuleLoaderClient = {
     {
       importLoaders: 2,
       sourceMap: generateSourceMap,
-      modules: true
-      // getLocalIdent: getCSSModuleLocalIdent
+      modules: true,
+      getLocalIdent: getCSSModuleLocalIdent
     },
     true,
     true
@@ -171,8 +171,8 @@ const scssModuleLoaderServer = {
     {
       importLoaders: 2,
       sourceMap: generateSourceMap,
-      modules: true
-      // getLocalIdent: getCSSModuleLocalIdent
+      modules: true,
+      getLocalIdent: getCSSModuleLocalIdent
     },
     true
   )
