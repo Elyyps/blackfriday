@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import BottomScrollListener from "react-bottom-scroll-listener";
-
 import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overview.module";
 import { FilterBarContainer } from "@app/core/filter-bar";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { SyncLoader } from "react-spinners";
 import { css } from "@emotion/core";
-
 import { StoreOverviewContainerProps } from "../containers/store-overview.container";
 import styles from "./store-overview-component.module.scss";
 import { Store } from "@app/api/core/store/store";
@@ -14,13 +12,13 @@ import { BannerComponent } from "@app/core/banner";
 import { generateDummyBannerComponentData } from "@app/api/core/banner/generate-dummy-data";
 import { Banner } from "@app/api/core/banner/banner";
 import { ViewType } from "@app/stores/settings";
-import { TabContainerComponent, TabComponent } from "@app/prep/modules-prep/core";
 import { PageProgressBarComponent } from "@app/core/page-progress-bar";
 import { StickyContainer, Sticky } from "react-sticky";
 import { getOffset, usePrevious } from "@app/util";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
+import { TabComponent } from "@app/core/tab";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -98,8 +96,6 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
       }, 500);
     }
   };
-  const connectClass = "uk-switcher-list";
-  const switcherAttr = { "data-uk-switcher": `connect: .${connectClass}` };
 
   const filtersChanged = () => {
     const actualScrollPosition = getActualScrollPosition();
@@ -134,10 +130,12 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
   return (
     <div>
       <div className="deals-overview__tab" ref={topDivRef}>
-        <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
-          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-winkels" })}</TabComponent>
-          <TabComponent attrAction={"link"}>{props.intl.formatMessage({ id: "tab-productdeals" })}</TabComponent>
-        </TabContainerComponent>
+        <TabComponent
+          tabs={[
+            { href: "/stores-overview", isSelected: true, title: props.intl.formatMessage({ id: "tab-winkels" }) },
+            { href: "/deals-overview", title: props.intl.formatMessage({ id: "tab-productdeals" }) }
+          ]}
+        />
       </div>
 
       <StickyContainer>
@@ -170,10 +168,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                       </div>
 
                       {advert && (
-                        <div>
-                          <div className={`${styles[`stores-overview__body__banner`]} `}>
-                            <BannerComponent {...advert} />
-                          </div>
+                        <div style={{ width: "100%" }} className={`${styles[`stores-overview__body__banner`]} `}>
+                          <BannerComponent {...advert} />
                         </div>
                       )}
                     </React.Fragment>

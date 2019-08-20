@@ -1,11 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { TabComponent, ITabsInterface } from "./tab.component";
+import { TabComponent } from "./tab.component";
 
-const data: ITabsInterface[] = [
-  { title: "Winkels", content: <h1>Will be implemented</h1>, index: 1 },
-  { title: "Productdeals", content: <h1>Will be implemented</h1>, index: 2 }
-];
+const data: any[] = [{ title: "Winkels", href: "/" }, { title: "Productdeals", href: "/" }];
 
 describe("[tabComponent]", () => {
   it("should render component without crashing", () => {
