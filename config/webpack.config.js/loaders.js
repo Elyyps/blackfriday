@@ -96,9 +96,9 @@ const cssModuleLoaderClient = {
     {
       modules: true,
       importLoaders: 1,
-      sourceMap: generateSourceMap,
+      sourceMap: generateSourceMap
       // localIdentName: '[name]__[local]--[hash:base64:5]',
-      getLocalIdent: getCSSModuleLocalIdent
+      // getLocalIdent: getCSSModuleLocalIdent
     },
     false,
     true

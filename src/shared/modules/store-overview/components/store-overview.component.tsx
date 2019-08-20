@@ -4,7 +4,6 @@ import { StoreOverviewModule } from "@app/api/modules/store-overview/store-overv
 import { FilterBarContainer } from "@app/core/filter-bar";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { SyncLoader } from "react-spinners";
-import { css } from "@emotion/core";
 import { StoreOverviewContainerProps } from "../containers/store-overview.container";
 import styles from "./store-overview-component.module.scss";
 import { Store } from "@app/api/core/store/store";
@@ -19,6 +18,7 @@ import { injectIntl, InjectedIntlProps } from "react-intl";
 import { CtaSmallComponent } from "@app/core/cta-small/cta-small.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { TabComponent } from "@app/core/tab";
+import css from "@emotion/css";
 /* tslint:disable:no-magic-numbers */
 
 export interface IStoreOverviewComponentProps {
@@ -116,6 +116,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
   const prevStatusFilterItems = usePrevious(props.statusFilterItems);
   const prevCategoryFilterItems = usePrevious(props.categoryFilterItems);
   const prevBrandFilterItems = usePrevious(props.brandFilterItems);
+  const prevSortBy = usePrevious(props.sortBy);
   const filtersAreDifferent = (): boolean => {
     const statusFiltersAreDifferent = singleFiltersAreDifferent(prevStatusFilterItems || [], props.statusFilterItems);
     const categoryFiltersAreDifferent = singleFiltersAreDifferent(
@@ -123,8 +124,9 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
       props.categoryFilterItems
     );
     const brandFiltersAreDifferent = singleFiltersAreDifferent(prevBrandFilterItems || [], props.brandFilterItems);
+    const sortByIsDifferent = prevSortBy !== props.sortBy;
 
-    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent;
+    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent || sortByIsDifferent;
   };
 
   return (
@@ -179,7 +181,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                 <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
                 <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
                 <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-                <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
+                <BottomScrollListener onBottom={bottomPageCallback} offset={700} />
               </div>
             ) : (
               <div>
@@ -243,9 +245,9 @@ const getLineHeight = (viewType: ViewType): number => {
     case ViewType.Tablet:
     case ViewType.Mobile:
     case ViewType.MobileBig:
-      return 168;
+      return 205;
     default:
-      return 288;
+      return 300;
   }
 };
 

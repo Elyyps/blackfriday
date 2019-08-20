@@ -29,8 +29,8 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
     };
   }, []);
   const modalSize =
-    props.variant === "small" ? "600px" : props.variant === "big" ? "50%" : "full-screen" ? "80%" : "600px";
-  const maxHeight = props.variant === "full-screen" ? { maxHeight: "initial" } : "";
+    props.variant === "small" ? "600px" : props.variant === "big" ? "50%" : "full-screen" ? "50%" : "600px";
+  const isScroll = props.variant === "full-screen" ? { overflow: "hidden" } : "";
   const padding = props.variant === "full-screen" ? { padding: "0" } : "";
   if (typeof document !== "undefined") {
     return ReactDOM.createPortal(
@@ -54,7 +54,7 @@ const ModalDialogComponent = (props: IModalDialogComponentProps) => {
           )}
           <div
             className={styles["c-modal"]}
-            style={{ background: props.background, width: modalSize, ...maxHeight }}
+            style={{ background: props.background, width: modalSize, ...isScroll }}
             ref={props.modalRef}
           >
             {props.variant !== "full-screen" && (

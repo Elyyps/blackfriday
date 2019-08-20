@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
-import { ImageComponent } from "@app/core";
 import LinkIcon from "@assets/icons/link.svg";
 import { Store } from "@app/api/core/store/store";
 import { getStoreStatusText } from "@app/util/store";
@@ -12,7 +11,7 @@ import IconHot from "@assets/icons/hot.svg";
 import { Link } from "react-router-dom";
 import { getStatusBarColor } from "@app/util/get-status-bar-color";
 import { trimText } from "@app/util/trim-text";
-
+const objectFitImages = require("object-fit-images");
 export interface IShopCardComponentProps {
   store: Store;
   variant?: string;
@@ -31,13 +30,14 @@ const CHARACTERS_SHORT = 46;
 
 const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
   const { description, logo, moreInfoLink, name, status, timeLeftPercentage, label } = props.store;
-
+  const modalRef = React.createRef<any>();
   const [trimmedDescription, setTrimmedDescription] = useState<string>(description);
   const shopCardVariantClass = props.variant ? styles[`${props.variant}`] : "";
   const MAX_CHARACTERS = props.variant !== "responsive" ? CHARACTERS_LONG : CHARACTERS_SHORT;
 
   useEffect(() => {
     setTrimmedDescription(checkTextLength(description, MAX_CHARACTERS));
+    objectFitImages(modalRef.current);
   }, []);
 
   return (
@@ -50,9 +50,10 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
       )}
       <div className={styles["image"]}>
         <Link to="/stores-single">
-          <ImageComponent alt="Shop logo" src={logo} isBlocking />
+          <img alt={"img"} ref={modalRef} className={styles["object-fit-polyfill"]} src={logo} />
         </Link>
       </div>
+
       <div className={`${styles["status"]}`}>
         <div className={`${styles["status-title"]} ${styles[getStatusBarColor(timeLeftPercentage)]}`}>
           {getStoreStatusText(status)}

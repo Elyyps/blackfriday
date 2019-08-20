@@ -86,17 +86,17 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
                 searchPlaceholder={props.intl.formatMessage(
                   { id: "filter-bar-search-placeholder" },
                   {
-                    title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
+                    title: props.intl.formatMessage({ id: "filter-bar-category-filter-title" })
                   }
                 )}
                 deleteFilterLabel={props.intl.formatMessage(
                   { id: "filter-control-clear" },
                   {
-                    title: props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })
+                    title: props.intl.formatMessage({ id: "filter-bar-category-filter-title" })
                   }
                 )}
-                title={props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })}
-                showFilterName={props.intl.formatMessage({ id: "filter-bar-stores-filter-title" })}
+                title={props.intl.formatMessage({ id: "filter-bar-category-filter-title" })}
+                showFilterName={props.intl.formatMessage({ id: "filter-bar-categories" })}
                 items={[...props.categoryFilterItems.map(item => ({ ...item }))]}
                 onChange={onCategoryFilterItemsChanged}
               />

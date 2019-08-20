@@ -5,7 +5,7 @@
   "language-switch_nl": "nl",
   "tab-winkels": "Magasins",
   "tab-productdeals": "Offres",
-  "store-overview-message": "Pas de Black Friday,mais beaucoup de d'avantages ",
+  "store-overview-message": "Pas de Black Friday, mais beaucoup de d'avantages ",
   "store-overview-no-result": "aucun résultat trouvé",
   "dropdown-no-result": "aucun résultat",
   "dropdown-button": "Afficher",
@@ -21,5 +21,10 @@
   "filter-bar-brand-filter-title": "Marques",
   "filter-bar-status-filter-title": "Status",
   "filter-bar-stores-filter-title": "Magasins",
-  "filter-control-clear": "Retirer les filtres de {title} "
+  "filter-control-clear": "Retirer les filtres de {title} ",
+  "count-down-blackfriday": "BLACK FRIDAY",
+  "day": "jour",
+  "days": "jours",
+  "month": "mois",
+  "months": "mois"
 }
