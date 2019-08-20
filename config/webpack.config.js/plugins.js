@@ -18,7 +18,11 @@ if (process.env.NODE_ENV === "production") {
     new CopyPlugin([{ from: paths.src + "/scripts/usersnap.js", to: paths.clientBuild + "/static/usersnap.js" }])
   );
 }
-
+shared.push(new CopyPlugin([{ from: paths.src + "/scripts/fonts.js", to: paths.clientBuild + "/static/fonts.js" }]));
+shared.push(
+  new CopyPlugin([{ from: paths.src + "/scripts/object-fit.js", to: paths.clientBuild + "/static/object-fit.js" }])
+);
+shared.push(new CopyPlugin([{ from: paths.src + "/assets/robots.txt", to: paths.clientBuild + "/static/robots.txt" }]));
 const client = [
   new CompressionPlugin({
     test: /\.js(\?.*)?$/i

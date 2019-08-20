@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    @media (max-width: $breakpoint-small) {
+    width: 100%;
+    @media (max-width: $breakpoint-xsmall-max) {
       flex-direction: column;
     }
 

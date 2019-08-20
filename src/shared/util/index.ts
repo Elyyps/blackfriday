@@ -7,3 +7,4 @@ export * from "./scroll-position";
 export * from "./use-previous";
 export * from "./get-blackfriday-year";
 export * from "./log-analytics-event";
+export * from "./debounce";

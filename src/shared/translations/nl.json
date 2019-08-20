@@ -47,10 +47,16 @@
   "filter-bar-brand-filter-title": "Merk",
   "filter-bar-status-filter-title": "Status",
   "filter-bar-stores-filter-title": "Winkels",
+  "filter-bar-category-filter-title": "categorie",
+  "filter-bar-categories": "categorieën",
   "filter-bar-sortBy-relevant-option": "Relevatie",
   "filter-bar-sortBy-new-option": "Nieuwste",
   "filter-bar-sortBy-popular-option": "Populair",
   "filter-bar-sortBy-AZ-option": "Winkels A - Z",
   "filter-bar-sortBy-ZA-option": "Winkels Z - A",
-  "count-down-blackfriday": "BLACK FRIDAY"
+  "count-down-blackfriday": "BLACK FRIDAY",
+  "day": "dag",
+  "days": "dagen",
+  "month": "maand",
+  "months": "maanden"
 }
