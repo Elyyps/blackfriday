@@ -1,10 +1,14 @@
 .navbar-menu-item {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
   overflow: auto;
+  @media (max-width: $breakpoint-small) {
+    margin-left: 20px;
+  }
   &__navigation {
-    height: 60%;
+    z-index: 0;
+    height: 85%;
     > * {
       margin-bottom: 24px;
     }
@@ -44,30 +48,11 @@
     }
   }
   &__language {
-    height: 40%;
+    background-color: #1c1c1c;
+    z-index: 1;
+    height: 15%;
     display: flex;
     flex-direction: row;
-    &-option {
-      span {
-        cursor: pointer;
-        font-family: $global-font-family-secondary;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        color: $global-inverse-color;
-        &:hover {
-          color: $global-link-color;
-        }
-      }
-      &:not(:last-child) {
-        &::after {
-          margin-left: 8px;
-          margin-right: 8px;
-          content: "/";
-          color: $global-inverse-color;
-        }
-      }
-    }
   }
   &__expandable {
     &-title {
@@ -88,6 +73,7 @@
     }
     &__icon {
       margin-left: 15px;
+
       path {
         stroke: #fff;
       }

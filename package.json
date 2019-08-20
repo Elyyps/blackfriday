@@ -183,6 +183,7 @@
     "regenerator-runtime": "0.13.3",
     "rimraf": "3.0.0",
     "stats-webpack-plugin": "0.7.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "1.0.0",
     "stylelint": "10.1.0",
     "stylelint-config-prettier": "5.2.0",
