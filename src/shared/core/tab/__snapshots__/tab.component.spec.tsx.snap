@@ -10,12 +10,14 @@ exports[`[tabComponent] should render component without crashing 1`] = `
     >
       <a
         className=""
+        href="/"
         key="0"
       >
         Winkels
       </a>
       <a
         className=""
+        href="/"
         key="1"
       >
         Productdeals
