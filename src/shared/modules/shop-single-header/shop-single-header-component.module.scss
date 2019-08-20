@@ -197,7 +197,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        top: 40px;
+        top: calc(100% - 80px);
       }
       &__head {
         display: flex;
