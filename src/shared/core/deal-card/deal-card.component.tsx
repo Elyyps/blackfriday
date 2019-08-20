@@ -36,7 +36,13 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
         </div>
         <div className={styles["deal-card__action"]}>
           <div className={styles["deal-card__price"]}>
-            <div className={styles["deal-card__sale"]}>{sale}</div>
+            <div
+              className={`${styles["deal-card__sale"]} ${!oldPrice &&
+                !newPrice &&
+                styles["deal-card__sale-full-width"]}`}
+            >
+              {sale}
+            </div>
             <div className={styles["deal-card__price-box"]}>
               <div className={styles["deal-card__price-old"]}>{oldPrice}</div>
               <div className={styles["deal-card__price-new"]}>{newPrice}</div>
@@ -45,6 +51,7 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
           <ClickableComponent
             title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
             href={moreInfoLink}
+            fullWidth
             iconStyle="filled"
             variant={"primary-default"}
             icon={LinkIcon}
