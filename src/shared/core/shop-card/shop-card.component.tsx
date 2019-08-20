@@ -12,7 +12,8 @@ import IconHot from "@assets/icons/hot.svg";
 import { Link } from "react-router-dom";
 import { getStatusBarColor } from "@app/util/get-status-bar-color";
 import { trimText } from "@app/util/trim-text";
-const objectFitImages = require("object-fit-images");
+import { ImageComponent } from "..";
+
 export interface IShopCardComponentProps {
   store: Store;
   variant?: string;
@@ -31,14 +32,13 @@ const charactersSmall = 46;
 
 const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
   const { description, logo, moreInfoLink, name, status, timeLeftPercentage, label } = props.store;
-  const modalRef = React.createRef<any>();
+
   const [trimmedDescription, setTrimmedDescription] = useState<string>(description);
   const shopCardVariantClass = props.variant ? styles[`${props.variant}`] : "";
   const MAX_CHARACTERS = props.variant !== "responsive" ? charactersBig : charactersSmall;
 
   useEffect(() => {
     setTrimmedDescription(checkTextLength(description, MAX_CHARACTERS));
-    objectFitImages(modalRef.current);
   }, []);
 
   return (
@@ -51,7 +51,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
       )}
       <div className={styles["image"]}>
         <Link to="/stores-single">
-          <img alt={"img"} ref={modalRef} className={styles["object-fit-polyfill"]} src={logo} />
+          <ImageComponent alt={"logo"} src={logo} />
         </Link>
       </div>
 

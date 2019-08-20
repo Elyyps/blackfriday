@@ -1,7 +1,7 @@
 import * as React from "react";
 import LazyLoad from "react-lazyload";
 import styles from "./image-component.module.scss";
-
+import ReactSVG from "react-svg";
 import IconDefault from "@assets/icons/no-image.svg";
 import { IconComponent } from "@app/core/icon";
 
@@ -33,7 +33,21 @@ const ImageComponent = (
 
   return (
     <LazyLoad>
-      <img {...other} />
+      {other.src.includes("svg") ? (
+        <ReactSVG
+          fallback={() => <span>Error!</span>}
+          loading={() => <span />}
+          renumerateIRIElements={true}
+          wrapper="span"
+          src={other.src}
+          style={{
+            height: "100%",
+            width: "100%"
+          }}
+        />
+      ) : (
+        <img {...other} />
+      )}
     </LazyLoad>
   );
 };

@@ -6,7 +6,7 @@ import styles from "./module-component.module.scss";
 import { WordPressPostModule } from "@app/api/modules/wordpress-module/wordpress-module";
 import { Background } from "@app/api/core/background";
 import { IScreenSize, ViewType } from "@app/stores/settings";
-
+const objectFitImages = require("object-fit-images");
 export interface IModuleComponentProps {
   screenSize: IScreenSize | undefined;
   wordPressModule: WordPressPostModule;
@@ -17,6 +17,9 @@ const Z_INDEX_MAX = 100;
 const ModuleComponent = (props: IModuleComponentProps) => {
   const component = getComponent(props.wordPressModule);
 
+  React.useEffect(() => {
+    objectFitImages();
+  }, []);
   const isMobile =
     props.screenSize &&
     (props.screenSize.viewType === ViewType.Mobile ||

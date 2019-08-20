@@ -30,6 +30,7 @@ const getStyleLoaders = (cssOptions, includeSassPreprocessor, enableHotReload) =
         ident: "postcss",
         plugins: () => [
           require("postcss-flexbugs-fixes"),
+          require("postcss-object-fit-images"),
           require("postcss-preset-env")({
             autoprefixer: {
               flexbox: "no-2009"

@@ -14,7 +14,8 @@ module.exports = {
     require("postcss-assets")({
       basePath: "./assets"
     }),
-    require("postcss-normalize")()
+    require("postcss-normalize")(),
+    require("postcss-object-fit-images")
   ],
   sourceMap: true
 };
