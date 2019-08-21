@@ -54,12 +54,11 @@ const renderButtonVariations = (
     }}
   >
     <h2 style={{ color: `${textColor}` }}>{buttonVariant}</h2>
-    <ClickableComponent title="test" icon={IconDefault} iconStyle="outline" variant={buttonVariant} />
+    <ClickableComponent title="test" iconRight={IconDefault} iconStyle="outline" variant={buttonVariant} />
     <br />
     <ClickableComponent
       title="test"
-      iconPosition="right"
-      icon={IconDefault}
+      iconRight={IconDefault}
       iconStyle="outline"
       variant={buttonVariant}
       href="https://www.youtube.com"
@@ -69,15 +68,14 @@ const renderButtonVariations = (
     <br />
     <ClickableComponent
       title="test"
-      iconPosition="left"
       iconStyle="outline"
-      icon={IconDefault}
+      iconLeft={IconDefault}
       variant={buttonVariant}
       href="/#allhailtomfrontendking"
     />
     <br />
     <ClickableComponent
-      icon={IconDefault}
+      iconRight={IconDefault}
       variant={buttonVariant}
       iconStyle="outline"
       onClick={() => alert(`clicked button 1: ${buttonVariant}`)}
@@ -85,7 +83,6 @@ const renderButtonVariations = (
     <br />
     <ClickableComponent
       title="test"
-      iconPosition="left"
       variant={buttonVariant}
       onClick={() => alert(`clicked button 6: ${buttonVariant}`)}
     />

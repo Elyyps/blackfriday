@@ -21,7 +21,7 @@ exports[`[Clickable] Should render component as button without crashing 1`] = `
     >
       test
       <span
-        className="icon-right"
+        className="icon-right "
       >
         <IconComponent
           icon="chevron-right.svg"
@@ -35,7 +35,7 @@ exports[`[Clickable] Should render component as button without crashing 1`] = `
 
 exports[`[Clickable] Should render component as link without crashing (internal link) 1`] = `
 <Link
-  className="button button--link-primary button--link-primary--icon-outline-fill button--animated button--fullWidth"
+  className="button button--link-primary animated button--link-primary--icon-outline-fill button--fullWidth"
   style={
     Object {
       "height": undefined,
@@ -51,7 +51,7 @@ exports[`[Clickable] Should render component as link without crashing (internal 
   >
     test
     <span
-      className="icon-right"
+      className="icon-right "
     >
       <IconComponent
         icon="chevron-right.svg"
@@ -64,7 +64,7 @@ exports[`[Clickable] Should render component as link without crashing (internal 
 
 exports[`[Clickable] Should render component as link without crashing (with animation and https link) 1`] = `
 <a
-  className="button button--primary-brand button--primary-brand--icon-outline-fill button--animated button--fullWidth"
+  className="button button--primary-brand animated button--primary-brand--icon-outline-fill button--fullWidth"
   href="https://www.youtube.com"
   style={
     Object {
@@ -80,7 +80,7 @@ exports[`[Clickable] Should render component as link without crashing (with anim
   >
     test
     <span
-      className="icon-right"
+      className="icon-right "
     >
       <IconComponent
         icon="chevron-right.svg"
@@ -93,7 +93,7 @@ exports[`[Clickable] Should render component as link without crashing (with anim
 
 exports[`[Clickable] Should render component as link without crashing (with http link) 1`] = `
 <a
-  className="button button--link-primary button--link-primary--icon-outline-fill button--animated button--fullWidth"
+  className="button button--link-primary animated button--link-primary--icon-outline-fill button--fullWidth"
   href="http://www.youtube.com"
   style={
     Object {
@@ -109,7 +109,7 @@ exports[`[Clickable] Should render component as link without crashing (with http
   >
     test
     <span
-      className="icon-right"
+      className="icon-right "
     >
       <IconComponent
         icon="chevron-right.svg"

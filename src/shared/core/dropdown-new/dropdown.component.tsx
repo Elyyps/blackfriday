@@ -9,8 +9,8 @@ export interface IDropdownComponentProps {
   animated?: boolean;
   children: any;
   hasSelectedItems?: boolean;
-  icon?: string;
-  iconPosition?: "right" | "left";
+  iconLeft?: string;
+  iconRight?: string;
   isOpen?: boolean;
   setIsOpen: (isOpen: boolean) => void;
   title: string;
@@ -49,7 +49,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
     <div className={`${styles["dropdown"]} ${!!props.isOpen && styles["dropdown--open"]}`} ref={wrapperRef}>
       <div
         className={`${styles["dropdown-child"]} 
-        ${!!props.hasSelectedItems && !props.isOpen && styles["dropdown-child--has-selected"]}
+        ${!!props.hasSelectedItems && !props.isOpen && styles["dropdown-child--ha-selected"]}
           ${!!props.isOpen && styles["dropdown-child--open"]}`}
       >
         <ClickableComponent
@@ -58,8 +58,8 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           variant={getVariant()}
           zIndex={props.isOpen ? zIndexWhenOpen : undefined}
           iconFillColor="#ffffff"
-          icon={props.icon ? props.icon : ChevronDown}
-          iconPosition="right"
+          iconRight={props.iconRight ? props.iconRight : ChevronDown}
+          iconLeft={props.iconLeft}
         />
       </div>
       <div className={`${styles["content"]} ${!!props.isOpen && styles["content--open"]} `}>{props.children}</div>

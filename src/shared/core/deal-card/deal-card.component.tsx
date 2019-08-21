@@ -54,7 +54,7 @@ const DealCardComponent = (props: IDealCardComponentProps) => {
             iconStyle="filled"
             fullWidth
             variant={"primary-default"}
-            icon={IconDefault}
+            iconRight={IconDefault}
           />
         </div>
       </div>

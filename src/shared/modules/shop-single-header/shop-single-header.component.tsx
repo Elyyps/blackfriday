@@ -167,7 +167,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                           href={storeLink.url}
                           title={storeLink.title}
                           iconStyle="filled"
-                          icon={IconDefault}
+                          iconRight={IconDefault}
                         />
 
                         <div className={`${styles["content__head__stars"]} uk-hidden@s`}>

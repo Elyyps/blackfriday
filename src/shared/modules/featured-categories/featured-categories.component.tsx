@@ -64,8 +64,7 @@ const component = (props: IFeaturedCategoriesProps & FeaturedCategoriesContainer
               }
               disableSelect
               variant="link-primary"
-              iconPosition="right"
-              icon={ChevronDown}
+              iconRight={ChevronDown}
               iconStyle="outline"
             />
           </div>

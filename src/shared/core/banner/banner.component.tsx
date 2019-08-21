@@ -80,7 +80,7 @@ const component = (props: IBannerComponentProps & InjectedIntlProps) => {
                   title={buttonTitle}
                   variant={"primary-default"}
                   iconStyle={"filled"}
-                  icon={IconDefault}
+                  iconLeft={IconDefault}
                   href={buttonLink}
                 />
               )}

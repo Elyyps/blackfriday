@@ -8,8 +8,7 @@ describe("[Clickable]", () => {
     const renderedComponent = shallow(
       <ClickableComponent
         title="test"
-        iconPosition="right"
-        icon={IconDefault}
+        iconRight={IconDefault}
         iconStyle="outline-fill"
         variant={"primary-brand"}
         onClick={() => alert(`clicked button 2: 1`)}
@@ -21,8 +20,7 @@ describe("[Clickable]", () => {
     const renderedComponent = shallow(
       <ClickableComponent
         title="test"
-        iconPosition="right"
-        icon={IconDefault}
+        iconRight={IconDefault}
         iconStyle="outline-fill"
         variant={"primary-brand"}
         href="https://www.youtube.com"
@@ -36,8 +34,7 @@ describe("[Clickable]", () => {
     const renderedComponent = shallow(
       <ClickableComponent
         title="test"
-        iconPosition="right"
-        icon={IconDefault}
+        iconRight={IconDefault}
         iconStyle="outline-fill"
         variant={"link-primary"}
         href="http://www.youtube.com"
@@ -51,8 +48,7 @@ describe("[Clickable]", () => {
     const renderedComponent = shallow(
       <ClickableComponent
         title="test"
-        iconPosition="right"
-        icon={IconDefault}
+        iconRight={IconDefault}
         iconStyle="outline-fill"
         variant={"link-primary"}
         href="/#hailtomfrontendking"

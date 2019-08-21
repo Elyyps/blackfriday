@@ -86,8 +86,7 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
           iconStyle="filled"
           dynamicSize={true}
           title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
-          icon={ShopIcon}
-          iconPosition="right"
+          iconRight={ShopIcon}
           href={moreInfoLink}
         />
       </div>

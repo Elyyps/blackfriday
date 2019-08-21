@@ -18,11 +18,21 @@
   background-color: $tint-gray-light;
   color: $gray-dark;
   svg {
-    transition: all 200ms;
-    // stroke: white !important;
     stroke: black;
     fill: none;
   }
+  button {
+    > * {
+      > * {
+        > :last-child {
+          > * {
+            transition: all 200ms;
+          }
+        }
+      }
+    }
+  }
+
   :focus {
     outline: none;
   }
@@ -36,8 +46,12 @@
     button:hover {
       background: white;
     }
-    svg {
-      transform: rotate(180deg);
+    * {
+      * {
+        &:first-child {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }
