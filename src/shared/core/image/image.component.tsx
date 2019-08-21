@@ -10,17 +10,16 @@ export interface IImageComponentProps
   errorImage?: string;
   errorMessage?: string | true;
   isBlocking?: boolean;
-  height?: string;
-  width?: string;
+  className?: string;
 }
 const ImageComponent = (
   props: IImageComponentProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 ) => {
-  const { errorImage, errorMessage, isBlocking, height, width, ...other } = props;
+  const { errorImage, errorMessage, isBlocking, className, ...other } = props;
   if (isBlocking) {
-    return <img {...other} />;
+    return <img className={className} {...other} />;
   }
-
+  const style = `${styles["svg-class"]} ${className}`;
   const computedErrorMessage = errorMessage === true ? "Kan afbeelding niet laden." : errorMessage;
   const computedErrorImage = errorImage || IconDefault;
 
@@ -41,14 +40,10 @@ const ImageComponent = (
           loading={() => <span />}
           renumerateIRIElements={true}
           src={other.src}
-          style={{
-            height: height,
-            width: width
-          }}
-          className={styles["svg-class"]}
+          className={style}
         />
       ) : (
-        <img {...other} />
+        <img className={className} {...other} />
       )}
     </LazyLoad>
   );
