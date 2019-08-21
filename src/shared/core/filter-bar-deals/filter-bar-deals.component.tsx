@@ -41,7 +41,7 @@ const component = (props: IFilterBarDealsProps & FilterBarDealsContainerProps & 
     props.setSortBy(sortByString);
   };
 
-  const sortByOptions = ["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"];
+  const sortByOptions = ["Relevatie", "Nieuwste", "Populair", "Deals A - Z", "Deals Z - A"];
 
   const getTotalNumberOfFilters = (): number =>
     props.storeFilterItems.filter(item => item.isSelected).length +

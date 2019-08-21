@@ -1,25 +1,26 @@
-// import React from "react";
-// import { FilterBar } from "@app/core/filter-bar/filter-bar.component";
-// import { ViewType } from "@app/stores/settings";
-// import { shallowWithIntl } from "enzyme-react-intl";
+import React from "react";
+import { ViewType } from "@app/stores/settings";
+import { shallowWithIntl } from "enzyme-react-intl";
+import { FilterBarDeals } from "./filter-bar-deals.component";
 /* tslint:disable */
-describe("[FilterBar]", () => {
+describe("[FilterBarDeals]", () => {
   it("should render without crashing", () => {
-    // const renderedComponent = shallowWithIntl();
-    // <FilterBar
-    //   filtersChanged={jest.fn()}
-    //   brandFilterItems={[]}
-    //   categoryFilterItems={[]}
-    //   screenSize={{ breakpointPixels: 0, viewType: ViewType.Desktop }}
-    //   sortBy=""
-    //   statusFilterItems={[]}
-    //   totalResults={100}
-    //   clearFilters={jest.fn()}
-    //   setBrandFilters={jest.fn()}
-    //   setCategoryFilters={jest.fn()}
-    //   setSortBy={jest.fn()}
-    //   setStatusFilters={jest.fn()}
-    // />
-    // expect(renderedComponent).toMatchSnapshot();
+    const renderedComponent = shallowWithIntl(
+      <FilterBarDeals
+        filtersChanged={jest.fn()}
+        brandFilterItems={[]}
+        categoryFilterItems={[]}
+        screenSize={{ breakpointPixels: 0, viewType: ViewType.Desktop }}
+        sortBy=""
+        totalResults={100}
+        clearFilters={jest.fn()}
+        setBrandFilters={jest.fn()}
+        setCategoryFilters={jest.fn()}
+        setSortBy={jest.fn()}
+        setStoreFilters={jest.fn()}
+        storeFilterItems={[]}
+      />
+    );
+    expect(renderedComponent).toMatchSnapshot();
   });
 });

@@ -13,6 +13,7 @@ interface IStateProps {
   storeFilterItems: FilterItem[];
   totalResults: number;
 }
+
 interface IDispatchProps {
   clearFilters: () => void;
   setBrandFilters: (filterItems: FilterItem[]) => void;
