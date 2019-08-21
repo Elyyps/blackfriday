@@ -10,15 +10,14 @@ export interface IImageComponentProps
   errorImage?: string;
   errorMessage?: string | true;
   isBlocking?: boolean;
+
   className?: string;
 }
 const ImageComponent = (
   props: IImageComponentProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 ) => {
   const { errorImage, errorMessage, isBlocking, className, ...other } = props;
-  if (isBlocking) {
-    return <img className={className} {...other} />;
-  }
+
   const style = `${styles["svg-class"]} ${className}`;
   const computedErrorMessage = errorMessage === true ? "Kan afbeelding niet laden." : errorMessage;
   const computedErrorImage = errorImage || IconDefault;
@@ -31,17 +30,23 @@ const ImageComponent = (
       </div>
     );
   }
-
+  if (isBlocking) {
+    return other.src.includes("svg") ? (
+      <ReactSVG
+        fallback={() => <span>Error!</span>}
+        loading={() => <span />}
+        renumerateIRIElements={true}
+        src={other.src}
+        className={style}
+      />
+    ) : (
+      <img className={className} {...other} />
+    );
+  }
   return (
     <LazyLoad>
       {other.src.includes("svg") ? (
-        <ReactSVG
-          fallback={() => <span>Error!</span>}
-          loading={() => <span />}
-          renumerateIRIElements={true}
-          src={other.src}
-          className={style}
-        />
+        <ReactSVG fallback={() => <span>Error!</span>} loading={() => <span />} src={other.src} className={style} />
       ) : (
         <img className={className} {...other} />
       )}

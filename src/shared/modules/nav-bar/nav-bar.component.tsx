@@ -12,6 +12,7 @@ import { NavbarMenuItemComponent } from "../navbar-menu-item";
 import { NavBarContainerProps } from "./cointeners/nav-bar-containers";
 import { IBlackFridayDate } from "@app/stores/settings";
 import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
+import { Link } from "react-router-dom";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -22,9 +23,9 @@ const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) =>
       <div className={styles["nav-bar__holder"]}>
         <div>
           <div className={styles["nav-bar__logo"]}>
-            <LinkComponent to="./">
+            <Link to={"./"}>
               <ImageComponent src={props.navBarModule.logo} alt="blackfriday logo" isBlocking={true} />
-            </LinkComponent>
+            </Link>
           </div>
           <div className={`uk-visible@s ${styles["nav-bar__label"]}`}>
             {`Black Friday ${(props.blackFridayDate as IBlackFridayDate).year}:`} <CountDownContainer />

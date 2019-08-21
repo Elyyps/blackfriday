@@ -90,7 +90,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Bol.com",
     moreInfoLink: "https://bol.com",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol-logo.svg",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
     timeLeftPercentage: 40
   },
   {
