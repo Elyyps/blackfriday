@@ -41,9 +41,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
                   </React.Fragment>
                 </LabelComponent>
                 <div className={styles["homepage-header__title"]}>
-                  <h1>
-                    <strong>{props.homePageModule.title}</strong>
-                  </h1>
+                  <h1>{props.homePageModule.title}</h1>
                 </div>
                 <ul className={`uk-list-check ${styles["homepage-header__list"]}`}>
                   {props.homePageModule.description.map((text, index) => (

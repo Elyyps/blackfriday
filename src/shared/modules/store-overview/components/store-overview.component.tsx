@@ -120,6 +120,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
   const prevStatusFilterItems = usePrevious(props.statusFilterItems);
   const prevCategoryFilterItems = usePrevious(props.categoryFilterItems);
   const prevBrandFilterItems = usePrevious(props.brandFilterItems);
+  const prevSortBy = usePrevious(props.sortBy);
   const filtersAreDifferent = (): boolean => {
     const statusFiltersAreDifferent = singleFiltersAreDifferent(prevStatusFilterItems || [], props.statusFilterItems);
     const categoryFiltersAreDifferent = singleFiltersAreDifferent(
@@ -127,8 +128,9 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
       props.categoryFilterItems
     );
     const brandFiltersAreDifferent = singleFiltersAreDifferent(prevBrandFilterItems || [], props.brandFilterItems);
+    const sortByIsDifferent = prevSortBy !== props.sortBy;
 
-    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent;
+    return statusFiltersAreDifferent || categoryFiltersAreDifferent || brandFiltersAreDifferent || sortByIsDifferent;
   };
 
   return (
@@ -170,10 +172,8 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                       </div>
 
                       {advert && (
-                        <div>
-                          <div className={`${styles[`stores-overview__body__banner`]} `}>
-                            <BannerComponent {...advert} />
-                          </div>
+                        <div className={`${styles[`stores-overview__body__banner`]} `}>
+                          <BannerComponent {...advert} />
                         </div>
                       )}
                     </React.Fragment>
@@ -183,7 +183,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
                 <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
                 <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
                 <i aria-hidden={true} className={styles["stores-overview__body__cards"]} />
-                <BottomScrollListener onBottom={bottomPageCallback} offset={500} />
+                <BottomScrollListener onBottom={bottomPageCallback} offset={700} />
               </div>
             ) : (
               <div>
@@ -247,9 +247,9 @@ const getLineHeight = (viewType: ViewType): number => {
     case ViewType.Tablet:
     case ViewType.Mobile:
     case ViewType.MobileBig:
-      return 168;
+      return 205;
     default:
-      return 288;
+      return 300;
   }
 };
 

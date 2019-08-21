@@ -21,7 +21,7 @@ export type IconStyle = "outline" | "filled" | "outline-fill";
 
 export interface IClickableComponentProps {
   animated?: boolean;
-  buttonType?: string;
+  buttonType?: "submit" | "reset" | "button";
   disabled?: boolean;
   disableSelect?: boolean;
   dynamicSize?: boolean;

@@ -1,24 +1,20 @@
 .blog-single-header {
   .blog-items {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    @media (max-width: 359px) {
+    @media (max-width: $breakpoint-xsmall-max) {
       flex-direction: column;
     }
 
     .blog-item {
-      flex: 1;
-      &:not(:last-child) {
-        margin-right: 32px;
+      width: 48%;
 
-        @media (max-width: $breakpoint-small-max) {
-          margin-right: 16px;
-        }
-        @media (max-width: 359px) {
-          margin-right: 0;
-          margin-bottom: 8px;
-        }
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        margin-bottom: 20px;
       }
     }
   }

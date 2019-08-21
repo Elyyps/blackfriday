@@ -1,28 +1,25 @@
 .featured-blog {
   &__card {
-    width: 50%;
+    width: 48%;
+    @media (max-width: $breakpoint-small) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
-
   &__title {
     margin-bottom: 36px;
-    @media (max-width: $breakpoint-small-max) {
+    @media (max-width: $breakpoint-small) {
       margin-bottom: 16px;
     }
   }
 
   &__body {
     width: 100%;
-
-    > div {
-      padding-bottom: 8px;
-    }
-    @media (min-width: $breakpoint-small) {
-      display: flex;
-      margin: 0 -12px;
-      > div {
-        flex: 1 1 auto;
-        padding: 0 12px;
-      }
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    @media (max-width: $breakpoint-small) {
+      flex-direction: column;
     }
   }
 }

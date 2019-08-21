@@ -1,7 +1,7 @@
 import * as React from "react";
 import LazyLoad from "react-lazyload";
 import styles from "./image-component.module.scss";
-
+import ReactSVG from "react-svg";
 import IconDefault from "@assets/icons/no-image.svg";
 import { IconComponent } from "@app/core/icon";
 
@@ -10,11 +10,13 @@ export interface IImageComponentProps
   errorImage?: string;
   errorMessage?: string | true;
   isBlocking?: boolean;
+  height?: string;
+  width?: string;
 }
 const ImageComponent = (
   props: IImageComponentProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 ) => {
-  const { errorImage, errorMessage, isBlocking, ...other } = props;
+  const { errorImage, errorMessage, isBlocking, height, width, ...other } = props;
   if (isBlocking) {
     return <img {...other} />;
   }
@@ -33,7 +35,21 @@ const ImageComponent = (
 
   return (
     <LazyLoad>
-      <img {...other} />
+      {other.src.includes("svg") ? (
+        <ReactSVG
+          fallback={() => <span>Error!</span>}
+          loading={() => <span />}
+          renumerateIRIElements={true}
+          src={other.src}
+          style={{
+            height: height,
+            width: width
+          }}
+          className={styles["svg-class"]}
+        />
+      ) : (
+        <img {...other} />
+      )}
     </LazyLoad>
   );
 };

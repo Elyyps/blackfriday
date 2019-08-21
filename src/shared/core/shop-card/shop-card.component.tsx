@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./shop-card-component.module.scss";
 import { TimeLeftBarComponent } from "../time-left-bar";
-import { ImageComponent } from "@app/core";
+
 import ShopIcon from "@assets/icons/link.svg";
 import { Store } from "@app/api/core/store/store";
 import { getStoreStatusText } from "@app/util/store";
@@ -12,6 +12,7 @@ import IconHot from "@assets/icons/hot.svg";
 import { Link } from "react-router-dom";
 import { getStatusBarColor } from "@app/util/get-status-bar-color";
 import { trimText } from "@app/util/trim-text";
+import { ImageComponent } from "..";
 
 export interface IShopCardComponentProps {
   store: Store;
@@ -50,9 +51,10 @@ const component = (props: IShopCardComponentProps & InjectedIntlProps) => {
       )}
       <div className={styles["image"]}>
         <Link to="/stores-single">
-          <ImageComponent alt="Shop logo" src={logo} isBlocking />
+          <ImageComponent alt={"logo"} src={logo} />
         </Link>
       </div>
+
       <div className={`${styles["status"]}`}>
         <div className={`${styles["status-title"]} ${styles[getStatusBarColor(timeLeftPercentage)]}`}>
           {getStoreStatusText(status)}

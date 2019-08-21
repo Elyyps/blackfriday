@@ -11,9 +11,9 @@ const MILLISECONDS = 1000;
 const SECONDS = 60;
 const MINUTE = 60;
 const HOURS = 24;
-const MONTHS = 24;
+const MONTHS = 12;
 const component = (props: ICountDownComponentProps & CountDownContainerProps & InjectedIntlProps) => {
-  const [date, setDate] = React.useState("");
+  const [date, setDate] = React.useState("...");
   let timerID: any;
   const currentDay = new Date();
   const blackFridayDay = new Date(
@@ -28,7 +28,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     currentDay.getMonth();
 
   const tick = () => {
-    const now = currentDay.getTime();
+    const now = new Date().getTime();
     const distance = countDownDate - now;
     const hours = Math.floor(
       (distance % (MILLISECONDS * SECONDS * MINUTE * HOURS)) / (MILLISECONDS * SECONDS * MINUTE)
@@ -48,20 +48,56 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     const daysLeftWithinBlackFridayMonth = blackFridayDay.getDate() - currentDay.getDate();
     if (months >= 1) {
       if (daysLeftWithinBlackFridayMonth > 0) {
-        setDate(`${months} month  ${props.isFullVersion ? `& ${daysLeftWithinBlackFridayMonth} days` : ""}`);
+        setDate(
+          `${months} ${
+            months > 1 ? props.intl.formatMessage({ id: "months" }) : props.intl.formatMessage({ id: "month" })
+          }  ${
+            props.isFullVersion
+              ? `& ${daysLeftWithinBlackFridayMonth} ${
+                  daysLeftWithinBlackFridayMonth > 1
+                    ? props.intl.formatMessage({ id: "days" })
+                    : props.intl.formatMessage({ id: "day" })
+                }`
+              : ""
+          }`
+        );
       } else if (blackFridayDay.getDate() === currentDay.getDate()) {
-        setDate(`${months} month `);
+        setDate(
+          `${months} ${
+            months > 1 ? props.intl.formatMessage({ id: "months" }) : props.intl.formatMessage({ id: "month" })
+          } `
+        );
       } else {
-        const dayTillEndOfMonth =
+        const daysLeftToBlackFriday =
           new Date(currentDay.getFullYear(), currentDay.getMonth(), 0).getDate() -
           currentDay.getDate() +
           blackFridayDay.getDate();
         setDate(
-          ` ${months > 1 ? `${months - 1} months` : ""} ${props.isFullVersion ? `& ${dayTillEndOfMonth} days` : ""}`
+          ` ${
+            months > 1
+              ? `${months - 1} ${
+                  months > 1 ? props.intl.formatMessage({ id: "months" }) : props.intl.formatMessage({ id: "month" })
+                }`
+              : ""
+          } ${
+            props.isFullVersion
+              ? `& ${daysLeftToBlackFriday} ${
+                  daysLeftWithinBlackFridayMonth > 1
+                    ? props.intl.formatMessage({ id: "days" })
+                    : props.intl.formatMessage({ id: "day" })
+                }`
+              : ""
+          }`
         );
       }
     } else if (daysLeftWithinBlackFridayMonth > 1) {
-      setDate(`${daysLeftWithinBlackFridayMonth} days`);
+      setDate(
+        `${daysLeftWithinBlackFridayMonth} ${
+          daysLeftWithinBlackFridayMonth > 1
+            ? props.intl.formatMessage({ id: "days" })
+            : props.intl.formatMessage({ id: "day" })
+        }`
+      );
     } else {
       timerID = setInterval(tick, MILLISECONDS);
     }
@@ -69,7 +105,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     return () => {
       clearInterval(timerID);
     };
-  }, []);
+  }, [props.intl]);
 
   return <React.Fragment>{date}</React.Fragment>;
 };
