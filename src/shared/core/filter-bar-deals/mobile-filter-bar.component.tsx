@@ -69,7 +69,7 @@ const DealsMobileFilterBarComponent = (props: IDealsMobileFilterBarComponentProp
           }
         });
       }
-      if (item.title === "Winkels") {
+      if (item.title === "Deals") {
         storeFilters.forEach((filter: FilterItem) => {
           if (item.selectedItems.includes(filter.displayName)) {
             filter.isSelected = true;

@@ -68,7 +68,7 @@ const getStores = (
     case "Populair":
       result = shuffle(result);
       break;
-    case "Winkels A - Z":
+    case "Deals A - Z":
       result = result.sort((a, b) => {
         if (a.name < b.name) {
           return -1;
@@ -80,7 +80,7 @@ const getStores = (
         return 0;
       });
       break;
-    case "Winkels Z - A":
+    case "Deals Z - A":
       result = result.sort((a, b) => {
         if (a.name > b.name) {
           return -1;
