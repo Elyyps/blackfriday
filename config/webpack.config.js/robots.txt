@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Disallow: /not-found/ playground-martijn /playground-ahmed /playground-tom
+Noindex: /not-found/ playground-martijn /playground-ahmed /playground-tom

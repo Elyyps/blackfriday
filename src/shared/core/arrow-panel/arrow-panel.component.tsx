@@ -14,6 +14,7 @@ export interface IArrowPanelProps {
 const ArrowPanel = ({ link: { title, url }, icon, image }: IArrowPanelProps) => {
   const pictureSize = `${image ? styles["image-container__image"] : styles["image-container__icon"]}`;
   const picture = `${image ? image : icon}`;
+
   return (
     <Link to={url} className={`${styles["card-simple"]}`}>
       <div className={styles["content"]}>

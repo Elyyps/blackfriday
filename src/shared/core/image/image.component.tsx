@@ -7,11 +7,10 @@ import { IconComponent } from "@app/core/icon";
 
 export interface IImageComponentProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+  className?: string;
   errorImage?: string;
   errorMessage?: string | true;
   isBlocking?: boolean;
-
-  className?: string;
 }
 const ImageComponent = (
   props: IImageComponentProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
