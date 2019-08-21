@@ -204,7 +204,7 @@
       display: flex;
       flex-wrap: wrap;
       > div {
-        flex: 1 1 50%;
+        flex: 1 1 45%;
         padding: 0 8px 16px;
         box-sizing: border-box;
         @media (max-width: $breakpoint-small-max) {

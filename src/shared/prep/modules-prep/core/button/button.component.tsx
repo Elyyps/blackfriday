@@ -14,7 +14,7 @@ interface IButtonProps {
   position?: string;
   target?: string;
   title: string;
-  type?: string;
+  type?: "submit" | "reset" | "button";
   variant?: string;
 }
 

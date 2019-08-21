@@ -30,18 +30,18 @@ describe("[StoreOverview]", () => {
 
   it("should get proper total height for many stores", () => {
     const totalHeight = getTotalHeight(ViewType.DesktopFull, 200);
-    expect(totalHeight).toBe(11520);
+    expect(totalHeight).toBe(12000);
   });
   it("should get proper total height for many stores mobile", () => {
     const totalHeight = getTotalHeight(ViewType.Mobile, 200);
-    expect(totalHeight).toBe(33600);
+    expect(totalHeight).toBe(41000);
   });
   it("should get proper total height for few stores", () => {
     const totalHeight = getTotalHeight(ViewType.DesktopFull, 5);
-    expect(totalHeight).toBe(288);
+    expect(totalHeight).toBe(300);
   });
   it("should get proper total height for few stores mobile", () => {
     const totalHeight = getTotalHeight(ViewType.Mobile, 5);
-    expect(totalHeight).toBe(840);
+    expect(totalHeight).toBe(1025);
   });
 });

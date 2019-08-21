@@ -19,8 +19,8 @@ import { LinkComponent } from "@app/core/link";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { ClickableComponent } from "@app/core/clickable";
-import { BreadcrumbComponent } from "@app/core/breadcrumb";
 import { ShadowCardComponent } from "@app/core/shadow-card";
+import { BreadcrumbComponent } from "@app/core/breadcrumb";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
