@@ -7,20 +7,19 @@ import { IconComponent } from "@app/core/icon";
 
 export interface IImageComponentProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+  className?: string;
   errorImage?: string;
   errorMessage?: string | true;
-  height?: string;
   isBlocking?: boolean;
-  width?: string;
 }
 const ImageComponent = (
   props: IImageComponentProps & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 ) => {
-  const { errorImage, errorMessage, isBlocking, height, width, ...other } = props;
+  const { errorImage, errorMessage, isBlocking, className, ...other } = props;
   if (isBlocking) {
-    return <img {...other} />;
+    return <img className={className} {...other} />;
   }
-
+  const style = `${styles["svg-class"]} ${className}`;
   const computedErrorMessage = errorMessage === true ? "Kan afbeelding niet laden." : errorMessage;
   const computedErrorImage = errorImage || IconDefault;
 
@@ -41,14 +40,10 @@ const ImageComponent = (
           loading={() => <span />}
           renumerateIRIElements={true}
           src={other.src}
-          style={{
-            height,
-            width
-          }}
-          className={styles["svg-class"]}
+          className={style}
         />
       ) : (
-        <img {...other} />
+        <img className={className} {...other} />
       )}
     </LazyLoad>
   );
