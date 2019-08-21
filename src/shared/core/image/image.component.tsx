@@ -9,8 +9,8 @@ export interface IImageComponentProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   errorImage?: string;
   errorMessage?: string | true;
-  isBlocking?: boolean;
   height?: string;
+  isBlocking?: boolean;
   width?: string;
 }
 const ImageComponent = (
@@ -42,8 +42,8 @@ const ImageComponent = (
           renumerateIRIElements={true}
           src={other.src}
           style={{
-            height: height,
-            width: width
+            height,
+            width
           }}
           className={styles["svg-class"]}
         />

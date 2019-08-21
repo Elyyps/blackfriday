@@ -19,7 +19,6 @@ export interface IDropdownComponentProps {
 const DropdownComponent = (props: IDropdownComponentProps) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const zIndexWhenOpen = 1021;
-  const buttonHeight = 38;
 
   useOutsideClick(wrapperRef, () => {
     if (props.isOpen) {
@@ -58,8 +57,6 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
           title={props.title}
           variant={getVariant()}
           zIndex={props.isOpen ? zIndexWhenOpen : undefined}
-          size={buttonHeight}
-          fullWidth
           iconFillColor="#ffffff"
           icon={props.icon ? props.icon : ChevronDown}
           iconPosition="right"

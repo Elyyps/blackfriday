@@ -6,7 +6,6 @@ import { generateHomePageHeader } from "../modules/homepage-header/generate-dumm
 import { generateDummyBannerModule } from "../modules/banner/generate-dummy-data";
 import {
   generateProductLineDummyData,
-  generateShopSingleBodyTextDummydata,
   generateHomepageBodytextDummyData,
   generateShopSingleBodyTextInfoDummydata
 } from "../modules/body-text/generate-dummy-data";
