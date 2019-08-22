@@ -11,6 +11,9 @@
   justify-content: center;
   width: 100%;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
   &__item {
     text-align: center;
   }
