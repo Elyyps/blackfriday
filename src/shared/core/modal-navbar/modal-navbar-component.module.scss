@@ -20,27 +20,31 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    &__menu {
-      margin-bottom: 39px;
-      &:hover {
+    color: $tint-gray-light;
+    path {
+      stroke: $tint-gray-light;
+    }
+    &:hover {
+      span {
         color: $brand-primary;
       }
+      path {
+        stroke: $brand-primary;
+      }
+    }
+    &__menu {
+      margin-bottom: 39px;
     }
     &__search {
       position: absolute;
       right: 32px;
       top: 32px;
       z-index: 1;
-      &:hover {
-        color: $brand-primary;
-      }
     }
     > div {
       margin-right: 8px;
     }
-    path {
-      stroke: currentColor;
-    }
+
     .modal-search & {
       top: 30px;
       @media (max-width: $breakpoint-small-max) {
