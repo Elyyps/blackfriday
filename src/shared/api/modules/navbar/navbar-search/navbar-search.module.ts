@@ -1,7 +1,7 @@
-import { DealCardModule } from "@app/api/core/deal-card";
+import { Deal } from "@app/api/core/deal/deal";
 import { Store } from "@app/api/core/store/store";
 
 export class NavbarSearchModule {
-  public deals: DealCardModule[];
+  public deals: Deal[];
   public stores: Store[];
 }

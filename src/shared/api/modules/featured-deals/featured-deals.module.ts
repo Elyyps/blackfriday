@@ -1,9 +1,9 @@
 import { SeeMoreCard } from "@app/api/core/see-more-card";
-import { DealCardModule } from "@app/api/core/deal-card";
+import { Deal } from "@app/api/core/deal/deal";
 import { WordPressPostModule } from "../wordpress-module/wordpress-module";
 
 export class FeaturedDealsModule extends WordPressPostModule {
-  public deals: [DealCardModule, DealCardModule, DealCardModule, DealCardModule];
+  public deals: [Deal, Deal, Deal, Deal];
   public seeMoreCard: SeeMoreCard;
   public title: string;
 }

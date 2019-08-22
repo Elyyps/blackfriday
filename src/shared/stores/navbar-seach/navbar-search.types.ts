@@ -1,4 +1,4 @@
-import { DealCardModule } from "@app/api/core/deal-card";
+import { Deal } from "@app/api/core/deal/deal";
 import { Store } from "@app/api/core/store/store";
 
 interface IAction {
@@ -6,7 +6,7 @@ interface IAction {
 }
 
 export interface INavbarSearchCards extends IAction {
-  deals: DealCardModule[];
+  deals: Deal[];
   stores: Store[];
 }
 

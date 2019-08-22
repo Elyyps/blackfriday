@@ -7,7 +7,7 @@
   background: $global-inverse-color;
   position: relative;
   width: 100%;
-  height: 288px;
+  min-height: 300px;
   border-radius: 2px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
 }
@@ -103,7 +103,7 @@
 @mixin responsive-card-768 {
   &,
   .shop-card {
-    height: 156px;
+    min-height: 166px;
     flex-direction: row;
     flex-wrap: wrap;
   }
