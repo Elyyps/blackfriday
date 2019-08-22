@@ -32,14 +32,14 @@ if (typeof window !== "undefined") {
   require("uikit");
 }
 
-export interface IDealsOverviewComponentProps {
+export interface IDealOverviewComponentProps {
   bgcolor?: string;
   cards?: any;
   customNextArrow?: JSX.Element | undefined;
   customPrevArrow?: JSX.Element | undefined;
 }
 
-const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
+const DealsOverviewComponent = (props: IDealOverviewComponentProps) => {
   const postFrom = 15;
   const ObjectKeys: any = {};
   const connectClass = "uk-switcher-list";

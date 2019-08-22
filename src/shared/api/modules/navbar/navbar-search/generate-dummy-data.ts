@@ -10,55 +10,60 @@ const LIMIT = 5;
 export const dummyNavbarSearchData: NavbarSearchModule = {
   deals: [
     {
-      title: "Pocketveermatas Pocket Comfort x2000",
-      subtitle: "Mediamarkt",
-      oldPrice: "€3.429",
-      newPrice: "€2.429",
-      discountText: "Bespaar 40%",
-      picture:
+      availableBrands: ["Apple", "Phillips", "Nintendo"],
+      categories: ["Mode", "Huishouden"],
+      id: "1",
+      image:
         "https://d2ddoduugvun08.cloudfront.net/items/2q1D2t2D003Z1X023z18/Image%202019-07-01%20at%204.45.18%20PM.png?X-CloudApp-Visitor-Id=3342233&v=d96f45c6",
-      button: { title: "Naar deals", url: "/deals-overview" }
+      label: "HOT",
+      moreInfoLink: "/deals-overview",
+      name: "Pocketveermatas Pocket Comfort x2001",
+      newPrice: "€2.429",
+      oldPrice: "€3.429",
+      sale: "Bespaar 40%",
+      stores: ["Mediamarkt"]
     },
     {
-      title: "Hoofdkussen Actie kussenset",
-      subtitle: "Mediamarkt",
-      label: "Hot",
-      oldPrice: "€3.429",
+      availableBrands: ["Apple", "Phillips", "Nintendo"],
+      categories: ["Mode", "Huishouden"],
+      id: "1",
+      image:
+        "https://d2ddoduugvun08.cloudfront.net/items/2q1D2t2D003Z1X023z18/Image%202019-07-01%20at%204.45.18%20PM.png?X-CloudApp-Visitor-Id=3342233&v=d96f45c6",
+      label: "HOT",
+      moreInfoLink: "/deals-overview",
+      name: "Pocketveermatas Pocket Comfort x2000",
       newPrice: "€2.429",
-      discountText: "Bespaar 40%",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/42013C072O2711070D0a/Image%202019-07-01%20at%204.46.51%20PM.png?X-CloudApp-Visitor-Id=3342233&v=c0749925",
-      button: { title: "Naar deals", url: "/deals-overview" }
+      oldPrice: "€3.429",
+      sale: "Bespaar 40%",
+      stores: ["Mediamarkt"]
     },
     {
-      title: "Lattenbodem FLEXUS 2600 VL",
-      subtitle: "Mediamarkt",
-      oldPrice: "€3.429",
+      availableBrands: ["Apple", "Phillips", "Nintendo"],
+      categories: ["Mode", "Huishouden"],
+      id: "1",
+      image:
+        "https://d2ddoduugvun08.cloudfront.net/items/2q1D2t2D003Z1X023z18/Image%202019-07-01%20at%204.45.18%20PM.png?X-CloudApp-Visitor-Id=3342233&v=d96f45c6",
+      label: "HOT",
+      moreInfoLink: "/deals-overview",
+      name: "Pocketveermatas Pocket Comfort x2000",
       newPrice: "€2.429",
-      discountText: "Bespaar 40%",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/193s25422A3q0v2F1f35/Image%202019-07-01%20at%204.47.42%20PM.png?X-CloudApp-Visitor-Id=3342233&v=b6e3280e",
-      button: { title: "Naar deals", url: "/deals-overview" }
+      oldPrice: "€3.429",
+      sale: "Bespaar 40%",
+      stores: ["Mediamarkt"]
     },
     {
-      title: "Dyson apparaten met korting",
-      subtitle: "Mediamarkt",
-      oldPrice: "€3.429",
+      availableBrands: ["Apple", "Phillips", "Nintendo"],
+      categories: ["Mode", "Huishouden"],
+      id: "1",
+      image:
+        "https://d2ddoduugvun08.cloudfront.net/items/2q1D2t2D003Z1X023z18/Image%202019-07-01%20at%204.45.18%20PM.png?X-CloudApp-Visitor-Id=3342233&v=d96f45c6",
+      label: "HOT",
+      moreInfoLink: "/deals-overview",
+      name: "Pocketveermatas Pocket Comfort x2000",
       newPrice: "€2.429",
-      discountText: "Bespaar 40%",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-      button: { title: "Naar deals", url: "/deals-overview" }
-    },
-    {
-      title: "Dyson apparaten met korting #2",
-      subtitle: "Mediamarkt",
       oldPrice: "€3.429",
-      newPrice: "€2.429",
-      discountText: "Bespaar 40%",
-      picture:
-        "https://d2ddoduugvun08.cloudfront.net/items/2R2d2B0a0e2o3528123s/Image%202019-07-01%20at%204.48.22%20PM.png?X-CloudApp-Visitor-Id=3342233&v=88efdc5a",
-      button: { title: "Naar deals", url: "/deals-overview" }
+      sale: "Bespaar 40%",
+      stores: ["Mediamarkt"]
     }
   ],
   stores: generateDemoStoreDummyData().slice(0, LIMIT)

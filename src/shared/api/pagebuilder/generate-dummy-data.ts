@@ -23,9 +23,10 @@ import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
 import { generateBlogBodyTextData, generateBlackFriday2019TextData } from "../core/blog-bodytext/endpoint";
 import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
-import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
+// import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
 import { generateNotFoundModuleDummyData } from "../modules/not-found/endpoints";
+import { generateDealOverviewModule } from "../modules/deal-overview/generate-dummy-data";
 
 export const pageList: PageModel[] = [
   {
@@ -93,7 +94,7 @@ export const pageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarData(),
       generateMediumHeroDummyData(),
-      generateNotYetImplemented("deals overview"),
+      generateDealOverviewModule(),
       generateCtaSmallModule(),
       generateDummyFooterData()
     ]

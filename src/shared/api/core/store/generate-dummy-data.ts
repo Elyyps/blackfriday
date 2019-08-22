@@ -45,7 +45,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Vodafone",
     moreInfoLink: "https://www.vodafone.nl/",
     description:
-      "Een selectie van bizar veel aanbiedingen. Een selectie van bizar veel aanbiedingen. Een selectie van bizar veel aanbiedingen.",
+      "Een selectie van bizar veel aanbiedingen. Nam non iaculis sem, vitae porttitor odio. Donec porta aliquam rutrum. Duis rhoncus nunc at interdum dictum.",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
     timeLeftPercentage: 70
   },

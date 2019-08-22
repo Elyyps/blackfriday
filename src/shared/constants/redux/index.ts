@@ -7,15 +7,17 @@ import { BUSINESS_OVERVIEW } from "./business-overview";
 import { SHOPSOVERVIEW } from "./shops-overview";
 import { SETTINGS } from "./settings";
 import { STORE_OVERVIEW } from "./store-overview";
+import { DEAL_OVERVIEW } from "./deal-overview";
 
 export const REDUX = {
-  LOCALES,
-  PAGE,
-  SHOPSOVERVIEW,
   BUSINESS_OVERVIEW,
-  NAVBARSEARCH,
   CARD,
+  DEAL_OVERVIEW,
+  LOCALES,
+  NAVBARSEARCH,
   NEWS,
+  PAGE,
   SETTINGS,
+  SHOPSOVERVIEW,
   STORE_OVERVIEW
 };

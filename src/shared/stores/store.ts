@@ -10,6 +10,7 @@ import { IPageState, pageReducer } from "./page";
 import { ISettingsState, settingsReducer } from "./settings";
 import { INavbarSearchState, navbarSearchReducer } from "./navbar-seach";
 import { IStoreOverviewState, storeOverviewReducer } from "./store-overview";
+import { IDealOverviewState, dealOverviewReducer } from "./deal-overview";
 
 type StoreParams = {
   history: History;
@@ -18,6 +19,7 @@ type StoreParams = {
 };
 
 export interface IAppState {
+  dealOverview: IDealOverviewState;
   locales: ILocalesState;
   navbarSearch: INavbarSearchState;
   page: IPageState;
@@ -50,7 +52,8 @@ export const configureStore = ({ history, initialState, middleware = [] }: Store
       page: pageReducer,
       router: connectRouter(history),
       settings: settingsReducer,
-      storeOverview: storeOverviewReducer
+      storeOverview: storeOverviewReducer,
+      dealOverview: dealOverviewReducer
     }),
     initialState,
     composeEnhancers(applyMiddleware(...[thunk, routerMiddleware(history)].concat(...middleware)))
