@@ -135,7 +135,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
                   ))}
                 </div>
               </div>
-              <div>
+              <div className={styles["homepage-header-bottom__cards-container"]}>
                 <div className={styles["homepage-header-bottom__label"]}>
                   <h2>{props.homePageModule.popularStoresTitle}</h2>
                 </div>

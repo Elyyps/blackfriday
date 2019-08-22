@@ -223,7 +223,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
               <Link aria-label="Logo link" to="./" className={`uk-visible@m ${styles["footer__logo"]}`}>
                 <ImageComponent src={props.footerModule.bottomFooter.logo} />
               </Link>
-              {props.footerModule.bottomFooter.copyright}
+              <span>{props.footerModule.bottomFooter.copyright}</span>
             </div>
             <ul className={styles["footer__nav"]}>
               {props.footerModule.bottomFooter.items.map((link, key) => (
