@@ -9,6 +9,7 @@
   &__navigation {
     z-index: 0;
     height: 85%;
+    overflow: auto;
     > * {
       margin-bottom: 24px;
     }

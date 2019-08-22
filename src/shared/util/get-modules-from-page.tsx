@@ -65,7 +65,7 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "CtaNewsletterModule":
       return <CtaNewsletterComponent ctaNewsLetterModule={wordPressModule as CtaNewsletterModule} />;
     case "FeaturedShopsModule":
-      return <FeaturedShopsComponent {...wordPressModule as FeaturedStoresModule} />;
+      return <FeaturedShopsComponent {...(wordPressModule as FeaturedStoresModule)} />;
     case "FooterModule":
       return <FooterComponent footerModule={wordPressModule as FooterModule} />;
     case "HomepageHeader":

@@ -159,7 +159,7 @@ exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`
             ],
             "description": "Een selectie van bizar veel aanbiedingen.",
             "id": "6",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol-logo.svg",
+            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
             "moreInfoLink": "https://bol.com",
             "name": "Bol.com",
             "status": 1,
