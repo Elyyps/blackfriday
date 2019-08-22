@@ -11,20 +11,24 @@ export interface IArrowPanelProps {
   link: ILink;
 }
 
-const ArrowPanel = ({ link: { title, url }, icon, image }: IArrowPanelProps) => (
-  <Link to={url} className={`${styles["card-simple"]}`}>
-    <div className={styles["content"]}>
-      {(image || icon) && (
-        <div className={styles["image-container"]}>
-          {image && <ImageComponent alt="Arrow icon" className={styles["image"]} src={image} />}
-          {icon && <ImageComponent alt="Arrow icon" className={styles["image-icon"]} src={icon} />}
-        </div>
-      )}
-      <div className={styles["title"]}>{title}</div>
-    </div>
-    <div className={styles["icon"]}>
-      <IconComponent icon={CHEVRON_RIGHT} size="10px" strokeColor="#474747" strokeWidth="3px" />
-    </div>
-  </Link>
-);
+const ArrowPanel = ({ link: { title, url }, icon, image }: IArrowPanelProps) => {
+  const pictureSize = `${image ? styles["image-container__image"] : styles["image-container__icon"]}`;
+  const picture = `${image ? image : icon}`;
+
+  return (
+    <Link to={url} className={`${styles["card-simple"]}`}>
+      <div className={styles["content"]}>
+        {(image || icon) && (
+          <div className={styles["image-container"]}>
+            <ImageComponent alt="Arrow icon" className={pictureSize} src={picture} />
+          </div>
+        )}
+        <div className={styles["title"]}>{title}</div>
+      </div>
+      <div className={styles["icon"]}>
+        <IconComponent icon={CHEVRON_RIGHT} size="10px" strokeColor="#474747" strokeWidth="3px" />
+      </div>
+    </Link>
+  );
+};
 export { ArrowPanel };

@@ -19,6 +19,9 @@
     color: $global-inverse-color;
     display: flex;
     align-items: center;
+    @media (max-width: $breakpoint-small) {
+      margin-left: 20px;
+    }
     cursor: pointer;
     color: $tint-gray-light;
     path {
@@ -38,8 +41,15 @@
     &__search {
       position: absolute;
       right: 32px;
-      top: 32px;
+      top: 28px;
       z-index: 1;
+      @media (max-width: $breakpoint-small-max) {
+        top: 24px;
+        color: $gray-dark;
+      }
+      &:hover {
+        color: $brand-primary;
+      }
     }
     > div {
       margin-right: 8px;
@@ -78,7 +88,9 @@
       }
       &__open {
         width: 400px;
-
+        @media (max-width: $breakpoint-small) {
+          width: 100vw;
+        }
         transition: 0.25s width ease-in-out;
       }
     }

@@ -1,22 +1,21 @@
 .blog-overview {
   &__holder {
-    @media (min-width: $breakpoint-small) {
+    @media (min-width: $breakpoint-small-medium) {
       display: flex;
       align-items: flex-start;
+      justify-content: space-between;
     }
   }
   &__content {
-    flex: 1 1 auto;
     margin-bottom: 20px;
+    @media (min-width: $breakpoint-small-medium) {
+      flex: 0 1 65%;
+    }
   }
   &__sidebar {
-    @media (min-width: $breakpoint-small) {
-      width: 40%;
-      flex-shrink: 0;
-      margin-left: 24px;
-    }
-    @media (min-width: $breakpoint-medium) {
-      width: 31%;
+    margin: 0;
+    @media (min-width: $breakpoint-small-medium) {
+      flex: 0 1 35%;
       margin: 0 0 0 40px;
     }
   }

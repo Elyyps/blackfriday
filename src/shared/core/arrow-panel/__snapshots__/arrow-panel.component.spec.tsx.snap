@@ -13,7 +13,7 @@ exports[`[arrow-panel] should render component without crashing 1`] = `
     >
       <ImageComponent
         alt="Arrow icon"
-        className="image"
+        className="image-container__image"
         src="store.svg"
       />
     </div>

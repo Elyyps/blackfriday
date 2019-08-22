@@ -6,6 +6,6 @@ export const generateFeaturedBlogDummyData = (): FeaturedBlogModule => ({
   items: generate2BlogPostsData(),
   name: "FeaturedBlogModule",
   id: "",
-  bottomPadding: { desktopSpacing: 72, mobileSpacing: 48 },
+  bottomPadding: { desktopSpacing: 0, mobileSpacing: 0 },
   background: { backgroundColour: "#f7f7f7" }
 });

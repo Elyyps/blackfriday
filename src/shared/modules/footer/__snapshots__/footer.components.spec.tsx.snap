@@ -803,7 +803,7 @@ exports[`[Footer] should render component without crashing 1`] = `
             to="./"
           >
             <ImageComponent
-              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/bf-expert.svg"
+              src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/logo-blackfriday.svg"
             />
           </Link>
           © 2019 · Black Friday Expert is een initiatief van Maddox Media B.V
