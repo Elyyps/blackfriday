@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./header-info-component.module.scss";
 import { ImageComponent } from "@app/core/image";
-import { DropdownComponent } from "@app/core/dropdown/dropdown.component";
+
 import { ShareSocialComponent } from "@app/core/share-social";
 import { HeaderInfo } from "@app/api/modules/header-info/header-info.module";
 import { generateShareSocialModule } from "@app/api/core/share-social/endpoints";
@@ -12,6 +12,7 @@ import ShareSVG from "@assets/icons/share.svg";
 import { LinkComponent } from "@app/core/link";
 import { BreadcrumbComponent } from "@app/core/breadcrumb";
 import { InjectedIntlProps, injectIntl } from "react-intl";
+import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
 
 export interface IHeaderInfoComponentProps {
   headerInfo: HeaderInfo;
@@ -29,7 +30,7 @@ const component = (props: IHeaderInfoComponentProps & InjectedIntlProps) => (
         <div className={styles["header-info__body__content"]}>
           {props.headerInfo.icon && (
             <div className={styles["header-info__icon"]}>
-              <ImageComponent alt="icon" src={props.headerInfo.icon} />
+              <ImageComponent alt="icon" src={props.headerInfo.icon} className={styles["header-info__icon-image"]} />
             </div>
           )}
           <div className={styles["header-info__content"]}>
@@ -47,9 +48,7 @@ const component = (props: IHeaderInfoComponentProps & InjectedIntlProps) => (
             <LinkComponent to={props.headerInfo.url}>{props.intl.formatMessage({ id: "see-more" })}</LinkComponent>
           </div>
           <div className={styles["header-info__share-dropdown"]}>
-            <DropdownComponent title="Status" icon={ShareSVG}>
-              <ShareSocialComponent {...generateShareSocialModule()} />
-            </DropdownComponent>
+            <ShareSocialDropdownComponent buttonTitle="Delen" shareSocial={generateShareSocialModule()} />
           </div>
         </div>
         <div className={styles["header-info__share-badge"]}>
