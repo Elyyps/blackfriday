@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import { MobileFilterComponent, IMobileFilterSelectedItems } from "../mobile-filter";
+import { IMobileFilterSelectedItems } from "../mobile-filter";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { IMobileFilterItem } from "../mobile-filter/mobile-filter-item";
+import { MobileFilterContainer } from "../mobile-filter/containers/mobile-filter-container";
 
 export interface IDealsMobileFilterBarComponentProps {
   brandFilterItems: FilterItem[];
@@ -105,7 +106,7 @@ const DealsMobileFilterBarComponent = (props: IDealsMobileFilterBarComponentProp
   };
 
   return (
-    <MobileFilterComponent
+    <MobileFilterContainer
       onFinish={handleFinishSearch}
       totalStores={totalStores}
       onClear={clearAllFilters}
