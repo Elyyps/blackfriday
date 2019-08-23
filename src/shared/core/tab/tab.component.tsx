@@ -1,45 +1,30 @@
 import * as React from "react";
 import styles from "./tab-component.module.scss";
-import { Link } from "react-router-dom";
 export interface ITabsInterface {
   content: JSX.Element;
   index: number;
   title: string;
 }
-export interface ITabComponentProps {
-  tabs: any[];
+
+export interface ITabLink {
+  href: string;
+  isSelected?: boolean;
+  title: string;
 }
-const TabComponent = (props: ITabComponentProps) => {
-  const [selectedTab, setSelectedTab] = React.useState<number>(1);
-  const getComponentTabIndex = () => {
-    let tabComponent;
-    props.tabs.map(tab => {
-      if (selectedTab === tab.index) {
-        tabComponent = tab.content;
-      }
-    });
-
-    return tabComponent;
-  };
-
-  return (
-    <React.Fragment>
-      <div className={`${styles["tab"]}`}>
-        <ul className={styles["uk-tab__list"]}>
-          {props.tabs.map((tab, key) => (
-            <li
-              role="button"
-              key={key}
-              className={selectedTab === tab.index ? styles["tab__selected"] : ""}
-              onClick={() => setSelectedTab(tab.index)}
-            >
-              {<Link to="#">{tab.title}</Link>}
-            </li>
-          ))}
-        </ul>
+export interface ITabComponentProps {
+  tabs: ITabLink[];
+}
+const TabComponent = (props: ITabComponentProps) => (
+  <React.Fragment>
+    <div className={`${styles["tab"]}`}>
+      <div className={styles["uk-tab__list"]}>
+        {props.tabs.map((tab, key) => (
+          <a href={tab.href} key={key} className={tab.isSelected ? styles["tab__selected"] : ""}>
+            {tab.title}
+          </a>
+        ))}
       </div>
-      {getComponentTabIndex()}
-    </React.Fragment>
-  );
-};
+    </div>
+  </React.Fragment>
+);
 export { TabComponent };

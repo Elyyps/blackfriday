@@ -24,9 +24,7 @@ const component = (props: ISearchableCheckboxDropdownProps & InjectedIntlProps) 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    if (internalItems.length === 0) {
-      setInternalItems([...props.items]);
-    }
+    setInternalItems([...props.items]);
   }, [props.items]);
 
   useEffect(() => {

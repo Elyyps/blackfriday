@@ -1,13 +1,11 @@
 .tab {
-  border-bottom: 2px solid $tint-gray;
-
-  ul {
+  div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  li {
+  a {
     width: 112px;
     height: 49px;
     font-size: 16px;
@@ -33,7 +31,7 @@
       align-items: center;
       justify-content: center;
       margin: 0;
-      > li {
+      > a {
         font-weight: 600;
         a {
           padding: 14px 16px;

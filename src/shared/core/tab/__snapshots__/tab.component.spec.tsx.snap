@@ -5,37 +5,24 @@ exports[`[tabComponent] should render component without crashing 1`] = `
   <div
     className="tab"
   >
-    <ul
+    <div
       className="uk-tab__list"
     >
-      <li
-        className="tab__selected"
-        key="0"
-        onClick={[Function]}
-        role="button"
-      >
-        <Link
-          to="#"
-        >
-          Winkels
-        </Link>
-      </li>
-      <li
+      <a
         className=""
-        key="1"
-        onClick={[Function]}
-        role="button"
+        href="/"
+        key="0"
       >
-        <Link
-          to="#"
-        >
-          Productdeals
-        </Link>
-      </li>
-    </ul>
+        Winkels
+      </a>
+      <a
+        className=""
+        href="/"
+        key="1"
+      >
+        Productdeals
+      </a>
+    </div>
   </div>
-  <h1>
-    Will be implemented
-  </h1>
 </Fragment>
 `;

@@ -17,18 +17,7 @@ const FeaturedDealsComponent = (props: IFeaturedDealsComponentProps) => {
       <div className={styles["featured-deals__list"]}>
         {deals.map((deal, key) => (
           <div className={styles[`featured-deals__item-${key}`]} key={key}>
-            <DealCardComponent
-              key={key}
-              label={deal.label}
-              subtitle={deal.subtitle}
-              buttonLink={deal.button.url}
-              title={deal.title}
-              oldPrice={deal.oldPrice}
-              image={deal.picture}
-              buttonText={deal.button.title}
-              newPrice={deal.newPrice}
-              sale={deal.discountText}
-            />
+            <DealCardComponent deal={deal} />
           </div>
         ))}
         <div>

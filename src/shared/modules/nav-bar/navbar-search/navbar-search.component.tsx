@@ -5,7 +5,7 @@ import { SEARCH_ICON } from "@app/constants/icons";
 import StoreIcon from "@assets/icons/store.svg";
 import { DealCardComponent } from "@app/core/deal-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
-import { DealCardModule } from "@app/api/core/deal-card";
+import { Deal } from "@app/api/core/deal/deal";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { Store } from "@app/api/core/store/store";
 
@@ -13,7 +13,7 @@ const LIMIT_EMPTY = 3;
 export interface INavbarSearchComponentProps {
   cleanFilter?: () => void;
   currentFilter: string;
-  deals?: DealCardModule[];
+  deals?: Deal[];
   dealsTitle: string;
   getCardsFiltered?: (text: string) => void;
   shopsTitle: string;
@@ -73,17 +73,7 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
                     {props.deals &&
                       props.deals.map((item, key) => (
                         <div key={key}>
-                          <DealCardComponent
-                            title={item.title}
-                            subtitle={item.subtitle}
-                            oldPrice={item.oldPrice}
-                            newPrice={item.newPrice}
-                            sale={item.discountText}
-                            image={item.picture}
-                            buttonLink={item.button.url}
-                            buttonText={item.button.title}
-                            variant={"responsive"}
-                          />
+                          <DealCardComponent deal={item} variant={"responsive"} />
                         </div>
                       ))}
                     {props.deals && props.deals.length > 0 && <div>{CardMoreDeals}</div>}

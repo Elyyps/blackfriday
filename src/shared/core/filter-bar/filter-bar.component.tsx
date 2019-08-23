@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./filter-bar-component.module.scss";
 import HandPointing from "@assets/icons/hand-pointing.svg";
 import StoreIcon from "@assets/icons/store.svg";
-import { IconComponent } from "@app/prep/modules-prep/core";
+import { IconComponent } from "@app/core";
 import { CheckboxDropdown } from "../checkbox-dropdown/checkbox-dropdown.component";
 import { FilterItem } from "@app/api/core/filter/filter-item";
 import { SearchableCheckboxDropdown } from "../searchable-checkbox-dropdown/searchable-checkbox-dropdown.component";
@@ -143,10 +143,6 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
               {props.totalResults} {props.intl.formatMessage({ id: "tab-winkels" })}
             </div>
             <div className={styles["filter__sort-item"]}>
-              <span className={styles["filter__sort-text"]}>
-                {props.intl.formatMessage({ id: "filter-bar-sort-by" })}:
-              </span>
-
               {/* className={styles["filter__sort-change"]} */}
               {/* {orderBy} */}
               <SelectComponent

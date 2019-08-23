@@ -45,7 +45,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Vodafone",
     moreInfoLink: "https://www.vodafone.nl/",
     description:
-      "Een selectie van bizar veel aanbiedingen. Een selectie van bizar veel aanbiedingen. Een selectie van bizar veel aanbiedingen.",
+      "Een selectie van bizar veel aanbiedingen. Nam non iaculis sem, vitae porttitor odio. Donec porta aliquam rutrum. Duis rhoncus nunc at interdum dictum.",
     logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
     timeLeftPercentage: 70
   },
@@ -90,7 +90,7 @@ export const generateDemoStoreDummyData = (): Store[] => [
     name: "Bol.com",
     moreInfoLink: "https://bol.com",
     description: "Een selectie van bizar veel aanbiedingen.",
-    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol-logo.svg",
+    logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
     timeLeftPercentage: 40
   },
   {

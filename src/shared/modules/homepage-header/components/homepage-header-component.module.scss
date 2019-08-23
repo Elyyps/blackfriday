@@ -32,7 +32,7 @@
     &-next,
     &-prev {
       left: auto;
-      bottom: 13%;
+      bottom: 8%;
       top: auto;
 
       > div {
@@ -53,7 +53,7 @@
       right: 130px !important;
       @media (max-width: $breakpoint-small-max) {
         right: auto !important;
-        left: 16px;
+        left: 24px;
         bottom: 0;
       }
     }
@@ -65,7 +65,7 @@
       }
       right: 72px !important;
       @media (max-width: $breakpoint-small-max) {
-        right: 16px !important;
+        right: 24px !important;
         bottom: 0;
       }
     }
@@ -229,14 +229,20 @@
     &__cards {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       > div {
-        flex: 1 1 45%;
-        padding: 0 8px 16px;
+        flex: 0 1 49%;
+        padding: 0 0px 16px;
         box-sizing: border-box;
         @media (max-width: $breakpoint-small-max) {
           flex: 1 1 100%;
           padding-bottom: 1px;
         }
+      }
+    }
+    &__cards-container {
+      @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 15px;
       }
     }
   }
@@ -299,6 +305,14 @@
       height: auto !important;
       position: relative;
       bottom: 25%;
+      @media (max-width: $breakpoint-small-max) {
+        bottom: 35%;
+        left: 0;
+        a {
+          display: flex;
+          justify-content: center;
+        }
+      }
       left: 6%;
     }
     &-title {
@@ -309,6 +323,8 @@
       z-index: 1;
       @media (max-width: $breakpoint-small-max) {
         max-width: 100%;
+        display: flex;
+        justify-content: center;
       }
       &:hover {
         color: inherit;
@@ -326,7 +342,6 @@
       font-weight: bold;
       margin-bottom: 16px;
       @media (max-width: $breakpoint-small-max) {
-        margin-bottom: 45px;
         font-size: 24px;
       }
     }

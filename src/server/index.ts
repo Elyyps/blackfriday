@@ -15,12 +15,18 @@ import { addStore } from "./middleware/store-handler";
 require("dotenv").config();
 
 const app = express.default();
+// serve robots file
+app.get("/robots.txt", (req, res) => {
+  const options = {
+    root: path.join(paths.clientBuild, "/static"),
+    headers: {
+      "Content-Type": "text/plain;charset=UTF-8"
+    }
+  };
+  res.status(200).sendFile("robots.txt", options);
+});
 
-// Use Nginx or Apache to serve static assets in production or remove the if() around the following
-// lines to use the express.static middleware to serve assets for production (not recommended!)
-// if (process.env.NODE_ENV === "development") {
 app.use(paths.publicPath, express.static(path.join(paths.clientBuild, paths.publicPath)));
-// }
 
 app.use(cors());
 
