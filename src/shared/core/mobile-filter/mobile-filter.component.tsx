@@ -11,6 +11,7 @@ import { GenericPageFilterComponent } from "./pages/generic-page-filter";
 import { IMobileFilterItem } from "./mobile-filter-item";
 import { SingleFilterComponent } from "./pages/single-page-filter";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { MobileFilterContainerProps } from "./containers/mobile-filter-container";
 
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
@@ -24,7 +25,7 @@ export interface IMobileFilterSelectedItems {
   title: string;
 }
 
-const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
+const component = (props: IMobileFilterComponentProps & InjectedIntlProps & MobileFilterContainerProps) => {
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
   const { filterItems, onClear } = props;
@@ -78,31 +79,26 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
     };
   }, [isFilterOpened]);
 
-  const onWindowResize = () => {
-    const w = window;
-    const d = document;
-    const documentElement = d.documentElement;
-    const body = d.getElementsByTagName("body")[0];
-    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
-    const mobileBreakpoint = 769;
-    if (width >= mobileBreakpoint) {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    } else {
-      document.documentElement.style.overflow = "none";
-      document.body.style.overflow = "none";
-    }
-  };
-
   React.useEffect(() => {
-    window.addEventListener("resize", onWindowResize);
+    const mobileBreakpoint = 769;
+    if (props.screenSize) {
+      if (props.screenSize.breakpointPixels < mobileBreakpoint) {
+        document.documentElement.style.overflow = "none";
+        document.body.style.overflow = "none";
+      } else {
+        document.documentElement.style.overflow = "none";
+        document.body.style.overflow = "none";
+      }
+    }
+  }, [props.screenSize]);
 
-    return () => {
-      window.removeEventListener("resize", onWindowResize);
+  React.useEffect(
+    () => () => {
       document.documentElement.style.overflow = "none";
       document.body.style.overflow = "none";
-    };
-  }, []);
+    },
+    []
+  );
 
   return !isFilterOpened ? (
     <div
