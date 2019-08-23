@@ -21,15 +21,16 @@ export type IconStyle = "outline" | "filled" | "outline-fill";
 
 export interface IClickableComponentProps {
   animated?: boolean;
+
   buttonType?: "submit" | "reset" | "button";
   disabled?: boolean;
   disableSelect?: boolean;
   dynamicSize?: boolean;
   fullWidth?: boolean;
   href?: string;
-  icon?: string;
   iconFillColor?: string;
-  iconPosition?: "right" | "left";
+  iconLeft?: string;
+  iconRight?: string;
   iconStyle?: IconStyle;
   onClick?: () => void;
   size?: number;
@@ -40,14 +41,14 @@ export interface IClickableComponentProps {
 }
 
 const renderIconMargin = (
-  margin = "right",
+  margin: string,
   title: string | undefined,
   icon: string | undefined,
   iconFillColor: string | undefined
 ) => {
   let style;
   if (title) {
-    style = styles[`icon-${margin}`];
+    style = `${styles[`icon-${margin}`]} `;
   }
 
   return (
@@ -58,57 +59,44 @@ const renderIconMargin = (
 };
 
 const renderIconText = (
-  icon: string | undefined,
-  iconPosition: string | undefined,
+  iconLeft: string | undefined,
+  iconRight: string | undefined,
   title: string | undefined,
   iconFillColor: string | undefined
 ) => {
-  const showTextOnTheLeft = (icon && iconPosition === "right") || (icon && !iconPosition);
-  const showTextOnTheRight = icon && iconPosition === "left";
+  const showTextOnTheCenter = iconRight && iconLeft;
 
   return (
     <span className={styles["icon-svg"]}>
-      {showTextOnTheLeft && title}
-      {icon ? renderIconMargin(iconPosition, title, icon, iconFillColor) : title}
-      {showTextOnTheRight && title}
+      {iconLeft && renderIconMargin(showTextOnTheCenter ? "center" : "left", title, iconLeft, iconFillColor)}
+      {title}
+      {iconRight && renderIconMargin(showTextOnTheCenter ? "center" : "right", title, iconRight, iconFillColor)}
     </span>
   );
 };
 
 const ClickableComponent = (props: IClickableComponentProps) => {
   const [iconText, setIconText] = React.useState<JSX.Element>(
-    renderIconText(props.icon, props.iconPosition, props.title, props.iconFillColor)
+    renderIconText(props.iconLeft, props.iconRight, props.title, props.iconFillColor)
   );
-  useEffect(() => setIconText(renderIconText(props.icon, props.iconPosition, props.title, props.iconFillColor)), [
-    props.icon,
-    props.iconPosition,
+  useEffect(() => setIconText(renderIconText(props.iconLeft, props.iconRight, props.title, props.iconFillColor)), [
+    props.iconLeft,
+    props.iconRight,
     props.title
   ]);
-  const {
-    buttonType,
-    disableSelect,
-    animated,
-    onClick,
-    href,
-    variant,
-    title,
-    disabled,
-    iconStyle,
-    target,
-    zIndex
-  } = props;
+  const { buttonType, disableSelect, onClick, href, variant, title, disabled, iconStyle, target, zIndex } = props;
 
   const classModify = variant || "primary-default";
   const buttonFAB = !title ? styles["button--FAB"] : "";
-  const animatedIcon = animated ? styles[`button--animated`] : "";
+  const animated = props.animated ? styles["animated"] : "";
   const noSelect = disableSelect ? styles[`no-select`] : "";
   const iconOutline = iconStyle ? styles[`button--${classModify}--icon-${iconStyle}`] : "";
   const buttonClassName = classNames(
     styles["button"],
     styles[`button--${classModify}`],
     buttonFAB,
+    animated,
     iconOutline,
-    animatedIcon,
     noSelect,
     {
       "button--fullWidth": props.fullWidth

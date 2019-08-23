@@ -48,6 +48,27 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
     shareSocial
   } = props.shopSingleHeaderModule;
 
+  const [isMobile, setIsMobile] = React.useState(false);
+  const [isSeeMorePressed, setIsSeeMorePressed] = React.useState(false);
+
+  const onWindowResize = () => {
+    const w = window;
+    const d = document;
+    const documentElement = d.documentElement;
+    const body = d.getElementsByTagName("body")[0];
+    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    const mobileBreakpoint = 769;
+    setIsMobile(width <= mobileBreakpoint);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", onWindowResize);
+    onWindowResize();
+    return () => {
+      window.removeEventListener("resize", onWindowResize);
+    };
+  }, []);
+
   return (
     <div className={styles["container"]}>
       <div className={styles["product-detail"]}>
@@ -83,7 +104,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                       <BreadcrumbComponent links={breadcrumbProps.links} backButton={breadcrumbProps.backButton} />
                     </div>
                   )}
-                  <div className={styles["content"]}>
+                  <div style={{ position: "relative" }} className={styles["content"]}>
                     <div className={styles["content__head"]}>
                       <h1 style={{ margin: "0" }}>{title}</h1>
                       <div className={`${styles["content__head__stars"]} uk-visible@s`}>
@@ -91,9 +112,38 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                         <span>{rating.text}</span>
                       </div>
                     </div>
-                    <div className={styles["content__body"]}>
+                    <div
+                      style={{
+                        position: "relative",
+                        maxHeight: isMobile ? (isSeeMorePressed ? "5000px" : "200px") : "5000px"
+                      }}
+                      className={styles["content__body"]}
+                    >
                       <BodyTextComponent style={{ margin: 0, padding: 0 }} bodyTextModule={bodyTextModule} />
+                      {isMobile && !isSeeMorePressed && <div className={styles["content__gradient"]} />}
                     </div>
+                    {isMobile &&
+                      (isSeeMorePressed ? (
+                        <a
+                          className={styles["content__see-more"]}
+                          role="button"
+                          onClick={() => {
+                            setIsSeeMorePressed(!isSeeMorePressed);
+                          }}
+                        >
+                          See Less
+                        </a>
+                      ) : (
+                        <a
+                          className={styles["content__see-more"]}
+                          role="button"
+                          onClick={() => {
+                            setIsSeeMorePressed(!isSeeMorePressed);
+                          }}
+                        >
+                          See More
+                        </a>
+                      ))}
                     {checkList && (
                       <div className="uk-visible@s">
                         <h4>{CheckListTitle}</h4>
@@ -108,6 +158,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                       </div>
                     )}
                   </div>
+
                   <div className={styles["product-detail__footer"]}>
                     <div className={styles["actions"]} data-uk-margin>
                       <div className={styles["actions__item"]}>
@@ -116,7 +167,7 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
                           href={storeLink.url}
                           title={storeLink.title}
                           iconStyle="filled"
-                          icon={IconDefault}
+                          iconRight={IconDefault}
                         />
 
                         <div className={`${styles["content__head__stars"]} uk-hidden@s`}>

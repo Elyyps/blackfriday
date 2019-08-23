@@ -158,18 +158,44 @@
     margin-top: 50px;
     list-style: none;
     margin-top: 56px;
+    box-sizing: border-box;
+    width: 100%;
+
+    @media (max-width: $breakpoint-medium) {
+      display: inline-flex;
+      justify-content: space-between;
+    }
     @media (max-width: $breakpoint-small-max) {
       margin-top: 32px;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: flex;
+      flex-direction: column;
+    }
     > * {
-      max-width: 340px;
+      width: 342px;
+      box-sizing: border-box;
+      padding: 24px;
       @media (max-width: $breakpoint-small-max) {
-        max-width: 100%;
+        width: 100%;
+      }
+      &:last-child {
+        @media (max-width: $breakpoint-small-max) {
+          margin-left: 16px;
+        }
+        @media (max-width: $breakpoint-xsmall-max) {
+          margin-left: 0px;
+        }
       }
       &:not(:last-child) {
         margin-bottom: 8px;
         @media (max-width: $breakpoint-small-max) {
+          width: calc(100% - 32px);
           margin-bottom: 1px;
+        }
+        @media (max-width: $breakpoint-xsmall-max) {
+          margin-right: 0px;
+          width: 100%;
         }
       }
     }

@@ -1,7 +1,9 @@
 .dropdown {
-  overflow: hidden;
   border-radius: 2px;
-
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
   &--open {
     box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.18);
   }
@@ -9,16 +11,28 @@
 
 .dropdown-child {
   width: auto;
+  box-sizing: border-box;
   display: inline-block;
-
+  z-index: 50;
+  position: relative;
   background-color: $tint-gray-light;
   color: $gray-dark;
   svg {
-    transition: all 200ms;
-    // stroke: white !important;
     stroke: black;
     fill: none;
   }
+  button {
+    > * {
+      > * {
+        > :last-child {
+          > * {
+            transition: all 200ms;
+          }
+        }
+      }
+    }
+  }
+
   :focus {
     outline: none;
   }
@@ -32,29 +46,32 @@
     button:hover {
       background: white;
     }
-    svg {
-      transform: rotate(180deg);
+    * {
+      * {
+        &:first-child {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }
 
 .content {
-  z-index: 1;
   margin-top: -1px;
   background-color: white;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
   position: absolute;
   padding-top: 10px;
+  left: 0;
+  bottom: auto;
+  overflow: hidden;
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 20px;
   transition: opacity 200ms;
   opacity: 0;
-  visibility: collapse;
-
   &--open {
     opacity: 1;
-    visibility: visible;
   }
 }
 

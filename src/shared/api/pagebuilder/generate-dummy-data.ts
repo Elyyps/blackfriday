@@ -6,8 +6,8 @@ import { generateHomePageHeader } from "../modules/homepage-header/generate-dumm
 import { generateDummyBannerModule } from "../modules/banner/generate-dummy-data";
 import {
   generateProductLineDummyData,
-  generateShopSingleBodyTextDummydata,
-  generateHomepageBodytextDummyData
+  generateHomepageBodytextDummyData,
+  generateShopSingleBodyTextInfoDummydata
 } from "../modules/body-text/generate-dummy-data";
 import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
 import { HeaderInfoDummy } from "../modules/header-info/generate-dummy-data";
@@ -79,7 +79,7 @@ export const pageList: PageModel[] = [
       generateDummyFeaturedDealsData(),
       dummyFeaturedShopsData(),
       generateCtaNewsLetterModule(),
-      generateShopSingleBodyTextDummydata(),
+      generateShopSingleBodyTextInfoDummydata(),
       generateDummyFooterData()
     ]
   } as PageModel,

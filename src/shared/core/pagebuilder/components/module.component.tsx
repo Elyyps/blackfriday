@@ -71,6 +71,8 @@ const ModuleComponent = (props: IModuleComponentProps) => {
             ? Z_INDEX_MAX
             : props.wordPressModule.name === "RecipeDetailModule"
             ? Z_INDEX_MAX - 1
+            : props.wordPressModule.name === "BlogBodyTextModule"
+            ? Z_INDEX_MAX - 1
             : "auto"
       }}
     >

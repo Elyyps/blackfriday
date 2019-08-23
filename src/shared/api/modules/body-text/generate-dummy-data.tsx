@@ -69,6 +69,27 @@ export const generateShopSingleBodyTextDummydata = () =>
     </p>
   </div>`;
 
+export const generateShopSingleBodyTextInfoDummydata = (): BodyTextModule => ({
+  html: ` <div>
+     <h1>
+      <strong>Black Friday Beddenreus</strong>
+    </h1>
+     <p>
+      Noteer vrijdag 29 november alvast in uw agenda, want dan start Black Friday 2019. Vanaf dat moment kunt u mooie
+      deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen
+      geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
+      uw wensen bij elkaar te shoppen.
+    </p>
+  </div>`,
+  containerAlignment: "left",
+  containerSize: "full",
+  style: { color: "#777" },
+  bottomPadding: { mobileSpacing: 48, desktopSpacing: 72 },
+  background: { backgroundColour: "rgb(247, 247, 247)" },
+  id: "0",
+  name: "BodyTextModule"
+});
+
 export const generateProductLineDummyData = (): BodyTextModule => ({
   containerAlignment: "left",
   containerSize: "full",

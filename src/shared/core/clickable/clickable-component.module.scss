@@ -67,17 +67,6 @@ a.button--primary-default,
   @media (max-width: $breakpoint-small-max) {
     width: 100%;
   }
-  &--animated {
-    svg {
-      transition: transform 150ms ease-in-out;
-    }
-    &:hover {
-      svg {
-        transform: translateX(4px);
-      }
-    }
-  }
-
   .icon-svg {
     display: flex;
     -webkit-box-align: center;
@@ -198,6 +187,22 @@ a.button--primary-default,
 .icon-right {
   margin-left: 8px;
   display: inherit;
+}
+
+.icon-center {
+  margin: 0 8px;
+  display: inherit;
+}
+
+.animated {
+  svg {
+    transition: transform 150ms ease-in-out;
+  }
+  &:hover {
+    svg {
+      transform: translateX(4px);
+    }
+  }
 }
 
 .button__dynamic-size {

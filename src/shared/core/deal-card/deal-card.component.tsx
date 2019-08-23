@@ -54,8 +54,7 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
             fullWidth
             iconStyle="filled"
             variant={"primary-default"}
-            icon={LinkIcon}
-            iconPosition="right"
+            iconRight={LinkIcon}
           />
         </div>
       </div>
