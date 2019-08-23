@@ -1,6 +1,7 @@
 .filter-bar {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
-  padding: 16px;
+  padding: 16px 0;
+
   &__filter-container {
     display: flex;
     flex-direction: row;
@@ -147,9 +148,6 @@
     align-items: center;
     justify-content: flex-end;
     width: 35%;
-    @media (max-width: 1060px) {
-      width: 10%;
-    }
   }
   .filter__sort {
     &-item {

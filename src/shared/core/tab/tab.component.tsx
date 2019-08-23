@@ -16,7 +16,7 @@ export interface ITabComponentProps {
 }
 const TabComponent = (props: ITabComponentProps) => (
   <React.Fragment>
-    <div className={`${styles["tab"]}`}>
+    <div className={`${styles["tab"]} uk-container`}>
       <div className={styles["uk-tab__list"]}>
         {props.tabs.map((tab, key) => (
           <a href={tab.href} key={key} className={tab.isSelected ? styles["tab__selected"] : ""}>

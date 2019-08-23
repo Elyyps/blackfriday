@@ -82,12 +82,10 @@
       top: -36px;
       left: 24px;
     }
-
-    img {
-      width: 35px;
-      height: 35px;
-      object-fit: cover;
-    }
+  }
+  &__icon-image {
+    width: 50%;
+    height: 50%;
   }
   &__title {
     margin-bottom: 10px;
