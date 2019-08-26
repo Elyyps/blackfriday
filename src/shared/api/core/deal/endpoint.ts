@@ -10,7 +10,7 @@ export interface IDealResult {
 
 const initialStoresResult = [...generateDemoDealDummyData()];
 
-const getStores = (
+const getDeals = (
   skip: number,
   take: number,
   storeFilters: FilterItem[],
@@ -124,7 +124,7 @@ const getAmountForStore = (store: string): number =>
   initialStoresResult.filter(deal => deal.stores.indexOf(store) > -1).length;
 
 export const DealApi = {
-  getStores,
+  getDeals,
   initialStoresResult,
   getAmountForCategory,
   getAmountForBrand,

@@ -7,6 +7,12 @@
   &--open {
     box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.18);
   }
+  .dropdown-child {
+    svg {
+      stroke: black;
+      fill: none;
+    }
+  }
 }
 
 .dropdown-child {
@@ -18,7 +24,7 @@
   background-color: $tint-gray-light;
   color: $gray-dark;
   svg {
-    stroke: black;
+    stroke: red;
     fill: none;
   }
   button {
@@ -39,7 +45,8 @@
 
   &--has-selected {
     svg {
-      stroke: white;
+      stroke: white !important;
+      fill: none;
     }
   }
   &--open {
@@ -70,8 +77,10 @@
   padding-right: 20px;
   transition: opacity 200ms;
   opacity: 0;
+  display: none;
   &--open {
     opacity: 1;
+    display: block;
   }
 }
 
