@@ -3,7 +3,7 @@
 exports[`[tabComponent] should render component without crashing 1`] = `
 <Fragment>
   <div
-    className="tab"
+    className="tab uk-container"
   >
     <div
       className="uk-tab__list"

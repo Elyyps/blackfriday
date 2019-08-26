@@ -71,34 +71,47 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
 
+  const enableScroll = () => {
+    document.documentElement.style.overflow = "unset";
+    document.body.style.overflow = "unset";
+  };
+  const disableScroll = () => {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  };
+
+  const checkScroll = () => {
+    const mobileBreakpoint = 769;
+    if (props.screenSize && isFilterOpened) {
+      if (props.screenSize.breakpointPixels < mobileBreakpoint) {
+        disableScroll();
+      } else {
+        enableScroll();
+      }
+    }
+  };
+
   React.useEffect(() => {
-    document.body.style.overflow = isFilterOpened ? "hidden" : "unset";
+    checkScroll();
 
     return () => {
       document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
     };
   }, [isFilterOpened]);
 
   React.useEffect(() => {
-    const mobileBreakpoint = 769;
-    if (props.screenSize) {
-      if (props.screenSize.breakpointPixels < mobileBreakpoint) {
-        document.documentElement.style.overflow = "none";
-        document.body.style.overflow = "none";
-      } else {
-        document.documentElement.style.overflow = "none";
-        document.body.style.overflow = "none";
-      }
-    }
+    checkScroll();
   }, [props.screenSize]);
 
-  React.useEffect(
-    () => () => {
-      document.documentElement.style.overflow = "none";
-      document.body.style.overflow = "none";
-    },
-    []
-  );
+  React.useEffect(() => {
+    checkScroll();
+
+    return () => {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    };
+  }, []);
 
   return (
     <div className={"uk-container"}>
