@@ -5,10 +5,18 @@ import { withA11y } from "@storybook/addon-a11y";
 import { withProvider } from "@app/util";
 import { MobileFilterComponent } from "./mobile-filter.component";
 import { mobileFilterDummyData } from "./dummy-data";
+import { breakPointDesktop } from "@app/util/detect-view";
+import { ViewType } from "@app/stores/settings";
 
 storiesOf("MobileFilter", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
-    <MobileFilterComponent totalStores={0} onClear={jest.fn} onFinish={jest.fn} filterItems={mobileFilterDummyData} />
+    <MobileFilterComponent
+      screenSize={{ viewType: ViewType.Desktop, breakpointPixels: breakPointDesktop }}
+      totalStores={0}
+      onClear={jest.fn}
+      onFinish={jest.fn}
+      filterItems={mobileFilterDummyData}
+    />
   ));

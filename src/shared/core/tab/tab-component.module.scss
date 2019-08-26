@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (max-width: $breakpoint-small-max) {
+    @media (max-width: $breakpoint-small-medium) {
       width: 50%;
     }
   }

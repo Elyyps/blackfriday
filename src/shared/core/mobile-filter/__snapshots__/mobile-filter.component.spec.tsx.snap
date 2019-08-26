@@ -82,6 +82,12 @@ exports[`[MobileFilter] should render component without crashing 1`] = `
   }
   onClear={[Function]}
   onFinish={[Function]}
+  screenSize={
+    Object {
+      "breakpointPixels": 960,
+      "viewType": 3,
+    }
+  }
   totalStores={0}
 />
 `;

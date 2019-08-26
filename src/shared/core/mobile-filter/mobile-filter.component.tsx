@@ -11,6 +11,7 @@ import { GenericPageFilterComponent } from "./pages/generic-page-filter";
 import { IMobileFilterItem } from "./mobile-filter-item";
 import { SingleFilterComponent } from "./pages/single-page-filter";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { MobileFilterContainerProps } from "./containers/mobile-filter-container";
 
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
@@ -24,7 +25,7 @@ export interface IMobileFilterSelectedItems {
   title: string;
 }
 
-const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
+const component = (props: IMobileFilterComponentProps & InjectedIntlProps & MobileFilterContainerProps) => {
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
   const { filterItems, onClear } = props;
@@ -78,139 +79,138 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
     };
   }, [isFilterOpened]);
 
-  const onWindowResize = () => {
-    const w = window;
-    const d = document;
-    const documentElement = d.documentElement;
-    const body = d.getElementsByTagName("body")[0];
-    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
-    const mobileBreakpoint = 769;
-    if (width >= mobileBreakpoint) {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    } else {
-      document.documentElement.style.overflow = "none";
-      document.body.style.overflow = "none";
-    }
-  };
-
   React.useEffect(() => {
-    window.addEventListener("resize", onWindowResize);
+    const mobileBreakpoint = 769;
+    if (props.screenSize) {
+      if (props.screenSize.breakpointPixels < mobileBreakpoint) {
+        document.documentElement.style.overflow = "none";
+        document.body.style.overflow = "none";
+      } else {
+        document.documentElement.style.overflow = "none";
+        document.body.style.overflow = "none";
+      }
+    }
+  }, [props.screenSize]);
 
-    return () => {
-      window.removeEventListener("resize", onWindowResize);
+  React.useEffect(
+    () => () => {
       document.documentElement.style.overflow = "none";
       document.body.style.overflow = "none";
-    };
-  }, []);
+    },
+    []
+  );
 
-  return !isFilterOpened ? (
-    <div
-      role="button"
-      onClick={() => {
-        setIsFilterOpened(true);
-      }}
-      className={styles["filter-bar"]}
-    >
-      {props.intl.formatMessage({ id: "filter-bar-label" })}
-      <IconComponent icon={FilterIcon} size={"15px"} />
-    </div>
-  ) : (
-    <div className={styles["mobile-filter"]}>
-      {currentFilterItem ? (
-        <div className={styles["mobile-filter__header"]}>
-          <span
-            role="button"
-            className={styles["mobile-filter__header__nav-button"]}
-            onClick={() => {
-              setCurrentFilterItem(undefined);
-            }}
-          >
-            <IconComponent strokeColor="#fff" icon={ChevronLeft} size={"12px"} />
-          </span>
-          <span className={styles["mobile-filter__header__title"]}>
-            <span>{currentFilterItem.title}</span>
-          </span>
-          {!currentFilterItem.isSingleSelection && (
-            <a role="button" onClick={onClearHandler} className={styles["mobile-filter__header__clear"]}>
-              {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
-            </a>
-          )}
+  return (
+    <div className={"uk-container"}>
+      {!isFilterOpened ? (
+        <div
+          role="button"
+          onClick={() => {
+            setIsFilterOpened(true);
+          }}
+          className={styles["filter-bar"]}
+        >
+          {props.intl.formatMessage({ id: "filter-bar-label" })}
+          <IconComponent icon={FilterIcon} size={"15px"} />
         </div>
       ) : (
-        <div className={styles["mobile-filter__header"]}>
-          <span
-            role="button"
-            className={styles["mobile-filter__header__nav-button"]}
-            onClick={() => {
-              setIsFilterOpened(false);
-            }}
-          >
-            <IconComponent strokeColor="#fff" icon={Cross} size={"12px"} />
-          </span>
-
-          <div className={styles["mobile-filter__header__title"]}>
-            <span>{props.intl.formatMessage({ id: "mobile-filter-title" })}</span>
-            <IconComponent icon={HandPointing} size={"16px"} />
-          </div>
-          <a
-            role="button"
-            onClick={() => {
-              onClear();
-            }}
-            className={styles["mobile-filter__header__clear"]}
-          >
-            {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
-          </a>
-        </div>
-      )}
-
-      {!currentFilterItem ? (
-        currentFilterItems.map((item, key) => (
-          <FilterItemRow
-            key={key}
-            items={item.selectedItems}
-            onClick={() => {
-              setCurrentFilterItem(item);
-            }}
-            title={item.title}
-          />
-        ))
-      ) : (
-        <div className={styles["mobile-filter__list"]}>
-          {currentFilterItem.isSingleSelection ? (
-            <SingleFilterComponent
-              hideSearchBar={!currentFilterItem.hasSearchBar}
-              items={currentFilterItem.items}
-              selectedItem={currentFilterItem.selectedItems[0]}
-              placeholder={currentFilterItem.searchBarPlaceholder}
-              setCheckedItem={(selectedItem: string) => {
-                const selectedItemArray = [];
-                selectedItemArray.push(selectedItem);
-                setSelectedItems(currentFilterItem, selectedItemArray);
-                setCurrentFilterItem(undefined);
-              }}
-            />
+        <div className={styles["mobile-filter"]}>
+          {currentFilterItem ? (
+            <div className={styles["mobile-filter__header"]}>
+              <span
+                role="button"
+                className={styles["mobile-filter__header__nav-button"]}
+                onClick={() => {
+                  setCurrentFilterItem(undefined);
+                }}
+              >
+                <IconComponent strokeColor="#fff" icon={ChevronLeft} size={"12px"} />
+              </span>
+              <span className={styles["mobile-filter__header__title"]}>
+                <span>{currentFilterItem.title}</span>
+              </span>
+              {!currentFilterItem.isSingleSelection && (
+                <a role="button" onClick={onClearHandler} className={styles["mobile-filter__header__clear"]}>
+                  {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
+                </a>
+              )}
+            </div>
           ) : (
-            <GenericPageFilterComponent
-              hideSearchBar={!currentFilterItem.hasSearchBar}
-              setCheckedItems={(selectedItems: string[]) => {
-                setSelectedItems(currentFilterItem, selectedItems);
-              }}
-              placeholder={currentFilterItem.searchBarPlaceholder}
-              filterItem={currentFilterItem}
-            />
+            <div className={styles["mobile-filter__header"]}>
+              <span
+                role="button"
+                className={styles["mobile-filter__header__nav-button"]}
+                onClick={() => {
+                  setIsFilterOpened(false);
+                }}
+              >
+                <IconComponent strokeColor="#fff" icon={Cross} size={"12px"} />
+              </span>
+
+              <div className={styles["mobile-filter__header__title"]}>
+                <span>{props.intl.formatMessage({ id: "mobile-filter-title" })}</span>
+                <IconComponent icon={HandPointing} size={"16px"} />
+              </div>
+              <a
+                role="button"
+                onClick={() => {
+                  onClear();
+                }}
+                className={styles["mobile-filter__header__clear"]}
+              >
+                {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
+              </a>
+            </div>
           )}
+
+          {!currentFilterItem ? (
+            currentFilterItems.map((item, key) => (
+              <FilterItemRow
+                key={key}
+                items={item.selectedItems}
+                onClick={() => {
+                  setCurrentFilterItem(item);
+                }}
+                title={item.title}
+              />
+            ))
+          ) : (
+            <div className={styles["mobile-filter__list"]}>
+              {currentFilterItem.isSingleSelection ? (
+                <SingleFilterComponent
+                  hideSearchBar={!currentFilterItem.hasSearchBar}
+                  items={currentFilterItem.items}
+                  selectedItem={currentFilterItem.selectedItems[0]}
+                  placeholder={currentFilterItem.searchBarPlaceholder}
+                  setCheckedItem={(selectedItem: string) => {
+                    const selectedItemArray = [];
+                    selectedItemArray.push(selectedItem);
+                    setSelectedItems(currentFilterItem, selectedItemArray);
+                    setCurrentFilterItem(undefined);
+                  }}
+                />
+              ) : (
+                <GenericPageFilterComponent
+                  hideSearchBar={!currentFilterItem.hasSearchBar}
+                  setCheckedItems={(selectedItems: string[]) => {
+                    setSelectedItems(currentFilterItem, selectedItems);
+                  }}
+                  placeholder={currentFilterItem.searchBarPlaceholder}
+                  filterItem={currentFilterItem}
+                />
+              )}
+            </div>
+          )}
+          <div className={styles["mobile-filter__footer"]}>
+            <Button
+              variant="primary-brand"
+              fullWidth
+              onClick={onFinishHandler}
+              title={props.intl.formatMessage({ id: "mobile-filter-button" })}
+            />
+          </div>
         </div>
       )}
-      <div className={styles["mobile-filter__footer"]}>
-        <Button
-          variant="primary-brand"
-          fullWidth
-          onClick={onFinishHandler}
-          title={props.intl.formatMessage({ id: "mobile-filter-button" })}
-        />
-      </div>
     </div>
   );
 };

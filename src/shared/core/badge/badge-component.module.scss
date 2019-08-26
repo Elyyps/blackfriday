@@ -6,15 +6,14 @@
     right: 0;
     button {
       padding: 0 0 10px 10px;
+      border-radius: 0 0 0 100%;
     }
   }
   &-left {
     left: 0;
     button {
       padding: 0 10px 10px 0;
-    }
-    button::before {
-      border-bottom-right-radius: 100%;
+      border-radius: 0 0 100% 0;
     }
   }
 
@@ -33,7 +32,7 @@
     overflow: hidden;
     position: relative;
     background: $tint-gray-light;
-    border-radius: 0 0 100% 0;
+
     display: flex;
     justify-content: center;
     transition: transform 0.2s;
@@ -41,6 +40,7 @@
       outline: 0;
     }
     &:hover {
+      cursor: pointer;
       svg {
         transform: scale(1.2);
       }

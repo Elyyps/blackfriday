@@ -55,6 +55,7 @@ import { HomePageHeaderContainer } from "@app/modules/homepage-header/containers
 import { NavBarContainer } from "@app/modules/nav-bar/cointeners/nav-bar-containers";
 import { NotFoundComponent } from "@app/modules/not-found";
 import { NotFoundModule } from "@app/api/modules/not-found/not-found";
+import { ShopSingleHeaderContainer } from "@app/modules/shop-single-header/containers";
 
 export const getComponent = (wordPressModule: WordPressPostModule) => {
   switch (wordPressModule.name) {
@@ -79,7 +80,7 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
     case "notYetImplemented":
       return <NotYetImplementedComponent notYetImplemented={wordPressModule as NotYetImplemented} />;
     case "ShopSingleHeaderModule":
-      return <ShopSingleHeaderComponent shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
+      return <ShopSingleHeaderContainer shopSingleHeaderModule={wordPressModule as ShopSingleHeaderModule} />;
     case "StoreOverviewModule":
       return <StoreOverviewContainer storeOverviewModule={wordPressModule as StoreOverviewModule} />;
     case "DealOverviewModule":
