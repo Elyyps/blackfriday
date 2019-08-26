@@ -49,7 +49,7 @@ const DropdownComponent = (props: IDropdownComponentProps) => {
     <div className={`${styles["dropdown"]} ${!!props.isOpen && styles["dropdown--open"]}`} ref={wrapperRef}>
       <div
         className={`${styles["dropdown-child"]} 
-        ${!!props.hasSelectedItems && !props.isOpen && styles["dropdown-child--ha-selected"]}
+        ${!!props.hasSelectedItems && !props.isOpen && styles["dropdown-child--has-selected"]}
           ${!!props.isOpen && styles["dropdown-child--open"]}`}
       >
         <ClickableComponent
