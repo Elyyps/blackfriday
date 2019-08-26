@@ -26,9 +26,8 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
           </div>
         )}
         <div className={styles["deal-card__body"]}>
-          <div className={styles["deal-card__image"]}>
-            <ImageComponent src={image} />
-          </div>
+          <ImageComponent className={styles["deal-card__image"]} src={image} />
+
           <div className={styles["deal-card__content"]}>
             <div className={styles["deal-card__subtitle"]}>{stores.map(store => store)}</div>
             <div className={styles["deal-card__title"]}>{name}</div>
