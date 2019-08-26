@@ -1,0 +1,83 @@
+.medium-hero {
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+
+.holder {
+  position: relative;
+  @media (max-width: $breakpoint-small-medium) {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
+.image {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2px;
+  @media (max-width: $breakpoint-small-max) {
+    height: 200px;
+  }
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    background: rgba(0, 0, 0, 0.3);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.content {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  @media (max-width: 360px) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    color: $global-inverse-color;
+    text-align: center;
+  }
+  span:nth-child(n + 3) {
+    color: $global-inverse-color;
+  }
+  h1:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.top {
+  padding: 16px 0;
+  width: 80%;
+  margin: 0 auto;
+  @media (max-width: $breakpoint-small-max) {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

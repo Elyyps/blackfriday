@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[NotFound] should render component without crashing 1`] = `
+<div
+  className="not-found"
+>
+  <div
+    className="not-found-container"
+  >
+    <IconComponent
+      icon="road-sign-right.svg"
+      size="45px"
+    />
+    <span
+      className="not-found-title"
+    >
+      Oeps!
+    </span>
+    <p>
+      We hebben de pagina niet gevonden. Zullen we je de weg wijzen?
+    </p>
+    <ClickableComponent
+      href="./"
+      title="Black Friday homepage"
+      variant="secondary"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,93 @@
+.card-simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: $global-background;
+  border-radius: $global-border-radius;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  height: 38px;
+  overflow: hidden;
+  -webkit-transition: all 0.05s;
+  transition: all 0.05s;
+  transform: perspective(1px) translateZ(0) scale(1);
+  -ms-transform: perspective(1px) translateZ(0) scale(1);
+  -webkit-transform: perspective(1px) translateZ(0) scale(1);
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+    transform: perspective(1px) translateZ(0) scale(1.02);
+    -ms-transform: perspective(1px) translateZ(0) scale(1.02);
+    -webkit-transform: perspective(1px) translateZ(0) scale(1.02);
+    .title {
+      color: $brand-primary;
+    }
+
+    .icon {
+      svg {
+        stroke: $brand-primary;
+      }
+    }
+  }
+  &:active {
+    text-decoration: none;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08);
+    transform: scale(1);
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 16px;
+  }
+
+  .title {
+    color: $global-color;
+    font-weight: bold;
+    font-family: $global-font-family-secondary;
+    max-height: 40px;
+    line-height: normal;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+
+    @media (max-width: $breakpoint-xsmall-max) {
+      font-size: 14px;
+    }
+  }
+
+  .image-container {
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__icon {
+      width: 60%;
+      height: 60%;
+    }
+  }
+
+  &--small {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}

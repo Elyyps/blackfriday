@@ -1,0 +1,59 @@
+.store-overview {
+  padding: 24px 0;
+  background-color: #f7f7f7;
+  min-height: 500px;
+}
+.filter-mobile-bar {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 200;
+}
+.no-black-friday {
+  margin: auto;
+  margin-top: 32px;
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+.stores-overview {
+  background-color: var(--tint-grey-97);
+  &__header {
+    padding-bottom: 16px;
+    background-color: var(--tint-white);
+  }
+  &__body {
+    color: red;
+    &__banner {
+      margin: 10px 8px 10px 8px;
+      flex: 0 1 100%;
+    }
+    &__list {
+      margin: 0 -8px 0 -8px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    &__cards {
+      box-sizing: border-box;
+      width: 20%;
+      padding: 8px;
+      @media (max-width: 1200px) {
+        width: 25%;
+      }
+      @media (max-width: 959px) {
+        width: 33.3333%;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  margin-top: 32px;
+  margin-bottom: 32px !important;
+}

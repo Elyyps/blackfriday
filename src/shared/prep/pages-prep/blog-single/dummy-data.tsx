@@ -214,10 +214,4 @@ const BodyBlogData = {
   ]
 };
 
-export {
-  BodyBlogData,
-  HeaderData,
-  FeaturedDeals,
-  CTASimple,
-  BlogFeaturedFields
-};
+export { BodyBlogData, HeaderData, FeaturedDeals, CTASimple, BlogFeaturedFields };

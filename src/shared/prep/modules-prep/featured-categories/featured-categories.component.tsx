@@ -11,9 +11,7 @@ export interface IFeaturedCategoriesComponentProps {
   title?: string;
 }
 
-const FeaturedCategoriesComponent = (
-  props: IFeaturedCategoriesComponentProps
-) => {
+const FeaturedCategoriesComponent = (props: IFeaturedCategoriesComponentProps) => {
   const styles = {
     backgroundColor: props.bgcolor,
     paddingTop: props.paddingTop,

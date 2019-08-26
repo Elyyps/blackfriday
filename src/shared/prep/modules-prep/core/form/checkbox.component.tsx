@@ -9,13 +9,7 @@ interface ICheckboxProps {
   onChange?: any;
 }
 
-const Checkbox = ({
-  name,
-  label,
-  key,
-  onChange,
-  isChecked
-}: ICheckboxProps) => (
+const Checkbox = ({ name, label, key, onChange, isChecked }: ICheckboxProps) => (
   <React.Fragment>
     <label htmlFor={key} className={"checkbox-label"}>
       <input

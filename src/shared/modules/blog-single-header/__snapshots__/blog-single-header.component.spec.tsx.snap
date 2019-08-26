@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BlogSingleHeader] should render component without crashing 1`] = `
+<div
+  className="blog-single-header"
+>
+  <div
+    className="header-content"
+  >
+    <div
+      className="uk-container"
+    >
+      <HeaderContentComponent
+        breadcrumbProps={
+          Object {
+            "backButton": Object {
+              "title": "Terug",
+              "url": "/#",
+            },
+            "links": Array [
+              Object {
+                "title": "Home",
+                "url": "/",
+              },
+              Object {
+                "title": "Alle blogs",
+                "url": "#",
+              },
+            ],
+            "variant": "light",
+          }
+        }
+        headerMobilePosition="left"
+        title="Vijf voorspellingen van Black Friday Nederland"
+      />
+    </div>
+  </div>
+  <div
+    className="uk-container"
+  >
+    <div
+      className="image"
+    >
+      <ImageComponent
+        src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png"
+      />
+    </div>
+  </div>
+</div>
+`;

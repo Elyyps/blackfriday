@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Modal] should render component without crashing 1`] = `
+<Fragment>
+  <div
+    onMouseDown={[Function]}
+    role="button"
+  >
+    <Button
+      title="test"
+    />
+  </div>
+</Fragment>
+`;

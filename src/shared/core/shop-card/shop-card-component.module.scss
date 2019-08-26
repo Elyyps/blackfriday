@@ -1,0 +1,247 @@
+.shop-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 16px;
+  background: $global-inverse-color;
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.08);
+}
+
+.label {
+  position: absolute;
+  z-index: 10;
+  left: 8px;
+  top: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $brand-primary;
+  border-radius: 2px;
+  color: $global-inverse-color;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  line-height: 11px;
+  span:first-child {
+    margin-right: 4px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 90px;
+  order: 1;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    > * {
+      -ms-flex: 1;
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+    }
+  }
+}
+
+.status {
+  width: 100%;
+  order: 2;
+  &-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $gray-light;
+    &.green {
+      color: $brand-secondary;
+    }
+    &.orange {
+      color: #ff9d0a;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  order: 3;
+  &-title h4 {
+    margin-bottom: 4px;
+  }
+  &-description {
+    color: $gray-light;
+    margin-right: 4px;
+    font-size: 14px;
+    width: 100%;
+    line-height: 18px;
+  }
+  &-link {
+    a {
+      font-size: 14px !important;
+      @media (max-width: 959px) {
+        width: auto !important;
+      }
+    }
+  }
+}
+.action {
+  order: 4;
+  margin-top: auto;
+  &,
+  a {
+    width: 100%;
+  }
+}
+
+@mixin responsive-card-768 {
+  &,
+  .shop-card {
+    min-height: 166px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .label {
+    left: auto;
+    right: 8px;
+  }
+
+  .content {
+    margin-right: 16px;
+    order: 1;
+    flex: 1 1 60%;
+  }
+
+  .image {
+    order: 2;
+    flex: 1 1 30%;
+    height: 72px;
+    a {
+      justify-content: flex-end;
+    }
+  }
+
+  .status {
+    order: 3;
+    flex: 1 1 30%;
+    margin-top: auto;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    &-bar {
+      display: none;
+    }
+  }
+
+  .action {
+    order: 4;
+    flex: 1 1 10%;
+    justify-content: flex-end;
+  }
+}
+
+@mixin responsive-card-640 {
+  .content {
+    flex: 1 1 80%;
+  }
+  .image {
+    flex: 1 1 10%;
+    height: 72px;
+    a img {
+      width: auto;
+      max-width: 100%;
+      max-height: 60%;
+    }
+  }
+}
+
+@mixin responsive-card-460 {
+  .image {
+    flex: 1 1 20%;
+  }
+  .content {
+    flex: 1 1 70%;
+  }
+  .action {
+    order: 4;
+    flex: 1 1 52%;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+  .status {
+    flex: 1 1 38%;
+  }
+}
+
+@media (max-width: 768px) {
+  @include responsive-card-768();
+}
+
+@media (max-width: 640px) {
+  @include responsive-card-640();
+}
+
+@media (max-width: 460px) {
+  @include responsive-card-460();
+}
+
+.responsive {
+  @include responsive-card-768();
+  .action {
+    flex: 0 1 38%;
+  }
+
+  @media (max-width: 768px) {
+    .status {
+      flex: 1 1 30%;
+    }
+    .action {
+      flex: 1 1 10%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    @include responsive-card-640();
+    .status {
+      flex: 1 1 30%;
+    }
+    .action {
+      flex: 1 1 40%;
+    }
+  }
+
+  @media (max-width: 460px) {
+    @include responsive-card-460();
+    .status {
+      flex: 1 1 10%;
+    }
+    .action {
+      flex: 1 1 50%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .action {
+      flex: 1 1 60%;
+    }
+  }
+
+  .content {
+    flex: 1 1 70%;
+  }
+  .image {
+    flex: 1 1 20%;
+    height: 72px;
+    a img {
+      width: auto;
+      max-width: 100%;
+      max-height: 60%;
+    }
+  }
+}

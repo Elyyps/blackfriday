@@ -1,0 +1,58 @@
+.blog-single-header {
+  position: relative;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 150px;
+    content: "";
+    background: $gray-dark;
+    z-index: -1;
+    @media (max-width: $breakpoint-small-max) {
+      bottom: 70px;
+    }
+  }
+  &::after {
+    background: url("https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/pattern.svg");
+    background-position: 50% 0;
+    background-size: 2000px auto;
+    opacity: 0.5;
+  }
+}
+
+.image {
+  height: 400px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  img {
+    object-fit: cover;
+  }
+
+  background-position: 50% 85%;
+  @media (max-width: $breakpoint-small-max) {
+    height: 250px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    height: 160px;
+  }
+}
+
+.header-content {
+  color: $global-inverse-color;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 72px 0;
+  @media (max-width: $breakpoint-small-max) {
+    padding: 40px 0;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    text-align: left;
+  }
+}

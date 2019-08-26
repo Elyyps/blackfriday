@@ -1,0 +1,23 @@
+.back-button {
+  font-family: Assistant;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #999999;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  svg{
+    transition: transform ease 0.25s;
+    margin-right: 8px;
+  }
+  &:hover {
+    svg {
+      transform: translateX(-5px);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BannerModule] should render component without crashing 1`] = `
+<Fragment>
+  <InjectIntl(component)
+    buttonLink="/deals-overview"
+    buttonTitle="Meer deals"
+    image={
+      Object {
+        "alt": "Ad picture",
+        "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+      }
+    }
+    imageLink="https://coolblue.nl"
+    label="22 t/m 26 nov."
+    logo={
+      Object {
+        "alt": "CoolBlue logo",
+        "src": "cool-blue.svg",
+      }
+    }
+    moreInfoLink="https://coolblue.nl"
+    showAlternativeBanner={false}
+    text="Een selectie van bizarre aanbiedingen."
+    title="Black Friday bij Coolblue"
+  />
+</Fragment>
+`;

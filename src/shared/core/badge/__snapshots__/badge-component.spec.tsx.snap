@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Badge] should render component without crashing 1`] = `
+<div
+  className="badge badge-right"
+>
+  <button>
+    <IconComponent
+      icon="share.svg"
+      size="18px"
+    />
+  </button>
+</div>
+`;

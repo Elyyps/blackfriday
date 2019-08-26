@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Clickable] Should render component as button without crashing 1`] = `
+<button
+  className="button button--primary-brand button--primary-brand--icon-outline-fill"
+  name="test"
+  onClick={[Function]}
+  style={
+    Object {
+      "height": undefined,
+      "width": undefined,
+      "zIndex": undefined,
+    }
+  }
+>
+  <span
+    className="icon-svg"
+  >
+    <span
+      className="icon-svg"
+    >
+      test
+      <span
+        className="icon-right "
+      >
+        <IconComponent
+          icon="chevron-right.svg"
+          size="14px"
+        />
+      </span>
+    </span>
+  </span>
+</button>
+`;
+
+exports[`[Clickable] Should render component as link without crashing (internal link) 1`] = `
+<Link
+  className="button button--link-primary animated button--link-primary--icon-outline-fill button--fullWidth"
+  style={
+    Object {
+      "height": undefined,
+      "width": "100%",
+      "zIndex": undefined,
+    }
+  }
+  target="_self"
+  to="/#hailtomfrontendking"
+>
+  <span
+    className="icon-svg"
+  >
+    test
+    <span
+      className="icon-right "
+    >
+      <IconComponent
+        icon="chevron-right.svg"
+        size="14px"
+      />
+    </span>
+  </span>
+</Link>
+`;
+
+exports[`[Clickable] Should render component as link without crashing (with animation and https link) 1`] = `
+<a
+  className="button button--primary-brand animated button--primary-brand--icon-outline-fill button--fullWidth"
+  href="https://www.youtube.com"
+  style={
+    Object {
+      "height": undefined,
+      "width": "100%",
+      "zIndex": undefined,
+    }
+  }
+  target="_blank"
+>
+  <span
+    className="icon-svg"
+  >
+    test
+    <span
+      className="icon-right "
+    >
+      <IconComponent
+        icon="chevron-right.svg"
+        size="14px"
+      />
+    </span>
+  </span>
+</a>
+`;
+
+exports[`[Clickable] Should render component as link without crashing (with http link) 1`] = `
+<a
+  className="button button--link-primary animated button--link-primary--icon-outline-fill button--fullWidth"
+  href="http://www.youtube.com"
+  style={
+    Object {
+      "height": undefined,
+      "width": "100%",
+      "zIndex": undefined,
+    }
+  }
+  target="_blank"
+>
+  <span
+    className="icon-svg"
+  >
+    test
+    <span
+      className="icon-right "
+    >
+      <IconComponent
+        icon="chevron-right.svg"
+        size="14px"
+      />
+    </span>
+  </span>
+</a>
+`;

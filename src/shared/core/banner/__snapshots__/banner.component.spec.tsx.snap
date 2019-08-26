@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Banner] should render component without crashing 1`] = `
+<component
+  buttonLink="/deals-overview"
+  buttonTitle="Meer deals"
+  image={
+    Object {
+      "alt": "Ad picture",
+      "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+    }
+  }
+  imageLink="https://coolblue.nl"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  label="22 t/m 26 nov."
+  logo={
+    Object {
+      "alt": "CoolBlue logo",
+      "src": "cool-blue.svg",
+    }
+  }
+  moreInfoLink="https://coolblue.nl"
+  showAlternativeBanner={false}
+  text="Een selectie van bizarre aanbiedingen."
+  title="Black Friday bij Coolblue"
+/>
+`;

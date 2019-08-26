@@ -1,15 +1,16 @@
 /// <reference path="./../../../types/index.d.ts" />
 
 import thunk from "redux-thunk";
-import { createStore, applyMiddleware, compose } from "redux";
-import { routerMiddleware, RouterState } from "connected-react-router";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import { routerMiddleware, RouterState, connectRouter } from "connected-react-router";
 import { History } from "history";
-import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
-import { localesReducer } from "@app/stores/locales";
+import { localesReducer, ILocalesState } from "@app/stores/locales";
 
-import { ILocalesState } from "@app/stores/locales";
 import { IPageState, pageReducer } from "./page";
+import { ISettingsState, settingsReducer } from "./settings";
+import { INavbarSearchState, navbarSearchReducer } from "./navbar-seach";
+import { IStoreOverviewState, storeOverviewReducer } from "./store-overview";
+import { IDealOverviewState, dealOverviewReducer } from "./deal-overview";
 
 type StoreParams = {
   history: History;
@@ -18,17 +19,23 @@ type StoreParams = {
 };
 
 export interface IAppState {
+  dealOverview: IDealOverviewState;
   locales: ILocalesState;
+  navbarSearch: INavbarSearchState;
   page: IPageState;
   router: RouterState;
+  settings: ISettingsState;
+  storeOverview: IStoreOverviewState;
 }
 
 export const getInitialState = () => {
   const initialState = <IAppState>{};
+
   return initialState;
 };
 
 declare let window: ExtendedWindow;
+
 export const configureStore = ({ history, initialState, middleware = [] }: StoreParams) => {
   const devtools =
     process.env.NODE_ENV === "development" &&
@@ -41,8 +48,12 @@ export const configureStore = ({ history, initialState, middleware = [] }: Store
   const store = createStore<IAppState>(
     combineReducers({
       locales: localesReducer,
+      navbarSearch: navbarSearchReducer,
       page: pageReducer,
-      router: connectRouter(history)
+      router: connectRouter(history),
+      settings: settingsReducer,
+      storeOverview: storeOverviewReducer,
+      dealOverview: dealOverviewReducer
     }),
     initialState,
     composeEnhancers(applyMiddleware(...[thunk, routerMiddleware(history)].concat(...middleware)))

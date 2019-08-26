@@ -9,11 +9,7 @@ export interface IHeaderSmallComponentProps {
   title?: string;
 }
 
-const HeaderSmallComponent = ({
-  image,
-  title,
-  sub_title
-}: IHeaderSmallComponentProps) => (
+const HeaderSmallComponent = ({ image, title, sub_title }: IHeaderSmallComponentProps) => (
   <div className="header-small">
     <div className="uk-container">
       <div className="header-small__top">

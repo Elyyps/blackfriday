@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[TimeLeftBar] should render component without crashing 1`] = `
+<div
+  className="time-left-bar"
+>
+  <div
+    className="control none"
+  >
+    <div
+      className="control-filled"
+      style={
+        Object {
+          "width": "calc( 1%)",
+        }
+      }
+    />
+  </div>
+</div>
+`;

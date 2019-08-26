@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[FeaturedBlogItems] should render component without crashing 1`] = `
+<div
+  className="featured-blog-items"
+>
+  <div
+    className="featured-blog-items__card"
+  >
+    <LinkComponent
+      to="/blog-single"
+    >
+      <div
+        className="featured-blog-items__card-image"
+      >
+        <ImageComponent
+          alt="De beste Moederdag cadeau deals"
+          src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png"
+        />
+      </div>
+      <h2
+        className="featured-blog-items__card-title"
+      >
+        De beste Moederdag cadeau deals
+      </h2>
+    </LinkComponent>
+  </div>
+</div>
+`;

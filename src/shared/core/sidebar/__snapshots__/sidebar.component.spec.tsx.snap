@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Sidebar] should render component without crashing 1`] = `
+<div
+  className="sidebar"
+>
+  <InjectIntl(component)
+    buttonLink="/deals-overview"
+    buttonTitle="Meer deals"
+    image={
+      Object {
+        "alt": "Ad picture",
+        "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",
+      }
+    }
+    imageLink="https://coolblue.nl"
+    isButtonFullWidth={true}
+    label="22 t/m 26 nov."
+    logo={
+      Object {
+        "alt": "CoolBlue logo",
+        "src": "cool-blue.svg",
+      }
+    }
+    moreInfoLink="https://coolblue.nl"
+    showAlternativeBanner={false}
+    text="Een selectie van bizarre aanbiedingen."
+    title="Black Friday bij Coolblue"
+    variant="small"
+  />
+  <FeaturedSidebarItems
+    featuredItems={
+      Array [
+        Object {
+          "image": "imac.png",
+          "link": Object {
+            "title": "Apple iPhones",
+            "url": "/stores-single",
+          },
+        },
+        Object {
+          "image": "iphone.png",
+          "link": Object {
+            "title": "Apple MacBooks",
+            "url": "/stores-single",
+          },
+        },
+        Object {
+          "image": "loader.png",
+          "link": Object {
+            "title": "Apple iMacs",
+            "url": "/stores-single",
+          },
+        },
+        Object {
+          "icon": "party.svg",
+          "link": Object {
+            "title": "Naar alle deals!",
+            "url": "/stores-single",
+          },
+        },
+      ]
+    }
+    key="0"
+    title="Een greep uit onze deals"
+  />
+  <FeaturedSidebarItems
+    featuredItems={
+      Array [
+        Object {
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Coolblue",
+            "url": "/stores-single",
+          },
+        },
+        Object {
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Alternate",
+            "url": "/stores-single",
+          },
+        },
+        Object {
+          "image": "cool-blue.svg",
+          "link": Object {
+            "title": "Beddenreus",
+            "url": "/stores-single",
+          },
+        },
+        Object {
+          "icon": "party.svg",
+          "link": Object {
+            "title": "Naar alle winkels!",
+            "url": "/stores-overview",
+          },
+        },
+      ]
+    }
+    key="1"
+    title="Black Friday Winkels"
+  />
+</div>
+`;

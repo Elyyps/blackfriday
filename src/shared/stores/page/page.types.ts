@@ -1,4 +1,4 @@
-import { PageModel } from "@app/api";
+import { PageModel } from "@app/api/pagebuilder/page.model";
 
 interface IAction {
   type?: string;

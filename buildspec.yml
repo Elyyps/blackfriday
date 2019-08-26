@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+      nodejs: 10
+    commands:
+      - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI_VIPER_CLIENT=493403569146.dkr.ecr.eu-west-1.amazonaws.com/blackfriday_frontend
+      - REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY=493403569146.dkr.ecr.eu-west-1.amazonaws.com/blackfriday_frontend_reverse_proxy
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Build started on `date` 
+      - echo Building the Docker image viper client...
+      - docker build -t $REPOSITORY_URI_VIPER_CLIENT:latest .
+      - docker tag $REPOSITORY_URI_VIPER_CLIENT:latest $REPOSITORY_URI_VIPER_CLIENT:$IMAGE_TAG
+      - echo Building the Docker image viper client reverse proxy...
+      - docker build -t $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:latest ./nginx
+      - docker tag $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:latest $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI_VIPER_CLIENT:latest
+      - docker push $REPOSITORY_URI_VIPER_CLIENT:$IMAGE_TAG
+      - docker push $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:latest
+      - docker push $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:$IMAGE_TAG
+      - echo Writing image definitions file...
+      - printf '[{"name":"blackfriday","imageUri":"%s"},{"name":"blackfriday-frontend-reverse-proxy","imageUri":"%s"}]' $REPOSITORY_URI_VIPER_CLIENT:$IMAGE_TAG $REPOSITORY_URI_VIPER_CLIENT_REVERSE_PROXY:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json

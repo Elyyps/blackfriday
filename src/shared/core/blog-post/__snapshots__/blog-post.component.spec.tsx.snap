@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[BlogPost] should render component without crashing 1`] = `
+<div
+  className="blog-post"
+>
+  <div
+    className="blog-post__image"
+  >
+    <ImageComponent
+      alt="Blog image"
+      src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/4.png"
+    />
+  </div>
+  <div
+    className="blog-post__body"
+  >
+    <LinkComponent
+      to="/blog-single"
+    >
+      <div
+        className="blog-post__title"
+      >
+        Top Black Friday deals van vorig jaar
+      </div>
+    </LinkComponent>
+    <div
+      className="blog-post__content"
+    >
+      <span>
+        Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... 
+      </span>
+      <LinkComponent
+        to="/blog-single"
+      >
+        <span
+          className="blog-post__link"
+        >
+          Lees meer
+        </span>
+      </LinkComponent>
+    </div>
+  </div>
+</div>
+`;

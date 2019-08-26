@@ -148,22 +148,22 @@ const BlogOverview = {
       links: [
         {
           title: "Apple Airpods",
-          link: "/",
+          link: "/stores-single",
           icon: Oasis
         },
         {
           title: "Apple iPhones",
-          link: "/",
+          link: "/stores-single",
           icon: Oasis
         },
         {
           title: "Apple MacBooks",
-          link: "/",
+          link: "/stores-single",
           icon: Oasis
         },
         {
           title: "Naar alle deals!",
-          link: "/",
+          link: "/stores-single",
           icon: Party
         }
       ]
@@ -173,22 +173,22 @@ const BlogOverview = {
       links: [
         {
           title: "Coolblue",
-          link: "/",
+          link: "/stores-single",
           icon: CoolBlue
         },
         {
           title: "Alternate",
-          link: "/",
+          link: "/stores-single",
           icon: CoolBlue
         },
         {
           title: "Beddenreus",
-          link: "/",
+          link: "/stores-single",
           icon: CoolBlue
         },
         {
           title: "Naar alle Winkels!",
-          link: "/",
+          link: "/stores-single",
           icon: Party
         }
       ]
@@ -239,10 +239,4 @@ const PostsListDummy = [
   }
 ];
 
-export {
-  BlogOverview,
-  HeaderOverviewData,
-  FeaturedDeals,
-  CTASimple,
-  PostsListDummy
-};
+export { BlogOverview, HeaderOverviewData, FeaturedDeals, CTASimple, PostsListDummy };

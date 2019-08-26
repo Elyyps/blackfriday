@@ -1,0 +1,11 @@
+.page-progress-bar {
+  position: relative;
+  height: 3px;
+  background-color: $tint-gray;
+  box-sizing: border-box;
+  &__progress {
+    background-color: $brand-primary;
+    height: 100%;
+    border-radius: 2px;
+  }
+}

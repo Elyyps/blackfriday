@@ -1,0 +1,64 @@
+.blog-single-header {
+  .blog-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    @media (max-width: $breakpoint-xsmall-max) {
+      flex-direction: column;
+    }
+
+    .blog-item {
+      width: 48%;
+
+      @media (max-width: $breakpoint-small) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  position: relative;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 120px;
+    content: "";
+    background: $gray-dark;
+    z-index: -1;
+
+    @media (max-width: $breakpoint-medium-max) {
+      bottom: 70px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      bottom: 50px;
+    }
+  }
+  &::after {
+    background: url("https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/pattern.svg");
+    background-position: 50% 0;
+    background-size: 2000px auto;
+    opacity: 0.5;
+  }
+}
+
+.breadcrumbs {
+  color: $global-inverse-color;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  padding: 72px 0;
+  @media (max-width: $breakpoint-small-max) {
+    padding: 40px 0;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    text-align: left;
+  }
+}

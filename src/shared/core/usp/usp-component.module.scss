@@ -1,0 +1,56 @@
+.usp {
+  font-size: 13px;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 12px;
+  }
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  justify-content: space-around;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+  &__item {
+    text-align: center;
+  }
+  &__link {
+    color: $gray-light;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+      span {
+        fill: $gray;
+      }
+    }
+  }
+  .icon-svg {
+    margin-right: 8px;
+    path {
+      fill: currentColor;
+    }
+  }
+  .usp__item {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  @media (max-width: 768px) {
+    .usp__item {
+      position: absolute;
+      display: flex;
+    }
+    margin-bottom: 16px;
+  }
+  @media (max-width: 800px) {
+    .usp__item {
+      padding: 0 19px;
+    }
+  }
+}

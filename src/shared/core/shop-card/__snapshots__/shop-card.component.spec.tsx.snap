@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ShopCard] should render component without crashing 1`] = `
+<component
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  store={
+    Object {
+      "availableBrands": Array [
+        "Apple",
+        "Phillips",
+        "Nintendo",
+      ],
+      "categories": Array [
+        "Audio",
+        "Games",
+      ],
+      "description": "Een selectie van bizar veel aanbiedingen.",
+      "id": "0",
+      "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
+      "moreInfoLink": "https://www.coolblue.nl/",
+      "name": "Coolblue",
+      "status": 1,
+      "timeLeftPercentage": 80,
+    }
+  }
+/>
+`;

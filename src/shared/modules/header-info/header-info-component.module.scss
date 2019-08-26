@@ -1,0 +1,104 @@
+.header-info {
+  position: relative;
+
+  &__image {
+    height: 424px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: -80px;
+    z-index: 1;
+    @media (max-width: $breakpoint-small-max) {
+      height: 250px;
+      margin: 0;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      height: 216px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    background: $global-background;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    padding: 40px 194px 40px 40px;
+    color: $gray-light;
+    &__content {
+      display: flex;
+    }
+    @media (max-width: $breakpoint-small-max) {
+      padding: 52px 32px 32px;
+      margin: 0 -24px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+      padding: 52px 24px 24px;
+      margin: 0 -16px;
+    }
+    a {
+      color: $gray-dark;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__share-dropdown {
+    position: absolute;
+    right: 60px;
+    top: 50px;
+    z-index: 2;
+    @media (max-width: $breakpoint-small-max) {
+      display: none;
+    }
+  }
+
+  &__share-badge {
+    display: none;
+    @media (max-width: $breakpoint-small-max) {
+      display: block;
+    }
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: solid 2px $tint-gray-light;
+    margin-right: 28px;
+    background: $global-background;
+    @media (max-width: $breakpoint-small-max) {
+      position: absolute;
+      top: -36px;
+      left: 24px;
+    }
+  }
+  &__icon-image {
+    width: 50%;
+    height: 50%;
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-family: $global-font-family-secondary;
+    font-size: 32px;
+    color: $gray-dark;
+  }
+  &__content {
+    flex: 1 1 auto;
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: flex-start;
+}

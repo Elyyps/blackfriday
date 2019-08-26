@@ -1,24 +1,29 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { HomepageComponent } from "@app/prep/pages-prep/homepage/homepage.component";
-import { WinkleoverviewComponent } from "@app/prep/pages-prep/winkleoverview/winkleoverview.component";
-import { BlogSingleComponent } from "@app/prep/pages-prep/blog-single/blog-single.component";
-import { BlogOverviewPageComponent } from "@app/prep/pages-prep/blog-overview/blog-overview.component";
-import { ProductOverviewComponent } from "@app/prep/pages-prep/product-overview/product-overview.component";
-import { WinkelSingleComponent } from "@app/prep/pages-prep/winkel-single/winkel-single.component";
+import { Route } from "react-router-dom";
+import { PlaygroundAhmedComponent } from "./playgrounds/playground-ahmed/playground-ahmed.component";
+import { PlaygroundDanieleComponent } from "./playgrounds/playground-daniele/playground-daniele.component";
+import { PlaygroundMartijnComponent } from "./playgrounds/playground-martijn/playground-martijn.component";
+import { PagebuilderContainer } from "./core/pagebuilder";
+import { PlaygroundTomComponent } from "./playgrounds/playground-tom/playground-tom.component";
+import { WinkleoverviewComponent } from "./prep/pages-prep/winkleoverview/winkleoverview.component";
 
-const Routes: React.FunctionComponent<{}> = props => (
+const Routes: React.FunctionComponent = () => (
   <React.Fragment>
-    <Route exact path="/" component={HomepageComponent} />
-    <Route exact path="/winkleoverview" component={WinkleoverviewComponent} />
-    <Route exact path="/blog-single" component={BlogSingleComponent} />
-    <Route exact path="/blog-overview" component={BlogOverviewPageComponent} />
-    <Route
-      exact
-      path="/product-overview"
-      component={ProductOverviewComponent}
-    />
-    <Route exact path="/winkel-single" component={WinkelSingleComponent} />
+    <Route exact path="/" component={PagebuilderContainer} />
+    <Route exact path="/stores-overview" component={PagebuilderContainer} />
+    <Route exact path="/stores-single" component={PagebuilderContainer} />
+    <Route exact path="/deals-overview" component={PagebuilderContainer} />
+    <Route exact path="/not-found" component={PagebuilderContainer} />
+
+    <Route exact path="/productline-overview" component={PagebuilderContainer} />
+    <Route exact path="/blog-overview" component={PagebuilderContainer} />
+    <Route exact path="/blog-single" component={PagebuilderContainer} />
+    <Route exact path="/black-friday-2019" component={PagebuilderContainer} />
+    <Route exact path="/playground-ahmed" component={PlaygroundAhmedComponent} />
+    <Route exact path="/playground-daniele" component={PlaygroundDanieleComponent} />
+    <Route exact path="/playground-martijn" component={PlaygroundMartijnComponent} />
+    <Route exact path="/playground-tom" component={PlaygroundTomComponent} />
+    <Route exact path="/ukraineoverview" component={WinkleoverviewComponent} />
   </React.Fragment>
 );
 

@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[ShopSingleHeader] should render component without crashing 1`] = `
+<component
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  screenSize={
+    Object {
+      "breakpointPixels": 0,
+      "viewType": 3,
+    }
+  }
+  shopSingleHeaderModule={
+    Object {
+      "CheckListTitle": "De voordelen van shoppen bij Beddenreus tijdens Black Friday.",
+      "backLink": Array [
+        Object {
+          "title": "Back",
+          "url": "/",
+        },
+      ],
+      "bodyTextModule": Object {
+        "containerAlignment": "left",
+        "containerSize": "full",
+        "html": " <div>
+    <p>
+      Sed ipsum metus, sodales sit amet vulputate a, lobortis mollis odio. Orci varius natoque penatibus et magnis dis
+      parturient montes, nascetur ridiculus mus. Vivamus sed velit in ligula finibus viverra. Donec eleifend commodo
+      ipsum nec commodo. Cras vehicula lectus et felis suscipit, vel commodo metus sagittis. Vestibulum quam elit,
+      dignissim sit amet risus in, luctus accumsan lectus. Sed rutrum metus ut massa tempus, eget blandit lacus
+      molestie. Pellentesque sit amet aliquam lacus. Etiam ultrices velit eu neque pharetra, vitae scelerisque sapien
+      fermentum. Morbi egestas bibendum est. Donec at felis hendrerit, iaculis lorem vel, porta enim. Quisque suscipit
+      condimentum elementum. Nam malesuada ut ligula sit amet porta. Sed nec gravida velit, eget porta metus. Quisque
+      tempor commodo pulvinar. Nullam sagittis posuere mauris, in interdum tellus vulputate id.
+    </p>
+     <h1>
+      <strong>Black Friday Beddenreus</strong>
+    </h1>
+     <p>
+      Noteer vrijdag 29 november alvast in uw agenda, want dan start Black Friday 2019. Vanaf dat moment kunt u mooie
+      deals en kortingen scoren.Hier in België hebben we het geluk dat de aanbiedingen in veel winkels meerdere dagen
+      geldig zijn en dat we dus niet afhankelijk zijn van enkel en alleen maar één dag.Hierdoor heeft u meer tijd om al
+      uw wensen bij elkaar te shoppen.
+    </p>
+  </div>",
+        "id": "",
+        "name": "shopSingleBodyText",
+      },
+      "breadcrumbProps": Object {
+        "backButton": Object {
+          "title": "Terug",
+          "url": "/#",
+        },
+        "links": Array [
+          Object {
+            "title": "Home",
+            "url": "/",
+          },
+          Object {
+            "title": "Alle winkels",
+            "url": "/stores-overview",
+          },
+        ],
+        "variant": "dark",
+      },
+      "checkList": Array [
+        "Profiteer van 15% op korting op alles",
+        "Online én in de winkels",
+        "De hele week aanbiedingen van 16-11 t/m 26-11",
+        "Ruimere openingstijden",
+      ],
+      "couponCode": "black15",
+      "discountButton": Object {
+        "title": "Naar deals",
+        "url": "/",
+      },
+      "discountPicture": "cool-blue.svg",
+      "discountSubtitle": "Gebruik deze kortingscode:",
+      "discountTitle": "15% korting op het hele assortiment",
+      "favoriteButton": Object {
+        "title": "Winkel opslaan als favoriet",
+        "url": "/",
+      },
+      "id": "1",
+      "keywords": Array [
+        "Wonen & slapen",
+        "Swiss sense",
+        "hastens",
+      ],
+      "name": "ShopSingleHeaderModule",
+      "picture": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/stores-single.png",
+      "rating": Object {
+        "text": "Beoordeel deze deal",
+        "value": 5,
+      },
+      "shareSocial": Object {
+        "email": Object {
+          "nameSocialShare": "Email",
+          "subject": "BlackFriday",
+          "title": "Email",
+          "url": "https://www.webbio.nl",
+        },
+        "facebook": Object {
+          "nameSocialShare": "Facebook",
+          "title": "BlackFriday",
+          "url": "https://www.webbio.nl",
+        },
+        "twitter": Object {
+          "hashtags": Array [
+            "BlackFriday",
+            "Netherlands",
+            "Sale",
+            "Shops",
+          ],
+          "nameSocialShare": "Twitter",
+          "title": "BlackFriday",
+          "url": "https://www.webbio.nl",
+          "via": "BlackFriday",
+        },
+        "whatsapp": Object {
+          "nameSocialShare": "WhatsApp",
+          "separator": " - ",
+          "title": "BlackFriday",
+          "url": "https://www.webbio.nl",
+        },
+      },
+      "smallBackLink": Object {
+        "title": "Alle winkels",
+        "url": "/",
+      },
+      "storeLink": Object {
+        "title": "Beddenreus",
+        "url": "/stores-single",
+      },
+      "timeLeftBar": Object {
+        "text": "NU geldig",
+        "value": 80,
+      },
+      "title": "15% korting op het hele assortiment",
+    }
+  }
+/>
+`;

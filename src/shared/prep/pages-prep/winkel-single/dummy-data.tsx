@@ -191,13 +191,4 @@ const CTASimple = {
   icon: Sign
 };
 
-export {
-  Card,
-  CardsShop,
-  ProductDetail,
-  CardsDeals,
-  CardMore,
-  Banner,
-  CTASimple,
-  ModalData
-};
+export { Card, CardsShop, ProductDetail, CardsDeals, CardMore, Banner, CTASimple, ModalData };

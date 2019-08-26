@@ -11,11 +11,10 @@ interface ISidebarProps {
 const SidebarComponent = (props: ISidebarProps) => (
   <div className="sidebar">
     {props.banner && <BannerComponent {...props.banner} />}
+    {/* <Banner2 bannerModule={...bannerProps} variant="small" /> */}
 
     {props.items &&
-      props.items.map((item, key) => (
-        <SidebarBoxComponent key={key} title={item.title} items={item.links} />
-      ))}
+      props.items.map((item, key) => <SidebarBoxComponent key={key} title={item.title} items={item.links} />)}
   </div>
 );
 

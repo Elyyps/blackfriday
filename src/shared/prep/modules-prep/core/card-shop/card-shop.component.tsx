@@ -17,17 +17,7 @@ interface ICardShopProps {
 }
 
 const CardShop = (props: ICardShopProps) => {
-  const {
-    title,
-    sub_title,
-    content,
-    image,
-    range,
-    button_text,
-    button_link,
-    variant,
-    button_secondary
-  } = props;
+  const { title, sub_title, content, image, range, button_text, button_link, variant, button_secondary } = props;
 
   const statusBarFilled = {
     width: `calc( ${range} * 100%)`
@@ -49,9 +39,7 @@ const CardShop = (props: ICardShopProps) => {
   };
 
   return (
-    <div
-      className={classNames("card-shop", `card-shop--${variant || "default"}`)}
-    >
+    <div className={classNames("card-shop", `card-shop--${variant || "default"}`)}>
       <div className="card-shop__body">
         <div className="card-shop__image">
           <ImageComponent src={image} />
@@ -60,10 +48,7 @@ const CardShop = (props: ICardShopProps) => {
           <div className={`card-shop__status ${statusBar(range)}`}>
             <div className="card-shop__status-title">{sub_title}</div>
             <div className="card-shop__status-bar">
-              <div
-                className="card-shop__status-bar-filled"
-                style={statusBarFilled}
-              />
+              <div className="card-shop__status-bar-filled" style={statusBarFilled} />
             </div>
           </div>
         )}
@@ -74,12 +59,7 @@ const CardShop = (props: ICardShopProps) => {
       </div>
       <div className="card-shop__action">
         {button_secondary ? <Button {...button_secondary} /> : ""}
-        <Button
-          title={button_text}
-          href={button_link}
-          variant={"primary"}
-          icon={IconDefault}
-        />
+        <Button title={button_text} href={button_link} variant={"primary"} icon={IconDefault} />
       </div>
     </div>
   );

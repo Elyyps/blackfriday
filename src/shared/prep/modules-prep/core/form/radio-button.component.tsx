@@ -9,13 +9,7 @@ interface ICheckboxProps {
   onChange?: any;
 }
 
-const RadioButton = ({
-  name,
-  label,
-  key,
-  onChange,
-  isChecked
-}: ICheckboxProps) => (
+const RadioButton = ({ name, label, key, onChange, isChecked }: ICheckboxProps) => (
   <React.Fragment>
     <div className="radio-button-wrapper">
       <label htmlFor={key} className={"radio-label"}>

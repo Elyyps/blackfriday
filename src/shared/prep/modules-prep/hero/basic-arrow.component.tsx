@@ -10,16 +10,14 @@ interface IBasicArrowProps {
   prev?: boolean;
 }
 
-const BasicArrow = (props: IBasicArrowProps) => {
+const BasicArrowComponent = (props: IBasicArrowProps) => {
   const { className, onClick } = props;
   let result;
   const customStyle = "hero__slick-arrow-" + `${props.prev ? "prev" : "next"}`;
   if (props.customArrow === undefined) {
     result = (
       <button
-        className={`${className} ${styles["hero__slick-arrow"]} ${
-          styles[customStyle]
-        }`}
+        className={`${className} ${styles["hero__slick-arrow"]} ${styles[customStyle]}`}
         style={{ display: "block" }}
         onClick={onClick}
       >
@@ -28,12 +26,7 @@ const BasicArrow = (props: IBasicArrowProps) => {
     );
   } else {
     result = (
-      <div
-        className={className}
-        onClick={onClick}
-        role="button"
-        aria-label="nextButton"
-      >
+      <div className={className} onClick={onClick} role="button" aria-label="nextButton">
         {props.customArrow}
       </div>
     );
@@ -41,4 +34,4 @@ const BasicArrow = (props: IBasicArrowProps) => {
 
   return result;
 };
-export { BasicArrow };
+export { BasicArrowComponent };

@@ -1,0 +1,61 @@
+.tab {
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    width: 112px;
+    height: 49px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $breakpoint-small-medium) {
+      width: 50%;
+    }
+  }
+
+  &__selected {
+    background-color: rgba(255, 9, 9, 0.1);
+    border-bottom: 2px solid red !important;
+    color: red !important;
+  }
+  .uk-tab {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      > a {
+        font-weight: 600;
+        a {
+          padding: 14px 16px;
+          text-decoration: none;
+          color: inherit;
+          display: inline-flex;
+        }
+        &.uk-active {
+          a {
+            background-color: rgba($brand-primary, 0.1);
+            position: relative;
+            color: $brand-primary;
+            &:after {
+              content: "";
+              width: 100%;
+              bottom: 0;
+              position: absolute;
+              background-color: $brand-primary;
+              height: 2px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

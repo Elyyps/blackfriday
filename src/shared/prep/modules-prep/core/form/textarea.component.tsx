@@ -17,15 +17,7 @@ interface IInputProps {
 }
 
 const TextArea = (props: IInputProps) => {
-  const {
-    name,
-    placeholder,
-    classModify,
-    icon,
-    label,
-    isError,
-    isSuccess
-  } = props;
+  const { name, placeholder, classModify, icon, label, isError, isSuccess } = props;
   const inputClassName = classNames("textarea", {
     [`textarea--${classModify}`]: classModify
   });
@@ -71,11 +63,7 @@ const TextArea = (props: IInputProps) => {
           ""
         )}
 
-        {isError ? (
-          <div className="error-message">{isError ? isError : ""}</div>
-        ) : (
-          " "
-        )}
+        {isError ? <div className="error-message">{isError ? isError : ""}</div> : " "}
       </div>
     </React.Fragment>
   );

@@ -5,48 +5,40 @@ import cors from "cors";
 import chalk from "chalk";
 import manifestHelpers from "express-manifest-helpers";
 import bodyParser from "body-parser";
-import paths from "../../config/paths";
-import { configureStore, getInitialState } from "@app/stores";
 
-import createHistory from "../shared/stores/history";
+import paths from "../../config/paths";
 import errorHandler from "./middleware/error-handler";
 import serverRenderer from "./middleware/server-renderer";
-import moduleFetcher from "./middleware/fetch-modules";
+import { moduleFetcher, setIsMobile, setBlackFridayDate } from "./middleware/initial-store-handler";
+import { addStore } from "./middleware/store-handler";
 
 require("dotenv").config();
 
 const app = express.default();
+// serve robots file
+app.get("/robots.txt", (req, res) => {
+  const options = {
+    root: path.join(paths.clientBuild, "/static"),
+    headers: {
+      "Content-Type": "text/plain;charset=UTF-8"
+    }
+  };
+  res.status(200).sendFile("robots.txt", options);
+});
 
-// Use Nginx or Apache to serve static assets in production or remove the if() around the following
-// lines to use the express.static middleware to serve assets for production (not recommended!)
-// if (process.env.NODE_ENV === "development") {
 app.use(paths.publicPath, express.static(path.join(paths.clientBuild, paths.publicPath)));
-// }
 
 app.use(cors());
 
+// Middleware requires to handle post requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const addStore = async (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction | undefined
-): Promise<void> => {
-  const history = createHistory({ initialEntries: [req.url] });
-
-  res.locals.store = configureStore({ history, initialState: getInitialState() });
-
-  if (typeof next !== "function") {
-    throw new Error("Next handler is missing");
-  }
-  next();
-};
-
+// Add Redux store
 app.use(addStore);
 
+// Add manifest to the requests
 const manifestPath = path.join(paths.clientBuild, paths.publicPath);
-
 app.use(
   manifestHelpers({
     manifestPath: `${manifestPath}/manifest.json`
@@ -57,12 +49,19 @@ app.use(
 // If you want to fetch more data, do it in this middleware.
 app.use(moduleFetcher());
 
+// Set mobile state in redux state for initial margin purposes
+app.use(setIsMobile());
+
+// Set current year in redux state
+app.use(setBlackFridayDate());
+
 // Render the HTML and sent it to the server.
 app.use(serverRenderer());
 
 // Deal with errors
 app.use(errorHandler);
 
+// Let the world know we're up and running
 app.listen(process.env.PORT || 3000, () => {
   console.log(
     `[${new Date().toISOString()}]`,

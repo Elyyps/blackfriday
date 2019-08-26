@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[DealsOverview] should render without crashing 1`] = `
+<component
+  brandFilterItems={Array []}
+  categoryFilterItems={Array []}
+  clearAllFilters={[MockFunction]}
+  dealOverviewModule={
+    Object {
+      "brandFilterItems": Array [
+        Object {
+          "displayName": "Apple",
+          "id": "1",
+          "isSelected": false,
+          "totalAmount": 7,
+        },
+        Object {
+          "displayName": "Jack & Jones",
+          "id": "2",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Adidas",
+          "id": "3",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "JBL",
+          "id": "4",
+          "isSelected": false,
+          "totalAmount": 1,
+        },
+        Object {
+          "displayName": "Converse",
+          "id": "5",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Microsoft",
+          "id": "6",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Guess",
+          "id": "7",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Only",
+          "id": "8",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Happy Socks",
+          "id": "9",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Phillips",
+          "id": "10",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "HP",
+          "id": "11",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Nintendo",
+          "id": "12",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Samsung",
+          "id": "13",
+          "isSelected": false,
+          "totalAmount": 1,
+        },
+        Object {
+          "displayName": "Sony",
+          "id": "14",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Vodafone",
+          "id": "15",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "Nike",
+          "id": "16",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+      ],
+      "categoryFilterItems": Array [
+        Object {
+          "displayName": "Audio",
+          "id": "1",
+          "isSelected": false,
+          "totalAmount": 3,
+        },
+        Object {
+          "displayName": "Sport",
+          "id": "2",
+          "isSelected": false,
+          "totalAmount": 3,
+        },
+        Object {
+          "displayName": "Games",
+          "id": "3",
+          "isSelected": false,
+          "totalAmount": 1,
+        },
+        Object {
+          "displayName": "Elektronisch",
+          "id": "4",
+          "isSelected": false,
+          "totalAmount": 18,
+        },
+        Object {
+          "displayName": "Mode",
+          "id": "5",
+          "isSelected": false,
+          "totalAmount": 52,
+        },
+        Object {
+          "displayName": "Huishouden",
+          "id": "6",
+          "isSelected": false,
+          "totalAmount": 52,
+        },
+      ],
+      "deals": Array [],
+      "emptyStateIcon": "sign.svg",
+      "id": "1",
+      "name": "DealOverviewModule",
+      "sortBy": "Relevantie",
+      "storeFilterItems": Array [
+        Object {
+          "displayName": "Vodafone",
+          "id": "1",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "De Bijenkorf",
+          "id": "2",
+          "isSelected": false,
+          "totalAmount": 0,
+        },
+        Object {
+          "displayName": "CoolBlue",
+          "id": "3",
+          "isSelected": false,
+          "totalAmount": 2,
+        },
+      ],
+      "totalAmountOfStores": 70,
+    }
+  }
+  deals={Array []}
+  getDeals={[MockFunction]}
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  screenSize={
+    Object {
+      "breakpointPixels": 0,
+      "viewType": 3,
+    }
+  }
+  setBrandFilters={[MockFunction]}
+  setCategoryFilters={[MockFunction]}
+  setSortBy={[MockFunction]}
+  setStoreFilters={[MockFunction]}
+  sortBy=""
+  storeFilterItems={Array []}
+  totalResults={100}
+/>
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[tabComponent] should render component without crashing 1`] = `
+<Fragment>
+  <div
+    className="tab uk-container"
+  >
+    <div
+      className="uk-tab__list"
+    >
+      <a
+        className=""
+        href="/"
+        key="0"
+      >
+        Winkels
+      </a>
+      <a
+        className=""
+        href="/"
+        key="1"
+      >
+        Productdeals
+      </a>
+    </div>
+  </div>
+</Fragment>
+`;

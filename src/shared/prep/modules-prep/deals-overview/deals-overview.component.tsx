@@ -32,14 +32,14 @@ if (typeof window !== "undefined") {
   require("uikit");
 }
 
-export interface IDealsOverviewComponentProps {
+export interface IDealOverviewComponentProps {
   bgcolor?: string;
   cards?: any;
   customNextArrow?: JSX.Element | undefined;
   customPrevArrow?: JSX.Element | undefined;
 }
 
-const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
+const DealsOverviewComponent = (props: IDealOverviewComponentProps) => {
   const postFrom = 15;
   const ObjectKeys: any = {};
   const connectClass = "uk-switcher-list";
@@ -58,7 +58,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   };
   const handleClick = (e: any) => {
     {
-      e.target.innerText ? setTextLabel(e.target.innerText) : setTextLabel("");
+      setTextLabel(e.target.innerText || "");
     }
     setPrevIcon(!prevIcon);
   };
@@ -79,9 +79,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
   };
   const isSomeCheckboxctive = (status: any) => {
     if (checkedItems[status]) {
-      const isActive = Object.keys(checkedItems[status]).some(
-        key => checkedItems[status][key] === true
-      );
+      const isActive = Object.keys(checkedItems[status]).some(key => checkedItems[status][key] === true);
 
       return isActive ? "active" : "";
     }
@@ -93,10 +91,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
         <div className="deals-overview__header">
           <div className="uk-container">
             <div className="deals-overview__tab">
-              <TabContainerComponent
-                attribute={switcherAttr}
-                classTabList={"uk-tab__list"}
-              >
+              <TabContainerComponent attribute={switcherAttr} classTabList={"uk-tab__list"}>
                 {tabItems
                   ? tabItems.map((item, key) => (
                       <TabComponent attrAction={"link"} key={key}>
@@ -113,9 +108,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   <IconComponent icon={HandPointing} size={"20px"} />
                 </div>
                 <button
-                  className={classNames(
-                    "filter-label filter-label--mobile uk-hidden@m"
-                  )}
+                  className={classNames("filter-label filter-label--mobile uk-hidden@m")}
                   onClick={handleClickLAbel}
                 >
                   Filters
@@ -132,28 +125,12 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                     })}
                   >
                     {prevIcon ? (
-                      <span
-                        role="button"
-                        className={classNames({ ["arrow-control"]: prevIcon })}
-                        onClick={handleClick}
-                      >
-                        <IconComponent
-                          color={"#fff"}
-                          icon={ChevronLeft}
-                          size={"7px"}
-                        />
+                      <span role="button" className={classNames({ ["arrow-control"]: prevIcon })} onClick={handleClick}>
+                        <IconComponent color={"#fff"} icon={ChevronLeft} size={"7px"} />
                       </span>
                     ) : (
-                      <span
-                        role="button"
-                        className={"button-control"}
-                        onClick={handleClickLAbel}
-                      >
-                        <IconComponent
-                          color={"#fff"}
-                          icon={Cross}
-                          size={"12px"}
-                        />
+                      <span role="button" className={"button-control"} onClick={handleClickLAbel}>
+                        <IconComponent color={"#fff"} icon={Cross} size={"12px"} />
                       </span>
                     )}
                     {textLabel ? (
@@ -164,11 +141,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                           Filters
                           <IconComponent icon={HandPointing} size={"16px"} />
                         </span>
-                        <a
-                          role="button"
-                          className={"filter-content-clear"}
-                          onClick={handleClickClear}
-                        >
+                        <a role="button" className={"filter-content-clear"} onClick={handleClickClear}>
                           Wis alle filters
                         </a>
                       </>
@@ -176,12 +149,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                   </div>
                   {dealsOverviewDropdownDummy
                     ? dealsOverviewDropdownDummy.map((item, index) => (
-                        <div
-                          key={index}
-                          className={`filter-item ${isSomeCheckboxctive(
-                            item.button_text
-                          )} `}
-                        >
+                        <div key={index} className={`filter-item ${isSomeCheckboxctive(item.button_text)} `}>
                           <Button
                             title={item.button_text}
                             type={"button"}
@@ -201,29 +169,17 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                             <div className="dropdown-body">
                               <div className="uk-grid uk-child-width-1-2@s">
                                 {item.dropdwon.status
-                                  ? item.dropdwon.status.map(
-                                      (itemCheckbox, key) => (
-                                        <div
+                                  ? item.dropdwon.status.map((itemCheckbox, key) => (
+                                      <div key={key} className={"dropdown-item"}>
+                                        <Checkbox
+                                          onChange={(event: any): void => handleChange(event, item.button_text)}
                                           key={key}
-                                          className={"dropdown-item"}
-                                        >
-                                          <Checkbox
-                                            onChange={(event: any): void =>
-                                              handleChange(
-                                                event,
-                                                item.button_text
-                                              )
-                                            }
-                                            key={key}
-                                            name={itemCheckbox.name}
-                                            label={itemCheckbox.label}
-                                          />
-                                          <span className="count-item uk-visible@m">
-                                            ({itemCheckbox.count})
-                                          </span>
-                                        </div>
-                                      )
-                                    )
+                                          name={itemCheckbox.name}
+                                          label={itemCheckbox.label}
+                                        />
+                                        <span className="count-item uk-visible@m">({itemCheckbox.count})</span>
+                                      </div>
+                                    ))
                                   : ""}
                               </div>
                             </div>
@@ -233,10 +189,7 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                                   <Link to="#">Verwijder merk filters (2)</Link>
                                 </li>
                                 <li>
-                                  <Button
-                                    title={"Toon 123 Winkels"}
-                                    href={"#"}
-                                  />
+                                  <Button title={"Toon 123 Winkels"} href={"#"} />
                                 </li>
                               </ul>
                             </div>
@@ -275,26 +228,22 @@ const DealsOverviewComponent = (props: IDealsOverviewComponentProps) => {
                 ? TabItemsContent.map((item, key) => (
                     <TabComponent key={key}>
                       <div
-                        className="uk-grid-posts uk-grid uk-grid-small  uk-child-width-1-3@s uk-child-width-1-5@m"
+                        className="uk-grid-posts uk-grid uk-grid-small uk-child-width-1-3@s uk-child-width-1-5@m"
                         data-uk-margin
                       >
                         {CardsDeals &&
-                          CardsDeals.slice(0, postFrom).map(
-                            (itemCard, keyCard) => (
-                              <div key={keyCard}>
-                                <CardProduct {...itemCard} />
-                              </div>
-                            )
-                          )}
+                          CardsDeals.slice(0, postFrom).map((itemCard, keyCard) => (
+                            <div key={keyCard}>
+                              <CardProduct {...itemCard} />
+                            </div>
+                          ))}
                         <BannerComponent {...Banner} />
                         {CardsDeals &&
-                          CardsDeals.slice(postFrom).map(
-                            (itemCard, keyCard) => (
-                              <div key={keyCard}>
-                                <CardProduct {...itemCard} />
-                              </div>
-                            )
-                          )}
+                          CardsDeals.slice(postFrom).map((itemCard, keyCard) => (
+                            <div key={keyCard}>
+                              <CardProduct {...itemCard} />
+                            </div>
+                          ))}
                       </div>
                     </TabComponent>
                   ))

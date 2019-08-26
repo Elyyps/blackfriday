@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[arrow-panel] should render component without crashing 1`] = `
+<Link
+  className="card-simple"
+  to="/"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="image-container"
+    >
+      <ImageComponent
+        alt="Arrow icon"
+        className="image-container__image"
+        src="store.svg"
+      />
+    </div>
+    <div
+      className="title"
+    >
+      Productdeals
+    </div>
+  </div>
+  <div
+    className="icon"
+  >
+    <IconComponent
+      icon={
+        Object {
+          "ReactComponent": [Function],
+          "__esModule": true,
+          "default": "chevron-right.svg",
+        }
+      }
+      size="10px"
+      strokeColor="#474747"
+      strokeWidth="3px"
+    />
+  </div>
+</Link>
+`;

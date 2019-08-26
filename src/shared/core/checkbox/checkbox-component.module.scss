@@ -1,0 +1,48 @@
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+  &__count-item {
+    color: $gray-light;
+    width: 15px;
+    height: 20px;
+  }
+
+  &__input {
+    -webkit-appearance: none;
+    background-color: #fdf3f3;
+    border: 1px solid $brand-primary;
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    position: relative;
+    margin: 0 13px 0 0;
+    cursor: pointer;
+  }
+  &__label {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    color: $gray-dark;
+  }
+  &__input:checked {
+    background-color: $brand-primary;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNS45NjUiIGhlaWdodD0iMTMuMTQyIiB2aWV3Qm94PSIwIDAgMTUuOTY1IDEzLjE0MiI+PHRpdGxlPmNoZWNrPC90aXRsZT48cGF0aCBkPSJNLjY3NCw3LjI5Myw1LjUyLDExLjcxNiwxNS4yMTMuNjU5IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
+    background-position: center;
+    background-size: 10px;
+    background-repeat: no-repeat;
+  }
+  &__input {
+    outline: none;
+  }
+}

@@ -2,11 +2,11 @@ import { Action } from "redux";
 
 import { REDUX } from "@app/constants";
 import * as ActionType from "./page.types";
-import { PageModel } from "@app/api";
+import { PageModel } from "@app/api/pagebuilder/page.model";
 
 export interface IPageState {
-  pages: PageModel[];
   currentPage: PageModel | undefined;
+  pages: PageModel[];
 }
 
 const INITIAL_STATE: IPageState = {
@@ -14,7 +14,10 @@ const INITIAL_STATE: IPageState = {
   pages: []
 };
 
-export const pageReducer = (state: IPageState = INITIAL_STATE, action: Action): IPageState => {
+export const pageReducer = (
+  state: IPageState = INITIAL_STATE,
+  action: Action
+): IPageState => {
   switch (action.type) {
     case REDUX.PAGE.SET_PAGES: {
       const { pages } = <ActionType.IPages>action;
@@ -38,7 +41,10 @@ export const pageReducer = (state: IPageState = INITIAL_STATE, action: Action): 
   }
 };
 
-export const addToPages = (pages: PageModel[], page: PageModel): PageModel[] => {
+export const addToPages = (
+  pages: PageModel[],
+  page: PageModel
+): PageModel[] => {
   const newPages = [...pages];
   newPages.map(item => (item.id === page.id ? page : item));
   newPages.push(page);

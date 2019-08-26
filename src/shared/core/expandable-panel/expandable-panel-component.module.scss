@@ -1,0 +1,47 @@
+.expandable-panel {
+  ul,
+  p {
+    margin: 0 auto;
+  }
+  cursor: pointer;
+
+  &__list {
+    margin: 0px;
+    display: contents;
+    cursor: pointer;
+    text-align: left;
+    margin: 0px;
+    list-style: none;
+  }
+
+  &__block {
+    position: relative;
+    z-index: 1;
+  }
+}
+.expandable-panel__block {
+  .expandable-panel__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease-in-out, margin 0.3s ease-in-out;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    a {
+      font-family: $global-font-family;
+      font-size: 14px;
+    }
+    cursor: initial;
+    ul:not([class]) > li:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+  &__open {
+    .expandable-panel__content {
+      margin: 24px 0 0 0;
+      max-height: 500px;
+      height: auto;
+      transition: max-height 0.25s ease-in-out, margin 0.3s ease-in-out;
+    }
+  }
+}

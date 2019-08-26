@@ -9,12 +9,11 @@ const HeaderInfoDummy = {
   image: Oasis,
   icon: Store,
   bgcolor: "#f7f7f7",
-  content:
-    "Vier Black Friday bij Apple en ontvang 15% korting op alles! Meer info",
+  content: "Vier Black Friday bij Apple en ontvang 15% korting op alles! Meer info",
   paddingBottom: "72px"
 };
 
-const FeaturedCategories = {
+const generateFeaturedCategoriesDummyData = () => ({
   bgcolor: "#f7f7f7",
   paddingBottom: "72px",
   paddingTop: "0",
@@ -45,8 +44,7 @@ const FeaturedCategories = {
       icon: Store
     },
     {
-      title:
-        "Categorie item met een nog langere na xdfasdfasdfasdfasd dfgasdfasdfasd",
+      title: "Categorie item met een nog langere na xdfasdfasdfasdfasd dfgasdfasdfasd",
       link: "/",
       icon: Store
     },
@@ -55,7 +53,7 @@ const FeaturedCategories = {
       link: "/"
     }
   ]
-};
+});
 
 const Cards = [
   {
@@ -211,12 +209,4 @@ const Banner = {
   logo: CoolBlue
 };
 
-export {
-  HeaderInfoDummy,
-  Cards,
-  CardMore,
-  CardsDeals,
-  CTASimple,
-  Banner,
-  FeaturedCategories
-};
+export { HeaderInfoDummy, Cards, CardMore, CardsDeals, CTASimple, Banner, generateFeaturedCategoriesDummyData };

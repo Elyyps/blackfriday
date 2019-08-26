@@ -1,0 +1,25 @@
+.featured-blog {
+  &__card {
+    width: 48%;
+    @media (max-width: $breakpoint-small) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin-bottom: 36px;
+    @media (max-width: $breakpoint-small) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    @media (max-width: $breakpoint-small) {
+      flex-direction: column;
+    }
+  }
+}

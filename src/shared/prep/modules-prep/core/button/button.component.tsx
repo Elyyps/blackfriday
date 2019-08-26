@@ -14,22 +14,12 @@ interface IButtonProps {
   position?: string;
   target?: string;
   title: string;
-  type?: string;
+  type?: "submit" | "reset" | "button";
   variant?: string;
 }
 
 const Button = (props: IButtonProps) => {
-  const {
-    onClick,
-    href,
-    variant,
-    target,
-    title,
-    type,
-    icon,
-    position,
-    ...other
-  } = props;
+  const { onClick, href, variant, target, title, type, icon, position, ...other } = props;
   const classModify = variant || "default";
   const buttonClassName = classNames("button", {
     [`button--${classModify}`]: classModify,
@@ -44,12 +34,7 @@ const Button = (props: IButtonProps) => {
           {icon ? <IconComponent icon={icon} size="12px" /> : ""}
         </Link>
       ) : (
-        <button
-          onClick={onClick}
-          {...other}
-          type={type}
-          className={buttonClassName}
-        >
+        <button onClick={onClick} {...other} type={type} className={buttonClassName}>
           <span>{title}</span>
           {icon ? <IconComponent icon={icon} size="12px" /> : ""}
           {variant === "dropdown" && (

@@ -1,21 +1,17 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:all",
-    "tslint-config-airbnb",
-    "tslint-config-prettier",
-    "tslint-react-a11y",
-    "tslint-react"
-  ],
+  "extends": ["tslint:all", "tslint-config-airbnb", "tslint-config-prettier", "tslint-react-a11y", "tslint-react"],
   "jsRules": {},
   "rules": {
-    "no-void-expression": [true, "ignore-arrow-function-shorthand"],
+    "no-void-expression": false,
     "import-name": false,
     "ordered-imports": false,
+    "array-type": [true, "array"],
     "no-angle-bracket-type-assertion": false,
     "no-reference": false,
     "no-implicit-dependencies": false,
     "no-empty": true,
+    "cyclomatic-complexity": [true, 22],
     "no-submodule-imports": false,
     "no-object-literal-type-assertion": false,
     "no-empty-interface": false,
@@ -37,7 +33,6 @@
     "prefer-method-signature": false,
     "no-inferrable-types": true,
     "typedef": false,
-    "no-unused-expression": true,
     "no-unused-variable": true,
     "no-magic-numbers": true,
     "match-default-export-name": false,
@@ -52,12 +47,10 @@
     "react-this-binding-issue": false,
     "no-unsafe-any": false,
     "align": false,
-    "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format",
-      "allow-pascal-case"
-    ],
+    "space-before-function-paren": false,
+    "whitespace": false,
+    "prefer-for-of": false,
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
     "no-import-side-effect": [
       true,
       {
@@ -66,7 +59,11 @@
     ],
     "max-func-body-length": 10,
     "strict-boolean-expressions": false,
-    "no-any": false
+    "no-any": false,
+    "interface-over-type-literal": false,
+    "no-default-export": false,
+    "no-use-before-declare": false,
+    "strict-type-predicates": false
   },
   "linterOptions": {
     "exclude": ["./node_modules"]

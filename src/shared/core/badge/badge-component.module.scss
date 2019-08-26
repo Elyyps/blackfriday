@@ -1,0 +1,49 @@
+.badge {
+  top: 0;
+  position: absolute;
+
+  &-right {
+    right: 0;
+    button {
+      padding: 0 0 10px 10px;
+      border-radius: 0 0 0 100%;
+    }
+  }
+  &-left {
+    left: 0;
+    button {
+      padding: 0 10px 10px 0;
+      border-radius: 0 0 100% 0;
+    }
+  }
+
+  &__dropdown {
+    margin-top: 0;
+    background-color: white;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.18);
+  }
+  button {
+    line-height: 0;
+    font-size: 0;
+    width: 56px;
+    border: none;
+    height: 56px;
+    background: none;
+    overflow: hidden;
+    position: relative;
+    background: $tint-gray-light;
+
+    display: flex;
+    justify-content: center;
+    transition: transform 0.2s;
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

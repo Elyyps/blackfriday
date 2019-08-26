@@ -1,22 +1,17 @@
 import { Dispatch } from "react-redux";
 import { IAppState, pageActions } from "@app/stores";
-import { PageApi, PageModel } from "@app/api";
-import FatalError from "@app/errors/fatal-error";
+import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
 
 const getPage = (page: string) => async (dispatch: Dispatch<any>, getState: () => IAppState) => {
   try {
-    const api = new PageApi();
+    const currentPage = pageList.find(pageItem => pageItem.route === page);
 
-    api
-      .pageRouteGet(page)
-      .then(response => response.json())
-      .then((response: PageModel) => {
-        dispatch(pageActions.setCurrentPage({ page: response }));
-        dispatch(pageActions.addToPages({ page: response }));
-      });
+    if (currentPage) {
+      dispatch(pageActions.setCurrentPage({ page: currentPage }));
+    }
   } catch (error) {
     // tslint:disable-next-line: no-unused-expression no-unsafe-any
-    new FatalError(error.name, error.message, error.stack);
+    // new FatalError(error.name, error.message, error.stack);
   }
 };
 

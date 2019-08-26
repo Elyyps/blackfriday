@@ -1,9 +1,9 @@
-import * as React from "react";
-import { connect, MapStateToProps, MapDispatchToProps } from "react-redux";
+import { connect, MapStateToProps } from "react-redux";
 import { IntlProvider, addLocaleData } from "react-intl";
 
 import nl from "react-intl/locale-data/nl";
 import en from "react-intl/locale-data/en";
+import fr from "react-intl/locale-data/fr";
 
 import { IAppState } from "@app/stores";
 
@@ -12,7 +12,7 @@ interface IProps {}
 interface IStateProps {}
 interface IDispatchProps {}
 
-addLocaleData([...nl, ...en]);
+addLocaleData([...nl, ...en, ...fr]);
 
 const mapStateToProps: MapStateToProps<IStateProps, IProps, IAppState> = state => {
   const { locale, messages } = state.locales;

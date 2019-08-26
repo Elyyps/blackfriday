@@ -1,10 +1,6 @@
 import * as React from "react";
 import "./header-info-component.scss";
-import {
-  ImageComponent,
-  IconComponent,
-  SharedBox
-} from "@app/prep/modules-prep/core";
+import { ImageComponent, IconComponent, SharedBox } from "@app/prep/modules-prep/core";
 
 export interface IHeaderInfoComponentProps {
   bgcolor?: string;

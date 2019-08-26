@@ -1,0 +1,85 @@
+.see-more-card {
+  min-height: 300px;
+  height: 300px;
+  max-height: 300px;
+  @media (max-width: 768px) {
+    min-height: 168px;
+    height: 168px;
+    max-height: 168px;
+  }
+  min-width: 215px;
+  width: 100%;
+  background-color: white;
+  text-align: left;
+  padding: 32px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 88px;
+  justify-content: center;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+
+  &__icon {
+    margin-bottom: 16px;
+  }
+  &__title {
+    h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+  &__content {
+    align-items: center;
+  }
+
+  &--responsive {
+    max-height: 166px;
+    min-height: 166px;
+    padding: 16px;
+    width: 100%;
+    justify-content: flex-start;
+    .see-more-card {
+      &__body {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      &__title {
+        order: -1;
+      }
+      &__content {
+        display: flex;
+        @media (max-width: $breakpoint-small-max) {
+          justify-content: space-between;
+        }
+      }
+      &__image {
+        order: 2;
+        width: 90px;
+        height: auto;
+
+        flex: 0 0 90px;
+        margin: 0 0 0 10px;
+      }
+      &__icon {
+        margin-left: 8px;
+      }
+
+      &__price {
+        display: block;
+        margin: 0;
+        flex: 0 0 50%;
+      }
+
+      &__action {
+        display: flex;
+        align-items: flex-end;
+        .button {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

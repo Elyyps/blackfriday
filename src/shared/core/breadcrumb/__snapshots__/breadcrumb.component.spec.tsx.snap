@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Breadcrumb] should render component without crashing 1`] = `
+<div
+  className="breadcrumbs breadcrumbs__light"
+>
+  <ul
+    className="uk-visible@s"
+  >
+    <li
+      key="0"
+    >
+      <Link
+        to="/#"
+      >
+        Home
+      </Link>
+    </li>
+    <li
+      key="1"
+    >
+      <span>
+        Blog
+      </span>
+    </li>
+  </ul>
+  <Link
+    className="uk-hidden@s back-button"
+    to="/#"
+  >
+    <IconComponent
+      icon="chevron-left.svg"
+      size="10px"
+      strokeColor="#fff"
+    />
+    <span
+      className="back-button-text"
+    >
+      Terug
+    </span>
+  </Link>
+</div>
+`;

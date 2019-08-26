@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[CtaSmallModuleComponent] should render component without crashing 1`] = `
+<CtaSmallComponent
+  background={
+    Object {
+      "backgroundColour": "#f7f7f7",
+    }
+  }
+  bottomPadding={
+    Object {
+      "desktopSpacing": 72,
+      "mobileSpacing": 48,
+    }
+  }
+  buttonLink="/deals-overview"
+  buttonTitle="Naar deals"
+  icon="sign.svg"
+  id="1"
+  name="CtaSmallModule"
+  text="Niet helemaal wat je zoekt? Geeft niks want we hebben meer!"
+/>
+`;
