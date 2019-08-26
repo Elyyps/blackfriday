@@ -13,6 +13,8 @@ import { NavBarContainerProps } from "./cointeners/nav-bar-containers";
 import { IBlackFridayDate } from "@app/stores/settings";
 import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 import { Link } from "react-router-dom";
+import { LocationSwitchComponent } from "@app/core/location-switch";
+import { LocationSwitchContainer } from "@app/core/location-switch/location-switch.container";
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }
@@ -38,6 +40,9 @@ const NavBarComponent = (props: INavBarComponentProps & NavBarContainerProps) =>
                 <LinkComponent to={link.url}>{link.title}</LinkComponent>
               </li>
             ))}
+            <li>
+              <LocationSwitchContainer />
+            </li>
           </ul>
           <ModalNavBar
             className={`${styles["nav-bar__search-button"]}`}
