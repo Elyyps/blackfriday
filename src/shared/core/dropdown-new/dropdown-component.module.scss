@@ -75,12 +75,13 @@
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 20px;
-  transition: opacity 200ms;
+  visibility: hidden;
   opacity: 0;
-  display: none;
+  transition: opacity 300ms;
+
   &--open {
     opacity: 1;
-    display: block;
+    visibility: visible;
   }
 }
 

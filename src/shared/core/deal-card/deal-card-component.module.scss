@@ -96,30 +96,42 @@
     margin: 12px 0;
     display: flex;
     justify-content: space-between;
+    flex: 0 0 45%;
     @media (max-width: 768px) {
       margin: 0;
-      flex: 0 0 50%;
+      flex: 0 0 30%;
       flex-direction: column;
       text-align: left;
       align-items: baseline;
     }
   }
-
+  &__button {
+    @media (max-width: 768px) {
+      flex: 0 0 38%;
+    }
+    flex: 0 0 55%;
+    > a {
+      padding: 8px 15px;
+    }
+  }
   &__price-box {
     display: flex;
     align-items: center;
   }
 
   &__sale {
-    box-sizing: border-box;
-    background: rgba($brand-primary, 0.1);
-    color: $brand-primary;
-    padding: 1px 5px;
-    display: inline-table;
-    @media (max-width: 768px) {
-      display: block;
-      font-size: 14px;
-      width: unset !important;
+    > span {
+      box-sizing: border-box;
+
+      background: rgba($brand-primary, 0.1);
+      color: $brand-primary;
+      padding: 1px 5px;
+      display: inline-table;
+      @media (max-width: 768px) {
+        display: block;
+        font-size: 14px;
+        width: unset !important;
+      }
     }
   }
 
@@ -151,6 +163,7 @@
     @media (max-width: 768px) {
       display: flex;
       align-items: flex-end;
+      justify-content: space-between;
       .button {
         width: 50%;
       }
@@ -181,12 +194,13 @@
         display: flex;
         flex-direction: column;
         margin: 0;
-        flex: 0 0 50%;
+        flex: 0 0 45%;
       }
 
       &__action {
         display: flex;
         align-items: flex-end;
+        justify-content: space-between;
         .button {
           width: 50%;
         }

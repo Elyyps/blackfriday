@@ -194,7 +194,7 @@
 .responsive {
   @include responsive-card-768();
   .action {
-    flex: 1 1 40%;
+    flex: 0 1 38%;
   }
 
   @media (max-width: 768px) {
