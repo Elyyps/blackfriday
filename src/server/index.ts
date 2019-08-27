@@ -9,7 +9,12 @@ import bodyParser from "body-parser";
 import paths from "../../config/paths";
 import errorHandler from "./middleware/error-handler";
 import serverRenderer from "./middleware/server-renderer";
-import { moduleFetcher, setIsMobile, setBlackFridayDate } from "./middleware/initial-store-handler";
+import {
+  moduleFetcher,
+  setIsMobile,
+  setBlackFridayDate,
+  setBlackFridayRootUrl
+} from "./middleware/initial-store-handler";
 import { addStore } from "./middleware/store-handler";
 
 require("dotenv").config();
@@ -54,6 +59,9 @@ app.use(setIsMobile());
 
 // Set current year in redux state
 app.use(setBlackFridayDate());
+
+// set the current url
+app.use(setBlackFridayRootUrl());
 
 // Render the HTML and sent it to the server.
 app.use(serverRenderer());
