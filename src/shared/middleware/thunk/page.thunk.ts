@@ -1,10 +1,11 @@
 import { Dispatch } from "react-redux";
 import { IAppState, pageActions } from "@app/stores";
-import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
-
+import { belgianPageList } from "@app/api/pagebuilder/generate-belgian-dummy-data";
+import { dutchPageList } from "@app/api/pagebuilder/generate-dutch-dummy-data";
 const getPage = (page: string) => async (dispatch: Dispatch<any>, getState: () => IAppState) => {
   try {
-    const currentPage = pageList.find(pageItem => pageItem.route === page);
+    // const currentPage = belgianPageList.find(pageItem => pageItem.route === page);
+    const currentPage = dutchPageList.find(pageItem => pageItem.route === page);
 
     if (currentPage) {
       dispatch(pageActions.setCurrentPage({ page: currentPage }));

@@ -41,7 +41,7 @@ export const generateDummyBlogPost = (): BlogPost[] => [
     link: { title: "Lees meer", url: "/blog-single" }
   }
 ];
-export const generate2DummyBlogPosts = (): BlogPost[] => [
+export const generate2DummyBelgianBlogPosts = (): BlogPost[] => [
   {
     image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/blog-single.png",
     title: "De beste Moederdag cadeau deals",
@@ -51,6 +51,23 @@ export const generate2DummyBlogPosts = (): BlogPost[] => [
   },
   {
     image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/1.png",
+    title: "Black Friday wordt Black Week – deals beginnen eerder",
+    content:
+      "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+
+    link: { title: "Lees meer", url: "/blog-single" }
+  }
+];
+export const generate2DummyDutchBlogPosts = (): BlogPost[] => [
+  {
+    image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/dutch/4.png",
+    title: "De beste Moederdag cadeau deals",
+    content:
+      "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",
+    link: { title: "Lees meer", url: "/blog-single" }
+  },
+  {
+    image: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/dutch/2.jpg",
     title: "Black Friday wordt Black Week – deals beginnen eerder",
     content:
       "Nog even en alles wordt weer uit de kast gehaald voor de beste Black Friday deals van 2018. Maar voordat het zo ver is, kijken we nog even terug... ",

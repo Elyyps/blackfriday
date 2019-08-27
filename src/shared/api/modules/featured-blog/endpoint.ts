@@ -1,3 +1,4 @@
-import { generateFeaturedBlogDummyData } from "./generate-dummy-data";
+import { generateFeaturedBlogDummyDataBelgian, generateFeaturedBlogDummyDataDutch } from "./generate-dummy-data";
 
-export const generateFeaturedBlogData = generateFeaturedBlogDummyData;
+export const generateFeaturedBlogDataBelgian = generateFeaturedBlogDummyDataBelgian;
+export const generateFeaturedBlogDataDutch = generateFeaturedBlogDummyDataDutch;

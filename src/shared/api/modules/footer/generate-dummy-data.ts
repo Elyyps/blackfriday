@@ -4,7 +4,29 @@ import { TopFooter } from "./models/top-footer";
 import { generateUSP } from "@app/api/core/usp/endpoints";
 import { Footer } from "./footer.module";
 
-export const generateBottomFooter = (): BottomFooter => ({
+export const generateBottomFooterDutch = (): BottomFooter => ({
+  copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
+  items: [
+    {
+      title: "Partner worden?",
+      url: "/"
+    },
+    {
+      title: "Algemene voorwaarden",
+      url: "/"
+    },
+    {
+      title: "Privacy",
+      url: "/"
+    },
+    {
+      title: "Cookiebeleid",
+      url: "/"
+    }
+  ],
+  logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/dutch/bf-nederland.svg"
+});
+export const generateBottomFooterBelgian = (): BottomFooter => ({
   copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
   items: [
     {
@@ -26,7 +48,6 @@ export const generateBottomFooter = (): BottomFooter => ({
   ],
   logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/logo-blackfriday.svg"
 });
-
 export const generateMiddleFooter = (): MiddleFooter => ({
   links: [
     {
@@ -153,8 +174,15 @@ export const generateTopFooter = (): TopFooter => ({
   usp: generateUSP()
 });
 
-export const generateDummyFooterData = (): Footer => ({
-  bottomFooter: generateBottomFooter(),
+export const generateDummyFooterDataDutch = (): Footer => ({
+  bottomFooter: generateBottomFooterDutch(),
+  middleFooter: generateMiddleFooter(),
+  topFooter: generateTopFooter(),
+  id: "1",
+  name: "FooterModule"
+});
+export const generateDummyFooterDataBelgian = (): Footer => ({
+  bottomFooter: generateBottomFooterBelgian(),
   middleFooter: generateMiddleFooter(),
   topFooter: generateTopFooter(),
   id: "1",

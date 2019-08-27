@@ -2,8 +2,8 @@ import { Action } from "redux";
 
 import { REDUX, LOCATIONS } from "@app/constants";
 import * as ActionType from "./location.types";
-const nlTheme = require("@app/styles/variables.scss");
-const blTheme = require("@app/styles/variables2.scss");
+const nlTheme = require("@app/styles/belgium-variables.scss");
+const blTheme = require("@app/styles/netherlands-variables.scss");
 export interface ILocationState {
   location: string;
   messages: any;
@@ -11,7 +11,7 @@ export interface ILocationState {
 
 const INITIAL_STATE: ILocationState = {
   location: LOCATIONS.NL,
-  messages: ""
+  messages: nlTheme
 };
 
 export const locationReducer = (state: ILocationState = INITIAL_STATE, action: Action): ILocationState => {
@@ -23,7 +23,6 @@ export const locationReducer = (state: ILocationState = INITIAL_STATE, action: A
         case LOCATIONS.NL:
           messages = nlTheme;
           break;
-
         case LOCATIONS.BL:
           messages = blTheme;
           break;

@@ -2,7 +2,9 @@ import * as express from "express";
 import MobileDetect from "mobile-detect";
 import { settingsActions, ViewType } from "@app/stores/settings";
 import { pageActions } from "@app/stores";
-import { pageList } from "@app/api/pagebuilder/generate-dummy-data";
+import { belgianPageList } from "@app/api/pagebuilder/generate-belgian-dummy-data";
+import { dutchPageList } from "@app/api/pagebuilder/generate-dutch-dummy-data";
+
 import { breakPointMobile, breakPointTablet, breakPointDesktop } from "@app/util/detect-view";
 import { BLACK_FRIDAY_DAY, BLACK_FRIDAY_MONTH } from "@app/constants/blackfriday-date";
 import { getBlackFridayYear } from "@app/util";
@@ -17,7 +19,7 @@ export const moduleFetcher: any = () => async (
       return next();
     }
     const pageUrl = req.url;
-    const currentPage = pageList.find(pageItem => pageItem.route === pageUrl);
+    const currentPage = belgianPageList.find(pageItem => pageItem.route === pageUrl);
 
     const empty: any = {};
 
