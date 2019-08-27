@@ -19,7 +19,7 @@ export const moduleFetcher: any = () => async (
     const pageUrl = req.url;
 
     const currentPage = pageList.find(pageItem => pageItem.route === pageUrl);
-    console.log(pageUrl);
+
     const empty: any = {};
 
     res.locals.store.dispatch(pageActions.setCurrentPage({ page: currentPage || empty }));
