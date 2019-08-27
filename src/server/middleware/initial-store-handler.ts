@@ -17,6 +17,7 @@ export const moduleFetcher: any = () => async (
       return next();
     }
     const pageUrl = req.url;
+
     const currentPage = pageList.find(pageItem => pageItem.route === pageUrl);
 
     const empty: any = {};
@@ -72,5 +73,14 @@ export const setBlackFridayDate: any = () => async (
   res.locals.store.dispatch(
     settingsActions.setBlackFridayDate({ day: BLACK_FRIDAY_DAY, month: BLACK_FRIDAY_MONTH - 1, year })
   );
+  next();
+};
+
+export const setBlackFridayRootUrl: any = () => async (
+  req: express.Request & { store: any },
+  res: express.Response,
+  next: express.NextFunction
+) => {
+  res.locals.store.dispatch(settingsActions.setBlackFridayRootURL({ rootUrl: req.originalUrl }));
   next();
 };

@@ -12,7 +12,13 @@ const setBlackFridayDate = (payload: ActionType.IBlackFridayDate) => ({
   ...payload
 });
 
+const setBlackFridayRootURL = (payload: ActionType.IBlackFridayRootURL) => ({
+  type: REDUX.SETTINGS.SET_BLACK_FRIDAY_ROOT_URL,
+  ...payload
+});
+
 export const settingsActions = {
   setScreenSize,
-  setBlackFridayDate
+  setBlackFridayDate,
+  setBlackFridayRootURL
 };

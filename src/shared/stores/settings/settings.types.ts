@@ -12,3 +12,6 @@ export interface IBlackFridayDate extends IAction {
   month: number;
   year: number;
 }
+export interface IBlackFridayRootURL extends IAction {
+  rootUrl: string;
+}
