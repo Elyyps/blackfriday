@@ -40,21 +40,23 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
                 !newPrice &&
                 styles["deal-card__sale-full-width"]}`}
             >
-              {sale}
+              <span> {sale}</span>
             </div>
             <div className={styles["deal-card__price-box"]}>
               <div className={styles["deal-card__price-old"]}>{oldPrice}</div>
               <div className={styles["deal-card__price-new"]}>{newPrice}</div>
             </div>
           </div>
-          <ClickableComponent
-            title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
-            href={moreInfoLink}
-            fullWidth
-            iconStyle="filled"
-            variant={"primary-default"}
-            iconRight={LinkIcon}
-          />
+          <div className={styles["deal-card__button"]}>
+            <ClickableComponent
+              title={props.intl.formatMessage({ id: "shop-card-clickable-title" })}
+              href={moreInfoLink}
+              fullWidth
+              iconStyle="filled"
+              variant={"primary-default"}
+              iconRight={LinkIcon}
+            />
+          </div>
         </div>
       </div>
     </ShadowCardComponent>
