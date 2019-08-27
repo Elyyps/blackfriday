@@ -44,7 +44,7 @@ export const settingsReducer = (state: ISettingsState = INITIAL_STATE, action: A
     case REDUX.SETTINGS.SET_BLACK_FRIDAY_ROOT_URL: {
       const blackFridayRootUrl = <ActionType.IBlackFridayRootURL>action;
 
-      return { ...state, ...blackFridayRootUrl };
+      return { ...state, blackFridayRootUrl };
     }
 
     default: {

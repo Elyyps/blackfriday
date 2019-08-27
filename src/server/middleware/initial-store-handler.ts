@@ -81,6 +81,6 @@ export const setBlackFridayRootUrl: any = () => async (
   res: express.Response,
   next: express.NextFunction
 ) => {
-  res.locals.store.dispatch(settingsActions.setBlackFridayRootURL({ rootUrl: req.originalUrl }));
+  res.locals.store.dispatch(settingsActions.setBlackFridayRootURL({ rootUrl: req.get("host") }));
   next();
 };
