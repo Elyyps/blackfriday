@@ -11,6 +11,7 @@ import { GenericPageFilterComponent } from "./pages/generic-page-filter";
 import { IMobileFilterItem } from "./mobile-filter-item";
 import { SingleFilterComponent } from "./pages/single-page-filter";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import { MobileFilterContainerProps } from "./containers/mobile-filter-container";
 
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
@@ -24,7 +25,7 @@ export interface IMobileFilterSelectedItems {
   title: string;
 }
 
-const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
+const component = (props: IMobileFilterComponentProps & InjectedIntlProps & MobileFilterContainerProps) => {
   const [currentFilterItem, setCurrentFilterItem] = useState<IMobileFilterItem | undefined>(undefined);
   const [currentFilterItems, setCurrentFilterItems] = useState<IMobileFilterItem[]>([]);
   const { filterItems, onClear } = props;
@@ -70,37 +71,45 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps) => {
     setCurrentFilterItems(filterItems);
   }, [filterItems]);
 
-  React.useEffect(() => {
-    document.body.style.overflow = isFilterOpened ? "hidden" : "unset";
+  const enableScroll = () => {
+    document.documentElement.style.overflow = "unset";
+    document.body.style.overflow = "unset";
+  };
+  const disableScroll = () => {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  };
 
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isFilterOpened]);
-
-  const onWindowResize = () => {
-    const w = window;
-    const d = document;
-    const documentElement = d.documentElement;
-    const body = d.getElementsByTagName("body")[0];
-    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+  const checkScroll = () => {
     const mobileBreakpoint = 769;
-    if (width >= mobileBreakpoint) {
-      document.documentElement.style.overflow = "auto";
-      document.body.style.overflow = "auto";
-    } else {
-      document.documentElement.style.overflow = "none";
-      document.body.style.overflow = "none";
+    if (props.screenSize && isFilterOpened) {
+      if (props.screenSize.breakpointPixels < mobileBreakpoint) {
+        disableScroll();
+      } else {
+        enableScroll();
+      }
     }
   };
 
   React.useEffect(() => {
-    window.addEventListener("resize", onWindowResize);
+    checkScroll();
 
     return () => {
-      window.removeEventListener("resize", onWindowResize);
-      document.documentElement.style.overflow = "none";
-      document.body.style.overflow = "none";
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
+    };
+  }, [isFilterOpened]);
+
+  React.useEffect(() => {
+    checkScroll();
+  }, [props.screenSize]);
+
+  React.useEffect(() => {
+    checkScroll();
+
+    return () => {
+      document.body.style.overflow = "unset";
+      document.documentElement.style.overflow = "unset";
     };
   }, []);
 

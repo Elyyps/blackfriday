@@ -29,6 +29,12 @@ exports[`[ShopSingleHeader] should render component without crashing 1`] = `
       "timeZone": null,
     }
   }
+  screenSize={
+    Object {
+      "breakpointPixels": 0,
+      "viewType": 3,
+    }
+  }
   shopSingleHeaderModule={
     Object {
       "CheckListTitle": "De voordelen van shoppen bij Beddenreus tijdens Black Friday.",

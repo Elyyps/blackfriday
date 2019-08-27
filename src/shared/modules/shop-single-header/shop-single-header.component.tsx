@@ -10,23 +10,21 @@ import { NewsletterComponent } from "@app/core/newsletter";
 import { StarsRatingComponent } from "@app/core/stars-rating";
 import { KeywordTagComponent } from "@app/core/keyword-tag";
 import { Button } from "@app/core";
-import { BackLinkComponent } from "@app/core/back-button";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { generateDummyNewsletterModule } from "@app/api/modules/newsletter/generate-dummy-data";
 import { ShareSocialDropdownComponent } from "@app/core/share-social-dropdown";
-import { socialMediaButtons } from "@app/api/core/share-social/generate-dummy-data";
-import { LinkComponent } from "@app/core/link";
 import { BodyTextComponent } from "@app/core/bodytext";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { ClickableComponent } from "@app/core/clickable";
 import { ShadowCardComponent } from "@app/core/shadow-card";
 import { BreadcrumbComponent } from "@app/core/breadcrumb";
+import { ShopSingleHeaderContainerProps } from "./containers";
 
 export interface IShopSingleHeaderComponentProps {
   shopSingleHeaderModule: ShopSingleHeaderModule;
 }
 
-const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) => {
+const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderContainerProps & InjectedIntlProps) => {
   const {
     breadcrumbProps,
     checkList,
@@ -37,7 +35,6 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
     discountPicture,
     discountSubtitle,
     discountTitle,
-    favoriteButton,
     keywords,
     picture,
     rating,
@@ -51,23 +48,16 @@ const component = (props: IShopSingleHeaderComponentProps & InjectedIntlProps) =
   const [isMobile, setIsMobile] = React.useState(false);
   const [isSeeMorePressed, setIsSeeMorePressed] = React.useState(false);
 
-  const onWindowResize = () => {
-    const w = window;
-    const d = document;
-    const documentElement = d.documentElement;
-    const body = d.getElementsByTagName("body")[0];
-    const width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
-    const mobileBreakpoint = 769;
-    setIsMobile(width <= mobileBreakpoint);
-  };
-
   React.useEffect(() => {
-    window.addEventListener("resize", onWindowResize);
-    onWindowResize();
-    return () => {
-      window.removeEventListener("resize", onWindowResize);
-    };
-  }, []);
+    const mobileBreakpoint = 769;
+    if (props.screenSize) {
+      if (props.screenSize.breakpointPixels <= mobileBreakpoint) {
+        if (!isMobile) setIsMobile(true);
+      } else {
+        if (isMobile) setIsMobile(false);
+      }
+    }
+  }, [props.screenSize]);
 
   return (
     <div className={styles["container"]}>
