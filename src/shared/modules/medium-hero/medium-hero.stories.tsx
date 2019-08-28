@@ -6,9 +6,9 @@ import { withProvider } from "@app/util";
 import { MediumHeroComponent } from "./medium-hero.component";
 
 // Dummy Data
-import { generateMediumHeroDummyData } from "@app/api/modules/medium-hero/generate-dummy-data";
+import { generateMediumHeroDummyDataBelgian } from "@app/api/modules/medium-hero/generate-dummy-data";
 
 storiesOf("Medium Hero", module)
   .addDecorator(withA11y)
   .addDecorator(withProvider)
-  .add("Basic implementation", () => <MediumHeroComponent mediumHeroModule={generateMediumHeroDummyData()} />);
+  .add("Basic implementation", () => <MediumHeroComponent mediumHeroModule={generateMediumHeroDummyDataBelgian()} />);

@@ -2,7 +2,6 @@ import { PAGE } from "./page";
 import { LOCALES } from "./locales";
 import { CARD } from "./card";
 import { NEWS } from "./news";
-import { LOCATION } from "./location";
 
 import { NAVBARSEARCH } from "./navbar-search";
 import { BUSINESS_OVERVIEW } from "./business-overview";
@@ -20,7 +19,6 @@ export const REDUX = {
   NEWS,
   PAGE,
   SETTINGS,
-  LOCATION,
   SHOPSOVERVIEW,
   STORE_OVERVIEW
 };

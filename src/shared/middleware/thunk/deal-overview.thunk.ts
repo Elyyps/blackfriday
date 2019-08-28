@@ -13,7 +13,7 @@ const getStores = (
   sortBy?: string
 ) => async (dispatch: Dispatch<any>, getState: () => IAppState) => {
   try {
-    const result = DealApi.getStores(skip, take, storeStatusFilter, categoryFilters, brandFilters, sortBy);
+    const result = DealApi.getDeals(skip, take, storeStatusFilter, categoryFilters, brandFilters, sortBy);
 
     if (skip === 0) {
       dispatch(dealOverviewActions.setDeals({ dealsResult: result }));

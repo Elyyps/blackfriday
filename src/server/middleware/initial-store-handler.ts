@@ -76,3 +76,12 @@ export const setBlackFridayDate: any = () => async (
   );
   next();
 };
+
+export const setBlackFridayRootUrl: any = () => async (
+  req: express.Request & { store: any },
+  res: express.Response,
+  next: express.NextFunction
+) => {
+  res.locals.store.dispatch(settingsActions.setBlackFridayRootURL({ rootUrl: req.get("host") }));
+  next();
+};
