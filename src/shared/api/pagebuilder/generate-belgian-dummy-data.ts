@@ -1,34 +1,34 @@
 import { PageModel } from "./page.model";
 import uuid from "uuid";
 import { dummyFeaturedShopsData } from "../modules/featured-shops/generate-dummy-data";
-import { generateDummyNavbarData } from "../modules/navbar/generate-dummy-data";
-import { generateHomePageHeader } from "../modules/homepage-header/generate-dummy-data";
+import { generateDummyNavbarDataBelgian } from "../modules/navbar/generate-dummy-data";
+import { generateHomePageHeaderBelgian } from "../modules/homepage-header/generate-dummy-data";
 import { generateDummyBannerModule } from "../modules/banner/generate-dummy-data";
 import {
   generateProductLineDummyData,
   generateHomepageBodytextDummyData,
   generateShopSingleBodyTextInfoDummydata
 } from "../modules/body-text/generate-dummy-data";
-import { generateDummyFooterData } from "../modules/footer/generate-dummy-data";
 import { HeaderInfoDummy } from "../modules/header-info/generate-dummy-data";
-import { generateMediumHeroDummyData } from "../modules/medium-hero/generate-dummy-data";
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
-import { generateBlogSingleHeaderData, generateBF2019HeaderData } from "../modules/blog-single-header/endpoint";
-import { generateBlogOverviewHeaderData } from "../modules/blog-overview-header/endpoint";
+import { generateBlogSingleHeaderData, generateBF2019HeaderDataBelgian } from "../modules/blog-single-header/endpoint";
+import { generateBlogOverviewHeaderDataBelgian } from "../modules/blog-overview-header/endpoint";
 import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
-import { generateFeaturedBlogData } from "../modules/featured-blog/endpoint";
+import { generateFeaturedBlogDataBelgian } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
 import { generateBlogBodyTextData, generateBlackFriday2019TextData } from "../core/blog-bodytext/endpoint";
-import { generateFeaturedBlogDummyData } from "../modules/featured-blog/generate-dummy-data";
+import { generateFeaturedBlogDummyDataBelgian } from "../modules/featured-blog/generate-dummy-data";
 // import { generateNotYetImplemented } from "../modules/not-implemented/not-yet-implemented-module";
 import { generateStoreOverviewModule } from "../modules/store-overview/generate-dummy-data";
 import { generateNotFoundModuleDummyData } from "../modules/not-found/endpoints";
 import { generateDealOverviewModule } from "../modules/deal-overview/generate-dummy-data";
+import { generateDummyFooterDataBelgian } from "../modules/footer/generate-dummy-data";
+import { generateMediumHeroDummyDataBelgian } from "../modules/medium-hero/generate-dummy-data";
 
-export const pageList: PageModel[] = [
+export const belgianPageList: PageModel[] = [
   {
     id: uuid(),
     route: "/",
@@ -38,15 +38,15 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
-      generateHomePageHeader(),
+      generateDummyNavbarDataBelgian(),
+      generateHomePageHeaderBelgian(),
       dummyFeaturedShopsData(),
       generateDummyBannerModule(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
-      generateFeaturedBlogDummyData(),
+      generateFeaturedBlogDummyDataBelgian(),
       generateHomepageBodytextDummyData(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -58,11 +58,11 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
-      generateMediumHeroDummyData(),
+      generateDummyNavbarDataBelgian(),
+      generateMediumHeroDummyDataBelgian(),
       generateStoreOverviewModule(),
       generateCtaNewsLetterModule(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -74,13 +74,13 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
+      generateDummyNavbarDataBelgian(),
       generatedummyShopSingleHeaderData(),
       generateDummyFeaturedDealsData(),
       dummyFeaturedShopsData(),
       generateCtaNewsLetterModule(),
       generateShopSingleBodyTextInfoDummydata(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -92,11 +92,11 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
-      generateMediumHeroDummyData(),
+      generateDummyNavbarDataBelgian(),
+      generateMediumHeroDummyDataBelgian(),
       generateDealOverviewModule(),
       generateCtaSmallModule(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -108,7 +108,7 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
+      generateDummyNavbarDataBelgian(),
       HeaderInfoDummy,
       generateDummyFeaturedCategoriesData(),
       generateDummyFeaturedDealsData(),
@@ -116,7 +116,7 @@ export const pageList: PageModel[] = [
       // generateFeaturedShopsDummyData(),
       generateCtaNewsLetterModule(),
       generateProductLineDummyData(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -128,12 +128,12 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
-      generateBlogOverviewHeaderData(),
+      generateDummyNavbarDataBelgian(),
+      generateBlogOverviewHeaderDataBelgian(),
       generateBlogOverviewData(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -145,13 +145,13 @@ export const pageList: PageModel[] = [
       description: "The landing page of the webpage"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
+      generateDummyNavbarDataBelgian(),
       generateBlogSingleHeaderData(),
       generateBlogBodyTextData(),
       generateDummyFeaturedDealsData(),
-      generateFeaturedBlogData(),
+      generateFeaturedBlogDataBelgian(),
       generateCtaNewsLetterModule(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -163,13 +163,13 @@ export const pageList: PageModel[] = [
       description: "Black Friday 2019 informative page"
     },
     wordPressPostModules: [
-      generateDummyNavbarData(),
-      generateBF2019HeaderData(),
+      generateDummyNavbarDataBelgian(),
+      generateBF2019HeaderDataBelgian(),
       generateBlackFriday2019TextData(),
       generateDummyFeaturedDealsData(),
-      generateFeaturedBlogData(),
+      generateFeaturedBlogDataBelgian(),
       generateCtaNewsLetterModule(),
-      generateDummyFooterData()
+      generateDummyFooterDataBelgian()
     ]
   } as PageModel,
   {
@@ -180,6 +180,6 @@ export const pageList: PageModel[] = [
       content: "Black Friday 2019 informative page",
       description: "Black Friday 2019 informative page"
     },
-    wordPressPostModules: [generateDummyNavbarData(), generateNotFoundModuleDummyData()]
+    wordPressPostModules: [generateDummyNavbarDataBelgian(), generateNotFoundModuleDummyData()]
   } as PageModel
 ];

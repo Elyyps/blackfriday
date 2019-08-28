@@ -9,7 +9,7 @@ import { HomepageHeader } from "@app/api/modules/homepage-header/homepage-header
 import { ModalComponent } from "@app/core/modal";
 import ReactPlayer from "react-player";
 import { HomePageHeaderContainerProps } from "../containers/homepage-header-container";
-import { IBlackFridayDate, IBlackFridayRootURL } from "@app/stores/settings";
+import { IBlackFridayDate } from "@app/stores/settings";
 
 import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 
@@ -29,7 +29,6 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
 
   return (
     <div className={styles["homepage-header"]}>
-      {`${(props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl}`}
       <div className={styles["homepage-header-top"]}>
         <div className="uk-container">
           <div className="uk-grid uk-child-width-1-2@m">

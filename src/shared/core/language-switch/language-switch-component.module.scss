@@ -7,12 +7,16 @@
     font-size: 14px;
     color: white;
   }
+  &-option {
+    color: $brand-primary !important;
+  }
   span {
     height: 25px;
     font-family: $global-font-family-secondary;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
+    color: #fff;
     &:hover {
       cursor: pointer;
       color: $global-link-color !important;

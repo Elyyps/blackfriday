@@ -13,6 +13,7 @@ import { NavBarContainerProps } from "./cointeners/nav-bar-containers";
 import { IBlackFridayDate } from "@app/stores/settings";
 import { CountDownContainer } from "@app/core/count-down/containers/count-down-containers";
 import { Link } from "react-router-dom";
+
 export interface INavBarComponentProps {
   navBarModule: INavBarModule;
 }

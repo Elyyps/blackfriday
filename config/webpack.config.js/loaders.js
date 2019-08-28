@@ -52,7 +52,8 @@ const getStyleLoaders = (cssOptions, includeSassPreprocessor, enableHotReload) =
       options: {
         // includePaths: [require("path").resolve(__dirname, "node_modules")],
         sourceMap: generateSourceMap,
-        data: `@import "src/shared/styles/variables.scss";
+        data: `@import "src/shared/styles/netherlands-variables.scss";
+                @import "src/shared/styles/variables.scss";
                  @import "src/shared/styles/global-style.scss";`
       }
     }
