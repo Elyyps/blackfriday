@@ -4,9 +4,10 @@ import { IPagebuilderComponentProps, PagebuilderComponent } from "@app/core/page
 import { IAppState } from "@app/stores";
 import { pageThunks } from "@app/middleware";
 import { PageModel } from "@app/api/pagebuilder/page.model";
-import { settingsActions, IScreenSize } from "@app/stores/settings";
+import { settingsActions, IScreenSize, IBlackFridayRootURL } from "@app/stores/settings";
 
 interface IStateProps {
+  blackFridayRootUrl: IBlackFridayRootURL | undefined;
   currentPage: PageModel | undefined;
   screenSize: IScreenSize | undefined;
 }
@@ -22,8 +23,9 @@ const mapStateToProps: MapStateToProps<
 > = state => {
   const { currentPage } = state.page;
   const { screenSize } = state.settings;
+  const blackFridayRootUrl = state.settings.blackFridayRootUrl;
 
-  return { currentPage, screenSize };
+  return { currentPage, screenSize, blackFridayRootUrl };
 };
 
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, IPagebuilderComponentProps> = dispatch => ({
