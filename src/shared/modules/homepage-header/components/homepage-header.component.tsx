@@ -29,7 +29,6 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
 
   return (
     <div className={styles["homepage-header"]}>
-      {`${(props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl}`}
       <div className={styles["homepage-header-top"]}>
         <div className="uk-container">
           <div className="uk-grid uk-child-width-1-2@m">

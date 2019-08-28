@@ -6,14 +6,12 @@ import { HomePageHeaderComponent, IHomePageHeaderComponentProps } from "../compo
 
 interface IStateProps {
   blackFridayDate: IBlackFridayDate | undefined;
-  blackFridayRootUrl: IBlackFridayRootURL | undefined;
 }
 
 const mapStateToProps: MapStateToProps<IStateProps, IHomePageHeaderComponentProps, IAppState> = state => {
   const blackFridayDate = state.settings.blackFridayDate;
-  const blackFridayRootUrl = state.settings.blackFridayRootUrl;
 
-  return { blackFridayDate, blackFridayRootUrl };
+  return { blackFridayDate };
 };
 
 export type HomePageHeaderContainerProps = IStateProps;
