@@ -1,3 +1,4 @@
-import { generateDummyNavbarData } from "./generate-dummy-data";
+import { generateDummyNavbarDataDutch, generateDummyNavbarDataBelgian } from "./generate-dummy-data";
 
-export const getNavbarModuleData = generateDummyNavbarData;
+export const getNavbarModuleDataBelgian = generateDummyNavbarDataBelgian;
+export const getNavbarModuleDataDutch = generateDummyNavbarDataDutch;

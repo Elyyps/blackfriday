@@ -8,6 +8,7 @@ import { EmptyPageComponent } from "@app/core/empty-page";
 import { ModuleComponent } from "./module.component";
 import { getViewType } from "@app/util/detect-view";
 import { HelmetComponent } from "./helmet.component";
+import { IBlackFridayRootURL } from "@app/stores/settings";
 
 export interface IPagebuilderComponentProps {}
 
@@ -38,6 +39,12 @@ export class PagebuilderComponent extends React.Component<
       window.addEventListener("resize", this.handleResize.bind(this));
       this.setScreenSize();
       TagManager.initialize(tagManagerArgs);
+    }
+    if (
+      typeof document === "object" &&
+      ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes(".be")
+    ) {
+      document.documentElement.style.setProperty("--colour-version-website", "#e10a14");
     }
   }
 

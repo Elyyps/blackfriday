@@ -4,6 +4,7 @@ import { shallow } from "enzyme";
 import { PagebuilderComponent, IPagebuilderComponentProps } from "@app/core/pagebuilder";
 import { getMockRouterProps } from "@app/util/get-mock-router-props";
 import { generatePageModel } from "./dummy-data-generator";
+import { IBlackFridayRootURL } from "@app/stores/settings";
 jest.mock("@app/api", () => "");
 
 describe("[PagebuilderComponent]", () => {
@@ -21,6 +22,7 @@ describe("[PagebuilderComponent]", () => {
         getPage={jest.fn()}
         screenSize={undefined}
         setScreenSize={jest.fn()}
+        blackFridayRootUrl={{ rootUrl: "be" } as IBlackFridayRootURL}
       />
     );
 
@@ -41,6 +43,7 @@ describe("[PagebuilderComponent]", () => {
         getPage={jest.fn()}
         screenSize={undefined}
         setScreenSize={jest.fn()}
+        blackFridayRootUrl={{ rootUrl: "be" } as IBlackFridayRootURL}
       />
     );
 

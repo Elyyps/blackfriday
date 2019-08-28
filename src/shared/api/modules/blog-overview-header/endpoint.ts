@@ -1,3 +1,7 @@
-import { generateBlogOverviewHeaderDummyData } from "./generate-dummy-data";
+import {
+  generateBlogOverviewHeaderDummyDataBelgian,
+  generateBlogOverviewHeaderDummyDataDutch
+} from "./generate-dummy-data";
 
-export const generateBlogOverviewHeaderData = generateBlogOverviewHeaderDummyData;
+export const generateBlogOverviewHeaderDataBelgian = generateBlogOverviewHeaderDummyDataBelgian;
+export const generateBlogOverviewHeaderDataDutch = generateBlogOverviewHeaderDummyDataDutch;

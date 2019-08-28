@@ -127,7 +127,6 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
                     props.clearFilters();
                     props.filtersChanged();
                   }}
-                  style={{ color: "red", cursor: "pointer" }}
                 >
                   {props.intl.formatMessage({ id: "filter-bar-clear-filters" })}({getTotalNumberOfFilters()})
                 </span>

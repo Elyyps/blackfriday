@@ -37,7 +37,8 @@ module.exports = ({ config, mode }) => {
       options: {
         includePaths: [require("path").resolve(__dirname, "node_modules")],
         sourceMap: true,
-        data: `@import "src/shared/styles/variables.scss";
+        data: `@import "src/shared/styles/netherlands-variables.scss";
+                @import "src/shared/styles/variables.scss";
                  @import "src/shared/styles/global-style.scss";`
       },
       include: path.resolve(__dirname, "../")

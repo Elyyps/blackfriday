@@ -1,7 +1,7 @@
 import { connect, MapStateToProps } from "react-redux";
 
 import { IAppState } from "@app/stores";
-import { IBlackFridayDate, IBlackFridayRootURL } from "@app/stores/settings";
+import { IBlackFridayDate } from "@app/stores/settings";
 import { HomePageHeaderComponent, IHomePageHeaderComponentProps } from "../components/homepage-header.component";
 
 interface IStateProps {

@@ -18,9 +18,9 @@
   }
 
   &__selected {
-    background-color: rgba(255, 9, 9, 0.1);
-    border-bottom: 2px solid red !important;
-    color: red !important;
+    background-color: rgba($brand-primary, 0.1);
+    border-bottom: 2px solid $brand-primary !important;
+    color: $brand-primary !important;
   }
   .uk-tab {
     margin: 0;
