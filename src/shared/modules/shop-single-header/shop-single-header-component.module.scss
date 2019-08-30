@@ -243,8 +243,6 @@
       }
 
       &__item {
-        display: flex;
-        align-items: center;
         order: 1;
         margin-bottom: 16px;
         @media (max-width: $breakpoint-xsmall-max) {

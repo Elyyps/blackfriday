@@ -1,6 +1,7 @@
 import * as React from "react";
 import styles from "./discount-card-component.module.scss";
-import { ImageComponent, Button } from "@app/prep/modules-prep/core";
+import { ImageComponent, Button } from "@app/core";
+
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { injectIntl, InjectedIntlProps } from "react-intl";
