@@ -21,7 +21,7 @@ const HeaderInfoComponent = (props: IHeaderInfoComponentProps) => {
     <div className="header-info" style={styles}>
       {props.image && (
         <div className="header-info__image">
-          <ImageComponent src={props.image} />
+          <ImageComponent isBlocking src={props.image} />
         </div>
       )}
       <div className="uk-container">
