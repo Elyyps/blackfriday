@@ -24,9 +24,6 @@
     }
     cursor: pointer;
     color: $tint-gray-light;
-    path {
-      stroke: $tint-gray-light;
-    }
     &:hover {
       span {
         color: $brand-primary;
