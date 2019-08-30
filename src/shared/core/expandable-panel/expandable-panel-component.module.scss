@@ -30,6 +30,9 @@
     a {
       font-family: $global-font-family;
       font-size: 14px;
+      &:hover {
+        color: rgba(var(--colour-version-website), 1) !important;
+      }
     }
     cursor: initial;
     ul:not([class]) > li:not(:first-child) {

@@ -19,7 +19,9 @@ export const moduleFetcher: any = () => async (
       return next();
     }
     const pageUrl = req.url;
-    const currentPage = belgianPageList.find(pageItem => pageItem.route === pageUrl);
+    const currentPage = (req.get("host") as string).includes(".be")
+      ? belgianPageList.find(pageItem => pageItem.route === pageUrl)
+      : dutchPageList.find(pageItem => pageItem.route === pageUrl);
 
     const empty: any = {};
 
