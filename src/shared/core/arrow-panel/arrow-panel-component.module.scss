@@ -23,12 +23,12 @@
     -ms-transform: perspective(1px) translateZ(0) scale(1.02);
     -webkit-transform: perspective(1px) translateZ(0) scale(1.02);
     .title {
-      color: $brand-primary;
+      color: rgba(var(--colour-version-website), 1);
     }
 
     .icon {
       svg {
-        stroke: $brand-primary;
+        stroke: rgba(var(--colour-version-website), 1);
       }
     }
   }

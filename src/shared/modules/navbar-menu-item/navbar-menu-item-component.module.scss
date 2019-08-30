@@ -40,11 +40,11 @@
   }
   &__clicked {
     a {
-      color: $brand-primary;
+      color: rgba(var(--colour-version-website), 1);
     }
     .navbar-menu-item__expandable__icon {
       path {
-        stroke: $brand-primary;
+        stroke: rgba(var(--colour-version-website), 1);
       }
     }
   }
@@ -62,12 +62,12 @@
       cursor: pointer;
       &:hover {
         a {
-          color: $brand-primary;
+          color: rgba(var(--colour-version-website), 1);
         }
 
         .navbar-menu-item__expandable__icon {
           path {
-            stroke: $brand-primary;
+            stroke: rgba(var(--colour-version-website), 1);
           }
         }
       }

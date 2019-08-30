@@ -1,8 +1,8 @@
 .label {
-  background-color: var(--colour-version-website);
+  background-color: rgba(var(--colour-version-website), 0.15);
   font-size: 12px;
   font-weight: bold;
-  color: $brand-primary;
+  color: rgba(var(--colour-version-website), 1);
   padding: 6px 10px;
   display: inline-flex;
   text-transform: uppercase;
@@ -19,7 +19,7 @@
     bottom: 0;
     content: "";
     border: 14px solid transparent;
-    border-right-color: rgba($brand-primary, 0.15);
+    border-right-color: rgba(var(--colour-version-website), 0.15);
   }
 }
 
@@ -31,6 +31,6 @@
     bottom: 0;
     content: "";
     border: 14px solid transparent;
-    border-left-color: rgba($brand-primary, 0.15);
+    border-left-color: rgba(var(--colour-version-website), 0.15);
   }
 }

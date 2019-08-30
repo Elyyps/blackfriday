@@ -39,7 +39,7 @@
     display: block;
     &::-webkit-input-placeholder,
     &::-moz-placeholder,
-    &:-ms-input-placeholder{
+    &:-ms-input-placeholder {
       color: $gray-light;
     }
     &:focus {
@@ -51,7 +51,7 @@
       border-color: $global-danger-background;
     }
   }
-  &-bottom{
+  &-bottom {
     display: flex;
     justify-content: flex-end;
   }
@@ -140,7 +140,7 @@
     // Box checked
     &:checked + label:before {
       box-shadow: none;
-      background: $brand-primary
+      background: rgba(var(--colour-version-website), 1)
         url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxNCAxMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwb2x5Z29uIGZpbGw9IiNmZmYiIHBvaW50cz0iMTIgMSA1IDcuNSAyIDUgMSA1LjUgNSAxMCAxMyAxLjUiLz4KPC9zdmc+")
         no-repeat 50% 50%;
       background-size: 10px 10px;

@@ -19,7 +19,7 @@ a {
   letter-spacing: normal;
   color: black;
   &:hover {
-    color: $brand-primary;
+    color: rgba(var(--colour-version-website), 1);
     text-decoration: none;
   }
 }
@@ -48,7 +48,7 @@ ul {
         top: 0.7em;
         left: 0;
         border-radius: 50%;
-        background-color: $brand-primary !important;
+        background-color: rgba(var(--colour-version-website), 1) !important;
       }
       &:not(:first-child) {
         margin-top: 8px;
@@ -97,7 +97,7 @@ ol {
       position: absolute;
       top: 0;
       left: 5px;
-      color: $brand-primary;
+      color: rgba(var(--colour-version-website), 1);
     }
     &:nth-child(n + 2) {
       margin-top: 8px;

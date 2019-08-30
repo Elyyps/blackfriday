@@ -40,11 +40,19 @@ export class PagebuilderComponent extends React.Component<
       this.setScreenSize();
       TagManager.initialize(tagManagerArgs);
     }
+    const red = "225,10,20";
+    const orange = "255,106,4";
+
     if (
       typeof document === "object" &&
       ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes(".be")
     ) {
-      document.documentElement.style.setProperty("--colour-version-website", "#e10a14");
+      document.documentElement.style.setProperty("--colour-version-website", red);
+    } else if (
+      typeof document === "object" &&
+      ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes(".nl")
+    ) {
+      document.documentElement.style.setProperty("--colour-version-website", orange);
     }
   }
 

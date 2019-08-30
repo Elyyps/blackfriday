@@ -23,7 +23,7 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    background-color: $brand-primary;
+    background-color: rgba(var(--colour-version-website), 1);
     color: $global-inverse-color;
     text-transform: uppercase;
     font-size: 11px;
@@ -123,8 +123,8 @@
     > span {
       box-sizing: border-box;
 
-      background: rgba($brand-primary, 0.1);
-      color: $brand-primary;
+      background: rgba(var(--colour-version-website), 0.1);
+      color: rgba(var(--colour-version-website), 1);
       padding: 1px 5px;
       display: inline-table;
       @media (max-width: 768px) {
@@ -146,7 +146,7 @@
   }
 
   &__price-new {
-    color: $brand-primary;
+    color: rgba(var(--colour-version-website), 1);
     font-size: 14px;
     font-family: $global-font-family-secondary;
   }

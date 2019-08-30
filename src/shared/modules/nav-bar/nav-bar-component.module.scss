@@ -40,8 +40,8 @@
     }
   }
   &__label {
-    background: rgba($brand-primary, 0.15);
-    color: $brand-primary;
+    background: rgba(var(--colour-version-website), 0.15);
+    color: rgba(var(--colour-version-website), 1);
     display: inline-flex;
     align-items: center;
     position: relative;
@@ -58,7 +58,7 @@
       bottom: 0;
       content: "";
       border: 14px solid transparent;
-      border-right-color: rgba($brand-primary, 0.15);
+      border-right-color: rgba(var(--colour-version-website), 0.15);
     }
   }
   &__navigation {
@@ -77,9 +77,6 @@
       font-family: $global-font-family-secondary;
       font-size: 14px;
       font-weight: 600;
-      &:hover {
-        color: $global-link-color;
-      }
     }
   }
   &__search-button {
@@ -88,7 +85,7 @@
       cursor: pointer;
       width: 50px;
       height: 50px;
-      border: 2px solid $brand-primary;
+      border: 2px solid rgba(var(--colour-version-website), 1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -97,7 +94,7 @@
         width: 45px;
       }
       path {
-        fill: $brand-primary;
+        fill: rgba(var(--colour-version-website), 1);
       }
     }
   }
