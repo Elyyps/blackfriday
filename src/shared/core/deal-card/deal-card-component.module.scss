@@ -103,6 +103,9 @@
       flex-direction: column;
       text-align: left;
       align-items: baseline;
+      > * {
+        margin-right: auto;
+      }
     }
   }
   &__button {
