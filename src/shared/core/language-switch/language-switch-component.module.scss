@@ -19,7 +19,7 @@
     color: #fff;
     &:hover {
       cursor: pointer;
-      color: $global-link-color !important;
+      color: rgba(var(--colour-version-website), 1) !important;
     }
   }
 }

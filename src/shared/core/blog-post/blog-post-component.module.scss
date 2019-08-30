@@ -53,7 +53,7 @@
     }
   }
   &__link {
-    color: $global-link-color;
+    color: rgba(var(--colour-version-website), 1);
     font-weight: 600;
   }
 }

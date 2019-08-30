@@ -50,7 +50,7 @@ export class PagebuilderComponent extends React.Component<
       document.documentElement.style.setProperty("--colour-version-website", red);
     } else if (
       typeof document === "object" &&
-      ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes(".nl")
+      ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes("localhost")
     ) {
       document.documentElement.style.setProperty("--colour-version-website", orange);
     }

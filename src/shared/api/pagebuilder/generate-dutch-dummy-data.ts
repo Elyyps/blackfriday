@@ -15,7 +15,7 @@ import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-
 import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
 import { generateBlogSingleHeaderData, generateBF2019HeaderDataDutch } from "../modules/blog-single-header/endpoint";
 import { generateBlogOverviewHeaderDataDutch } from "../modules/blog-overview-header/endpoint";
-import { generateBlogOverviewData } from "../modules/blog-overview/endpoint";
+import { generateBlogOverviewDataDutch } from "../modules/blog-overview/endpoint";
 import { generateDummyFeaturedCategoriesData } from "../modules/featured-categories/generate-dummy-data";
 import { generateFeaturedBlogDataDutch } from "../modules/featured-blog/endpoint";
 import { generatedummyShopSingleHeaderData } from "../modules/shop-single-header/generate-dummy-data";
@@ -130,7 +130,7 @@ export const dutchPageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarDataDutch(),
       generateBlogOverviewHeaderDataDutch(),
-      generateBlogOverviewData(),
+      generateBlogOverviewDataDutch(),
       generateDummyFeaturedDealsData(),
       generateCtaNewsLetterModule(),
       generateDummyFooterDataDutch()
