@@ -7,6 +7,7 @@ import { ShadowCardComponent } from "../shadow-card";
 import { ClickableComponent } from "@app/core/clickable";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { Deal } from "@app/api/core/deal/deal";
+import { Link } from "react-router-dom";
 
 interface IDealCardComponentProps {
   deal: Deal;
@@ -26,8 +27,9 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
           </div>
         )}
         <div className={styles["deal-card__body"]}>
-          <ImageComponent className={styles["deal-card__image"]} src={image} />
-
+          <Link to={moreInfoLink}>
+            <ImageComponent className={styles["deal-card__image"]} src={image} />
+          </Link>
           <div className={styles["deal-card__content"]}>
             <div className={styles["deal-card__subtitle"]}>{stores.map(store => store)}</div>
             <div className={styles["deal-card__title"]}>{name}</div>

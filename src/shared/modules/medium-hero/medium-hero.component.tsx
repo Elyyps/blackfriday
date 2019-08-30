@@ -20,7 +20,7 @@ const MediumHeroComponent = (props: IMediumHeroComponentProps) => {
         </div>
         <div className={styles["holder"]}>
           <div className={styles["image"]}>
-            <ImageComponent src={image} alt="temp alt" />
+            <ImageComponent src={image} isBlocking alt="temp alt" />
           </div>
           {headerContent && (
             <div className={styles["content"]}>

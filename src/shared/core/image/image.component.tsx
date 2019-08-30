@@ -4,7 +4,7 @@ import styles from "./image-component.module.scss";
 import ReactSVG from "react-svg";
 import IconDefault from "@assets/icons/no-image.svg";
 import { IconComponent } from "@app/core/icon";
-
+const OFFSET_LAZYLOADING = 200;
 export interface IImageComponentProps
   extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   className?: string;
@@ -44,7 +44,7 @@ const ImageComponent = (
   }
 
   return (
-    <LazyLoad>
+    <LazyLoad offset={OFFSET_LAZYLOADING}>
       {other.src.includes("svg") ? (
         <ReactSVG fallback={() => <span>Error!</span>} loading={() => <span />} src={other.src} className={style} />
       ) : (
