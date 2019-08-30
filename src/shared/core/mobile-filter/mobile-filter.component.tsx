@@ -74,10 +74,12 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
   const enableScroll = () => {
     document.documentElement.style.overflow = "unset";
     document.body.style.overflow = "unset";
+    document.body.style.position = "relative";
   };
   const disableScroll = () => {
     document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
   };
 
   const checkScroll = () => {
@@ -95,8 +97,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
     checkScroll();
 
     return () => {
-      document.body.style.overflow = "unset";
-      document.documentElement.style.overflow = "unset";
+      enableScroll();
     };
   }, [isFilterOpened]);
 
@@ -106,10 +107,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
 
   React.useEffect(() => {
     checkScroll();
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     return () => {
-      document.body.style.overflow = "unset";
-      document.documentElement.style.overflow = "unset";
+      enableScroll();
     };
   }, []);
 
