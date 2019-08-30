@@ -102,9 +102,9 @@ $buttonVariants: "primary-default" $global-inverse-color $global-inverse-color,
   &--tertiary {
     color: $gray-dark !important;
     background-color: transparent;
-    -webkit-box-shadow: inset 0px 0px 0px 2px $brand-primary;
-    -moz-box-shadow: inset 0px 0px 0px 2px $brand-primary;
-    box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    -webkit-box-shadow: inset 0px 0px 0px 2px rgba(var(--colour-version-website), 1);
+    -moz-box-shadow: inset 0px 0px 0px 2px rgba(var(--colour-version-website), 1);
+    box-shadow: inset 0px 0px 0px 2px rgba(var(--colour-version-website), 1);
     &:hover {
       -webkit-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
       -moz-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);
@@ -117,9 +117,9 @@ $buttonVariants: "primary-default" $global-inverse-color $global-inverse-color,
   &--tertiary-inverted {
     color: $global-inverse-color;
     background-color: transparent;
-    -webkit-box-shadow: inset 0px 0px 0px 2px $brand-primary;
-    -moz-box-shadow: inset 0px 0px 0px 2px $brand-primary;
-    box-shadow: inset 0px 0px 0px 2px $brand-primary;
+    -webkit-box-shadow: inset 0px 0px 0px 2px rgba(var(--colour-version-website), 1);
+    -moz-box-shadow: inset 0px 0px 0px 2px rgba(var(--colour-version-website), 1);
+    box-shadow: inset 0px 0px 0px 2px rgba(var(--colour-version-website), 1);
 
     &:hover {
       -webkit-box-shadow: inset 0px 0px 0px 2px darken($brand-primary, 7%);

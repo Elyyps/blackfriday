@@ -29,10 +29,10 @@
     }
     &:hover {
       span {
-        color: $brand-primary;
+        color: rgba(var(--colour-version-website), 1);
       }
       path {
-        stroke: $brand-primary;
+        stroke: rgba(var(--colour-version-website), 1);
       }
     }
     &__menu {
@@ -48,7 +48,7 @@
         color: $gray-dark;
       }
       &:hover {
-        color: $brand-primary;
+        color: var(--colour-version-website);
       }
     }
     > div {

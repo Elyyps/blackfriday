@@ -8,7 +8,7 @@
     color: white;
   }
   &-option {
-    color: $brand-primary !important;
+    color: rgba(var(--colour-version-website), 1) !important;
   }
   span {
     height: 25px;

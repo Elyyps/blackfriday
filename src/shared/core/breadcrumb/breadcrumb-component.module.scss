@@ -41,9 +41,9 @@
     a {
       color: $gray-light !important;
       &:hover {
-        color: $brand-primary !important;
+        color: rgba(var(--colour-version-website), 1) !important;
         span {
-          stroke: $brand-primary !important;
+          stroke: rgba(var(--colour-version-website), 1) !important;
         }
       }
     }
