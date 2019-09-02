@@ -31,6 +31,8 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
   const { filterItems, onClear } = props;
   const [isFilterOpened, setIsFilterOpened] = useState<boolean>(false);
 
+  const scrollAddition = 0.01;
+
   const onFinishHandler = () => {
     const selectedItems: IMobileFilterSelectedItems[] = filterItems.map(item => ({
       title: item.title,
@@ -107,7 +109,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
 
   React.useEffect(() => {
     checkScroll();
-    const vh = window.innerHeight * 0.01;
+    const vh = window.innerHeight * scrollAddition;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     return () => {
