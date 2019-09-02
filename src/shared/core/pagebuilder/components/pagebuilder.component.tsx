@@ -46,7 +46,7 @@ export class PagebuilderComponent extends React.Component<
 
     if (
       typeof document === "object" &&
-      ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes("host")
+      ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes(".be")
     ) {
       // document.documentElement.style.setProperty("--colour-version-website", red);
       cssVars({
