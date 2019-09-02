@@ -48,6 +48,7 @@ exports[`[MediumHero] should render component without crashing 1`] = `
       >
         <ImageComponent
           alt="temp alt"
+          isBlocking={true}
           src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/store-banner.jpg"
         />
       </div>

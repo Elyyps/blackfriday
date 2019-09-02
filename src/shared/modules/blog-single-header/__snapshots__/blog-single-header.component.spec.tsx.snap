@@ -42,6 +42,7 @@ exports[`[BlogSingleHeader] should render component without crashing 1`] = `
       className="image"
     >
       <ImageComponent
+        isBlocking={true}
         src="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/blog/2.png"
       />
     </div>
