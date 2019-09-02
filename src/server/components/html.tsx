@@ -17,6 +17,8 @@ const HTML = ({ children, css = [], scripts = [], state = "{}" }: Props) => {
         <meta charSet="utf-8" />
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes"></meta>
         {head.base.toComponent()}
         {head.title.toComponent()}
         {head.meta.toComponent()}

@@ -29,7 +29,7 @@ const BlogSingleHeaderComponent = (props: IBlogSingleHeaderComponentProps) => {
       <div className="uk-container">
         {image && (
           <div className={styles["image"]}>
-            <ImageComponent src={image} />
+            <ImageComponent src={image} isBlocking />
           </div>
         )}
       </div>

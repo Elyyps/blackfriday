@@ -43,19 +43,27 @@ export class PagebuilderComponent extends React.Component<
     }
     const red = "225,10,20";
     const orange = "255,106,4";
-    cssVars({
-      // preserveStatic: true // default
-    });
+
     if (
       typeof document === "object" &&
       ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes("host")
     ) {
-      document.documentElement.style.setProperty("--colour-version-website", red);
+      // document.documentElement.style.setProperty("--colour-version-website", red);
+      cssVars({
+        variables: {
+          "--colour-version-website": red
+        }
+      });
     } else if (
       typeof document === "object" &&
       ((this.props.blackFridayRootUrl as IBlackFridayRootURL).rootUrl as string).includes(".nl")
     ) {
-      document.documentElement.style.setProperty("--colour-version-website", orange);
+      // document.documentElement.style.setProperty("--colour-version-website", orange);
+      cssVars({
+        variables: {
+          "--colour-version-website": orange
+        }
+      });
     }
   }
 

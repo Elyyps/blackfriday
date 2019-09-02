@@ -1,10 +1,12 @@
 import * as React from "react";
 import styles from "./discount-card-component.module.scss";
-import { ImageComponent, Button } from "@app/prep/modules-prep/core";
+import { ImageComponent } from "@app/core";
+
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { getStatusBarColor } from "@app/util/get-status-bar-color";
+import { ClickableComponent } from "../clickable";
 
 interface IDiscountCardComponentProps {
   buttonLink: string;
@@ -68,7 +70,7 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
             <div className={styles["discount-card__tooltip__arrow"]} />
           </div>
         )}
-        <Button title={buttonText} href={buttonLink} variant={"primary"} icon={IconDefault} />
+        <ClickableComponent iconRight={IconDefault} title={buttonText} href={buttonLink} variant={"primary-default"} />
       </div>
     </div>
   );
