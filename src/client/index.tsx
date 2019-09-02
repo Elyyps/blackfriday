@@ -19,7 +19,6 @@ const store =
     initialState: window.__PRELOADED_STATE__,
     history
   });
-
 hydrate(
   <Provider store={store}>
     <Router>
