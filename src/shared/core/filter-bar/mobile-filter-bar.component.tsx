@@ -63,7 +63,7 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
           }
         });
       }
-      if (item.title === "Categorieen") {
+      if (item.title === "Categorieën") {
         categoryFilters.forEach((filter: FilterItem) => {
           if (item.selectedItems.includes(filter.displayName)) {
             filter.isSelected = true;
@@ -139,14 +139,14 @@ const getMobileFilterItems = (
   },
   {
     hasSearchBar: true,
-    title: "Categorieen",
-    searchBarPlaceholder: "Categorieen zoeken",
+    title: "Categorieën",
+    searchBarPlaceholder: "Categorieën zoeken",
     selectedItems: [...getSelectedFilterItems(categoryFilterItems)],
     items: [...getFilterItems(categoryFilterItems)]
   },
   {
     hasSearchBar: true,
-    title: "Merk",
+    title: "Merken",
     searchBarPlaceholder: "Merk zoeken",
     selectedItems: [...getSelectedFilterItems(brandfilterItems)],
     items: [...getFilterItems(brandfilterItems)]
