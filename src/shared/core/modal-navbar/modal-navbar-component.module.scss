@@ -19,11 +19,15 @@
     color: $global-inverse-color;
     display: flex;
     align-items: center;
-    @media (max-width: $breakpoint-small) {
-      margin-left: 20px;
-    }
+    width: 20px;
+    padding: 4px;
+    margin-left: 16px;
+   
     cursor: pointer;
     color: $tint-gray-light;
+    path {
+      stroke: $global-inverse-color;
+    }
     &:hover {
       span {
         color: rgba(var(--colour-version-website), 1);

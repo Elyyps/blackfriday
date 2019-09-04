@@ -70,7 +70,7 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
             <div className={styles["discount-card__tooltip__arrow"]} />
           </div>
         )}
-        <ClickableComponent iconRight={IconDefault} title={buttonText} href={buttonLink} variant={"primary-default"} />
+        <ClickableComponent iconFillColor="white" iconRight={IconDefault} title={buttonText} href={buttonLink} variant={"primary-default"} />
       </div>
     </div>
   );
