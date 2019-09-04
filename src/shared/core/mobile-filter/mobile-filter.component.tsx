@@ -12,10 +12,12 @@ import { IMobileFilterItem } from "./mobile-filter-item";
 import { SingleFilterComponent } from "./pages/single-page-filter";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { MobileFilterContainerProps } from "./containers/mobile-filter-container";
+import { FilterItem } from "@app/api/core/filter/filter-item";
 
 export interface IMobileFilterComponentProps {
   filterItems: IMobileFilterItem[];
   onClear: () => void;
+  onFilterChange: (items: IMobileFilterItem[]) => void;
   onFinish: (selectedItems: IMobileFilterSelectedItems[]) => void;
   totalStores: number;
 }
@@ -42,6 +44,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
     setIsFilterOpened(false);
   };
 
+  const getNumberOfSelectedfilters = (filterItems: IMobileFilterItem) => filterItems.items.filter(item => item).length;
   const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
     if (currentFilterItems && currentFilterItem) {
       currentFilterItems.forEach(item => {
@@ -52,6 +55,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
 
       setCurrentFilterItems(currentFilterItems);
     }
+    props.onFilterChange(currentFilterItems);
   };
 
   const onClearHandler = () => {
@@ -223,7 +227,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
               variant="primary-brand"
               fullWidth
               onClick={onFinishHandler}
-              title={props.intl.formatMessage({ id: "mobile-filter-button" })}
+              title={props.intl.formatMessage({ id: "mobile-filter-button" }) + " " + props.totalStores}
             />
           </div>
         </div>

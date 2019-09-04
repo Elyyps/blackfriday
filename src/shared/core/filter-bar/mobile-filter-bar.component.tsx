@@ -20,9 +20,9 @@ export interface IStoresMobileFilterBarComponentProps {
   statusFilterItems: FilterItem[];
 }
 
-const totalStores = 10; // TODO: calculate filter totals!
 const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentProps) => {
   const [mobileFilters, setMobileFilters] = useState<IMobileFilterItem[]>([]);
+  const [totalStores, setTotalStores] = useState<number>(0);
 
   useEffect(() => {
     setMobileFilters(
@@ -36,6 +36,33 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
     );
   }, [props.brandFilterItems, props.categoryFilterItems, props.sortBy, props.sortByOptions, props.statusFilterItems]);
 
+  const calculateStoreNumbers = (selectedItems: IMobileFilterSelectedItems[]) => {
+    let count = 0;
+    selectedItems.map(item => {
+      if (item.title === "Merken") {
+        props.brandFilterItems.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            if (filter.totalAmount) count += filter.totalAmount;
+          }
+        });
+      }
+      if (item.title === "Categorieën") {
+        props.categoryFilterItems.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            if (filter.totalAmount) count += filter.totalAmount;
+          }
+        });
+      }
+      if (item.title === "Status") {
+        props.statusFilterItems.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            if (filter.totalAmount) count += filter.totalAmount;
+          }
+        });
+      }
+    });
+    setTotalStores(count);
+  };
   const handleFinishSearch = (selectedItems: IMobileFilterSelectedItems[]) => {
     const brandFilters = props.brandFilterItems.map((filter: FilterItem) => {
       const result = { ...filter, isSelected: false };
@@ -101,12 +128,14 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
 
       return result;
     });
-
+    setTotalStores(0);
     props.onFiltersChanged(clearedBrandFilters, clearedCategoryFilters, clearedStatusFilters, "Relevantie");
+
   };
 
   return (
     <MobileFilterContainer
+      onFilterChange={calculateStoreNumbers}
       onFinish={handleFinishSearch}
       totalStores={totalStores}
       onClear={clearAllFilters}
