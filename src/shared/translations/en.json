@@ -6,7 +6,6 @@
   "search-empty-state": "No results found for your search",
   "search-all-subjects": "Search in all subjects",
   "mobile-filter-title": "Filter",
-  "mobile-filter-button": "Toon {totalStores} Winkels.",
   "tab-winkels": "Stores",
   "tab-productdeals": "Product deals",
   "store-overview-message": "No Black Friday, but a lot of benefits!",
@@ -26,5 +25,7 @@
   "filter-bar-brand-filter-title": "Brand",
   "filter-bar-status-filter-title": "Status",
   "filter-bar-stores-filter-title": "Stores",
+  "mobile-filter-button": "Toon {totalStores} winkels",
+  "mobile-filter-button-all-stores": "Toon alle winkels",
   "count-down-blackfriday": "BLACK FRIDAY"
 }

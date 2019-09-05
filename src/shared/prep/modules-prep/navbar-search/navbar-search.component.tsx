@@ -21,7 +21,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   },
   {
@@ -31,7 +31,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   },
   {
@@ -41,7 +41,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   },
   {
@@ -51,7 +51,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   }
 ];
@@ -63,7 +63,7 @@ const SearchItems = [
     range: ".7",
     content: "Een selectie van bizarre vele aanbiedingen.",
     image: CoolBlue,
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   }
 ];

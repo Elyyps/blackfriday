@@ -227,7 +227,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
               variant="primary-brand"
               fullWidth
               onClick={onFinishHandler}
-              title={props.intl.formatMessage({ id: "mobile-filter-button" }) + " " + props.totalStores}
+              title={
+                props.totalStores
+                  ? props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores: props.totalStores })
+                  : props.intl.formatMessage({ id: "mobile-filter-button-all-stores" })
+              }
             />
           </div>
         </div>
