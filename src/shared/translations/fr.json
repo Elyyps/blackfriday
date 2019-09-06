@@ -30,5 +30,7 @@
   "day": "jour",
   "days": "jours",
   "month": "mois",
-  "months": "mois"
+  "months": "mois",
+  "search-empty-state": "Aucun résultat n'a été trouvé pour votre recherche",
+  "shop-single-benefits": "Les avantages du shopping chez"
 }

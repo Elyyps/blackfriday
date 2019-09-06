@@ -48,7 +48,7 @@
     width: 100%;
     margin-bottom: 8px;
     &:hover {
-      background-color: #caf7d6;
+      background-color: #caf7d6 !important;
     }
   }
   &__tooltip {
@@ -136,6 +136,7 @@
     flex: 0 0 auto;
     cursor: pointer;
     position: relative;
+
     > * {
       width: 100%;
     }

@@ -6,7 +6,7 @@ exports[`[Sidebar] should render component without crashing 1`] = `
 >
   <InjectIntl(component)
     buttonLink="/deals-overview"
-    buttonTitle="Meer deals"
+    buttonTitle="Naar deals"
     image={
       Object {
         "alt": "Ad picture",

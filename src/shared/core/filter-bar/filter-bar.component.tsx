@@ -42,7 +42,7 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
     props.setSortBy(sortByString);
   };
 
-  const sortByOptions = ["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"];
+  const sortByOptions = ["Relevantie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"];
 
   const getTotalNumberOfFilters = (): number =>
     props.statusFilterItems.filter(item => item.isSelected).length +
@@ -145,7 +145,7 @@ const component = (props: IFilterBarProps & FilterBarContainerProps & InjectedIn
               {/* className={styles["filter__sort-change"]} */}
               {/* {orderBy} */}
               <SelectComponent
-                options={["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
+                options={["Relevantie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
                 onSelect={setSort}
               />
             </div>

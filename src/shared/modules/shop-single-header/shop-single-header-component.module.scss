@@ -246,8 +246,13 @@
         order: 1;
         margin-bottom: 16px;
         @media (max-width: $breakpoint-xsmall-max) {
-          flex: 1 1 100%;
+          width: 100%;
           justify-content: space-between;
+
+          display: flex;
+          a {
+            justify-content: initial;
+          }
           & + .actions__item {
             order: 0;
             margin-bottom: 16px;

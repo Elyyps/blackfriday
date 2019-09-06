@@ -12,7 +12,19 @@
   }
 
   &__not-found {
-    margin-left: 16px;
+    text-align: center;
+    span {
+      font-weight: bold;
+    }
+  }
+  &__see-more {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    > div {
+      width: 45%;
+    }
   }
   &__icon {
     position: absolute;

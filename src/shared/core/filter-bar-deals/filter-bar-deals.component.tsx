@@ -41,7 +41,7 @@ const component = (props: IFilterBarDealsProps & FilterBarDealsContainerProps & 
     props.setSortBy(sortByString);
   };
 
-  const sortByOptions = ["Relevatie", "Nieuwste", "Populair", "Deals A - Z", "Deals Z - A"];
+  const sortByOptions = ["Relevantie", "Nieuwste", "Populair", "Deals A - Z", "Deals Z - A"];
 
   const getTotalNumberOfFilters = (): number =>
     props.storeFilterItems.filter(item => item.isSelected).length +
@@ -153,13 +153,13 @@ const component = (props: IFilterBarDealsProps & FilterBarDealsContainerProps & 
               <span className={styles["amount-of-shops"]}>
                 <IconComponent icon={DealIcon} size={"20px"} />
               </span>
-              {props.totalResults} {props.intl.formatMessage({ id: "tab-winkels" })}
+              {props.totalResults} {props.intl.formatMessage({ id: "tab-productdeals" })}
             </div>
             <div className={styles["filter__sort-item"]}>
               {/* className={styles["filter__sort-change"]} */}
               {/* {orderBy} */}
               <SelectComponent
-                options={["Relevatie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
+                options={["Relevantie", "Nieuwste", "Populair", "Winkels A - Z", "Winkels Z - A"]}
                 onSelect={setSort}
               />
             </div>

@@ -3,7 +3,7 @@ import CoolBlue from "@assets/cool-blue.svg";
 
 export const generateDummyBannerComponentData = (): Banner => ({
   title: "Black Friday bij Coolblue",
-  buttonTitle: "Meer deals",
+  buttonTitle: "Naar deals",
   buttonLink: "/deals-overview",
   image: {
     src: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",

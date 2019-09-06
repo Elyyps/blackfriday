@@ -2,8 +2,10 @@ import { connect, MapStateToProps, MapDispatchToProps } from "react-redux";
 import { LanguageSwitchComponent } from "./language-switch.component";
 import { IAppState } from "@app/stores";
 import { localesActions } from "@app/stores/locales";
+import { IBlackFridayRootURL } from "@app/stores/settings";
 
 interface IStateProps {
+  blackFridayRootUrl: IBlackFridayRootURL | undefined;
   currentLocale: string;
 }
 interface IDispatchProps {
@@ -12,8 +14,9 @@ interface IDispatchProps {
 
 const mapStateToProps: MapStateToProps<IStateProps, {}, IAppState> = state => {
   const { locale } = state.locales;
+  const blackFridayRootUrl = state.settings.blackFridayRootUrl;
 
-  return { currentLocale: locale };
+  return { currentLocale: locale, blackFridayRootUrl };
 };
 
 const mapDispatchToProps: MapDispatchToProps<IDispatchProps, {}> = dispatch => ({

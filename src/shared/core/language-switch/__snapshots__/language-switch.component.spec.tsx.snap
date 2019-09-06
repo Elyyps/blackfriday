@@ -2,6 +2,11 @@
 
 exports[`[LanguageSwitch] should render component without crashing 1`] = `
 <component
+  blackFridayRootUrl={
+    Object {
+      "rootUrl": "be",
+    }
+  }
   currentLocale="nl"
   intl={
     Object {

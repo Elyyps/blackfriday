@@ -12,9 +12,9 @@ export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
       label: "HOT",
       moreInfoLink: "/deals-overview",
       name: "Pocketveermatas Pocket Comfort x2001",
-      newPrice: "€2.429",
-      oldPrice: "€3.429",
-      sale: "Bespaar 40%",
+      newPrice: 2429,
+      oldPrice: 3429,
+      sale: "Bespaar -40%",
       stores: ["Mediamarkt"]
     },
     {
@@ -26,9 +26,9 @@ export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
       label: "HOT",
       moreInfoLink: "/deals-overview",
       name: "Pocketveermatas Pocket Comfort x2000",
-      newPrice: "€2.429",
-      oldPrice: "€3.429",
-      sale: "Bespaar 40%",
+      newPrice: 2429,
+      oldPrice: 3429,
+      sale: "Bespaar -40%",
       stores: ["Mediamarkt"]
     },
     {
@@ -40,9 +40,9 @@ export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
       label: "HOT",
       moreInfoLink: "/deals-overview",
       name: "Pocketveermatas Pocket Comfort x2000",
-      newPrice: "€2.429",
-      oldPrice: "€3.429",
-      sale: "Bespaar 40%",
+      newPrice: 2429,
+      oldPrice: 3429,
+      sale: "Bespaar -40%",
       stores: ["Mediamarkt"]
     },
     {
@@ -54,9 +54,9 @@ export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
       label: "HOT",
       moreInfoLink: "/deals-overview",
       name: "Pocketveermatas Pocket Comfort x2000",
-      newPrice: "€2.429",
-      oldPrice: "€3.429",
-      sale: "Bespaar 40%",
+      newPrice: 2429,
+      oldPrice: 3429,
+      sale: "Bespaar -40%",
       stores: ["Mediamarkt"]
     }
   ],
@@ -65,6 +65,8 @@ export const generateDummyFeaturedDealsData = (): FeaturedDealsModule => ({
     title: "Wij hebben meer winkels in ons overzicht",
     link: { url: "/stores-overview", title: "Alle winkels" }
   },
+  topPadding: { desktopSpacing: 72, mobileSpacing: 48 },
+
   bottomPadding: { desktopSpacing: 72, mobileSpacing: 48 },
   background: { backgroundColour: "#f7f7f7" },
   id: "1",

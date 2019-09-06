@@ -7,9 +7,9 @@ export interface IKeywordTagComponentProps {
 }
 
 const KeywordTagComponent = (props: IKeywordTagComponentProps) => (
-  <div style={props.style} className={styles["keyword-tag"]}>
+  <a style={props.style} className={styles["keyword-tag"]} href={"/stores-overview"}>
     {props.children}
-  </div>
+  </a>
 );
 
 export { KeywordTagComponent };

@@ -14,6 +14,7 @@ export const generateDummyNavbarDataBelgian = (): INavBarModule => ({
   logo: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/logo-blackfriday.svg",
   id: "1",
   name: "NavBarModule",
+
   navbarMenuItem: [
     { url: "./stores-overview", text: "Winkels" } as MenuItemLink,
     { url: "./deals-overview", text: "Productdeals" } as MenuItemLink,

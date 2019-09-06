@@ -47,6 +47,7 @@ const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderCont
 
   const [isMobile, setIsMobile] = React.useState(false);
   const [isSeeMorePressed, setIsSeeMorePressed] = React.useState(false);
+  const myRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const mobileBreakpoint = 769;
@@ -97,7 +98,7 @@ const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderCont
                   <div style={{ position: "relative" }} className={styles["content"]}>
                     <div className={styles["content__head"]}>
                       <h1 style={{ margin: "0" }}>{title}</h1>
-                      <div className={`${styles["content__head__stars"]} uk-visible@s`}>
+                      <div className={`${styles["content__head__stars"]} uk-visible@s`} ref={myRef}>
                         <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                         <span>{rating.text}</span>
                       </div>
@@ -135,8 +136,11 @@ const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderCont
                         </a>
                       ))}
                     {checkList && (
-                      <div className="uk-visible@s">
-                        <h4>{CheckListTitle}</h4>
+                      <div>
+                        <h4>
+                          {props.intl.formatMessage({ id: "shop-single-benefits" })} {}
+                          {CheckListTitle}
+                        </h4>
                         <div className={styles["product-detail__list"]}>
                           {checkList.map((item, key) => (
                             <div key={key} className={styles["product-detail__list__item"]}>
@@ -159,7 +163,6 @@ const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderCont
                           iconStyle="filled"
                           iconRight={IconDefault}
                         />
-
                         <div className={`${styles["content__head__stars"]} uk-hidden@s`}>
                           <StarsRatingComponent rating={rating.value} voteTrigger={() => {}} />
                           {rating.text}
@@ -167,7 +170,7 @@ const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderCont
                       </div>
                       <div className={styles["actions__item"]}>
                         <div className={styles["actions__item-wrap"]}>
-                          <div className="uk-hidden@s">
+                          <div className="uk-hidden@s" style={{ display: "none" }}>
                             <Button
                               icon={HeartIcon}
                               iconPosition="left"
@@ -183,7 +186,7 @@ const component = (props: IShopSingleHeaderComponentProps & ShopSingleHeaderCont
                       </div>
                     </div>
                     <div className={`${styles["labels"]} uk-visible@s`}>
-                      {keywords.map((item, key) => (
+                      {keywords.slice(0, 5).map((item, key) => (
                         <KeywordTagComponent style={{ marginLeft: key == 0 ? "0" : "4px" }} key={key}>
                           {item}
                         </KeywordTagComponent>

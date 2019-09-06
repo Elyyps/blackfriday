@@ -50,8 +50,7 @@ export const generateDummyBlogBodyText = (): BlogBodyTextModule => ({
         reispagina goed in de gaten voor een recent overzicht van alle <a href="#">reisaanbiedingen</a> met Black
         Friday.
       </p>`,
-    bottomPadding: { mobileSpacing: 32, desktopSpacing: 72 },
-    topPadding: { mobileSpacing: 32, desktopSpacing: 72 },
+
     containerAlignment: "center",
     containerSize: "full",
     id: "1",
@@ -60,7 +59,9 @@ export const generateDummyBlogBodyText = (): BlogBodyTextModule => ({
   dateTime: "2 minuten leestijd",
   sidebarItems: generateSidebarData(),
   id: "1",
-  name: "BlogBodyTextModule"
+  name: "BlogBodyTextModule",
+  bottomPadding: { mobileSpacing: 32, desktopSpacing: 72 },
+  topPadding: { mobileSpacing: 32, desktopSpacing: 72 }
 });
 
 export const generateBlackFriday2019Text = (): BlogBodyTextModule => ({
@@ -77,8 +78,6 @@ export const generateBlackFriday2019Text = (): BlogBodyTextModule => ({
 <p>Er zijn een aantal winkels bij wie je er nu al vanuit kunt gaan dat ze volgend jaar weer van de partij zijn. <a href="#">MediaMarkt</a> heeft bijvoorbeeld elk jaar met Black Friday scherpe elektronica aanbiedingen. Hetzelfde geldt&nbsp; voor <a href="#">Coolblue</a>. Huishoudelijke apparatuur zoals wasmachines, stofzuigers of <a href="#">elektronica</a> artikelen als laptops en televisies zijn ineens een stuk beter betaalbaar met Black Friday bij Coolblue. Verder is <a href="#">Bol.com</a> ook een grote speler op de retailermarkt waar je een paar weken voor Sinterklaas- en kerst goedkoop al je cadeautjes kunt bestellen. Behalve deze drie deelnemers zijn er natuurlijk nog honderden andere deelnemende winkels.</p>
 <h2><strong>Profiteren van Black Friday 2019 – Alle deals op een rijtje</strong></h2>
 <p>Om orde te creëren in de chaos van alle aanbiedingen tijdens Black Friday 2019, zetten wij de beste deals voor je in een handig overzicht. Dankzij onze contacten met alle (web)winkels zijn wij als eerste op de hoogte van de beste aanbiedingen tijdens Black Friday. Wij updaten regelmatig het winkeloverzicht met de meest scherpe deals zodat jij als eerste weet wat de beste aanbiedingen worden tijdens Black Friday. Check regelmatig het winkeloverzicht voor het meest recente overzicht zodat jij zeker weet dat er geen enkele deal aan je neus voorbijgaat. Abonneer je verder op de Deal Alerts. Door je te abonneren op deze nieuwsbrief ontvang je voorafgaand en tijdens Black Friday regelmatig alerts met de beste deals. Deze deals kun jij vervolgens helemaal zelf afstemmen op je interesses.</p>`,
-    bottomPadding: { mobileSpacing: 32, desktopSpacing: 72 },
-    topPadding: { mobileSpacing: 32, desktopSpacing: 72 },
     containerAlignment: "center",
     containerSize: "full",
 

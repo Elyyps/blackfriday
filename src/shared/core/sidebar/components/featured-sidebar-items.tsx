@@ -11,7 +11,7 @@ export interface IFeaturedSidebarItemsProps {
 const FeaturedSidebarItems = (props: IFeaturedSidebarItemsProps) => (
   <div className={styles["featured-sidebar-items"]}>
     <div>
-      <h2 className={styles["title"]}>{props.title}</h2>
+      <h3 className={styles["title"]}>{props.title}</h3>
       {props.featuredItems && (
         <div className={styles["list"]}>
           {props.featuredItems.map((item, key) => (

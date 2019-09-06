@@ -3,11 +3,14 @@ import styles from "./navbar-search-component.module.scss";
 import { IconComponent } from "@app/prep/modules-prep/core";
 import { SEARCH_ICON } from "@app/constants/icons";
 import StoreIcon from "@assets/icons/store.svg";
+import DealsIcon from "@assets/icons/medal.svg";
+
 import { DealCardComponent } from "@app/core/deal-card";
 import { SeeMoreCardComponent } from "@app/core/see-more-card";
 import { Deal } from "@app/api/core/deal/deal";
 import { ShopCardComponent } from "@app/core/shop-card";
 import { Store } from "@app/api/core/store/store";
+import { InjectedIntlProps, injectIntl } from "react-intl";
 
 const LIMIT_EMPTY = 3;
 export interface INavbarSearchComponentProps {
@@ -23,7 +26,7 @@ export interface INavbarSearchComponentProps {
 const CardMoreDeals = (
   <SeeMoreCardComponent
     title="Wij hebben meer deals in ons overzicht"
-    icon={StoreIcon}
+    icon={DealsIcon}
     buttonText="Alle deals"
     buttonLink="/deals-overview"
     variant={"responsive"}
@@ -40,7 +43,7 @@ const CardMoreShops = (
   />
 );
 
-const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
+const component = (props: INavbarSearchComponentProps & InjectedIntlProps) => (
   <div className={styles["navbar-search"]}>
     <div className={styles["navbar-search__bar"]}>
       <div className={styles["navbar-search__field"]}>
@@ -108,8 +111,11 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
               props.deals &&
               props.deals.length === 0 &&
               props.currentFilter && (
-                <div style={{ marginLeft: 16 }} className={styles["navbar-search__not-found"]}>
-                  No results found for your search
+                <div className={styles["navbar-search__not-found"]}>
+                  <span>{props.intl.formatMessage({ id: "search-empty-state" })}</span>
+                  <div className={styles["navbar-search__see-more"]}>
+                    <div>{CardMoreShops}</div> <div>{CardMoreDeals}</div>
+                  </div>
                 </div>
               )}
           </div>
@@ -118,4 +124,5 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
     </div>
   </div>
 );
+const NavbarSearchComponent = injectIntl(component);
 export { NavbarSearchComponent };

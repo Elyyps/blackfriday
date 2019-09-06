@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`[KeywordTag] should render component without crashing 1`] = `
-<div
+<a
   className="keyword-tag"
+  href="/stores-overview"
 >
    Tag Content 
-</div>
+</a>
 `;

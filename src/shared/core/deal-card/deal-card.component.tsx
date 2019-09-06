@@ -45,8 +45,17 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
               <span> {sale}</span>
             </div>
             <div className={styles["deal-card__price-box"]}>
-              <div className={styles["deal-card__price-old"]}>{oldPrice}</div>
-              <div className={styles["deal-card__price-new"]}>{newPrice}</div>
+              {oldPrice && (
+                <div className={styles["deal-card__price-old"]}>
+                  €{oldPrice} {oldPrice % 1 === 0 && <span>,-</span>}
+                </div>
+              )}
+              {newPrice && (
+                <div className={styles["deal-card__price-new"]}>
+                  €{newPrice}
+                  {newPrice % 1 === 0 && <span>,-</span>}
+                </div>
+              )}
             </div>
           </div>
           <div className={styles["deal-card__button"]}>

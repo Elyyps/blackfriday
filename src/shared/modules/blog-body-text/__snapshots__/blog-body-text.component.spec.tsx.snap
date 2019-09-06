@@ -23,10 +23,6 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
       <BodyTextComponent
         bodyTextModule={
           Object {
-            "bottomPadding": Object {
-              "desktopSpacing": 72,
-              "mobileSpacing": 32,
-            },
             "containerAlignment": "center",
             "containerSize": "full",
             "html": "<h2>
@@ -78,10 +74,6 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
       </p>",
             "id": "1",
             "name": "BlogBodyText",
-            "topPadding": Object {
-              "desktopSpacing": 72,
-              "mobileSpacing": 32,
-            },
           }
         }
       />
@@ -133,7 +125,7 @@ exports[`[BlogBodyText] should render component without crashing 1`] = `
         banner={
           Object {
             "buttonLink": "/deals-overview",
-            "buttonTitle": "Meer deals",
+            "buttonTitle": "Naar deals",
             "image": Object {
               "alt": "Ad picture",
               "src": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/ad.png",

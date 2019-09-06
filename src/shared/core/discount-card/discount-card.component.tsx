@@ -1,6 +1,7 @@
 import * as React from "react";
 import styles from "./discount-card-component.module.scss";
 import { ImageComponent } from "@app/core";
+const CopyToClipboard = require("react-copy-to-clipboard");
 
 import IconDefault from "@assets/icons/link.svg";
 import { TimeLeftBarComponent } from "../time-left-bar";
@@ -55,13 +56,15 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
         </div>
       </div>
       <div className={styles["discount-card__action"]}>
-        <button
-          onClick={displayMessage}
-          className={styles["discount-card__coupon"]}
-          style={couponCopied ? { backgroundColor: "#caf7d6" } : { backgroundColor: "white" }}
-        >
-          {coupon}
-        </button>
+        <CopyToClipboard text={coupon}>
+          <button
+            onClick={displayMessage}
+            className={styles["discount-card__coupon"]}
+            style={couponCopied ? { backgroundColor: "#caf7d6" } : { backgroundColor: "white" }}
+          >
+            {coupon}
+          </button>
+        </CopyToClipboard>
         {messageDisplayed && (
           <div className={styles["discount-card__tooltip"]} aria-hidden="true">
             <div className={styles["discount-card__tooltip__message"]}>
