@@ -26,6 +26,7 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
 
   const ClipLoaderTimer = 1500;
 
+  const element = React.useRef(null);
   const [] = React.useState<boolean>(false);
 
   const displayMessage = () => {
@@ -39,8 +40,26 @@ const component = (props: IDiscountCardComponentProps & InjectedIntlProps) => {
     }
   };
 
+  React.useEffect(() => {
+    // const rootElement = document.getElementById("app");
+    // if (rootElement) {
+    //   const linkElement = rootElement.querySelector("#link");
+    //   if (linkElement) linkElement.addEventListener("click", this.scrollToSEOText);
+    //   const seoElement = rootElement.querySelector("#seotext");
+    //   if (seoElement) {
+    //     this.setState({ element: seoElement });
+    //   }
+    // }
+    if (element) {
+      if (element.current !== undefined) {
+        const rect = element.current.getBoundingClientRect();
+      }
+      console.log(rect.top, rect.right, rect.bottom, rect.left);
+    }
+  }, []);
+
   return (
-    <div className={styles["discount-card"]}>
+    <div ref={element} className={styles["discount-card"]}>
       <div className={styles["discount-card__body"]}>
         <div className={styles["discount-card__image"]}>
           <ImageComponent alt="Logo" src={image} />
