@@ -8,6 +8,8 @@ import { ClickableComponent } from "@app/core/clickable";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { Deal } from "@app/api/core/deal/deal";
 import { Link } from "react-router-dom";
+const CurrencyFormat = require("react-currency-format");
+// import FormatCurrency from 'react-format-currency';
 
 interface IDealCardComponentProps {
   deal: Deal;
@@ -47,13 +49,26 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
             <div className={styles["deal-card__price-box"]}>
               {oldPrice && (
                 <div className={styles["deal-card__price-old"]}>
-                  €{oldPrice} {oldPrice % 1 === 0 && <span>,-</span>}
+                  <CurrencyFormat
+                    value={oldPrice}
+                    displayType={"text"}
+                    prefix={"€ "}
+                    suffix={oldPrice % 1 === 0 && ",-"}
+                    thousandSeparator="."
+                    decimalSeparator=","
+                  />
                 </div>
               )}
               {newPrice && (
                 <div className={styles["deal-card__price-new"]}>
-                  €{newPrice}
-                  {newPrice % 1 === 0 && <span>,-</span>}
+                  <CurrencyFormat
+                    value={newPrice}
+                    displayType={"text"}
+                    prefix={"€ "}
+                    suffix={newPrice % 1 === 0 && ",-"}
+                    thousandSeparator="."
+                    decimalSeparator=","
+                  />
                 </div>
               )}
             </div>

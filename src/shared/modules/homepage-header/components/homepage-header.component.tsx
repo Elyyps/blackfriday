@@ -52,7 +52,10 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
                   {props.homePageModule.arrowPanelslinks.map((panel, key) => (
                     <ArrowPanel
                       key={key}
-                      link={{ title: panel.link.title, url: panel.link.url }}
+                      link={{
+                        title: `${panel.link.title} (${panel.total})`,
+                        url: panel.link.url
+                      }}
                       icon={panel.icon}
                       image={panel.image}
                     />

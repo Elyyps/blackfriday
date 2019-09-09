@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from "./keyword-tag-component.module.scss";
+import { LinkComponent } from "../link";
 
 export interface IKeywordTagComponentProps {
   children: any;
@@ -7,9 +8,9 @@ export interface IKeywordTagComponentProps {
 }
 
 const KeywordTagComponent = (props: IKeywordTagComponentProps) => (
-  <a style={props.style} className={styles["keyword-tag"]} href={"/stores-overview"}>
-    {props.children}
-  </a>
+  <div className={styles["keyword-tag"]}>
+    <LinkComponent to={"/stores-overview"}>{props.children}</LinkComponent>
+  </div>
 );
 
 export { KeywordTagComponent };

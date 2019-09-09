@@ -12,7 +12,7 @@ import {
 import { HeaderInfoDummy } from "../modules/header-info/generate-dummy-data";
 import { generateCtaSmallModule } from "../modules/cta-small/generate-dummy-data";
 import { generateCtaNewsLetterModule } from "../modules/cta-newsletter/generate-dummy-data";
-import { generateDummyFeaturedDealsData } from "../modules/featured-deals/generate-dummy-data";
+import { generateDummyFeaturedDealsDataBelgian } from "../modules/featured-deals/generate-dummy-data";
 import { generateBlogSingleHeaderData, generateBF2019HeaderDataBelgian } from "../modules/blog-single-header/endpoint";
 import { generateBlogOverviewHeaderDataBelgian } from "../modules/blog-overview-header/endpoint";
 import { generateBlogOverviewDataBelgian } from "../modules/blog-overview/endpoint";
@@ -42,7 +42,7 @@ export const belgianPageList: PageModel[] = [
       generateHomePageHeaderBelgian(),
       dummyFeaturedShopsData(),
       generateDummyBannerModule(),
-      generateDummyFeaturedDealsData(),
+      generateDummyFeaturedDealsDataBelgian(),
       generateCtaNewsLetterModule(),
       generateFeaturedBlogDummyDataBelgian(),
       generateHomepageBodytextDummyData(),
@@ -76,7 +76,7 @@ export const belgianPageList: PageModel[] = [
     wordPressPostModules: [
       generateDummyNavbarDataBelgian(),
       generatedummyShopSingleHeaderData(),
-      generateDummyFeaturedDealsData(),
+      generateDummyFeaturedDealsDataBelgian(),
       dummyFeaturedShopsData(),
       generateCtaNewsLetterModule(),
       generateShopSingleBodyTextInfoDummydata(),
@@ -111,7 +111,7 @@ export const belgianPageList: PageModel[] = [
       generateDummyNavbarDataBelgian(),
       HeaderInfoDummy,
       generateDummyFeaturedCategoriesData(),
-      generateDummyFeaturedDealsData(),
+      generateDummyFeaturedDealsDataBelgian(),
       generateDummyBannerModule(),
       // generateFeaturedShopsDummyData(),
       generateCtaNewsLetterModule(),
@@ -131,7 +131,7 @@ export const belgianPageList: PageModel[] = [
       generateDummyNavbarDataBelgian(),
       generateBlogOverviewHeaderDataBelgian(),
       generateBlogOverviewDataBelgian(),
-      generateDummyFeaturedDealsData(),
+      generateDummyFeaturedDealsDataBelgian(),
       generateCtaNewsLetterModule(),
       generateDummyFooterDataBelgian()
     ]
@@ -148,7 +148,7 @@ export const belgianPageList: PageModel[] = [
       generateDummyNavbarDataBelgian(),
       generateBlogSingleHeaderData(),
       generateBlogBodyTextData(),
-      generateDummyFeaturedDealsData(),
+      generateDummyFeaturedDealsDataBelgian(),
       generateFeaturedBlogDataBelgian(),
       generateCtaNewsLetterModule(),
       generateDummyFooterDataBelgian()
@@ -166,7 +166,7 @@ export const belgianPageList: PageModel[] = [
       generateDummyNavbarDataBelgian(),
       generateBF2019HeaderDataBelgian(),
       generateBlackFriday2019TextData(),
-      generateDummyFeaturedDealsData(),
+      generateDummyFeaturedDealsDataBelgian(),
       generateFeaturedBlogDataBelgian(),
       generateCtaNewsLetterModule(),
       generateDummyFooterDataBelgian()

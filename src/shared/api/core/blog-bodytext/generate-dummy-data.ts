@@ -60,8 +60,7 @@ export const generateDummyBlogBodyText = (): BlogBodyTextModule => ({
   sidebarItems: generateSidebarData(),
   id: "1",
   name: "BlogBodyTextModule",
-  bottomPadding: { mobileSpacing: 32, desktopSpacing: 72 },
-  topPadding: { mobileSpacing: 32, desktopSpacing: 72 }
+  bottomPadding: { mobileSpacing: 32, desktopSpacing: 72 }
 });
 
 export const generateBlackFriday2019Text = (): BlogBodyTextModule => ({

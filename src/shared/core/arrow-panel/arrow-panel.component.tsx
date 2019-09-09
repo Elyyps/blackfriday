@@ -9,6 +9,7 @@ export interface IArrowPanelProps {
   icon?: string;
   image?: string;
   link: ILink;
+  total?: number;
 }
 
 const ArrowPanel = ({ link: { title, url }, icon, image }: IArrowPanelProps) => {

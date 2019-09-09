@@ -24,7 +24,7 @@ export const generateDemoDealDummyData = (): Deal[] => [
     moreInfoLink: "/deals-overview",
     name: "Bartafel BROHAVE 50x120 zwart",
     newPrice: 129.0,
-    oldPrice: 145.0,
+    oldPrice: 145.25,
     sale: "20% korting",
     stores: ["Jysk"]
   },

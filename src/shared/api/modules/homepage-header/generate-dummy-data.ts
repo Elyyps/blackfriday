@@ -6,6 +6,10 @@ import iphone from "@assets/dummy-images/product-thumbnails/iphone.png";
 import loader from "@assets/dummy-images/product-thumbnails/loader.png";
 
 import CoolBlue from "@assets/cool-blue.svg";
+import { generateDemoDealDummyData } from "@app/api/core/deal/generate-dummy-data";
+
+import { generateDemoStoreDummyData } from "@app/api/core/store/generate-dummy-data";
+
 export const generateHomePageHeaderBelgian = (): HomepageHeader => ({
   title: "Black Friday België",
   durationBlackFridayText: "Hoe lang nog?",
@@ -22,7 +26,7 @@ export const generateHomePageHeaderBelgian = (): HomepageHeader => ({
   arrowPanelslinks: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      link: { title: "Productdeals", url: "/deals-overview" }
+      link: { title: "Productdealsfdgdf", url: "/deals-overview" }
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
@@ -113,11 +117,13 @@ export const generateHomePageHeaderDutch = (): HomepageHeader => ({
   arrowPanelslinks: [
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
-      link: { title: "Productdeals", url: "/deals-overview" }
+      link: { title: "Productdeals", url: "/deals-overview" },
+      total: generateDemoDealDummyData().length
     },
     {
       icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-      link: { title: "Deelnemende winkels", url: "/stores-overview" }
+      link: { title: "Deelnemende winkels", url: "/stores-overview" },
+      total: generateDemoStoreDummyData().length
     }
   ],
   label: "Black Friday 2019: NOG 10 dagen!",

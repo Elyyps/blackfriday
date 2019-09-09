@@ -25,7 +25,7 @@ import { ShopSingleHeaderComponent } from "@app/modules/shop-single-header";
 import { ShopSingleHeaderModule } from "@app/api/modules/shop-single-header/shop-single-header.module";
 import { CtaNewsletterModule } from "@app/api/modules/cta-newsletter/cta-newsletter.module";
 import { CtaNewsletterComponent } from "@app/modules/cta-newsletter/cta-newsletter.component";
-import { generateDummyFeaturedDealsData } from "@app/api/modules/featured-deals/generate-dummy-data";
+import { generateDummyFeaturedDealsDataDutch } from "@app/api/modules/featured-deals/generate-dummy-data";
 import { BlogSingleHeaderComponent } from "@app/modules/blog-single-header";
 import { BlogOverviewComponent } from "@app/modules/blog-overview";
 import { BlogOverviewModule } from "@app/api/modules/blog-overview/blog-overview";
@@ -99,7 +99,7 @@ export const getComponent = (wordPressModule: WordPressPostModule) => {
       const bodyTextModule = wordPressModule as BodyTextModule;
       return <BodyTextComponent style={bodyTextModule.style} bodyTextModule={bodyTextModule as BodyTextModule} />;
     case "FeaturedDealsModule":
-      return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsData()} />;
+      return <FeaturedDealsComponent featuredDealsModule={generateDummyFeaturedDealsDataDutch()} />;
     case "FeaturedCategoriesModule":
       return <FeaturedCategoriesContainer featuredCategoriesModule={generateDummyFeaturedCategoriesData()} />;
     case "HeaderInfo":
