@@ -1,11 +1,5 @@
 import * as React from "react";
 import styles from "./tooltip-component.module.scss";
-
-interface IPoint {
-  x: number;
-  y: number;
-}
-
 export interface ITooltipComponentProps {
   children: any;
   duration?: number;
@@ -23,20 +17,21 @@ const TooltipComponent = (props: ITooltipComponentProps) => {
   React.useEffect(() => {
     if (element && element.current) {
       const rect = element.current.getBoundingClientRect();
-      const tempCouponYPos = rect.bottom;
-      setArrowX(rect.width / 2 + rect.left - 5);
-      setArrowY(rect.top - 5);
+      const offSetY = 5;
+      const halfSize = 2;
+      setArrowX(rect.width / halfSize + rect.left - offSetY);
+      setArrowY(rect.top - offSetY);
     }
 
     if (props.parentElement) {
       if (props.parentElement.current) {
         const rect = props.parentElement.current.getBoundingClientRect();
         setAbsolutePositionX(rect.left);
-        setAbsolutePositionY(rect.top + rect.height + 10);
+        const offSetY = 5;
+        setAbsolutePositionY(rect.top + rect.height + offSetY);
         setWidth(rect.width);
       }
     }
-
   });
   const MAX_HEIGHT = 5000;
 
