@@ -1,3 +1,34 @@
-.newsletter-forms__text-field {
-  margin-top: 20px;
+.newsletter-forms {
+  &__spam {
+    font-size: 13px;
+    font-weight: 600;
+    color: #999999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    @media (max-width: $breakpoint-xsmall-max) {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      button {
+        margin-top: 8px;
+      }
+    }
+  }
+  &__text-field {
+    margin-top: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  &__checkboxes {
+    display: grid;
+    grid-template-columns: auto auto;
+    @media (max-width: $breakpoint-xsmall-max) {
+      grid-template-columns: auto;
+    }
+    padding-top: 16px;
+    grid-column-gap: 8px;
+    margin-bottom: 40px;
+  }
 }

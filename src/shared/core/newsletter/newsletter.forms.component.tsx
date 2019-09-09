@@ -1,22 +1,38 @@
 import * as React from "react";
-import { withFormik, FormikProps, FormikErrors, Form } from "formik";
+import { withFormik, FormikProps, FormikErrors, Form, connect } from "formik";
 import { TextFieldComponent } from "@app/core";
 import { validateEmail } from "@app/util";
 import Paper from "@assets/icons/paper.svg";
 import { ClickableComponent } from "../clickable";
 
 import styles from "./newsletter-forms-component.module.scss";
+import { ISearchItem } from "@app/api/core/search-item";
+import { getMockRouterProps } from "@app/util/get-mock-router-props";
+import { CheckboxComponent } from "../checkbox";
+import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 export interface IContactFormValues {
   emailAddress: string;
-  message: string;
   name: string;
+  selectedItems: ISearchItem[];
 }
 
-interface IOtherProps {}
+interface IOtherProps {
+  selectedItems: ISearchItem[];
+}
 
 const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
   const { touched, errors } = props;
   const maxCharacter = 200;
+
+  const chechItemSelected = (id: number): boolean | undefined => {
+    if (props.values.selectedItems.find(itemProps => itemProps.id === id)) return true;
+
+    return false;
+  };
+
+  const onChange = () => {
+  
+  };
 
   return (
     <Form>
@@ -47,7 +63,9 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
         </div>
       </div>
       <div className={`${styles["newsletter-forms__text-field"]} "uk-margin-small-top"`}>
-        <TextFieldComponent
+        <h3>Graag ontvang ik de beste deals voor:</h3>
+        <CheckboxComponent>Alle onderwerpen</CheckboxComponent>
+        {/* <TextFieldComponent
           label="Bericht"
           placeholder=""
           value={props.values.message}
@@ -58,10 +76,24 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
           maxCharacters={maxCharacter}
           isTextArea
           errorMessage={touched.message === true && errors.message}
-        />
+        /> */}
       </div>
-      <div className="form-bottom uk-margin-small-top">
-        <ClickableComponent iconStyle="filled" buttonType="submit" title={"Verzenden"} iconRight={Paper} />
+      <div className={styles["newsletter-forms__checkboxes"]}>
+        {props.selectedItems.map(item => {
+          const isChecked = chechItemSelected(item.id);
+
+          return (
+            <CheckboxComponent isChecked={isChecked} key={item.id}>
+              {item.text}
+            </CheckboxComponent>
+          );
+        })}
+      </div>
+      <div className={styles["newsletter-forms__spam"]}>
+        <span>Vergeet niet je inschrijving via je mail te bevestigen en controleer eventueel je spamfolder</span>
+        <div className="form-bottom uk-margin-small-top">
+          <ClickableComponent variant="primary-brand" iconStyle="filled" buttonType="submit" title={"Verzenden"} iconRight={Paper} />
+        </div>
       </div>
     </Form>
   );
@@ -69,13 +101,14 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
 
 interface IFormProps {
   onSubmit: (values: IContactFormValues) => void;
+  selectedItems: ISearchItem[];
 }
 
 export const NewsletterFormComponent = withFormik<IFormProps, IContactFormValues>({
   mapPropsToValues: () => ({
     emailAddress: "",
-    message: "",
-    name: ""
+    name: "",
+    selectedItems: []
   }),
 
   validate: (values: IContactFormValues) => {
@@ -89,9 +122,9 @@ export const NewsletterFormComponent = withFormik<IFormProps, IContactFormValues
     } else if (!validateEmail(values.emailAddress)) {
       errors.emailAddress = "Geen valide e-mail adres";
     }
-    if (!values.message) {
-      errors.message = "Laat een bericht achter";
-    }
+    // if (values.selectedItems.length === 0) {
+    //   errors.message = "Laat een bericht achter";
+    // }
 
     return errors;
   },
