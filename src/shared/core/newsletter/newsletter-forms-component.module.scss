@@ -1,4 +1,19 @@
 .newsletter-forms {
+  &__no-items-selected {
+    color: #b00020;
+    font-family: Assistant, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.0333333333em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    display: block;
+    line-height: normal;
+    margin-bottom: 24px;
+  }
   &__spam {
     font-size: 13px;
     font-weight: 600;
@@ -24,11 +39,12 @@
   &__checkboxes {
     display: grid;
     grid-template-columns: auto auto;
-    @media (max-width: $breakpoint-xsmall-max) {
-      grid-template-columns: auto;
-    }
     padding-top: 16px;
     grid-column-gap: 8px;
-    margin-bottom: 40px;
+    margin-bottom: 4px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      grid-template-columns: auto;
+      margin-bottom: 16px;
+          }
   }
 }

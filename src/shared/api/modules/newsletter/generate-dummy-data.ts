@@ -35,7 +35,7 @@ export const generateDummyNewsletterModule = (): NewsletterModule => ({
     },
     {
       text: "Wonen & koken",
-      id: 6
+      id: 7
     }
   ],
   text: "Op de hoogte blijven? Meld je dan aan!"

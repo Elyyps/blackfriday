@@ -10,6 +10,12 @@ import { ISearchItem } from "@app/api/core/search-item";
 import { getMockRouterProps } from "@app/util/get-mock-router-props";
 import { CheckboxComponent } from "../checkbox";
 import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
+
+interface IContactFormErrorMessages {
+  emailAddress: string;
+  name: string;
+  selectedItems: string;
+}
 export interface IContactFormValues {
   emailAddress: string;
   name: string;
@@ -17,21 +23,52 @@ export interface IContactFormValues {
 }
 
 interface IOtherProps {
-  selectedItems: ISearchItem[];
+  checkBoxItems: ISearchItem[];
 }
 
 const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
   const { touched, errors } = props;
+  const [selectAll, setSelectAll] = React.useState(false);
   const maxCharacter = 200;
 
-  const chechItemSelected = (id: number): boolean | undefined => {
+  const checkItemSelected = (id: number): boolean | undefined => {
     if (props.values.selectedItems.find(itemProps => itemProps.id === id)) return true;
 
     return false;
   };
 
-  const onChange = () => {
-  
+  const areAllItemsSelected = (currentValues: ISearchItem[]) => {
+    props.setFieldTouched("selectedItems");
+    let areAllItemsSelectedResult = true;
+    props.checkBoxItems.forEach(item => {
+      const foundItem = currentValues.find(el => el.id === item.id);
+      if (!foundItem) areAllItemsSelectedResult = false;
+    });
+
+    return areAllItemsSelectedResult;
+  };
+
+  const onCheckboxChange = (item: ISearchItem) => {
+    props.setFieldTouched("selectedItems");
+    let checkedItems = props.values.selectedItems;
+    const checkItem = checkedItems.find(el => item.id === el.id);
+    if (checkItem !== undefined) {
+      checkedItems = checkedItems.filter(el => el.id !== item.id);
+    } else {
+      checkedItems.push(item);
+    }
+    props.setFieldValue("selectedItems", checkedItems);
+    setSelectAll(areAllItemsSelected(checkedItems));
+  };
+
+  const toggleSelectAll = () => {
+    if (areAllItemsSelected(props.values.selectedItems)) {
+      setSelectAll(false);
+      props.setFieldValue("selectedItems", []);
+    } else {
+      props.setFieldValue("selectedItems", props.checkBoxItems);
+      setSelectAll(true);
+    }
   };
 
   return (
@@ -64,35 +101,40 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
       </div>
       <div className={`${styles["newsletter-forms__text-field"]} "uk-margin-small-top"`}>
         <h3>Graag ontvang ik de beste deals voor:</h3>
-        <CheckboxComponent>Alle onderwerpen</CheckboxComponent>
-        {/* <TextFieldComponent
-          label="Bericht"
-          placeholder=""
-          value={props.values.message}
-          onChange={props.handleChange}
-          onBlur={props.handleBlur}
-          type="text"
-          id="message"
-          maxCharacters={maxCharacter}
-          isTextArea
-          errorMessage={touched.message === true && errors.message}
-        /> */}
+        <CheckboxComponent isChecked={selectAll} onClick={toggleSelectAll}>
+          Alle onderwerpen
+        </CheckboxComponent>
       </div>
       <div className={styles["newsletter-forms__checkboxes"]}>
-        {props.selectedItems.map(item => {
-          const isChecked = chechItemSelected(item.id);
+        {props.checkBoxItems.map(item => {
+          const isChecked = checkItemSelected(item.id);
 
           return (
-            <CheckboxComponent isChecked={isChecked} key={item.id}>
+            <CheckboxComponent
+              onClick={() => {
+                onCheckboxChange(item);
+              }}
+              isChecked={isChecked}
+              key={item.id}
+            >
               {item.text}
             </CheckboxComponent>
           );
         })}
       </div>
+
+      <span className={styles["newsletter-forms__no-items-selected"]}>{touched.selectedItems !== undefined && errors.selectedItems}</span>
+
       <div className={styles["newsletter-forms__spam"]}>
         <span>Vergeet niet je inschrijving via je mail te bevestigen en controleer eventueel je spamfolder</span>
         <div className="form-bottom uk-margin-small-top">
-          <ClickableComponent variant="primary-brand" iconStyle="filled" buttonType="submit" title={"Verzenden"} iconRight={Paper} />
+          <ClickableComponent
+            variant="primary-brand"
+            iconStyle="filled"
+            buttonType="submit"
+            title={"Verzenden"}
+            iconRight={Paper}
+          />
         </div>
       </div>
     </Form>
@@ -100,8 +142,8 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
 };
 
 interface IFormProps {
+  checkBoxItems: ISearchItem[];
   onSubmit: (values: IContactFormValues) => void;
-  selectedItems: ISearchItem[];
 }
 
 export const NewsletterFormComponent = withFormik<IFormProps, IContactFormValues>({
@@ -112,7 +154,7 @@ export const NewsletterFormComponent = withFormik<IFormProps, IContactFormValues
   }),
 
   validate: (values: IContactFormValues) => {
-    const errors: FormikErrors<IContactFormValues> = {};
+    const errors: FormikErrors<IContactFormErrorMessages> = {};
     if (!values.name) {
       errors.name = "Vul uw naam in";
     }
@@ -122,9 +164,10 @@ export const NewsletterFormComponent = withFormik<IFormProps, IContactFormValues
     } else if (!validateEmail(values.emailAddress)) {
       errors.emailAddress = "Geen valide e-mail adres";
     }
-    // if (values.selectedItems.length === 0) {
-    //   errors.message = "Laat een bericht achter";
-    // }
+
+    if (values.selectedItems.length === 0) {
+      errors.selectedItems = "Laat een bericht achter";
+    }
 
     return errors;
   },

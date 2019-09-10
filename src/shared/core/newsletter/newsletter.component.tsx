@@ -11,8 +11,10 @@ export interface INewsletterComponentProps {
   newsletterModule: NewsletterModule;
 }
 
-const onSubmit = () => {
+const onSubmit = (event: any) => {
   // Submit logic here
+  console.log(event)
+
 };
 const NewsletterComponent = (props: INewsletterComponentProps) => {
   const triggerButton = (
@@ -29,7 +31,7 @@ const NewsletterComponent = (props: INewsletterComponentProps) => {
           <div className={styles["newsletter__content"]}>{props.newsletterModule.text}</div>
           <div className={styles["newsletter__action"]}>
             <ModalComponent title={props.newsletterModule.modalTitle} trigger={triggerButton} variant={"big"}>
-              <NewsletterFormComponent selectedItems={props.newsletterModule.items} onSubmit={onSubmit} />
+              <NewsletterFormComponent checkBoxItems={props.newsletterModule.items} onSubmit={onSubmit} />
             </ModalComponent>
           </div>
         </div>
