@@ -123,7 +123,9 @@ const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
         })}
       </div>
 
-      <span className={styles["newsletter-forms__no-items-selected"]}>{touched.selectedItems !== undefined && errors.selectedItems}</span>
+      <span className={styles["newsletter-forms__no-items-selected"]}>
+        {touched.selectedItems !== undefined && errors.selectedItems}
+      </span>
 
       <div className={styles["newsletter-forms__spam"]}>
         <span>Vergeet niet je inschrijving via je mail te bevestigen en controleer eventueel je spamfolder</span>
@@ -166,7 +168,7 @@ export const NewsletterFormComponent = withFormik<IFormProps, IContactFormValues
     }
 
     if (values.selectedItems.length === 0) {
-      errors.selectedItems = "Laat een bericht achter";
+      errors.selectedItems = "Selecteer minstens één categorie";
     }
 
     return errors;
