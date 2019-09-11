@@ -1,11 +1,6 @@
 import * as React from "react";
 import styles from "./navbar-search-component.module.scss";
-import {
-  CardButton,
-  CardShop,
-  CardProduct,
-  IconComponent
-} from "@app/prep/modules-prep/core";
+import { CardButton, CardShop, CardProduct, IconComponent } from "@app/prep/modules-prep/core";
 import { SEARCH_ICON } from "@app/constants/icons";
 import CoolBlue from "@assets/cool-blue.svg";
 import Store from "@assets/icons/store.svg";
@@ -21,7 +16,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   },
   {
@@ -31,7 +26,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   },
   {
@@ -41,7 +36,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   },
   {
@@ -51,7 +46,7 @@ const SearchProducts = [
     sale: "Bespaar 40% ",
     price: "€2.429",
     old_price: "€3.429",
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   }
 ];
@@ -63,7 +58,7 @@ const SearchItems = [
     range: ".7",
     content: "Een selectie van bizarre vele aanbiedingen.",
     image: CoolBlue,
-    button_text: "Naar deals",
+    button_text: "Naar deal",
     button_link: "#"
   }
 ];
@@ -85,19 +80,13 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
           <IconComponent icon={SEARCH_ICON} size="12px" />
         </div>
 
-        <input
-          type="text"
-          placeholder="Zoek deals en winkels"
-          className={styles["navbar-search__input"]}
-        />
+        <input type="text" placeholder="Zoek deals en winkels" className={styles["navbar-search__input"]} />
 
         <div className={styles["navbar-search__results"]}>
           <div className="uk-container">
             <h2>Gevonden deals</h2>
             <div
-              className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${
-                styles["navbar-search__results-posts"]
-              }`}
+              className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${styles["navbar-search__results-posts"]}`}
             >
               {SearchProducts.map((item, key) => (
                 <div key={key}>
@@ -113,9 +102,7 @@ const NavbarSearchComponent = (props: INavbarSearchComponentProps) => (
             </div>
             <h2>Gevonden winkels</h2>
             <div
-              className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${
-                styles["navbar-search__results-posts"]
-              }`}
+              className={`uk-grid uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m ${styles["navbar-search__results-posts"]}`}
             >
               {SearchItems.map((item, key) => (
                 <div key={key}>

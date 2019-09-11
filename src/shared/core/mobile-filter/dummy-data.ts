@@ -25,7 +25,7 @@ export const mobileFilterDummyData: IMobileFilterItem[] = [
   },
   {
     hasSearchBar: true,
-    title: "Merk",
+    title: "Merken",
     searchBarPlaceholder: "Search in Brands",
     selectedItems: [],
     items: ["Nike", "Adidas", "Reebok", "New Balance"]

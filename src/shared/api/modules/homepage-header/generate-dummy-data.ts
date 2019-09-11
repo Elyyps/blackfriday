@@ -13,7 +13,7 @@ import { generateDemoStoreDummyData } from "@app/api/core/store/generate-dummy-d
 export const generateHomePageHeaderBelgian = (): HomepageHeader => ({
   title: "Black Friday België",
   durationBlackFridayText: "Hoe lang nog?",
-  startingDateText: "Wanneer is Black Friday",
+  startingDateText: "Wanneer is Black Friday?",
   popularStoresTitle: "Populaire winkels",
   popularProductsTitle: "Populaire onderwerpen",
   description: [
@@ -104,7 +104,7 @@ export const generateHomePageHeaderBelgian = (): HomepageHeader => ({
 export const generateHomePageHeaderDutch = (): HomepageHeader => ({
   title: "Black Friday Nederland",
   durationBlackFridayText: "Hoe lang nog?",
-  startingDateText: "Wanneer is Black Friday",
+  startingDateText: "Wanneer is Black Friday?",
   popularStoresTitle: "Populaire winkels",
   popularProductsTitle: "Populaire onderwerpen",
   description: [

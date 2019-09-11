@@ -100,6 +100,8 @@ const component = (props: ISearchableCheckboxDropdownProps & InjectedIntlProps) 
     setIsOpen(false);
   };
 
+  const totalStores = getTotalCount();
+
   return (
     <div>
       <DropdownComponent title={props.title} hasSelectedItems={hasSelectedItems} isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -136,9 +138,11 @@ const component = (props: ISearchableCheckboxDropdownProps & InjectedIntlProps) 
 
               <li>
                 <ClickableComponent
-                  title={`${props.intl.formatMessage({ id: "dropdown-button" })} ${getTotalCount()} ${
-                    props.showFilterName
-                  }`}
+                  title={
+                    hasSelectedItems
+                      ? props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores })
+                      : props.intl.formatMessage({ id: "mobile-filter-button-all-stores" })
+                  }
                   variant="primary-brand"
                   onClick={persistFilters}
                 />

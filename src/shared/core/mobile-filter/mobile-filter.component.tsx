@@ -14,8 +14,10 @@ import { injectIntl, InjectedIntlProps } from "react-intl";
 import { MobileFilterContainerProps } from "./containers/mobile-filter-container";
 
 export interface IMobileFilterComponentProps {
+  clearFilterText?: string;
   filterItems: IMobileFilterItem[];
   onClear: () => void;
+  onFilterChange: (items: IMobileFilterItem[]) => void;
   onFinish: (selectedItems: IMobileFilterSelectedItems[]) => void;
   totalStores: number;
 }
@@ -42,16 +44,17 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
     setIsFilterOpened(false);
   };
 
-  const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
+  const setSelectedItems = (filterItemToSet: IMobileFilterItem, items: string[]) => {
     if (currentFilterItems && currentFilterItem) {
       currentFilterItems.forEach(item => {
-        if (item.title === filterItem.title) {
+        if (item.title === filterItemToSet.title) {
           item.selectedItems = items;
         }
       });
 
       setCurrentFilterItems(currentFilterItems);
     }
+    props.onFilterChange(currentFilterItems);
   };
 
   const onClearHandler = () => {
@@ -60,6 +63,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
         title: currentFilterItem.title,
         items: currentFilterItem.items,
         selectedItems: [],
+        clearFilterText: currentFilterItem.clearFilterText,
         searchBarPlaceholder: currentFilterItem.searchBarPlaceholder,
         hasSearchBar: currentFilterItem.hasSearchBar
       };
@@ -148,7 +152,9 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
               </span>
               {!currentFilterItem.isSingleSelection && (
                 <a role="button" onClick={onClearHandler} className={styles["mobile-filter__header__clear"]}>
-                  {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
+                  {currentFilterItem.clearFilterText
+                    ? currentFilterItem.clearFilterText
+                    : props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
                 </a>
               )}
             </div>
@@ -223,7 +229,11 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
               variant="primary-brand"
               fullWidth
               onClick={onFinishHandler}
-              title={props.intl.formatMessage({ id: "mobile-filter-button" })}
+              title={
+                props.totalStores
+                  ? props.intl.formatMessage({ id: "mobile-filter-button" }, { totalStores: props.totalStores })
+                  : props.intl.formatMessage({ id: "mobile-filter-button-all-stores" })
+              }
             />
           </div>
         </div>

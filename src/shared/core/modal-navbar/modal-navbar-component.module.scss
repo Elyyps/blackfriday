@@ -30,6 +30,9 @@
       cursor: pointer;
     }
     color: $tint-gray-light;
+    path {
+      stroke: $global-inverse-color;
+    }
     &:hover {
       span {
         color: rgba(var(--colour-version-website), 1);
