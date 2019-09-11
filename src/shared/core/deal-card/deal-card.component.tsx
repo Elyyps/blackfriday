@@ -9,7 +9,6 @@ import { injectIntl, InjectedIntlProps } from "react-intl";
 import { Deal } from "@app/api/core/deal/deal";
 import { Link } from "react-router-dom";
 const CurrencyFormat = require("react-currency-format");
-// import FormatCurrency from 'react-format-currency';
 
 interface IDealCardComponentProps {
   deal: Deal;
@@ -18,6 +17,8 @@ interface IDealCardComponentProps {
 
 const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
   const { image, stores, name, sale, newPrice, oldPrice, moreInfoLink, label } = props.deal;
+  const oldPriceSuffix = oldPrice && oldPrice % 1 === 0 ? ",-" : "";
+  const newPriceSuffix = newPrice && newPrice % 1 === 0 ? ",-" : "";
 
   return (
     <ShadowCardComponent fullWidth borderRadius={["2px"]} backgroundColor={"#fff"}>
@@ -53,7 +54,7 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
                     value={oldPrice}
                     displayType={"text"}
                     prefix={"€ "}
-                    suffix={oldPrice % 1 === 0 && ",-"}
+                    suffix={oldPriceSuffix}
                     thousandSeparator="."
                     decimalSeparator=","
                   />
@@ -65,7 +66,7 @@ const component = (props: IDealCardComponentProps & InjectedIntlProps) => {
                     value={newPrice}
                     displayType={"text"}
                     prefix={"€ "}
-                    suffix={newPrice % 1 === 0 && ",-"}
+                    suffix={newPriceSuffix}
                     thousandSeparator="."
                     decimalSeparator=","
                   />

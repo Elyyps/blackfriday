@@ -104,20 +104,19 @@ const component = (props: INavbarSearchComponentProps & InjectedIntlProps) => (
                   ))}
                 {props.stores && props.stores.length > 0 && <div>{CardMoreShops}</div>}
               </div>
-            </div>
-
-            {props.stores &&
-              props.stores.length === 0 &&
-              props.deals &&
-              props.deals.length === 0 &&
-              props.currentFilter && (
-                <div className={styles["navbar-search__not-found"]}>
-                  <span>{props.intl.formatMessage({ id: "search-empty-state" })}</span>
-                  <div className={styles["navbar-search__see-more"]}>
-                    <div>{CardMoreShops}</div> <div>{CardMoreDeals}</div>
+              {props.stores &&
+                props.stores.length === 0 &&
+                props.deals &&
+                props.deals.length === 0 &&
+                props.currentFilter && (
+                  <div className={styles["navbar-search__not-found"]}>
+                    <span>{props.intl.formatMessage({ id: "search-empty-state" })}</span>
+                    <div className={styles["navbar-search__see-more"]}>
+                      <div>{CardMoreShops}</div> <div>{CardMoreDeals}</div>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+            </div>
           </div>
         )}
       </div>

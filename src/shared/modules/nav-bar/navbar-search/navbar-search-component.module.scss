@@ -13,17 +13,20 @@
 
   &__not-found {
     text-align: center;
+
     span {
       font-weight: bold;
     }
   }
   &__see-more {
-    padding: 20px;
+    margin-top: 10px;
+    padding: 8px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+
     > div {
-      width: 45%;
+      width: 49.2%;
     }
   }
   &__icon {
