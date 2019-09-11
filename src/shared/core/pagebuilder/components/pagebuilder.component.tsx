@@ -64,6 +64,12 @@ export class PagebuilderComponent extends React.Component<
           "--colour-version-website": orange
         }
       });
+    } else {
+      cssVars({
+        variables: {
+          "--colour-version-website": orange
+        }
+      });
     }
   }
 

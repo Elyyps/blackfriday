@@ -26,6 +26,8 @@
   "count-down-blackfriday": "BLACK FRIDAY",
   "deals-filter-bar-stores-filter-title": "Magasin",
   "deals-filter-bar-brands-filter-title": "Marque",
+  "mobile-filter-button": "Toon {totalStores} winkels",
+  "mobile-filter-button-all-stores": "Toon alle winkels",
   "deals-filter-bar-category-filter-title": "Categorie",
   "day": "jour",
   "days": "jours",
