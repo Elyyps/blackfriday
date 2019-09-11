@@ -13,8 +13,6 @@ export interface INewsletterComponentProps {
 
 const onSubmit = (event: any) => {
   // Submit logic here
-  console.log(event)
-
 };
 const NewsletterComponent = (props: INewsletterComponentProps) => {
   const triggerButton = (

@@ -32,7 +32,10 @@ const CtaNewsletterComponent = (props: ICtaNewsletterComponentProps) => (
                 trigger={<ClickableComponent title={props.ctaNewsLetterModule.buttonTitle} variant="primary-brand" />}
                 variant={"small"}
               >
-                <NewsletterFormComponent onSubmit={onSubmit} />
+                <NewsletterFormComponent
+                  checkBoxItems={props.ctaNewsLetterModule.newsletterItems}
+                  onSubmit={onSubmit}
+                />
               </ModalComponent>
             )}
           </div>

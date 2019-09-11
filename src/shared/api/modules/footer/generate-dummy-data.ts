@@ -3,6 +3,7 @@ import { BottomFooter } from "./models/bottom-footer";
 import { TopFooter } from "./models/top-footer";
 import { generateUSP } from "@app/api/core/usp/endpoints";
 import { Footer } from "./footer.module";
+import { generateDummyNewsletterModule } from "../newsletter/generate-dummy-data";
 
 export const generateBottomFooterDutch = (): BottomFooter => ({
   copyright: "© 2019 · Black Friday Expert is een initiatief van Maddox Media B.V",
@@ -177,6 +178,7 @@ export const generateTopFooter = (): TopFooter => ({
 export const generateDummyFooterDataDutch = (): Footer => ({
   bottomFooter: generateBottomFooterDutch(),
   middleFooter: generateMiddleFooter(),
+  newsletterItems: generateDummyNewsletterModule().items,
   topFooter: generateTopFooter(),
   id: "1",
   name: "FooterModule"
@@ -184,6 +186,7 @@ export const generateDummyFooterDataDutch = (): Footer => ({
 export const generateDummyFooterDataBelgian = (): Footer => ({
   bottomFooter: generateBottomFooterBelgian(),
   middleFooter: generateMiddleFooter(),
+  newsletterItems: generateDummyNewsletterModule().items,
   topFooter: generateTopFooter(),
   id: "1",
   name: "FooterModule"

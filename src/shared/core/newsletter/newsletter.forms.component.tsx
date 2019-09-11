@@ -1,5 +1,5 @@
 import * as React from "react";
-import { withFormik, FormikProps, FormikErrors, Form, connect } from "formik";
+import { withFormik, FormikProps, FormikErrors, Form } from "formik";
 import { TextFieldComponent } from "@app/core";
 import { validateEmail } from "@app/util";
 import Paper from "@assets/icons/paper.svg";
@@ -7,9 +7,7 @@ import { ClickableComponent } from "../clickable";
 
 import styles from "./newsletter-forms-component.module.scss";
 import { ISearchItem } from "@app/api/core/search-item";
-import { getMockRouterProps } from "@app/util/get-mock-router-props";
 import { CheckboxComponent } from "../checkbox";
-import { NewsletterModule } from "@app/api/modules/newsletter/newsletter";
 
 interface IContactFormErrorMessages {
   emailAddress: string;
@@ -29,7 +27,6 @@ interface IOtherProps {
 const InnerForm = (props: IOtherProps & FormikProps<IContactFormValues>) => {
   const { touched, errors } = props;
   const [selectAll, setSelectAll] = React.useState(false);
-  const maxCharacter = 200;
 
   const checkItemSelected = (id: number): boolean | undefined => {
     if (props.values.selectedItems.find(itemProps => itemProps.id === id)) return true;

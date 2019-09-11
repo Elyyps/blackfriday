@@ -19,7 +19,7 @@
     font-weight: 600;
     color: #999999;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
     @media (max-width: $breakpoint-xsmall-max) {
@@ -45,6 +45,6 @@
     @media (max-width: $breakpoint-xsmall-max) {
       grid-template-columns: auto;
       margin-bottom: 16px;
-          }
+    }
   }
 }
