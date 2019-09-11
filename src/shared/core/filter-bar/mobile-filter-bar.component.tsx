@@ -130,7 +130,6 @@ const StoresMobileFilterBarComponent = (props: IStoresMobileFilterBarComponentPr
     });
     setTotalStores(0);
     props.onFiltersChanged(clearedBrandFilters, clearedCategoryFilters, clearedStatusFilters, "Relevantie");
-
   };
 
   return (
@@ -162,6 +161,7 @@ const getMobileFilterItems = (
   {
     hasSearchBar: true,
     title: "Status",
+    clearFilterText: "Wis deze filters",
     searchBarPlaceholder: "Status zoeken",
     selectedItems: [...getSelectedFilterItems(statusFilterItems)],
     items: [...getFilterItems(statusFilterItems)]
@@ -169,6 +169,7 @@ const getMobileFilterItems = (
   {
     hasSearchBar: true,
     title: "Categorieën",
+    clearFilterText: "Wis deze filters",
     searchBarPlaceholder: "Categorieën zoeken",
     selectedItems: [...getSelectedFilterItems(categoryFilterItems)],
     items: [...getFilterItems(categoryFilterItems)]
@@ -177,6 +178,7 @@ const getMobileFilterItems = (
     hasSearchBar: true,
     title: "Merken",
     searchBarPlaceholder: "Merk zoeken",
+    clearFilterText: "Wis deze filters",
     selectedItems: [...getSelectedFilterItems(brandfilterItems)],
     items: [...getFilterItems(brandfilterItems)]
   }

@@ -12,9 +12,9 @@ import { IMobileFilterItem } from "./mobile-filter-item";
 import { SingleFilterComponent } from "./pages/single-page-filter";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 import { MobileFilterContainerProps } from "./containers/mobile-filter-container";
-import { FilterItem } from "@app/api/core/filter/filter-item";
 
 export interface IMobileFilterComponentProps {
+  clearFilterText?: string;
   filterItems: IMobileFilterItem[];
   onClear: () => void;
   onFilterChange: (items: IMobileFilterItem[]) => void;
@@ -44,11 +44,10 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
     setIsFilterOpened(false);
   };
 
-  const getNumberOfSelectedfilters = (filterItems: IMobileFilterItem) => filterItems.items.filter(item => item).length;
-  const setSelectedItems = (filterItem: IMobileFilterItem, items: string[]) => {
+  const setSelectedItems = (filterItemToSet: IMobileFilterItem, items: string[]) => {
     if (currentFilterItems && currentFilterItem) {
       currentFilterItems.forEach(item => {
-        if (item.title === filterItem.title) {
+        if (item.title === filterItemToSet.title) {
           item.selectedItems = items;
         }
       });
@@ -64,6 +63,7 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
         title: currentFilterItem.title,
         items: currentFilterItem.items,
         selectedItems: [],
+        clearFilterText: currentFilterItem.clearFilterText,
         searchBarPlaceholder: currentFilterItem.searchBarPlaceholder,
         hasSearchBar: currentFilterItem.hasSearchBar
       };
@@ -152,7 +152,9 @@ const component = (props: IMobileFilterComponentProps & InjectedIntlProps & Mobi
               </span>
               {!currentFilterItem.isSingleSelection && (
                 <a role="button" onClick={onClearHandler} className={styles["mobile-filter__header__clear"]}>
-                  {props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
+                  {currentFilterItem.clearFilterText
+                    ? currentFilterItem.clearFilterText
+                    : props.intl.formatMessage({ id: "mobile-filter-clear-filter" })}
                 </a>
               )}
             </div>

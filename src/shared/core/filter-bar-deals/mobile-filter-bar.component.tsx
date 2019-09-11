@@ -20,10 +20,30 @@ export interface IDealsMobileFilterBarComponentProps {
   storeFilterItems: FilterItem[];
 }
 
-const totalStores = 10; // TODO: calculate filter totals!
 const DealsMobileFilterBarComponent = (props: IDealsMobileFilterBarComponentProps) => {
   const [mobileFilters, setMobileFilters] = useState<IMobileFilterItem[]>([]);
+  const [totalStores, setTotalStores] = useState<number>(0);
 
+  const calculateStoreNumbers = (selectedItems: IMobileFilterSelectedItems[]) => {
+    let count = 0;
+    selectedItems.map(item => {
+      if (item.title === "Merken") {
+        props.brandFilterItems.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            if (filter.totalAmount) count += filter.totalAmount;
+          }
+        });
+      }
+      if (item.title === "Categorieën") {
+        props.categoryFilterItems.forEach((filter: FilterItem) => {
+          if (item.selectedItems.includes(filter.displayName)) {
+            if (filter.totalAmount) count += filter.totalAmount;
+          }
+        });
+      }
+    });
+    setTotalStores(count);
+  };
   useEffect(() => {
     setMobileFilters(
       getMobileFilterItems(
@@ -107,6 +127,7 @@ const DealsMobileFilterBarComponent = (props: IDealsMobileFilterBarComponentProp
 
   return (
     <MobileFilterContainer
+      onFilterChange={calculateStoreNumbers}
       onFinish={handleFinishSearch}
       totalStores={totalStores}
       onClear={clearAllFilters}
@@ -133,6 +154,7 @@ const getMobileFilterItems = (
   {
     hasSearchBar: true,
     title: "Status",
+    clearFilterText: "Wis deze filters",
     searchBarPlaceholder: "Status zoeken",
     selectedItems: [...getSelectedFilterItems(storeFilterItems)],
     items: [...getFilterItems(storeFilterItems)]
@@ -140,6 +162,7 @@ const getMobileFilterItems = (
   {
     hasSearchBar: true,
     title: "Categorieën",
+    clearFilterText: "Wis deze filters",
     searchBarPlaceholder: "Categorieën zoeken",
     selectedItems: [...getSelectedFilterItems(categoryFilterItems)],
     items: [...getFilterItems(categoryFilterItems)]
@@ -147,6 +170,7 @@ const getMobileFilterItems = (
   {
     hasSearchBar: true,
     title: "Merken",
+    clearFilterText: "Wis deze filters",
     searchBarPlaceholder: "Merk zoeken",
     selectedItems: [...getSelectedFilterItems(brandfilterItems)],
     items: [...getFilterItems(brandfilterItems)]

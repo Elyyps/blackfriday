@@ -1,3 +1,8 @@
+.uk-container{
+  &::after{
+    content: "unset"
+  }
+}
 .filter-bar {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
   padding: 16px 0;
@@ -18,18 +23,7 @@
       cursor: pointer;
     }
   }
-  // &-ul {
-  //   list-style: none;
-  //   width: 230px;
-  // }
-  // &-li {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  // }
-  // &-li:hover {
-  //   cursor: pointer;
-  // }
+
   &__filter-list {
     display: flex;
     flex-direction: row;
@@ -57,8 +51,6 @@
           padding: 12px 16px;
           background-color: $gray-dark;
           color: $global-inverse-color;
-          // position: relative;
-          // align-items: center;
           &.arrowAction {
             justify-content: center;
           }
@@ -151,6 +143,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 35%;
   }
   .filter__sort {
     &-item {

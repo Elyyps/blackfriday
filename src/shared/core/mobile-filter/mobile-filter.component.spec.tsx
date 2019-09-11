@@ -13,6 +13,7 @@ describe("[MobileFilter]", () => {
         totalStores={0}
         onClear={jest.fn}
         onFinish={jest.fn}
+        onFilterChange={jest.fn}
         filterItems={mobileFilterDummyData}
       />
     );
