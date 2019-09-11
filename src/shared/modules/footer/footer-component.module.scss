@@ -41,10 +41,19 @@
     @media (min-width: $breakpoint-medium) {
       margin-left: -15px;
     }
+
     li {
-      padding: 0 16px;
-      display: flex;
-      align-items: center;
+      margin: 0 16px;
+      a {
+        display: flex;
+        color: #777777;
+
+        align-items: center;
+        flex-direction: row;
+        &:hover {
+          color: $gray;
+        }
+      }
     }
     .icon-svg {
       margin-right: 10px;
@@ -182,11 +191,16 @@
   &__column-nav {
     margin: 0;
 
-    > li {
+    li {
       position: relative;
       list-style: none;
       margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
     }
+
     li:hover {
       a {
         color: white;
@@ -256,6 +270,9 @@
   &__social {
     &-items {
       padding: 8px;
+      &:last-child {
+        padding-bottom: 0px;
+      }
     }
   }
 

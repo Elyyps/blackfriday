@@ -96,7 +96,7 @@ const ModalNavBar = (props: IModalNavBarProps) => {
                   <IconComponent icon={CLOSE_ICON} size="12px" />
                   <span className="uk-visible@m">{props.close}</span>
                 </div>
-                {props.children}
+                <div className="modal-navbar__items">{props.children}</div>
               </div>
             </div>
           </div>,

@@ -136,7 +136,14 @@ const component = (props: IDealOverviewComponentProps & DealOverviewContainerPro
         <div ref={mainDivRef}>
           <Sticky>
             {({ style, isSticky }) => (
-              <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
+              <div
+                style={{
+                  ...style,
+                  marginTop: props.distanceTop && `${props.distanceTop.distanceTop}px`,
+                  transition: "0.4s"
+                }}
+                className={styles["filter-mobile-bar"]}
+              >
                 <FilterBarDealsContainer filtersChanged={filtersChanged} />
                 {isSticky && <PageProgressBarComponent totalHeight={totalHeight} mainDivRef={mainDivRef} />}
               </div>
@@ -147,7 +154,10 @@ const component = (props: IDealOverviewComponentProps & DealOverviewContainerPro
         <div className={styles["store-overview"]}>
           <div className="uk-container">
             <div className={styles["no-black-friday"]}>
-              <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
+              <h2>
+                {props.intl.formatMessage({ id: "store-overview-message" })}
+                {props.distanceTop && props.distanceTop.distanceTop}
+              </h2>
             </div>
 
             {props.deals && props.deals.length > 0 ? (

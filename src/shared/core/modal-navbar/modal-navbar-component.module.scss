@@ -18,11 +18,17 @@
   &__close {
     color: $global-inverse-color;
     display: flex;
+    align-self: flex-start;
     align-items: center;
+    width: auto;
+    order: 1;
     @media (max-width: $breakpoint-small) {
-      margin-left: 20px;
+      margin-right: 20px;
     }
-    cursor: pointer;
+    svg,
+    span {
+      cursor: pointer;
+    }
     color: $tint-gray-light;
     &:hover {
       span {
@@ -99,6 +105,14 @@
     margin: 0 auto;
     padding-left: 16px;
     padding-right: 16px;
+    @media (max-width: $breakpoint-xsmall-max) {
+      &__menu {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
     @media (min-width: $breakpoint-small) {
       padding-left: 24px;
       padding-right: 24px;

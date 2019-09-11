@@ -19,13 +19,15 @@ export interface IScreenSize {
 export interface ISettingsState {
   blackFridayDate: ActionType.IBlackFridayDate | undefined;
   blackFridayRootUrl: ActionType.IBlackFridayRootURL | undefined;
+  distanceTop: ActionType.IDistanceTop | undefined;
   screenSize: IScreenSize | undefined;
 }
 
 const INITIAL_STATE: ISettingsState = {
   screenSize: undefined,
   blackFridayDate: undefined,
-  blackFridayRootUrl: undefined
+  blackFridayRootUrl: undefined,
+  distanceTop: undefined
 };
 
 export const settingsReducer = (state: ISettingsState = INITIAL_STATE, action: Action): ISettingsState => {
@@ -45,6 +47,11 @@ export const settingsReducer = (state: ISettingsState = INITIAL_STATE, action: A
       const blackFridayRootUrl = <ActionType.IBlackFridayRootURL>action;
 
       return { ...state, blackFridayRootUrl };
+    }
+    case REDUX.SETTINGS.SET_DISTANCE_TOP: {
+      const distanceTop = <ActionType.IDistanceTop>action;
+
+      return { ...state, distanceTop };
     }
 
     default: {

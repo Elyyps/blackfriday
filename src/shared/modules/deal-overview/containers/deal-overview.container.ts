@@ -5,12 +5,13 @@ import { FilterItem } from "@app/api/core/filter/filter-item";
 import { dealOverviewActions } from "@app/stores/deal-overview";
 import { Deal } from "@app/api/core/deal/deal";
 import { dealOverviewThunks } from "@app/middleware/thunk/deal-overview.thunk";
-import { IScreenSize } from "@app/stores/settings";
+import { IScreenSize, IDistanceTop } from "@app/stores/settings";
 
 interface IStateProps {
   brandFilterItems: FilterItem[];
   categoryFilterItems: FilterItem[];
   deals: Deal[];
+  distanceTop: IDistanceTop | undefined;
   screenSize: IScreenSize | undefined;
   sortBy: string;
   storeFilterItems: FilterItem[];
@@ -36,12 +37,13 @@ interface IDispatchProps {
 const mapStateToProps: MapStateToProps<IStateProps, IDealOverviewComponentProps, IAppState> = state => {
   const { brandFilterItems, categoryFilterItems, sortBy, storeFilterItems, deals, totalResults } = state.dealOverview;
 
-  const { screenSize } = state.settings;
+  const { screenSize, distanceTop } = state.settings;
 
   return {
     brandFilterItems,
     categoryFilterItems,
     screenSize,
+    distanceTop,
     sortBy,
     storeFilterItems,
     deals,

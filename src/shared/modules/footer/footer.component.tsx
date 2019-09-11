@@ -42,8 +42,10 @@ const FooterComponent = (props: IFooterComponentProps) => {
               <ul className={styles["footer__top-list"]}>
                 {props.footerModule.topFooter.topLeftFooter.map((item, index) => (
                   <li key={index}>
-                    <IconComponent icon={item.icon} size="20px" />
-                    <span style={{ marginLeft: "10px" }}>{item.text}</span>
+                    <Link to={item.link ? item.link : ""}>
+                      <IconComponent icon={item.icon} size="20px" />
+                      <span style={{ marginLeft: "10px" }}>{item.text}</span>
+                    </Link>
                   </li>
                 ))}
               </ul>

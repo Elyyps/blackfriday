@@ -34,7 +34,7 @@ const HomePageHeaderComponent = (props: IHomePageHeaderComponentProps & HomePage
           <div className="uk-grid uk-child-width-1-2@m">
             <div>
               <div className={styles["homepage-header-wrap"]}>
-                <LabelComponent>
+                <LabelComponent onlyMobile={true}>
                   <React.Fragment>
                     {`Black Friday ${(props.blackFridayDate as IBlackFridayDate).year}: `}
                     <CountDownContainer />

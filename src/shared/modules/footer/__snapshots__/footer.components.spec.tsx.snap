@@ -22,36 +22,44 @@ exports[`[Footer] should render component without crashing 1`] = `
             <li
               key="0"
             >
-              <IconComponent
-                icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
-                size="20px"
-              />
-              <span
-                style={
-                  Object {
-                    "marginLeft": "10px",
-                  }
-                }
+              <Link
+                to="/stores-overview"
               >
-                132 winkels
-              </span>
+                <IconComponent
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+                  size="20px"
+                />
+                <span
+                  style={
+                    Object {
+                      "marginLeft": "10px",
+                    }
+                  }
+                >
+                  132 Winkels
+                </span>
+              </Link>
             </li>
             <li
               key="1"
             >
-              <IconComponent
-                icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
-                size="20px"
-              />
-              <span
-                style={
-                  Object {
-                    "marginLeft": "10px",
-                  }
-                }
+              <Link
+                to="/deals-overview"
               >
-                560 Deals
-              </span>
+                <IconComponent
+                  icon="https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+                  size="20px"
+                />
+                <span
+                  style={
+                    Object {
+                      "marginLeft": "10px",
+                    }
+                  }
+                >
+                  560 Deals
+                </span>
+              </Link>
             </li>
           </ul>
         </div>

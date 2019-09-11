@@ -43,10 +43,12 @@ const NavbarMenuItemComponent = (props: INavbarMenuItemComponentProps) => {
                     openedPanel === `${index}` ? styles["navbar-menu-item__clicked"] : ""
                   }`}
                 >
-                  <a>{(item as MenuItemExpandable).text}</a>
-                  <div className={styles["navbar-menu-item__expandable__icon"]}>
-                    <IconComponent icon={openedPanel === `${index}` ? ArrowUp : ArrowDown} size="10px" />
-                  </div>
+                  <span>
+                    <a>{(item as MenuItemExpandable).text}</a>
+                    <div className={styles["navbar-menu-item__expandable__icon"]}>
+                      <IconComponent icon={openedPanel === `${index}` ? ArrowUp : ArrowDown} size="10px" />
+                    </div>
+                  </span>
                 </div>
               }
             >
@@ -60,7 +62,9 @@ const NavbarMenuItemComponent = (props: INavbarMenuItemComponentProps) => {
             </ExpandablePanelComponent>
           ) : (
             <div className={styles["navbar-menu-item__expandable-title"]} key={index}>
-              <Link to={(item as MenuItemLink).url}>{(item as MenuItemLink).text}</Link>
+              <span>
+                <Link to={(item as MenuItemLink).url}>{(item as MenuItemLink).text}</Link>
+              </span>
             </div>
           )
         )}

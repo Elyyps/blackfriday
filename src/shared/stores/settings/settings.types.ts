@@ -15,3 +15,6 @@ export interface IBlackFridayDate extends IAction {
 export interface IBlackFridayRootURL extends IAction {
   rootUrl: string | undefined;
 }
+export interface IDistanceTop extends IAction {
+  distanceTop: number;
+}

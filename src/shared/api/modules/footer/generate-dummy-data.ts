@@ -163,12 +163,14 @@ export const generateMiddleFooter = (): MiddleFooter => ({
 export const generateTopFooter = (): TopFooter => ({
   topLeftFooter: [
     {
-      text: "132 winkels",
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg"
+      text: "132 Winkels",
+      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
+      link: "/stores-overview"
     },
     {
       text: "560 Deals",
-      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg"
+      icon: "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/medal.svg",
+      link: "/deals-overview"
     }
   ],
   usp: generateUSP()

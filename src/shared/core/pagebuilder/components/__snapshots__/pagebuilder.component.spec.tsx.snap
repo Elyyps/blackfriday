@@ -2,200 +2,204 @@
 
 exports[`[PagebuilderComponent] should render with 2 modules without crashing 1`] = `
 <Fragment>
-  <HelmetComponent
-    content=""
-    description=""
-    title=""
-  />
-  <ModuleComponent
-    key="0"
-    wordPressModule={
-      Object {
-        "id": "1",
-        "name": "FeaturedStoresModule",
-        "seeMoreCard": Object {
-          "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
-          "link": Object {
-            "title": "Alle winkels",
-            "url": "/",
+  <Container>
+    <HelmetComponent
+      content=""
+      description=""
+      title=""
+    />
+    <ModuleComponent
+      key="0"
+      wordPressModule={
+        Object {
+          "id": "1",
+          "name": "FeaturedStoresModule",
+          "seeMoreCard": Object {
+            "icon": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/footerIcons/store.svg",
+            "link": Object {
+              "title": "Alle winkels",
+              "url": "/",
+            },
+            "title": "Wij hebben meer winkels in ons overzicht",
           },
-          "title": "Wij hebben meer winkels in ons overzicht",
-        },
-        "stores": Array [
-          Object {
-            "availableBrands": Array [
-              "Apple",
-              "Phillips",
-              "Nintendo",
-              "Microsoft",
-              "Phillips",
-              "Nintendo",
-              "Sony",
-              "Vodafone",
-            ],
-            "categories": Array [
-              "Audio",
-              "Games",
-              "Elektronisch",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "0",
-            "label": "Hot",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
-            "moreInfoLink": "https://www.coolblue.nl/",
-            "name": "Coolblue",
-            "status": 1,
-            "timeLeftPercentage": 80,
-          },
-          Object {
-            "availableBrands": Array [
-              "Apple",
-              "Phillips",
-              "Nintendo",
-              "Adidas",
-              "Jack & Jones",
-              "Happy Socks",
-            ],
-            "categories": Array [
-              "Mode",
-              "Huishouden",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "1",
-            "label": "Hot",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/de+bijenkorf.png",
-            "moreInfoLink": "https://www.debijenkorf.nl/",
-            "name": "De Bijenkorf",
-            "status": 0,
-            "timeLeftPercentage": 30,
-          },
-          Object {
-            "availableBrands": Array [
-              "Vodafone",
-            ],
-            "categories": Array [
-              "Elektronisch",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen. Nam non iaculis sem, vitae porttitor odio. Donec porta aliquam rutrum. Duis rhoncus nunc at interdum dictum.",
-            "id": "2",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
-            "moreInfoLink": "https://www.vodafone.nl/",
-            "name": "Vodafone",
-            "status": 1,
-            "timeLeftPercentage": 70,
-          },
-          Object {
-            "availableBrands": Array [
-              "Jack & Jones",
-              "Adidas",
-              "Converse",
-              "Phillips",
-              "Sony",
-            ],
-            "categories": Array [
-              "Mode",
-              "Huishouden",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "3",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/wehkamp.png",
-            "moreInfoLink": "https://www.wehkamp.nl/",
-            "name": "Wehkamp",
-            "status": 1,
-            "timeLeftPercentage": 60,
-          },
-          Object {
-            "availableBrands": Array [
-              "Sony",
-              "Samsung",
-              "Apple",
-            ],
-            "categories": Array [
-              "Elektronisch",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "4",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/ziggo.png",
-            "moreInfoLink": "https://www.ziggo.nl/",
-            "name": "Ziggo",
-            "status": 1,
-            "timeLeftPercentage": 75,
-          },
-          Object {
-            "availableBrands": Array [
-              "Apple",
-              "Phillips",
-              "Nintendo",
-              "Sony",
-              "Microsoft",
-            ],
-            "categories": Array [
-              "Audio",
-              "Elektronisch",
-              "Huishouden",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "5",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bcc.png",
-            "moreInfoLink": "https://www.bcc.nl/",
-            "name": "BCC",
-            "status": 1,
-            "timeLeftPercentage": 100,
-          },
-          Object {
-            "availableBrands": Array [
-              "Apple",
-              "Phillips",
-              "Nintendo",
-              "Sony",
-              "Vodafone",
-              "Microsoft",
-              "Samsung",
-            ],
-            "categories": Array [
-              "Audio",
-              "Games",
-              "Elektronisch",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "6",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
-            "moreInfoLink": "https://bol.com",
-            "name": "Bol.com",
-            "status": 1,
-            "timeLeftPercentage": 40,
-          },
-          Object {
-            "availableBrands": Array [
-              "Phillips",
-              "Samsung",
-            ],
-            "categories": Array [
-              "Audio",
-              "Elektronisch",
-            ],
-            "description": "Een selectie van bizar veel aanbiedingen.",
-            "id": "7",
-            "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/dyson.png",
-            "moreInfoLink": "https://www.dyson.nl/",
-            "name": "Dyson",
-            "status": 0,
-            "timeLeftPercentage": 20,
-          },
-        ],
-        "title": "Vergelijkbare winkels",
+          "stores": Array [
+            Object {
+              "availableBrands": Array [
+                "Apple",
+                "Phillips",
+                "Nintendo",
+                "Microsoft",
+                "Phillips",
+                "Nintendo",
+                "Sony",
+                "Vodafone",
+              ],
+              "categories": Array [
+                "Audio",
+                "Games",
+                "Elektronisch",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "0",
+              "label": "Hot",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/coolblue.png",
+              "moreInfoLink": "https://www.coolblue.nl/",
+              "name": "Coolblue",
+              "status": 1,
+              "timeLeftPercentage": 80,
+            },
+            Object {
+              "availableBrands": Array [
+                "Apple",
+                "Phillips",
+                "Nintendo",
+                "Adidas",
+                "Jack & Jones",
+                "Happy Socks",
+              ],
+              "categories": Array [
+                "Mode",
+                "Huishouden",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "1",
+              "label": "Hot",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/de+bijenkorf.png",
+              "moreInfoLink": "https://www.debijenkorf.nl/",
+              "name": "De Bijenkorf",
+              "status": 0,
+              "timeLeftPercentage": 30,
+            },
+            Object {
+              "availableBrands": Array [
+                "Vodafone",
+              ],
+              "categories": Array [
+                "Elektronisch",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen. Nam non iaculis sem, vitae porttitor odio. Donec porta aliquam rutrum. Duis rhoncus nunc at interdum dictum.",
+              "id": "2",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/vodafone.png",
+              "moreInfoLink": "https://www.vodafone.nl/",
+              "name": "Vodafone",
+              "status": 1,
+              "timeLeftPercentage": 70,
+            },
+            Object {
+              "availableBrands": Array [
+                "Jack & Jones",
+                "Adidas",
+                "Converse",
+                "Phillips",
+                "Sony",
+              ],
+              "categories": Array [
+                "Mode",
+                "Huishouden",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "3",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/wehkamp.png",
+              "moreInfoLink": "https://www.wehkamp.nl/",
+              "name": "Wehkamp",
+              "status": 1,
+              "timeLeftPercentage": 60,
+            },
+            Object {
+              "availableBrands": Array [
+                "Sony",
+                "Samsung",
+                "Apple",
+              ],
+              "categories": Array [
+                "Elektronisch",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "4",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/ziggo.png",
+              "moreInfoLink": "https://www.ziggo.nl/",
+              "name": "Ziggo",
+              "status": 1,
+              "timeLeftPercentage": 75,
+            },
+            Object {
+              "availableBrands": Array [
+                "Apple",
+                "Phillips",
+                "Nintendo",
+                "Sony",
+                "Microsoft",
+              ],
+              "categories": Array [
+                "Audio",
+                "Elektronisch",
+                "Huishouden",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "5",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bcc.png",
+              "moreInfoLink": "https://www.bcc.nl/",
+              "name": "BCC",
+              "status": 1,
+              "timeLeftPercentage": 100,
+            },
+            Object {
+              "availableBrands": Array [
+                "Apple",
+                "Phillips",
+                "Nintendo",
+                "Sony",
+                "Vodafone",
+                "Microsoft",
+                "Samsung",
+              ],
+              "categories": Array [
+                "Audio",
+                "Games",
+                "Elektronisch",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "6",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/bol.png",
+              "moreInfoLink": "https://bol.com",
+              "name": "Bol.com",
+              "status": 1,
+              "timeLeftPercentage": 40,
+            },
+            Object {
+              "availableBrands": Array [
+                "Phillips",
+                "Samsung",
+              ],
+              "categories": Array [
+                "Audio",
+                "Elektronisch",
+              ],
+              "description": "Een selectie van bizar veel aanbiedingen.",
+              "id": "7",
+              "logo": "https://viper-development-images.s3-eu-west-1.amazonaws.com/blackFriday/StoreLogos/dyson.png",
+              "moreInfoLink": "https://www.dyson.nl/",
+              "name": "Dyson",
+              "status": 0,
+              "timeLeftPercentage": 20,
+            },
+          ],
+          "title": "Vergelijkbare winkels",
+        }
       }
-    }
-  />
+    />
+  </Container>
 </Fragment>
 `;
 
 exports[`[PagebuilderComponent] should render without modules without crashing 1`] = `
 <Fragment>
-  <HelmetComponent
-    content=""
-    description=""
-    title=""
-  />
+  <Container>
+    <HelmetComponent
+      content=""
+      description=""
+      title=""
+    />
+  </Container>
 </Fragment>
 `;
