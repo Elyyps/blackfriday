@@ -13,6 +13,7 @@ storiesOf("MobileFilter", module)
   .addDecorator(withProvider)
   .add("Basic implementation", () => (
     <MobileFilterComponent
+      onFilterChange={jest.fn}
       screenSize={{ viewType: ViewType.Desktop, breakpointPixels: breakPointDesktop }}
       totalStores={0}
       onClear={jest.fn}
