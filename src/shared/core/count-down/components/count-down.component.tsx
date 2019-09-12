@@ -12,6 +12,7 @@ const SECONDS = 60;
 const MINUTE = 60;
 const HOURS = 24;
 const MONTHS = 12;
+const roundMonthFrom = 10;
 const component = (props: ICountDownComponentProps & CountDownContainerProps & InjectedIntlProps) => {
   const [date, setDate] = React.useState("...");
   let timerID: any;
@@ -22,7 +23,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     (props.blackFridayDate as IBlackFridayDate).day
   );
   const countDownDate = blackFridayDay.getTime();
-  const months =
+  let months =
     (blackFridayDay.getFullYear() - currentDay.getFullYear()) * MONTHS +
     blackFridayDay.getMonth() -
     currentDay.getMonth();
@@ -46,7 +47,12 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
 
   React.useEffect(() => {
     const daysLeftWithinBlackFridayMonth = blackFridayDay.getDate() - currentDay.getDate();
+
     if (months >= 1) {
+      if (!props.isFullVersion && daysLeftWithinBlackFridayMonth > roundMonthFrom) {
+        months = months + 1;
+      }
+
       if (daysLeftWithinBlackFridayMonth > 0) {
         setDate(
           `${months} ${
@@ -72,17 +78,23 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
           new Date(currentDay.getFullYear(), currentDay.getMonth(), 0).getDate() -
           currentDay.getDate() +
           blackFridayDay.getDate();
+
+        if (!props.isFullVersion && daysLeftToBlackFriday > roundMonthFrom) {
+          months = months + 1;
+        }
         setDate(
           ` ${
             months > 1
               ? `${months - 1} ${
-                  months > 1 ? props.intl.formatMessage({ id: "months" }) : props.intl.formatMessage({ id: "month" })
+                  months - 1 > 1
+                    ? props.intl.formatMessage({ id: "months" })
+                    : props.intl.formatMessage({ id: "month" })
                 }`
               : ""
           } ${
             props.isFullVersion
               ? `& ${daysLeftToBlackFriday} ${
-                  daysLeftWithinBlackFridayMonth > 1
+                  daysLeftToBlackFriday > 1
                     ? props.intl.formatMessage({ id: "days" })
                     : props.intl.formatMessage({ id: "day" })
                 }`
@@ -90,7 +102,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
           }`
         );
       }
-    } else if (daysLeftWithinBlackFridayMonth > 1) {
+    } else if (daysLeftWithinBlackFridayMonth >= 1) {
       setDate(
         `${daysLeftWithinBlackFridayMonth} ${
           daysLeftWithinBlackFridayMonth > 1
