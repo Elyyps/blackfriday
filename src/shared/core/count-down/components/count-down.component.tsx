@@ -23,7 +23,7 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     (props.blackFridayDate as IBlackFridayDate).day
   );
   const countDownDate = blackFridayDay.getTime();
-  let months =
+  const months =
     (blackFridayDay.getFullYear() - currentDay.getFullYear()) * MONTHS +
     blackFridayDay.getMonth() -
     currentDay.getMonth();
@@ -49,15 +49,15 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
     const daysLeftWithinBlackFridayMonth = blackFridayDay.getDate() - currentDay.getDate();
 
     if (months >= 1) {
-      if (!props.isFullVersion && daysLeftWithinBlackFridayMonth > roundMonthFrom) {
-        months = months + 1;
-      }
-
       if (daysLeftWithinBlackFridayMonth > 0) {
         setDate(
-          `${months} ${
+          `${
+            !props.isFullVersion && daysLeftWithinBlackFridayMonth > roundMonthFrom
+              ? props.intl.formatMessage({ id: "more-then-month" })
+              : ""
+          } ${months}  ${
             months > 1 ? props.intl.formatMessage({ id: "months" }) : props.intl.formatMessage({ id: "month" })
-          }  ${
+          } ${
             props.isFullVersion
               ? `& ${daysLeftWithinBlackFridayMonth} ${
                   daysLeftWithinBlackFridayMonth > 1
@@ -79,13 +79,14 @@ const component = (props: ICountDownComponentProps & CountDownContainerProps & I
           currentDay.getDate() +
           blackFridayDay.getDate();
 
-        if (!props.isFullVersion && daysLeftToBlackFriday > roundMonthFrom) {
-          months = months + 1;
-        }
         setDate(
           ` ${
             months > 1
-              ? `${months - 1} ${
+              ? `${
+                  !props.isFullVersion && daysLeftToBlackFriday > roundMonthFrom
+                    ? props.intl.formatMessage({ id: "more-then-month" })
+                    : ""
+                } ${months - 1} ${
                   months - 1 > 1
                     ? props.intl.formatMessage({ id: "months" })
                     : props.intl.formatMessage({ id: "month" })
