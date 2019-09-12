@@ -45,6 +45,42 @@ exports[`[CtaSmallModuleComponent] should render component without crashing 1`] 
             variant="small"
           >
             <WithFormik(InnerForm)
+              checkBoxItems={
+                Array [
+                  Object {
+                    "id": 0,
+                    "text": "Apple",
+                  },
+                  Object {
+                    "id": 1,
+                    "text": "Cosmetica & Parfum",
+                  },
+                  Object {
+                    "id": 2,
+                    "text": "Gaming",
+                  },
+                  Object {
+                    "id": 3,
+                    "text": "Sport & Vrije tijd",
+                  },
+                  Object {
+                    "id": 4,
+                    "text": "Computer & Elektronica",
+                  },
+                  Object {
+                    "id": 5,
+                    "text": "Fashion",
+                  },
+                  Object {
+                    "id": 6,
+                    "text": "Speelgoed",
+                  },
+                  Object {
+                    "id": 7,
+                    "text": "Wonen & koken",
+                  },
+                ]
+              }
               onSubmit={[Function]}
             />
           </ModalComponent>

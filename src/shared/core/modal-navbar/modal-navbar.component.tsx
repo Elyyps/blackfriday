@@ -93,7 +93,7 @@ const ModalNavBar = (props: IModalNavBarProps) => {
                   className={`${styles["modal-navbar__close"]} ${styles[`modal-navbar__close__${props.variant}`]}`}
                   onClick={toggleOpened}
                 >
-                  <IconComponent icon={CLOSE_ICON} size="12px" />
+                  <IconComponent color="white" icon={CLOSE_ICON} size="12px" />
                   <span className="uk-visible@m">{props.close}</span>
                 </div>
                 {props.children}

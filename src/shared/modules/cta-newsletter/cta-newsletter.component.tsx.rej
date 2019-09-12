@@ -1,0 +1,7 @@
+diff a/src/shared/modules/cta-newsletter/cta-newsletter.component.tsx b/src/shared/modules/cta-newsletter/cta-newsletter.component.tsx	(rejected hunks)
+@@ -35 +35,4 @@ const CtaNewsletterComponent = (props: ICtaNewsletterComponentProps) => (
+-                <NewsletterFormComponent checkBoxItems={props.ctaNewsLetterModule.newsletterItems} onSubmit={onSubmit} />
++                <NewsletterFormComponent
++                  checkBoxItems={props.ctaNewsLetterModule.newsletterItems}
++                  onSubmit={onSubmit}
++                />

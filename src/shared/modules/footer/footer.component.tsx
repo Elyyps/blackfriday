@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./footer-component.module.scss";
 import { ImageComponent, Button, IconComponent, USPContainer } from "@app/core/";
 
-import { Footer } from "@app/api/modules/footer/models/footer.module";
+import { FooterModule } from "@app/api/modules/footer/models/footer.module";
 import { LinkComponent } from "@app/core/link";
 import { StarsRatingComponent } from "@app/core/stars-rating";
 import { ExpandablePanelComponent } from "@app/core/expandable-panel";
@@ -12,7 +12,7 @@ import { NewsletterFormComponent } from "@app/core/newsletter";
 import ArrowUp from "@assets/icons/chevron-up.svg";
 import ArrowDown from "@assets/icons/chevron-down.svg";
 export interface IFooterComponentProps {
-  footerModule: Footer;
+  footerModule: FooterModule;
 }
 const CLOSE_PANEL = "close";
 const numberStars = 5;
@@ -189,7 +189,7 @@ const FooterComponent = (props: IFooterComponentProps) => {
                   }
                   variant={"small"}
                 >
-                  <NewsletterFormComponent onSubmit={onSubmit} />
+                  <NewsletterFormComponent checkBoxItems={[]} onSubmit={onSubmit} />
                 </ModalComponent>
               </div>
               <div className={styles["footer__column-footer"]}>

@@ -746,6 +746,7 @@ exports[`[Footer] should render component without crashing 1`] = `
               variant="small"
             >
               <WithFormik(InnerForm)
+                checkBoxItems={Array []}
                 onSubmit={[Function]}
               />
             </ModalComponent>

@@ -34,7 +34,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -44,7 +44,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -54,7 +54,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -64,7 +64,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -74,7 +74,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -84,7 +84,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -94,7 +94,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -104,7 +104,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     },
     {
@@ -114,7 +114,7 @@ const FeaturedDeals = {
       sale: "Bespaar 40% ",
       price: "€2.429",
       old_price: "€3.429",
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     }
   ],
@@ -122,7 +122,7 @@ const FeaturedDeals = {
     {
       title: "Er zijn meer interessante Apple deals!",
       image: Party,
-      button_text: "Naar deals",
+      button_text: "Naar deal",
       button_link: "#"
     }
   ]
