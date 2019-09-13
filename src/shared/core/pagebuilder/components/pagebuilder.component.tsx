@@ -76,13 +76,15 @@ export class PagebuilderComponent extends React.Component<
     }
   }
 
-  public changeDistanceTop(moduleName: string, distanceTop: number, startingHeight: number) {
+  public changeDistanceTop(moduleNames: string[], distanceTop: number, startingHeight: number) {
     if (this.props.currentPage) {
-      this.props.currentPage.wordPressPostModules.map(
-        modules =>
-          modules.name.toUpperCase().includes(moduleName.toUpperCase()) &&
-          window.pageYOffset > startingHeight &&
-          this.props.setDistanceTop(distanceTop)
+      this.props.currentPage.wordPressPostModules.forEach(modules =>
+        moduleNames.forEach(
+          moduleName =>
+            modules.name.toUpperCase().includes(moduleName.toUpperCase()) &&
+            window.pageYOffset > startingHeight &&
+            this.props.setDistanceTop(distanceTop)
+        )
       );
     }
 
@@ -102,10 +104,10 @@ export class PagebuilderComponent extends React.Component<
     if (distanceScrolled >= callFunctionAfter && !this.isNavbarVisible) {
       this.isNavbarVisible = true;
 
-      this.changeDistanceTop("DealOverviewModule", navbarHeight, startingHeight);
+      this.changeDistanceTop(["DealOverviewModule", "StoreOverviewModule"], navbarHeight, startingHeight);
     } else if (distanceScrolled <= -callFunctionAfter && this.currentPositionY > minHeightToHide) {
       this.isNavbarVisible = false;
-      this.changeDistanceTop("DealOverviewModule", 0, startingHeight);
+      this.changeDistanceTop(["DealOverviewModule", "StoreOverviewModule"], 0, startingHeight);
     }
   };
 

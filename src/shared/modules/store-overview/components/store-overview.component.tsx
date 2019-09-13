@@ -144,7 +144,14 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
         <div ref={mainDivRef}>
           <Sticky>
             {({ style, isSticky }) => (
-              <div style={{ ...style, transform: "none" }} className={styles["filter-mobile-bar"]}>
+              <div
+                style={{
+                  ...style,
+                  marginTop: props.distanceTop && `${props.distanceTop.distanceTop}px`,
+                  transition: "0.4s"
+                }}
+                className={styles["filter-mobile-bar"]}
+              >
                 <FilterBarContainer filtersChanged={filtersChanged} />
                 {isSticky && <PageProgressBarComponent totalHeight={totalHeight} mainDivRef={mainDivRef} />}
               </div>

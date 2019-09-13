@@ -23,6 +23,7 @@ describe("[StoreOverview]", () => {
         setSortBy={jest.fn()}
         setStatusFilters={jest.fn()}
         clearAllFilters={jest.fn()}
+        distanceTop={{ distanceTop: 0 }}
       />
     );
     expect(renderedComponent).toMatchSnapshot();

@@ -20,7 +20,7 @@
     display: flex;
     align-self: flex-start;
     align-items: center;
-    width: auto;
+    width: fit-content;
     order: 1;
     @media (max-width: $breakpoint-small) {
       margin-right: 20px;

@@ -5,11 +5,12 @@ import { FilterItem } from "@app/api/core/filter/filter-item";
 import { storeOverviewActions } from "@app/stores/store-overview";
 import { Store } from "@app/api/core/store/store";
 import { storeOverviewThunks } from "@app/middleware/thunk/store-overview.thunk";
-import { IScreenSize } from "@app/stores/settings";
+import { IScreenSize, IDistanceTop } from "@app/stores/settings";
 
 interface IStateProps {
   brandFilterItems: FilterItem[];
   categoryFilterItems: FilterItem[];
+  distanceTop: IDistanceTop | undefined;
   screenSize: IScreenSize | undefined;
   sortBy: string;
   statusFilterItems: FilterItem[];
@@ -42,12 +43,13 @@ const mapStateToProps: MapStateToProps<IStateProps, IStoreOverviewComponentProps
     totalResults
   } = state.storeOverview;
 
-  const { screenSize } = state.settings;
+  const { screenSize, distanceTop } = state.settings;
 
   return {
     brandFilterItems,
     categoryFilterItems,
     screenSize,
+    distanceTop,
     sortBy,
     statusFilterItems,
     stores,
