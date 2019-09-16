@@ -1,0 +1,62 @@
+.tooltip {
+  opacity: 1;
+
+  position: fixed;
+  height: auto;
+  max-height: 0;
+  transition: max-height ease 0.5s;
+
+  z-index: 930;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  text-align: center;
+  &__content {
+    position: relative;
+    padding: 10px;
+    width: auto;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  &__arrow {
+    position: fixed;
+    left: 50%;
+    top: -5px;
+    z-index: 931;
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid rgba(31, 31, 31, 1);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    &.top {
+      //pointing down
+      border-top: 5px solid rgba(31, 31, 31, 1);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      left: 50%;
+      top: -5px;
+    }
+    &,
+    .down {
+      //pointing up
+      left: 50%;
+      top: -5px;
+      border-bottom: 5px solid rgba(31, 31, 31, 1);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    &.left {
+      //pointing right
+    }
+    &.right {
+      //pointing left
+    }
+  }
+  &__message {
+    font-size: 15px;
+    padding: auto;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+  }
+}

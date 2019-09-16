@@ -64,7 +64,7 @@ const ModalNavBar = (props: IModalNavBarProps) => {
           setIsMenuOpened(true);
         }}
       >
-        <IconComponent  icon={props.icon} size={props.iconSize} />
+        <IconComponent icon={props.icon} size={props.iconSize} />
         {props.title}
       </button>
       {typeof document !== "undefined" &&
