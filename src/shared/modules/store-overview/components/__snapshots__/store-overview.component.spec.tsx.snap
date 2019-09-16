@@ -5,11 +5,6 @@ exports[`[StoreOverview] should render without crashing 1`] = `
   brandFilterItems={Array []}
   categoryFilterItems={Array []}
   clearAllFilters={[MockFunction]}
-  distanceTop={
-    Object {
-      "distanceTop": 0,
-    }
-  }
   getStores={[MockFunction]}
   intl={
     Object {

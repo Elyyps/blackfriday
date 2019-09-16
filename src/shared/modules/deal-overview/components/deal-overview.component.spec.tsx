@@ -23,7 +23,6 @@ describe("[DealsOverview]", () => {
         getDeals={jest.fn()}
         clearAllFilters={jest.fn()}
         setSortBy={jest.fn()}
-        distanceTop={{ distanceTop: 0 }}
       />
     );
     expect(renderedComponent).toMatchSnapshot();

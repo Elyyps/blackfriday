@@ -16,13 +16,9 @@ const setBlackFridayRootURL = (payload: ActionType.IBlackFridayRootURL) => ({
   type: REDUX.SETTINGS.SET_BLACK_FRIDAY_ROOT_URL,
   ...payload
 });
-const setDistanceTop = (payload: ActionType.IDistanceTop) => ({
-  type: REDUX.SETTINGS.SET_DISTANCE_TOP,
-  ...payload
-});
+
 export const settingsActions = {
   setScreenSize,
   setBlackFridayDate,
-  setBlackFridayRootURL,
-  setDistanceTop
+  setBlackFridayRootURL
 };

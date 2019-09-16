@@ -172,11 +172,6 @@ exports[`[DealsOverview] should render without crashing 1`] = `
     }
   }
   deals={Array []}
-  distanceTop={
-    Object {
-      "distanceTop": 0,
-    }
-  }
   getDeals={[MockFunction]}
   intl={
     Object {

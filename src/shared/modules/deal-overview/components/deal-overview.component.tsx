@@ -138,9 +138,7 @@ const component = (props: IDealOverviewComponentProps & DealOverviewContainerPro
             {({ style, isSticky }) => (
               <div
                 style={{
-                  ...style,
-                  marginTop: props.distanceTop && `${props.distanceTop.distanceTop}px`,
-                  transition: "0.4s"
+                  ...style
                 }}
                 className={styles["filter-mobile-bar"]}
               >
@@ -154,10 +152,7 @@ const component = (props: IDealOverviewComponentProps & DealOverviewContainerPro
         <div className={styles["store-overview"]}>
           <div className="uk-container">
             <div className={styles["no-black-friday"]}>
-              <h2>
-                {props.intl.formatMessage({ id: "store-overview-message" })}
-                {props.distanceTop && props.distanceTop.distanceTop}
-              </h2>
+              <h2>{props.intl.formatMessage({ id: "store-overview-message" })}</h2>
             </div>
 
             {props.deals && props.deals.length > 0 ? (

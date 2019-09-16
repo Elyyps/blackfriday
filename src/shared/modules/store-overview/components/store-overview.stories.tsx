@@ -26,6 +26,5 @@ storiesOf("Store overview", module)
       setSortBy={() => {}}
       setStatusFilters={() => {}}
       clearAllFilters={() => {}}
-      distanceTop={{ distanceTop: 0 }}
     />
   ));

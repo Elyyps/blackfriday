@@ -23,8 +23,6 @@ describe("[PagebuilderComponent]", () => {
         screenSize={undefined}
         setScreenSize={jest.fn()}
         blackFridayRootUrl={{ rootUrl: "be" } as IBlackFridayRootURL}
-        distanceTop={{ distanceTop: 0 }}
-        setDistanceTop={() => ""}
       />
     );
 
@@ -46,8 +44,6 @@ describe("[PagebuilderComponent]", () => {
         screenSize={undefined}
         setScreenSize={jest.fn()}
         blackFridayRootUrl={{ rootUrl: "be" } as IBlackFridayRootURL}
-        distanceTop={{ distanceTop: 0 }}
-        setDistanceTop={() => ""}
       />
     );
 

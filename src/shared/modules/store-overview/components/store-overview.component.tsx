@@ -146,9 +146,7 @@ const component = (props: IStoreOverviewComponentProps & StoreOverviewContainerP
             {({ style, isSticky }) => (
               <div
                 style={{
-                  ...style,
-                  marginTop: props.distanceTop && `${props.distanceTop.distanceTop}px`,
-                  transition: "0.4s"
+                  ...style
                 }}
                 className={styles["filter-mobile-bar"]}
               >

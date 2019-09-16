@@ -7,7 +7,7 @@ import { ModuleComponent } from "./module.component";
 import { getViewType } from "@app/util/detect-view";
 import { HelmetComponent } from "./helmet.component";
 import { IBlackFridayRootURL } from "@app/stores/settings";
-import { StickyContainer, Sticky } from "react-sticky";
+import { StickyContainer } from "react-sticky";
 import cssVars from "css-vars-ponyfill";
 
 export interface IPagebuilderComponentProps {}
@@ -21,10 +21,6 @@ export class PagebuilderComponent extends React.Component<
   IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps,
   IState
 > {
-  public currentPositionY = 0;
-  public isNavbarVisible = true;
-  public prevPositionY = 0;
-
   public constructor(props: IPagebuilderComponentProps & PagebuilderContainerProps & RouteComponentProps) {
     super(props);
 
@@ -76,51 +72,9 @@ export class PagebuilderComponent extends React.Component<
     }
   }
 
-  public changeDistanceTop(moduleNames: string[], distanceTop: number, startingHeight: number) {
-    if (this.props.currentPage) {
-      this.props.currentPage.wordPressPostModules.forEach(modules =>
-        moduleNames.forEach(
-          moduleName =>
-            modules.name.toUpperCase().includes(moduleName.toUpperCase()) &&
-            window.pageYOffset > startingHeight &&
-            this.props.setDistanceTop(distanceTop)
-        )
-      );
-    }
-
-    if (window.pageYOffset < startingHeight) this.props.setDistanceTop(0);
-  }
-
-  public checkScroll = () => {
-    this.currentPositionY = window.pageYOffset;
-    const distanceScrolled = this.prevPositionY - this.currentPositionY;
-
-    const minHeightToHide = 40;
-    const navbarHeight = 82;
-    const callFunctionAfter = 10;
-    const startingHeight = 440;
-    this.prevPositionY = this.currentPositionY;
-
-    if (distanceScrolled >= callFunctionAfter && !this.isNavbarVisible) {
-      this.isNavbarVisible = true;
-
-      this.changeDistanceTop(["DealOverviewModule", "StoreOverviewModule"], navbarHeight, startingHeight);
-    } else if (distanceScrolled <= -callFunctionAfter && this.currentPositionY > minHeightToHide) {
-      this.isNavbarVisible = false;
-      this.changeDistanceTop(["DealOverviewModule", "StoreOverviewModule"], 0, startingHeight);
-    }
-  };
-
-  public componentDidMount() {
-    window.addEventListener("scroll", this.checkScroll);
-
-    this.currentPositionY = window.pageYOffset;
-    this.prevPositionY = 0;
-  }
   public componentWillUnmount() {
     if (typeof window === "object") {
       window.removeEventListener("resize", this.handleResize.bind(this));
-      window.removeEventListener("scroll", this.checkScroll);
     }
   }
   public render() {
@@ -131,30 +85,9 @@ export class PagebuilderComponent extends React.Component<
             <StickyContainer>
               <HelmetComponent {...this.props.currentPage.metaData} />
 
-              {this.props.currentPage.wordPressPostModules.map((wordPressModule, index) =>
-                wordPressModule.name === "NavBarModule" ? (
-                  <Sticky>
-                    {({ style }) => (
-                      <div
-                        style={{
-                          ...style,
-                          zIndex: 500,
-                          transform: this.isNavbarVisible ? "translateY(0%)" : "translateY(-100%)",
-                          transition: "0.4s"
-                        }}
-                      >
-                        <ModuleComponent
-                          wordPressModule={wordPressModule}
-                          screenSize={this.props.screenSize}
-                          key={index}
-                        />
-                      </div>
-                    )}
-                  </Sticky>
-                ) : (
-                  <ModuleComponent wordPressModule={wordPressModule} screenSize={this.props.screenSize} key={index} />
-                )
-              )}
+              {this.props.currentPage.wordPressPostModules.map((wordPressModule, index) => (
+                <ModuleComponent wordPressModule={wordPressModule} screenSize={this.props.screenSize} key={index} />
+              ))}
             </StickyContainer>
           </React.Fragment>
         ) : (
